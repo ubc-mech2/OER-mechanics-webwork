@@ -1,0 +1,186 @@
+\documentclass[a4paper]{article}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+
+\begin{document}
+\title{Mechanics Map Formatting Guidelines}
+
+\begin{center} \textbf{Mechanics Map Formatting Guidelines}
+\end{center}
+
+\underline{Terminology:}
+\begin{itemize}
+	\item Engineering Mechanics - Collectively, the study of the interaction of forces, bodies, and motion
+	\item Statics - The study of rigid bodies in equilibrium
+	\item Dynamics - The study of rigid bodies in motion
+	\item Strength of Materials - The study of deformable bodies
+	\item Particles - A body where we assume all mass is concentrated at a single point.
+	\begin{itemize}
+				\item Alternatively we will talk about concurrent force systems, which we will approximate as particles
+	\end{itemize}
+	\item Rigid Bodies - A body that is assumed to not deform under loading and that has a distributed mass
+\end{itemize}
+
+\underline{Website Format:}
+\begin{itemize}
+	\item Webpage
+		\begin{itemize}
+				\item Each html page should have a title "Mechanics Map - *Subject Title*"
+				\item Use the \textless h1\textgreater \space tags for a visible title on the top of the page
+				\item Use the \textless h2\textgreater \space tags for section headings within the page
+				\item Use the \textless strong\textgreater \space tags to bold important terms used for the first time
+		\end{itemize}
+	\item Images
+		\begin{itemize}
+				\item Use public domain images or self-generated images if possible
+				\item Images under a CC-BY-SA or CC-BY can also be used, with the source being attributed in the image caption
+				\item Always include an image caption
+				\item Images in the main content area should be no more than 600px in width (standard should be 500px)
+				\item Worked problem images should be no more than 500px in width
+		\end{itemize}
+	\item Equations
+		\begin{itemize}
+				\item For accessibility reasons, all equatins should be written in LaTeX using the MathJax pluggin
+					\begin{itemize}
+						\item Use an equation table to organize and center the equation
+						\item Write the equation itself in the MathJax tags
+						\item \textbackslash[ *Put LaTeX equation here* \textbackslash]
+					\end {itemize}
+		\end{itemize}
+\end {itemize}
+
+ \pagebreak
+\underline{Symbols:}
+\begin{itemize}
+	\item Body Physical Properties and Points
+		\begin{itemize}
+			\item \(m\): mass
+			\item \(C\): Centroid point for a 2D area
+			\item \( \bar{x}\) and \( \bar{y} \) for the x- and y-coordinates of the centroid
+			\item \(G\): Center of mass point
+			\item \(O\): A fixed ground point, particularly for fixed axis rotation
+			\item Other points should generally be labelled \(A, B, C, etc.\)
+		\end{itemize}
+	\item Vectors
+		\begin{itemize}
+			\item Vectors use a rightward arrow over the variable (the \textbackslash vec\{\} tag in LaTeX)
+		\end{itemize}
+	\item Forces
+		\begin{itemize}
+			\item \(F\): A force
+			\item \(F_A\): A force at point A
+			\item \(F_{Ax} \): The x component of the force at A
+			\item \(F_g\): The gravity force
+			\item \(F_N\): A normal force
+			\item \(T\): A tension force
+			\item \(F_k\): Force from a spring
+			\item \(F_c\): Force from a damper
+		\end{itemize}
+	\item Moments
+		\begin{itemize}
+			\item \(M\): A moment
+			\item \(M_A\): The moment about point A
+			\item \(M_{Ax}\): The moment about point A about the x-axis
+		\end{itemize}
+	\item Moments of Inertia
+		\begin{itemize}
+			\item \(I_G\): Mass moments of inertia for 2D problems, always use subscript to denote point the moment of inertia is about
+			\item \(I_{xx}\), \(I_{yy}\), and \(I_{zz}\) for mass moments of inertia in 3D about the center of mass
+			\item \(I_{xx0}\), \(I_{yy0}\), and \(I_{zz0}\) for mass moments of inertia in 3D about a point other than the center of mass
+			\item \(K\) is used for the radius of gyration
+		\end{itemize}
+	\item Motion in one dimension
+		\begin{itemize}
+			\item \(x\): position in one dimension
+			\item \(\dot{x}\) or \(v\): velocity in one dimension
+			\item \(\ddot{x}\) or \(a\): acceleration in one dimension
+		\end{itemize}
+	\item Motion in x-y coordinates
+		\begin{itemize}
+			\item \(x\) and \(y\) position
+			\item \(\dot{x}\) or \(v_x\) and \(\dot{y}\) or \(v_y\)
+			\item \(\ddot{x}\) or \(a_x\) and \(\ddot{y}\) or \(a_y\) accelerations
+		\end{itemize}
+	\item Motion in n-t coordinates
+		\begin{itemize}
+			\item \(v_t\): velocity
+			\item \(a_t\) or \(\dot{v}\) and \(a_N\) accelerations
+		\end{itemize}
+	\item Motion in polar coordinates
+		\begin{itemize}
+			\item \(r\) and \(\theta\) for position
+			\item \(v_r\) and \(v_\theta\) for velocities
+			\item \(a_r\) and \(a_\theta\) for acceleration
+		\end{itemize}
+	\item Relative Motion
+		\begin{itemize}
+			\item \(\vec{r}_{A/B}\): Position of A with respect to B
+			\item \(\vec{r}_{A/O}\): Position of A with respect to the origin
+			\item \(\vec{v}_{A/B}\): Velocity of A with respect to B
+			\item \(\vec{v}_{A/O}\): Velocity of A with respect to the origin
+			\item \(\vec{a}_{A/B}\): Acceleration of A with respect to B
+			\item \(\vec{a}_{A/O}\): Acceleration of A with respect to the origin
+		\end{itemize}
+	\item Coordinate systems for Relative Motion Analysis
+		\begin{itemize}
+			\item x- and y-coordinates reserved for the fixed ground frame of reference
+			\item Use \(r_1\) and \(\theta_1\) coordinate directions for first coordinate system that rotates with the body (mirroring polar kinematics), increase the subscript number for each additional rotating coordinate system that is required
+		\end{itemize}
+	\item Work and Energy
+		\begin{itemize}
+			\item W: Work
+			\item KE: Kinetic energy
+			\item PE: Potential energy
+			\item P: Power
+			\item \(\eta\): Efficiency
+		\end{itemize}
+	\item Impulse and Momentum
+		\begin{itemize}
+			\item \(\vec{J}\): Linear impulse (use vector in for vector form, use subscripts (\(J_x\)) when discussing components
+			\item \(m\vec{v}\): Momentum (use vector when in vector form, use subscripts for initial and final, and for directions when breaking it down into components)
+			\item \(mv_{Afx}\): For 2D collisions, use subscripts (in this order) to describe the body, initial vs. final, and the direction
+			\item \(\vec{K}\): Angular impulse (use vector in for vector form, use subscripts when discussing components
+		\end{itemize}
+	\item Vibrations
+		\begin{itemize}
+			\item \(k\): Spring constant
+			\item \(k_{eq}\): Equivalent spring constant
+			\item \(c\): Damping constant
+			\item \(\omega_0\): Forced frequency
+			\item \(\omega_n\): Natural frequency
+			\item \(\omega_d\): Damped natural frequency
+		\end{itemize}
+\end{itemize}
+
+\underline{Graphics:}
+	\begin{itemize}
+		\item Free Body Diagrams
+			\begin{itemize}
+				\item Free body diagrams should show only the body (no background), with the body itself in black
+				\item Coordinate systems should be drawn as appropriate in black
+				\item The coordinate system should be drawn on the diagram
+				\item Forces should be shown as red vectors
+				\item Moments in planar problems should be shown as purple curving vectors
+				\item If velocities or accelerations are shown, use a dashed blue vector
+				\item Key dimensions should be shown in blue
+			\end{itemize}
+	\end{itemize}
+
+\underline{Video Formatting}
+	\begin{itemize}
+		\item Videos
+			\begin{itemize}
+				\item Videos should be uploaded to the group YouTube account
+				\item Each video lecture should be titled "*Section Number* *Subject Name* - Video Lecture - *Your initials*"
+				\item Each worked problem should be titled "*Section Number* *Subject Name* - WP\#\#\# - *Your initials*"
+				\item Please have the problem itself shown at the beginning of the video and give a brief verbal recap of the problem
+				\item Don't refer to the problem number in the video itself (just say "In this problem..."). This makes iteasier if we add problems and change numbers
+		\end{itemize}
+	\end{itemize}
+
+
+\end{document}
+
