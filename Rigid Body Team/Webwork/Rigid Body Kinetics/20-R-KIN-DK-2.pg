@@ -1,0 +1,101 @@
+##DESCRIPTION
+## Kid with foam hammer, find moment of inertia
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinetics)
+## DBsection(Parallel Axis Theorem)
+## Institution(University of British Columbia)
+## Author(David Kim)
+## Date(2020-06-18)
+## Level(Intermediate)
+## KEYWORDS('moment of inertia','hammer','foam','parallel axis theorem','parallel axis','composite bodies')
+## RESOURCES('20-R-KIN-DK-2.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"source.pl",        # allows code to be displayed on certain sites.
+	"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$density = random(100,200,10);     # (lower, upper, stepsize)
+$thicknesscm = random(0.5,0.8,0.05);
+$widthA = random(5,10,1);
+$lengthA = random(30,50,2);
+$widthB = random(8,10,0.5);
+$lengthB = random(15,30,1);
+$widthC = random(5,10,1);
+$lengthC = random(12,16,1);
+$widthD = $widthC;
+$lengthD = $lengthC;
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1000;
+$height = $imgScale*1000;
+
+#computation
+$massA = $density*$widthA/100*$lengthA/100*$thicknesscm/100;
+$inertiaA = 1/12*($massA)*(($widthA/100)**2+($lengthA/100)**2) + $massA*($lengthA/2)**2;
+
+$massB = $density*$widthB/100*$lengthB/100*$thicknesscm/100;
+$inertiaB = 1/12*($massB)*(($withB/100)**2+($lengthB/100)**2) + $massB*(($lengthA+$widthB/2)/100)**2;
+
+$massC = $density*$widthC/100*$lengthC/100*$thicknesscm/100;
+$inertiaC = 1/12*$massC*(($widthC/100)+($lengthC/100)**2) + $massC*((($lengthA+$widthB/2)/100)**2+(($lengthB+$widthC/2)/100)**2);
+$inertiaD = $inertiaC;
+
+$inertia = $inertiaA + $inertiaB + $inertiaC + $inertiaD;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-R-KIN-DK-2.png", width=>[$width], height=>[$height]) @]*
+
+A kid excitedly swings his foam cutout hammer. The hammer consists of 4 separate rectangular plates, plate [`A`], plate [`B`], plate [`C`], and plate [`D`].
+Plate [`A`] has dimensions [`w_A =`] [`[$widthA]`] [`cm`] and [`l_A =`] [`[$lengthA]`] [`cm`].
+Plate [`B`] has dimensions [`w_B =`] [`[$widthB]`] [`cm`] and [`l_B =`] [`[$lengthB]`] [`cm`].
+Plate [`C`] has dimensions [`w_C =`] [`[$widthC]`] [`cm`] and [`l_C =`] [`[$lengthC]`] [`cm`].
+Plate [`D`] has dimensions [`w_D =`] [`[$widthD]`] [`cm`] and [`l_D =`] [`[$lengthD]`] [`cm`].
+If point [`P`] acts like a pin and the hammer rotates about that point, what is the moment of inertia of the hammer? The foam has a density of [`\rho =`] [`[$density]`] [`kg/m^3`] and each plate has a uniform thickness of ['t ='] [`[$thicknesscm]`] [`cm`].
+Assume the foam acts as a rigid body.
+
+
+[`I =`][___]{"$inertia"} [`kg*m^2`]  
+
+
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()];     #save as .pg
