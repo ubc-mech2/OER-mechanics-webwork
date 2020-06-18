@@ -1,0 +1,86 @@
+##DESCRIPTION
+## Plate with hole, find moment of inertia
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinetics)
+## DBsection(Composite Bodies)
+## Institution(University of British Columbia)
+## Author(David Kim)
+## Date(2020-06-18)
+## Level(Beginner)
+## KEYWORDS('moment of inertia','disk','hole','kinetics')
+## RESOURCES('20-R-KIN-DK1.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"source.pl",        # allows code to be displayed on certain sites.
+	"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$density = random(8000,10000,50);     # (lower, upper, stepsize)
+$thicknesscm = random(0.1,1,0.1);
+$holeradiusmm = random(10,30,2);
+$diskradiusmm = random(50,80,5);
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1000;
+$height = $imgScale*1000;
+
+#computation
+$massdiskkg = $density*pi*($diskradiusmm/1000)**2*($thicknesscm/100);
+$inertiadisk = 0.5*$massdiskkg*($diskradiusmm/1000)**2;
+
+$massholekg = $density*pi*($holeradiusmm/1000)**2*($thicknesscm/100);
+$inertiahole = 0.5*$massholekg*($holeradiusmm/1000)**2;
+
+$inertia = $inertiadisk-$inertiahole;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.005,
+tolType=>'relative');  #relative or absolute
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-R-KIN-DK1.png", width=>[$width], height=>[$height]) @]*
+
+What is the moment of inertia about an axis passing through point [`P`] of the plate if the plate has a radius [`r_D = `] [`[$diskradiusmm]`] [`mm`] and the hole has a radius [`r_h=`] [`[$holeradiusmm]`] [`mm`].
+The plate has constant density [`\rho =`] [`[$density]`] [`kg/m^3`] and a thickness of [`t =`] [`[$thicknesscm]`] [`cm`].
+
+
+[`I_P =`][___]{"$inertia"} [`kg*m^2`]  
+
+
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()];     #save as .pg
