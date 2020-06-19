@@ -50,11 +50,11 @@ $D = $B + 3;
 
 
 #computation
-$x1 = -*$B/3 *(3*$C - $B*$B + 3*$A*$B - 3*A^2)
-$x2 = 2/3*($D - $B)^(3/2)
+$x1 = -1*$B/3 *(3*$C - $B*$B + 3*$A*$B - 3*$A^2);
+$x2 = 2/3*($D - $B)^(3/2);
 $p = $x1 + $x2;
-$d = abs($x1) + abs($x2);
-$s = $d/$D;
+$s = abs($x1) + abs($x2);
+$v = $s/$D;
 
 
 #set tolerance
@@ -71,11 +71,11 @@ tolType=>'relative');
 BEGIN_PGML
 
 The particle starts at the origin and moves with velocity [`v = (t - [$A])^2 -[$C]`] m/s, for [`0 < t < [$B] `] s and it changed to [`v^2 = (t-[$B])^2`] 
-for [` [$B] <= t < [$D]`]. Determine the position and distance travelled. What is the average speed?
+for [` [$B] < t < [$D]`]. Determine the position and distance travelled. What is the average speed?
 
 [`postion =`] [_____]{"$p"} [`m`]  
-[`distance =`] [_____]{"$d"} [`m`]  
-[`average speed =`] [_____]{"$s"} [`m/s`]  
+[`distance =`] [_____]{"$s"} [`m`]  
+[`average speed =`] [_____]{"$v"} [`m/s`]  
 
 
 
