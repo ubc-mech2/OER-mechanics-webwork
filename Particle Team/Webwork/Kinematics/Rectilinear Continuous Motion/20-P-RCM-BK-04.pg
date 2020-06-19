@@ -61,7 +61,7 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-<strong> Preliminary Problem </strong>
+*Preliminary Problem*
 
 If [`v=[$A]s^2`], find the acceleration when [`s=[$B]m`].
 
