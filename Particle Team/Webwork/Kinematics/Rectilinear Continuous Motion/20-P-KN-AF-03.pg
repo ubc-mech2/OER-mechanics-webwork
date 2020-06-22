@@ -1,0 +1,75 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$A = random(2, 10, 1);
+$B = random(2, 10, 1);
+$C = random(2, 10, 1);
+
+
+#computation
+$v =$A*x;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+The particle moves with an acceleration of [`a = [$A] + [$B]*s`], along a straight line. What is the velocity is when s = [`[$C]`].
+
+[`v=`] [_____]{"$v"} [`m/s`]  
+
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
