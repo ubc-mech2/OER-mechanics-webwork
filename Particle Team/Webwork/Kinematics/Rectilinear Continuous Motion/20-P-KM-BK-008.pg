@@ -9,8 +9,8 @@
 ## Author(Bryden Kinsella)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS('preliminary')
-## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
+## KEYWORDS()
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,12 +42,12 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(2, 10, 1);
-$B = random(2, 10, 1);
+$h = random(5,15,1);
+$g = 9.81;
 
 
 #computation
-$t = $B/(2*$A);
+$dt = sqrt(2*$h/$g) - sqrt(2*($h-1)/$g);
 
 #set tolerance
 Context()->flags->set(
@@ -61,11 +61,14 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-*Preliminary Problem*
 
-If [`s=[$A]t^2`], find the time at which [`velocity=[$B]`].
+Two apples fall from a tree at the exact same time, from a height of [`[$h]`] meters. 
+One of them hits the ground, while the other lands on the head of a student sitting at the base of the tree.
+Assuming the student's head is exactly one meter above the ground, what is the time between the two impacts?  
+([`g=[$g] m/s^2`])
 
-[`t=`] [_____]{"$t"} [`s`]  
+[`\delta t=`] [_____]{"$dt"} [`s`]  
+
 
 END_PGML
 
