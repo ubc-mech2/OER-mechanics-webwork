@@ -10,7 +10,7 @@
 ## Date(June 2020)
 ## Level()
 ## KEYWORDS()
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -48,7 +48,9 @@ $C = random(2, 10, 1);
 
 
 #computation
-$v =$A*x;
+$v = -$A/2*$t**2 + $B;
+$t = sqrt((2*$B - 2*$v)/($A));
+$s = -1*$B/3*sqrt((2*$B)/$A) + $B*sqrt((2*$B)/$A);
 
 #set tolerance
 Context()->flags->set(
@@ -63,9 +65,15 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The particle moves with an acceleration of [`a = [$A] + [$B]*s`], along a straight line. What is the velocity is when s = [`[$C]`].
+A sphere is fired into slime that forces an acceleration of ['a = -[$A]*t']. Where t is in seconds. Determine the distance travelled, the time to 
+stop and the expression for the velocity if the initial velocity is ['v = [$B] * m/s'].
 
-[`v=`] [_____]{"$v"} [`m/s`]  
+Note that the velocity is to be written in terms of time. 
+
+
+[`v =`] [_____]{"$v"} [`m/s`]  
+[`t =`] [_____]{"$t"} [`s`]  
+[`s =`] [_____]{"$s"} [`m`]  
 
 
 END_PGML
