@@ -47,7 +47,7 @@ $B = random(2, 10, 1);
 
 
 #computation
-$v = 3*$A*($B**2);
+$x = $B/($A**2);
 
 #set tolerance
 Context()->flags->set(
@@ -63,10 +63,9 @@ tolType=>'relative');
 BEGIN_PGML
 *Preliminary Problem*
 
-If [`s=[$A]t^3 + 4`], find the velocity at time [`[$B]`].
+If [`v=[$A]x`], find the position where [`a=[$B]m/s^2`].
 
-[`v=`] [_____]{"$v"} [`m/s`]  
-
+[`x=`] [_____]{"$x"} [`m/s^2`]  
 
 END_PGML
 
