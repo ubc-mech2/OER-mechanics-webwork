@@ -10,7 +10,7 @@
 ## Date(June 2020)
 ## Level()
 ## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -30,14 +30,9 @@ loadMacros(
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
 	"parserRadioButtons.pl",
-	"PGbasicmacros.pl",
-	"PGchoicemacros.pl",
-	"PGanswermacros.pl",
-	"PGauxiliaryFunctions.pl"
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
-	 
 
 ##############################################################
 #
@@ -47,16 +42,12 @@ loadMacros(
 
 Context("Numeric");
 #given
-$B = random(2, 6, 2);
-$C = random(0.1, 1, 0.1);
-$D = random(1, 4, 1);
-$A = $D*$B/2 - 1;
-
+$A = random(1, 2, 1);
+$B = random(4, 8, 1);
 
 #computation
-
-$s = $D*$D*(-$B*$D/6 + $A/2 + 1);
-$t = $s/$C;
+$t1 = 4/3;
+$t2 = -2/3;
 
 #set tolerance
 Context()->flags->set(
@@ -71,15 +62,12 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-You hang out with your friend and their dog. The dog is older and has a harder time seeing the ball so you have to roll it. Due ot the grass,
-the acceleration acts as [`a = [$A] - [$B]*t`] [`m/s^2`]. The initial velocity of the ball is [`v = [$D]`] [`m/s`]. 
+A boat starts at rest and from the origin. It then travels a long a straight line and produces the grpah below. 
+Determine the acceleration at [`t = [$A]`] [`s`] and at [`t = [$B]`] [`s`].
 
 
-Where does the ball stop and how long does it take the dog to get there if they move at [`[$C]`] [`m/s`]. 
-
-[`s =`] [_____]{"$s"} [`m`]  
-[`t =`] [_____]{"$t"} [`s`]  
-
+[`postion =`] [_____]{"$p"} [`m`]  
+[`distance =`] [_____]{"$s"} [`m`]  
 
 
 END_PGML
