@@ -25,8 +25,8 @@ DOCUMENT();
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
+$width = $imgScale*700;
+$height = $imgScale*700;
 
 
 
@@ -70,12 +70,14 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-KM-BK-010.png", width=>[$width], height=>[$height]) @]*
+
 A spaceship uses a special engine that generates more thrust as it warms up. 
 The spaceship can accelerate at [`[$A]t`] [`m/s^2`], where [`t`] is in seconds, and [`t=0`] when the engine is turned on. 
 To slow down, the spaceship turns around 180 degrees, and fires its engine in the other direction.
 For the purposes of this question, assume this maneuvre happens instantly, so that the a-t graph looks like the figure above.
-The spaceship needs to deliver cargo to a destination 12 parsecs ([`3.7*10^{17}`] [`m`]) away. 
-What is the minimum time to make this journey, coming to rest at the destination?
+The spaceship needs to deliver cargo to a destination 12 parsecs ([`3.7*10^{17}`] [`m`]) away.  
+What is the minimum time to make this journey, coming to rest at the destination?  
 Give your answer in earth days (one earth day = 86400 seconds), to one decimal place.
 
 [`t=`] [_____]{"$t"} [`days`]  
