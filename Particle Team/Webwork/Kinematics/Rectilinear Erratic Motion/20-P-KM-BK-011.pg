@@ -72,17 +72,17 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-0_P_RM_BK_20
+20-P-KM-BK-011
 
 
 
-A car is being driven down a highway. It starts off travelling at [`[$v1]km/hr`], \
-then accelerates at [`[$a1]m/s^2`] for [`[$t1]s].
+A car is being driven down a highway. It starts off travelling at [`[$v1]`] [`km/hr`],
+then accelerates at [`[$a1]`][`m/s^2`] for [`[$t1]`][`s`].  
 What is the car's velocity afterwards?
 
 [`v=`][___]{"$v2"} [`km/hr`]
 
-The driver then hits the brakes, and decelerates at ['[$a2]m/s^2`].
+The driver then hits the brakes, and decelerates at [`[$a2]`][`m/s^2`].  
 From the moment deceleration starts, how long until the car reaches its original velocity?
 
 [`t=`][___]{"$t2"} [`s`]
