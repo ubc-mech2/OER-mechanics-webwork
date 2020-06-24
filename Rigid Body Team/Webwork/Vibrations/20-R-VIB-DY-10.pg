@@ -1,0 +1,73 @@
+## DESCRIPTION
+## Box connected to a wall with two springs
+## ENDDESCRIPTION
+
+## KEYWORDS('Springs', 'Energy Method','Box')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Energy Method)
+## Date(2020-06-23)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-VIB-DY-11.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1500;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$mass = random(5,15,0.1);
+$k = random(50,100,1);
+
+#---- Formulas to compute answers --------------#
+$T = 1/2*$mass;
+$V = $k;
+
+#---- Answers to the problem -----------------------#
+$ansA = $T;
+$ansB = $V;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-9.png", width=>[$width], height=>[$height]) @]*
+
+Two springs, with spring constants [`k =`] [`[$k]`] [`N.m`] each, are used to connect a [`m =`] [`[$mass]`] [`kg`] cargo load to a wall, Assuming the floor is frictionless, determine
+the energy equation.
+
+[____]{"$ansA"} [`v^2 + `][_____]{"$ansB"} [`x^2 = 0`]
+
+END_PGML
+
+ENDDOCUMENT();

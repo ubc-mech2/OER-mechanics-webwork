@@ -1,0 +1,85 @@
+## DESCRIPTION
+## Film reel, find the moment of inertia
+## ENDDESCRIPTION
+
+## KEYWORDS('Composite Bodies', 'Film Reel','Moment of Inertia')
+## DBsubject(Dynamics)
+## DBchapter(Kinetics)
+## DBsection(Composite Bodies)
+## Date(2020-06-23)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-KIN-DK-5.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1750;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$radC =  0.045;
+$thicknessC = 0.08;
+$radH = 0.04;
+$radP = 0.2;
+$thickness = 0.03;
+$rho = 3000;
+$radHP = 0.12;
+
+#---- Formulas to compute answers --------------#
+$massP = $rho*$thickness*$radP**2*pi;
+$massC = $rho*$thicknessC*$radC**2*pi;
+$massH = $rho*$radH**2*$thickness*pi;
+
+$inertiaP = 1/2*$massP*$radP**2;
+$inertiaC = 1/2*$massC*$radC**2;
+$inertiaH = 1/2*$massH*($radH**2+2*$radHP**2);
+
+#---- Answers to the problem -----------------------#
+$ansA = 2*$inertiaP + $inertiaC - 6*$inertiaH;
+
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KIN-DK-5.png", width=>[$width], height=>[$height]) @]*
+
+A film reel consists of two metal plates by a cylindrical core and has a density [`\rho = 3000 kg*m^2`]. The core has a raidus 
+[`r =`] [`[$radC]`] [`cm`] and a thickness [`d =`] [`[$thicknessC]`] [`cm`] while the plates have a radius of [`r =`] [`[$radP]`] [`cm`].
+Each plate has 6 holes punched into it, each with a radius of [`r =`] [`[$radH]`] [`cm`], placed 12cm away from the center of the plate. Calculate the moment of inertia
+of the film reel if it rotates about the z-axis from its center. 
+
+[`I_Z =`] [____]{"$ansA"} [`kg*m^2`]
+
+END_PGML
+
+ENDDOCUMENT();
