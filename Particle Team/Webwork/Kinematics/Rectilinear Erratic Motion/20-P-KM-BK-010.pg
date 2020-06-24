@@ -1,0 +1,87 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Kinematics)
+## DBsection(3: Erratic Motion)
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level(Advanced)
+## KEYWORDS('Kinematics','Spaceship','Erratic','Erratic Motion')
+## RESOURCES('inspired by Hibbeler 14E Section 12.3')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$x = 3.7*10**17;
+$A = random(2,9,1);
+
+
+#computation
+$t = ($x*6/((2-sqrt(2))*$A)**(1/3);
+$t /= 86400;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.1,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A spaceship uses a special engine that generates more thrust as it warms up. 
+The spaceship can accelerate at [`[$A]t`] [`m/s^2`], where [`t`] is in seconds, and [`t=0`] when the engine is turned on. 
+To slow down, the spaceship turns around 180 degrees, and fires its engine in the other direction.
+For the purposes of this question, assume this maneuvre happens instantly, so that the a-t graph looks like the figure above.
+The spaceship needs to deliver cargo to a destination 12 parsecs ([`3.7*10^{17}`] [`m`]) away. 
+What is the minimum time to make this journey, coming to rest at the destination?
+Give your answer in earth days (one earth day = 86400 seconds), to one decimal place.
+
+[`t=`] [_____]{"$t"} [`days`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
