@@ -66,9 +66,12 @@ A boat starts at rest and from the origin. It then travels a long a straight lin
 Determine the acceleration at [`t = [$A]`] [`s`] and at [`t = [$B]`] [`s`].
 
 
-[`postion =`] [_____]{"$p"} [`m`]  
-[`distance =`] [_____]{"$s"} [`m`]  
+[`a`] at [`t = [$A]`] [_____]{"$t1"} [`s`]  
+[`a`] at [`t = [$B]`] [_____]{"$t1"} [`s`]  
 
+*Use the figure below*
+
+[@ image( "20-P-KM-AF-005.png", width=>[$width], height=>[$height]) @]*
 
 END_PGML
 
