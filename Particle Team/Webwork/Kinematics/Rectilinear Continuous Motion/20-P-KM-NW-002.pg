@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.2 preliminary problem 12-13
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.2 problem 12-13
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-22)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('20-P-KM-NW-002.png')
+## RESOURCES('')
 
 ##############################################################
 
