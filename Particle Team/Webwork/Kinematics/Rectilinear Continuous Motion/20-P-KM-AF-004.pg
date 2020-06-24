@@ -73,10 +73,10 @@ tolType=>'relative');
 BEGIN_PGML
 
 You hang out with your friend and their dog. The dog is older and has a harder time seeing the ball so you have to roll it. Due ot the grass,
-the acceleration acts as [`a = [$A] - [$B]*t`][`m/s**2`]. The initial velocity of the ball is [`v = [$D]`][`m/s`]. 
+the acceleration acts as [`a = [$A] - [$B]*t`] [`m/s^2`]. The initial velocity of the ball is [`v = [$D]`] [`m/s`]. 
 
 
-Where does the ball stop and how long does it take the dog to get there if they move at [`[$C]`][`m/s`]. 
+Where does the ball stop and how long does it take the dog to get there if they move at [`[$C]`] [`m/s`]. 
 
 
 [`t =`] [_____]{"$t"} [`s`]  
