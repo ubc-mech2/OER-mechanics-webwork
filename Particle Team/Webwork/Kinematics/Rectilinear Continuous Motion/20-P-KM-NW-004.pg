@@ -35,28 +35,10 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = random(5,15,1);     # (lower, upper, stepsize)
-$timeEvent = random(5,10,0.2);
-
-#image scale
-$imgScale = .2;
-
-#image aspect ratio
-$width = $imgScale*4700;
-$height = $imgScale*1600;
+$acceleration = 9.81;     # (lower, upper, stepsize)
+$timeEvent = 10;#random(5,10,0.2);
 
 #computation
-$speed = $acceleration * $timeEvent;
-
-# let timeEvent = s
-# quadratic = -t^2/4 + s*t/2 + a^2/4 - a^2/2 + as; a,b,c: -1/4, $timeEvent/2, $acceleration * $timeEvent - $acceleration**2/4
-
-# quadratic = -$time**2/4 + $timeEvent * $time /2 + $acceleration**2/4 - $acceleration**2/2; a,b,c: -1/4, $timeEvent/2, -$acceleration**2/4
-
-$a = -0.25;
-$b = $timeEvent/2;
-$c = $acceleration * $timeEvent - $acceleration**2/4;
-$timeStop = (-1*$b+((b**2-4*$a*$c)**0.25)**2)/(2*$a);
 
 #set tolerance
 Context()->flags->set(
@@ -73,10 +55,10 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-NW-003.png", width=>[$width], height=>[$height]) @]*
 
-The 68 bus starts from rest at the bus loop and is subjected to a constant acceleration of [`a_{c} =`] [`[$acceleration]`] [`ft/s^2`] from [`t =`] [`0`] to [`[$timeEvent]`] [`s`]. As it approaches a red light, the bus then brakes to a stop at the rate shown by the graph. Determine the maximum speed [`v`] of the bus and the time [`t`] when it stops.
+A bored university student throws Ball [`A`] upwards with an initial velocity of [`v_{0}`]. Ball [`B`] is thrown upwards from the same point with the same velocity [`t_{0}`] seconds later. Determine the elapsed time [`t < `] 2[`v_{0}/g`] from the instant ball [`A`] is thrown to when both balls are at the same height, and find their instantaneous speed.
 
-[`v=`][___]{"$speed"} [`ft/s`]  
-[`t=`][___]{"$timeStop"} [`s`]
+[`t=`][___]{"$timeElapsed"}  
+[`v=`][___]{"$speed"} 
 
 END_PGML
 
