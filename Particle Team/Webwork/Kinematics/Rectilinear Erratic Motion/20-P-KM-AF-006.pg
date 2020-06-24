@@ -42,16 +42,18 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(1, 2, 1);
-$B = random(4, 8, 1);
+$A = random(1, 4, 1);
+$B = random(5, 7, 1);
+$C = random(8, 10, 1);
 
 #computation
-$t1 = 4/3;
-$t2 = -2/3;
+$s1 = 1/64*$A - 7/4;
+$s2 = 1/64*$B - 7/4;
+$s3 = 6.25*($C-8)*(3.25*($C-8)**2 +13);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -62,16 +64,19 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A boat starts at rest and from the origin. It then travels a long a straight line and produces the grpah below. 
-Determine the acceleration at [`t = [$A]`] [`s`] and at [`t = [$B]`] [`s`].
+A plane travels in a straight line, the graph below describes its motion. 
+The plane starts at rest. Create an [`a - s`] graph and find the value of acceleration
+at [`s = [$A], [$B]`] and [`[$C]`] to three decimal points. *ask for the v of t eqn once i get it to do that*
 
 
-[`a`] at [`t = [$A]`] [_____]{"$t1"} [`s`]  
-[`a`] at [`t = [$B]`] [_____]{"$t2"} [`s`]  
+[`a`] at [`s = [$A]`] [_____]{"$s1"} [`s`]  
+[`a`] at [`s = [$B]`] [_____]{"$s2"} [`s`]  
+[`a`] at [`s = [$C]`] [_____]{"$s3"} [`s`]  
+
 
 *Use the figure below*
 
-[@ image( "20-P-KM-AF-005.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-AF-006.png", width=>[$width], height=>[$height]) @]*
 
 END_PGML
 
