@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-32
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-42
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -8,9 +8,9 @@
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-06-24)
-## Level(Advanced)
-## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('')
+## Level(Beginner)
+## KEYWORDS('dynamics','rectilinear','particle','kinematics', 'erratic')
+## RESOURCES('20-P-KM-NW-006.png')
 
 ##############################################################
 
@@ -35,9 +35,17 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = 9.81;     # (lower, upper, stepsize)
+$acceleration = -5/60;     # (lower, upper, stepsize)
 
 #computation
+$distance = 5*40 + 5*20/2;
+
+#image scale
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
 
 #set tolerance
 Context()->flags->set(
@@ -52,10 +60,13 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A bored university student throws Ball [`A`] upwards with an initial velocity of [`v_{0}`]. Ball [`B`] is thrown upwards from the same point with the same velocity [`t_{0}`] seconds later. Determine the elapsed time [`t < `] 2[`v_{0}/g`] from the instant ball [`A`] is thrown to when both balls are at the same height, and find their instantaneous speed.
+[@ image( "20-P-KM-NW-006.png", width=>[$width], height=>[$height]) @]*
 
-[`t=`][___]{"$timeElapsed"}  
-[`v=`][___]{"$speed"} 
+The velocity of a car is plotted as shown. Determine the total distance [`d`] the car moves until it stops ([`t = 60 s`]).
+What is the average acceleration of the car within this time frame?
+
+[`d=`][___]{"$distance"} [`m`]  
+[`a_{ave}=`][___]{"$acceleration"} [`m/s^2`]
 
 END_PGML
 
