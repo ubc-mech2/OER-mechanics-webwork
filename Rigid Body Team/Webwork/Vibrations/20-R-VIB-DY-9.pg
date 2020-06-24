@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Circular weight being spun, find moment of inertia
+## Window cleaner hanging off the side of a bulding, find the spring constant.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Parallel Axis', 'Moment of inertia','circular weight')
+## KEYWORDS('Springs', 'Free Undamped Vibration','Spring', `Window Cleaner`)
 ## DBsubject(Dynamics)
-## DBchapter(Kinetics)
-## DBsection(Parallel Axis)
-## Date(2020-06-22)
-## Author(David Kim)
+## DBchapter(Vibration)
+## DBsection(Free Undamped Vibration)
+## Date(2020-06-23)
+## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KIN-DK-3.png')
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-9.png')
 
 ########################################################
 
@@ -36,37 +36,38 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.005,
+tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1650;		#aspect ratio
+$width = $imgScale*1500;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$density = random(2500,5000,100);
-$radius = random(0.1,0.25.0.01);
-$thickness = 0.1;
-$swingRad = 0.5;
+$mass = random(75,150,1);
+$massP = random(5,10,0.1);
+$k = random(250,350,0.1);
+$radius = random(0.5,1.5,0.01);
 
 #---- Formulas to compute answers --------------#
-$mass = $density*$radius**2*$thickness*pi;
+$inertia = 1/2*$massP*$radius**2;
+$natFreq = sprintf("%0.3f",sqrt($k*$radius**2/($inertia+$radius*$mass)));
 
 #---- Answers to the problem -----------------------#
-$ansA = 1/12*($mass)*(3*$radius**2+$thickness**2)+$mass*$swingRad**2;
+$ansA = $k;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-DK-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-9.png", width=>[$width], height=>[$height]) @]*
 
-A circular weight is being spun on a rope in a planar motion about the point p. What is the moment of inertia of the weight? The weight has a density of [`\rho =`] [`[$density]`] [`kg/m^3`]
-and the radius of the disk is [`r = `] [`[$radius]`] [`m`].
+A window cleaner is hanging over the side of a building with a pulley system and a spring. Given that the radius of the pulley is [`[$radius]`] [`m`], the pulley's mass is [`m =`] [`[$massP]`] [`kg`],
+and the cleaner has a mass [`m = `] [`[$mass]`], what is the spring constant if the natural vibration of the system is [`[$natFreq]`] [`Hz`]?
 
-[`I_P =`] [____]{"$ansA"} [`kg*m^2`]
+[`k =`] [____]{"$ansA"} [`N/m`]
 
 END_PGML
 

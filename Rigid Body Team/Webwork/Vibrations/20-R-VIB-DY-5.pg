@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Circular weight being spun, find moment of inertia
+## Striaght bar pinned to the ceiling, find the natural period of vibration.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Parallel Axis', 'Moment of inertia','circular weight')
+## KEYWORDS('', '','')
 ## DBsubject(Dynamics)
-## DBchapter(Kinetics)
-## DBsection(Parallel Axis)
-## Date(2020-06-22)
-## Author(David Kim)
+## DBchapter(Vibration)
+## DBsection(Free Undamped Vibrations)
+## Date(2020-06-23)
+## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KIN-DK-3.png')
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-5.png')
 
 ########################################################
 
@@ -36,37 +36,36 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.005,
+tolerance=>.01,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1650;		#aspect ratio
+$width = $imgScale*2000;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$density = random(2500,5000,100);
-$radius = random(0.1,0.25.0.01);
-$thickness = 0.1;
-$swingRad = 0.5;
+$mass = random(10,25,1);
+$k = random(50,100,5);
 
 #---- Formulas to compute answers --------------#
-$mass = $density*$radius**2*$thickness*pi;
+$natFreq = sqrt(4*$k/$mass);
 
 #---- Answers to the problem -----------------------#
-$ansA = 1/12*($mass)*(3*$radius**2+$thickness**2)+$mass*$swingRad**2;
+$ansA = 2*pi/$natFreq;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-DK-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-5.png", width=>[$width], height=>[$height]) @]*
 
-A circular weight is being spun on a rope in a planar motion about the point p. What is the moment of inertia of the weight? The weight has a density of [`\rho =`] [`[$density]`] [`kg/m^3`]
-and the radius of the disk is [`r = `] [`[$radius]`] [`m`].
+A straight bar, [`3m`] in length, is pinned to the ceiling at point [`A`]. On one end there is a weight with a mass [`m =`] [`[$mass]`] [`kg`]
+and on the other end there is a spring with k value of [`[$k]`]. Given that the bar is displaced a small angle \theta from equilibirum,
+what is the natural period of vibration? Negate the bar's weight.
 
-[`I_P =`] [____]{"$ansA"} [`kg*m^2`]
+[`t =`] [____]{"$ansA"} [`s`]
 
 END_PGML
 
