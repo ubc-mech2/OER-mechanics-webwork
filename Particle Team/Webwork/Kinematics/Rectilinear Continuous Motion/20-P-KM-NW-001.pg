@@ -1,0 +1,74 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.2 preliminary problem 12-8
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Rectilinear Kinematics)
+## DBsection(Preliminary)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-19)
+## Level(Beginner)
+## KEYWORDS('dynamics','rectilinear','particle','kinematics')
+## RESOURCES('20-P-KM-NW-001.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$a = random(1,6,1);     # (lower, upper, stepsize)
+$b = random(13,20,1);
+$c = random(1,10,1);
+$t = random(6,13,0.5);
+
+
+#computation
+$displacement = $c * ($b**2- $a**2);
+$velocity = $displacement/($b - $a);
+$acceleration = $c * 2;
+
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.001,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A popcorn kernel's position is defined by [`s=([$c]t^2 + 20)`] [`cm`] as it gets sucked into a vacuum cleaner, where [`t`] is in seconds. Determine (a) the displacement of the kernel during the time interval from [`t = [$a]`] [`s`] to [`t = [$b]`] [`s`], (b) the average velocity of the kernel during this time interval, and (c) the acceleration of the kernel when [`t = [$t]`] [`s`].
+
+[`\Delta s=`][___]{"$displacement"} [`cm`] 
+[`v_{ave}=`][___]{"$velocity"} [`cm/s`] 
+[`a=`][___]{"$acceleration"} [`cm/s^2`] 
+
+_Round your answers to 1 decimal place_.
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

@@ -1,0 +1,72 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.2 preliminary problem 12-13
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Rectilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-22)
+## Level(Intermediate)
+## KEYWORDS('dynamics','rectilinear','particle','kinematics')
+## RESOURCES('20-P-KM-NW-002.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$reactionNormal = 0.75;     # (lower, upper, stepsize)
+$reactionImpaired = 3;
+$speedMiles = random(20,40,2);
+$deceleration = random(1,4,1);
+
+#computation
+$speedFeet = $speedMiles*22/15;
+$time = $speedFeet/$deceleration;
+
+$distance_normal = $reactionNormal*$speedFeet + $speedFeet*$time - 0.5*$deceleration*$time**2;
+$distance_impaired = $distance_normal + ($reactionImpaired - $reactionNormal)*$speedFeet;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.001,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+Experiments indicate that a normal driver takes about [`[$reactionNormal]`] [`s`] before he or she can react to a situation to avoid a collision. It takes about [`[$reactionImpaired]`] [`s`] for a driver having 0.1% alcohol in his or her system to do the same. If such drivers are traveling on a straight road at [`[$speedMiles]`] [`mph`] ([`[$speedFeet]`] [`ft/s)`] and their cars can decelerate at [`[$deceleration]`] [`ft/s^2`], determine the shortest stopping distance [`d`] for each from the moment they see an imminent collision. Moral: If you must drink, please don't drive!
+
+[`d_{normal}=`][___]{"$distance_normal"} [`ft`]  
+[`d_{impaired}=`][___]{"$distance_impaired"} [`ft`]  
+
+_Round your answers to 1 decimal place_.
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg
