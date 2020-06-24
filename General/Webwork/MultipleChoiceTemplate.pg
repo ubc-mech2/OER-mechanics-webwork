@@ -1,0 +1,65 @@
+DOCUMENT();
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+$mc1 = RadioButtons(
+    [ "A", "B", "C", "D"],
+    "D"); #this will make D the correct answer
+
+$mc2 = RadioButtons(
+    [ "A", "B", "C", "D" ],
+    "B"); #this will make B the correct answer
+
+
+
+##############################################################
+#
+#  TEXT
+#  This is NOT in PGML
+#
+
+BEGIN_TEXT
+
+
+$BR
+\{ image( "image.png", width=>1000, height=>500,  
+tex_size=>700, extra_html_tags=>'alt=
+"This should show up as alt text"' ) \}
+
+Question one:
+$BR
+\{ $mc1->buttons() \}
+$BR
+Question two:
+$BR
+\{ $mc2->buttons() \}
+
+
+END_TEXT
+
+
+ANS( $mc1->cmp() );
+ANS( $mc2->cmp() );
+
+
+##############################################################
+
+ENDDOCUMENT()};

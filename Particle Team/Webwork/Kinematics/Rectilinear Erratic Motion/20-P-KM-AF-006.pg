@@ -10,7 +10,7 @@
 ## Date(June 2020)
 ## Level()
 ## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -22,6 +22,7 @@
 
 DOCUMENT();
 
+
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
 	"MathObjects.pl",
@@ -29,14 +30,9 @@ loadMacros(
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
 	"parserRadioButtons.pl",
-	"PGbasicmacros.pl",
-	"PGchoicemacros.pl",
-	"PGanswermacros.pl",
-	"PGauxiliaryFunctions.pl"
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
-	 
 
 ##############################################################
 #
@@ -46,18 +42,18 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(2, 10, 1);
-$B = random(2, 10, 1);
-$C = random(2, 10, 1);
-
+$A = random(1, 4, 1);
+$B = random(5, 7, 1);
+$C = random(8, 10, 1);
 
 #computation
-$t = sqrt((2*$B)/($A));
-$s = -1*$B/3*sqrt((2*$B)/$A) + $B*sqrt((2*$B)/$A);
+$s1 = 1/64*$A - 7/4;
+$s2 = 1/64*$B - 7/4;
+$s3 = 6.25*($C-8)*(3.25*($C-8)**2 +13);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -68,12 +64,19 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A sphere is fired into slime that forces an acceleration of [`a = -[$A]*t`]. Where t is in seconds. Determine the distance travelled, the time to 
-stop if the initial velocity is [`v = [$B]`] [`m/s`].
+A plane travels in a straight line, the graph below describes its motion. 
+The plane starts at rest. Create an [`a - s`] graph and find the value of acceleration
+at [`s = [$A], [$B]`] and [`[$C]`] to three decimal points. *ask for the v of t eqn once i get it to do that*
 
-[`t =`] [_____]{"$t"} [`s`]  
-[`s =`] [_____]{"$s"} [`m`]  
 
+[`a`] at [`s = [$A]`] [_____]{"$s1"} [`s`]  
+[`a`] at [`s = [$B]`] [_____]{"$s2"} [`s`]  
+[`a`] at [`s = [$C]`] [_____]{"$s3"} [`s`]  
+
+
+*Use the figure below*
+
+[@ image( "20-P-KM-AF-006.png", width=>[$width], height=>[$height]) @]*
 
 END_PGML
 

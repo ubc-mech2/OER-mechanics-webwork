@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-???????
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-32
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -7,10 +7,10 @@
 ## DBsection(Rectilinear Kinematics)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
-## Date(2020-06-23)
-## Level(Intermediate)
+## Date(2020-06-24)
+## Level(Advanced)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('??????????????')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,19 +35,9 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = 15;#random(5,15,1);     # (lower, upper, stepsize)
-$timeEvent = 10;#random(5,10,0.2);
-
-#image scale
-$imgScale = 1;
-
-#image aspect ratio
-$width = $imgScale*940;
-$height = $imgScale*320;
+$acceleration = 9.81;     # (lower, upper, stepsize)
 
 #computation
-$speed = $acceleration * $timeEvent;
-
 
 #set tolerance
 Context()->flags->set(
@@ -62,11 +52,10 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-005.png", width=>[$width], height=>[$height]) @]*
+A bored university student throws Ball [`A`] upwards with an initial velocity of [`v_{0}`]. Ball [`B`] is thrown upwards from the same point with the same velocity [`t_{0}`] seconds later. Determine the elapsed time [`t < `] 2[`v_{0}/g`] from the instant ball [`A`] is thrown to when both balls are at the same height, and find their instantaneous speed.
 
-?????
-[`v=`][___]{"$speed"} [`ft/s`]  
-[`t=`][___]{"$timeStop"} [`s`]
+[`t=`][___]{"$timeElapsed"}  
+[`v=`][___]{"$speed"} 
 
 END_PGML
 

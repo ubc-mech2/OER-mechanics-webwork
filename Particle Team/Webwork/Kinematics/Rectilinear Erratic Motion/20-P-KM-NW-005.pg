@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-???????
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem P12-2g
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -7,10 +7,10 @@
 ## DBsection(Rectilinear Kinematics)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
-## Date(2020-06-23)
-## Level(Intermediate)
-## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('??????????????')
+## Date(2020-06-24)
+## Level(Beginner)
+## KEYWORDS('dynamics','particle','kinematics')
+## RESOURCES('20-P-KM-NW-005.png')
 
 ##############################################################
 
@@ -35,23 +35,18 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = 15;#random(5,15,1);     # (lower, upper, stepsize)
-$timeEvent = 10;#random(5,10,0.2);
+$acceleration = -2;    # (lower, upper, stepsize)
 
 #image scale
-$imgScale = 1;
+$imgScale = 0.6;
 
 #image aspect ratio
-$width = $imgScale*940;
-$height = $imgScale*320;
-
-#computation
-$speed = $acceleration * $timeEvent;
-
+$width = $imgScale*900;
+$height = $imgScale*500;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.001,
+tolerance=>0,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################
@@ -64,9 +59,9 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-NW-005.png", width=>[$width], height=>[$height]) @]*
 
-?????
-[`v=`][___]{"$speed"} [`ft/s`]  
-[`t=`][___]{"$timeStop"} [`s`]
+Determine the acceleration [`a`] of a skytrain approaching a station at [`t = 1 s`] using the velocity-time graph.
+
+[`a=`][___]{"$acceleration"} [`m/s^2`]
 
 END_PGML
 

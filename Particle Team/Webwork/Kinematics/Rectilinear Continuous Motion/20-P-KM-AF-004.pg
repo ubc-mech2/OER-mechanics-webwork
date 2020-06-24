@@ -47,17 +47,16 @@ loadMacros(
 
 Context("Numeric");
 #given
-$B = random(1, 5, 1);
+$B = random(2, 6, 2);
 $C = random(0.1, 1, 0.1);
-$D = random(1, 5, 1);
-$A = $D*$B - 1;
+$D = random(1, 4, 1);
+$A = $D*$B/2 - 1;
 
 
 #computation
 
-$v = $D* ( 1 + ($A - $D*$B)/2);
-$t = $D;
-$s = $D*$D*( 1 + ($A - $D*$B)/2);
+$s = $D*$D*(-$B*$D/6 + $A/2 + 1);
+$t = $s/$C;
 
 #set tolerance
 Context()->flags->set(
@@ -73,16 +72,14 @@ tolType=>'relative');
 BEGIN_PGML
 
 You hang out with your friend and their dog. The dog is older and has a harder time seeing the ball so you have to roll it. Due ot the grass,
-the acceleration acts as [`a = [$A] - [$B]*t`][`m/s**2`]. The initial velocity of the ball is [`v = [$D]`][`m/s`]. 
+the acceleration acts as [`a = [$A] - [$B]*t`] [`m/s^2`]. The initial velocity of the ball is [`v = [$D]`] [`m/s`]. 
 
 
-Where does the ball stop and how long does it take the dog to get there if they move at [`[$C]`][`m/s`]. 
+Where does the ball stop and how long does it take the dog to get there if they move at [`[$C]`] [`m/s`]. 
 
-
-[`t =`] [_____]{"$t"} [`s`]  
 [`s =`] [_____]{"$s"} [`m`]  
+[`t =`] [_____]{"$t"} [`s`]  
 
-[`v =`] [_____]{"$v"} [`m/s`]  
 
 
 END_PGML

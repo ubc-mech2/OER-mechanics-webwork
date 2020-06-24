@@ -22,6 +22,7 @@
 
 DOCUMENT();
 
+
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
 	"MathObjects.pl",
@@ -29,14 +30,9 @@ loadMacros(
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
 	"parserRadioButtons.pl",
-	"PGbasicmacros.pl",
-	"PGchoicemacros.pl",
-	"PGanswermacros.pl",
-	"PGauxiliaryFunctions.pl"
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
-	 
 
 ##############################################################
 #
@@ -47,13 +43,7 @@ loadMacros(
 Context("Numeric");
 #given
 $A = random(2, 10, 1);
-$B = random(2, 10, 1);
-$C = random(2, 10, 1);
 
-
-#computation
-$t = sqrt((2*$B)/($A));
-$s = -1*$B/3*sqrt((2*$B)/$A) + $B*sqrt((2*$B)/$A);
 
 #set tolerance
 Context()->flags->set(
@@ -61,21 +51,36 @@ tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
-#
-#  PGML 
-#
-#
+# you can use the regular PGML stuff, for text and set up of the equation. 
+
 
 BEGIN_PGML
 
-A sphere is fired into slime that forces an acceleration of [`a = -[$A]*t`]. Where t is in seconds. Determine the distance travelled, the time to 
-stop if the initial velocity is [`v = [$B]`] [`m/s`].
-
-[`t =`] [_____]{"$t"} [`s`]  
-[`s =`] [_____]{"$s"} [`m`]  
-
+Input [`[$A] + t`].
 
 END_PGML
+
+# here you have to begin text, I am not certain why.
+# You have to use this specific syntax.
+# The number in the ans_rule represents how long the answer bar will be. 
+# You cannot edit other parts of line 72, or else it won't work.
+# Unfortunetly, I have not been able to get it to 'v = ' the answer bar
+# If you figure it out, pls edit and re-commit to Git 
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+#computation
+# I am not 100% sure that it has to be here but this syntax can be so sensitive
+$v = "$A + t";
+ANS(function_cmp($v,'t'));
+
+
+
+
 
 ##############################################################
 
