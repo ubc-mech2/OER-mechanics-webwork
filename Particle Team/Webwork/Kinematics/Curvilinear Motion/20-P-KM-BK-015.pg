@@ -3,19 +3,20 @@
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter()
+## DBchapter(12: Particle Kinematics)
 ## DBsection()
 ## Institution(University of British Columbia)
 ## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS('Golf','Bird','Erratic','Erratic Motion','Kinematics')
-## RESOURCES('inspired by Hibbeler 14E Section 12.3')
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+
 
 ##############################################################
 
@@ -49,17 +50,16 @@ loadMacros(
 
 Context("Numeric");
 #given
-$v1 = random(70,90,1);
-$g = 9.81;
-$v2 = random(10,19,1);
-$h = random(1000,1300,100);
+$A = random(2,5,1);
 
 #computation
-$t = $v1/$g + ($h-($v1**2*)/(2*$g))/$v2;
+$y = 3.14159/(2*$A);
+$vy = 3.14159/($A);
+$ay = 3.14159/(2*$A);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.1,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -70,15 +70,14 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-20-P-KM-BK-013
+A particle travels along the path [`y = sin([$A]x)`], where [`x`] is in meters.
+If it starts at the origin and travels with a constant positive velocity in the x direction,
+find the first points after the origin where [`y`], [`v_y`], and [`a_y`] are equal to zero.
+Give the x coordinates of these points below.
 
-A golfer hits a ball, giving it an initial vertical velocity of [`[$v1]`] [`m/s`]. 
-Right at the apex of its arc (when the ball's vertical velocity is zero)
-a bird flys by and grabs it. The bird has a constant upwards velocity of [`[$v2]`] [`m/s`]. 
-How many seconds after the club first hits the ball does the bird reach a height of [`[$h]`] [`m`]?
-
-[`t=`][___]{"$t"} [`s`]
-
+[`y=0`] at [`x=`] [_____]{"$y"} [`m`]  
+[`v_y=0`] at [`x=`] [_____]{"$vy"} [`m`]  
+[`a_y=0`] at [`x=`] [_____]{"$ay"} [`m`]  
 
 END_PGML
 

@@ -1,0 +1,100 @@
+## DESCRIPTION
+## Cat stuck on platform, find velocity, maximum accel.
+## ENDDESCRIPTION
+
+## KEYWORDS('cat', 'platform','velocity', 'gear','angular velocity')
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Gear System)
+## Date(2020-06-25)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-KM-DK-1.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$angaccelA = random(1,7,1);
+$dA = random(0.2,0.4,0.05);
+$dB = random(0.4,0.6,0.05);
+$rC = random(0.6,0.9,0.05);
+$rD = random(0.2,0.4,0.05);
+$time = random(2,6,1);
+$maxaccel = random(3,5,0.25);
+
+
+#---- Formulas to compute answers --------------#
+$angaccelB = $angaccelA;
+$angaccelC = $angaccelB*$dB/2/$rC;
+$angaccelD = $angaccelC;
+
+$accel = $angaccelD*$rD;
+$vel = $accel*$time;
+$distance = 0.5*$accel*($time)**2;
+
+$angaccelD2 = $maxaccel/$rD;
+$angaccelC2 = $angaccelD2;
+$angaccelB2 = $angaccelC2*$rC/($dB/2);
+$angaccelA2 = $angaccelB2;
+
+
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KM-DK-1.png", width=>[$width], height=>[$height]) @]*
+
+A cat has found itself sutck on a platform controlled by a gear system. A bystander attempts to
+save it by turning handle A at a constant [`\alpha_A =`][`[$angaccelA]`] [`rad/s^2`] in the clockwise direction.
+The diameter of handle A and gear B is [`d_A =`] [`[$dA]`][`m`] and [`d_B =`] [`[$dB]`][`m`] respectively, and
+the two are rigidly attached. Gear C has a radius of [`r_C =`] [`[$rC]`][`m`] while pulley D has a radius [`r_D =`] [`[$rD]`][`m`].
+The cord in which the platform is connected to is wrapped around pulley D which is rigidly attached to gear C. Assume the system
+starts from rest. 
+
+1) Determine the velocity of the cat and the distance it travels in [`t =`] [`[$time]`][`s`]
+  
+[`v_{Cat} =`] [____]{"$vel"}[`m/s`]  
+[`d =`][____]{"$distance"}[`m`]
+
+2) If the cat gets motion sickness and cannot handle an acceleration of [`a = `] [`[$maxaccel]`][`m/s^2`] upwards,
+what is the maximum angular acceleration the bystander can turn the handle at? Are they currently over or under the limit?
+[`\alpha_{Max} =`] [____]{"$angaccelA2"}[`m/s^2`]  
+
+
+
+END_PGML
+
+ENDDOCUMENT();

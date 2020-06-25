@@ -3,19 +3,20 @@
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter()
+## DBchapter(12: Particle Kinematics)
 ## DBsection()
 ## Institution(University of British Columbia)
 ## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS('Golf','Bird','Erratic','Erratic Motion','Kinematics')
-## RESOURCES('inspired by Hibbeler 14E Section 12.3')
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+
 
 ##############################################################
 
@@ -49,17 +50,20 @@ loadMacros(
 
 Context("Numeric");
 #given
-$v1 = random(70,90,1);
-$g = 9.81;
-$v2 = random(10,19,1);
-$h = random(1000,1300,100);
+$A = random(2,5,1)
+$B = random(2,5,1)
+$C = random(2,5,1)
+$D = random(2,5,1)
+$t = random(2,5,1)
 
 #computation
-$t = $v1/$g + ($h-($v1**2*)/(2*$g))/$v2;
+$vx = ($C-$A)/$t;
+$vy = ($D-$B)/$t;
+$ay = sqrt($vy**2 + $vx**2);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.1,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -70,15 +74,12 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-20-P-KM-BK-013
+A particle starts at [`([$A],[$B])`] and ends up at [`([$C],[$D])`] [$t] seconds later.
+Find the x component, y component, and magnitude of its velocity.
 
-A golfer hits a ball, giving it an initial vertical velocity of [`[$v1]`] [`m/s`]. 
-Right at the apex of its arc (when the ball's vertical velocity is zero)
-a bird flys by and grabs it. The bird has a constant upwards velocity of [`[$v2]`] [`m/s`]. 
-How many seconds after the club first hits the ball does the bird reach a height of [`[$h]`] [`m`]?
-
-[`t=`][___]{"$t"} [`s`]
-
+[`v_x`] [_____]{"$vx"} [`m`]
+[`v_y`] [_____]{"$vy"} [`m`]
+[`v`] [_____]{"$v"} [`m`]
 
 END_PGML
 
