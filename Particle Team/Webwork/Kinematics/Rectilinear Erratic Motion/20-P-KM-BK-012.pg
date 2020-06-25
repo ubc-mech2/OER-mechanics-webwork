@@ -46,7 +46,7 @@ loadMacros(
 
 
 $mc1 = RadioButtons(
-    [ "*A*", "B", "C", "D" ],
+    [ "A", "B", "C", "D" ],
     "D");
 $mc2 = RadioButtons(
     [ "A", "B", "C", "D" ],
@@ -65,13 +65,14 @@ $mc3 = RadioButtons(
 BEGIN_TEXT
 
 20-P-KM-BK-012
+$BR
 \{ image( "20-P-KM-BK-012.png", width=>1000, height=>500,  
 tex_size=>700, extra_html_tags=>'alt=
 "Velocity increases then decreases. Point A is on the incline, Point B at the apex, 
 Point C on the decline, and Point D at the t intercept"' ) \}
 
 Of the four points on the v-t graph above:
-
+$BR
 Which has the greatest displacement?
 $BR
 \{ $mc1->buttons() \}
