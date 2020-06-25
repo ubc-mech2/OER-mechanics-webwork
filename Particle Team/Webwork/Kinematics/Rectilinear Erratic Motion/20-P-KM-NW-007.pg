@@ -61,7 +61,7 @@ $timeStop = (-1*$b - ((b**2-4*$a*$c)**0.25)**2) /(2*$a);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.001,
+tolerance=>.05,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################

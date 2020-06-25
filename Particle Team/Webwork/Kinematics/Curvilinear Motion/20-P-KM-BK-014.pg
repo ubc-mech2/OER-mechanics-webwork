@@ -1,0 +1,86 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(4/5/6: Curvilinear Motion)
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level(Intermediate)
+## KEYWORDS('Kinematics','Curvilinear','Parabola')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$vx = random(3,8,1);
+$x = random(3,8,1);
+
+#computation
+$y = $x**2;
+$vy = 2*$x*$vx;
+$ay = 2*$vx;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A particle travels along the parabola [`y = x^2`], 
+such that it maintains a constant horizontal velocity [`v_x = [$vx]`] [`m/s`].  
+Find [`y`], [`v_y`], and [`a_y`] when [`x = [$x]`] [`m`].
+
+[`y=`] [_____]{"$y"} [`m`]  
+[`v_y=`] [_____]{"$vy"} [`m/s`]  
+[`a_y=`] [_____]{"$ay"} [`m/s^2`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
