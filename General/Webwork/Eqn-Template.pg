@@ -1,0 +1,87 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$A = random(2, 10, 1);
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+# you can use the regular PGML stuff, for text and set up of the equation. 
+
+
+BEGIN_PGML
+
+Input [`[$A] + t`].
+
+END_PGML
+
+# here you have to begin text, I am not certain why.
+# You have to use this specific syntax.
+# The number in the ans_rule represents how long the answer bar will be. 
+# You cannot edit other parts of line 72, or else it won't work.
+# Unfortunetly, I have not been able to get it to 'v = ' the answer bar
+# If you figure it out, pls edit and re-commit to Git 
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+#computation
+# I am not 100% sure that it has to be here but this syntax can be so sensitive
+$v = "$A + t";
+ANS(function_cmp($v,'t'));
+
+
+
+
+
+##############################################################
+
+ENDDOCUMENT()};
