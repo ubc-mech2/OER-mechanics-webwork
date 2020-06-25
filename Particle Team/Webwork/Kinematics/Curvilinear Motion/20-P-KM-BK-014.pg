@@ -3,19 +3,20 @@
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter()
-## DBsection()
+## DBchapter(12: Particle Kinematics)
+## DBsection(4/5/6: Curvilinear Motion)
 ## Institution(University of British Columbia)
 ## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS('Golf','Bird','Erratic','Erratic Motion','Kinematics')
-## RESOURCES('inspired by Hibbeler 14E Section 12.3')
+## Level(Intermediate)
+## KEYWORDS('Kinematics','Curvilinear','Parabola')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+
 
 ##############################################################
 
@@ -49,17 +50,17 @@ loadMacros(
 
 Context("Numeric");
 #given
-$v1 = random(70,90,1);
-$g = 9.81;
-$v2 = random(10,19,1);
-$h = random(1000,1300,100);
+$vx = random(3,8,1);
+$x = random(3,8,1);
 
 #computation
-$t = $v1/$g + ($h-($v1**2*)/(2*$g))/$v2;
+$y = $x**2;
+$vy = 2*$x*$vx;
+$ay = 2*$vx;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.1,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -70,15 +71,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-20-P-KM-BK-013
+A particle travels along the parabola [`y = x^2`], 
+such that it maintains a constant horizontal velocity [`v_x = [$vx]`] [`m/s`].  
+Find [`y`], [`v_y`], and [`a_y`] when [`x = [$x]`] [`m`].
 
-A golfer hits a ball, giving it an initial vertical velocity of [`[$v1]`] [`m/s`]. 
-Right at the apex of its arc (when the ball's vertical velocity is zero)
-a bird flys by and grabs it. The bird has a constant upwards velocity of [`[$v2]`] [`m/s`]. 
-How many seconds after the club first hits the ball does the bird reach a height of [`[$h]`] [`m`]?
-
-[`t=`][___]{"$t"} [`s`]
-
+[`y=`] [_____]{"$y"} [`m`]  
+[`v_y=`] [_____]{"$vy"} [`m/s`]  
+[`a_y=`] [_____]{"$ay"} [`m/s^2`]  
 
 END_PGML
 
