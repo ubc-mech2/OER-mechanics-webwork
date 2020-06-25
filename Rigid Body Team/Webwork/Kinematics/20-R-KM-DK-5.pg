@@ -1,0 +1,85 @@
+## DESCRIPTION
+## Record player, find revs, angular vel., angular accel. with given time
+## ENDDESCRIPTION
+
+## KEYWORDS('record player', 'angular acceleration','angle', 'revolution','angular velocity')
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Pure Rotation)
+## Date(2020-06-25)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-KM-DK-5.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$a = random(1,6,1);
+$b = random(1,8,0.2);
+$c = random(1,40,1);
+
+$time = random(10,90,5);
+
+
+#---- Formulas to compute answers --------------#
+$angle = $c + $b*($time)**2+$a*($time)**3;
+$rev = $angle/(2*pi);
+$angvel = $b*2*$time +$a*3*($time)**2;
+$angaccel = $b*2 + $a*3*2*$time;
+
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KM-DK-5.png", width=>[$width], height=>[$height]) @]*
+
+Stuck in quarantine, a retired engineer decides to jam out to his record player, 
+only to find out that it's broken. He notices a pattern in which the record rotates, 
+and hypothesizes that the angular distance the record travels can be described by the 
+equation [`\theta =`] [`[$c] + [$b]t^2 +[$a]t^3`], where [`t`] is the time in seconds.
+Determine the number of revolutions, the angular velocity, and the angular aceleration
+at the instant when [`t =`] [`[$time]`][`s`]
+
+
+[`Revolutions =`] [____]{"$rev"}  
+[`\omega =`] [____]{"$angvel"}[`rad/s`]  
+[`\alpha =`] [____]{"$angaccel"}[`rad/s^2`]
+
+
+END_PGML
+
+ENDDOCUMENT();
