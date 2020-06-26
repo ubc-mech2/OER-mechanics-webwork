@@ -64,11 +64,10 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A particle travles in a path descirbed as [`y = [$A]*x`]. The [`y`] component is described as 
-[`v_y = [$B]*t`], determine the magnitude of the velocity at [`t = [$C]`][`s`].
+A particle travels in a path following the equation [`y = [$A]*x`]. The [`y`] velocity component is described as [`v_y = [$B]*t`] [`m/s`]. Determine the magnitude of the velocity at [`t = [$C]`] [`s`].
 
 
-[_____]{"$vt"} [`m/s`]  
+[`v =`][_____]{"$vt"} [`m/s`]  
 
 END_PGML
 
