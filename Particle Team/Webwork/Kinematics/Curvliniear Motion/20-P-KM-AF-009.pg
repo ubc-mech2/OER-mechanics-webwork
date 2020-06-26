@@ -1,0 +1,77 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$A = random(0.1,1, 0.1);
+$B = random(1, 5, 1);
+$C = random(1, 5, 1);
+
+#computation
+$vy = $B*$C;
+$vx = $B*$C/$A;
+$vt = sqrt( ($vy)**2 + ($vx)**2); 
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A particle travles in a path descirbed as [`y = [$A]*x`]. The [`y`] component is described as 
+[`v_y = [$B]*t`], determine the magnitude of the velocity at [`t = [$C]`][`s`].
+
+
+[_____]{"$vt"} [`m/s`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

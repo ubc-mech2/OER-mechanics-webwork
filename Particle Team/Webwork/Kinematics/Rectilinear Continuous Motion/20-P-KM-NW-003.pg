@@ -49,7 +49,7 @@ $distanceBetween = ((($displacementB - $displacementA)**0.5)**2);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.001,
+tolerance=>.05,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################

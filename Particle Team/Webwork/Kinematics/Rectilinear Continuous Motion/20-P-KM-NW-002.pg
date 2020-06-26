@@ -37,7 +37,7 @@ Context("Numeric");         # or Complex
 #given
 $reactionNormal = 0.75;     # (lower, upper, stepsize)
 $reactionImpaired = 3;
-$speedMiles = random(20,40,2);
+$speedMiles = random(21,42,3);
 $deceleration = random(1,4,1);
 
 #computation
@@ -49,7 +49,7 @@ $distance_impaired = $distance_normal + ($reactionImpaired - $reactionNormal)*$s
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.001,
+tolerance=>.05,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################

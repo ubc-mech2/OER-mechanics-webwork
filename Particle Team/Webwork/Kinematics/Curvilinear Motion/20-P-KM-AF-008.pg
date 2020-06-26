@@ -1,0 +1,92 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$L = random(1, 4, 1);
+$K= random(5, 7, 1);
+$A = random(8, 10, 1);
+$B = random(8, 10, 1);
+
+#computation
+$C = $B*(sin($K)- tan($L)*cos($K));
+$t = ($C + sqrt(($C)**2 - 4*(-4.9)*$A))/(2*4.9);
+$x = $B*cos($K)*$t;
+$y = -1*tan($L)*$t;
+$D = sqrt(($x)**2 + ($y)**2);
+$s = $D/$t;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.0003,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A dog owner throws the ball for their dog at the angle [`theta = [$K]`] above the horizontal. 
+The owner is [`h = [$A]`] meters tall and is standing on a hill with a downward slope at angle 
+[`gamma = [$L]`]. What are the coordinates where the ball landed if [` v(i) = [$B]`][`m/s`]? WShat constant speed must the dog travel 
+at to get to the ball at the same time. 
+
+
+*Use the figure below*
+
+[@ image( "20-P-KM-AF-008.png", width=>[$width], height=>[$height]) @]*
+
+Coordinates: 
+[`x`] at [_____]{"$x"}   
+[`y`] at [_____]{"$y"} 
+
+Speed of the Dog:
+[_____]{"$s"} [`m/s`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,86 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$A = random(2,5,1);
+
+#computation
+$y = 3.14159/(2*$A);
+$vy = 3.14159/($A);
+$ay = 3.14159/(2*$A);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A particle travels along the path [`y = sin([$A]x)`], where [`x`] is in meters.
+If it starts at the origin and travels with a constant positive velocity in the x direction,
+find the first points after the origin where [`y`], [`v_y`], and [`a_y`] are equal to zero.
+Give the x coordinates of these points below.
+
+[`y=0`] at [`x=`] [_____]{"$y"} [`m`]  
+[`v_y=0`] at [`x=`] [_____]{"$vy"} [`m`]  
+[`a_y=0`] at [`x=`] [_____]{"$ay"} [`m`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
