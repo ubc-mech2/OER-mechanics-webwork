@@ -63,7 +63,7 @@ tolType=>'relative');
 BEGIN_PGML
 *Preliminary Problem*
 
-If [`x=[$A]t^2`], find the time at which [`velocity=[$B]`].
+If [`v=[$A]t^2`] [`m/s`], find the time at which [`a=[$B]`] [`m/s^2`].
 
 [`t=`] [_____]{"$t"} [`s`]  
 

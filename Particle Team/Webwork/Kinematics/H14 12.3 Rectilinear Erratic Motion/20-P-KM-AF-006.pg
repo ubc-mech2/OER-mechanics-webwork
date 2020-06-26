@@ -4,13 +4,13 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Motion)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
-## Author(Bryden Kinsella)
+## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS('preliminary')
-## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,16 +42,18 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(2, 10, 1);
-$B = random(2, 10, 1);
-
+$A = random(1, 4, 1);
+$B = random(5, 7, 1);
+$C = random(8, 10, 1);
 
 #computation
-$v = 3*$A*($B**2);
+$s1 = 1/64*$A - 7/4;
+$s2 = 1/64*$B - 7/4;
+$s3 = 6.25*($C-8)*(3.25*($C-8)**2 +13);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -61,12 +63,19 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-*Preliminary Problem*
 
-If [`x=[$A]t^3 + 4`], find the velocity at time [`[$B]`].
+A plane starts from rest and travels in a straight line motion as shown by the graph below. Create an [`a - s`] graph and find the values of acceleration
+at [`s = [$A], [$B]`] and [`[$C]`] [`s`] to three decimal points. *ask for the v of t eqn once i get it to do that*
 
-[`v=`] [_____]{"$v"} [`m/s`]  
 
+[`a_{[$A]} =`] [_____]{"$s1"} [`m/s^2`]  
+[`a_{[$B]} =`] [_____]{"$s2"} [`m/s^2`]  
+[`a_{[$C]} =`] [_____]{"$s3"} [`m/s^2`]  
+
+
+*Use the figure below*
+
+[@ image( "20-P-KM-AF-006.png", width=>[$width], height=>[$height]) @]*
 
 END_PGML
 

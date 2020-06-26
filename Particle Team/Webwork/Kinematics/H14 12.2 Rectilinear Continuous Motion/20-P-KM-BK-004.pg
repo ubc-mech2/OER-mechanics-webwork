@@ -4,13 +4,13 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(2: Rectilinear Motion)
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## KEYWORDS('preliminary')
+## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,18 +42,16 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(1, 4, 1);
-$B = random(5, 7, 1);
-$C = random(8, 10, 1);
+$A = random(2, 10, 1);
+$B = random(2, 10, 1);
+
 
 #computation
-$s1 = 1/64*$A - 7/4;
-$s2 = 1/64*$B - 7/4;
-$s3 = 6.25*($C-8)*(3.25*($C-8)**2 +13);
+$a = 2*($A**2)*($B**3);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.0003,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -63,20 +61,11 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+*Preliminary Problem*
 
-A plane travels in a straight line, the graph below describes its motion. 
-The plane starts at rest. Create an [`a - s`] graph and find the value of acceleration
-at [`s = [$A], [$B]`] and [`[$C]`] to three decimal points. *ask for the v of t eqn once i get it to do that*
+If [`v=[$A]s^2`] [`m/s`], find the acceleration when [`s=[$B]`] [`m`].
 
-
-[`a`] at [`s = [$A]`] [_____]{"$s1"} [`s`]  
-[`a`] at [`s = [$B]`] [_____]{"$s2"} [`s`]  
-[`a`] at [`s = [$C]`] [_____]{"$s3"} [`s`]  
-
-
-*Use the figure below*
-
-[@ image( "20-P-KM-AF-006.png", width=>[$width], height=>[$height]) @]*
+[`a=`] [_____]{"$a"} [`m/s^2`]  
 
 END_PGML
 

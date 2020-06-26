@@ -47,7 +47,7 @@ $B = random(2, 10, 1);
 
 
 #computation
-$a = 2*($A**2)*($B**3);
+$s = $B/($A**2);
 
 #set tolerance
 Context()->flags->set(
@@ -63,9 +63,9 @@ tolType=>'relative');
 BEGIN_PGML
 *Preliminary Problem*
 
-If [`v=[$A]x^2`], find the acceleration when [`x=[$B]m`].
+If [`v=[$A]s`] [`m/s`], find the position where [`a=[$B]`] [`m/s^2`].
 
-[`a=`] [_____]{"$a"} [`m/s^2`]  
+[`s=`] [_____]{"$s"} [`m`]  
 
 END_PGML
 

@@ -47,7 +47,7 @@ $B = random(2, 10, 1);
 
 
 #computation
-$a = ($A**2)*$B;
+$v = 3*$A*($B**2);
 
 #set tolerance
 Context()->flags->set(
@@ -63,9 +63,10 @@ tolType=>'relative');
 BEGIN_PGML
 *Preliminary Problem*
 
-If [`v=[$A]x`], find the acceleration when [`x=[$B]m`].
+If [`s=[$A]t^3 + 4`] [`m`], find velocity [`v`] at time [`t = [$B]`] [`s`].
 
-[`a=`] [_____]{"$a"} [`m/s^2`]  
+[`v=`] [_____]{"$v"} [`m/s`]  
+
 
 END_PGML
 

@@ -4,13 +4,13 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Motion)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
-## Author(Bryden Kinsella)
+## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS('preliminary')
-## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,16 +42,18 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(2, 10, 1);
-$B = random(2, 10, 1);
-
+$A = random(0.1,1, 0.1);
+$B = random(1, 5, 1);
+$C = random(1, 5, 1);
 
 #computation
-$t = $B/(2*$A);
+$vy = $B*$C;
+$vx = $B*$C/$A;
+$vt = sqrt( ($vy)**2 + ($vx)**2); 
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.03,
 tolType=>'relative');
 
 ##############################################################
@@ -61,11 +63,11 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-*Preliminary Problem*
 
-If [`v=[$A]t^2`], find the time at which [`a=[$B]m/s^2`].
+A particle travels in a path following the equation [`y = [$A]*x`]. The [`y`] velocity component is described as [`v_y = [$B]*t`] [`m/s`]. Determine the magnitude of the velocity at [`t = [$C]`] [`s`].
 
-[`t=`] [_____]{"$t"} [`s`]  
+
+[`v =`][_____]{"$vt"} [`m/s`]  
 
 END_PGML
 
