@@ -64,14 +64,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A plane travels in a straight line, the graph below describes its motion. 
-The plane starts at rest. Create an [`a - s`] graph and find the value of acceleration
-at [`s = [$A], [$B]`] and [`[$C]`] to three decimal points. *ask for the v of t eqn once i get it to do that*
+A plane starts from rest and travels in a straight line motion as shown by the graph below. Create an [`a - s`] graph and find the values of acceleration
+at [`s = [$A], [$B]`] and [`[$C]`] [`s`] to three decimal points. *ask for the v of t eqn once i get it to do that*
 
 
-[`a`] at [`s = [$A]`] [_____]{"$s1"} [`s`]  
-[`a`] at [`s = [$B]`] [_____]{"$s2"} [`s`]  
-[`a`] at [`s = [$C]`] [_____]{"$s3"} [`s`]  
+[`a_{[$A]} =`] [_____]{"$s1"} [`m/s^2`]  
+[`a_{[$B]} =`] [_____]{"$s2"} [`m/s^2`]  
+[`a_{[$C]} =`] [_____]{"$s3"} [`m/s^2`]  
 
 
 *Use the figure below*
