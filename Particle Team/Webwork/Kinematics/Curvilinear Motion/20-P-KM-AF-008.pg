@@ -42,10 +42,10 @@ loadMacros(
 
 Context("Numeric");
 #given
-$L = random(1, 4, 1);
-$K= random(5, 7, 1);
-$A = random(8, 10, 1);
-$B = random(8, 10, 1);
+$L = random(0.5, 7, 0.5);
+$K= random(20, 37, 0.5);
+$A = random(0.7,1.6, 0.1);
+$B = random(3, 9, 1);
 
 #computation
 $C = $B*(sin($K)- tan($L)*cos($K));
@@ -68,9 +68,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A dog owner throws the ball for their dog at the angle [`theta = [$K]`] above the horizontal. 
+A dog owner throws the ball for their dog at the angle [`\theta= [$K]^\circ`] above the horizontal. 
 The owner is [`h = [$A]`] meters tall and is standing on a hill with a downward slope at angle 
-[`gamma = [$L]`]. What are the coordinates where the ball landed if [` v(i) = [$B]`][`m/s`]? WShat constant speed must the dog travel 
+[`\gamma = [$L]^\circ`]. What are the coordinates where the ball landed if [` v_i = [$B]`][`m/s`]? WShat constant speed must the dog travel 
 at to get to the ball at the same time. 
 
 
