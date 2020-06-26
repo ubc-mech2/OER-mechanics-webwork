@@ -74,12 +74,14 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-BK-010.png", width=>[$width], height=>[$height]) @]*
 
-A spaceship uses a special engine that generates more thrust as it warms up. 
+A spaceship needs to deliver cargo to a destination 12 parsecs [`(3.7*10^{17}`] [`m)`] away.
+The spaceship uses a special engine that generates more thrust as it warms up. 
 The spaceship can accelerate at [`[$A]t`] [`m/s^2`], where [`t`] is in seconds, and [`t=0`] when the engine is turned on. 
-To slow down, the spaceship turns around 180 degrees, and fires its engine in the other direction.
-For the purposes of this question, assume this maneuver happens instantly, so that the a-t graph looks like the figure above.
-The spaceship needs to deliver cargo to a destination 12 parsecs [`(3.7*10^{17}`] [`m)`] away. 
-What is the minimum time to make this journey, coming to rest at the destination?
+In order to get there as fast as possible, the spaceship accelerates at [`[$A]t`] [`m/s^2`], 
+then at a certain point, turns its engine around and decelerates at [`-[$A]t`] [`m/s^2`], 
+so that it will come to rest at the destination.
+For the purposes of this question, assume this turning maneuver happens instantly, so that the a-t graph looks like the figure above.
+How long does the delivery take?
 Give your answer in earth days [`(one earth day = 86400 seconds)`], to one decimal place.
 
 [`t=`] [_____]{"$t"} [`days`]  
