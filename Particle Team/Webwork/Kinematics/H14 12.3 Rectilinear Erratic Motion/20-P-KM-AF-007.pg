@@ -59,50 +59,38 @@ in [`a - s`], [`v - t`], [`s - t'] and then write the appropriate equations belo
 *see graph below*
 
 [@ image( "20-P-KM-AF-007.png", width=>[$width], height=>[$height]) @]*
-
-[`a - s`] first equation
 END_PGML
 
 BEGIN_TEXT
- $BR\{ans_rule(25) \}
+ $BR
+ \(a - s\) first equation: \{ans_rule(25) \}
 END_TEXT
 
 #answers
 $as1 = "3/(2*sqrt(s))";
 ANS(function_cmp($as1,'s'));
 
-BEGIN_PGML
-[`a - s`] second equation
-END_PGML
-
 BEGIN_TEXT
- $BR\{ans_rule(25) \}
+ $BR
+ \(a - s\) second equation: \{ans_rule(25) \}
 END_TEXT
 
 #answers
 $as2 = "-1";
 ANS(function_cmp($as2,'s'));
 
-BEGIN_PGML
-
-[`v - t`] first equation
-END_PGML
-
 BEGIN_TEXT
- $BR\{ans_rule(25) \}
+ $BR
+ \(v - t\) first equation: \{ans_rule(25) \}
 END_TEXT
 
 #answers
 $vt1 = "9/2*t";
 ANS(function_cmp($vt1,'t'));
 
-BEGIN_PGML
-
-[`v - t`] second equation
-END_PGML
-
 BEGIN_TEXT
- $BR\{ans_rule(25) \}
+ $BR
+\(v - t\) second equation: \{ans_rule(25) \}
 END_TEXT
 
 #answers
@@ -110,32 +98,25 @@ END_TEXT
 $vt2 = "-3*e^(-t)";
 ANS(function_cmp($vt2,'t'));
 
-BEGIN_PGML
-
-[`s - t`] first equation
-END_PGML
-
 BEGIN_TEXT
- $BR\{ans_rule(25) \}
+ $BR
+ \(v - t\) second equation: \{ans_rule(25) \}
 END_TEXT
 
 #answers
 $st1 = "9/4*t^2";
 ANS(function_cmp($st1,'t'));
 
-BEGIN_PGML
-
-[`s - t`] second equation
-END_PGML
-
 BEGIN_TEXT
 
- $BR\{ans_rule(25) \}
+ $BR
+ \(s - t\) second equation: \{ans_rule(25) \}
 END_TEXT
 
 #answers
 $st2 = "3*e^(-t) + 4";
 ANS(function_cmp($st2,'t'));
+
 ##############################################################
 
 ENDDOCUMENT()};
