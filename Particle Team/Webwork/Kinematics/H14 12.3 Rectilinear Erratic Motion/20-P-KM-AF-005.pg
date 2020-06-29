@@ -1,0 +1,80 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$A = random(1, 2, 1);
+$B = random(4, 8, 1);
+
+#computation
+$t1 = 4/3;
+$t2 = -2/3;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A boat starts at rest and from the origin. It then travels a long a straight line and produces the grpah below. 
+Determine the acceleration at [`t = [$A]`] [`s`] and at [`t = [$B]`] [`s`].
+
+
+[`a`] at [`t = [$A]`] [_____]{"$t1"} [`s`]  
+[`a`] at [`t = [$B]`] [_____]{"$t2"} [`s`]  
+
+*Use the figure below*
+
+[@ image( "20-P-KM-AF-005.png", width=>[$width], height=>[$height]) @]*
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,83 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-32
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Rectilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-24)
+## Level(Advanced)
+## KEYWORDS('dynamics','rectilinear','particle','kinematics')
+## RESOURCES('')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$acceleration = 9.81;     # (lower, upper, stepsize)
+
+#computation
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.001,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A bored university student throws Ball [`A`] upwards with an initial velocity of [`v_{0}`]. Ball [`B`] is thrown upwards from the same point with the same velocity [`t_{0}`] seconds later. Determine the elapsed time [`t < `] 2[`v_{0}/g`] from the instant ball [`A`] is thrown to when both balls are at the same height.
+
+END_PGML
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+$t = " ";
+ANS(function_cmp($t,'t','v_{0}','g'));
+
+BEGIN_PGML
+
+Find their instantaneous speed at that height.
+
+END_PGML
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+$v = "";
+ANS(function_cmp($v,'v_{0}','g'));
+
+ENDDOCUMENT()];     #save as .pg

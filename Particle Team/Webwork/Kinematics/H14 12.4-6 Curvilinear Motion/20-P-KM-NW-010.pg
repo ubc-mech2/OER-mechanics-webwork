@@ -1,0 +1,67 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Curvilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-25)
+## Level(Beginner)
+## KEYWORDS('dynamics','curvilinear','particle','kinematics')
+## RESOURCES('??????????')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$coordX = random(2,5,1);         # (lower, upper, stepsize)
+$coordY = random(2,5,1);
+$velocity = random(13,25,12);     
+$velocityY = ($velocity-1)*2/3+4;  # special triangle ratio
+
+$time = random(2,4,1);
+
+#computation
+$coordAns = $time*sqrt($velocity**2-$velocityY**2)+$coordX;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocity]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
+
+[`x([$time])=`][___]{"$coordAns"}[`units`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

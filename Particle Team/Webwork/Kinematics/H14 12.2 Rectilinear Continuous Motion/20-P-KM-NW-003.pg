@@ -1,0 +1,71 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-28
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Rectilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-24)
+## Level(Intermediate)
+## KEYWORDS('dynamics','rectilinear','particle','kinematics')
+## RESOURCES('')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$Aa = random(11,15,1);     # (lower, upper, stepsize)
+$Ab=  random(1,5,1); 
+$Ba =  random(10,12,1); 
+$Bb =  random(5,10,1); 
+
+$t0 = random(5,10,0.2);
+
+#computation
+$displacementA = $Aa*($t0**3)/6 - $Ab*($t0**2)/2;
+$displacementB = $Ba*($t0**4)/12 - $Bb*($t0**2)/2;
+$distanceBetween = ((($displacementB - $displacementA)**0.5)**2);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+Two identical copies of Jimmy Neutron, [`A`] and [`B`], decide to have a race in a particle accelerator. They start from rest at the origin [`s = 0`] and move along a straight line such that [`a_{A} = ([$Aa]t - [$Ab])`] [`ft/s^2`] and [`a_{B} = ([$Ba]t^2 - [$Bb])`] [`ft/s^2`], where [`t`] is in seconds. Determine the displacement each Jimmy Neutron has travelled and the distance [`d`] between them when [`t = [$t0]`] [`s`].
+
+[`d_{A}=`][___]{"$displacementA"} [`ft`]  
+[`d_{B}=`][___]{"$displacementB"} [`ft`]  
+[`d=`][___]{"$distanceBetween"} [`ft`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg
