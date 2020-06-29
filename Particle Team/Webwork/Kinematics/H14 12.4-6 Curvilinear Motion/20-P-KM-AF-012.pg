@@ -40,6 +40,7 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
 $A = random(1, 6, 1);
