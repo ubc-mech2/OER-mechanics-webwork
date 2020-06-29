@@ -77,7 +77,7 @@ tolType=>'relative');
 BEGIN_PGML
 
 A particle moves with the velocity of [`v = \{ [$A]\hat{i} , [$B]*t\hat{j}, ([$C]-t)\hat{k} \}`][`m/s`].
-What is the position at the following times, [`t = [$D],[$E],[$F]`][`s`]. 
+What is the position at the following times, [`t = [$D],[$E],[$F]`][`s`] as well as the acceleration. 
 
 All answers must be entered in the coordinate format. [`(x,y,z)`]
 
