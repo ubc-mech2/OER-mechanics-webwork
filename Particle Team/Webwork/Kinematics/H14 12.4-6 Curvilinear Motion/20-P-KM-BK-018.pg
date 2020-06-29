@@ -74,9 +74,8 @@ You're trying to hit a target with an arrow. The target is [`[$x]`] [`ft`] away,
 You can shoot an arrow at [`[$v]`] [`ft/s`].  
 How many inches above the target do you have to aim?
 
-[`x=`] [_____]{"$x"} [`m`]  
-[`y=`] [_____]{"$y"} [`m`]  
-[`z=`] [_____]{"$z"} [`m`]  
+[`h=`] [_____]{"$h"} [`m`]  
+
 
 END_PGML
 
