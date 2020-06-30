@@ -4,31 +4,23 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection()
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
-## Author(Bryden Kinsella)
+## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS('Kinematics')
-## RESOURCES('')
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-
+## Easy
 
 ##############################################################
 
 DOCUMENT();
-
-#image scale
-$imgScale = .2;
-
-#image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
-
 
 
 loadMacros(   
@@ -48,18 +40,20 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
-$x = random(100,200,10);
-$v = random(105,205,10);
-$g = 32.2;
+$A = random(1, 5, 0.2);
+$B = random(50,75, 5);
+$C = random(1, 5, 1);
 
 #computation
-$theta = asin($x*$g/($v**2))/2;
-$h = $x*tan($theta);
+$radcon = $B * (pi/180);
+$rho = ($A*$C)**2/($A*tan($radcon));
+
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.03,
 tolType=>'relative');
 
 ##############################################################
@@ -70,13 +64,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-You're trying to hit a target with an arrow. The target is [`[$x]`] [`ft`] away, at the same height as you. 
-You can shoot an arrow at [`[$v]`] [`ft/s`].  
-How many inches above the target do you have to aim?
+A certain famous skateholder is travelling along a curved path. If his velocity could be described as a [`v = [$A]t`] [`m/s`], if the acceleration makes an angle of [`[$B]^\circ`] with the tangentail component. What is the radius of curvature of his path at time [`[$C]`] [`s`]?
 
-[`x=`] [_____]{"$x"} [`m`]  
-[`y=`] [_____]{"$y"} [`m`]  
-[`z=`] [_____]{"$z"} [`m`]  
+[`\rho = `][_____]{"$rho"} [`m`] 
 
 END_PGML
 

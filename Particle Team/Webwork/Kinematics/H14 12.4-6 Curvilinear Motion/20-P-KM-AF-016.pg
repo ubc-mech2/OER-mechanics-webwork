@@ -4,31 +4,23 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection()
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
-## Author(Bryden Kinsella)
+## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS('Kinematics')
-## RESOURCES('')
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-
+## Easy
 
 ##############################################################
 
 DOCUMENT();
-
-#image scale
-$imgScale = .2;
-
-#image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
-
 
 
 loadMacros(   
@@ -48,18 +40,24 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
-$x = random(100,200,10);
-$v = random(105,205,10);
-$g = 32.2;
+$A = random(2, 6, 1);
+$B = random(2, 10, 1);
+$D = random(1, 3, 1);
+$E = random(4, 7, 1);
+$F = random(5, 15, 1);
 
 #computation
-$theta = asin($x*$g/($v**2))/2;
-$h = $x*tan($theta);
+$rho1 = ((1 + (2*(1/$A)*$D)**2)**(3/2))/(2*(1/$A));
+$an1 = ($F**2)/($rho1);
+$rho2 = ((1 + (2*(1/$A)*$E)**2)**(3/2))/(2*(1/$A));
+$an2 = ($F**2)/($rho2);
+
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.03,
 tolType=>'relative');
 
 ##############################################################
@@ -70,13 +68,22 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-You're trying to hit a target with an arrow. The target is [`[$x]`] [`ft`] away, at the same height as you. 
-You can shoot an arrow at [`[$v]`] [`ft/s`].  
-How many inches above the target do you have to aim?
+A car travels along a path described as [`y = \frac{1}{[$A]} x^2 + [$B]`] and has a velocity of [`v = [$F]`] [`m/s`]. What is the [`a_n`] and [`\rho`] when [`x = [$D]`] [`m`] and [`[$E]`] [`m`].
 
-[`x=`] [_____]{"$x"} [`m`]  
-[`y=`] [_____]{"$y"} [`m`]  
-[`z=`] [_____]{"$z"} [`m`]  
+When [`x = [$D]`] [`m`] : 
+
+[`\rho_1`] [_____]{"$rho1"} [`m`]
+
+[`a_{n}`] [_____]{"$an1"} [`m/s^2`]
+
+
+
+When [`x = [$E]`] [`m`] :
+
+[`\rho_2`] [_____]{"$rho2"} [`m`]
+
+[`a_{n}`] [_____]{"$an2"} [`m/s^2`]
+
 
 END_PGML
 
