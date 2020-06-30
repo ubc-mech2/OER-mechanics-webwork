@@ -1,0 +1,75 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random(1, 5, 0.2);
+$B = random(50,75, 5);
+$C = random(1, 5, 1);
+
+#computation
+$radcon = $B * (pi/180);
+$rho = ($A*$C)**2/($A*tan($radcon));
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A certain famous skateholder is travelling along a curved path. If his velocity could be described as a [`v = [$A]t`] [`m/s`], if the acceleration makes an angle of [`[$B]^\circ`] with the tangentail component. What is the radius of curvature of his path at time [`[$C]`] [`s`]?
+
+[`\rho = `][_____]{"$rho"} [`m`] 
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

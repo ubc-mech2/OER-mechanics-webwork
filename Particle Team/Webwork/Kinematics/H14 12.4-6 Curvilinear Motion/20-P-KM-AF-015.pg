@@ -1,0 +1,82 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random(5, 35, 5);
+$B = random(2, 6, 1);
+$C = random(1, 5, 1);
+
+#computation
+$at = ($B**2*$C**2)/$A;
+$an = $B;
+$a = sqrt ($at**2 + $an**2);
+$angle = atan($an/$at);
+$theta = $angle*(180/pi);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.0005,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+The car travels around a curve with a curved radius of [`[$A]`] [`m`] and a velocity of [`v = [$B]t`] [`m/s`]. What is the acceleration at [`t = [$C]`] [`s`]?
+
+[`a =`][_____]{"$a"} [`m/s`] 
+
+What is the angle between [`a_t`] and [`a`]?
+
+[`\theta =`][_____]{"$theta"} [`^\circ`] 
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
