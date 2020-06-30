@@ -1,0 +1,69 @@
+## DESCRIPTION
+## The world's smallest Ferris Wheel is mounted at the end of a beam. Find the Steady-State Amplitude of vibration
+## ENDDESCRIPTION
+
+## KEYWORDS('eccentricity', 'Amplitude','Steady-State Vibration', 'Forced Undamped Vibration')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Undamped Vibration)
+## Date(2020-6-29)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-16.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+
+
+#---- Formulas to compute answers --------------#
+
+
+#---- Answers to the problem -----------------------#
+$ansA = ;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-16.png", width=>[$width], height=>[$height]) @]*
+
+The world's smallest Ferris wheel(m = 20kg) is mounted on the end of a horizontal beam for no apparent reason. The wheel is mounted eccentrically in such a way that the eccentricity is equivalent to a mass of 5kg located 0.15m away from the axis of rotation. The static weight of the Ferris wheel causes a deflection of 20mm in the beam. Given that the wheel spins at a rate of 15rad/s, find the steady-state amplitude of vibration.
+
+[`Amplitude =`] [____]{"$ansA"} [`m`]
+
+END_PGML
+
+ENDDOCUMENT();

@@ -1,0 +1,83 @@
+## DESCRIPTION
+## A buoy is swinging on lang, find the natural period of the system.
+## ENDDESCRIPTION
+
+## KEYWORDS('buoy', 'Energy Methods','Natural Period')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Energy Methods)
+## Date(2020-06-23)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-12.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$density = random(1000,1500,1);
+$h = random(0.3,0.5,0.01);
+$w = random(0.1,0.3,0.01);
+$radius = random(1,1.5,0.1);
+
+#---- Formulas to compute answers --------------#
+$areaTower = $h*$w;
+$areaDisk = 1/2*pi*$radius**2;
+$mass = $density*($areaTower+$areaDisk);
+$COG = ($areaTower*($radius+$h/2)+$areaDisk*($radius-4*$radius/(3*pi)))/($areaTower+$areaDisk);
+
+$inertTower = $mass*(1/12*($h**2+$w**2)+($h/2)**2);
+$inertSemi = 1/2*$mass*$radius**2;
+$inertA = $inertTower + $inertSemi;
+$inertCOG = $inertA - $mass*($radius-$COG)**2;
+$inertIC = $inertCOG + $mass*$COG**2;
+
+#---- Answers to the problem -----------------------#
+$ansA = 2*pi*sqrt($inertIC/($mass*9.81*($radius-$COG)));
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-12.png", width=>[$width], height=>[$height]) @]*
+
+A symmetrical buoy of unifrom density [`\rho =`] [`[$density]`] [`kg/m^3`] is moved onto land for maintenance. The tower on top of the buoy can be thought 
+of as a rectangle with a height [`h = `] [`[$h]`] [`m`] and width [`w =`] [`[$w]`] [`m`]. Given that the radius of 
+the bottom is [`r =`] [`[$radius]`] [`m`], find the natural period of the system. The buoy has uniform density of 1000.
+
+[`t =`] [____]{"$ansA"} [`s`]
+
+END_PGML
+
+ENDDOCUMENT();
