@@ -58,7 +58,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocity]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
+A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocityY]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
 
 [`x([$time])=`][___]{"$coordAns"}[`units`]
 
