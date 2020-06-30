@@ -2,7 +2,7 @@
 ## Tall man hits sign with his head
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibrations', 'Natural Frequency','Pendulum', 'small angle')
+## KEYWORDS('Free Undamped Vibrations', 'Twisting ', 'small angle')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
 ## DBsection(Free Undamped Vibrations)
@@ -48,7 +48,7 @@ $height = $imgScale*1000;
 $length=  random(0.2,0.5,0.01);
 $mass = random(1,5,0.1);
 $springConst = random(10,25,1);
-$intVel = random(1,3,0.1);
+$angVel = random(1,3,0.1);
 
 #---- Formulas to compute answers --------------#
 $moInertia = ($mass*$length**2)/12;
@@ -64,9 +64,10 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-4.png", width=>[$width], height=>[$height]) @]*
 
-A tall man hits his head on a store sign that is mounted horizontally. The sign can be thought of as a thin rectangle with a height [`h =`] [`[$length]`] [`m`] and mass [`m =`] [`[$mass]`] [`kg`]. 
-The pole the sign is mounted to has a spring contant [`k =`] [`[$springConst]`] [`N/m`]. Given that the man was walking at [`v =`] [`[$intVel]`] [`m/s`], what is the maximum amplitude of the 
-sign as a result of the impact? 
+A tall person hits their head on a store sign that is mounted horizontally. The sign can be thought of as a thin rectangle 
+with a height [`h =`] [`[$length]`] [`m`] and mass [`m =`] [`[$mass]`] [`kg`]. The pole the sign is mounted to has a 
+spring contant [`k =`] [`[$springConst]`] [`N*m/rad `]. As a result of the impact, the sign is given an initial angular velocity 
+[`w`] [`[$angVel]`] [`rad/s`], what is the maximum amplitude of the sign as a result of the impact? 
 
 [`C =`][___]{"$ansA"}[`m`]
 

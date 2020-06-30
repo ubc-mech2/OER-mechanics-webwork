@@ -69,8 +69,10 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-1.png", width=>[$width], height=>[$height]) @]*
 
-A solid rectangle, of mass [`m = `] [`[$mass]`] [`kg`], is attached to walls on its right and left by springs.
-The springs have a spring constant [`k = `] [`[$springConst]`] [`N/m`]. Given an intial displacement of [`x_0 =`] [`[$dis]`] [`m`] and an intial velocity  of [`v = `] [`[$intVelocity]`] [`m/s`], find the equation of motion, natural frequency, maximum amplitude and natural period of vibration.
+A solid rectangle, of mass [`m = `] [`[$mass]`] [`kg`], is attached to walls on its right and left by springs. 
+The springs are at resting length in the intial position and each have a spring constant [`k = `] [`[$springConst]`] [`N/m`]. 
+Given an intial displacement of [`x_0 =`] [`[$dis]`] [`m`] and an intial velocity  of [`v = `] [`[$intVelocity]`] [`m/s`], 
+find the equation of motion, natural frequency, maximum amplitude and natural period of vibration.
 
 [`a +`][___]{"$ansA"}[`x`]
 

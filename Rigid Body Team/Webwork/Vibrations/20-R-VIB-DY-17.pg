@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## The world's smallest Ferris Wheel is mounted at the end of a beam. Find the Steady-State Amplitude of vibration
+## A rod is pinned to the ceiling. Find the steady-state vibration amplitude.
 ## ENDDESCRIPTION
 
-## KEYWORDS('eccentricity', 'Amplitude','Steady-State Vibration', 'Forced Undamped Vibration')
+## KEYWORDS('Forced Undamped Vibration', 'Springs','steady-state vibration amplitude.')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
 ## DBsection(Forced Undamped Vibration)
-## Date(2020-6-29)
+## Date(2020-6-30)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-16.png')
+## RESOURCES('20-R-VIB-DY-17.png')
 
 ########################################################
 
@@ -41,35 +41,36 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1500;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1500;
 
 #---- Random variables for this problem --------#
-$mass = 20;
-$angVel =  15;
-$eccent = 5;
-$radius = 0.15;
-$deflect = 20;
+$k1 = random(50,150,1);
+$k2 = random(50,150,1);
+$constant = random(1,5,0.1);
+$freq = random(1,8,0.1);
+$length = random(1,10,0.1);
+$mass = random(5,10,0.1);
 
 #---- Formulas to compute answers --------------#
-$k = $mass*9.81/($deflect/1000);
-$natFreq = sqrt($k/$mass);
-$force = $eccent*$radius*$angVel**2;
+$k = $k1*$k2/($k1+$k2);
+$num = 2*$constant*$k;
+$denom = $length*$mass*(2*(9.81/$length+2*$k/$mass)-$freq**2);
 
 #---- Answers to the problem -----------------------#
-$ansA = abs(($force/$k)/(1-($angVel/$natFreq)**2));
+$ansA = abs($num/$denom);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-16.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-17.png", width=>[$width], height=>[$height]) @]*
 
-The world's smallest Ferris wheel ([`m =`] [`[$mass]`] [`kg`]) is mounted on the end of a horizontal beam for no apparent reason. 
-The wheel is mounted eccentrically in such a way that the eccentricity is equivalent to a mass [`m =`] [`[$eccent]`] [`kg`] located 
-[`d =`] [`[$dis]`] [`m`] away from the axis of rotation. The static weight of the Ferris wheel causes a deflection of [`\delta =`] [`[$deflect]`] [`mm`] 
-in the beam. Given that the wheel spins at a rate of [`w =`] [`[$angVel]`] [`rad/s`], find the steady-state amplitude of vibration.
+A rod of length [`l =`] [`[$length]`] [`m`] and mass [`m =`] [`[$mass]`] [`kg`] is pinned to the ceiling. 2/3 of the length down, it is connected to a series of springs horizontally. 
+The springs have a spring constant [`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. 
+Given that the rod is disturbed by a periodic displacement [`\delta =`] [`[$constant]`][`sin`][`[$freq]`][`t`], 
+find the steady-state vibration amplitude. 
 
 [`Amplitude =`] [____]{"$ansA"} [`m`]
 

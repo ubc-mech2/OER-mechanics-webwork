@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## 
+## Car driving across a bumpy road. Determine the velocity of the car that will produce the greatest vibration. 
 ## ENDDESCRIPTION
 
-## KEYWORDS('', '','')
+## KEYWORDS('Car', 'Maximum Velocity','Forced Undamped Vibration')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
 ## DBsection()
 ## Date(2020-6-30)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level()
-## RESOURCES('20-R-VIB-DY-.png')
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-20.png')
 
 ########################################################
 
@@ -41,28 +41,35 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
+$width = $imgScale*3000;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-
+$mass = random(2000,3000,10);
+$amp = random(0.05,0.15,0.01);
+$lambda = random(5,7,0.1);
+$k = random(750,1250,10);
 
 #---- Formulas to compute answers --------------#
-
+$natFreq = sqrt(4*$k/$mass);
+$timePeriod = 2*pi/$natFreq;
+$velocity = $lambda/$timePeriod;
 
 #---- Answers to the problem -----------------------#
-$ansA = ;
+$ansA = $velocity;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-20.png", width=>[$width], height=>[$height]) @]*
 
+A [`m= `] [`[$mass]`] [`kg`] car is driving across a bumpy road which can be described as a sinusoidal wave with an amplitude of [`[$amp]`] [`m`]
+and a wave length [`\lambda =`] [`[$lambda]`] [`m`]. There are 4 springs, one for each wheel, and they all have a spring constant [`k =`] [`[$k]`] [`N/m`]. 
+Find the velocity of the car that will produce the greatest vibration. 
 
-
-[` =`] [____]{"$ansA"} [``]
+[`v =`] [____]{"$ansA"} [`m/s`]
 
 END_PGML
 
