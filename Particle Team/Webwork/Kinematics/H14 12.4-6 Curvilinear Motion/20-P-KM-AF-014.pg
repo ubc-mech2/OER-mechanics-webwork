@@ -1,0 +1,83 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.6 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random(0.25, 0.75, 0.25);
+$B = random(2, 8, 2);
+$C = random(1, 10, 1);
+$D = $B/$A;
+
+#computation
+$K = $D/2;
+$vy = 2(-1*$K**2 + $K*$B)/$C;
+$vx = $D/$C;
+$va = sqrt($vx**2 + $vy**2);
+$angle = atan($vx/$vy);
+$theta = $angle*(pi/180);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+Scientists have found a new plant 100 light years away who does not have friction or follow energy laws and whose surface can be described using [`-[$A]x^2 + [$B]x = 0 `]. If the car moves from the origin to [`([$D], 0)`]
+in [`[$C]`] seconds. What is the cars scalar speed and angle from which it initially leaves? 
+
+[`\theta =`][_____]{"$theta"} [`^\circ`] 
+
+[`v =`][_____]{"$va"} [`m/s`] 
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
