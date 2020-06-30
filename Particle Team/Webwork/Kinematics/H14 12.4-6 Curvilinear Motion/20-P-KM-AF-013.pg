@@ -40,21 +40,22 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
-$A = random(35, 45, 0.5);
-$B = random(5, 10, 0.5);
-$C = random(0.2, 1.4, 0.1);
-$D = random(10,20,1);
-$E = random(1,10,1);
+$A = random(0.1, 1.5, 0.1);
+$B = random(2, 14, 0.2);
+$C = random(1, 10, 0.4);
+$D = random(1,5,1);
 
 #computation
-$radcon = $A*(pi/180);
-$r = sqrt($E/3.14159265359);
-$ti = sqrt(tan($radcon)*($D-$r)-$C)/2;
-$vi = ($D-$r)/(cos($A)*$ti);
-$ta = sqrt(tan($radcon)*($D+$r)-$C)/2;
-$va = ($D+$r)/(cos($A)*$ta);
+$t = sqrt($B/(4.9));
+$angle = atan($B/$C);
+$theta = $angle*(pi/180) + $D;
+$vy = $B/$t;
+$vx = $C/$t;
+$v = sqrt($vx**2 + $vy**2);
+$va = $v/$A;
 
 #set tolerance
 Context()->flags->set(
@@ -69,14 +70,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-An important part of game development is the physics of the game which must have practical rules. 
-In the game, the dogs jumps with the angle [`\theta = [$A]\circ`], the gravity is [`-[$B]`] [`m/s^2`] and the surface are of the mushroom is [`A = [$E]`][`m^2`].
-What is the max and minimum speed must the dog jump in order ot make it on to the mushroom if [`h = [$C]`] [`m`] and is [`[$D]`] meters away from the dog.
+You are playing on the magical trampoline, it has some interesting properties. Firstly, the trampoline gives energy during impact, meaning, you leave at [`[$A]`] times the speed and reflects and increases [`[$D]^\circ`] from the [`x`] - axis that you come into it with.
+Assuming that you leave from the middle of trampoline and the net is [`[$B]`][`m`] high and having a [`[$C]`][`m`] radius, what is the minimum speed and angle (with respect to the [`x`] - axis) you need to hit the trampoline with? 
 
-[@ image( "20-P-KM-AF-011.png", width=>[$width], height=>[$height]) @]*
+[`\theta =`][_____]{"$theta"} [`^\circ`] 
 
-minimum speed [_____]{"$vi"} [`m/s`]  
-maximum speed  [_____]{"$va"} [`m/s`]  
+
+[`v =`][_____]{"$va"} [`m/s`] 
 
 END_PGML
 

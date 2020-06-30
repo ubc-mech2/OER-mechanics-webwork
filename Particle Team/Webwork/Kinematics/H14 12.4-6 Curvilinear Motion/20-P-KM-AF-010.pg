@@ -51,14 +51,14 @@ $F = random(5.5, 8, 0.5);
 
 #computation
 $x1 = $A*$D;
-$y1 = $B*$D**2;
-$z1 = ($C-$D)*$D;
+$y1 = $B*$D**2/2;
+$z1 = ($C-$D/2)*$D;
 $x2 = $A*$E;
-$y2 = $B*$E**2;
-$z2 = ($C-$E)*$E;
+$y2 = $B*$E**2/2;
+$z2 = ($C-$E/2)*$E;
 $x3 = $A*$F;
-$y3 = $B*$F**2;
-$z3 = ($C-$F)*$F;
+$y3 = $B*$F**2/2;
+$z3 = ($C-$F/2)*$F;
 $ax = 0;
 $ay = $B;
 $az = -1;
@@ -77,7 +77,7 @@ tolType=>'relative');
 BEGIN_PGML
 
 A particle moves with the velocity of [`v = \{ [$A]\hat{i} , [$B]*t\hat{j}, ([$C]-t)\hat{k} \}`][`m/s`].
-What is the position at the following times, [`t = [$D],[$E],[$F]`][`s`]. 
+What is the position at the following times, [`t = [$D],[$E],[$F]`][`s`] as well as the acceleration. 
 
 All answers must be entered in the coordinate format. [`(x,y,z)`]
 
