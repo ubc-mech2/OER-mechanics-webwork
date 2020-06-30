@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4 
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -7,10 +7,10 @@
 ## DBsection(Curvilinear Kinematics)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
-## Date(2020-06-25)
-## Level(Beginner)
+## Date(2020-06-29)
+## Level(Intermediate)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('??????????')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,14 +35,17 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = -10;
-
-$velocity = random(2,10,1);         # (lower, upper, stepsize)
-$height = random(100,150,10);
-$time = -$height*2/$acceleration;
+$distance = random(2,5,1);         # (lower, upper, stepsize)
+$period = 10; #random(10,20,1);
+$angle = random(40,50,1);
+$pi = Real("pi");
 
 #computation
-$speed = sqrt($velocity**2 + ($acceleration*$time)**2);
+$x = $distance*sin($angle);
+$y = $distance - $distance*cos($angle);
+$displacement = sqrt($x**2+$y**2);
+$time = $angle/360*$period;
+$velocity = $displacement/$time;
 
 #set tolerance
 Context()->flags->set(
@@ -57,9 +60,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A student's report card is crushed into a ball and kicked with an initial velocity of [`v_{i} = [$velocity]`] [`m/s`] off the roof of a building [`[$height]`] [`m`] tall. Determine the speed of the ball upon impact if it travels for [`[$time]`] [`s`] before landing. Treat [`g = 10`] [`m/s^2`].
+A model planet orbiting [`[$distance]`] [`m`] from a star revolves with an orbital period of [`[$period]`] [`s`]. Determine its average velocity when it revolves to make an angle of [`[$angle]^\circ`] with the star and its starting location.
 
-[`v=`][___]{"$speed"}[`m/s`]
+[`v=`][___]{"$velocity"}[`m/s`]
 
 END_PGML
 

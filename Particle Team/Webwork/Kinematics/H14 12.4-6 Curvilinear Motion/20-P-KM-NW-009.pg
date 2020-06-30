@@ -37,11 +37,12 @@ Context("Numeric");         # or Complex
 #given
 $c = random(2,5,1);         # (lower, upper, stepsize)
 $d = random(1,4,1);
-$x = random(2,4,1);
+$t = random(2,4,1);
 $velocityX = random(3,5,1);
 
 #computation
-$speed;
+$velocityY = 16-($c*$t-$d)**2;
+$speed = (($velocityX**2 + $velocityY**2)**0.25)**2;
 
 #set tolerance
 Context()->flags->set(
@@ -56,7 +57,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-Suppose you fire a bullet into the sky that follows a path expressed by the equation [`y = 16-([$c]x-[$d])^2`], where height [`y`] and lateral displacement [`x`] are in metres. Find the particle's speed at [`x = [$x]`] [`m`] if its horizontal velocity is [`[$velocityX]`] [`m/s`].
+A form of vigorous exercise is throwing objects with great momentum, or 'yeeting'. Suppose you yeet a tennis ball into the sky that follows a path expressed by the equation [`y = 16-([$c]t-[$d])^2`], where height [`y`] is in metres and time [`t`] is in seconds. Find the particle's speed at [`t = [$t]`] [`s`] if its horizontal velocity is [`[$velocityX]`] [`m/s`].
 
 [`v=`][___]{"$speed"}[`m/s`]
 
