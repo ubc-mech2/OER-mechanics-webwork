@@ -85,7 +85,7 @@ END_PGML
 BEGIN_HINT
 Radius of curvature for \(y=f(x)\):
 $BR
-\(r=\frac{1+\frac{dy}{dx}^2}{\frac{d^2y}{dx^2}}\)
+\(r=\frac{(1+\frac{dy}{dx}^2)^{3/2}}{\frac{d^2y}{dx^2}}\)
 
 END_HINT
 
