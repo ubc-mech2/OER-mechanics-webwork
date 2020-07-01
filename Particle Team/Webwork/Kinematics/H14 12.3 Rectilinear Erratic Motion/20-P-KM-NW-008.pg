@@ -1,0 +1,76 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.3 12-68
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Rectilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-25)
+## Level(Advanced)
+## KEYWORDS('dynamics','rectilinear','particle','kinematics')
+## RESOURCES('20-P-KM-NW-008.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$s1 = random(5,145,5);      # (lower, upper, stepsize)
+$s2 = random(165,195,5);
+
+#image scale
+$imgScale = 0.7;
+
+#image aspect ratio
+$width = $imgScale*600;
+$height = $imgScale*400;
+
+#computation
+$acceleration1 = $s1*(50/150)**2;
+$acceleration2 = (200-$s2)*-1;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-P-KM-NW-008.png", width=>[$width], height=>[$height]) @]*
+
+The velocity-position graph for a student running late to class is shown. Determine
+their acceleration when [`s_{1} = [$s1]`] [`m`] and when [`s_{2} = [$s2]`] [`m`].
+
+[`a_{1}=`][___]{"$acceleration1"} [`m/s^2`]  
+[`a_{2}=`][___]{"$acceleration2"} [`m/s^2`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

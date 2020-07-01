@@ -1,0 +1,99 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$vx = random(2,6,1);
+$vy = random(2,6,1);
+$vz = random(2,6,1);
+
+$nx = $vy - $vz;
+$ny = $vz - $vx;
+$nz = $vx - $vy;
+
+$a = random(2,6,1);
+
+#computation
+$at = sqrt($vx**2 + $vy**2 + $vz**2);
+$atx = $a*$vx/$at;
+$aty = $a*$vy/$at;
+$atz = $a*$vz/$at;
+
+$ax = sqrt($atx**2 + $nx**2);
+$ay = sqrt($aty**2 + $ny**2);
+$az = sqrt($atz**2 + $nz**2);
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A particle has a velocity of [`[$vx]i + [$vy]j + [$vz]k`] [`m/s`].  
+It has a constant tangential acceleration of [`[$a]`] [`m/s^2`], and a normal acceleration of [`[$nx]i + [$ny]j + [$nz]k`] [`m/s^2`]. 
+Find the x, y, and z components of its net acceleration.
+
+[`a_x=`] [_____]{"$ax"} [`m/s^2`]  
+[`a_y=`] [_____]{"$ay"} [`m/s^2`]  
+[`a_z=`] [_____]{"$az"} [`m/s^2`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

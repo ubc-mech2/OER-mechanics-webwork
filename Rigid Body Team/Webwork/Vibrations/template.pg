@@ -1,0 +1,69 @@
+## DESCRIPTION
+## 
+## ENDDESCRIPTION
+
+## KEYWORDS('', '','')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection()
+## Date(2020-6-30)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level()
+## RESOURCES('20-R-VIB-DY-.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+
+
+#---- Formulas to compute answers --------------#
+
+
+#---- Answers to the problem -----------------------#
+$ansA = ;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-.png", width=>[$width], height=>[$height]) @]*
+
+
+
+[` =`] [____]{"$ansA"} [``]
+
+END_PGML
+
+ENDDOCUMENT();

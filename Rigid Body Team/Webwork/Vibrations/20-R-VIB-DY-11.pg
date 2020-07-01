@@ -1,0 +1,73 @@
+## DESCRIPTION
+## Bar pinned to the ceiling, find the natural frequency
+## ENDDESCRIPTION
+
+## KEYWORDS('Springs', 'Energy Method','Box')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Energy Method)
+## Date(2020-06-23)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-VIB-DY-11.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$length = random(0.75,2,0.01);
+$mass = random(2,3,0.1);
+
+#---- Formulas to compute answers --------------#
+$inertia = 1/3*$mass*$length**2;
+$T = 1/2*$inertia;
+$V = $mass*9.81*$length/2;
+$natFreq = sqrt($V/($T*2));
+
+#---- Answers to the problem -----------------------#
+$ansA = $natFreq;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-11.png", width=>[$width], height=>[$height]) @]*
+
+A [`[$length]`] [`m`] bar is pinned by one end to the ceiling. Given that he mass of the bar is [`[$mass]`] [`kg`], what is the natural frequency of the system?
+
+[____]{"$ansA"} [`Hz`]
+
+END_PGML
+
+ENDDOCUMENT();

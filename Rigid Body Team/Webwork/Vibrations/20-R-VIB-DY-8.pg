@@ -1,0 +1,73 @@
+## DESCRIPTION
+## Skateboard in a half pipe
+## ENDDESCRIPTION
+
+## KEYWORDS('Springs', 'Free Undamped Vibration','Small angle', `Half pipe`)
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Free Undamped Vibration)
+## Date(2020-06-23)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-8.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1750;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$radius = random(1,2,0.1);
+$length = random(0.5,1,0.01);
+
+#---- Formulas to compute answers --------------#
+$num = 3*9.81*sqrt(4*$radius**2-$length**2);
+$denom = 6*$radius**2-$length**2;
+$natFreq = sqrt($num/$denom);
+
+#---- Answers to the problem -----------------------#
+$ansA = $natFreq;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-8.png", width=>[$width], height=>[$height]) @]*
+
+A [`[$length]`] [`m`] skateboard is balanced in the middle of a half pipe as shown in the figure. A gust of wind causes a small displacement. Given that the half pipe's radius is 
+[`[$radius]`] [`m`], what is the natural frequency of the vibration?
+
+[`w_n =`] [____]{"$ansA"} [`Hz`]
+
+END_PGML
+
+ENDDOCUMENT();

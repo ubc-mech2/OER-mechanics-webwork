@@ -1,0 +1,66 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Curvilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-26)
+## Level(Beginner)
+## KEYWORDS('dynamics','curvilinear','particle','kinematics')
+## RESOURCES('')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$c = random(2,5,1);         # (lower, upper, stepsize)
+$d = random(1,4,1);
+$t = random(2,4,1);
+$velocityX = random(3,5,1);
+
+#computation
+$velocityY = 16-($c*$t-$d)**2;
+$speed = (($velocityX**2 + $velocityY**2)**0.25)**2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A form of vigorous exercise is throwing objects with great momentum, or 'yeeting'. Suppose you yeet a tennis ball into the sky that follows a path expressed by the equation [`y = 16-([$c]t-[$d])^2`], where height [`y`] is in metres and time [`t`] is in seconds. Find the particle's speed at [`t = [$t]`] [`s`] if its horizontal velocity is [`[$velocityX]`] [`m/s`].
+
+[`v=`][___]{"$speed"}[`m/s`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

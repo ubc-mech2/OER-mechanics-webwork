@@ -1,0 +1,74 @@
+## DESCRIPTION
+## Springs in series and parallel, find the spring constants
+## ENDDESCRIPTION
+
+## KEYWORDS('Springs', 'Free Undamped Vibration','Series', `Parallel`)
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Free Undamped Vibration)
+## Date(2020-06-23)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-7.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*2000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$mass = random(10,20,1);
+$k1 = random(50,200,1);
+$k2 = random(50,200,1);
+
+#---- Formulas to compute answers --------------#
+$natFreqP = sprintf("%0.3f",sqrt(($k1 + $k2)/$mass));
+$natFreqS =  sprintf("%0.3f",sqrt(($k1*$k2/($mass*($k1+$k2)))));
+
+#---- Answers to the problem -----------------------#
+$ansA = List($k1,$k2);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-7.png", width=>[$width], height=>[$height]) @]*
+
+A mechanic finds two old springs in his storage room, but the spring constants are not labeled. In order to figure out the k values, the mechanic
+loads the springs in parallel and series with a load that has a mass [`m =`] [`[$mass]`] [`kg`]. Given that the natural frequencies of the parallel and
+series setup are [`[$natFreqP]`] [`Hz`]and [`[$natFreqS]`] [`Hz`] respectively, what are the spring constants? Answer as a pair of numbers.
+
+[`k =`] [____]{"$ansA"}
+
+END_PGML
+
+ENDDOCUMENT();

@@ -1,0 +1,100 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter()
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level(Beginner)
+## KEYWORDS('Car','Erratic','Erratic Motion','Kinematics')
+## RESOURCES('inspired by Hibbeler 14E Section 12.3')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$v1 = random(70,90,1);
+$a1 = random(3.0,5.0,0.1);
+$t1 = random(1.0,3.0,0.1);
+$a2 = random(6.0,9.9,0.1);
+
+#computation
+$v2 = $v1 + $t1*($a1*3.6);
+$t2 = ($v2 - $v1)/($a2*3.6);
+$t3 = $v2/($a2*3.6);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.1,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+20-P-KM-BK-011
+
+
+
+A car is being driven down a highway. It starts off travelling at [`[$v1]`] [`km/hr`],
+then accelerates at [`[$a1]`][`m/s^2`] for [`[$t1]`][`s`].  
+What is the car's velocity afterwards?
+
+[`v=`][___]{"$v2"} [`km/hr`]
+
+The driver then hits the brakes, and decelerates at [`[$a2]`][`m/s^2`].  
+From the moment deceleration starts, how long until the car reaches its original velocity?
+
+[`t=`][___]{"$t2"} [`s`]
+
+From the moment deceleration starts, how long until the car comes to rest?
+
+[`t=`][___]{"$t3"} [`s`]
+
+
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

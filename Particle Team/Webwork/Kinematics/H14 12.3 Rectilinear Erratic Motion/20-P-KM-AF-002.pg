@@ -1,0 +1,86 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$A = random(0, 5, 1);
+$B = random(5, 10, 1);
+$C = ($B - $A)*($B - $A);
+$D = $B + 3;
+
+
+
+#computation
+$x1 = -1*$B/3 *(3*$C - $B*$B + 3*$A*$B - 3*$A**2);
+$x2 = 2/3*($D - $B)**(3/2);
+$p = $x1 + $x2;
+$s = abs($x1) + abs($x2);
+$v = $s/$D;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+The particle starts at the origin and moves with velocity [`v = (t - [$A])^2 -[$C]`] m/s, for [`0 < t < [$B] `] s and it changed to [`v^2 = (t-[$B])`] 
+for [` [$B] < t < [$D]`]. Determine the position and distance travelled. What is the average speed?
+
+[`postion =`] [_____]{"$p"} [`m`]  
+[`distance =`] [_____]{"$s"} [`m`]  
+[`speed_{average} =`] [_____]{"$v"} [`m/s`]  
+
+
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

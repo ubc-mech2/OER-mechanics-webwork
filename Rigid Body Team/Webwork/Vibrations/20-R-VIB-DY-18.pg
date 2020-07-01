@@ -1,0 +1,76 @@
+## DESCRIPTION
+## Load subject to a periodic force. Find the amplitude of the steady-state function.
+## ENDDESCRIPTION
+
+## KEYWORDS('Friction', 'Forced Undamped Vibration','Periodic Force')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Undamped Force)
+## Date(2020-6-30)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-18.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*2000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$constant = random(1,15,1);
+$freq = random(1,5,0.1);
+$mass = random(2,10,1);
+$k = random(25,50,1);
+$frictionCo = random(0.45,0.55,0.01);
+
+#---- Formulas to compute answers --------------#
+$num = $constant-$mass*$frictionCo*9.81;
+$denom = $k-$mass*$freq**2;
+
+#---- Answers to the problem -----------------------#
+$ansA = abs($num/$denom);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-18.png", width=>[$width], height=>[$height]) @]*
+
+A periodic force [`F =`] [`[$constant]`][`sin`][`[$freq]`][`t`] is applied to [`m =`] [`[$mass]`] [`kg`] load, which is connected to a [`k =`] [`[$k]`] [`N/m`] spring. 
+Given that the floor's coefficient of friction is [`\mu =`] [`[$frictionCo]`], what is the amplitude of the steady-state vibration?
+
+
+[`Amplitude =`] [____]{"$ansA"} [`m`]
+
+END_PGML
+
+ENDDOCUMENT();

@@ -1,0 +1,80 @@
+##DESCRIPTION
+## Disk spinning, angular velocity described by equation, find time
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Pure Rotation)
+## Institution(University of British Columbia)
+## Author(David Kim )
+## Date(2020-06-24)
+## Level(Intermediate)
+## KEYWORDS('kinematics','pure rotation','rotation','disk','angular velocity)
+## RESOURCES('20-R-KM-DK-3.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$theta = random(1,4,0.2);     # (lower, upper, stepsize)
+$angvel = random(300,900, 25);
+$a = random(1,17,1);
+$b = random(2,9,1);
+
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1847;
+$height = $imgScale*1981;
+
+#computation
+$angle = sqrt($angvel/($a/$b));
+$time = $a/$b*(-1/$angle+1/$theta);
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.01,
+tolType=>'relative');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-R-KM-DK-3.png", width=>[$width], height=>[$height]) @]*
+
+A disk spins with an angular velocity [`\omega = `][`[$a]/[$b]`][`\theta^2`]. The disk starts at [`\theta =`] [`[$theta]`] [`rad`]. Determine the time needed for the angular velocity of the disk to reach [`\omega =`] [`[$angvel]`] [`rad/s`].
+
+[`t =`][___]{"$time"} [`s`]  
+
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()];     #save as .pg

@@ -1,0 +1,79 @@
+## DESCRIPTION
+## A rod is pinned to the ceiling. Find the steady-state vibration amplitude.
+## ENDDESCRIPTION
+
+## KEYWORDS('Forced Undamped Vibration', 'Springs','steady-state vibration amplitude.')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Undamped Vibration)
+## Date(2020-6-30)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-17.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1500;
+
+#---- Random variables for this problem --------#
+$k1 = random(50,150,1);
+$k2 = random(50,150,1);
+$constant = random(1,5,0.1);
+$freq = random(1,8,0.1);
+$length = random(1,10,0.1);
+$mass = random(5,10,0.1);
+
+#---- Formulas to compute answers --------------#
+$k = $k1*$k2/($k1+$k2);
+$num = 2*$constant*$k;
+$denom = $length*$mass*(2*(9.81/$length+2*$k/$mass)-$freq**2);
+
+#---- Answers to the problem -----------------------#
+$ansA = abs($num/$denom);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-17.png", width=>[$width], height=>[$height]) @]*
+
+A rod of length [`l =`] [`[$length]`] [`m`] and mass [`m =`] [`[$mass]`] [`kg`] is pinned to the ceiling. 2/3 of the length down, it is connected to a series of springs horizontally. 
+The springs have a spring constant [`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. 
+Given that the rod is disturbed by a periodic displacement [`\delta =`] [`[$constant]`][`sin`][`[$freq]`][`t`], 
+find the steady-state vibration amplitude. 
+
+[`Amplitude =`] [____]{"$ansA"} [`m`]
+
+END_PGML
+
+ENDDOCUMENT();

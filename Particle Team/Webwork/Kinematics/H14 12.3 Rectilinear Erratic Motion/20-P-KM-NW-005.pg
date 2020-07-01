@@ -1,0 +1,68 @@
+##DESCRIPTION
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem P12-2g
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Rectilinear Kinematics)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-06-24)
+## Level(Beginner)
+## KEYWORDS('dynamics','particle','kinematics')
+## RESOURCES('20-P-KM-NW-005.png')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$acceleration = -2;    # (lower, upper, stepsize)
+
+#image scale
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-P-KM-NW-005.png", width=>[$width], height=>[$height]) @]*
+
+Determine the acceleration [`a`] of a skytrain approaching a station at [`t = 1 s`] using the velocity-time graph.
+
+[`a=`][___]{"$acceleration"} [`m/s^2`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg
