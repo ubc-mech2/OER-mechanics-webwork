@@ -48,8 +48,8 @@ $B = random(2, 6, 1);
 $C = random(1, 5, 1);
 
 #computation
-$at = ($B**2*$C**2)/$A;
-$an = $B;
+$an = ($B**2*$C**2)/$A;
+$at = $B;
 $a = sqrt ($at**2 + $an**2);
 $angle = atan($an/$at);
 $theta = $angle*(180/pi);

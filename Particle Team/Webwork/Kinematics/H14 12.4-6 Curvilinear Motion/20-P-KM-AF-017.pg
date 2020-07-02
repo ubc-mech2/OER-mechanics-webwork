@@ -64,7 +64,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A certain famous skateholder is travelling along a curved path. If his velocity could be described as a [`v = [$A]t`] [`m/s`], if the acceleration makes an angle of [`[$B]^\circ`] with the tangentail component. What is the radius of curvature of his path at time [`[$C]`] [`s`]?
+A certain famous skateholder is travelling along a curved path. If his velocity could be described as a [`v = [$A]t`] [`m/s`], if the acceleration makes an angle of [`[$B]^\circ`] with the tangential component. What is the radius of curvature of his path at time [`[$C]`] [`s`]?
 
 [`\rho = `][_____]{"$rho"} [`m`] 
 
