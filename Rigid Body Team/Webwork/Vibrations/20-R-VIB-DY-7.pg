@@ -63,11 +63,13 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-7.png", width=>[$width], height=>[$height]) @]*
 
-A mechanic finds two old springs in his storage room, but the spring constants are not labeled. In order to figure out the k values, the mechanic
-loads the springs in parallel and series with a load that has a mass [`m =`] [`[$mass]`] [`kg`]. Given that the natural frequencies of the parallel and
-series setup are [`[$natFreqP]`] [`Hz`]and [`[$natFreqS]`] [`Hz`] respectively, what are the spring constants? Answer as a pair of numbers.
+A mechanic finds two old springs in their storage room, but the spring constants are not labeled. 
+In order to figure out the k values, The mechanic decides to have some fun and loads the springs 
+in parallel and series with a mass [`m =`] [`[$mass]`] [`kg`] to find the spring constant of each spring. 
+Given that  the natural frequencies of the parallel and series setup are measured to be [`[$natFreqP]`] [`Hz`]and 
+[`[$natFreqS]`] [`Hz`] respectively after being perturbed, what are the spring constants? Answer as a pair of numbers.
 
-[`k =`] [____]{"$ansA"}
+[`k =`] [____]{"$ansA"} [`N/m`]
 
 END_PGML
 

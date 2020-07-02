@@ -69,7 +69,7 @@ with a height [`h =`] [`[$length]`] [`m`] and mass [`m =`] [`[$mass]`] [`kg`]. T
 spring contant [`k =`] [`[$springConst]`] [`N*m/rad `]. As a result of the impact, the sign is given an initial angular velocity 
 [`w`] [`[$angVel]`] [`rad/s`], what is the maximum amplitude of the sign as a result of the impact? 
 
-[`C =`][___]{"$ansA"}[`m`]
+[`C =`][___]{"$ansA"}[`rad`]
 
 END_PGML
 

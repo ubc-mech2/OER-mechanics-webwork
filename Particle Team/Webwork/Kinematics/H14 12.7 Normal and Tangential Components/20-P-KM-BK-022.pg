@@ -4,23 +4,31 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection()
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
+
 
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
 
 
 loadMacros(   
@@ -40,23 +48,32 @@ loadMacros(
 #
 #
 
-
 Context("Numeric");
 #given
-$A = random(5, 35, 5);
-$B = random(2, 6, 1);
-$C = random(1, 5, 1);
+$vx = random(1,3,1);
+$vy = random(4,6,1);
+$vz = random(2,6,1);
+
+$nx = $vy - $vz;
+$ny = $vz - $vx;
+$nz = $vx - $vy;
+
+$a = random(2,6,1);
 
 #computation
-$at = ($B**2*$C**2)/$A;
-$an = $B;
-$a = sqrt ($at**2 + $an**2);
-$angle = atan($an/$at);
-$theta = $angle*(180/pi);
+$at = sqrt($vx**2 + $vy**2 + $vz**2);
+$atx = $a*$vx/$at;
+$aty = $a*$vy/$at;
+$atz = $a*$vz/$at;
+
+$ax = sqrt($atx**2 + $nx**2);
+$ay = sqrt($aty**2 + $ny**2);
+$az = sqrt($atz**2 + $nz**2);
+
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.0005,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -67,13 +84,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The car travels around a curve with a curved radius of [`[$A]`] [`m`] and a velocity of [`v = [$B]t`] [`m/s`]. What is the acceleration at [`t = [$C]`] [`s`]?
+A particle has a velocity of [`[$vx]i + [$vy]j + [$vz]k`] [`m/s`].  
+It has a constant tangential acceleration of [`[$a]`] [`m/s^2`], and a normal acceleration of [`[$nx]i + [$ny]j + [$nz]k`] [`m/s^2`]. 
+Find the x, y, and z components of its net acceleration.
 
-[`a =`][_____]{"$a"} [`m/s`] 
-
-What is the angle between [`a_t`] and [`a`]?
-
-[`\theta =`][_____]{"$theta"} [`^\circ`] 
+[`a_x=`] [_____]{"$ax"} [`m/s^2`]  
+[`a_y=`] [_____]{"$ay"} [`m/s^2`]  
+[`a_z=`] [_____]{"$az"} [`m/s^2`]  
 
 END_PGML
 

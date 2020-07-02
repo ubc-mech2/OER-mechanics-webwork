@@ -64,7 +64,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-9.png", width=>[$width], height=>[$height]) @]*
 
 Two springs, with spring constants [`k =`] [`[$k]`] [`N.m`] each, are used to connect a [`m =`] [`[$mass]`] [`kg`] cargo load to a wall, Assuming the floor is frictionless, determine
-the energy equation.
+the first order differential equation describing energy.
 
 [____]{"$ansA"} [`v^2 + `][_____]{"$ansB"} [`x^2 = 0`]
 

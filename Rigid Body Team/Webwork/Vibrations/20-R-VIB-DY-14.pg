@@ -66,8 +66,8 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-14.png", width=>[$width], height=>[$height]) @]*
 
 A shaking machine consists of a motor and a spring. The motor consists of a rotary 
-engine which can be described by the function [`\delta =`][`[$disConstant]`][`cos`][`[$freq]`][`t`]. Given that the spring constant is 
-[`k =`] [`[$k]`] [`N/m`] and a load of [`m =`] [`[$mass]`] [`kg`], what is the natural frequency and the amplitude of the steady state vibration?
+engine which can be described by the function [`\delta =`][`[$disConstant]`][`cos`][`[$freq]`][`t`] and the spring constant is 
+[`k =`] [`[$k]`] [`N/m`]. Given that a mass [`m =`] [`[$mass]`] [`kg`] is shaken by the system, what is the natural frequency and the amplitude of the steady state vibration?
 
 
 [`v =`] [____]{"$ansA"} [`m/s`]
