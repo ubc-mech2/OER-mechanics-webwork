@@ -64,7 +64,7 @@ $t = random(2,5,1);
 #computation
 $x = 1/2*$A*$t**2 + $vx0*$t + $x0;
 $y = 1/6*$B*$t**3 + $vy0*$t + $y0;
-$x = 1/12*$C*$t**4 + $vz0*$t + $z0;
+$z = 1/12*$C*$t**4 + $vz0*$t + $z0;
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,
