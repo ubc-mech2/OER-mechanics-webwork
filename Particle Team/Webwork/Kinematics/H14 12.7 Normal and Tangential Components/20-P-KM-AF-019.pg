@@ -10,7 +10,7 @@
 ## Date(June 2020)
 ## Level()
 ## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.6 preliminary problems')
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -43,19 +43,12 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(0.1, 1.5, 0.1);
-$B = random(2, 14, 0.2);
-$C = random(1, 10, 0.4);
-$D = random(1,5,1);
+$C = random(30, 30, 5);
 
 #computation
-$t = sqrt($B/(4.9));
-$angle = atan($B/$C);
-$theta = $angle*(pi/180) + $D;
-$vy = $B/$t;
-$vx = $C/$t;
-$v = sqrt($vx**2 + $vy**2);
-$va = $v/$A;
+
+$amax = 2*$C**2;
+$amin = ($C**2)/(4);
 
 #set tolerance
 Context()->flags->set(
@@ -70,13 +63,10 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-You are playing on the magical trampoline, it has some interesting properties. Firstly, the trampoline gives energy during impact, meaning, you leave at [`[$A]`] times the speed and reflects and increases [`[$D]^\circ`] from the [`x`] - axis that you come into it with.
-Assuming that you leave from the middle of trampoline and the net is [`[$B]`][`m`] high and having a [`[$C]`][`m`] radius, what is the minimum speed and angle (with respect to the [`x`] - axis) you need to hit the trampoline with to just clear the net? 
+Traffic circles are very common and are their shapes can be expressed by equations. if a circle folllows the equation [`4x^2 + y^2 = 4`] typically in [`km`]. The velocity that cars must drive with is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum acceleration felt by the cars?
 
-[`\theta =`][_____]{"$theta"} [`^\circ`] 
-
-
-[`v =`][_____]{"$va"} [`m/s`] 
+[`a_{max}`][_____]{"$amax"} [`\frac{km}{h^2}`] 
+[`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
 
 END_PGML
 
