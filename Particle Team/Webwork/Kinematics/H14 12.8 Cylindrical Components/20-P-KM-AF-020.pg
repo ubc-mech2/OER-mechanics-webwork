@@ -1,0 +1,75 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$C = random(30, 30, 5);
+
+#computation
+
+$amax = 2*$C**2;
+$amin = ($C**2)/(4);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+Traffic circles are very common and are their shapes can be expressed by equations. if a circle folllows the equation [`4x^2 + y^2 = 4`] typically in [`km`]. The velocity that cars must drive with is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum acceleration felt by the cars?
+
+[`a_{max}`][_____]{"$amax"} [`\frac{km}{h^2}`] 
+[`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
