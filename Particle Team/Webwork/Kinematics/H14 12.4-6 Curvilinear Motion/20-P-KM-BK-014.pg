@@ -56,7 +56,7 @@ $x = random(3,8,1);
 #computation
 $y = $x**2;
 $vy = 2*$x*$vx;
-$ay = 2*$vx;
+$ay = 2*$vx**2;
 
 #set tolerance
 Context()->flags->set(
