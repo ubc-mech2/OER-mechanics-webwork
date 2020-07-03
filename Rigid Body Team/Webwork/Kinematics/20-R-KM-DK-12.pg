@@ -1,0 +1,81 @@
+## DESCRIPTION
+## Ladder sliding, find accel. at the bottom and angular accel.
+## ENDDESCRIPTION
+
+## KEYWORDS('ladder','relative motion','velocity','angular velocity','acceleration','angular acceleration')
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Relative Motion Analysis)
+## Date(2020-06-26)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-KM-DK-12.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$accelB = random(3,4.9,0.1);
+$velB = random(5,7,0.1);
+$degA = random(20,30,1);
+$length = random(8,12,0.5);
+
+#---- Formulas to compute answers --------------#
+$radA = $degA*pi/180;
+
+$angvel = $velB/($length*cos($radA));
+
+$angaccel = ($accelB-($angvel)**2*$length*sin($radA))/($length*cos($radA));
+$accelA = $angaccel*$length*sin($radA)-($angvel)**2*$length*cos($radA);
+
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KM-DK-12.png", width=>[$width], height=>[$height]) @]*
+
+A handyman has left a ladder leaning on a wall which begins to slip. At a given instant, the top 
+of the ladder has an acceleration [`a_B =`] [`[$accelB]`] [`m/s^2`] and a velocity of [`v_B =`] [`[$velB]`] [`m/s`],
+ both acting downward. Determine the acceleration at the bottom of the ladder, A, and the ladder's angular
+ acceleration at this instant. The length of the ladder is [`l =`] [`[$length]`] [`m`] and forms an angle of [`\theta =`] [`[$degA]`][`^{\circ}`]
+ with the ground at A.
+
+[`\alpha =`][____]{"$angaccel"}[`rad/s^s`]  
+[`a_A =`][____]{"$accelA"}[`m/s^2`]
+
+
+END_PGML
+
+ENDDOCUMENT();

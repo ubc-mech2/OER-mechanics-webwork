@@ -1,0 +1,78 @@
+## DESCRIPTION
+## Gear rolling on fixed rack with angular vel. and angular accel., find accel.
+## ENDDESCRIPTION
+
+## KEYWORDS('acceleration', 'gear','angular velocity','angular acceleration')
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Relative Motion Analysis)
+## Date(2020-06-26)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-KM-DK-10.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$mc1 = RadioButtons(["\ihat","\jhat","-\ihat","-\jhat","\ihat+\jhat","-\ihat+\jhat","\ihat-\jhat","-\ihat-\jhat"],"\jhat");
+$mc2 = RadioButtons(["\ihat","\jhat","-\ihat","-\jhat","\ihat+\jhat","-\ihat+\jhat","\ihat-\jhat","-\ihat-\jhat"],"-\jhat");
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$angvel = random(1,9,0.2);
+$angaccel = random(3,6,0.25);
+$r = random(0.1,0.5,0.05);
+
+#---- Formulas to compute answers --------------#
+$vel = $angvel*$r;
+$accelG = $angaccel*$r;
+$accelB = $angvel**2*$r;
+$accelA = -1*$accelB;
+
+########################################################;
+#PGML
+
+
+BEGIN_PGML	
+
+[@ image( "20-R-KM-DK-10.png", width=>[$width], height=>[$height]) @]*
+
+A gear rolls on a fixed rack with an angular velocity of [`\omega =`] [`[$angvel]`] [`rad/s`]
+ and an angular acceleration of [`\alpha =`] [`[$angaccel]`] [`rad/s^2`]. Determine the acceleration at
+  point O, B, and A. The gear has a radius [`r =`] [`[$r]`] [`m`].
+ 
+
+[`a_O =`][_]{"$accelG"}[`\hat{i} + `][_]{"0"}[`\hat{j}`] [`m/s^2`]  
+[`a_B =`][_]{"0"}[`i + `][_]{"$accelB"}[`\hat{j}`] [`m/s^2`]  
+[`a_A =`][_]{"0"}[`i + `][_]{"$accelA"}[`\hat{j}`] [`m/s^2`]  
+END_PGML
+
+ENDDOCUMENT();

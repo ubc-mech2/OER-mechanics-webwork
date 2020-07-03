@@ -1,0 +1,73 @@
+## DESCRIPTION
+## Wheel moves to the right at vel. with angular vel., find total vel. at point
+## ENDDESCRIPTION
+
+## KEYWORDS('gear train', 'gear','angular velocity')
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Relative Motion Analysis)
+## Date(2020-06-26)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-KM-DK-8.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$velA = random(1,6,1);
+$rB = (0.15,0.6,0.15);
+$angvel = random(1,8,1); 
+
+
+#---- Formulas to compute answers --------------#
+$velB = sqrt(($velA - $angvel*$rB*cos(pi/4))**2 + ($angvel*$rB*sin(pi/4))**2);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KM-DK-8.png", width=>[$width], height=>[$height]) @]*
+
+A wheel moves at a velocity of [`v_A =`][`[$velA]`] [`m/s`] to the right. If it rotates at an 
+angular velocity of [`\omega =`] [`[$angvel]`] [`rad/s`] clockwise, what is the magnitude of the 
+velocity at point B? The radius of the wheel is [`r =`] [`[$rB]`] [`m`].
+  
+ 
+[`v_B =`][____]{"$velB"}[`m/s`]
+
+
+END_PGML
+
+ENDDOCUMENT();
