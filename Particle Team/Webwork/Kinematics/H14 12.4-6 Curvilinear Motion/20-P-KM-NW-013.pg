@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-107
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -7,10 +7,10 @@
 ## DBsection(Curvilinear Kinematics)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
-## Date(2020-06-26)
-## Level(Intermediate)
+## Date(2020-07-02)
+## Level(Advanced)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('??????????')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,15 +35,14 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$coordX = random(2,5,1);         # (lower, upper, stepsize)
-$coordY = random(2,5,1);
-$velocity = random(13,25,12);     
-$velocityY = ($velocity-1)*2/3+4;  # special triangle ratio
-
-$time = random(2,4,1);
+$velocity = random(70,100,10);     # (lower, upper, stepsize)
+$distance = random(10,40,5);
+$height = random(10,30,10);
+$acceleration = 9.81;
 
 #computation
-$coordAns = $time*sqrt($velocity**2-$velocityY**2)+$coordX;
+$time = sqrt(2*$height/$acceleration);
+$distance = 2*$height;
 
 #set tolerance
 Context()->flags->set(
@@ -58,9 +57,10 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocityY]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
+A water jet discharging from a barrel has a velocity v = [`\sqrt{2gh}`], where [`h =[$height]`] [`m`] is the depth of the orifice from the free water surface. Determine the time [`t`] for a particle of water leaving the orifice to fall to the bottom and the horizontal distance [`x`] away from its landing position.
 
-[`x([$time])=`][___]{"$coordAns"}[`units`]
+[`t =`][___]{"$time"}[`s`]  
+[`x =`][___]{"$distance"}[`m`]
 
 END_PGML
 

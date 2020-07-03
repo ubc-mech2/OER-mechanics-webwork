@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-106
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -7,10 +7,10 @@
 ## DBsection(Curvilinear Kinematics)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
-## Date(2020-06-26)
-## Level(Intermediate)
+## Date(2020-07-02)
+## Level(Advanced)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('??????????')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,15 +35,14 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$coordX = random(2,5,1);         # (lower, upper, stepsize)
-$coordY = random(2,5,1);
-$velocity = random(13,25,12);     
-$velocityY = ($velocity-1)*2/3+4;  # special triangle ratio
-
-$time = random(2,4,1);
+$speed = random(5,20,5);     # (lower, upper, stepsize)
+$angleDegrees = random(30,60,10);
+$g = 9.81;
 
 #computation
-$coordAns = $time*sqrt($velocity**2-$velocityY**2)+$coordX;
+$angle = $angleDegrees*pi/180;
+$time = 2*$speed/$g*(sin($angle)-3/4*cos($angle));
+$range = $speed*cos($angle)*$time;
 
 #set tolerance
 Context()->flags->set(
@@ -58,9 +57,11 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocityY]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
+The snowmobile is traveling at [`[$speed]`] [`m/s`] when it
+launches off the peak of a snow embankment with a downward slope of [`-3/4`]. Determine the time of flight elapsed [`t`] and the horizontal range [`R`] when it lands if the snowmobile takes off at an angle of [`[$angleDegrees]^\circ`].
 
-[`x([$time])=`][___]{"$coordAns"}[`units`]
+[`t=`][___]{"$time"} [`s`]  
+[`R=`][___]{"$range"} [`m`]
 
 END_PGML
 
