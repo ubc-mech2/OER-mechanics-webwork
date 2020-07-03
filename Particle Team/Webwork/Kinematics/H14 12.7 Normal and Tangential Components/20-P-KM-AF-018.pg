@@ -10,7 +10,7 @@
 ## Date(June 2020)
 ## Level()
 ## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.6 preliminary problems')
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -43,19 +43,17 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(0.1, 1.5, 0.1);
-$B = random(2, 14, 0.2);
-$C = random(1, 10, 0.4);
-$D = random(1,5,1);
+$A = random(100, 300, 25);
+$B = random(7.2, 36, 3.6);
+$C = random(80, 150, 10);
 
 #computation
-$t = sqrt($B/(4.9));
-$angle = atan($B/$C);
-$theta = $angle*(pi/180) + $D;
-$vy = $B/$t;
-$vx = $C/$t;
-$v = sqrt($vx**2 + $vy**2);
-$va = $v/$A;
+$speed = [$B]/3.6;
+$time = sqrt ($A/4.9);
+$distance = $speed * $time;
+$dtc = $C - $distance; 
+#dtc = distance to cross
+$velocity = ($dtc)/($time);
 
 #set tolerance
 Context()->flags->set(
@@ -70,13 +68,10 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-You are playing on the magical trampoline, it has some interesting properties. Firstly, the trampoline gives energy during impact, meaning, you leave at [`[$A]`] times the speed and reflects and increases [`[$D]^\circ`] from the [`x`] - axis that you come into it with.
-Assuming that you leave from the middle of trampoline and the net is [`[$B]`][`m`] high and having a [`[$C]`][`m`] radius, what is the minimum speed and angle (with respect to the [`x`] - axis) you need to hit the trampoline with to just clear the net? 
+The company CONGO is an up and coming package shipment company and have gotten international attention for its delivery methods. It works like this, a plane flies [`[$A]`] [`m`] over the ground with a constant horizontal velocity of [`[$B]`] [`\frac{km}{h}`].
+THe reciever stands [`[$C]`] [`m`] on the ground away from the plane. The instant when the package is released the reciever moves towards the package. Ignoring the recievers height, with what velocity must the person move to get to the package before it hits the ground?
 
-[`\theta =`][_____]{"$theta"} [`^\circ`] 
-
-
-[`v =`][_____]{"$va"} [`m/s`] 
+[`v = `][_____]{"$velocity"} [`m/s`] 
 
 END_PGML
 
