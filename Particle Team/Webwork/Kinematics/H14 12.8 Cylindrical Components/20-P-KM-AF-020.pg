@@ -4,31 +4,23 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection()
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
-## Author(Bryden Kinsella)
+## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS('Kinematics')
-## RESOURCES('')
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-
+## Easy
 
 ##############################################################
 
 DOCUMENT();
-
-#image scale
-$imgScale = .2;
-
-#image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
-
 
 
 loadMacros(   
@@ -48,18 +40,19 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
-$A = random(2,5,1);
+$A = random(20, 45, 5);
+$B = random(100, 300, 25);
 
 #computation
-$y = 3.14159/($A);
-$vy = 3.14159/(2*$A);
-$ay = 3.14159/($A);
+$convert = $A/(3.6) ; 
+$dottheta = $convert/$B ; 
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -70,14 +63,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A particle travels along the path [`y = sin([$A]x)`], where [`x`] is in meters.
-If it starts at the origin and travels with a constant positive velocity in the x direction,
-find the first points after the origin where [`y`], [`v_y`], and [`a_y`] are equal to zero.
-Give the x coordinates of these points below.
+The particle moves with a speed of [`[$A]`] [`\frac{km}{h}`]. Find the angular velocity [`\dot{\theta}`] if the radius of travel is [`[$B]`] [`m`] at this instant.
 
-[`y=0`] at [`x=`] [_____]{"$y"} [`m`]  
-[`v_y=0`] at [`x=`] [_____]{"$vy"} [`m`]  
-[`a_y=0`] at [`x=`] [_____]{"$ay"} [`m`]  
+[`\dot{\theta} =`][_____]{"$dottheta"}
 
 END_PGML
 
