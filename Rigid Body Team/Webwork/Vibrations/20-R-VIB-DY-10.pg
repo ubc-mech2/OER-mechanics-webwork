@@ -10,7 +10,7 @@
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Beginner)
-## RESOURCES('20-R-VIB-DY-11.png')
+## RESOURCES('20-R-VIB-DY-10.png')
 
 ########################################################
 
@@ -61,7 +61,7 @@ $ansB = $V;
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-9.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-10.png", width=>[$width], height=>[$height]) @]*
 
 Two springs, with spring constants [`k =`] [`[$k]`] [`N.m`] each, are used to connect a [`m =`] [`[$mass]`] [`kg`] cargo load to a wall, Assuming the floor is frictionless, determine
 the first order differential equation describing energy.
