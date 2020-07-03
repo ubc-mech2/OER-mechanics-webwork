@@ -67,7 +67,7 @@ BEGIN_PGML
 
 A [`m= `] [`[$mass]`] [`kg`] car is driving across a bumpy road which can be described as a sinusoidal wave with an amplitude of [`[$amp]`] [`m`]
 and a wave length [`\lambda =`] [`[$lambda]`] [`m`]. There are 4 springs, one for each wheel, and they all have a spring constant [`k =`] [`[$k]`] [`N/m`]. 
-Find the velocity of the car that will produce the greatest vibration. 
+Given that the distance between the wheels is the same as [`\lambda`], find the velocity of the car that will produce the greatest vibration. 
 
 [`v =`] [____]{"$ansA"} [`m/s`]
 
