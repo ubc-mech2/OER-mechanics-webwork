@@ -50,11 +50,18 @@ $E = random(1,10,1);
 
 #computation
 $radcon = $A*(pi/180);
-$r = sqrt($E/3.14159265359);
-$ti = sqrt(tan($radcon)*($D-$r)-$C)/2;
-$vi = ($D-$r)/(cos($A)*$ti);
-$ta = sqrt(tan($radcon)*($D+$r)-$C)/2;
-$va = ($D+$r)/(cos($A)*$ta);
+$radius = sqrt($E/3.14159265359);
+$bot = $B/2;
+
+$distval1 = $D - $radius;
+$top1 = tan($radcon)*($distval1) - $C;
+$ti = sqrt($top1/$bot);
+$vi = ($D-$radius)/(cos($radcon)*$ti);
+
+$distval2 = $D + $radius;
+$top2 = tan($radcon)*($distval2) - $C;
+$ta = sqrt($top2/$bot);
+$va = ($D+$radius)/(cos($radcon)*$ta);
 
 #set tolerance
 Context()->flags->set(
@@ -70,10 +77,10 @@ tolType=>'relative');
 BEGIN_PGML
 
 An important part of game development is the physics of the game which must have practical rules. 
-In the game, the dogs jumps with the angle [`\theta = [$A]\circ`], the gravity is [`-[$B]`] [`m/s^2`] and the surface are of the mushroom is [`A = [$E]`][`m^2`].
+In the game, the dogs jumps with the angle [`\theta = [$A]^\circ`], the gravity is [`-[$B]`] [`m/s^2`] and the surface are of the mushroom is [`A = [$E]`] [`m^2`].
 What is the max and minimum speed must the dog jump in order ot make it on to the mushroom if [`h = [$C]`] [`m`] and is [`[$D]`] meters away from the dog.
 
-[@ image( "20-P-KM-AF-011.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-AF-011.png", width=>[100], height=>[100]) @]*
 
 minimum speed [_____]{"$vi"} [`m/s`]  
 maximum speed  [_____]{"$va"} [`m/s`]  
