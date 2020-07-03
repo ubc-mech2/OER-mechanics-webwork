@@ -43,16 +43,16 @@ loadMacros(
 
 Context("Numeric");
 #given
-$C = random(30, 30, 5);
+$A = random(20, 45, 5);
+$B = random(100, 300, 25);
 
 #computation
-
-$amax = 2*$C**2;
-$amin = ($C**2)/(4);
+$convert = $A/(3.6) ; 
+$dottheta = $convert/$B ; 
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -63,10 +63,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Traffic circles are very common and are their shapes can be expressed by equations. if a circle folllows the equation [`4x^2 + y^2 = 4`] typically in [`km`]. The velocity that cars must drive with is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum acceleration felt by the cars?
+The particle moves with a speed of [`[$A]`] [`\frac{km}{h}`]. Find the angular velocity [`\dot{\theta}`] if the radius of travel is [`[$B]`] [`m`] at this instant.
 
-[`a_{max}`][_____]{"$amax"} [`\frac{km}{h^2}`] 
-[`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
+[`\dot{\theta} =`][_____]{"$dottheta"}
 
 END_PGML
 
