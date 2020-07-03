@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-127
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -7,10 +7,10 @@
 ## DBsection(Curvilinear Kinematics)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
-## Date(2020-06-26)
+## Date(2020-07-03)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('??????????')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,15 +35,16 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$coordX = random(2,5,1);         # (lower, upper, stepsize)
-$coordY = random(2,5,1);
-$velocity = random(13,25,12);     
-$velocityY = ($velocity-1)*2/3+4;  # special triangle ratio
+$speed = random(5,20,5);     # (lower, upper, stepsize)
+$acceleration = random(30,60,10);
+$angleDegrees = random(50,80,5);
 
-$time = random(2,4,1);
+$g = 9.81;
 
 #computation
-$coordAns = $time*sqrt($velocity**2-$velocityY**2)+$coordX;
+$angle = $angleDegrees*pi/180;
+$deltaV = 2;
+$radius = 2;
 
 #set tolerance
 Context()->flags->set(
@@ -58,9 +59,10 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocityY]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
+At a given instant, a locomotive named Tom has a speed of [`[$speed]`] [`m/s`] and an acceleration of [`[$acceleration]`] [`m/s^2`] acting in the direction shown. Determine the rate of increase in Tom's speed and the radius of curvature [`r`] of the path if the resultant acceleration makes a [`[$angleDegrees]` angle with his path..
 
-[`x([$time])=`][___]{"$coordAns"}[`units`]
+[`\frac{dv}{dt}=`][___]{"$deltaV"} [`m/s^2`]  
+[`r=`][___]{"$radius"} [`m`]
 
 END_PGML
 
