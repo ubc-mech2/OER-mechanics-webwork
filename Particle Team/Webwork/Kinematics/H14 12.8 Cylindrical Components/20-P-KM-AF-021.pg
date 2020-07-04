@@ -43,16 +43,24 @@ loadMacros(
 
 Context("Numeric");
 #given
-$C = random(20, 30, 5);
+$A = random(2, 4, 1);
+$B = random(2, 7, 1);
+$C = random(1.5, 8, 0.5);
 
 #computation
-
-$amax = 2*$C**2;
-$amin = ($C**2)/(4);
+$theta = cos($B*$C);
+$dottheta = -$B*sin($B*$C);
+$ddottheta = -$B**2*cos($B*$C);
+$r = $A*$theta;
+$dotr = $A*$dottheta;
+$ddotr = $A*$ddottheta;
+$ar = $ddotr - $r*$dottheta**2;
+$at = $r*$ddottheta + 2*$dotr*$dottheta;
+$a = sqrt($ar**2 + $at**2);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -63,10 +71,15 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Traffic circles are not often actual circles and are they can be expressed by equations. if a circle folllows the equation [`4x^2 + y^2 = 4`] typically in [`km`]. The velocity that cars must drive with is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum acceleration felt by the cars?
+A particle moves along a path described as [`r = [$A]\theta`] and [`\theta = cos([$B]t)`]. What is [`\ddot{r}`], [`\ddot{\theta}`] and [`a`] at the instant when [` t = [$C]`]? 
 
-[`a_{max}`][_____]{"$amax"} [`\frac{km}{h^2}`] 
-[`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
+_Note: this question is in radians._
+
+[`\ddot{\theta} =`][_____]{"$ddottheta"}
+
+[`\ddot{r} =`][_____]{"$ddotr"}
+
+[`a =`][_____]{"$a"}
 
 END_PGML
 

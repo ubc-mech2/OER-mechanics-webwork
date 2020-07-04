@@ -74,7 +74,7 @@ BEGIN_PGML
 
 A symmetrical buoy of unifrom density [`\rho =`] [`[$density]`] [`kg/m^3`] is moved onto land for maintenance. The tower on top of the buoy can be thought 
 of as a rectangle with a height [`h = `] [`[$h]`] [`m`] and width [`w =`] [`[$w]`] [`m`]. Given that the radius of 
-the bottom is [`r =`] [`[$radius]`] [`m`], find the natural period of the system. The buoy has uniform density of 1000.
+the bottom is [`r =`] [`[$radius]`] [`m`], find the natural period of the system. The buoy has uniform density [`\rho =`] [`[$density]`] [`kg/m^2`].
 
 [`t =`] [____]{"$ansA"} [`s`]
 
