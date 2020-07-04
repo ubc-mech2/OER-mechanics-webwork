@@ -43,16 +43,20 @@ loadMacros(
 
 Context("Numeric");
 #given
-$C = random(20, 30, 5);
+$A = random(10, 50, 5);
+$B = random(75, 125, 25);
+$D = random(1, 8, 1);
+$C = $B + 5*$D;
 
 #computation
-
-$amax = 2*$C**2;
-$amin = ($C**2)/(4);
+$theta = asin($B/$C);
+$r = $B*csc($theta);
+$dotr = -$B*csc($theta)*cot($theta);
+$dottheta = sqrt( $A**2 /($r**2 + $dotr**2));
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.0003,
 tolType=>'relative');
 
 ##############################################################
@@ -63,10 +67,14 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Traffic circles are not often actual circles and are they can be expressed by equations. if a circle folllows the equation [`4x^2 + y^2 = 4`] typically in [`km`]. The velocity that cars must drive with is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum acceleration felt by the cars?
+You often relax on a floaties on the Okanagan Lake, suddenly, the Ogopogo pops up [`[$B]`] [`m`] away travelling perpendicular to you at [`[$A]`] [`m/s`]. 
+You pull out our phone out to track and film the Ogopogo, when [`r = [$C]`] [`m`], what is the angular velocity at which you are turning your phone? 
 
-[`a_{max}`][_____]{"$amax"} [`\frac{km}{h^2}`] 
-[`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
+*Use the figure below*
+
+[@ image( "20-P-KM-AF-022.png", width=>[100], height=>[100]) @]*
+
+[`\ddot{\theta} =`][_____]{"$dottheta"}
 
 END_PGML
 
