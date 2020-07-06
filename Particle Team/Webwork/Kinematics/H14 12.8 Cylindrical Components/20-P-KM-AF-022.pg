@@ -56,7 +56,7 @@ $dottheta = sqrt( $A**2 /($r**2 + $dotr**2));
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.0003,
+tolerance=>.003,
 tolType=>'relative');
 
 ##############################################################
