@@ -39,12 +39,10 @@ $speed = random(5,20,5);     # (lower, upper, stepsize)
 $acceleration = random(30,60,10);
 $angleDegrees = random(50,80,5);
 
-$g = 9.81;
-
 #computation
 $angle = $angleDegrees*pi/180;
-$deltaV = 2;
-$radius = 2;
+$deltaV = $acceleration*cos($angle);
+$radius = $speed**2/($acceleration*sin($angle));
 
 #set tolerance
 Context()->flags->set(
@@ -59,9 +57,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-At a given instant, a locomotive named Tom has a speed of [`[$speed]`] [`m/s`] and an acceleration of [`[$acceleration]`] [`m/s^2`] acting in the direction shown. Determine the rate of increase in Tom's speed and the radius of curvature [`r`] of the path if the resultant acceleration makes a [`[$angleDegrees]` angle with his path..
+At a given instant, a locomotive named Tom has a velocity of [`[$speed]`] [`m/s`] and an acceleration of [`[$acceleration]`] [`m/s^2`], with [`[$angleDegrees]^\circ`] between these vectors. Determine the rate of increase in Tom's tangential speed and the radius of curvature [`r`] of the path.
 
-[`\frac{dv}{dt}=`][___]{"$deltaV"} [`m/s^2`]  
+[`\frac{dv_{t}}{dt}=`][___]{"$deltaV"} [`m/s^2`]  
 [`r=`][___]{"$radius"} [`m`]
 
 END_PGML

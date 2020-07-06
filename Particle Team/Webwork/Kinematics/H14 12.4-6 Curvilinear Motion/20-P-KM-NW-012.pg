@@ -59,7 +59,10 @@ tolType=>'absolute');  #absolute or relative
 #
 #
 
+
 BEGIN_PGML
+
+[@ image( "20-P-KM-NW-008.png", width=>[$width], height=>[$height]) @]*
 
 A model planet with a an orbital distance of [`[$distance]`] [`m`] revolves once every [`[$period]`] seconds. Determine its average velocity when it revolves to make an angle of [`[$angleDegrees]^\circ`] with the star and its starting location. 
 
