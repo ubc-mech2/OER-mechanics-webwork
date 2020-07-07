@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-127
+## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-155
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -8,8 +8,8 @@
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-07-03)
-## Level(Intermediate)
-## KEYWORDS('dynamics','normal', 'tangential','particle','kinematics')
+## Level(Advanced)
+## KEYWORDS('dynamics','cylindrical','particle','kinematics')
 ## RESOURCES('')
 
 ##############################################################
@@ -35,14 +35,17 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$speed = random(5,20,5);     # (lower, upper, stepsize)
-$acceleration = random(30,60,10);
-$angleDegrees = random(50,80,5);
+$radius = random(2,5,1);     # (lower, upper, stepsize)
+$coeff = random(2,5,1);
+$angleDegrees = random(20,40,10);
 
 #computation
-$angle = $angleDegrees*pi/180;
-$deltaV = $acceleration*cos($angle);
-$radius = $speed**2/($acceleration*sin($angle));
+$angle = $angleDegrees/180*pi;
+$thetaP = -2*sqrt(1-($angle)**2); # -2sin2t
+$thetaPP = -4*$angle; # -4cos2t
+$accelerationRadial = 0-$radius*$thetaP**2;
+$accelerationAngular = $radius*$thetaPP + 2*0*$thetaP;
+$acceleration = sqrt($accelerationRadial**2 + $accelerationAngular**2);
 
 #set tolerance
 Context()->flags->set(
@@ -57,12 +60,10 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-At a given instant, a locomotive named Tom has a velocity of [`[$speed]`] [`m/s`] and an acceleration of [`[$acceleration]`] [`m/s^2`], with [`[$angleDegrees]^\circ`] between these vectors. Determine the rate of increase in Tom's tangential speed and the radius of curvature [`\rho`] of the path.
+A particle is moving along a circular path having a radius of [`[$radius]`] inches such that its position as a function of time is given by [`\theta = cos([$coeff]t)`], where [`\theta`] is in radians and [`t`] is in seconds. Determine the magnitude of the acceleration of the particle when [`\theta = [$angleDegrees]^\circ`].
 
-[`\frac{dv_{t}}{dt}=`][___]{"$deltaV"} [`m/s^2`]  
-[`\rho=`][___]{"$radius"} [`m`]
+[`a =`][___]{"$acceleration"} [`m/s^2`]
 
-_Use radians for any trigonometric functions._
 END_PGML
 
 ENDDOCUMENT()];     #save as .pg

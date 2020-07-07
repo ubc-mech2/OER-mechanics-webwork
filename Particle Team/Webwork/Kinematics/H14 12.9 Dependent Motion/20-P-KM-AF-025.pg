@@ -43,18 +43,16 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(100, 300, 25);
-$B = random(7.2, 36, 3.6);
-$C = random(80, 150, 10);
+$B = random(2, 10, 1);
+$C = random(5, 15, 1);
 
 #computation
-$speed = $B/3.6;
-$time = sqrt($A/4.9);
-$distance = $speed * $time;
-$dtc = $C - $distance; 
-#dtc = distance to cross
-$velocity = $dtc/$time;
 
+$va = (-4*$B + $C)/4;
+
+
+$width = 300;
+$height = 300;
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -68,10 +66,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The company CONGO is an up and coming package shipment company and have gotten international attention for its delivery methods. Their plane flies [`[$A]`] [`m`] over the ground with a constant horizontal velocity of [`[$B]`] [`\frac{km}{h}`].
-The reciever stands [`[$C]`] [`m`] on the ground away from the plane. The instant when the package is released, the reciever moves towards the package. Ignoring the reciever's height, what velocity must the person have to get to the package before it hits the ground?
+If at point C, the block is pulled down with [`[$C]`] [`m/s`] downwards and the B block is moved upwards with [`[$B]`] [`m/s`]. What is the velocity of block A in [`m/s`].
 
-[`v = `][_____]{"$velocity"} [`m/s`] 
+[@ image( "20-P-KM-AF-025.png", width=>[$width], height=>[$height]) @]*
+
+[`V_{A} = `][_____]{"$va"} [`m/s`] 
 
 END_PGML
 

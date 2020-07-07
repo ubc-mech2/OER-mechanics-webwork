@@ -63,7 +63,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Traffic circles are not often actual circles and are they can be expressed by equations. if a circle folllows the equation [`4x^2 + y^2 = 4`] typically in [`km`]. The velocity that cars must drive with is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum acceleration felt by the cars?
+Traffic circles are not often actual circles and are they can be expressed by equations. A hypothetical circle follows the equation [`4x^2 + y^2 = 4`], all measurements being in kilometres. The velocity with which cars must drive is [`[$C]`] [`\frac{km}{h}`]. What are the minimum and maximum accelerations felt by the cars?
 
 [`a_{max}`][_____]{"$amax"} [`\frac{km}{h^2}`] 
 [`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
