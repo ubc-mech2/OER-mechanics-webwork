@@ -43,20 +43,18 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(10, 50, 5);
-$B = random(75, 125, 25);
-$D = random(1, 8, 1);
-$C = $B + 5*$D;
+$A = random(2, 20, 2);
 
 #computation
-$theta = asin($B/$C);
-$r = $B*csc($theta);
-$dotr = -$B*csc($theta)*cot($theta);
-$dottheta = sqrt( $A**2 /($r**2 + $dotr**2));
 
+$vb = $A;
+
+
+$width = 300;
+$height = 300;
 #set tolerance
 Context()->flags->set(
-tolerance=>.003,
+tolerance=>.03,
 tolType=>'relative');
 
 ##############################################################
@@ -67,14 +65,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-You often relax on a floaties on the Okanagan Lake, suddenly, the Ogopogo pops up [`[$B]`] [`m`] away travelling perpendicular to you at [`[$A]`] [`m/s`]. 
-You pull out our phone out to track and film the Ogopogo, when [`r = [$C]`] [`m`], what is the angular velocity at which you are turning your phone? 
+If block A moves with a downward speed of [`V_{A} = [$A]`] [`m/s`]. What is the velocity at which block B will move at?
 
-_please use up to three decimal places_
+[@ image( "20-P-KM-AF-023.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "20-P-KM-AF-022.png", width=>[100], height=>[100]) @]*
-
-[`\ddot{\theta} =`][_____]{"$dottheta"}
+[`V_{B} = `][_____]{"$vb"} [`m/s`]  
 
 END_PGML
 
