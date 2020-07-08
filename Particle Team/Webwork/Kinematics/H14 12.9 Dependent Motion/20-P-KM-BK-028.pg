@@ -1,0 +1,85 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1305;
+$height = $imgScale*1543;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$aA = random(5,9,1);
+
+
+#computation
+$aB = -$aA/4;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+
+
+If block [`A`] in the diagram above has an acceleration of [`[$aA]`] [`m/s^2`], find the acceleration of block [`B`].
+
+[`a_B=`] [______]{"$aB"} [`m/s^2`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};
