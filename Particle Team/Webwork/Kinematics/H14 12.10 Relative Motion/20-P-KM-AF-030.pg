@@ -48,13 +48,38 @@ $B = random(2, 10, 1);
 $C = random(10, 15, 1);
 $D = random(10, 15, 1);
 $E = random(10, 15, 1);
+$F = random(10, 15, 1);
+$G = random(10, 15, 1);
+$H = random(10, 15, 1);
 
 #computation
-$angle = $E* 180/pi;
-$va = sqrt($B*$E);
-$vay = sin($angle)*$va;
-$vax = cos($angle)*$va;
-$vabx = $vax -$D;
+
+#basic calculations
+$ra = sqrt($C) + 30/4;
+$rb = sqrt($C) + 10/4;
+$thetaa = ($G +$H)*pi/180;
+$thetab = $H*pi/180;
+$tthetaa = 90*pi/180 - $thetaa;
+$tthetab = 90*pi/180 - $thetab;
+
+#relative velocity calculations
+$vabx = -$A*sin($thetaa) + $B*sin($thetab);
+$vaby = $A*cos($thetaa) - $B*cos($thetab);
+
+#acceleration calculations
+$ata = -$F;
+$atb = $D;
+$ana = ($A)**2/$ra;
+$anb = ($B)**2/$rb;
+
+$aax = $ata*cos($thetaa) - $ana*cos($tthetaa);
+$aay = -$ata*sin($thetaa) - $ana*sin($tthetaa);
+
+$abx = $atb*cos($thetab) - $anb*cos($tthetab);
+$aby = -$atb*sin($thetab) - $anb*sin($tthetab);
+
+$aabx = $aax - $abx;
+$aaby = $aay - $aby;
 
 $width = 300;
 $height = 300;
@@ -71,11 +96,17 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If car A moves with an acceleration [`[ [$A] a_{t} + [$B]a_{n} ]`] [`m/s`] with a [`\theta = [$C]^\circ] and a radius of [`[$E]`] [`m`]. Car B moves with a velocity of [` [$D] `] [`m/s`]. What is the relative velocity from car B's perspective.
+Race tracks are ovals, however the curves can be described as a section of a circle with the equation [` x^2 + y^2 = [$C] `]. Car A and B are speeding around the curve with [`[$A]`] [`m/s`] and [`[$B]`] [`m/s`] respectively. Car B accelerates at [`[$D]`] [`m/s^2`] in the same direction of the velocity, Car A accelerates in the opposite direction with [`[$F]`] [`m/s^2`].
 
-[@ image( "20-P-KM-AF-028.png", width=>[$width], height=>[$height]) @]*
+_[`\alpha = [$G]`] [`^\circ`] [`\beta = [$H]`] [`^\circ`]_ 
 
-[`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vay"}[`\hat{j}`]
+[@ image( "20-P-KM-AF-030.png", width=>[$width], height=>[$height]) @]*
+
+[`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vaby"}[`\hat{j}`]
+
+
+[`a_{A/B} = `][_____]{"$aabx"}[`\hat{i}`] [`+`] [_____]{"$aaby"}[`\hat{j}`]
+
 
 END_PGML
 
