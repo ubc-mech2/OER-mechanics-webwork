@@ -26,8 +26,8 @@ DOCUMENT();
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
+$width = $imgScale*2468;
+$height = $imgScale*1128;
 
 
 
@@ -76,7 +76,7 @@ BEGIN_PGML
 You're given three pulleys, and have to choose between the two options above in order to lift a load. 
 Assuming you can pull with a speed of [`[$v]`] [`m/s`] either way, find the speed at which the block would travel in each case.
 
-[`v_A=`] [______]{"$vA"} [`m/s`]
+[`v_A=`] [______]{"$vA"} [`m/s`]  
 [`v_B=`] [______]{"$vB"} [`m/s`]
 
 END_PGML

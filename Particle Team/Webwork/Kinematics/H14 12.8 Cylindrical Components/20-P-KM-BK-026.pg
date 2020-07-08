@@ -55,7 +55,7 @@ $rpm = random(60,120,15);
 $vr = random(2,5,1);
 $ddtheta = random(2,5,1);
 $ar = random(2,5,1);
-$r = 0.5
+$r = 0.5;
 
 #computation
 $dtheta = $rpm*6.28318/60;

@@ -58,7 +58,7 @@ $t = random(10,15,1);
 #computation
 $dtheta = $a*$t*2*3.14159/$h;
 $ddtheta = $a*2*3.14159/$h;
-$a = sqrt(($r*$ddtheta)**2 + ($r*$dtheta**2)**2 + ($a)**2);
+$at = sqrt(($r*$ddtheta)**2 + ($r*$dtheta**2)**2 + ($a)**2);
 
 
 
@@ -84,6 +84,7 @@ and completes one full [`360^\circ`] twist every [`[$h]`] [`m`].
 If a child going down the slide experiences a vertical acceleration of [`[$a]`] [`m/s^2`],
 find the total acceleration they would experience after [`[$t]`] [`s`].
 
+[`a=`] [_____]{"$at"} [`m/s^2`]
 
 END_PGML
 
