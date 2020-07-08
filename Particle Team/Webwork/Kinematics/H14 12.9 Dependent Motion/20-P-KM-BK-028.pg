@@ -70,7 +70,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-
+[@ image( "20-P-KM-BK-028.png", width=>[$width], height=>[$height]) @]*
 
 If block [`A`] in the diagram above has an acceleration of [`[$aA]`] [`m/s^2`], find the acceleration of block [`B`].
 

@@ -54,8 +54,7 @@ $v = random(5,9,1);
 
 
 #computation
-$vA = $v/3;
-$vB = $v/4;
+$vA = $v/6;
 
 
 #set tolerance
@@ -71,12 +70,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-KM-BK-030.png", width=>[$width], height=>[$height]) @]*
 
-You're given three pulleys, and have to choose between the two options above in order to lift a load. 
-Assuming you can pull with a speed of [`[$v]`] [`m/s`] either way, find the speed at which the block would travel in each case.
+An evil physics professor has asked you to lift this block. If you pull the rope at [`[$v]`] [`m/s`], how fast will the block move?
 
-[`v_A=`] [______]{"$vA"} [`m/s`]
-[`v_B=`] [______]{"$vB"} [`m/s`]
+[`v_{block}=`] [______]{"$vA"} [`m/s`]
 
 END_PGML
 

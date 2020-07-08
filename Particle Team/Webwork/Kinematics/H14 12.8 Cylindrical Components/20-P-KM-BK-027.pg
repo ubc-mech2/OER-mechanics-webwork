@@ -76,6 +76,8 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-KM-BK-027.png", width=>[$width], height=>[$height]) @]*
+
 A waterslide makes a corkscrew (A.K.A. a helix, or spiral) as it descends. 
 It maintains a constant radius of [`[$r]`] [`m`] as it descends, 
 and completes one full [`360^\circ`] twist every [`[$h]`] [`m`]. 

@@ -71,6 +71,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-KM-BK-029.png", width=>[$width], height=>[$height]) @]*
 
 You're given three pulleys, and have to choose between the two options above in order to lift a load. 
 Assuming you can pull with a speed of [`[$v]`] [`m/s`] either way, find the speed at which the block would travel in each case.
