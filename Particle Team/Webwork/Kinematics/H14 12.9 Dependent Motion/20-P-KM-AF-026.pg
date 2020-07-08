@@ -48,7 +48,7 @@ $C = random(10, 15, 1);
 
 #computation
 
-$va = (-1*(2*B - $C))/2;
+$va = (-1*(2*$B - $C))/2;
 
 
 $width = 300;
