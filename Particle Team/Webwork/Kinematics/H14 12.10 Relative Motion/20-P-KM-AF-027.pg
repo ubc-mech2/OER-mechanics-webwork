@@ -1,0 +1,86 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+## Easy
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random(1, 10, 1);
+$B = random(1, 15, 1);
+$C = random(1, 10, 1);
+$D = random(1, 15, 1);
+
+#computation
+
+$vbax = $A - $C;
+$vbay = $B - $D;
+$vba = sqrt ( $vbax**2 + $vbay**2 );
+$anglerad = atan($vbay/($vbax));
+$theta = $anglerad*180/pi;
+
+$width = 300;
+$height = 300;
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+The boat A moves with a velocity of [`[ [$A]\hat{i} + [$B]\hat{j} ]`] [`\frac{km}{h}`] and boat B moves with [`[ [$C]\hat{i} + [$D]\hat{j} ]`] [`\frac{km}{h}`]. What is the magnitude of the relative velocity and what is the angle to the [`\hat{i}`] axis?
+
+[@ image( "20-P-KM-AF-027.png", width=>[$width], height=>[$height]) @]*
+
+[`V_{B/A} = `][_____]{"$vba"} [`m/s`] 
+
+[`\theta = `][_____]{"$theta"} [`m/s`] 
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
