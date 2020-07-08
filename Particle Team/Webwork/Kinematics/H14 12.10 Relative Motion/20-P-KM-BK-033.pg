@@ -1,0 +1,88 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*2620;
+$height = $imgScale*1616;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$vc = random(2.0,2.9,0.1);
+$vw = random(1.0,1.9,0.1);
+
+
+#computation
+$v = sqrt($vc**2 + $vw**2);
+
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A rope is tied to a tree branch, so that it can be used to swing out over a river.
+If a child swings out at [`[$vc]`] [`m/s`], perpendicular to the flow of the water,
+and the water is flowing at [`[$vw]`] [`m/s`], find the speed of the water relative to the child.
+
+
+[`v_{water/child}=`] [______]{"$v"} [`m/s`]  
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};

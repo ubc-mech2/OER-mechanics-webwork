@@ -1,0 +1,90 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*2620;
+$height = $imgScale*1616;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$vt = random(80,100,2);
+$vr = random(20,40,1);
+
+
+#computation
+$v = sqrt($vt**2 + $vr**2)/3.6;
+$theta = atan($vt/$vr)*180/3.14159;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+
+A train is travelling at [`[$vt]`] [`km/hr`]. While it is on a level stretch of track, rain begins to fall.
+Assume each rain drop falls vertically at [`[$vr]`] [`km/hr`].
+Find the speed and angle at which the rain would appear to be falling to an observer on the train.
+
+
+[`v_{rain/train}=`] [______]{"$v"} [`m/s`]  
+[`angle`] [`from`] [`vertical`] [______]{"$theta"}[`^\circ`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};
