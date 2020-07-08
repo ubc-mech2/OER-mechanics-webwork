@@ -1,0 +1,72 @@
+##DESCRIPTION
+## particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-?????????????????
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Absolute Dependent Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-07)
+## Level(Beginner)
+## KEYWORDS('dynamics','absolute','dependent','motion','particle','kinematics')
+## RESOURCES('????????????????????????????????????????????????????')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$distanceC = random(4,16,2);     # (lower, upper, stepsize)
+
+#computation
+$displacement = $distanceC/2;
+
+#image scale
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+# [@ image( "20-P-KM-NW-022.png", width=>[$width], height=>[$height]) @]*
+
+Determine the displacement of a magical star-forged hammer if a truck tugs the cable [`[$distanceC]`] feet to the right.
+
+[`d =`][___]{"$displacement"} [`ft`]  
+
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg
