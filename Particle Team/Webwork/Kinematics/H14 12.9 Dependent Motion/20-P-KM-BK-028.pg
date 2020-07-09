@@ -54,7 +54,7 @@ $aA = random(5,9,1);
 
 
 #computation
-$aB = -$aA/4;
+$aB = -$aA/2;
 
 
 #set tolerance
