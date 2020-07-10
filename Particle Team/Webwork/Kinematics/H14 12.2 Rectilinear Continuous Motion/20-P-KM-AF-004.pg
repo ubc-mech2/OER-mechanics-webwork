@@ -1,5 +1,5 @@
 ##DESCRIPTION
-##
+## Dog with rolling ball, with acceleration in regards to time. Uses two equations, no integration.
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -8,7 +8,7 @@
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
+## Level(Intermediate)
 ## KEYWORDS()
 ## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
 ## TitleText('TBD')
@@ -16,12 +16,10 @@
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
 DOCUMENT();
-
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language

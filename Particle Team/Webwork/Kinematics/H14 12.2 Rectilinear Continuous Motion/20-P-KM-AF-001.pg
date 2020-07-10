@@ -1,5 +1,5 @@
 ##DESCRIPTION
-##
+## Particle movement with one equation in a straight line. Find velocity with acceleration. 
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -8,15 +8,14 @@
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
+## Level(Beginner)
+## KEYWORDS(Rectilinear Continuous Motion, Particle Movement)
 ## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
