@@ -77,7 +77,7 @@ The boat A moves with a velocity of [`[ [$A]\hat{i} + [$B]\hat{j} ]`] [`\frac{km
 
 [`V_{B/A} = `][_____]{"$vba"} [`m/s`] 
 
-[`\theta = `][_____]{"$theta"} [`m/s`] 
+[`\theta = `][_____]{"$theta"} [`^\circ`] 
 
 END_PGML
 

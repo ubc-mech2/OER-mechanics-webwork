@@ -72,6 +72,8 @@ A sphere is fired into slime that forces an acceleration of [`a = -[$A]*t`]. Whe
 stop if the initial velocity is [`v = [$B]`] [`m/s`].
 
 [`t =`] [_____]{"$t"} [`s`]  
+
+
 [`s =`] [_____]{"$s"} [`m`]  
 
 

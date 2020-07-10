@@ -65,6 +65,8 @@ BEGIN_PGML
 
 The particle starts from rest and moves with an acceleration of [`a = [$A] + [$B]*s`], along a straight line. What is the velocity when s = [`[$C]`].
 
+_hint: [`v`] [`dv = a`] [`ds`]_
+
 [`v=`] [_____]{"$v"} [`m/s`]  
 
 

@@ -73,9 +73,9 @@ BEGIN_PGML
 The particle starts at the origin and moves with velocity [`v = (t - [$A])^2 -[$C]`] m/s, for [`0 < t < [$B] `] s and it changed to [`v^2 = (t-[$B])`] 
 for [` [$B] < t < [$D]`]. Determine the position and distance travelled. What is the average speed?
 
-[`postion =`] [_____]{"$p"} [`m`]  
-[`distance =`] [_____]{"$s"} [`m`]  
-[`speed_{average} =`] [_____]{"$v"} [`m/s`]  
+[`p =`] [_____]{"$p"} [`m`]  
+[`d =`] [_____]{"$s"} [`m`]  
+[`v_{avg} =`] [_____]{"$v"} [`m/s`]  
 
 
 
