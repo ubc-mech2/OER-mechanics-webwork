@@ -85,10 +85,11 @@ Context()->texStrings;
    		Velocity components: \{ans_rule(25) \}
    $BR
    $BR
-   
    Where is the particle when \(t = $D s\)?
- $BR
+   $BR
+   $BR
    Particle posiiton: \{ans_rule(25) \}
+   $BR
    $BR
    END_TEXT
    Context()->normalStrings;
