@@ -1,22 +1,21 @@
 ##DESCRIPTION
-##
+## Two boats with given velocities and asked to find relative velocity and theta
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(10: Rectilinear Kinematics: Relative Motion Translating Axes)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## Level(Beginner)
+## KEYWORDS(Boats, Relative Velocity, Translating Axes)
+## RESOURCES('inspired by Hibbeler 14E Section 12.10 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 

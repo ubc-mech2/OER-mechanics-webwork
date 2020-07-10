@@ -1,22 +1,22 @@
 ##DESCRIPTION
-##
+## Ogopogo filming, radial acceleration
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(8: Rectilinear Kinematics: CM Cylindrical Components)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## Level(Advanced)
+## KEYWORDS(Ogopogo, relative velocity)
+## RESOURCES('inspired by Hibbeler 14E Section 12.8 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
+## Based heavily off of a Hibbler problem
 
 ##############################################################
 
