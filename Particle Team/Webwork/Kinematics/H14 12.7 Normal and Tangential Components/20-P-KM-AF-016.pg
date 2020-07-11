@@ -1,22 +1,21 @@
 ##DESCRIPTION
-##
+## A car travels around a desribed path, find normal acceleration and radius length with two values of x
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(7: Rectilinear Kinematics: CM Normal/Tangential Components)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
+## Level(Beginner)
+## KEYWORDS(Velocity, Normal Components)
 ## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
