@@ -1,0 +1,78 @@
+##DESCRIPTION
+## Particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-223
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Relative Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-09)
+## Level(Intermediate)
+## KEYWORDS('dynamics','relative','motion','particle','kinematics')
+## RESOURCES('20-P-KM-NW-027.jpg')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$A = random(11,15,1);     # (lower, upper, stepsize)
+$B = random(6,10,1);
+$distance = random(400,600,100);
+
+$angleA = 45/180*pi;
+$angleB = 30/180*pi;
+
+#computation
+$velocityAB = sqrt(($A*cos($angleA)+$B*cos($angleB))**2+($A*sin($angleA)-$B*sin($angleB))**2);
+$time = $distance/$velocityAB;
+
+#image scale
+$imgScale = 0.2;
+$width = 800;
+$height = 600;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+# [@ image( "20-P-KM-NW-027.jpg", width=>[$width], height=>[$height]) @]*
+
+Two boats leave the shore at the same time and travel in the directions shown. If [`v_{A} = [$A]`] [`m/s`] and [`v_{B} = [$B]`] [`m/s`], determine the magnitude of the velocity of boat [`A`] with respect to boat [`B`]. How long after leaving the shore will the boats be [`[$distance]`] metres apart?
+
+_Use radians for trigonometric functions._
+
+[`v_{A/B} = `][___]{"$velocityAB"}[`m/s`]  
+[`t =`][___]{"$time"} [`s`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg
