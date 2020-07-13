@@ -54,7 +54,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A ball attached to a string has an initial speed [`v_{0} = [$speed]`] [`m/s`]. If it has an acceleration [`a_{n}`] along a curving track equal to its position starting at [`s = 0`] [`m`], determine the time needed for the ball to travel [`[$distance]`] metres.
+A ball attached to a string has an initial speed [`v_{0} = [$speed]`] [`m/s`]. If it has a normal acceleration [`a_{n} = s`] starting at [`s = 0`] [`m`], determine the time needed for the ball to travel [`[$distance]`] metres.
 
 [`t =`][___]{"$time"} [`s`]
 

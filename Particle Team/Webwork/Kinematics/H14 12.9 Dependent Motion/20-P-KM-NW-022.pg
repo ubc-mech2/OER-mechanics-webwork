@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-?????????????????
+## Particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-199
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-07-07)
 ## Level(Beginner)
 ## KEYWORDS('dynamics','absolute','dependent','motion','particle','kinematics')
-## RESOURCES('????????????????????????????????????????????????????')
+## RESOURCES('20-P-KM-NW-022.png')
 
 ##############################################################
 
@@ -60,7 +60,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-# [@ image( "20-P-KM-NW-022.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-022.png", width=>[$width], height=>[$height]) @]*
 
 Determine the displacement of a magical star-forged hammer if a truck tugs the cable [`[$distanceC]`] feet to the right.
 

@@ -1,21 +1,22 @@
 ##DESCRIPTION
-## One car on a curved track and another on a straight track
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(10: Rectilinear Kinematics: Relative Motion Translating Axes)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS(Car, Translating Axes)
-## RESOURCES('inspired by Hibbeler 14E Section 12.10 preliminary problems')
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+## Easy
 
 ##############################################################
 
