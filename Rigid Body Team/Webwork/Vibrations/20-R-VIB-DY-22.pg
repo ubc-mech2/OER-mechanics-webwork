@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Punching ball is displaced. Find the equation of motion.
+## PIzza cutter is connected to a spring. Find the equation of motion.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibration', 'Punching bag','Equation of motion')
+## KEYWORDS('Energy Method', 'Pizza Cutter','Equation of motion')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
-## DBsection(Free Undamped Vibration)
+## DBsection(Energy Method)
 ## Date(2020-7-14)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-3.png')
+## RESOURCES('20-R-VIB-DY-22.png')
 
 ########################################################
 
@@ -41,18 +41,22 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
+$width = $imgScale*1750;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = random(2,5,0.1);
-$tension = random(25,50,1);
-$intVel = random(1,5,0.1);
-$length = random(1.5,2.5,0.01);
+$mass = random(0.25,0.5,0.01);
+$radius = random(0.05,0.10,0.01);
+$intVel = random(1,2,0.1);
+$k = random(10,25,1);
 
 #---- Formulas to compute answers --------------#
-$natFreq = sqrt(2*$tension/($mass*$length));
-$A = $intVel/$natFreq;
+$inertia = 0.5*$mass*$radius**2;
+$T = 1/2*$inertia+1/2*$mass*$radius**2;
+$V = 1/2*$k*$radius**2;
+$natFreq = sqrt($V/$T);
+$angVel = $intVel/$radius;
+$A = $angVel/$natFreq;
 
 #---- Answers to the problem -----------------------#
 $ansA = "$A*sin($natFreq*t)";
@@ -62,12 +66,10 @@ $ansA = "$A*sin($natFreq*t)";
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-22.png", width=>[$width], height=>[$height]) @]*
 
-A new type of punching bag consists of a [`m =`] [`[$mass]`] [`kg`] ball suspended mid air by two [`l =`] [`[$length]`] [`m`]
-taut ropes, each with a tension of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
-If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], what is the natural period of the system 
-given a small initial displacement.
+A new pizza cutter consists of a spring ([`k=`] [`[$k]`] [`N/m`]) and a lightweight([`m =`] [`[$mass]`] [`kg`]) circular blade with a radius [`r =`] [`[$radius]`] [`m`]. 
+Assuming that the wheel does not slip with the ground, if the wheel is given an initial velocity of [`v_0 =`] [`[$intVel]`] [`m/s`] find the equation of motion.
 
 END_PGML
 

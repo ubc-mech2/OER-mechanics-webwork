@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Punching ball is displaced. Find the equation of motion.
+## A toy car is connected to a wall by a spring and damper. Find the initial displacement.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibration', 'Punching bag','Equation of motion')
+## KEYWORDS('Free Damped Vibration', 'Toy car','Displacement')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
-## DBsection(Free Undamped Vibration)
+## DBsection(Free damped Vibration)
 ## Date(2020-7-14)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-3.png')
+## RESOURCES('20-R-VIB-DY-28.png')
 
 ########################################################
 
@@ -41,42 +41,38 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
+$width = $imgScale*1500;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = random(2,5,0.1);
-$tension = random(25,50,1);
-$intVel = random(1,5,0.1);
-$length = random(1.5,2.5,0.01);
+$mass = random(0.25,0.75,0.01);
+$k = random(15,25,1);
+$limit = sqrt(4*$mass*$k);
+$c = random(0.5,1.5,0.1);
+$dis = random(0.1,0.2,0.01);
 
 #---- Formulas to compute answers --------------#
-$natFreq = sqrt(2*$tension/($mass*$length));
-$A = $intVel/$natFreq;
+$wN = sqrt($k/$mass);
+$zeta = $c/(2*$mass*$wN);
+$wD = $wN*sqrt(1-$zeta**2);
+$tD = 2*pi/$wD;
+$sigma = $zeta*$wN*$tD;
 
 #---- Answers to the problem -----------------------#
-$ansA = "$A*sin($natFreq*t)";
+$ansA = e**$sigma*$dis;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-28.png", width=>[$width], height=>[$height]) @]*
 
-A new type of punching bag consists of a [`m =`] [`[$mass]`] [`kg`] ball suspended mid air by two [`l =`] [`[$length]`] [`m`]
-taut ropes, each with a tension of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
-If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], what is the natural period of the system 
-given a small initial displacement.
+A [`m =`] [`[$mass]`] [`kg`] toy car is attached to the wall with a spring, [`k =`] [`[$k]`] [`N/m`], and damper, [`c =`] [`[$c]`] [`Ns/m`], in parallel. 
+Given that one cycle later the displacement is [`x_1 =`] [`[$dis]`] [`m`], determine the initial displacement [`x_0`].
+
+[`x_0 =`] [____]{"$ansA"} [`m`]
 
 END_PGML
-
-BEGIN_TEXT
-
- $BR\{ans_rule(25) \}
-
-END_TEXT
-
-ANS(function_cmp($ansA,'t'));
 
 ENDDOCUMENT();

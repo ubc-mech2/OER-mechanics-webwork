@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Punching ball is displaced. Find the equation of motion.
+## Twisting a square plate suspended wtih ropes. What is the natural response of the vibration.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibration', 'Punching bag','Equation of motion')
+## KEYWORDS('Free Undamped Vibration', 'Natural Frequency','Moment of Inertia')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
 ## DBsection(Free Undamped Vibration)
 ## Date(2020-7-14)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-3.png')
+## Level(Advanced)
+## RESOURCES('20-R-VIB-DY-23.png')
 
 ########################################################
 
@@ -45,38 +45,37 @@ $width = $imgScale*1000;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = random(2,5,0.1);
-$tension = random(25,50,1);
-$intVel = random(1,5,0.1);
-$length = random(1.5,2.5,0.01);
+$rho = random(900,1100,1);
+$length = random(0.75,1.25,0.01);
+$s = random(1.5,2,0.01);
+$radius = random(0.25,0.5,0.01);
+$d = random(0.02,0.05,0.01);
 
 #---- Formulas to compute answers --------------#
-$natFreq = sqrt(2*$tension/($mass*$length));
-$A = $intVel/$natFreq;
+$massP = $s**2*$d*$rho;
+$massC = pi*$radius**2*$rho*$d;
+$c = sqrt(2*$s**2)/2;
+$inertia = 1/12*$massP*(2*$s**2)**2-1/2*$massC*$radius**2;
+$T = ($massP-$massC)*9.81/4;
+$natFreq = sqrt(4*$c*$T*$radius/($inertia*$length));
 
 #---- Answers to the problem -----------------------#
-$ansA = "$A*sin($natFreq*t)";
+$ansA = $natFreq;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-23.png", width=>[$width], height=>[$height]) @]*
 
-A new type of punching bag consists of a [`m =`] [`[$mass]`] [`kg`] ball suspended mid air by two [`l =`] [`[$length]`] [`m`]
-taut ropes, each with a tension of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
-If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], what is the natural period of the system 
-given a small initial displacement.
+A [`s*s*d`] square plate is supported by ropes, of length [`l =`] [`[$length]`] [`m`], on each of its four corners. 
+The plate has a large circular cut-out in the center of radius [`r =`] [`[$radius]`] [`m`]. The plate has a desnity 
+[`\rho =`] [`[$rho]`] [`kg/m^3`]. Given that the plate is given a small rotation about a vertical axis at its center, 
+what is the natural vibration of oscillation?
+
+[`w_n =`] [____]{"$ansA"} [`rad/s`]
 
 END_PGML
-
-BEGIN_TEXT
-
- $BR\{ans_rule(25) \}
-
-END_TEXT
-
-ANS(function_cmp($ansA,'t'));
 
 ENDDOCUMENT();

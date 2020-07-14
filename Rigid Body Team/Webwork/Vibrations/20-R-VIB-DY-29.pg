@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Punching ball is displaced. Find the equation of motion.
+## Spring and box in underwater city. Find the equation of motion for the box.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibration', 'Punching bag','Equation of motion')
+## KEYWORDS('Free Damped Vibration', 'Equation of motion','viscous damping')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
-## DBsection(Free Undamped Vibration)
+## DBsection(Free Damped Vibration)
 ## Date(2020-7-14)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-3.png')
+## RESOURCES('20-R-VIB-DY-29.png')
 
 ########################################################
 
@@ -41,33 +41,36 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
+$width = $imgScale*1500;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = random(2,5,0.1);
-$tension = random(25,50,1);
-$intVel = random(1,5,0.1);
-$length = random(1.5,2.5,0.01);
+$mass = 5;
+$k = 25;
+$force = 2;
+$intDis = 0.02;
+$intVel = 2.5;
 
 #---- Formulas to compute answers --------------#
-$natFreq = sqrt(2*$tension/($mass*$length));
-$A = $intVel/$natFreq;
+$wN = sqrt($k/$mass);
+$zeta = $c/(2*$mass*$wN);
+$wD = $wN*sqrt(1-$zeta**2);
+$phi = $wD*2*$mass/$c;
+$A = $intDis/sin($phi);
 
 #---- Answers to the problem -----------------------#
-$ansA = "$A*sin($natFreq*t)";
+$ansA = "";
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-29.png", width=>[$width], height=>[$height]) @]*
 
-A new type of punching bag consists of a [`m =`] [`[$mass]`] [`kg`] ball suspended mid air by two [`l =`] [`[$length]`] [`m`]
-taut ropes, each with a tension of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
-If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], what is the natural period of the system 
-given a small initial displacement.
+In Atlantis, the underwater city, an engineer sets up a [`m =`] [`[$mass]`] [`kg`] box and spring, [`k =`] [`[$k]`] [`N/m`]. 
+The water has a damping force on the box of [`F =`] [`[$force]`][`|vel|`]. Given that the engineer gives the box an 
+initial displacement [`x_0 =`] [`[$intDis]`] [`m`] and velocity [`v_0 =`] [`[$intVel]`] [`m/s`], determine the equation of displacement for the box.
 
 END_PGML
 
@@ -78,5 +81,6 @@ BEGIN_TEXT
 END_TEXT
 
 ANS(function_cmp($ansA,'t'));
+
 
 ENDDOCUMENT();
