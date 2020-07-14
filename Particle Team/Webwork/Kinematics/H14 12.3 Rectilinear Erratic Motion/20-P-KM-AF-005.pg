@@ -61,7 +61,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A boat starts at rest and from the origin. It then travels a long a straight line and produces the grpah below. 
+A boat starts at rest and from the origin. It then travels a long a straight line and produces the graph below. 
 Determine the acceleration at [`t = [$A]`] [`s`] and at [`t = [$B]`] [`s`].
 
 
