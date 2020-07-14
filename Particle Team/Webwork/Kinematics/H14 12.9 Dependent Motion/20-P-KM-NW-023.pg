@@ -9,8 +9,8 @@
 ## Author(Nathan Wan)
 ## Date(2020-07-09)
 ## Level(Intermediate)
-## KEYWORDS('dynamics','absolute','dependent','motion','particle','kinematics')
-## RESOURCES('20-P-KM-NW-023.jpg')
+## KEYWORDS('dynamics','absolute','dependent','particle','kinematics')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-202')
 
 ##############################################################
 
@@ -40,7 +40,7 @@ $velocityC = random(2,4,1);
 
 #computation
 $velocityB1 = $velocityA/4;
-$velocityB2 = $velocityC/2;
+$velocityB2 = $velocityC;
 
 #set tolerance
 Context()->flags->set(

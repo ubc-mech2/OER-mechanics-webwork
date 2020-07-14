@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (8th edition) chapter 12 problem 12-64
+## Particle dynamics; Car acceleration - graphical pairing, constant acceleration then gradually decreasing deceleration, find distance and time
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-23)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics', 'erratic')
-## RESOURCES('20-P-KM-NW-007.png')
+## RESOURCES('inspired by Hibbeler (8th edition) chapter 12 problem 12-64')
 
 ##############################################################
 
@@ -39,11 +39,11 @@ $acceleration = 15;#random(5,15,1);     # (lower, upper, stepsize)
 $timeEvent = 10;#random(5,10,0.2);
 
 #image scale
-$imgScale = 1;
+$imgScale = 0.8;
 
 #image aspect ratio
-$width = $imgScale*940;
-$height = $imgScale*320;
+$width = $imgScale*900;
+$height = $imgScale*400;
 
 #computation
 $speed = $acceleration * $timeEvent;

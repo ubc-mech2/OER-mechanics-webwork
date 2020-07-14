@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Particle dynamics; ????????????????????????
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -35,15 +35,22 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$coordX = random(2,5,1);         # (lower, upper, stepsize)
-$coordY = random(2,5,1);
-$velocity = random(13,25,12);     
-$velocityY = ($velocity-1)*2/3+4;  # special triangle ratio
+$playerHeight = random(1.6,2,0.1);         # (lower, upper, stepsize)
+$netHeight = random(0.6,0.8,1);
+$netDistance = random(3,5,1);   
 
-$time = random(2,4,1);
+$acceleration = 9.81;
 
 #computation
-$coordAns = $time*sqrt($velocity**2-$velocityY**2)+$coordX;
+$velocity = $netDistance/sqrt(($playerHeight-$netHeight)*2/$acceleration);
+$range = $velocity*sqrt($playerHeight*2/$acceleration);
+
+#image scale
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
 
 #set tolerance
 Context()->flags->set(
@@ -58,9 +65,12 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A particle travels at [`[$velocity]`] [`units/s`] in a [`3`] unit circular path around the origin, counterclockwise. If the [`y`] component of its velocity is [`[$velocityY]`] [`units/s`] and increasing, determine its [`x`] coordinate after [`[$time]`] seconds.
+[@ image( "20-P-KM-NW-011.png", width=>[$width], height=>[$height]) @]*
 
-[`x([$time])=`][___]{"$coordAns"}[`units`]
+A tennis player [`[$playerHeight]`] [`m`] tall serves a tennis ball with an initial velocity parallel to the ground. Determine the minimum speed [`v_{A}`] of the ball at [`A`] so that it passes over the net at [`B`], which is [`[$netDistance]`] [`m`] away and [`[$netHeight]`] [`m`] tall. Also, find the horizontal distance [`s`] travelled when the ball strikes the ground.
+
+[`v_{A} =`][___]{"$velocity"}[`m/s`]  
+[`s =`][___]{"$range"}[`m`]
 
 END_PGML
 

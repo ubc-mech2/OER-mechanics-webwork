@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem R12-11
+## Particle dynamics; Twin planes accelerating, find time when plane has relative motion toward other
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -9,8 +9,8 @@
 ## Author(Nathan Wan)
 ## Date(2020-07-10)
 ## Level(Advanced)
-## KEYWORDS('dynamics','relative','motion','particle','kinematics')
-## RESOURCES('')
+## KEYWORDS('dynamics','relative','particle','kinematics')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem R12-11')
 
 ##############################################################
 

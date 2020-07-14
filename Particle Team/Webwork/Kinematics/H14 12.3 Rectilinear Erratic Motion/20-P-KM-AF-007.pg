@@ -4,18 +4,19 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(3: Rectilinear Kinematics: Erratic Motion)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Advanced)
-## KEYWORDS(Hot Air Balloon, Erratic Motion)
+## Level()
+## KEYWORDS()
 ## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+## Easy
 
 ##############################################################
 
@@ -55,12 +56,12 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A hot air ballons motion is charted on the graph below. Graph this motion
-in [`a - s`], [`v - t`], [`s - t'] and then write the appropriate equations below. 
+A hot-air balloon's motion is charted on the graph below. Graph this motion
+in [`a - s`], [`v - t`], [`s - t`] and then write the appropriate equations below.
 
-*see graph below*
 
 [@ image( "20-P-KM-AF-007.png", width=>[$width], height=>[$height]) @]*
+
 END_PGML
 
 #TEXT(beginproblem());

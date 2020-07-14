@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-208
+## Particle dynamics; Twin pulley with pulley accleration, find time and velocity of blocks at certain points
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -9,8 +9,8 @@
 ## Author(Nathan Wan)
 ## Date(2020-07-08)
 ## Level(Advanced)
-## KEYWORDS('dynamics','absolute','dependent','motion','particle','kinematics')
-## RESOURCES('20-P-KM-NW-025.jpg')
+## KEYWORDS('dynamics','absolute','dependent','particle','kinematics')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-208')
 
 ##############################################################
 
@@ -63,7 +63,7 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-NW-025.jpg", width=>[$width], height=>[$height]) @]*
 
-The C motor draws in rope at a constant velocity of [`v_{C} = [$velocityC]`] [`m/s`]. The D motor draws a different rope with a constant acceleration of [`a_{D} = [$accelerationD]`] [`m/s^2`]. If [`v_{D} = 0`] when [`t = 0`], determine the time needed for block [`A`] to rise [`[$distanceA]`] metres. What is the difference between the lengths of rope that the two motors draw in when block [`A`] reaches the same speed as block [`B`]?
+The [`C`] motor draws in rope at a constant velocity of [`v_{C} = [$velocityC]`] [`m/s`]. The [`D`] motor draws a different rope with a constant acceleration of [`a_{D} = [$accelerationD]`] [`m/s^2`]. If [`v_{D} = 0`] when [`t = 0`], determine the time needed for block [`A`] to rise [`[$distanceA]`] metres. What is the difference between the lengths of rope that the two motors draw in when block [`A`] reaches the same speed as block [`B`]?
 
 [`t =`][___]{"$time"} [`s`]  
 [`\Delta d =`][___]{"$difference"} [`m`]

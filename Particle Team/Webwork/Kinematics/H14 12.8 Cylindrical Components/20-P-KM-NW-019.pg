@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-155
+## Particle dynamics; Find acceleration given angular equation and radius at a given time
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics)
-## DBsection(Curvilinear Kinematics)
+## DBsection(Cylindrical Motion)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-07-03)
 ## Level(Advanced)
 ## KEYWORDS('dynamics','cylindrical','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-155')
 
 ##############################################################
 
@@ -49,7 +49,7 @@ $acceleration = sqrt($accelerationRadial**2 + $accelerationAngular**2);
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.01,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################
@@ -61,6 +61,8 @@ tolType=>'absolute');  #absolute or relative
 BEGIN_PGML
 
 A particle is moving along a circular path having a radius of [`[$radius]`] inches such that its position as a function of time is given by [`\theta = cos([$coeff]t)`], where [`\theta`] is in radians and [`t`] is in seconds. Determine the magnitude of the acceleration of the particle when [`\theta = [$angleDegrees]^\circ`].
+
+_Use radians for any trigonometric functions._
 
 [`a =`][___]{"$acceleration"} [`m/s^2`]
 

@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12
+## Particle dynamics; Space elevator - find average speed given planetary measurements and elevator trip time
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics)
-## DBsection(Curvilinear Kinematics)
+## DBsection(Cylindrical Motion)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-07-07)
 ## Level(Advanced)
 ## KEYWORDS('dynamics','cylindrical','particle','kinematics')
-## RESOURCES('20-P-KM-NW-021.png')
+## RESOURCES('')
 
 ##############################################################
 
@@ -69,6 +69,8 @@ BEGIN_PGML
 [@ image( "20-P-KM-NW-021.png", width=>[$width], height=>[$height]) @]*
 
 Aerospace scientists have built a space elevator on a pseudo-Earth exoplanet that launches astronauts from sea level to the Karman line (altitude 100 km). If this planet has a diameter of [`[$diameter]`] kilometres and completes a full rotation once every [`[$day]`] hours, find the average speed of an elevator car that takes [`[$time]`] minutes to go from terminus to terminus. Assume the elevator travels at a constant speed.
+
+_Use radians for any trigonometric functions._
 
 [`v =`][___]{"$speed"} [`m/s`]   
 

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; inspired by Hibbeler (14th edition) chapter 12
+## Particle dynamics; Broken pulley, find cable speed
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -9,8 +9,8 @@
 ## Author(Nathan Wan)
 ## Date(2020-07-09)
 ## Level(Intermediate)
-## KEYWORDS('dynamics','absolute','dependent','motion','particle','kinematics')
-## RESOURCES('20-P-KM-NW-024.jpg')
+## KEYWORDS('dynamics','absolute','dependent','particle','kinematics')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,8 +35,7 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$weight = random(10,20,1);     # (lower, upper, stepsize)
-$distance = random(2,7,1);
+$distance = random(2,7,1);     # (lower, upper, stepsize)
 
 #computation
 $speed = sqrt(6*9.81*$distance);
@@ -61,7 +60,7 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-NW-024.jpg", width=>[$width], height=>[$height]) @]*
 
-A cable snaps from wear and tear, sending the attached Rube Goldberg computer from rest into free fall. The computer weighs [`[$weight]`] kilograms. Calculate the the speed of the end of the cable when it passes through the axle and the pulley collapses. Let [`s = [$distance]`] [`m`].
+A cable snaps from wear and tear, sending the attached Rube Goldberg computer from rest into free fall. Calculate the the speed of the end of the cable when it passes through the axle and the pulley collapses. Let [`s = [$distance]`] [`m`].
 
 [`v =`][___]{"$speed"} [`m/s`]
 

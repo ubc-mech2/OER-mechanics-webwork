@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-127
+## Particle dynamics; Tom train - find change in speed given acceleration and radius
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics)
-## DBsection(Curvilinear Kinematics)
+## DBsection(Normal-Tangential Motion)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-07-03)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','normal', 'tangential','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-127')
 
 ##############################################################
 
@@ -59,10 +59,11 @@ BEGIN_PGML
 
 At a given instant, a locomotive named Tom has a velocity of [`[$speed]`] [`m/s`] and an acceleration of [`[$acceleration]`] [`m/s^2`], with [`[$angleDegrees]^\circ`] between these vectors. Determine the rate of increase in Tom's tangential speed and the radius of curvature [`\rho`] of the path.
 
+_Use radians for any trigonometric functions._
+
 [`\frac{dv_{t}}{dt}=`][___]{"$deltaV"} [`m/s^2`]  
 [`\rho=`][___]{"$radius"} [`m`]
 
-_Use radians for any trigonometric functions._
 END_PGML
 
 ENDDOCUMENT()];     #save as .pg

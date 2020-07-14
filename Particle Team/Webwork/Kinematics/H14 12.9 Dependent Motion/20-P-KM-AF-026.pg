@@ -1,21 +1,22 @@
 ##DESCRIPTION
-## blocks on ground and strings 
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(9: Rectilinear Kinematics: Absolute Dependent Motion)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Intermediate)
-## KEYWORDS(multiple Angles, Pulley, Dependent Motion)
-## RESOURCES('inspired by Hibbeler 14E Section 12.9 preliminary problems')
+## Level()
+## KEYWORDS()
+## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+## Easy
 
 ##############################################################
 
@@ -65,7 +66,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Ignoring friction, given that block B moves at [`[$B]`] [`m/s`] away and to the right of the system. Block C moves downward with [`[$C]`] [`m/s`] and the block D is pushed upwards with half the speed of block B. What is the velocity of blcok A in [`m/s`]?
+In the picture, block B moves at [`[$B]`] [`m/s`] away and to the right of the system, block C moves downward with [`[$C]`] [`m/s`] and block D is pushed upwards with half the speed of block B. What is the velocity of block A? Ignore friction.
 
 [@ image( "20-P-KM-AF-026.png", width=>[$width], height=>[$height]) @]*
 

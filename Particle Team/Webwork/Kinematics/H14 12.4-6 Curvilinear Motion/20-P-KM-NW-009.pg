@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Particle dynamics; Yeeted ball - parabolic height-time function, find speed
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-26)
 ## Level(Beginner)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 section 12.4')
 
 ##############################################################
 

@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.2 preliminary problem 12-8
+## Particle dynamics; Popcorn kernel - particle movement with uniform acceleration, finding displacement/avg velocity/acceleration
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(Rectilinear Kinematics)
+## DBchapter(Kinematics)
 ## DBsection(Preliminary)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-06-19)
 ## Level(Beginner)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 section 12.2 preliminary problem 12-8')
 
 ##############################################################
 
@@ -35,8 +35,8 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$a = random(1,6,1);     # (lower, upper, stepsize)
-$b = random(13,20,1);
+$a = random(2,3,1);     # (lower, upper, stepsize)
+$b = random(4,6,1);
 $c = random(2,10,1);
 $t = random(6,13,0.5);
 
@@ -61,7 +61,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A popcorn kernel's position is defined by [`s=([$c]t^2 + 20)`] [`cm`] as it gets sucked into a vacuum cleaner, where [`t`] is in seconds. Determine (a) the displacement of the kernel during the time interval from [`t = [$a]`] [`s`] to [`t = [$b]`] [`s`], (b) the average velocity of the kernel during this time interval, and (c) the acceleration of the kernel when [`t = [$t]`] [`s`].
+**Preliminary Question**
+
+A popcorn kernel's position is defined by [`s=([$c]t^2 + 20)`] [`cm`] as it gets sucked into a vacuum cleaner, where [`t`] is in seconds. Determine (a) the displacement of the kernel during the time interval from [`t = [[$a],[$b]]`], (b) the average velocity of the kernel during this time interval, and (c) the acceleration of the kernel when [`t = [$t]`] [`s`].
 
 [`\Delta s=`][___]{"$displacement"} [`cm`]  
 [`v_{ave}=`][___]{"$velocity"} [`cm/s`]  

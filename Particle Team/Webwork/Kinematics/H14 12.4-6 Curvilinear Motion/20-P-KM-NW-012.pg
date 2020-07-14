@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4 
+## Particle dynamics; Model planet - circular motion, find average velocity
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-29)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 section 12.4 ')
 
 ##############################################################
 
@@ -36,12 +36,11 @@ loadMacros(
 Context("Numeric");         # or Complex
 #given
 $distance = random(2,5,1);         # (lower, upper, stepsize)
-$period = 10; #random(10,20,1);
+$period = random(10,20,1);
 $angleDegrees = random(40,50,1);
-$pi = Real("pi");
 
 #computation
-$angle = $angleDegrees/180*$pi;
+$angle = $angleDegrees/180*pi;
 $x = $distance*sin($angle);
 $y = $distance - $distance*cos($angle);
 $displacement = sqrt($x**2+$y**2);
@@ -62,11 +61,11 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-008.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-012.png", width=>[$width], height=>[$height]) @]*
 
 A model planet with a an orbital distance of [`[$distance]`] [`m`] revolves once every [`[$period]`] seconds. Determine its average velocity when it revolves to make an angle of [`[$angleDegrees]^\circ`] with the star and its starting location. 
 
-_Use radians for trigonometric functions._
+_Use radians for any trigonometric functions._
 
 [`v=`][___]{"$velocity"}[`m/s`]
 

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.2 problem 12-13
+## Particle dynamics; Drunk driving - particle deceleration to a stop, finding distance
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-22)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('')
+## RESOURCES(' inspired by Hibbeler (14th edition) chapter 12 section 12.2 problem 12-13')
 
 ##############################################################
 
@@ -38,7 +38,7 @@ Context("Numeric");         # or Complex
 $reactionNormal = 0.75;     # (lower, upper, stepsize)
 $reactionImpaired = 3;
 $speedMiles = random(21,42,3);
-$deceleration = random(1,4,1);
+$deceleration = random(18,25,1);
 
 #computation
 $speedFeet = $speedMiles*22/15;
