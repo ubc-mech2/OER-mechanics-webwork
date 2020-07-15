@@ -42,13 +42,13 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(1, 5, 1);
+$A = random(1, 3, 1);
 $B = random(3, 5, 1);
 $C = random(5, 10, 1);
 
 #computation
-$theta = asin((-$A)/$B);
-$angle = $theta* 180/pi;
+$theta = asin(($A)/$B);
+$angle = $theta*180/pi;
 $vm = $B*cos($theta);
 $t = $C/$vm;
 
@@ -71,12 +71,12 @@ Olympians are finding new creative ways to train. One swimmer uses their local r
 
 [@ image( "20-P-KM-AF-029.png", width=>[$width], height=>[$height]) @]*
 
-[`\theta = `][_____]{"$theta"}[`^\circ`]
+[`\theta = `][_____]{"$angle"}[`^\circ`]
 
 
 What is the time to cross if [` r = [$C] `] [`m`]?
 
-[`t = `][_____]{"$theta"}[`^\circ`]
+[`t = `][_____]{"$t"}[`s`]
 
 END_PGML
 
