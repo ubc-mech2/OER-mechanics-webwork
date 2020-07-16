@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Spring and box in underwater city. Find the equation of motion for the box.
+## A bos is supported by a series of springs and a damper. Find the displacement of the box at t.
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Damped Vibration', 'Equation of motion','viscous damping')
+## KEYWORDS('Free Damped Vibration', 'Series','Critically Damped')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
 ## DBsection(Free Damped Vibration)
-## Date(2020-7-14)
+## Date(2020-7-15)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-29.png')
+## RESOURCES('20-R-VIB-DY-31.png')
 
 ########################################################
 
@@ -41,45 +41,41 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1500;		#aspect ratio
+$width = $imgScale*1250;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = random(5,10,0.1);
-$k = random(25,40,1);
-$c = random(1,3,0.1);
-$intDis = random(0.1,0.3,0.01);
+$t = random(0.5,1.5,0.01);
+$mass = random(10,20,0.1);
+$k1 = random(50,100,1);
+$k2 = random(100,50,1);
+$intDis = random(0.01,0.1,0.01);
+$intVel = random(0.5,1.5,0.01);
 
 #---- Formulas to compute answers --------------#
+$k = $k1*$k2/($k1+$k2);
+$c = sprintf("%0.3f",sqrt(4*$mass*$k));
 $wN = sqrt($k/$mass);
-$zeta = $c/(2*$mass*$wN);
-$wD = $wN*sqrt(1-$zeta**2);
-$phi = arctan($wD*2*$mass/$c);
-$A = $intDis/sin($phi);
+$a =  ($intDis + ($intVel + $intDis*$wN)*$t);
+$b = exp (-$wN*$t);
 
 #---- Answers to the problem -----------------------#
-$ansA = "$A*e**($c/(2*$mass))sin($wD*t+$phi)";
+$ansA = $a*$b;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-29.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-31.png", width=>[$width], height=>[$height]) @]*
 
-In Atlantis, the underwater city, an engineer sets up a [`m =`] [`[$mass]`] [`kg`] box and spring, [`k =`] [`[$k]`] [`N/m`]. 
-The water has a damping force on the box of [`F =`] [`[$c]`][`|vel|`]. Given that the engineer gives the box an 
-initial displacement [`x_0 =`] [`[$intDis]`] [`m`], determine the equation of displacement for the box.
+A [`m =`] [`[$mass]`] [`kg`] box is supported in the air by springs in series and a damper in parallel. 
+The springs have spring constants of [`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. 
+The damper has a damping constant of [`c =`] [`[$c]`] [`Ns/m`]. Find the displacement of the box at [`t =`] [`[$t]`] [`s`]
+given an inital velocity [`v_0 =`] [`[$intVel]`] [`m/s`] and displacement [`x_0 =`] [`[$intDis]`] [`m`].
+
+[`x_t =`] [____]{"$ansA"} [`m`]
 
 END_PGML
-
-BEGIN_TEXT
-
- $BR\{ans_rule(25) \}
-
-END_TEXT
-
-ANS(function_cmp($ansA,'t'));
-
 
 ENDDOCUMENT();
