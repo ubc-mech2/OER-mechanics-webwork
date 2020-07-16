@@ -44,7 +44,7 @@ $angle = $angleDegrees/180*pi;
 $x = $distance*sin($angle);
 $y = $distance - $distance*cos($angle);
 $displacement = sqrt($x**2+$y**2);
-$time = $angle/360*$period;
+$time = $angleDegrees/360*$period;
 $velocity = $displacement/$time;
 
 #set tolerance
@@ -61,9 +61,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-012.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-012.jpg", width=>[$width], height=>[$height]) @]*
 
-A model planet with a an orbital distance of [`[$distance]`] [`m`] revolves once every [`[$period]`] seconds. Determine its average velocity when it revolves to make an angle of [`[$angleDegrees]^\circ`] with the star and its starting location. 
+A model planet orbits with a radius of [`[$distance]`] [`m`] around a star once every [`[$period]`] seconds. Determine its average velocity when it revolves to make an angle of [`[$angleDegrees]^\circ`] with its starting location.
 
 _Use radians for any trigonometric functions._
 
