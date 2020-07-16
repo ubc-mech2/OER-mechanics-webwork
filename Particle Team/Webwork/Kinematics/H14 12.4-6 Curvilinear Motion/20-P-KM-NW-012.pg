@@ -61,11 +61,11 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-012.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-012.png", width=>[$width], height=>[$height]) @]*
 
 A model planet orbits with a radius of [`[$distance]`] [`m`] around a star once every [`[$period]`] seconds. Determine its average velocity when it revolves to make an angle of [`[$angleDegrees]^\circ`] with its starting location.
 
-_Use radians for any trigonometric functions._
+_If you enter an answer as a expression of trigonometric functions, use radians._
 
 [`v=`][___]{"$velocity"}[`m/s`]
 

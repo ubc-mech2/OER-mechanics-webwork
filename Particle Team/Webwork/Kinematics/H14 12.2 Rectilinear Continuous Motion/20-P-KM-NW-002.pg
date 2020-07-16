@@ -65,8 +65,6 @@ Experiments indicate that a normal driver takes about [`[$reactionNormal]`] [`s`
 [`d_{normal}=`][___]{"$distance_normal"} [`ft`]  
 [`d_{impaired}=`][___]{"$distance_impaired"} [`ft`]  
 
-_Round your answers to 1 decimal place_.
-
 END_PGML
 
 ENDDOCUMENT()];     #save as .pg
