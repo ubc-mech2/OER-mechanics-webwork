@@ -40,6 +40,13 @@ loadMacros(
 #
 #
 
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*1500;
+$height = $imgScale*1500;
+
 Context("Numeric");
 #given
 $h = random(5,15,1);
@@ -62,12 +69,14 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-KM-BK-008.jpg", width=>[$width], height=>[$height]) @]*
+
 Two apples fall from a tree at the exact same time, from a height of [`[$h]`] meters. 
 One of them hits the ground, while the other lands on the head of a student sitting at the base of the tree.
 Assuming the student's head is exactly one meter above the ground, what is the time between the two impacts?  
 ([`g=[$g] m/s^2`])
 
-[`\delta t=`] [_____]{"$dt"} [`s`]  
+[`\Delta t=`] [_____]{"$dt"} [`s`]  
 
 
 END_PGML
