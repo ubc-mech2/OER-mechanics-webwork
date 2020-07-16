@@ -85,6 +85,8 @@ BEGIN_TEXT
 Question one:
 $BR
 \{ $mc1->buttons() \}
+$BR
+$BR
 
 END_TEXT
 
@@ -92,7 +94,9 @@ ANS( $mc1->cmp() );
 
 BEGIN_PGML
 
-[`F = `][_____]{"$Fmin"}[`N`]
+
+
+[`F = `][_____]{"$Fpush"}[`N`]
 
 END_PGML
 
