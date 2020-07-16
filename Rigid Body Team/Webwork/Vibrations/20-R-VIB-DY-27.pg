@@ -1,0 +1,86 @@
+## DESCRIPTION
+## Race car's suspension is displaced. Find the time required for vibration to disappear.
+## ENDDESCRIPTION
+
+## KEYWORDS('Free Damped Vibration', 'Suspension','Overdamped')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection('Free Damped VIbration)
+## Date(2020-7-13)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-VIB-DY-27.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*2000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$mass = random(400,500,5);
+$k = random(9000,11000,1);
+$limit = sqrt(4*$mass*4*$k)+random(10,100,1);
+$c = sprintf("%0.3f",random($limit, $limit+1000,5));
+$massDriver = random(60,100,5);
+
+#---- Formulas to compute answers --------------#
+$totMass = $mass + $massDriver;
+$totK = 4*$k;
+$totC = 4*$c;
+$dis = $totMass*9.81/($totK);
+$r1 = (-$totC + sqrt($totC**2-4*$mass*$totK))/(2*$mass);
+$r2 = (-$totC - sqrt($totC**2-4*$mass*$totK))/(2*$mass);
+if($r1>$r2){
+	$tau = 1/$r2;
+}
+else{
+	$tau = 1/$r1;
+}
+
+#---- Answers to the problem -----------------------#
+$ansA = 3*$tau;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-27.png", width=>[$width], height=>[$height]) @]*
+
+A [`m =`] [`[$mass]`] [`kg`] race car's suspension consists of a damper, [`c =`] [`[$c]`] [`Ns/m`] and spring, [`k =`] [`[$k]`] [`N/m`] at each of its four wheel. 
+As a result of the [`[$massDriver]`] driver sitting in the car, the suspension has an initial displacement of [`y_0`] [`m`] downwards. If the driver were to suddenly vanish, 
+what is the displacement one cycle after the vanishing. 
+
+[`t =`] [____]{"$ansA"} [`s`]
+
+END_PGML
+
+ENDDOCUMENT();

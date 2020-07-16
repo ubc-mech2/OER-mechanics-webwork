@@ -1,0 +1,73 @@
+##DESCRIPTION
+## Particle dynamics; Twin pulley with pulley accleration, find time and velocity of blocks at certain points
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Absolute Dependent Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-08)
+## Level(Advanced)
+## KEYWORDS('dynamics','absolute','dependent','particle','kinematics')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-208')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$velocityC = random(11,15,1);     # (lower, upper, stepsize)
+$accelerationD = random(1,5,1);
+$distanceA = random(3,9,1);
+
+#computation
+$time = sqrt($distanceA*2*2/$accelerationD);
+$difference = 0;
+
+#image scale
+$imgScale = 0.4;
+$width = 400;
+$height = 600;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-P-KM-NW-025.jpg", width=>[$width], height=>[$height]) @]*
+
+The [`C`] motor draws in rope at a constant velocity of [`v_{C} = [$velocityC]`] [`m/s`]. The [`D`] motor draws a different rope with a constant acceleration of [`a_{D} = [$accelerationD]`] [`m/s^2`]. If [`v_{D} = 0`] when [`t = 0`], determine the time needed for block [`A`] to rise [`[$distanceA]`] metres. What is the difference between the lengths of rope that the two motors draw in when block [`A`] reaches the same speed as block [`B`]?
+
+[`t =`][___]{"$time"} [`s`]  
+[`\Delta d =`][___]{"$difference"} [`m`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

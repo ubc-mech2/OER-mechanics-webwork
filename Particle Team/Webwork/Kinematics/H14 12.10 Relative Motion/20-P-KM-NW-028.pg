@@ -1,0 +1,72 @@
+##DESCRIPTION
+## Particle dynamics; Twin planes accelerating, find time when plane has relative motion toward other
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Relative Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-10)
+## Level(Advanced)
+## KEYWORDS('dynamics','relative','particle','kinematics')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem R12-11')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$velocityA = random(800,900,50);     # (lower, upper, stepsize)
+$velocityB = random(1200,1400,50);
+$angleDegrees = random(10,30,10);
+$accelerationA = random(10,40,5);
+
+#computation
+$time = ($velocityB*cos($angleDegrees*pi/180)-$velocityA)/$accelerationA;
+
+#image scale
+$imgScale = 0.4;
+$width = 400;
+$height = 600;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+Two planes, [`A`] and [`B`], are flying at the same altitude. Plane [`A`] is flying due north with a speed of [`v_{A} = [$velocityA]`] [`km/h`], while plane [`B`] has a velocity of [`v_{B} = [$velocityB]`] [`km/h`] flying at a [`[$angleDegrees]^\circ`] angle. If plane [`A`]'s speed starts increasing at [`[$accelerationA]`] [`km/h^2`], determine the time elapsed before the pilot observes plane [`B`] directly moving toward plane [`A`].
+
+_Use radians for trigonometric functions._
+
+[`t = `][___]{"$time"}[`h`]  
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

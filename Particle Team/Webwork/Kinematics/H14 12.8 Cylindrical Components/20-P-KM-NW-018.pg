@@ -1,10 +1,10 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12
+## Particle dynamics; Find angular velocity of a baseball bat given area swung
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics)
-## DBsection(Curvilinear Kinematics)
+## DBsection(Cylindrical Motion)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-07-06)
@@ -42,6 +42,13 @@ $time = random(0.3,0.9,0.1);
 #computation
 $velocity = $area/(pi*$length**2)*2*pi/$time;
 
+#image scale
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,
@@ -55,7 +62,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-What is the transverse velocity of a [`[$length]`] [`m`] baseball bat that sweeps through a cross-sectional area of [`[$area]`] [`m^2`] in [`[$time]`] seconds?
+[@ image( "20-P-KM-NW-018.png", width=>[$width], height=>[$height]) @]*
+
+What is the transverse velocity of a [`[$length]`] [`m`] baseball bat that sweeps through a cross-sectional sector of [`[$area]`] [`m^2`] in [`[$time]`] seconds?
 
 [`v_{\theta}=`][___]{"$velocity"} [`rad/s`]
 

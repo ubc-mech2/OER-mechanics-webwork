@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-106
+## Particle dynamics; Snowmobile jump - find landing distance on an incline, time
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-07-02)
 ## Level(Advanced)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-106')
 
 ##############################################################
 
@@ -41,8 +41,15 @@ $g = 9.81;
 
 #computation
 $angle = $angleDegrees*pi/180;
-$time = 2*$speed/$g*(sin($angle)-3/4*cos($angle));
+$time = 2*$speed/$g*(sin($angle)+3/4*cos($angle));
 $range = $speed*cos($angle)*$time;
+
+#image scale
+$imgScale = 1;
+
+#image aspect ratio
+$width = $imgScale*600;
+$height = $imgScale*500;
 
 #set tolerance
 Context()->flags->set(
@@ -57,8 +64,12 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
+[@ image( "20-P-KM-NW-015.png", width=>[$width], height=>[$height]) @]*
+
 The snowmobile is traveling at [`[$speed]`] [`m/s`] when it
 launches off the peak of a snow embankment with a downward slope of [`-3/4`]. Determine the time of flight elapsed [`t`] and the horizontal range [`R`] when it lands if the snowmobile takes off at an angle of [`[$angleDegrees]^\circ`].
+
+_Use radians for trigonometric functions._
 
 [`t=`][___]{"$time"} [`s`]  
 [`R=`][___]{"$range"} [`m`]

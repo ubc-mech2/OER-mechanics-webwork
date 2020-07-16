@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (8th edition) chapter 12 problem 12-178
+## Particle dynamics; Floating duck - constant speed, find radial and transverse components given position equation
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics)
-## DBsection(Curvilinear Kinematics)
+## DBsection(Cylindrical Motion)
 ## Institution(University of British Columbia)
 ## Author(Nathan Wan)
 ## Date(2020-07-06)
-## Level(Advanced)
+## Level(Intermediate)
 ## KEYWORDS('dynamics','cylindrical','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-178')
 
 ##############################################################
 
@@ -35,18 +35,18 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$radiusNumerator = 200;#random(100,400,100);     # (lower, upper, stepsize)
-$speed = 35;#random(20,50,5);
-$thetaDenominator = 3;#random(3,6,3);
+$radiusNumerator = random(100,400,100);     # (lower, upper, stepsize)
+$speed = random(20,50,5);
+$thetaDenominator = random(3,6,3);
 
 #computation
 $theta = pi/$thetaDenominator;
 $radius = $radiusNumerator/$theta;
-$bigBracket = ;
+$bigBracket = ($radiusNumerator**2+$radiusNumerator**2*$theta**2)/$theta**4;
 
-$thetaP = sqrt($speed**2/;
-$velocityRadial = -2;
-$velocityTransverse = 2;
+$thetaP = sqrt($speed**2/$bigBracket);
+$velocityRadial = ($radiusNumerator/$theta**2*-1)*$thetaP;
+$velocityTransverse = $radius*$thetaP;
 
 #set tolerance
 Context()->flags->set(
@@ -62,6 +62,8 @@ tolType=>'absolute');  #absolute or relative
 BEGIN_PGML
 
 A toy duck travels along a river which for a short distance is defined by [`r = ([$radiusNumerator]/\theta)`] [`ft`], where [`\theta`] is in radians. If it maintains a constant speed of [`v = [$speed]`] [`ft/s`], determine the radial and transverse components of its velocity when [`\theta =`] [`\pi/[$thetaDenominator]`] [`rad`].
+
+_Use radians for any trigonometric functions._
 
 [`v_{r} =`][___]{"$velocityRadial"} [`m/s`]  
 [`v_{\theta} =`][___]{"$velocityTransverse"} [`rad/s`]

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-##
+## Sphere into medium where acceleration is a function of time (still need help with the variable question)
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -8,15 +8,14 @@
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
+## Level(Advanced)
+## KEYWORDS(Rectilinear Continuous Motion, Integration)
 ## RESOURCES('inspired by Hibbeler 14E Section 12.2 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
@@ -72,6 +71,8 @@ A sphere is fired into slime that forces an acceleration of [`a = -[$A]*t`]. Whe
 stop if the initial velocity is [`v = [$B]`] [`m/s`].
 
 [`t =`] [_____]{"$t"} [`s`]  
+
+
 [`s =`] [_____]{"$s"} [`m`]  
 
 

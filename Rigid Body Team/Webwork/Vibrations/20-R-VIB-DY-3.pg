@@ -1,12 +1,12 @@
-##DESCRIPTION
-## Pendulum in a grandfather clock
-##ENDDESCRIPTION
+## DESCRIPTION
+## Punching ball is displaced. Find the equation of motion.
+## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibrations', 'Natural Frequency','Pendulum', 'small angle')
+## KEYWORDS('Free Undamped Vibration', 'Punching bag','Equation of motion')
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped Vibrations)
-## Date(2020-06-17)
+## DBchapter(Vibration)
+## DBsection(Free Undamped Vibration)
+## Date(2020-7-14)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
@@ -36,7 +36,7 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.005,
+tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
@@ -45,26 +45,38 @@ $width = $imgScale*1000;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$length=  random(0.5,2,0.1);
+$mass = random(2,5,0.1);
+$tension = random(25,50,1);
+$intVel = random(1,5,0.1);
+$length = random(1.5,2.5,0.01);
 
 #---- Formulas to compute answers --------------#
-$natFreq = sqrt(9.81/$length);
+$natFreq = sqrt(2*$tension/($mass*$length));
+$A = $intVel/$natFreq;
 
 #---- Answers to the problem -----------------------#
-$ansA = $natFreq;
+$ansA = "$A*sin($natFreq*t)";
 
-########################################################
+########################################################;
 #PGML
 
 BEGIN_PGML	
 
 [@ image( "20-R-VIB-DY-3.png", width=>[$width], height=>[$height]) @]*
 
-A grandfather clock contains a pendulum that swings with small angle changes. The length of the pendulum is [`l =`] [`[$length]`] [`m`].
-What is the natural frequency of the pendulum?
-
-[`f =`][___]{"$ansA"}[`Hz`]
+A new type of punching bag consists of a [`m =`] [`[$mass]`] [`kg`] ball suspended mid air by two [`l =`] [`[$length]`] [`m`]
+taut ropes, each with a tension of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
+If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], what is the natural period of the system 
+given a small initial displacement.
 
 END_PGML
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+ANS(function_cmp($ansA,'t'));
 
 ENDDOCUMENT();

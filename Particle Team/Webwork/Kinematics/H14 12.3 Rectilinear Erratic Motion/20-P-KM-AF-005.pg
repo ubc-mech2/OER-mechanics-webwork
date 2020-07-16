@@ -1,22 +1,21 @@
 ##DESCRIPTION
-##
+## A boat travels in a straight line, a graph involved. 
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(3: Rectilinear Kinematics: Erratic Motion)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
+## Level(Beginner)
+## KEYWORDS(Boat, Erratic Motion)
 ## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
@@ -62,7 +61,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A boat starts at rest and from the origin. It then travels a long a straight line and produces the grpah below. 
+A boat starts at rest and from the origin. It then travels a long a straight line and produces the graph below. 
 Determine the acceleration at [`t = [$A]`] [`s`] and at [`t = [$B]`] [`s`].
 
 

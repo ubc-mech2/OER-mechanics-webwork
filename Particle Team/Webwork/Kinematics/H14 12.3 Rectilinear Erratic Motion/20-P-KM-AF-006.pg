@@ -1,22 +1,21 @@
 ##DESCRIPTION
-##
+## A plane slows down to a stop. Get a v-s graph, create a-s graph and find values 
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(3: Rectilinear Kinematics: Erratic Motion)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
+## Level(Intermediate)
+## KEYWORDS(Plane, Erratic Motion)
 ## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
@@ -44,7 +43,7 @@ Context("Numeric");
 #given
 $A = random(1, 4, 1);
 $B = random(5, 7, 1);
-$C = random(8, 10, 1);
+$C = random(9, 10, 1);
 
 #computation
 $s1 = 1/64*$A - 7/4;

@@ -1,22 +1,21 @@
 ##DESCRIPTION
-##
+## olympic swimmer and crossing the river
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection(10: Rectilinear Kinematics: Relative Motion Translating Axes)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.7 preliminary problems')
+## Level(Advanced)
+## KEYWORDS(Swimming, Translating Axes)
+## RESOURCES('inspired by Hibbeler 14E Section 12.10 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
@@ -43,13 +42,13 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(1, 5, 1);
-$B = random(3, 5, 1);
+$A = random(1, 3, 1);
+$B = random(4, 6, 1);
 $C = random(5, 10, 1);
 
 #computation
-$theta = asin((-$A)/$B);
-$angle = $theta* 180/pi;
+$theta = asin(($A)/$B);
+$angle = $theta*180/pi;
 $vm = $B*cos($theta);
 $t = $C/$vm;
 
@@ -72,12 +71,12 @@ Olympians are finding new creative ways to train. One swimmer uses their local r
 
 [@ image( "20-P-KM-AF-029.png", width=>[$width], height=>[$height]) @]*
 
-[`\theta = `][_____]{"$theta"}[`^\circ`]
+[`\theta = `][_____]{"$angle"}[`^\circ`]
 
 
 What is the time to cross if [` r = [$C] `] [`m`]?
 
-[`t = `][_____]{"$theta"}[`^\circ`]
+[`t = `][_____]{"$t"}[`s`]
 
 END_PGML
 

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Curvilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 section 12.4
+## Particle dynamics; Report card kicked off building, find final speed, inferred that initial speed has no vertical component
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-25)
 ## Level(Beginner)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('??????????')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 section 12.4')
 
 ##############################################################
 

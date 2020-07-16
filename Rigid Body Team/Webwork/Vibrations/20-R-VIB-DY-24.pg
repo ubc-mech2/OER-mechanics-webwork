@@ -1,0 +1,82 @@
+## DESCRIPTION
+## Oscillating mass between two rollers. What is the natural frequency of the vibration.
+## ENDDESCRIPTION
+
+## KEYWORDS('Free Undamped Vibration', 'Rollers','Natural Frequency')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Free Undamped Vibration)
+## Date(2020-7-14)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Advanced)
+## RESOURCES('20-R-VIB-DY-24.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1500;
+
+#---- Random variables for this problem --------#
+$mass = random(5,15,1);
+$k1 = random(50,100,1);
+$k2 = random(75,150,1);
+$rA = random(0.5,0.75,0.01);
+$rB = random(0.25,0.4,0.01);
+$massA = random(3,4,0.1);
+$massB = random(1,2,0.1);
+
+#---- Formulas to compute answers --------------#
+$k = $k1*$k2/($k1+$k2);
+$inertiaA = 1/2*$massA*$rA**2;
+$inertiaB = 1/2*$massB*$rB**2;
+$num = $k*$rA**2;
+$denom = $inertiaA + $inertiaB*$rA/$rB + $mass*$rA**2;
+
+#---- Answers to the problem -----------------------#
+$ansA = $num/$denom;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+
+There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
+[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
+[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
+Given a small vertical displacement, what is the natural frequency of the vibration.
+
+[`w_n =`] [____]{"$ansA"} [`rad/s`]
+
+END_PGML
+
+ENDDOCUMENT();

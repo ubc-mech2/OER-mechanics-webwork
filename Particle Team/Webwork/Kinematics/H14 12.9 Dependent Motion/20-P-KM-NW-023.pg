@@ -1,0 +1,67 @@
+##DESCRIPTION
+## Particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-202
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Absolute Dependent Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-09)
+## Level(Intermediate)
+## KEYWORDS('dynamics','absolute','dependent','particle','kinematics')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-202')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$velocityA = random(2,8,2);     # (lower, upper, stepsize)
+$velocityC = random(2,4,1);
+
+#computation
+$velocityB1 = $velocityA/4;
+$velocityB2 = $velocityC;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-P-KM-NW-023.jpg", width=>[$width], height=>[$height]) @]*
+
+If the end [`A`] of the cable is moving at [`v_{A} = [$velocityA]`] [`m/s`], determine the speed of block [`B`]. How much faster does block [`B`] move if the pulley axle at [`C`] starts withdrawing into the wall at [`[$velocityC]`] [`m/s`]?
+
+[`v_{B}=`][___]{"$velocityB1"} [`m/s`]  
+[`\Delta v_{B}=`][___]{"$velocityB2"} [`m/s`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

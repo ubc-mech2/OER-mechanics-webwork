@@ -66,7 +66,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Ignoring friction, given that block B moves at [`[$B]`] [`m/s`] away and to the right of the system. Block C moves downward with [`[$C]`] [`m/s`] and the block D is pushed upwards with half the speed of block B. What is the velocity of blcok A in [`m/s`]?
+In the picture, block B moves at [`[$B]`] [`m/s`] away and to the right of the system, block C moves downward with [`[$C]`] [`m/s`] and block D is pushed upwards with half the speed of block B. What is the velocity of block A? Ignore friction.
 
 [@ image( "20-P-KM-AF-026.png", width=>[$width], height=>[$height]) @]*
 

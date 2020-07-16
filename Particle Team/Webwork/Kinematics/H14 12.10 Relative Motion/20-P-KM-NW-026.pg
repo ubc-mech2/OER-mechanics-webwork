@@ -1,0 +1,65 @@
+##DESCRIPTION
+## Particle dynamics; Tennis ball with topspin, find relative velocity
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Relative Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-09)
+## Level(Beginner)
+## KEYWORDS('dynamics','relative','particle','kinematics')
+## RESOURCES('')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$radius = random(2,4,1);     # (lower, upper, stepsize)
+$velocity = random(5,15,1);
+$rpm = random(250,1000,250);
+
+#computation
+$speed = $velocity + $rpm*2*pi/60*$radius/100;
+#set tolerance
+Context()->flags->set(
+tolerance=>.01,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A tennis player strikes a tennis ball with radius [`[$radius]`] [`cm`] such that the ball's velocity is [`[$velocity]`] [`m/s`] and purely horizontal. If the player also adds a topspin of [`[$rpm]`] [`rpm`], what is the speed of the top of the tennis ball relative to the player?
+
+_Use radians for any trigonometric functions._
+
+[`v_{b/p} =`][___]{"$speed"} [`m/s`]
+
+END_PGML
+
+ENDDOCUMENT()];     #save as .pg

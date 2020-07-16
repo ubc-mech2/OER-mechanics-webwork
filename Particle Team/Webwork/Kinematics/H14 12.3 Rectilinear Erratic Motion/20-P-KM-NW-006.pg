@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-42
+## Particle dynamics; Car - steady velocity, then braking to stop, find distance and avg acceleration
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-24)
 ## Level(Beginner)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics', 'erratic')
-## RESOURCES('20-P-KM-NW-006.png')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-42')
 
 ##############################################################
 
@@ -62,7 +62,7 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-NW-006.png", width=>[$width], height=>[$height]) @]*
 
-The velocity of a car is plotted as shown. Determine the total distance [`d`] the car moves until it stops ([`t = 60 s`]).
+The velocity of a car is plotted as shown. Determine the total distance [`d`] the car moves until it stops ([`t = 60`] [`s`]).
 What is the average acceleration of the car within this time frame?
 
 [`d=`][___]{"$distance"} [`m`]  

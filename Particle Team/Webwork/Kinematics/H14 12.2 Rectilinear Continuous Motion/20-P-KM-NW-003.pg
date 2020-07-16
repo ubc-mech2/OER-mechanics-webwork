@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Rectilinear particle dynamics; inspired by Hibbeler (14th edition) chapter 12 problem 12-28
+## Particle dynamics; Two olympic athletes - twin particles racing with given accelerations, find distances travelled and between
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-24)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','rectilinear','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-28')
 
 ##############################################################
 
@@ -45,7 +45,7 @@ $t0 = random(5,10,0.2);
 #computation
 $displacementA = $Aa*($t0**3)/6 - $Ab*($t0**2)/2;
 $displacementB = $Ba*($t0**4)/12 - $Bb*($t0**2)/2;
-$distanceBetween = ((($displacementB - $displacementA)**0.5)**2);
+$distanceBetween = abs($displacementB - $displacementA);
 
 #set tolerance
 Context()->flags->set(
@@ -60,7 +60,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-Two identical copies of Jimmy Neutron, [`A`] and [`B`], decide to have a race in a particle accelerator. They start from rest at the origin [`s = 0`] and move along a straight line such that [`a_{A} = ([$Aa]t - [$Ab])`] [`ft/s^2`] and [`a_{B} = ([$Ba]t^2 - [$Bb])`] [`ft/s^2`], where [`t`] is in seconds. Determine the displacement each Jimmy Neutron has travelled and the distance [`d`] between them when [`t = [$t0]`] [`s`].
+Two olympic athletes, [`A`] and [`B`], decide to have a race. They start from rest at the origin [`s = 0`] and move along a straight line such that [`a_{A} = ([$Aa]t - [$Ab])`] [`ft/s^2`] and [`a_{B} = ([$Ba]t^2 - [$Bb])`] [`ft/s^2`], where [`t`] is in seconds. Determine the displacement each athlete has travelled and the distance [`d`] between them when [`t = [$t0]`] [`s`].
 
 [`d_{A}=`][___]{"$displacementA"} [`ft`]  
 [`d_{B}=`][___]{"$displacementB"} [`ft`]  
