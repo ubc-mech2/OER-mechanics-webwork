@@ -71,7 +71,7 @@ BEGIN_PGML
 
 A [`m = `] [`[$mass]`] [`kg`] box is attached to walls on its right and left by springs. 
 The springs are at resting length in the intial position and each have a spring constant [`k = `] [`[$springConst]`] [`N/m`]. 
-Given an intial displacement of [`x_0 =`] [`[$dis]`] [`m`] and an intial velocity  of [`v = `] [`[$intVelocity]`] [`m/s`], 
+Given an initial displacement of [`x_0 =`] [`[$dis]`] [`m`] and an initial velocity  of [`v = `] [`[$intVelocity]`] [`m/s`], 
 find the natural frequency, maximum amplitude and natural period of vibration.
 
 [`w_n =`][___]{"$ansB"} [`rad/s`]
