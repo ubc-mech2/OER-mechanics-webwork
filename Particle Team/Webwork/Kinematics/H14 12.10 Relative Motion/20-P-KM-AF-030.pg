@@ -62,8 +62,8 @@ $tthetaa = 90*pi/180 - $thetaa;
 $tthetab = 90*pi/180 - $thetab;
 
 #relative velocity calculations
-$vabx = -$A*sin($thetaa) + $B*sin($thetab);
-$vaby = $A*cos($thetaa) - $B*cos($thetab);
+$vabx = $A*cos($thetaa) - $B*cos($thetab);
+$vaby = -$A*sin($thetaa) + $B*sin($thetab);
 
 #acceleration calculations
 $ata = -$F;
