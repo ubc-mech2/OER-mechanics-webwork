@@ -49,7 +49,7 @@ $D = $B/$A;
 
 #computation
 $K = $D/2;
-$vy = 2(-1*$K**2 + $K*$B)/$C;
+$vy = 2*(-1*$K**2 + $K*$B)/$C;
 $vx = $D/$C;
 $va = sqrt($vx**2 + $vy**2);
 $angle = atan($vx/$vy);
@@ -70,6 +70,8 @@ BEGIN_PGML
 
 Scientists have found a new plant 100 light years away who does not have friction or follow energy laws and whose surface can be described using [`-[$A]x^2 + [$B]x = 0 `]. If the car moves from the origin to [`([$D], 0)`]
 in [`[$C]`] seconds. What is the cars scalar speed and angle from which it initially leaves? 
+
+[@ image( "20-P-KM-AF-014.png", width=>[$width], height=>[$height]) @]*
 
 [`\theta =`][_____]{"$theta"} [`^\circ`] 
 
