@@ -70,7 +70,7 @@ BEGIN_PGML
 
 Aerospace scientists have built a space elevator on a pseudo-Earth exoplanet that launches astronauts from sea level to the Karman line (altitude 100 km). If this planet has a diameter of [`[$diameter]`] kilometres and completes a full rotation once every [`[$day]`] hours, find the average speed of an elevator car that takes [`[$time]`] minutes to go from terminus to terminus. Assume the elevator travels at a constant speed.
 
-_Use radians for any trigonometric functions._
+_If you enter an answer as a expression of trigonometric functions, use radians._
 
 [`v =`][___]{"$speed"} [`m/s`]   
 

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; ?????????????????//
+## Particle dynamics; Time-dependent components - given height and velocity as functions of time, find change in distance and velocity at two times
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-07-02)
 ## Level(Advanced)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('????????????????????????????/')
+## RESOURCES('')
 
 ##############################################################
 
@@ -35,13 +35,12 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$velocity = random(70,100,10);     # (lower, upper, stepsize)
-$distance = random(10,40,5);
-$height = random(10,30,10);
+$time1 = random(4,15,1);     # (lower, upper, stepsize)
+$time2 = random(16,20,1);
 
 #computation
-$theta1 = 2;
-$theta2 = 2;
+$velDifference = sqrt(1+$time2**2)-sqrt(1+$time1**2);
+$distanceDifference = sqrt($time2**2+(0.5*$time2**2)**2)-sqrt($time1**2+(0.5*$time1**2)**2);
 
 #set tolerance
 Context()->flags->set(
@@ -56,10 +55,11 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-The fireman wishes to fire a water stream at a fire [`[$distance]`] feet away from and [`[$height]`] feet below her hose. Determine two possible angles of elevation [`\theta_{1}`] and [`\theta_{2}`] at which this can be done. Water flows from the hose at [`v_{A} = [$velocity]`] [`ft/s`].
+A particle accelerates horizontally in such a way that its velocity (in metres per second) is equal to time [`t`], starting when [`t = 0`] seconds. If the particle's height (in metres) is also equal to time [`t`], how much faster is it moving at [`t = [$time2]`] [`s`] compared to when [`t = [$time1]`] [`s`]? How much further is it away from its starting location?
 
-[`\theta_{1}=`][___]{"$theta1"}[`^\circ`]  
-[`\theta_{2}=`][___]{"$theta2"}[`^\circ`]  
+[`\Delta v=`][___]{"$velDifference"}[`m/s`]  
+[`\Delta s=`][___]{"$distanceDifference"}[`m`]
+
 
 END_PGML
 

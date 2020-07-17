@@ -63,7 +63,7 @@ BEGIN_PGML
 
 A toy duck travels along a river which for a short distance is defined by [`r = ([$radiusNumerator]/\theta)`] [`ft`], where [`\theta`] is in radians. If it maintains a constant speed of [`v = [$speed]`] [`ft/s`], determine the radial and transverse components of its velocity when [`\theta =`] [`\pi/[$thetaDenominator]`] [`rad`].
 
-_Use radians for any trigonometric functions._
+_If you enter an answer as a expression of trigonometric functions, use radians._
 
 [`v_{r} =`][___]{"$velocityRadial"} [`m/s`]  
 [`v_{\theta} =`][___]{"$velocityTransverse"} [`rad/s`]

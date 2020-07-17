@@ -64,9 +64,9 @@ BEGIN_PGML
 
 [@ image( "20-P-KM-NW-018.png", width=>[$width], height=>[$height]) @]*
 
-What is the transverse velocity of a [`[$length]`] [`m`] baseball bat that sweeps through a cross-sectional sector of [`[$area]`] [`m^2`] in [`[$time]`] seconds?
+What is the angular velocity of a [`[$length]`] [`m`] baseball bat that sweeps through a cross-sectional sector of [`[$area]`] [`m^2`] in [`[$time]`] seconds?
 
-[`v_{\theta}=`][___]{"$velocity"} [`rad/s`]
+[`\dot{\theta} =`][___]{"$velocity"} [`rad/s`]
 
 END_PGML
 
