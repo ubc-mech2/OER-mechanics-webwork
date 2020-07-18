@@ -72,8 +72,9 @@ BEGIN_PGML
 You are playing on the magical trampoline, it has some interesting properties. Firstly, the trampoline gives energy during impact, meaning, you leave at [`[$A]`] times the speed and reflects and increases [`[$D]^\circ`] from the [`x`] - axis that you come into it with.
 Assuming that you leave from the middle of trampoline and the net is [`[$B]`][`m`] high and having a [`[$C]`][`m`] radius, what is the minimum speed and angle (with respect to the [`x`] - axis) you need to hit the trampoline with to just clear the net? 
 
-[`\theta =`][_____]{"$theta"} [`^\circ`] 
+[@ image( "20-P-KM-AF-013.png", width=>[$width], height=>[$height]) @]*
 
+[`\theta =`][_____]{"$theta"} [`^\circ`] 
 
 [`v =`][_____]{"$va"} [`m/s`] 
 

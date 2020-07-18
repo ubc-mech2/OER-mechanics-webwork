@@ -69,7 +69,7 @@ BEGIN_PGML
 
 A dog owner throws the ball for their dog at the angle [`\theta= [$K]^\circ`] above the horizontal. 
 The owner is [`h = [$A]`] meters tall and is standing on a hill with a downward slope at angle 
-[`\gamma = [$L]^\circ`]. What are the coordinates where the ball landed if [` v_i = [$B]`][`m/s`]? WShat constant speed must the dog travel 
+[`\gamma = [$L]^\circ`]. What are the coordinates where the ball landed if [` v_i = [$B]`][`m/s`]? What constant speed must the dog travel? 
 at to get to the ball at the same time. 
 
 
