@@ -56,7 +56,7 @@ $amp = $disConstant/(1-($freq/$natFreq)**2);
 
 #---- Answers to the problem -----------------------#
 $ansA = $amp;
-$ansB = $disConstant*$freq;
+$ansB = abs($amp*$freq);
 
 ########################################################;
 #PGML
@@ -67,12 +67,11 @@ BEGIN_PGML
 
 A shaking machine consists of a motor and a spring. The motor consists of a rotary 
 engine which can be described by the function [`\delta =`][`[$disConstant]`][`cos`][`[$freq]`][`t`] and the spring constant is 
-[`k =`] [`[$k]`] [`N/m`]. Given that a mass [`m =`] [`[$mass]`] [`kg`] is shaken by the system, what is the natural frequency and the amplitude of the steady state vibration?
+[`k =`] [`[$k]`] [`N/m`]. Given that a mass [`m =`] [`[$mass]`] [`kg`] is shaken by the system, what is the natural frequency and the maximum velocity of the steady state vibration?
 
+[`Amplitude =`] [____]{"$ansA"} [`m`]
 
-[`v =`] [____]{"$ansA"} [`m/s`]
-
-[`Amplitude =`] [____]{"$ansB"} [`m`]
+[`v =`] [____]{"$ansB"} [`m/s`]
 
 END_PGML
 
