@@ -1,0 +1,88 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1856;
+$height = $imgScale*2168;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$we = random(20,40,1);
+
+#computation
+$m = $we/9.81;
+$wm = $m*1.62;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+If scale measures an object's weight as [`[$we]`] [`N`] on earth [`(g_{earth}=9.81m/s^2)`], 
+what weight would the same scale measure with the same object on the moon [`(g_{moon}=1.62m/s^2)`]?
+
+[`W_{moon}=`] [______]{"$wm"} [`N`]
+
+What is the object's mass in [`kg`]?
+
+[`m = `] [______]{"m"} [`kg`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};
