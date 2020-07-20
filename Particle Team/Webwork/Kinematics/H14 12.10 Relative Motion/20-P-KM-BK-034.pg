@@ -76,7 +76,7 @@ When the car accelerates to [`[$v2]`] [`km/hr`], it now feels like the wind is b
 
 Find the speed of the wind, relative to a static observer.
 
-[`v_{wind}=`] [______]{"$aB"} [`km/hr`]
+[`v_{wind}=`] [______]{"$vw"} [`km/hr`]
 
 END_PGML
 

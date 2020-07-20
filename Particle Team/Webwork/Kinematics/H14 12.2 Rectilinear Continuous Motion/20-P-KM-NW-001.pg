@@ -69,8 +69,6 @@ A popcorn kernel's position is defined by [`s=([$c]t^2 + 20)`] [`cm`] as it gets
 [`v_{ave}=`][___]{"$velocity"} [`cm/s`]  
 [`a=`][___]{"$acceleration"} [`cm/s^2`] 
 
-_Round your answers to 1 decimal place_.
-
 END_PGML
 
 ENDDOCUMENT()];     #save as .pg

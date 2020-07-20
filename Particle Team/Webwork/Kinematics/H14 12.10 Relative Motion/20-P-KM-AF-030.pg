@@ -62,8 +62,8 @@ $tthetaa = 90*pi/180 - $thetaa;
 $tthetab = 90*pi/180 - $thetab;
 
 #relative velocity calculations
-$vabx = -$A*sin($thetaa) + $B*sin($thetab);
-$vaby = $A*cos($thetaa) - $B*cos($thetab);
+$vabx = $A*cos($thetaa) - $B*cos($thetab);
+$vaby = -$A*sin($thetaa) + $B*sin($thetab);
 
 #acceleration calculations
 $ata = -$F;
@@ -99,7 +99,7 @@ Race tracks are ovals, however the curves can be described as a section of a cir
 
 _[`\alpha = [$G]`] [`^\circ`] [`\beta = [$H]`] [`^\circ`]_ 
 
-[@ image( "20-P-KM-AF-030.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-AF-030.jpg", width=>[$width], height=>[$height]) @]*
 
 [`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vaby"}[`\hat{j}`]
 

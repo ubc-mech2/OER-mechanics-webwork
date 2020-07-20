@@ -76,8 +76,8 @@ tolType=>'relative');
 BEGIN_PGML
 
 An important part of game development is the physics of the game which must have practical rules. 
-In the game, the dogs jumps with the angle [`\theta = [$A]^\circ`], the gravity is [`-[$B]`] [`m/s^2`] and the surface area of the mushroom is [`A = [$E]`] [`m^2`].
-What is the maximum and minimum speed must the dog jump in order ot make it on to the mushroom if [`h = [$C]`] [`m`] and is [`[$D]`] meters away from the dog.
+In the game, the dogs jumps with the angle [`\theta = [$A]^\circ`], the gravity is [`-[$B]`] [`m/s^2`] and the surface area of the circular mushroom is [`A = [$E]`] [`m^2`].
+What is the maximum and minimum speed must the dog jump in order to make it on to the mushroom if [`h = [$C]`] [`m`] and is [`[$D]`] meters away from the dog.
 
 _ignore height of the dog_
 

@@ -57,8 +57,8 @@ $A = random(10,20,2);
 #computation
 $omega = 2*3.14159/($t*60);
 $g = $r*1000*$omega**2;
-$a1 = $A - $g;
-$a2 = sqrt(($g)**2 + ($A)**2);
+$a1 = sqrt(($g)**2 + ($A)**2);
+$a2 = $A - $g;
 
 
 #set tolerance
@@ -79,8 +79,8 @@ The radius of its orbit is [`[$r]`] [`km`], and it completes an orbit every [`[$
 Its engine generates an acceleration of [`[$A]`] [`m/s^2`].
 The crew of the spaceship are considering two options to leave the planet. 
 
-1. Face away from the planet, accelerating radially
-2. Face in the direction of motion, accelerating tangentially
+1. Face in the direction of motion, accelerating tangentially
+2. Face away from the planet, accelerating radially
 
 Find the magnitude of the total acceleration the spaceship would experience 
 in both cases the instant they turn their engine on.
