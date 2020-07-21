@@ -72,7 +72,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If the lawnmower has a mass of [`[$M]`] [`kg`] and its handle is at [`45^\circ`]. The friction coefficient for the entire body is [`[$U]`]. Ignore any energy or material losses. Is it easier to pull or push the lawnmower and what is the minimum force required to overcome friction?
+The lawnmower has a mass of [`[$M]`] [`kg`] and its handle is at [`45^\circ`]. The friction coefficient for the entire body is [`\mu = [$U]`]. Ignore any energy or material losses. Is it easier to pull or push the lawnmower and what is the minimum force required to overcome friction?
 
 _use 9.81 for gravity and negative to indicate downwards_
 
