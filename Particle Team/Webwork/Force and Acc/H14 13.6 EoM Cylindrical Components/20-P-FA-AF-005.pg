@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Rotating ball with spring
+## Forked prong, easy question
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(13: Force and Acceleration)
-## DBsection(4: Equations of Motion: Normal/Tangential Components)
+## DBsection(6: Equations of Motion: Cylindrical Components)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Advanced)
+## Level(Beginner)
 ## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 13.5 problems')
+## RESOURCES('inspired by Hibbeler 14E Section 13.6 problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -43,25 +43,19 @@ loadMacros(
 Context("Numeric");
 #given
 $M = random(2, 10, 1);
-$D1 = random(0.5, 1, 0.1);
-$D2 = random(0.1,0.4,1);
-$theta = random(20,50,5);
-$K = random(50, 250, 25);
+$A = random(0.5, 1, 0.1);
+$theta = random(0.5,2,0.5);
 
-#computation for numerical answer
-$angle = $theta*pi/180;
+#angle calculations
+$angle = atan($theta/$A);
 
-#situation one
-$length1 = $D1 + 2;
-$value1 = ($K*$D1*$length1*sin($angle)**2)/($M);
-$velocity1 = sqrt($value1);
-$acceleration1 = ($K*$D1*cos($angle) - $M*9.81)/($M);
+#acceleration calculations
+$ar = $A**2*(1 - $theta);
+$at = 2*$theta*$A**2;
 
-#situation two
-$length2 = $D2 + 2;
-$value2 = ($K*$D2*$length2*sin($angle)**2)/($M);
-$velocity2 = sqrt($value2);
-$acceleration2 = ($K*$D2*cos($angle) - $M*9.81)/($M);
+#force calculations
+$N = ($M * $ar)/(sin($angle));
+$F = $M*$at - $N*cos($theta);
 
 $width = 300;
 $height = 300;
@@ -78,19 +72,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-What is the vertical acceleration and normal velocity when the spring is stretched an extra [`[$D1]`] [`m`]? The spring constant is [`[$K]`], angle [`\theta = `] [`[$theta]^\circ`] to the vertical axis and the ball has a mass of [`[$M]`] [`kg`]. 
+The arm is rotating along the described path with an angular velocity of [`\theta\dot = [$A]`] [`rad/s`] and [`\theta\ddot = 0 `] [`rad/s^2`]. Determine the magnitude of the force exerted on the [`[$M]`] [`kg`] ball when [`\theta = [$theta]`] [`rad`].
 
-_use 9.81 for gravity and negative to indicate downwards_
+[@ image( "20-P-FA-AF-005.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "20-P-FA-AF-004.png", width=>[$width], height=>[$height]) @]*
-
-[`V_{n} = `][_____]{"$velocity1"}[`m/s`]
-[`a_{b} = `][_____]{"$acceleration1"}[`m/s^2`]
-
-What is velocities when d is [`[$D2]`] [`m`]
-
-[`V_{n} = `][_____]{"$velocity2"}[`m/s`]
-[`a_{b} = `][_____]{"$acceleration2"}[`m/s^2`]
+[`F = `][_____]{"$F"}[`N`]
 
 END_PGML
 

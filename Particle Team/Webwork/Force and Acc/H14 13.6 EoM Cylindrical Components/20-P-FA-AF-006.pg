@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Rotating ball with spring
+## Forked prong guiding particle along given path
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(13: Force and Acceleration)
-## DBsection(4: Equations of Motion: Normal/Tangential Components)
+## DBsection(6: Equations of Motion: Cylindrical Components)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Advanced)
+## Level(Intermediate)
 ## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 13.5 problems')
+## RESOURCES('inspired by Hibbeler 14E Section 13.6 problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -43,25 +43,29 @@ loadMacros(
 Context("Numeric");
 #given
 $M = random(2, 10, 1);
-$D1 = random(0.5, 1, 0.1);
-$D2 = random(0.1,0.4,1);
-$theta = random(20,50,5);
-$K = random(50, 250, 25);
+$G = random(1, 3, 1);
+$C = random(0.1,0.4,1);
+$E = random(50, 250, 25);
 
-#computation for numerical answer
-$angle = $theta*pi/180;
+$D = sqrt(3*$G**2);
+$B = 2*$G;
 
-#situation one
-$length1 = $D1 + 2;
-$value1 = ($K*$D1*$length1*sin($angle)**2)/($M);
-$velocity1 = sqrt($value1);
-$acceleration1 = ($K*$D1*cos($angle) - $M*9.81)/($M);
+#table
+$theta = pi/6;
+$dtheta = $C*$E;
+$ddtheta = $C;
+$radius = $B*cos($theta);
+$dradius = -1*$B*sin($theta)*$dtheta;
+$ddradius = -1*$B*cos($theta)*$dtheta**2 - $B*sin($theta)*$ddtheta;
+$angle2 = atan(-cos($theta)/sin($theta));
 
-#situation two
-$length2 = $D2 + 2;
-$value2 = ($K*$D2*$length2*sin($angle)**2)/($M);
-$velocity2 = sqrt($value2);
-$acceleration2 = ($K*$D2*cos($angle) - $M*9.81)/($M);
+#accelerations
+$ar = $ddradius -$radius*$dtheta**2;
+$at = $radius*$ddtheta + 2*$dradius*$dtheta;
+
+#force calculation
+$N = ($M*$ar)/(sin($angle2));
+$F = $M*$at - $N*cos($angle2);
 
 $width = 300;
 $height = 300;
@@ -78,19 +82,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-What is the vertical acceleration and normal velocity when the spring is stretched an extra [`[$D1]`] [`m`]? The spring constant is [`[$K]`], angle [`\theta = `] [`[$theta]^\circ`] to the vertical axis and the ball has a mass of [`[$M]`] [`kg`]. 
+The forked rod moves a smooth [`[$M]`] [`kg`] particle around the shaped described by [`r = [$B]*cos(\theta)`]. If [`\theta\dot = [$C]*t`], find the magnitude of the force the rod exerts on the particle assuming [`r = [$D]`] and [`t = [$E]`] [`s`]. Assume they only make contact on one side. 
 
-_use 9.81 for gravity and negative to indicate downwards_
+[@ image( "20-P-FA-AF-006.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "20-P-FA-AF-004.png", width=>[$width], height=>[$height]) @]*
-
-[`V_{n} = `][_____]{"$velocity1"}[`m/s`]
-[`a_{b} = `][_____]{"$acceleration1"}[`m/s^2`]
-
-What is velocities when d is [`[$D2]`] [`m`]
-
-[`V_{n} = `][_____]{"$velocity2"}[`m/s`]
-[`a_{b} = `][_____]{"$acceleration2"}[`m/s^2`]
+[`F = `][_____]{"$F"}[`N`]
 
 END_PGML
 
