@@ -47,7 +47,7 @@ $A = random(0.5, 1, 0.1);
 $theta = random(0.5,2,0.5);
 
 #angle calculations
-$angle = atan($theta/$A);
+$angle = atan($theta);
 
 #acceleration calculations
 $ar = $A**2*(1 - $theta);
