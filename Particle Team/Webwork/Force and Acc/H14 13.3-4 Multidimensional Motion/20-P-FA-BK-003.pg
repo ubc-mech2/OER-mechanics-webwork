@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .2;
+$imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*1856;
-$height = $imgScale*2168;
+$width = $imgScale*2508;
+$height = $imgScale*1688;
 
 
 
@@ -79,6 +79,10 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+
+[@ image( "20-P-FA-BK-003.jpg", width=>[$width], height=>[$height]) @]* 
+
 
 Three blocks are stacked on top of each other, as in the image above. 
 From top to bottom, the blocks have masses of [`1kg`], [`2kg`], and [`3kg`].

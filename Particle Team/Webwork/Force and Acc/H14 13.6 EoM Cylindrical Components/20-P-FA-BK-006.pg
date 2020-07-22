@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .2;
+$imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*1856;
-$height = $imgScale*2168;
+$width = $imgScale*2516;
+$height = $imgScale*3181;
 
 
 
@@ -71,6 +71,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+[@ image( "20-P-FA-BK-006.jpg", width=>[$width], height=>[$height]) @]* 
 
 A [`[$m]kg`] block is sliding down a semicircular ramp with a radius of [`[$r] m`]. 
 If the block reaches a maximum velocity of [`[$v]m/s`] at a point where the slope is [`[$theta]^\circ`] from horizontal,
