@@ -75,7 +75,7 @@ A bottle is placed on a rotating table, as in the image above. If the bottle has
 and is placed [`[$r]cm`] away from the center of the tray, with a coefficient of friction of [`\mu_s = [$mu]`],
 find the angular velocity at which the bottle will begin to slide.
 
-A slides against B at [`P_3=`] [______]{"$P3"} [`N`]
+[`\omega=`] [______]{"$omega"} [`rad/s`]
 END_PGML
 
 

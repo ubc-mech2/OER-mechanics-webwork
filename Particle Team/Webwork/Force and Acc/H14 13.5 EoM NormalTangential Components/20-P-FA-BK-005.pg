@@ -57,7 +57,7 @@ $g = 9.81;
 
 #computation
 $y = $v**2/($s*$g);
-$theta = arcsin((sqrt(-$y**2 - sqrt($y**2 + 4)*(-$y))/sqrt(2));
+$theta = arcsin((sqrt(-$y**2 - sqrt($y**2 + 4)*(-$y))/sqrt(2)));
 $T = $m*$g/cos($theta);
 $thetad = $theta*180/3.14159;
 
@@ -75,10 +75,10 @@ tolType=>'relative');
 BEGIN_PGML
 
 A tetherball (a ball on a rope attached to a pole) is swinging around in a circular path with a velocity of [`[$v]m/s`].
-If the rope is [`[$s]m`] long and the ball has a mass of [`[$m]kg`], find the tension in the rope and the angle [`\Theta`] between the rope and the pole.
+If the rope is [`[$s]m`] long and the ball has a mass of [`[$m]kg`], find the tension in the rope and the angle [`\theta`] between the rope and the pole.
 
-[`T = `] [______]{"$T"} [`N`]
-[`\Theta = `] [______]{"$thetad"} [`^\circ`]
+[`T = `] [______]{"$T"} [`N`]  
+[`\theta = `] [______]{"$thetad"} [`^\circ`]
 
 END_PGML
 

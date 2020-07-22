@@ -75,8 +75,8 @@ BEGIN_PGML
 A [`[$m]kg`] block is sliding down a semicircular ramp with a radius of [`[$r] m`]. 
 If the block reaches a maximum velocity of [`[$v]m/s`] at a point where the slope is [`[$theta]^\circ`] from horizontal,
 find the coefficient of friction between the block and the ramp.
-[`T = `] [______]{"$T"} [`N`]
-[`\Theta = `] [______]{"$theta"} [`^\circ`]
+
+[`\mu = `] [______]{"$mu"}
 
 END_PGML
 
