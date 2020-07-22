@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .2;
+$imgScale = .7;
 
 #image aspect ratio
-$width = $imgScale*1856;
-$height = $imgScale*2168;
+$width = $imgScale*1200;
+$height = $imgScale*1553;
 
 
 
@@ -70,6 +70,9 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+
+[@ image( "20-P-FA-BK-004.jpg", width=>[$width], height=>[$height]) @]* 
 
 A bottle is placed on a rotating table, as in the image above. If the bottle has a mass of [`[$m]g`], 
 and is placed [`[$r]cm`] away from the center of the tray, with a coefficient of friction of [`\mu_s = [$mu]`],

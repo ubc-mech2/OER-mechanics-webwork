@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .2;
+$imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*1856;
-$height = $imgScale*2168;
+$width = $imgScale*2640;
+$height = $imgScale*1993;
 
 
 
@@ -73,6 +73,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+[@ image( "20-P-FA-BK-005.jpg", width=>[$width], height=>[$height]) @]* 
 
 A tetherball (a ball on a rope attached to a pole) is swinging around in a circular path with a velocity of [`[$v]m/s`].
 If the rope is [`[$s]m`] long and the ball has a mass of [`[$m]kg`], find the tension in the rope and the angle [`\theta`] between the rope and the pole.
