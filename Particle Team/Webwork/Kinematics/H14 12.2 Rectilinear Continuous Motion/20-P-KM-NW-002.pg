@@ -60,6 +60,8 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
+[@ image("20-P-KM-NW-002.png", width=>[$width], height=>[$height]) @]*
+
 Experiments indicate that a normal driver takes about [`[$reactionNormal]`] [`s`] before he or she can react to a situation to avoid a collision. It takes about [`[$reactionImpaired]`] [`s`] for a driver having 0.1% alcohol in his or her system to do the same. If such drivers are traveling on a straight road at [`[$speedMiles]`] [`mph`] ([`[$speedFeet]`] [`ft/s)`] and their cars can decelerate at [`[$deceleration]`] [`ft/s^2`], determine the shortest stopping distance [`d`] for each from the moment they see an imminent collision. Moral: If you must drink, please don't drive!
 
 [`d_{normal}=`][___]{"$distance_normal"} [`ft`]  
