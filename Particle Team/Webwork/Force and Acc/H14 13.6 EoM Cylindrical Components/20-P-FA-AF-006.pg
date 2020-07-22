@@ -83,7 +83,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The forked rod moves a smooth [`[$M]`] [`kg`] particle around the shaped described by [`r = [$B]`] [`cos(\theta)`]. If [`\dot\theta`]  [`=`] [`[$C]*t`] [`rad/s`], find the magnitude of the force the rod exerts on the particle assuming [`r = sqrt($D1)`] and [`t = [$E]`] [`s`]. Assume they only make contact on one side. 
+The forked rod moves a smooth [`[$M]`] [`kg`] particle around the shaped described by [`r = [$B]`] [`cos(\theta)`]. If [`\dot\theta`]  [`=`] [`[$C]*t`] [`rad/s`], find the magnitude of the force the rod exerts on the particle assuming [`r = \sqrt[$D1]`] and [`t = [$E]`] [`s`]. Assume they only make contact on one side. 
 
 [@ image( "20-P-FA-AF-006.png", width=>[$width], height=>[$height]) @]*
 
