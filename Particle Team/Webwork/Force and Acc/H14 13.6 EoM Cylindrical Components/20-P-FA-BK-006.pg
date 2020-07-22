@@ -1,0 +1,87 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1856;
+$height = $imgScale*2168;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$m = random(0.3,0.7,0.1);
+$r = random(1.0,2.0,0.1);
+$v = random(5,9,1);
+$theta = random(10,30,2);
+$g = 9.81;
+
+#computation
+$mu = sin($theta)*$g/(cos($theta)*$g + $v**2/$r);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A [`[$m]kg`] block is sliding down a semicircular ramp with a radius of [`[$r] m`]. 
+If the block reaches a maximum velocity of [`[$v]m/s`] at a point where the slope is [`[$theta]^\circ`] from horizontal,
+find the coefficient of friction between the block and the ramp.
+[`T = `] [______]{"$T"} [`N`]
+[`\Theta = `] [______]{"$theta"} [`^\circ`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};

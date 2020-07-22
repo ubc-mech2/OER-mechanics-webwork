@@ -1,0 +1,89 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1856;
+$height = $imgScale*2168;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$m = random(0.3,0.7,0.1);
+$s = random(1.0,2.0,0.1);
+$v = random(5,9,1);
+$g = 9.81;
+
+#computation
+$y = $v**2/($s*$g);
+$theta = arcsin((sqrt(-$y**2 - sqrt($y**2 + 4)*(-$y))/sqrt(2));
+$T = $m*$g/cos($theta);
+$thetad = $theta*180/3.14159;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A tetherball (a ball on a rope attached to a pole) is swinging around in a circular path with a velocity of [`[$v]m/s`].
+If the rope is [`[$s]m`] long and the ball has a mass of [`[$m]kg`], find the tension in the rope and the angle [`\Theta`] between the rope and the pole.
+
+[`T = `] [______]{"$T"} [`N`]
+[`\Theta = `] [______]{"$thetad"} [`^\circ`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};
