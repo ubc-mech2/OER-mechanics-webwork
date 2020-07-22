@@ -1,22 +1,21 @@
 ##DESCRIPTION
-##
+## Forked prong, easy question
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBchapter(13: Force and Acceleration)
+## DBsection(6: Equations of Motion: Cylindrical Components)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## Level(Beginner)
+## KEYWORDS(Spring, Fun, Ball)
+## RESOURCES('inspired by Hibbeler 14E Section 13.6 problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
 
 ##############################################################
 
@@ -40,26 +39,29 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
-$A = random(0, 5, 1);
-$B = random(5, 10, 1);
-$C = ($B - $A)*($B - $A);
-$D = $B + 3;
+$M = random(2, 10, 1);
+$A = random(0.5, 1, 0.1);
+$theta = random(0.5,2,0.5);
 
+#angle calculations
+$angle = atan($theta/$A);
 
+#acceleration calculations
+$ar = $A**2*(1 - $theta);
+$at = 2*$theta*$A**2;
 
-#computation
-$x1 = -1*$B/3 *(3*$C - $B*$B + 3*$A*$B - 3*$A**2);
-$x2 = 2/3*($D - $B)**(3/2);
-$p = $x1 + $x2;
-$s = abs($x1) + abs($x2);
-$v = $s/$D;
+#force calculations
+$N = ($M * $ar)/(sin($angle));
+$F = $M*$at - $N*cos($theta);
 
-
+$width = 300;
+$height = 300;
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.03,
 tolType=>'relative');
 
 ##############################################################
@@ -70,13 +72,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A particle starts at the origin at [`t = 0`] [`s`] and moves with velocity [`v = (t - [$A])^2 -[$C]`] [`m/s`]. At [`t = [$B]`] [`s`], its velocity then changes to [`v = \sqrt{t-[$B]}`] [`m/s`]. Determine the position and distance travelled when [`t =`] [`[$D]`] [`s`]. What is the average speed of the particle?
+The arm is rotating along the described path with an angular velocity of [`\dot\theta`] [`=`] [`[$A]`] [`rad/s`] and [`\ddot\theta`] [`=`] [`0`] [`rad/s^2`]. Determine the magnitude of the force exerted on the [`[$M]`] [`kg`] ball when [`\theta = [$theta]`] [`rad`].
 
-[`p =`] [_____]{"$p"} [`m`]  
-[`d =`] [_____]{"$s"} [`m`]  
-[`v_{avg} =`] [_____]{"$v"} [`m/s`]  
+[@ image( "20-P-FA-AF-005.png", width=>[$width], height=>[$height]) @]*
 
-
+[`F = `][_____]{"$F"}[`N`]
 
 END_PGML
 

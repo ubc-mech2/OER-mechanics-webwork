@@ -4,23 +4,31 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(2: Rectilinear Kinematics: Continuous Motion)
+## DBsection()
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
 ## Level()
-## KEYWORDS()
-## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
-## Easy
+
 
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*1856;
+$height = $imgScale*2168;
+
 
 
 loadMacros(   
@@ -42,19 +50,11 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(0, 5, 1);
-$B = random(5, 10, 1);
-$C = ($B - $A)*($B - $A);
-$D = $B + 3;
-
-
+$we = random(20,40,1);
 
 #computation
-$x1 = -1*$B/3 *(3*$C - $B*$B + 3*$A*$B - 3*$A**2);
-$x2 = 2/3*($D - $B)**(3/2);
-$p = $x1 + $x2;
-$s = abs($x1) + abs($x2);
-$v = $s/$D;
+$m = $we/9.81;
+$wm = $m*1.62;
 
 
 #set tolerance
@@ -70,15 +70,18 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A particle starts at the origin at [`t = 0`] [`s`] and moves with velocity [`v = (t - [$A])^2 -[$C]`] [`m/s`]. At [`t = [$B]`] [`s`], its velocity then changes to [`v = \sqrt{t-[$B]}`] [`m/s`]. Determine the position and distance travelled when [`t =`] [`[$D]`] [`s`]. What is the average speed of the particle?
+If scale measures an object's weight as [`[$we]`] [`N`] on earth [`(g_{earth}=9.81m/s^2)`], 
+what weight would the same scale measure with the same object on the moon [`(g_{moon}=1.62m/s^2)`]?
 
-[`p =`] [_____]{"$p"} [`m`]  
-[`d =`] [_____]{"$s"} [`m`]  
-[`v_{avg} =`] [_____]{"$v"} [`m/s`]  
+[`W_{moon}=`] [______]{"$wm"} [`N`]
 
+What is the object's mass in [`kg`]?
 
+[`m = `] [______]{"$m"} [`kg`]
 
 END_PGML
+
+
 
 ##############################################################
 
