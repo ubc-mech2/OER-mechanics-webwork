@@ -1,21 +1,22 @@
 ##DESCRIPTION
-## Particle movement question with speed averages, two parts and integration required with respect to distance
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(12: Particle Kinematics)
-## DBsection(3: Rectilinear Kinematics: Erratic Motion)
+## DBsection(2: Rectilinear Kinematics: Continuous Motion)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Intermediate)
-## KEYWORDS(Particle Movement, Integration, Erratic Motion)
+## Level()
+## KEYWORDS()
 ## RESOURCES('inspired by Hibbeler 14E Section 12.3 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
+## Easy
 
 ##############################################################
 
@@ -69,8 +70,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The particle starts at the origin and moves with velocity [`v = (t - [$A])^2 -[$C]`] m/s, for [`0 < t < [$B] `] s and it changed to [`v^2 = (t-[$B])`] 
-for [` [$B] < t < [$D]`]. Determine the position and distance travelled. What is the average speed?
+A particle starts at the origin at [`t = 0`] [`s`] and moves with velocity [`v = (t - [$A])^2 -[$C]`] [`m/s`]. At [`t = [$B]`] [`s`], its velocity then changes to [`v = \sqrt{t-[$B]}`] [`m/s`]. Determine the position and distance travelled when [`t =`] [`[$D]`] [`s`]. What is the average speed of the particle?
 
 [`p =`] [_____]{"$p"} [`m`]  
 [`d =`] [_____]{"$s"} [`m`]  

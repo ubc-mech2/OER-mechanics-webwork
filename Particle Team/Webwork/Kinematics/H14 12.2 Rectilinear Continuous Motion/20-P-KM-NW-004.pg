@@ -36,8 +36,12 @@ loadMacros(
 Context("Numeric");         # or Complex
 #given
 $acceleration = 9.81;     # (lower, upper, stepsize)
+$velocity = random(15,20,1);
+$timeB = random(2,3,1);
 
 #set tolerance
+$timeElapsed = $velocity/$acceleration + 0.5*$timeB;
+
 Context()->flags->set(
 tolerance=>.05,
 tolType=>'absolute');  #absolute or relative
@@ -50,17 +54,10 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A bored university student throws Ball [`A`] vertically upwards with an initial velocity of [`v`]. Ball [`B`] is thrown upwards from the same point with the same velocity [`t`] seconds later. Determine the elapsed time [`t_{1} < `] [`2v/g`] from the instant ball [`A`] is thrown to when both balls are at the same height.
+A bored university student throws Ball [`A`] vertically upwards with an initial velocity of [`v = [$velocity]`] [`m/s`]. Ball [`B`] is thrown upwards from the same point with the same velocity [`[$timeB]`] seconds later. Determine the elapsed time [`t_{0}`] from the instant ball [`A`] is thrown to when both balls are at the same height. Assume air resistance is negligible.
+
+[`t_{0} = `][___]{"$timeElapsed"}[`s`]
 
 END_PGML
 
-BEGIN_TEXT
-
- $BR\{ans_rule(25) \}
-
-END_TEXT
-
-$t = "v/$acceleration + t/2";
-ANS(function_cmp($t,'v/g'));
-
-ENDDOCUMENT()];     #save as .pg
+ENDDOCUMENT();     #save as .pg
