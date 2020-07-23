@@ -78,7 +78,8 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-What is the vertical acceleration and normal velocity when the spring is stretched an extra [`[$D1]`] [`m`]? The spring constant is [`[$K]`], angle [`\theta = `] [`[$theta]^\circ`] to the vertical axis and the ball has a mass of [`[$M]`] [`kg`]. 
+What is the vertical acceleration and normal velocity when the spring of [`l`]
+[`=`] [`2`] [`m`] is stretched an extra [`[$D1]`] [`m`]? The spring constant is [`[$K]`], angle [`\theta = `] [`[$theta]^\circ`] to the vertical axis and the ball has a mass of [`[$M]`] [`kg`]. 
 
 _use 9.81 for gravity and negative to indicate downwards_
 

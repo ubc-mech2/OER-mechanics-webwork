@@ -42,11 +42,11 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(5, 10, 1);
+$M = random(10, 15, 1);
 $U = random(0.1, 0.5, 0.1);
-$K = random(100, 300, 10);
+$K = random(50, 75, 5);
 $D = random(0.1, 0.8, 0.1);
-$A = random(0.5, 3, 0.5);
+$A = random(10, 15, 0.5);
 
 #computation for numerical answer
 $W = $M*9.81;
