@@ -10,7 +10,7 @@
 ## Date(2020-07-02)
 ## Level(Advanced)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-107')
+## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 problem 12-105')
 
 ##############################################################
 
@@ -37,12 +37,19 @@ Context("Numeric");         # or Complex
 #given
 $velocity = random(70,100,10);     # (lower, upper, stepsize)
 $distance = random(10,40,5);
-$height = random(10,30,10);
+$barrelHeight = random(10,30,10);
 $acceleration = 9.81;
 
 #computation
 $time = sqrt(2*$height/$acceleration);
 $distance = 2*$height;
+
+#image scale
+$imgScale = .7;
+
+#image aspect ratio
+$width = $imgScale*711;
+$height = $imgScale*263;
 
 #set tolerance
 Context()->flags->set(
@@ -57,7 +64,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A water jet discharging from the middle of a fully filled barrel has a velocity v = [`\sqrt{2gh}`], where [`h =[$height]`] [`m`] is the depth of the orifice from the free water surface. Determine the time [`t`] for a particle of water leaving the orifice to fall to the bottom and the horizontal distance [`x`] away from its landing position.
+[@ image("20-P-KM-NW-013.png", width=>[$width], height=>[$height]) @]*
+
+A [`[$barrelHeight]`] [`m`] tall barrel is fully filled with water when a nail punctures it in the middle. Water discharges from the resulting hole with a horizontal velocity [`v = \sqrt{2gh}`], where [`h`] is the depth of the hole from the water surface. Determine the time [`t`] for a particle of water leaving the barrel to fall to the ground and the horizontal distance [`x`] away from its landing position.
 
 [`t =`][___]{"$time"}[`s`]  
 [`x =`][___]{"$distance"}[`m`]
