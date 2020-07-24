@@ -47,6 +47,11 @@ $displacement = sqrt($x**2+$y**2);
 $time = $angleDegrees/360*$period;
 $velocity = $displacement/$time;
 
+#image scale
+$imgScale = 0.35;
+$width = $imgScale*1368;
+$height = $imgScale*1549;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,

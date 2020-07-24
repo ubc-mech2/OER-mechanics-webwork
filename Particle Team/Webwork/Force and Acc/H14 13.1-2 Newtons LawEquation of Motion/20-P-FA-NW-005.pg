@@ -1,0 +1,83 @@
+##DESCRIPTION
+## Particle dynamics; 
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Force and Acceleration)
+## DBsection(Equations of Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-22)
+## Level(Intermediate)
+## KEYWORDS('dynamics','force','acceleration','equations')
+## RESOURCES('special thanks to Douglas College and Halliday Resnick and Walker Problem 133')
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = 0.7;
+
+#image aspect ratio
+$width = $imgScale*756;
+$height = $imgScale*409;
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGauxiliaryFunctions.pl",
+	"niceTables.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+
+#given
+$angleDegrees = random(30,45,1);
+$acceleration = random(0.2,0.5,0.05);
+$mass = random(17,20,0.5);
+$fricCoeff = random(0.3,0.5,0.01);
+
+$g = 9.81;
+
+#computation
+$angle = $angleDegrees/180*pi;
+$Fgrav = $mass*$g;
+$netAccel = $mass*$acceleration;
+$Ftension = ($netAccel/$fricCoeff+$Fgrav)/(sin($angle)+cos($angle)/$fricCoeff);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.002);
+
+##############################################################
+#
+#  Text 
+#
+#
+
+BEGIN_PGML
+
+[@ image("20-P-FA-NW-005.png", width=>[$width], height=>[$height]) @]*
+
+A child pulls on a rope with an angle [`\theta = [$angleDegrees]^\circ`] as shown and the chest accelerates across the horizontal floor at [`[$acceleration]`] [`m/s^2`]. The toy chest and its contents have a mass of [`[$mass]`] kilograms and the coefficient of kinetic friction between the chest and the floor is [`[$fricCoeff]`]. What is the magnitude of the tension force that the child must exert on the rope to cause this acceleration? Ignore the dimensions of the box.  Treat it like a particle.
+
+[`F_T=`] [_____]{"$Ftension"} [`N`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT();
