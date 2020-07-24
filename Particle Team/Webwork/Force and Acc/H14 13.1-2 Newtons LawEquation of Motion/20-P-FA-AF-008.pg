@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Force and acceleration advanced question, all equations needd
+## Two masses, force between them
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -8,8 +8,8 @@
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Advanced)
-## KEYWORDS(Particles, Planets, Gravity)
+## Level(Intermediate)
+## KEYWORDS(Gravitational Pull, Competing Forces)
 ## RESOURCES('inspired by Hibbeler 14E Section 13.1-2 preliminary problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
@@ -42,25 +42,21 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(2, 10, 1);
-$T = random(20, 100, 10);
-$D = random(1, 3, 0.5);
+$E = random(5, 50, 5);
+$A = random(1, 9, 1);
+$R = random(5, 50, 5);
+$M2 = random(1, 3, 0.5);
 
 #computation for first part
-$W = $M*9.81;
-$Fblock = $T - $W;
-$acc = $Fblock/$M;
+$mass = $E/9.81;
 
 #computation for second part
-$r = 6371 + $D;
-$rm = $r*1000;
-$m1 = 5.972*10**24;
+$Fpush = $E - $mass*$A;
+
+#computation for third part
 $G = 66.73*10**(-12);
-$Fearth = $G*$m1*$M/($rm**2);
+$Fattrac = $G*$mass*$M2/($R**2);
 
-
-$width = 300;
-$height = 300;
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -74,17 +70,19 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A block that has a mass of [` [$M] `] [`kg`] and is attached to a cord that has a tension of [` [$T] `] [`N`] acting directly upwards. What is the acceleration?
+The weight of an object falling to Earth is [`W_{E} \: = \: [$E] \: N']. What is its mass?
 
-_use 9.81 for gravity and negative to indicate downwards_
+_use 9.81 for Earths gravity_
 
-[`a = `][_____]{"$acc"}[`m/s^2`]
+[`m = `][_____]{"$mass"}[`kg`]
 
+What force pushing upwards is required to slow its acceleration to [`a \: = \: [$A] \: m/s^2`] downwards.
 
-If it is [` [$D] `] [`km`] above the earths surface, what is the force felt between the two bodies?
+[`F = `][_____]{"$Fpush"}[`N`]
 
-[`F = `][_____]{"$Fearth"}[`N`]
+There is an object [`[$R] \: m`] away with a mass of [`[$M2] \: kg`]. Wha is the force of the attraction between these two objects?
 
+[`F = `][_____]{"$Fattrac"}[`N`]
 
 END_PGML
 
