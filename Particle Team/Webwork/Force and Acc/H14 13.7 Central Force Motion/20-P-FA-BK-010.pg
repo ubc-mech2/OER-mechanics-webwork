@@ -1,0 +1,93 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+
+
+#computation
+$v = 942.5;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+*Constants:*
+Radius of the earth: [`6378`] [`km`]  
+Mass of the earth: [`5.9767*10^{24}`] [`km`]  
+Mass of the sun: [`1.991*10^{30}`] [`km`]  
+Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
+
+
+#[@ image( "20-P-FA-BK-003.jpg", width=>[$width], height=>[$height]) @]* 
+
+A satellite is in an elliptical orbit around the earth, with an apogee at 
+[`2500`] [`km`] and a perigee at [`500`] [`km`] above the surface of the earth.
+At apogee its speed is 730 m/s. What is its speed at perigee?
+
+[`v_p=`] [______]{"$v"} [`m/s`]  
+
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};
