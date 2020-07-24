@@ -55,7 +55,7 @@ $musb = 2*$musg + 0.1;
 $mukg = $musg - 0.1;
 $mukb = $musb - 0.1;
 
-$g = 9.81
+$g = 9.81;
 
 $mA = 1;
 $mB = 2;
