@@ -45,12 +45,12 @@ $time = ($velocityB*cos($angleDegrees*pi/180)-$velocityA)/$accelerationA;
 
 #image scale
 $imgScale = 0.4;
-$width = 400;
-$height = 600;
+$width = $imgScale*1000;
+$height = $imgScale*1500;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.25,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################
