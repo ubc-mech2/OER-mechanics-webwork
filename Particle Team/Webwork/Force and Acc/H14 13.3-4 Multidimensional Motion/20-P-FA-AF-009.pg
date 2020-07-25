@@ -52,10 +52,6 @@ $NL = cos($angle)*$W/ (sin($angle)*$U + cos($angle));
 $Fpush = ($U*$NL)/(cos($angle));
 
 
-$mc1 = RadioButtons(
-    [ "PUSH", "PULL"],
-    "PULL"); #this will make PULL the correct answer
-
 
 $width = 300;
 $height = 300;
@@ -76,27 +72,7 @@ The lawnmower has a mass of [`[$M]`] [`kg`] and its handle is at [`45^\circ`]. T
 
 _use 9.81 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-002.png", width=>[$width], height=>[$height]) @]* 
-
-END_PGML
-
-BEGIN_TEXT
-
-Question one:
-$BR
-\{ $mc1->buttons() \}
-$BR
-$BR
-
-END_TEXT
-
-ANS( $mc1->cmp() );
-
-BEGIN_PGML
-
-
-
-[`F = `][_____]{"$Fpush"}[`N`]
+[@ image( "20-P-FA-AF-009.png", width=>[$width], height=>[$height]) @]* 
 
 END_PGML
 
