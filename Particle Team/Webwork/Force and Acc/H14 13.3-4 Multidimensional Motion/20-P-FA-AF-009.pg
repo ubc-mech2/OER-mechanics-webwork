@@ -61,7 +61,7 @@ $sy = $T**2/($M*2);
 
 #computation for sx
 $sxin1 = 1 - $U;
-$sxin2 = $A*$T/3 - $M*$g*sxin1;
+$sxin2 = $A*$T/3 - $M*$g*$sxin1;
 $sx = cos($angle)*$T**2/(2*$M);
 
 #final answer 
