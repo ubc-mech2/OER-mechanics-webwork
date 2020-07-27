@@ -56,6 +56,9 @@ $A = $D*$B/2 - 1;
 $s = $D*$D*(-$B*$D/6 + $A/2 + 1);
 $t = $s/$C;
 
+
+$width = 300;
+$height = 300;
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,
@@ -74,6 +77,9 @@ the acceleration acts as [`a = [$A] - [$B]*t`] [`m/s^2`]. The initial velocity o
 
 
 Where does the ball stop and how long does it take the dog to get there if they move at [`[$C]`] [`m/s`]. 
+
+
+[@ image( "20-P-KM-AF-004.png", width=>[$width], height=>[$height]) @]*
 
 [`s =`] [_____]{"$s"} [`m`]  
 [`t =`] [_____]{"$t"} [`s`]  

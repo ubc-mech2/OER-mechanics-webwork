@@ -55,7 +55,7 @@ $T = $U*$N - $K*$D + $M*$A;
 $ab = ($T - $W)/$M;
 
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(

@@ -55,7 +55,7 @@ $vba = sqrt ( $vbax**2 + $vbay**2 );
 $anglerad = atan($vbay/($vbax));
 $theta = $anglerad*180/pi;
 
-$width = 300;
+$width = 400;
 $height = 300;
 #set tolerance
 Context()->flags->set(
