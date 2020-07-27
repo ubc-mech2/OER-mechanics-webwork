@@ -43,15 +43,29 @@ loadMacros(
 Context("Numeric");
 #given
 $M = random(2, 10, 1);
+$T = random(1, 3, 1);
+$A = random(2, 10, 1);
 $U = random(0.1, 0.5, 0.1);
 
-#computation for numerical answer
+#set up of the variables
 $W = $M*9.81;
+$N = $W;
+$g = 9.81;
 $angle = 45*pi/180;
-$NL = cos($angle)*$W/ (sin($angle)*$U + cos($angle));
-$Fpush = ($U*$NL)/(cos($angle));
+$Ffric = $U*$N;
 
+#computation for sy
+$syin1 = sin($angle) - $U - 1;
+$syin2 = $A*$T/3*sin($angle) - $M*$g*$syin1;
+$sy = $T**2/($M*2);
 
+#computation for sx
+$sxin1 = 1 - $U;
+$sxin2 = $A*$T/3 - $M*$g*sxin1;
+$sx = cos($angle)*$T**2/(2*$M);
+
+#final answer 
+$displacement = sqrt(($sx**2) + ($sy**2));
 
 $width = 300;
 $height = 300;
@@ -68,11 +82,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The lawnmower has a mass of [`[$M]`] [`kg`] and its handle is at [`45^\circ`]. The friction coefficient for the entire body is [`\mu = [$U]`]. Ignore any energy or material losses. Is it easier to pull or push the lawnmower and what is the minimum force required to overcome friction?
+A pulley outputs a force as a function of time, [`F \: = \: [$A] \: t`] on a block of a mass of [`[$M]\: kg`]. After a change in time of [`[$T]\: s`], what is the displacement on the slope line? Note the kinetic coefficient of friction is [`\mu \: = \: [$U]`].
 
-_use 9.81 for gravity and negative to indicate downwards_
+_use 9.81 for gravity_
 
 [@ image( "20-P-FA-AF-009.png", width=>[$width], height=>[$height]) @]* 
+
+[`d = `][_____]{"$displacement"}[`m`]
 
 END_PGML
 
