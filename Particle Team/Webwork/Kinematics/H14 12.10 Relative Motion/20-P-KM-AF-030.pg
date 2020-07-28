@@ -57,7 +57,7 @@ $H = random(10, 15, 1);
 $ra = sqrt($C) + 30/4;
 $rb = sqrt($C) + 10/4;
 $thetaa = ($G +$H)*pi/180;
-$thetab = $H*pi/180;
+$thetab = $G*pi/180;
 $tthetaa = 90*pi/180 - $thetaa;
 $tthetab = 90*pi/180 - $thetab;
 
