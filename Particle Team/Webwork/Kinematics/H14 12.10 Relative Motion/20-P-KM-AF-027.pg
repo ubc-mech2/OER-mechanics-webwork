@@ -42,9 +42,9 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random(1, 10, 1);
+$A = random(6, 10, 1);
 $B = random(1, 15, 1);
-$C = random(1, 10, 1);
+$C = random(1, 5, 1);
 $D = random(1, 15, 1);
 
 #computation
