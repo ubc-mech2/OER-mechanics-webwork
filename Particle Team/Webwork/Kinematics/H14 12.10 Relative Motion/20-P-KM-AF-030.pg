@@ -49,7 +49,7 @@ $D = random(10, 15, 1);
 $E = random(10, 15, 1);
 $F = random(10, 15, 1);
 $G = random(10, 15, 1);
-$H = random(10, 15, 1);
+$H = random(30, 40, 1);
 
 #computation
 
@@ -62,7 +62,7 @@ $tthetaa = 90*pi/180 - $thetaa;
 $tthetab = 90*pi/180 - $thetab;
 
 #relative velocity calculations
-$vabx = $A*cos($thetaa) - $B*cos($thetab);
+$vabx = -$A*cos($thetaa) + $B*cos($thetab);
 $vaby = -$A*sin($thetaa) + $B*sin($thetab);
 
 #acceleration calculations
@@ -71,7 +71,7 @@ $atb = $D;
 $ana = ($A)**2/$ra;
 $anb = ($B)**2/$rb;
 
-$aax = $ata*cos($thetaa) - $ana*cos($tthetaa);
+$aax =  $ata*cos($thetaa) - $ana*cos($tthetaa);
 $aay = -$ata*sin($thetaa) - $ana*sin($tthetaa);
 
 $abx = $atb*cos($thetab) - $anb*cos($tthetab);
@@ -95,7 +95,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Race tracks are ovals, however the curves can be described as a section of a circle with the equation [` x^2 + y^2 = [$C] `]. Car A and B are speeding around the curve with [`[$A]`] [`m/s`] and [`[$B]`] [`m/s`] respectively. Car B accelerates at [`[$D]`] [`m/s^2`] in the same direction of the velocity, Car A accelerates in the opposite direction with [`[$F]`] [`m/s^2`].
+Race tracks are ovals, however the curves can be described as a section of a circle with the equation [` x^2 + y^2 = [$C] `]. Car A and B are speeding around the curve with [`[$A]`] [`m/s`] and [`[$B]`] [`m/s`] respectively. Car B accelerates at [`[$D]`] [`m/s^2`] in the same direction of the velocity, Car A is decelerating at [`[$F]`] [`m/s^2`].
 
 _[`\alpha = [$G]`] [`^\circ`] [`\beta = [$H]`] [`^\circ`]_ 
 
