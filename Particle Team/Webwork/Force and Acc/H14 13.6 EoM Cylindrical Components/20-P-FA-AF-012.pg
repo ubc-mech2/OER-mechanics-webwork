@@ -1,0 +1,94 @@
+##DESCRIPTION
+## Collar on a rail, complicated
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(13: Force and Acceleration)
+## DBsection(6: Equations of Motion: Cylindrical Components)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level(Advanced)
+## KEYWORDS(Spring, Fun, Ball)
+## RESOURCES('inspired by Hibbeler 14E Section 13.6 problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$W = random(2, 10, 1);
+$dtheta = 2;
+$theta = pi/6;
+
+#r calculations
+$r = 10;
+$dotr = 20*sqrt(3);
+$ddotr = 200;
+
+#acceleration calculations
+$ar = $ddotr - $r*$dtheta**2;
+$atheta = 2*$dotr*$dtheta;
+
+#mass calculations
+$m = $W/9.80;
+
+#force calculations
+$Ptop = $m*($ar -tan($theta)*$atheta);
+$Pbot = tan($theta)*sin($theta) + cos($theta);
+$P = $Ptop/$Pbot;
+
+$N = ($m*$ar - $P*cos($theta))/(sin($theta));
+
+$width = 300;
+$height = 300;
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+The smooth rod follows a path described as [` r = 5/(1 - sin(\theta))`],  where [`\theta`] is in radians and [`r`] is in meters. The collar has a weight of [`[$W] \: = \: N`]. Determine the normal force and force [`F`] when [`\theta \: = \: pi/6 \: rad`] and [`\dot\theta \: = \: [$dtheta] \: rad/s`] ? 
+
+[@ image( "20-P-FA-AF-012.png", width=>[$width], height=>[$height]) @]*
+
+[`N = `][_____]{"$N"}[`N`]
+[`F = `][_____]{"$P"}[`N`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
