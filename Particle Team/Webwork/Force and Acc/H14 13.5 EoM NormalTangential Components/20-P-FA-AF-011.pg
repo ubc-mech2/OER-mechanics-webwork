@@ -71,7 +71,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A motorcycle and cyclist have a combined mass of [`[$M] \: kg`] travels a long a path described as [`y \: = \: x^2 `]. When [` x \: = \: [$X] `], the motorcycle and cyclist are tilted as in the diagram below [`\theta \: = \: [$theta]^circ`]. What is the velocity of the motorcycle?
+A motorcycle and cyclist have a combined mass of [`[$M] \: kg`], and travel along a horizontal path described by [`y \: = \: x^2 `]. When [` x \: = \: [$X] `], the motorcycle and cyclist are tilted as in the diagram below, with [`\theta \: = \: [$theta]^\circ`]. What is the velocity of the motorcycle?
 
 _use 9.80 for gravity and negative to indicate downwards_
 
