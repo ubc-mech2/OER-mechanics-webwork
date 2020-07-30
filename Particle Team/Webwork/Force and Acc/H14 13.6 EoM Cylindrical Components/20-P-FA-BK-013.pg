@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .5;
+$imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*1305;
+$height = $imgScale*1543;
 
 
 
@@ -50,20 +50,29 @@ loadMacros(
 
 Context("Numeric");
 #given
-$rp = random(500,800,100);
-$ra = random(2000,3000,100);
+$k = random(0.2,0.5,0.1);
+$thetad = random(2,5,1);
+$mu = random(0.2,0.5,0.1);
+$m = random(2,5,1);
+$theta = random(0.5,1.5,0.5);
 
 #computation
-$re = 6378;
-$G = 66.73*(10**(-12));
-$M = 5.9767*(10**(24));
+$r = 2.71828**($k*$theta);
+$rd = $k*$thetad*$r;
+$rdd = $k*$thetad*$rd;
 
-$vp = sqrt((2*$G*$M)/(($re+$rp)*(2*$re + $ra + $rp)*(10**6)));
-$va = $vp*$rp/$ra;
+$atheta = 2*$rd*$thetad;
+$ar = $rdd-$r*($thetad**2);
+
+$psi = atan(1/$k);
+
+$N = $m*$ar/(cos($psi) - sin($psi)*$mu);
+$F = $m*$atheta + (sin($psi) + cos($psi)*$mu)*$N;
+
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -74,22 +83,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-*Constants:*  
-Radius of the earth: 	[`6378`] [`km`]  
-Mass of the earth: 	[`5.9767*10^{24}`] [`km`]  
-Mass of the sun: 	[`1.991*10^{30}`] [`km`]  
-Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
-
-[@ image( "20-P-FA-BK-010.jpg", width=>[$width], height=>[$height]) @]* 
-
-A satellite is in an elliptical orbit around the earth, with an apogee at 
-[`[$ra]`] [`km`] and a perigee at [`[$rp]`] [`km`] above the surface of the earth.
-Find its speed at apogee and perigee.
-
-[`v_p=`] [______]{"$vp"} [`m/s`]  
-[`v_a=`] [______]{"$va"} [`m/s`]  
+A slotted bar is pushing a particle with a mass of [`[$m]\:kg`] along the spiral [`r = e^{[$k]\theta}`] 
+with a constant angular velocity of [`[$thetad]\: rad/s`]. 
+If the particle slides along the spiral with a friction coefficient of [`[$mu]`],
+find the force exerted by the bar when [`\theta = [$theta]\:rad`].
 
 
+[`F = `] [_____]{"$F"} [`N`]
 
 END_PGML
 

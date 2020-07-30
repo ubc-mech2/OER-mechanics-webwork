@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .5;
+$imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*1305;
+$height = $imgScale*1543;
 
 
 
@@ -50,20 +50,19 @@ loadMacros(
 
 Context("Numeric");
 #given
-$rp = random(500,800,100);
-$ra = random(2000,3000,100);
+$r = random(2,5,1);
+$dtheta = random(2,3);
+$vr = random(1.0,2.0,0.1);
+$m = random(4,8,1);
 
 #computation
-$re = 6378;
-$G = 66.73*(10**(-12));
-$M = 5.9767*(10**(24));
+$a = sqrt((2*$vr*$dtheta)**2 + ($r*$dtheta**2)**2);
+$T = $m*($a+9.8);
 
-$vp = sqrt((2*$G*$M)/(($re+$rp)*(2*$re + $ra + $rp)*(10**6)));
-$va = $vp*$rp/$ra;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -74,22 +73,12 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-*Constants:*  
-Radius of the earth: 	[`6378`] [`km`]  
-Mass of the earth: 	[`5.9767*10^{24}`] [`km`]  
-Mass of the sun: 	[`1.991*10^{30}`] [`km`]  
-Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
+A monkey weighing [`[$m]\:kg`] is swinging through the jungle, when the vine it grabs onto begins to slip. 
+If the monkey is swinging with an angular velocity of [`[$dtheta]`] [`rad/s`], 
+and the vine is slipping at a constant rate of [`[$vr]`] [`m/s`],
+find the tension in the vine when it is completely vertical with a length of [`r=[$r]`].
 
-[@ image( "20-P-FA-BK-010.jpg", width=>[$width], height=>[$height]) @]* 
-
-A satellite is in an elliptical orbit around the earth, with an apogee at 
-[`[$ra]`] [`km`] and a perigee at [`[$rp]`] [`km`] above the surface of the earth.
-Find its speed at apogee and perigee.
-
-[`v_p=`] [______]{"$vp"} [`m/s`]  
-[`v_a=`] [______]{"$va"} [`m/s`]  
-
-
+[`T = `] [_____]{"$T"} [`N`]
 
 END_PGML
 

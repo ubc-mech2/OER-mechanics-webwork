@@ -73,14 +73,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-*Constants:*
-Radius of the earth: [`6378`] [`km`]  
-Mass of the earth: [`5.9767*10^{24}`] [`km`]  
-Mass of the sun: [`1.991*10^{30}`] [`km`]  
+*Constants:*  
+Radius of the earth: 	[`6378`] [`km`]  
+Mass of the earth: 	[`5.9767*10^{24}`] [`km`]  
+Mass of the sun: 	[`1.991*10^{30}`] [`km`]  
 Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
 
-
-#[@ image( "20-P-FA-BK-003.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-BK-007.jpg", width=>[$width], height=>[$height]) @]* 
 
 A spaceship is in a circular orbit around the earth, [`$h`] [`km`] above the surface.
 
@@ -89,7 +88,7 @@ A.) What is the initial speed of the spaceship?
 B.) What is the escape velocity from this point?  
 [`v_e=`] [______]{"$ve"} [`km/s`]  
 C.) What is the increase in speed needed?  
-[`\Deltav=`] [______]{"$dv"} [`km/s`]  
+[`\Delta v=`] [______]{"$dv"} [`km/s`]  
 
 END_PGML
 
