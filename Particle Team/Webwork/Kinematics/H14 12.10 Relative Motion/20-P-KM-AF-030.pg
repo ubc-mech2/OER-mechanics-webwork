@@ -42,24 +42,14 @@ loadMacros(
 
 Context("Numeric");
 #given
-#$A = random(2, 10, 1);
-#$B = random(2, 10, 1);
-#$C = random(10, 15, 1);
-#$D = random(10, 15, 1);
-#$E = random(10, 15, 1);
-#$F = random(10, 15, 1);
-#$G = random(10, 15, 1);
-#$H = random(30, 40, 1);
-
-$A = 10;
-$B = 4;
-$C = 15;
-$D = 14;
-$E = 2;
-$F = 14;
-$G = 10;
-$H = 32;
-
+$A = random(2, 10, 1);
+$B = random(2, 10, 1);
+$C = random(10, 15, 1);
+$D = random(10, 15, 1);
+$E = random(10, 15, 1);
+$F = random(10, 15, 1);
+$G = random(10, 15, 1);
+$H = random(30, 40, 1);
 
 #computation
 
@@ -81,11 +71,11 @@ $atb = $D;
 $ana = ($A)**2/$ra;
 $anb = ($B)**2/$rb;
 
-$aax = $ata*cos($thetaa) + $ana*cos($tthetaa);
-$aay = $ata*sin($thetaa) - $ana*sin($tthetaa);
+$aax = $ata*cos($thetaa) + $ana*sin($thetaa);
+$aay = $ata*sin($thetaa) - $ana*cos($thetaa);
 
-$abx = -$atb*cos($thetab) + $anb*cos($tthetab);
-$aby = -$atb*sin($thetab) - $anb*sin($tthetab);
+$abx = -$atb*cos($thetab) + $anb*sin($thetab);
+$aby = -$atb*sin($thetab) - $anb*cos($thetab);
 
 $aabx = $aax - $abx;
 $aaby = $aay - $aby;
