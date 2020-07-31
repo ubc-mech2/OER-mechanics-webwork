@@ -74,7 +74,7 @@ in [`[$C]`] seconds. What is the cars scalar speed and angle from which it initi
 
 _Note: The only force acting on the ball is due to gravity_
 
-[@ image( "20-P-KM-AF-0142.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-AF-014.png", width=>[$width], height=>[$height]) @]*
 
 [`\theta =`][_____]{"$theta"} [`^\circ`] 
 
