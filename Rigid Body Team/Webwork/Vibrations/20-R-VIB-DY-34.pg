@@ -1,0 +1,88 @@
+## DESCRIPTION
+## Pendulum on bus. Find equation of displacement.
+## ENDDESCRIPTION
+
+## KEYWORDS('Pendulum', 'Bus','Equation of displacement')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Undamped Vibration)
+## Date(2020-7-31)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Advanced)
+## RESOURCES('20-R-VIB-DY-34.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1500;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$massS = random(2,5,1);
+$massB = random(4,6,1);
+$length = random(1.5,2.5,0.1);
+$accel = random(1,5,0.1);
+$freq = random(2,7,1);
+$k = random(10,20,1);
+
+#---- Formulas to compute answers --------------#
+$cog = ($massB/2+$massS)*$length/($massB+$massS);
+$I = $length**2*($massB/3+$massS);
+$natFreq = ($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2)/$I;
+$force = $cog*($massB+$massS)*$accel;
+$D = ($force/($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2))/(1-($freq/$natFreq)**2);
+
+#---- Answers to the problem -----------------------#
+$ansA = "$D*sin($freq*t)";
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-34.png", width=>[$width], height=>[$height]) @]*
+
+A bus has handles for passengers to use while standing up. The handles consist of a bar and a ball at the end. 
+The bar is [`l =`] [`[$length]`] [`m_B`] long and [`m =`] [`[$mass]`] [`kg`] while the sphere has a mass 
+[`m_S =`] [`[$sphere]`] [`kg`]. A spring with a spring constant [`k =`] [`[$k]`] [`N/m`] is placed halfway down the bar. 
+While driving, the transmission breaks down on the bus causing a perdic accelertaion [`a =`] [`[$accel]`] [`m/s^2`].
+Assuming small angle displacements, determine the equation of displacement.
+
+END_PGML
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+ANS(function_cmp($ansA,'t'));
+
+ENDDOCUMENT();
