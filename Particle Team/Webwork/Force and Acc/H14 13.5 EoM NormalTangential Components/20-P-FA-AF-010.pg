@@ -49,7 +49,7 @@ $R = random(1,5,1);
 
 #situation one
 $tension = $M*$V**2/($R);
-$acceleration = $U*9/80;
+$acceleration = $U*9.80;
 
 $width = 300;
 $height = 300;
@@ -70,9 +70,10 @@ The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk with a rope at
 
 _use 9.80 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-010.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-FA-AF-0102.png", width=>[$width], height=>[$height]) @]*
 
 [`T = `][_____]{"$tension"}[`N`]
+
 [`a_{t} = `][_____]{"$acceleration"}[`m/s^2`]
 
 END_PGML
