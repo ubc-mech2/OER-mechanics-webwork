@@ -54,7 +54,7 @@ $mass = $E/9.81;
 $Fpush = $E - $mass*$A;
 
 #computation for third part
-$G = 66.73*10**(-12);
+$G = 66.73;
 $Fattrac = $G*$mass*$M2/($R**2);
 
 #set tolerance
