@@ -1,16 +1,16 @@
 ## DESCRIPTION
-## Punching ball is displaced. Find the equation of motion.
+## 
 ## ENDDESCRIPTION
 
-## KEYWORDS('Free Undamped Vibration', 'Punching bag','Equation of motion')
+## KEYWORDS('', '','')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
-## DBsection(Free Undamped Vibration)
-## Date(2020-7-14)
+## DBsection()
+## Date(2020-6-30)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level(Intermediate)
-## RESOURCES('20-R-VIB-DY-3.png')
+## Level()
+## RESOURCES('20-R-VIB-DY-.png')
 
 ########################################################
 
@@ -45,39 +45,35 @@ $width = $imgScale*1000;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = random(2,5,0.1);
-$tension = random(1000,1200,1);
-$intVel = random(1,5,0.1);
-$length = random(1.5,2.5,0.01);
+$mass = random(50,75,1);
+$k = random(100,125,1);
+$c = random(15,50,1);
+$force = random(50,60,1);
+$freq = random(2,4,0.1);
 
 #---- Formulas to compute answers --------------#
-$natFreq = sqrt(2*$tension/($mass*$length));
-$A = $intVel/$natFreq;
+$natFreq = sqrt($k/$mass);
+$cc = sqrt(4*$mass*$k);
+$num = $force/$k;
+$denom = sqrt((1-($freq/$natFreq)**2)**2+(2*$c*$freq/$cc/$natFreq)**2);
 
 #---- Answers to the problem -----------------------#
-$ansA = "$A*sin($natFreq*t)";
+$ansA = $num/$denom;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-3.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-35.png", width=>[$width], height=>[$height]) @]*
 
-A new type of punching bag to be used in space consists of a [`m =`] [`[$mass]`] [`kg`] 
-ball suspended mid air by two [`l =`] [`[$length]`] [`m`] taut ropes, each with a tension 
-of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
-If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], 
-find the equation of motion.
+A new innovative workout machine requires the user to shake a weight of mass [`m =`] [`[$mass]`] [`kg`]. 
+The mass is attached to the ceiling via a spring, [`k =`] [`[$k]`] [`N/m`], and damper, [`c =`] [`[$c]`] [`Ns/m`]. 
+Given that the periodic force can be described as [`F =`] [`[$force]sin([$freq]t)`], determine the amplitude of vibration.
+Initially the machine is at rest.
+
+[`Amplitude =`] [____]{"$ansA"} [`m`]
 
 END_PGML
-
-BEGIN_TEXT
-
- $BR\{ans_rule(25) \}
-
-END_TEXT
-
-ANS(function_cmp($ansA,'t'));
 
 ENDDOCUMENT();
