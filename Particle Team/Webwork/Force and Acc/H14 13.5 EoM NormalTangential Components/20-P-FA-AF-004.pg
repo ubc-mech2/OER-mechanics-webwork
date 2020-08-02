@@ -83,14 +83,16 @@ What is the vertical acceleration and normal velocity when the spring of [`l`]
 
 _use 9.81 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-004.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-FA-AF-0042.png", width=>[$width], height=>[$height]) @]*
 
 [`V_{n} = `][_____]{"$velocity1"}[`m/s`]
+
 [`a_{b} = `][_____]{"$acceleration1"}[`m/s^2`]
 
 What is velocities when d is [`[$D2]`] [`m`]
 
 [`V_{n} = `][_____]{"$velocity2"}[`m/s`]
+
 [`a_{b} = `][_____]{"$acceleration2"}[`m/s^2`]
 
 END_PGML
