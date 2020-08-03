@@ -54,8 +54,9 @@ $mass = $E/9.81;
 $Fpush = $E - $mass*$A;
 
 #computation for third part
-$G = 66.73;
-$Fattrac = $G*$mass*$M2/($R**2);
+$Ftop = 66.73*$mass*$M2;
+$Fbot = $R**2;
+$Fattrac = $Ftop/$Fbot;
 
 #set tolerance
 Context()->flags->set(
@@ -70,9 +71,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The weight of an object falling to Earth is [`W_{E} \: = \: [$E] \: N']. What is its mass?
+The weight of an object falling to Earth is [`W_{E} \: = \: [$E] \: N`]. What is its mass?
 
-_use 9.81 for Earths gravity_
+_use 9.8 for Earths gravity_
 
 [`m = `][_____]{"$mass"}[`kg`]
 

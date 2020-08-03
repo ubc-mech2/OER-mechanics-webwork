@@ -1,0 +1,72 @@
+##DESCRIPTION
+## Preliminary problem
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(14: Work and Energy)
+## DBsection(1: The Work of a Force)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level(Beginner)
+## KEYWORDS(Spring, Fun, Ball)
+## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$W = 180;
+
+$width = 300;
+$height = 300;
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+Determine the work of the force when it displaces [`2 \: m`].
+
+[@ image( "20-P-WE-AF-003.png", width=>[$width], height=>[$height]) @]*
+
+[`W = `][_____]{"$W"}[`J`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
