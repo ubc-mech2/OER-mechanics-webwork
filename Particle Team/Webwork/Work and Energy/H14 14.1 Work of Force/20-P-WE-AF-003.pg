@@ -61,7 +61,7 @@ BEGIN_PGML
 
 Determine the work of the force when it displaces [`2 \: m`].
 
-[@ image( "20-P-WE-AF-003.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
 
 [`W = `][_____]{"$W"}[`J`]
 

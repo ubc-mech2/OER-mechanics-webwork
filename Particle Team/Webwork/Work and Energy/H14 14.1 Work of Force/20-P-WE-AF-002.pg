@@ -42,7 +42,7 @@ loadMacros(
 
 Context("Numeric");
 #given
-$W = 120;
+$W = 100*$d*3/5;
 
 $width = 300;
 $height = 300;
@@ -59,9 +59,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Determine the work of the force when it displaces [`2 \: m`].
+Determine the work of the force when it displaces [`[$d] \: m`].
 
-[@ image( "20-P-WE-AF-002.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-002.jpg", width=>[$width], height=>[$height]) @]*
 
 [`W = `][_____]{"$W"}[`J`]
 
