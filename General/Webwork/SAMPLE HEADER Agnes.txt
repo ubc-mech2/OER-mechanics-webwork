@@ -1,6 +1,6 @@
 ##DESCRIPTION
 ##
-## Created in collaboration between Douglas College Department of Physics
+## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
 ##
 ## Project led by Agnes d'Entremont and Jennifer Kirkey
