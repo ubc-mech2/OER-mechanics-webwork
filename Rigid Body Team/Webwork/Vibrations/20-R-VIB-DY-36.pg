@@ -18,15 +18,15 @@
 ##
 ##ENDDESCRIPTION
 
-## KEYWORDS('', '','')
+## KEYWORDS('Phase Angle', 'Magnification factor','Testing Vehicle')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
-## DBsection()
-## Date(2020-6-30)
+## DBsection(Forced Damped Vibrations)
+## Date(2020-8-04)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level()
-## RESOURCES('20-R-VIB-DY-.png')
+## Level(Beginner)
+## RESOURCES('20-R-VIB-DY-36.png')
 
 ########################################################
 
@@ -57,28 +57,40 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
+$width = $imgScale*1500;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-
+$mass = random(1750,2500,1);
+$c = random(150,250,1);
+$k = random(150,250,1);
+$force = random(100,150,1);
+$freq = random(1.5,5,0.1);
+$x0 = random(0.02,0.07,0.01);
 
 #---- Formulas to compute answers --------------#
-
+$cC = sqrt(4*$mass*$k);
+$wN = sqrt($mass/$k);
 
 #---- Answers to the problem -----------------------#
-$ansA = ;
+$ansA = atan((2*$cC/$c*$freq/$wN)/(1-($freq/$wN)**2));
+$ansB = 1/sqrt((1-($freq/$wN)**2)**2+(2*$cC/$c*$freq/$wN)**2);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-36.png", width=>[$width], height=>[$height]) @]*
 
+A [`m =`] [`[$mass]`] [`kg`] testing vehicle is undergoing a vibrations experiment. 
+It is attached to a wall via damper, [`c =`] [`[$c]`] [`Ns/m`], and spring, [`k =`] [`[$k]`] [`N/m`]. 
+Given that the spring is compressed [`[$x0]`] m from equilibrium before a periodic force 
+[`F =`] [`[$force]cos([$freq]t)`] is applied to the vehicle, determine the phase angle and the magnification factor.
 
+[`\phi =`] [____]{"$ansA"} [`rad`]
 
-[` =`] [____]{"$ansA"} [``]
+[`MF =`] [____]{"$ansB"}
 
 END_PGML
 
