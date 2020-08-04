@@ -43,7 +43,7 @@ loadMacros(
 Context("Numeric");
 #given
 $A = random(0.25, 0.75, 0.25);
-$B = random(2, 8, 2);
+$B = random(1, 4, 1);
 $C = random(1, 10, 1);
 $D = $B/$A;
 
