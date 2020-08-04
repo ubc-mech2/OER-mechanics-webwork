@@ -18,7 +18,7 @@
 ##
 ## This work was completed on the traditional, ancestral, and unceded
 ## territory of the many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), 
-## Squamish, Tsleil-Waututh, QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen, Chemainus (Stz'uminus) and Stó:lō (S’ólh Téméxw). 
+## Squamish, Tsleil-Waututh, QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), Chemainus (Stz'uminus) and Stó:lō (S’ólh Téméxw). 
 ##
 ## ENDDESCRIPTION
 ##
