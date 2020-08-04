@@ -1,6 +1,6 @@
 ##DESCRIPTION
 ##
-## Created in collaboration between Douglas College Department of Physics
+## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
 ##
 ## Project led by Agnes d'Entremont and Jennifer Kirkey
@@ -17,8 +17,8 @@
 ## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
 ## This work was completed on the traditional, ancestral, and unceded
-## territory of the Coast Salish peoples - specifically the Musqueam, 
-## Squamish, Tsleil-Waututh, QayQayt and Kwikwetlem Nations. 
+## territory of the many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), 
+## Squamish, Tsleil-Waututh, QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), Chemainus (Stz'uminus) and Stó:lō (S’ólh Téméxw). 
 ##
 ## ENDDESCRIPTION
 ##
