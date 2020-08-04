@@ -82,11 +82,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A pulley outputs a force as a function of time, [`F \: = \: [$A] \: t`] on a block of a mass of [`[$M]\: kg`]. After a change in time of [`[$T]\: s`], what is the displacement on the slope line? Note the kinetic coefficient of friction is [`\mu \: = \: [$U]`].
+A pulley outputs a force as a function of time, [`F \: = \: [$A] \: t`] on a block of a mass of [`[$M]\: kg`]. After a change in time of [`[$T]\: s`], what is the displacement on the slope line? Note the kinetic coefficient of friction is [`\mu \: = \: [$U]`] and that the block is already in motion.
 
 _use 9.81 for gravity_
 
-[@ image( "20-P-FA-AF-009.png", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-AF-0092.png", width=>[$width], height=>[$height]) @]* 
 
 [`d = `][_____]{"$displacement"}[`m`]
 

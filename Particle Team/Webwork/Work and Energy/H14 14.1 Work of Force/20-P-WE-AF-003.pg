@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Cylindrical block being rotated around fast
+## Preliminary problem
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(13: Force and Acceleration)
-## DBsection(5: Equations of Motion: Normal/Tangential Components)
+## DBchapter(14: Work and Energy)
+## DBsection(1: The Work of a Force)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Beginer)
+## Level(Beginner)
 ## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 13.5 problems')
+## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,14 +42,7 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(2, 10, 1);
-$U = random(0.5, 1, 0.1);
-$V = random(1,10,1);
-$R = random(1,5,1);
-
-#situation one
-$tension = $M*$V**2/($R);
-$acceleration = $U*9.80;
+$W = 180;
 
 $width = 300;
 $height = 300;
@@ -66,15 +59,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk with a rope attached. What is the tension in the rope if the velocity is found to be [`[$V] \: m/s`]? What is the tangential acceleration if [`\mu = [$U]`]?
+Determine the work of the force when it displaces [`2 \: m`].
 
-_use 9.80 for gravity and negative to indicate downwards_
+[@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
 
-[@ image( "20-P-FA-AF-0102.png", width=>[$width], height=>[$height]) @]*
-
-[`T = `][_____]{"$tension"}[`N`]
-
-[`a_{t} = `][_____]{"$acceleration"}[`m/s^2`]
+[`W = `][_____]{"$W"}[`J`]
 
 END_PGML
 
