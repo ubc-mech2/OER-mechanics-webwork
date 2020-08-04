@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Forked prong, easy question
+## Preliminary problem
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(13: Force and Acceleration)
-## DBsection(6: Equations of Motion: Cylindrical Components)
+## DBchapter(14: Work and Energy)
+## DBsection(1: The Work of a Force)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level(Beginner)
 ## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 13.6 problems')
+## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,20 +42,8 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(2, 10, 1);
-$A = random(0.5, 1, 0.1);
-$theta = random(0.5,2,0.5);
-
-#angle calculations
-$angle = atan($theta);
-
-#acceleration calculations
-$ar = $A**2*(1 - $theta);
-$at = 2*$theta*$A**2;
-
-#force calculations
-$N = ($M * $ar)/(sin($angle));
-$F = $M*$at - $N*cos($theta);
+$d = random(1,4,1);
+$W = 300*$d;
 
 $width = 300;
 $height = 300;
@@ -72,11 +60,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The arm is rotating along the described path with an angular velocity of [`\dot\theta`] [`=`] [`[$A]`] [`rad/s`] and [`\ddot\theta`] [`=`] [`0`] [`rad/s^2`]. Determine the magnitude of the force exerted on the [`[$M]`] [`kg`] ball when [`\theta = [$theta]`] [`rad`].
+Determine the work of the force when it displaces [`[$d] \: m`].
 
-[@ image( "20-P-FA-AF-0052.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-001.jpg", width=>[$width], height=>[$height]) @]*
 
-[`F = `][_____]{"$F"}[`N`]
+[`W = `][_____]{"$W"}[`J`]
 
 END_PGML
 

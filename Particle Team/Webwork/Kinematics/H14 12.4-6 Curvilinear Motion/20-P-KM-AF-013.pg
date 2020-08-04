@@ -43,10 +43,10 @@ loadMacros(
 Context("Numeric");
 #given
 $A = random(0.1, 1.5, 0.1);
-$h = random(2, 8, 1);
 $r = random(5, 10, 1);
+$h = $r - 4;
 $D = random(1,5,1);
-$theta = random (10, 35, 5);
+$theta = random (25, 35, 5);
 
 #computation
 $theta2 = $theta + $D;

@@ -53,8 +53,8 @@ $L = $C/2;
 $vy = 2*(-$A*$K**2 + $K*$B)/$L;
 $vx = $D/$C;
 $va = sqrt($vx**2 + $vy**2);
-$angle = atan($vx/$vy);
-$theta = $angle*(pi/180);
+$angle = atan($vy/$vx);
+$theta = $angle*(180/pi);
 
 #set tolerance
 Context()->flags->set(
@@ -69,8 +69,8 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Scientists have found a new plant 100 light years away, two aliens of the same height are playing catch and their ball follows the path described as [`-[$A]x^2 + [$B]x = 0 `]. If the ball moves from one to the other who stands [`[$D] \: m`] away
-in [`[$C]`] seconds. What is the cars scalar speed and angle from which it initially leaves? 
+Scientists have found a new planet 100 light years away, two aliens of the same height are playing catch and their ball follows the path described as [`-[$A]x^2 + [$B]x = 0 `]. If the ball moves from one to the other who stands [`[$D] \: m`] away
+in [`[$C]`] seconds. What is the ball's scalar speed and angle from the horizontal axis from which it initially leaves? 
 
 _Note: The only force acting on the ball is due to gravity_
 
