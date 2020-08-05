@@ -48,14 +48,15 @@ $R = random(5, 50, 5);
 $M2 = random(1, 3, 0.5);
 
 #computation for first part
-$mass = $E/9.81;
+$mass = $E/9.8;
 
 #computation for second part
 $Fpush = $E - $mass*$A;
 
 #computation for third part
 $Ftop = 66.73*$mass*$M2;
-$Fbot = $R**2;
+$distance = $R/100;
+$Fbot = $distance**2;
 $Fattrac = $Ftop/$Fbot;
 
 #set tolerance
@@ -81,9 +82,9 @@ What force pushing upwards is required to slow its acceleration to [`a \: = \: [
 
 [`F = `][_____]{"$Fpush"}[`N`]
 
-There is an object [`[$R] \: m`] away with a mass of [`[$M2] \: kg`]. Wha is the force of the attraction between these two objects?
+There is an object [`[$R] \: cm`] away with a mass of [`[$M2] \: kg`]. Wha is the force of the attraction between these two objects?
 
-[`F = `][_____]{"$Fattrac"}[`N`]
+[`F = `][_____]{"$Fattrac"}[`10^{-12} \: \: N`]
 
 END_PGML
 
