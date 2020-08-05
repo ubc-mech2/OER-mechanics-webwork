@@ -67,14 +67,14 @@ $rddot = 0;
 
 $theta = 0.5*$thetaddot*($t**2) + $theta0;
 $thetadot = $thetaddot*$t;
-$thetaddot = $thetaddot;
+$thetaddot2 = $thetaddot;
 
 $ar = $rddot-$r*($thetadot**2);
-$atheta = $r*$thetaddot + 2*$rdot*$thetadot;
+$atheta = $r*$thetaddot2 + 2*$rdot*$thetadot;
 
 $a = sqrt($ar**2 + $atheta**2);
 
-$F = $a/$m;
+$F = $a*$m;
 
 
 #set tolerance
