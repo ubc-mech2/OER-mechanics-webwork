@@ -50,15 +50,18 @@ loadMacros(
 
 Context("Numeric");
 #given
-$h = random(700, 2900, 100);
-$G = 66.73*(10**(-12));
-$M = 5.976*(10**24);
-$r = 6378;
+$musg = random(0.2,0.4,0.1);
+$musb = 2*$musg + 0.1;
+$mukg = $musg - 0.1;
+$mukb = $musb - 0.1;
+
+$g = 9.81;
+
+$mA = 1;
+$mB = 2;
 
 #computation
-$vc = sqrt(($G*$M)/(($r+$h)*1000))/1000;
-$ve = sqrt((2*$G*$M)/(($r+$h)*1000))/1000;
-$dv = $ve - $vc;
+$P = $musb*($mA)*$g + ($mA)/$mB*($musb*($mA)*$g - $mukg*($mA + $mB)*$g);
 
 #set tolerance
 Context()->flags->set(
@@ -73,22 +76,22 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-*Constants:*  
-Radius of the earth: 	[`6378`] [`km`]  
-Mass of the earth: 	[`5.9767*10^{24}`] [`kg`]  
-Mass of the sun: 	[`1.991*10^{30}`] [`kg`]  
-Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
 
-[@ image( "20-P-FA-BK-007.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-BK-015.jpg", width=>[$width], height=>[$height]) @]* 
 
-A spaceship is in a circular orbit around the earth, [`[$h]`] [`km`] above the surface.
 
-A.) What is the initial speed of the spaceship?  
-[`v_c=`] [______]{"$vc"} [`km/s`]  
-B.) What is the escape velocity from this point?  
-[`v_e=`] [______]{"$ve"} [`km/s`]  
-C.) What is the increase in speed needed?  
-[`\delta v=`] [______]{"$dv"} [`km/s`]  
+Two blocks are stacked on top of each other, as in the image above. 
+The top block has a mass of [`1kg`], while the bottom block has a mass of [`2kg`].
+A force [`P`] is applied to the top block. Find the force at which the top block begins to slide against the bottom block, given the following friction coefficients:
+Static friction between the bottom block and the ground: [`\mu_{SG} = [$musg]`]  
+Kinetic friction between the bottom block and the ground: [`\mu_{KG} = [$mukg]`]  
+Static friction between the two blocks: [`\mu_{SB} = [$musb]`]  
+Kinetic friction between the two blocks: [`\mu_{KB} = [$mukb]`]  
+
+Neglect air drag, assume the only forces acting on the blocks are 
+gravity ([`9.81m/s^2`]), friction ([`F_F = \mu*N`]) and applied force [`F`]. 
+
+The top block begins to slide at [`P=`] [______]{"$P"} [`N`]
 
 END_PGML
 

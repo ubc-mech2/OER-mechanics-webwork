@@ -23,11 +23,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .5;
+$imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*1305;
+$height = $imgScale*1543;
 
 
 
@@ -50,19 +50,17 @@ loadMacros(
 
 Context("Numeric");
 #given
-$h = random(700, 2900, 100);
-$G = 66.73*(10**(-12));
-$M = 5.976*(10**24);
-$r = 6378;
+$mu = random(0.2,0.5,0.1);
+$m = random(2,5,1);
+$theta = random(10,40,5);
 
 #computation
-$vc = sqrt(($G*$M)/(($r+$h)*1000))/1000;
-$ve = sqrt((2*$G*$M)/(($r+$h)*1000))/1000;
-$dv = $ve - $vc;
+$F = $m*9.8*($mu*cos($theta*3.14159/180) + sin($theta*3.14159/180));
+
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.05,
 tolType=>'relative');
 
 ##############################################################
@@ -73,22 +71,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-*Constants:*  
-Radius of the earth: 	[`6378`] [`km`]  
-Mass of the earth: 	[`5.9767*10^{24}`] [`kg`]  
-Mass of the sun: 	[`1.991*10^{30}`] [`kg`]  
-Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
+Find the force required to push a [`[$m]\: kg`] box up a slope with an angle of 
+[`[$theta]^\circ`] and a coefficient of friction of [`\mu = [$mu]`].
 
-[@ image( "20-P-FA-BK-007.jpg", width=>[$width], height=>[$height]) @]* 
 
-A spaceship is in a circular orbit around the earth, [`[$h]`] [`km`] above the surface.
-
-A.) What is the initial speed of the spaceship?  
-[`v_c=`] [______]{"$vc"} [`km/s`]  
-B.) What is the escape velocity from this point?  
-[`v_e=`] [______]{"$ve"} [`km/s`]  
-C.) What is the increase in speed needed?  
-[`\delta v=`] [______]{"$dv"} [`km/s`]  
+[`F = `] [_____]{"$F"} [`N`]
 
 END_PGML
 
