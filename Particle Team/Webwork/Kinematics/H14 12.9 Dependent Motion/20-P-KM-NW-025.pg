@@ -44,9 +44,9 @@ $time = sqrt($distanceA*2*2/$accelerationD);
 $difference = 0;
 
 #image scale
-$imgScale = 0.4;
-$width = 400;
-$height = 600;
+$imgScale = 0.25;
+$width = $imgScale*1628;
+$height = $imgScale*2169;
 
 #set tolerance
 Context()->flags->set(
@@ -61,7 +61,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-025.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-025.png", width=>[$width], height=>[$height]) @]*
 
 The [`C`] motor draws in rope at a constant velocity of [`v_{C} = [$velocityC]`] [`m/s`]. The [`D`] motor draws a different rope with a constant acceleration of [`a_{D} = [$accelerationD]`] [`m/s^2`]. If [`v_{D} = 0`] when [`t = 0`], determine the time needed for block [`A`] to rise [`[$distanceA]`] metres. What is the difference between the lengths of rope that the two motors draw in when block [`A`] reaches the same speed as block [`B`]?
 

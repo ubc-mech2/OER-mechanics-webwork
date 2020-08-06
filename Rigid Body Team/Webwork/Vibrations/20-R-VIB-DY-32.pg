@@ -1,0 +1,97 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College 
+## and UBC Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+## KEYWORDS('', '','')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Undamped Vibrations)
+## Date(2020-08-04)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Advanced)
+## RESOURCES('20-R-VIB-DY-32.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*2000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$lengthA = random(1.5,2,0.1);
+$lengthB = random(3,3.5,0.1);
+$mass = random(5,10,1);
+$force = random(5,10,0.1);
+$freq = random(10,15,1);
+$kA = random(25,50,1);
+$kB = random(25,50,1);
+$time = random(5,20,0.1);
+
+#---- Formulas to compute answers --------------#
+$A = $force/($kA*($lengthA/2)**2+$kB*(2*$lengthB/3)**2-$lengthB**2*$mass*$freq**2);
+
+#---- Answers to the problem -----------------------#
+$ansA = $A*sin($freq*$time);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-32.png", width=>[$width], height=>[$height]) @]*
+
+A L-shaped bar of negligible mass is pinned to the ceiling by the corner at point O. 
+Arm A, length [`L_A =`] [`[$lengthA]`] [`m`], has a spring [`k_A =`] [`[$kA]`] [`N/m`] 
+attached halfway and a force [`F =`] [`[$force]cos([$freq]t)`] applied at the end of the bar. 
+Arm B, length [`L_B =`] [`[$lengthB]`] [`m`], has a spring [`k_B =`] [`[$kB]`] [`N/m`] attached 
+2/3rd of the length down the bar and a mass [`m =`] [`[$mass]`] [`kg`] at the end of the bar.
+Given that initially the bar is at rest and unstretched, find the angle at [`t =`] [`[$time]`] [`s`].
+
+[`\theta =`] [____]{"$ansA"} [`rad`]
+
+END_PGML
+
+ENDDOCUMENT();

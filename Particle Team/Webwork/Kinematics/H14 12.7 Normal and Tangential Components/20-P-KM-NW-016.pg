@@ -45,9 +45,9 @@ $deltaV = $acceleration*cos($angle);
 $radius = $speed**2/($acceleration*sin($angle));
 
 #image scale
-$imgScale = 0.4;
-$width = 400;
-$height = 600;
+$imgScale = 0.1;
+$width = $imgScale*2959;
+$height = $imgScale*2765;
 
 #set tolerance
 Context()->flags->set(

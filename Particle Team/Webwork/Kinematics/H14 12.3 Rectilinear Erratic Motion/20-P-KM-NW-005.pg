@@ -41,8 +41,8 @@ $acceleration = -2;    # (lower, upper, stepsize)
 $imgScale = 0.6;
 
 #image aspect ratio
-$width = $imgScale*900;
-$height = $imgScale*500;
+$width = $imgScale*715;
+$height = $imgScale*424;
 
 #set tolerance
 Context()->flags->set(
