@@ -4,13 +4,13 @@
 
 ## DBsubject(Dynamics)
 ## DBchapter(14: Work and Energy)
-## DBsection(1: The Work of a Force)
+## DBsection(2-3: Principle of Work and Energy)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level(Beginner)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## KEYWORDS(Integration)
+## RESOURCES('inspired by Hibbeler 14E Section 14.2-3 problems')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,7 +42,15 @@ loadMacros(
 
 Context("Numeric");
 #given
-$W = 180;
+$A = random (0,1,1);
+$S = random (0,1,1);
+$M = random (0,1,1);
+
+
+#computation
+$inside = $S**2 + $A*$S - $M*9.8*$S;
+$inside2 = 2*$M/($inside)
+$velocity = sqrt($inside2);
 
 $width = 300;
 $height = 300;
@@ -59,7 +67,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A constant force does work and displaces the block [`2 \: m`]. What is the magnitude of the work?
+A crate of mass [`[$M] \: kg`] is being lifted by a force described as [` F \: = \: s/2 \: + \: [$A]`]. What is the velocity after [` s \: = \: [$S]`]?
 
 [@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
 

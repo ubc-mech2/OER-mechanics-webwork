@@ -46,13 +46,14 @@ $M = random(10, 15, 1);
 $U = random(0.1, 0.5, 0.1);
 $K = random(50, 75, 5);
 $D = random(0.1, 0.8, 0.1);
-$A = random(10, 15, 0.5);
 
 #computation for numerical answer
 $W = $M*9.81;
 $N = $W;
-$T = $U*$N - $K*$D + $M*$A;
-$ab = ($T - $W)/$M;
+$Atop = $W - $U*$N + $K*$D;
+$Abot = 2*$M;
+$A = $Atop/$Abot;
+$T = $W - $M*$A;
 
 
 $width = 350;
@@ -70,13 +71,16 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The friction coefficent for this bar is [`\mu = [$U]`] and both blocks has a mass of [`[$M]`] [`kg`]. When the sping with a spring constant of [`k = [$K]`] [`N/m`] is compressed [`[$D]`] [`m`] and then released. Block A experiences an acceleration of [`[$A]`] [`m/s`] to the left. What is the acceleration of Block B?
+The friction coefficent for this bar is [`\mu = [$U]`] and both blocks has a mass of [`[$M]`] [`kg`]. When the sping with a spring constant of [`k = [$K]`] [`N/m`] is compressed [`[$D]`] [`m`] and then released. What is the accleeration of block B? What is the tension in the rope?
 
 _use 9.81 for gravity and negative to indicate downwards_
 
 [@ image( "20-P-FA-AF-003.png", width=>[$width], height=>[$height]) @]* 
 
-[`a_{B} = `][_____]{"$ab"}[`m/s^2`]
+[`T = `][_____]{"$T"}[`N`]
+
+
+[`a_{B} = `][_____]{"$A"}[`m/s^2`]
 
 END_PGML
 
