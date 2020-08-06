@@ -42,9 +42,9 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random (0,1,1);
-$S = random (0,1,1);
-$M = random (0,1,1);
+$A = random (1,5,1);
+$S = random (1,4,1);
+$M = random (5,20,5);
 
 
 #computation
@@ -69,9 +69,9 @@ BEGIN_PGML
 
 A crate of mass [`[$M] \: kg`] is being lifted by a force described as [` F \: = \: s/2 \: + \: [$A]`]. What is the velocity after [` s \: = \: [$S]`]?
 
-[@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-006.jpg", width=>[$width], height=>[$height]) @]*
 
-[`W = `][_____]{"$W"}[`J`]
+[`v = `][_____]{"$velocity"}[`m/s`]
 
 END_PGML
 
