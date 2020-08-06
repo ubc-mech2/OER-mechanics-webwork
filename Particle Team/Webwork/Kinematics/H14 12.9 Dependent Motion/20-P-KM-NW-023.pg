@@ -42,6 +42,13 @@ $velocityC = random(2,4,1);
 $velocityB1 = $velocityA/4;
 $velocityB2 = $velocityC;
 
+#image scale
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,

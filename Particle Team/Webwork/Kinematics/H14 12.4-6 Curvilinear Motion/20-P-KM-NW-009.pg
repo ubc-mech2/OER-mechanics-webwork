@@ -43,7 +43,7 @@ $height = 16-($c*$t-$d)**2;
 
 #computation
 $velocityY = -2*$c*($c*$t-$d);
-$speed = (($velocityX**2 + $velocityY**2)**0.25)**2;
+$speed = sqrt($velocityX**2 + $velocityY**2);
 
 #set tolerance
 Context()->flags->set(
