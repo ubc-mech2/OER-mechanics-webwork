@@ -42,8 +42,8 @@ $s2 = random(165,195,5);
 $imgScale = 0.7;
 
 #image aspect ratio
-$width = $imgScale*600;
-$height = $imgScale*400;
+$width = $imgScale*709;
+$height = $imgScale*423;
 
 #computation
 $acceleration1 = $s1*(50/150)**2;

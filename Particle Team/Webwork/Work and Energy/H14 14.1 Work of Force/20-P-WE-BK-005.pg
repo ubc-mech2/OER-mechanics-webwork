@@ -1,25 +1,34 @@
 ##DESCRIPTION
-## Preliminary problem
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(14: Work and Energy)
-## DBsection(1: The Work of a Force)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
 
+
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
 
 
 loadMacros(   
@@ -39,16 +48,17 @@ loadMacros(
 #
 #
 
-
 Context("Numeric");
 #given
-$W = 180;
+$sin = 0.8;
+$Fmax = 20;
 
-$width = 300;
-$height = 300;
+#computation
+$W = $sin*$Fmax*(1.5);
+
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.02,
 tolType=>'relative');
 
 ##############################################################
@@ -58,14 +68,16 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+What is the work done by the force shown in the picture above when the block moves [`2 \: m`]?  
+The magnitude of the force is a piecewise function. From [`s = 0`] to [`s = 1m`] 
+the magnitude of the force is [`F = 20*s \: N`],
+and from [`s = 1m`] to [`s = 2m`] the magnitude of the force is a constant [`20N`].
 
-A constant force does work and displaces the block [`2 \: m`]. What is the magnitude of the work?
-
-[@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
-
-[`W = `][_____]{"$W"}[`J`]
+[`W=`] [______]{"$W"} [`J`]
 
 END_PGML
+
+
 
 ##############################################################
 

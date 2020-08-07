@@ -43,9 +43,11 @@ $rpm = random(250,1000,250);
 $speed = $velocity + $rpm*2*pi/60*$radius/100;
 
 #image scale
-$imgScale = 0.4;
-$width = 400;
-$height = 600;
+$imgScale = 0.6;
+
+#image aspect ratio
+$width = $imgScale*900;
+$height = $imgScale*500;
 
 #set tolerance
 Context()->flags->set(

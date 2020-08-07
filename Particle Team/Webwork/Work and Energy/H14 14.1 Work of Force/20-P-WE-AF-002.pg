@@ -59,7 +59,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Determine the work of the force when it displaces [`[$d] \: m`].
+A constant force does work and displaces the block [`[$d] \: m`]. What is the magnitude of the work?
 
 [@ image( "20-P-WE-AF-002.jpg", width=>[$width], height=>[$height]) @]*
 

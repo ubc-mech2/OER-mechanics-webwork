@@ -47,9 +47,11 @@ $velocityAB = sqrt(($A*cos($angleA)+$B*cos($angleB))**2+($A*sin($angleA)-$B*sin(
 $time = $distance/$velocityAB;
 
 #image scale
-$imgScale = 0.2;
-$width = 800;
-$height = 600;
+$imgScale = 0.25;
+
+#image aspect ratio
+$width = $imgScale*2343;
+$height = $imgScale*1374;
 
 #set tolerance
 Context()->flags->set(
@@ -64,7 +66,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-# [@ image( "20-P-KM-NW-027.jpg", width=>[$width], height=>[$height]) @]*
+# [@ image( "20-P-KM-NW-027.png", width=>[$width], height=>[$height]) @]*
 
 Two boats leave the shore at the same time and travel in the directions shown. If [`v_{A} = [$A]`] [`m/s`] and [`v_{B} = [$B]`] [`m/s`], determine the magnitude of the velocity of boat [`A`] with respect to boat [`B`]. How long after leaving the shore will the boats be [`[$distance]`] metres apart?
 

@@ -35,7 +35,7 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = 9.81;     # (lower, upper, stepsize)
+$acceleration = 9.8;     # (lower, upper, stepsize)
 $velocity = random(15,20,1);
 $timeB = random(2,3,1);
 

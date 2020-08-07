@@ -39,7 +39,7 @@ $playerHeight = random(1.6,2,0.1);         # (lower, upper, stepsize)
 $netHeight = random(0.6,0.8,1);
 $netDistance = random(3,5,1);   
 
-$acceleration = 9.81;
+$acceleration = 9.8;
 
 #computation
 $velocity = $netDistance/sqrt(($playerHeight-$netHeight)*2/$acceleration);
@@ -65,7 +65,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-011.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-011.jpg", width=>[$width], height=>[$height]) @]*
 
 A tennis player [`[$playerHeight]`] [`m`] tall serves a tennis ball with an initial velocity parallel to the ground. Determine the minimum speed [`v_{A}`] of the ball at [`A`] so that it passes over the net at [`B`], which is [`[$netDistance]`] [`m`] away and [`[$netHeight]`] [`m`] tall. Also, find the horizontal distance [`s`] travelled when the ball strikes the ground.
 
