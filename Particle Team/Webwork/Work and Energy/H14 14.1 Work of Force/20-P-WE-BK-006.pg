@@ -1,25 +1,34 @@
 ##DESCRIPTION
-## Preliminary problem
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(14: Work and Energy)
-## DBsection(1: The Work of a Force)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
 
+
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
 
 
 loadMacros(   
@@ -39,16 +48,18 @@ loadMacros(
 #
 #
 
-
 Context("Numeric");
 #given
-$W = 180;
+$r = random(2,9,1);
+$v = random(2,9,1);
+$m = random(2,9,1);
 
-$width = 300;
-$height = 300;
+#computation
+$E = 0.5*$m*$v**2
+
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.02,
 tolType=>'relative');
 
 ##############################################################
@@ -58,14 +69,15 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+A block (mass = [`[$m] \: kg`]) is in circular motion as shown in the image above, 
+with a radius of [`[$r] \: m`] and a speed of [`[$v] \: m/s`].
+Find the block's kinetic energy.
 
-A constant force does work and displaces the block [`2 \: m`]. What is the magnitude of the work?
-
-[@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
-
-[`W = `][_____]{"$W"}[`J`]
+[`E=`] [______]{"$E"} [`J`]
 
 END_PGML
+
+
 
 ##############################################################
 
