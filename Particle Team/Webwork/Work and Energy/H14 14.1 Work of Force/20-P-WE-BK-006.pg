@@ -50,14 +50,12 @@ loadMacros(
 
 Context("Numeric");
 #given
-$m = random(12,17,1);
-$h = random(10,20,1);
-
-$g = 9.81;
+$r = random(2,9,1);
+$v = random(2,9,1);
+$m = random(2,9,1);
 
 #computation
-$W = $g*$m*$h;
-
+$E = 0.5*$m*$v**2
 
 #set tolerance
 Context()->flags->set(
@@ -71,12 +69,11 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+A block (mass = [`[$m] \: kg`]) is in circular motion as shown in the image above, 
+with a radius of [`[$r] \: m`] and a speed of [`[$v] \: m/s`].
+Find the block's kinetic energy.
 
-
-How much work is done to lift a [`[$m]\: kg`] object [`[$h]\: m`]?
-
-
-[`W=`] [______]{"$W"} [`N`]
+[`E=`] [______]{"$E"} [`J`]
 
 END_PGML
 

@@ -50,14 +50,11 @@ loadMacros(
 
 Context("Numeric");
 #given
-$m = random(12,17,1);
-$h = random(10,20,1);
-
-$g = 9.81;
+$v = random(100,150,10);
 
 #computation
-$W = $g*$m*$h;
-
+$vms = $v/3.6;
+$r = ($vms**2)/(5*9.8);
 
 #set tolerance
 Context()->flags->set(
@@ -72,11 +69,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+A motorcycle stunt rider wants to go around a vertical circular loop, as in the drawing above.
+Find the maximum possible radius of the loop so that make it all the way around without falling at the top
+if their bike has a speed of [`[$v] \: km/hr`] at the start of the loop.
 
-How much work is done to lift a [`[$m]\: kg`] object [`[$h]\: m`]?
-
-
-[`W=`] [______]{"$W"} [`N`]
+[`r =`] [______]{"$r"} [`m`]
 
 END_PGML
 

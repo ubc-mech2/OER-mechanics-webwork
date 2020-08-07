@@ -50,13 +50,9 @@ loadMacros(
 
 Context("Numeric");
 #given
-$m = random(12,17,1);
-$h = random(10,20,1);
-
-$g = 9.81;
+$W = 0;
 
 #computation
-$W = $g*$m*$h;
 
 
 #set tolerance
@@ -71,12 +67,10 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+What is the work done by the force shown in the picture above when the block moves [`2 \: m`]?  
+The force is applied perpendicular to the motion.
 
-
-How much work is done to lift a [`[$m]\: kg`] object [`[$h]\: m`]?
-
-
-[`W=`] [______]{"$W"} [`N`]
+[`W=`] [______]{"$W"} [`J`]
 
 END_PGML
 

@@ -50,14 +50,11 @@ loadMacros(
 
 Context("Numeric");
 #given
-$m = random(12,17,1);
-$h = random(10,20,1);
-
-$g = 9.81;
+$sin = 0.8;
+$Fmax = 20;
 
 #computation
-$W = $g*$m*$h;
-
+$W = $sin*$Fmax*(1.5);
 
 #set tolerance
 Context()->flags->set(
@@ -71,12 +68,12 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+What is the work done by the force shown in the picture above when the block moves [`2 \: m`]?  
+The magnitude of the force is a piecewise function. From [`s = 0`] to [`s = 1m`] 
+the magnitude of the force is [`F = 20*s \: N`],
+and from [`s = 1m`] to [`s = 2m`] the magnitude of the force is a constant [`20N`].
 
-
-How much work is done to lift a [`[$m]\: kg`] object [`[$h]\: m`]?
-
-
-[`W=`] [______]{"$W"} [`N`]
+[`W=`] [______]{"$W"} [`J`]
 
 END_PGML
 
