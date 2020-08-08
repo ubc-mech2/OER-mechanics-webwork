@@ -1,0 +1,99 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College 
+## and UBC Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+## KEYWORDS('Forced Damped Vibration', 'Eccentric','Damper')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Damped Vibration)
+## Date(2020-08-07)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('20-R-VIB-DY-42.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$mass = random();
+$rad = random();
+$length = random();
+$c = random();
+$time = random();
+$dis = random();
+
+#---- Formulas to compute answers --------------#
+$k = $mass*9.81/$dis;
+$wN = sqrt($k/$mass);
+$cC = sqrt(4*$mass*$k);
+$force = $mass*$rad*$angVel**2;
+$D = ($force/$k)/sqrt((1-($angVel/$wN)**2)**2+(2*$c/$cC*$angVel/$wN)**2);
+$phi = atan((2*$c/$cC*$angVel/$wN)/((1-($angVel/$wN)**2));
+
+#---- Answers to the problem -----------------------#
+$ansA = $D*sin($angVel*$time+$phi);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-42.png", width=>[$width], height=>[$height]) @]*
+
+A [`m = [$mass] kg`] eccentric electric motor is mounted at the end of a [`l = [$length] m`] 
+solid horizontal bar which is attached to a wall. The eccentric motion can be described as a 
+[`[$eccent] kg`] mass rotating at an angular velocity [`\omega = [$angVel] rad/s`] located 
+[`r = [$rad] m`] from the axis of rotation. A [`c =  [$c] Ns/m`] damper supports the bar at the midpoint. 
+If the bar deflects [`y_0 = [$dis] m`] when the motor is off, determine the angle at [`t = [$time] s`].
+
+[`\theta =`] [____]{"$ansA"} [`rad`]
+
+END_PGML
+
+ENDDOCUMENT();
