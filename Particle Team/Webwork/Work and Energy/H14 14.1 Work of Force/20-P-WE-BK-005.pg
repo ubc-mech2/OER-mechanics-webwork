@@ -1,0 +1,84 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$sin = 0.8;
+$Fmax = 20;
+
+#computation
+$W = $sin*$Fmax*(1.5);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+What is the work done by the force shown in the picture above when the block moves [`2 \: m`]?  
+The magnitude of the force is a piecewise function. From [`s = 0`] to [`s = 1m`] 
+the magnitude of the force is [`F = 20*s \: N`],
+and from [`s = 1m`] to [`s = 2m`] the magnitude of the force is a constant [`20N`].
+
+[`W=`] [______]{"$W"} [`J`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};

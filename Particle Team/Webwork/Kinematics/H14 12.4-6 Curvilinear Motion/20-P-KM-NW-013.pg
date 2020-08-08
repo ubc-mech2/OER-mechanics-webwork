@@ -38,18 +38,18 @@ Context("Numeric");         # or Complex
 $velocity = random(70,100,10);     # (lower, upper, stepsize)
 $distance = random(10,40,5);
 $barrelHeight = random(10,30,10);
-$acceleration = 9.81;
+$acceleration = 9.8;
 
 #computation
 $time = sqrt(2*$height/$acceleration);
 $distance = 2*$height;
 
 #image scale
-$imgScale = .7;
+$imgScale = .3;
 
 #image aspect ratio
-$width = $imgScale*711;
-$height = $imgScale*263;
+$width = $imgScale*1573;
+$height = $imgScale*1152;
 
 #set tolerance
 Context()->flags->set(

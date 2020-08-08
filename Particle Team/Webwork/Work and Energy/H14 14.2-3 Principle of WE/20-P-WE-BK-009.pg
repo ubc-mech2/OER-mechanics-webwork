@@ -1,0 +1,84 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$v = random(100,150,10);
+
+#computation
+$vms = $v/3.6;
+$r = ($vms**2)/(5*9.8);
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A motorcycle stunt rider wants to go around a vertical circular loop, as in the drawing above.
+Find the maximum possible radius of the loop so that make it all the way around without falling at the top
+if their bike has a speed of [`[$v] \: km/hr`] at the start of the loop.
+
+[`r =`] [______]{"$r"} [`m`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};

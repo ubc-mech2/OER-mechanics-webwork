@@ -47,6 +47,11 @@ $time = $speedFeet/$deceleration;
 $distance_normal = $reactionNormal*$speedFeet + $speedFeet*$time - 0.5*$deceleration*$time**2;
 $distance_impaired = $distance_normal + ($reactionImpaired - $reactionNormal)*$speedFeet;
 
+#image scale
+$imgScale = 1;
+$width = $imgScale*616;
+$height = $imgScale*181;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,

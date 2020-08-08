@@ -1,0 +1,84 @@
+##DESCRIPTION
+##
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
+## Institution(University of British Columbia)
+## Author(Bryden Kinsella)
+## Date(June 2020)
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$r = random(2,9,1);
+$v = random(2,9,1);
+$m = random(2,9,1);
+
+#computation
+$E = 0.5*$m*$v**2
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A block (mass = [`[$m] \: kg`]) is in circular motion as shown in the image above, 
+with a radius of [`[$r] \: m`] and a speed of [`[$v] \: m/s`].
+Find the block's kinetic energy.
+
+[`E=`] [______]{"$E"} [`J`]
+
+END_PGML
+
+
+
+##############################################################
+
+ENDDOCUMENT()};

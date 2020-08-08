@@ -42,8 +42,8 @@ $timeEvent = random(5,10,0.2);
 $imgScale = 0.8;
 
 #image aspect ratio
-$width = $imgScale*900;
-$height = $imgScale*400;
+$width = $imgScale*1252;
+$height = $imgScale*506;
 
 #computation
 $speed = $acceleration * $timeEvent;

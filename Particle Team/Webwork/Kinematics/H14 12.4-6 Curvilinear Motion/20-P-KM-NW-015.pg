@@ -37,7 +37,7 @@ Context("Numeric");         # or Complex
 #given
 $speed = random(5,20,5);     # (lower, upper, stepsize)
 $angleDegrees = random(30,60,10);
-$g = 9.81;
+$g = 9.8;
 
 #computation
 $angle = $angleDegrees*pi/180;

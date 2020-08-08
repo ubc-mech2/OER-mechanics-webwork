@@ -1,0 +1,117 @@
+## DESCRIPTION
+## 20-R-WE-DK-13 highschool students create spring experiment, rank the different potential energies
+## ENDDESCRIPTION
+
+## KEYWORDS('potential energy','experiment','spring','work','energy')
+## DBsubject(Dynamics)
+## DBchapter(Work and Energy)
+## DBsection(Potential Energy)
+## Date(2020-08-06)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-WE-13.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$mcScenario11 = PopUp(["?","Feasible","Infeasible"], "Feasible");
+$mcScenario12 = PopUp(["?","Feasible","Infeasible"], "Feasible");
+$mcScenario13 = PopUp(["?","Feasible","Infeasible"], "Feasible");
+$mcScenario14 = PopUp(["?","Equal energy","Less energy","More energy","Need more information","N/A"], "Equal energy");
+$mcScenario15 = PopUp(["?","Equal energy","Less energy","More energy","Need more information","N/A"], "Less energy");
+$mcScenario16 = PopUp(["?","Equal energy","Less energy","More energy","Need more information","N/A"], "More energy");
+
+$mcScenario21 = PopUp(["?","Feasible","Infeasible"], "Infeasible");
+$mcScenario22 = PopUp(["?","Feasible","Infeasible"], "Feasible");
+$mcScenario23 = PopUp(["?","Feasible","Infeasible"], "Feasible");
+$mcScenario24 = PopUp(["?","Equal energy","Less energy","More energy","Need more information","N/A"], "N/A");
+$mcScenario25 = PopUp(["?","Equal energy","Less energy","More energy","Need more information","N/A"], "Need more information");
+$mcScenario26 = PopUp(["?","Equal energy","Less energy","More energy","Need more information","N/A"], "N/A");
+#---- Formulas to compute answers --------------#
+
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KIN-WE-13.png", width=>[$width], height=>[$height]) @]*
+
+Highschool students are desinging an eperiment to test the concept of potential energy. They come up 
+with several scenarios and would like to measure values to compare later. They decide they will use the 
+same weight and spring for each one of their scenarios, but have not decided on exact dimensions. In
+their proposed Scenario 1, the weight hangs from the ceiling attached to the spring, a distance of [`h/2`] off
+the ground. In Scenario 2, the weight is attached to the ceiling by a taut string and attached to the top of 
+the spring such that it rests at a height [`h/2`] off the ground. Assume the spring is large enough that it
+does not buckle under the weight. Scenario 3 is similar to Scenario 1 except a force is exerted on the weight 
+to extend the spring at an angle [`\theta`], such that the weight is held at height [`h/2`] off the ground.  
+  
+At a glance, determine if each scenario is feasible, and, if they are, compare the energy level of each scenario.  
+Scenario 1: [@ $mcScenario11->menu() @]*  
+Scenario 2: [@ $mcScenario12->menu() @]*  
+Scenario 3: [@ $mcScenario13->menu() @]*  
+  
+Scenario 1 compared to Scenario 2: [@ $mcScenario14->menu() @]*  
+Scenario 2 compared to Scenario 3: [@ $mcScenario15->menu() @]*  
+Scenario 3 compared to Scenario 1: [@ $mcScenario16->menu() @]*  
+  
+What would happen if all scenarios were adjusted such that the weight was resting at height [`3h/4`] off the ground?
+
+Scenario 1: [@ $mcScenario21->menu() @]*  
+Scenario 2: [@ $mcScenario22->menu() @]*  
+Scenario 3: [@ $mcScenario23->menu() @]*  
+
+Scenario 1 compared to Scenario 2: [@ $mcScenario24->menu() @]*  
+Scenario 2 compared to Scenario 3: [@ $mcScenario25->menu() @]*  
+Scenario 3 compared to Scenario 1: [@ $mcScenario26->menu() @]*  
+
+END_PGML
+
+ANS($mcScenario11->cmp);
+ANS($mcScenario12->cmp);
+ANS($mcScenario13->cmp);
+
+ANS($mcScenario14->cmp);
+ANS($mcScenario15->cmp);
+ANS($mcScenario16->cmp);
+
+ANS($mcScenario21->cmp);
+ANS($mcScenario22->cmp);
+ANS($mcScenario23->cmp);
+
+ANS($mcScenario24->cmp);
+ANS($mcScenario25->cmp);
+ANS($mcScenario26->cmp);
+
+ENDDOCUMENT();

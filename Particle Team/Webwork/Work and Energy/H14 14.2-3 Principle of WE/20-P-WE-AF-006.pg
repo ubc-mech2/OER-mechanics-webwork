@@ -1,0 +1,82 @@
+##DESCRIPTION
+## Preliminary problem
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(14: Work and Energy)
+## DBsection(2-3: Principle of Work and Energy)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level(Beginner)
+## KEYWORDS(Integration)
+## RESOURCES('inspired by Hibbeler 14E Section 14.2-3 problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random (20,30,1);
+$S = random (10,20,1);
+$M = random (1,3,1);
+
+
+#computation
+$inside = $S**2 + $A*$S - $M*9.8*$S;
+$inside2 = 2*($inside)/$M;
+$velocity = sqrt($inside2);
+
+$width = 300;
+$height = 300;
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A crate of mass [`[$M] \: kg`] is being lifted by a force described as [` F \: = \: s/2 \: + \: [$A]`]. What is the velocity after [` s \: = \: [$S]`]?
+
+_use 9.8 for gravity calculations_
+
+[@ image( "20-P-WE-AF-006.jpg", width=>[$width], height=>[$height]) @]*
+
+[`v = `][_____]{"$velocity"}[`m/s`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};

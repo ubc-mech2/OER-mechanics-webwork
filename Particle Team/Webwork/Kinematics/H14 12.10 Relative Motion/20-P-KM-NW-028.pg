@@ -44,9 +44,9 @@ $accelerationA = random(10,40,5);
 $time = ($velocityB*cos($angleDegrees*pi/180)-$velocityA)/$accelerationA;
 
 #image scale
-$imgScale = 0.4;
-$width = $imgScale*1000;
-$height = $imgScale*1500;
+$imgScale = 0.2;
+$width = $imgScale*1320;
+$height = $imgScale*1364;
 
 #set tolerance
 Context()->flags->set(
@@ -61,7 +61,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-028.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-028.png", width=>[$width], height=>[$height]) @]*
 
 Two planes, [`A`] and [`B`], are flying at the same altitude. Plane [`A`] is flying due north with a speed of [`v_{A} = [$velocityA]`] [`km/h`], while plane [`B`] has a velocity of [`v_{B} = [$velocityB]`] [`km/h`] flying at a [`[$angleDegrees]^\circ`] angle. If plane [`A`]'s speed starts increasing at [`[$accelerationA]`] [`km/h^2`], determine the time elapsed before the pilot observes plane [`B`] moving due west.
 
