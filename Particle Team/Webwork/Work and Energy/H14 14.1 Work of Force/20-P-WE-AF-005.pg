@@ -1,0 +1,82 @@
+##DESCRIPTION
+## An integrated force with cos 
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(14: Work and Energy)
+## DBsection(1: The Work of a Force)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level(Advanced)
+## KEYWORDS(Integration, Function of S)
+## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random(3,10,1);
+$s2 = random(6,10,1);
+$s1 = random(1,5,1);
+
+
+#computation
+$pt1 = ($s2 + 2*$A)*cos($s2)/2;
+$pt2 = cos($s2)/2;
+$pt3 = ($s1 + 2*$A)*cos($s1)/2;
+$pt4 = cos($s1)/2;
+
+$W = $pt1 + $pt2 - $pt3 - $pt4;
+
+$width = 300;
+$height = 300;
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A force described as [`F \: = \: s/2 \: + [$A]`] and [`\theta \: = \: s`] acts on a particle between the distances of [`s_{1} \: = [$s1]`] to [`s_{2} \: = [$s2]`]?
+
+
+[`W = `][_____]{"$W"}[`J`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
