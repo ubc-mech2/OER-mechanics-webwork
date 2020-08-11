@@ -43,7 +43,7 @@ loadMacros(
 Context("Numeric");
 #given
 $d = random(1,4,1);
-$W = 300*$d;
+$W = 400*$d;
 
 $width = 300;
 $height = 300;
