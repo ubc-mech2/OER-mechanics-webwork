@@ -71,7 +71,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The friction coefficent for this bar is [`\mu = [$U]`] and both blocks has a mass of [`[$M]`] [`kg`]. When the sping with a spring constant of [`k = [$K]`] [`N/m`] is compressed [`[$D]`] [`m`] and then released. What is magnitude of B's accleeration and the magnitude of tension in the rope?
+The friction coefficent for this bar is [`\mu = [$U]`] and both blocks has a mass of [`[$M]`] [`kg`]. When the sping with a spring constant of [`k \: = \: [$K] \: N/m`] is compressed [`[$D]`] [`m`] and then released, what is the magnitude of both B's accleeration and the tension of the rope?
 
 _use 9.81 for gravity and negative to indicate downwards_
 
