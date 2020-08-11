@@ -69,7 +69,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-28.png", width=>[$width], height=>[$height]) @]*
 
 A [`m =`] [`[$mass]`] [`kg`] toy car is attached to the wall with a spring, [`k =`] [`[$k]`] [`N/m`], and damper, [`c =`] [`[$c]`] [`Ns/m`], in parallel. 
-Given that one cycle later the displacement is [`x_1 =`] [`[$dis]`] [`m`], determine the initial displacement [`x_0`].
+Find the initial displacement [`x_0`] if the amplitude of the next peak is [`x_1 =`] [`[$dis]`] [`m`].
 
 [`x_0 =`] [____]{"$ansA"} [`m`]
 

@@ -89,7 +89,7 @@ BEGIN_PGML
 A [`l =`] [`[$length]`] [`m`] bar of mass [`m =`] [`[$mass]`] [`kg`] is pinned to the ceiling. 
 A damper, [`c =`] [`[$c]`] [`Ns/m`], and spring, [`k =`] [`[$k]`] [`N/m`], are attached halfway down the bar. 
 If a force [`F =`] [`[$force]sin([$freq]t)`] is applied to the end of the bar, 
-determine the particular solution of the vibration.
+determine the steady-state solution of the vibration.
 
 END_PGML
 

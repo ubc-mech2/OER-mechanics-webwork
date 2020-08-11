@@ -57,7 +57,7 @@ $massC = pi*$radius**2*$rho*$d;
 $c = sqrt(2*$s**2)/2;
 $inertia = 1/12*$massP*(2*$s**2)**2-1/2*$massC*$radius**2;
 $T = ($massP-$massC)*9.81/4;
-$natFreq = sqrt(4*$c*$T*$radius/($inertia*$length));
+$natFreq = sqrt(4*$c**2*$T/($inertia*$length));
 
 #---- Answers to the problem -----------------------#
 $ansA = $natFreq;

@@ -47,14 +47,14 @@ $height = $imgScale*1000;
 #---- Random variables for this problem --------#
 $t = random(0.5,1.5,0.01);
 $mass = random(10,20,0.1);
-$k1 = random(50,100,1);
-$k2 = random(100,50,1);
+$k1 = random(50,100,0.01);
+$k2 = random(100,50,0.01);
 $intDis = random(0.01,0.1,0.01);
 $intVel = random(0.5,1.5,0.01);
 
 #---- Formulas to compute answers --------------#
 $k = $k1*$k2/($k1+$k2);
-$c = sprintf("%0.3f",sqrt(4*$mass*$k));
+$c = sprintf("%0.2f",sqrt(4*$mass*$k));
 $wN = sqrt($k/$mass);
 $a =  ($intDis + ($intVel + $intDis*$wN)*$t);
 $b = exp (-$wN*$t);

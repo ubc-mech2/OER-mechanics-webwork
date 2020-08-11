@@ -67,7 +67,7 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-35.png", width=>[$width], height=>[$height]) @]*
 
-A new innovative workout machine requires the user to shake a weight of mass [`m =`] [`[$mass]`] [`kg`]. 
+A new innovative workout machine requires the user to push weight of mass [`m =`] [`[$mass]`] [`kg`] up and down repeatedly. 
 The mass is attached to the ceiling via a spring, [`k =`] [`[$k]`] [`N/m`], and damper, [`c =`] [`[$c]`] [`Ns/m`]. 
 Given that the periodic force can be described as [`F =`] [`[$force]sin([$freq]t)`], determine the amplitude of vibration.
 Initially the machine is at rest.
