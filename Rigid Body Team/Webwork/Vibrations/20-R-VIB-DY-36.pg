@@ -83,7 +83,7 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-36.png", width=>[$width], height=>[$height]) @]*
 
-A [`m =`] [`[$mass]`] [`kg`] testing vehicle is undergoing a vibrations experiment. 
+A [`m =`] [`[$mass]`] [`kg`] testing vehicle is undergoing a chassis stiffness testing session. 
 It is attached to a wall via damper, [`c =`] [`[$c]`] [`Ns/m`], and spring, [`k =`] [`[$k]`] [`N/m`]. 
 Given that the spring is compressed [`[$x0]`] m from equilibrium before a periodic force 
 [`F =`] [`[$force]cos([$freq]t)`] is applied to the vehicle, determine the phase angle and the magnification factor.

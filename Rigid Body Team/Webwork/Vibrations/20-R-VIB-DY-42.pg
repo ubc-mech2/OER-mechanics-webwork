@@ -87,10 +87,11 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-42.png", width=>[$width], height=>[$height]) @]*
 
 A [`m = [$mass] kg`] eccentric electric motor is mounted at the end of a [`l = [$length] m`] 
-solid horizontal bar which is attached to a wall. The eccentric motion can be described as a 
+solid horizontal bar which is cantilevered to a wall. The eccentric motion can be described as a 
 [`[$eccent] kg`] mass rotating at an angular velocity [`\omega = [$angVel] rad/s`] located 
-[`r = [$rad] m`] from the axis of rotation. A [`c =  [$c] Ns/m`] damper supports the bar at the midpoint. 
-If the bar deflects [`y_0 = [$dis] m`] when the motor is off, determine the angle at [`t = [$time] s`].
+[`r = [$rad] m`] from the axis of rotation. A [`c =  [$c] Ns/m`] damper acts on the bar at the midpoint. 
+If the bar deflects [`y_0 = [$dis] m`] when the motor is off, determine the angle of the steady-state vibration
+ at [`t = [$time] s`].
 
 [`\theta =`] [____]{"$ansA"} [`rad`]
 
