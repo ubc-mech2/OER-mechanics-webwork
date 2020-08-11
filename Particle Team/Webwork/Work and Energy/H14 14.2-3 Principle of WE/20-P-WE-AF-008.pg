@@ -44,15 +44,15 @@ Context("Numeric");
 #given
 $U = random (0.1,0.5,0.1);
 $M = random (2,5,1);
-$K = random (50,200,50);
-$D = random (0.1,0.8,0.1);
-$l = random (1,4,1);
+$K = random (100,200,50);
+$D = random (0.4,0.8,0.1);
+$l = random (2,7,1);
 $theta = random (10,45,5);
 
 #variable setup 
 $angle = $theta*pi/180;
 $W = $M*9.8;
-$N = $W/(cos($angle));
+$N = $W*(sin($angle));
 
 #energy calculations
 $U1 = $M*9.8*sin($angle)*($l+$D);
