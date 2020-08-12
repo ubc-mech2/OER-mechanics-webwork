@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Cylindrical block being rotated around fast
+## Block being pushed
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(13: Force and Acceleration)
-## DBsection(5: Equations of Motion: Normal/Tangential Components)
+## DBchapter(14: Work and Energy)
+## DBsection(4: Power and Efficiency)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level(Beginer)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 13.5 problems')
+## Level(Beginner)
+## KEYWORDS(Integration)
+## RESOURCES('inspired by Hibbeler 14E Section 14.4')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,14 +42,24 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(2, 10, 1);
-$U = random(0.3,0.8, 0.1);
-$V = random(1,10,1);
-$R = random(1,5,1);
+$U = random (0.4,0.8,0.1);
+$M = random (3,5,1);
+$T = random (3,5,1);
+$A = random (100,400,100);
+$theta = random (10,25,5);
 
-#situation one
-$tension = $M*$V**2/($R);
-$acceleration = $U*9.80;
+#variable setup 
+$angle = $theta*pi/180;
+$W = $M*9.8;
+$N = $W + $A*sin($angle);
+
+#acceleration calculations
+$atop = $A*cos($angle) -$U*$N;
+$acc= $atop/$M;
+
+#power
+$velocity = $acc*$T;
+$power = $A*cos($angle)*$velocity;
 
 $width = 300;
 $height = 300;
@@ -66,15 +76,13 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk that is accelerating with a rope attached. What is the tension in the rope if the velocity is found to be [`[$V] \: m/s`]? What is the tangential acceleration if [`\mu = [$U]`]?
+A block of mass of [`[$M] \: kg`] is being pushed by of force [`F \: = \: [$A]\: N`] at an angle of [`\theta \: = \: [$theta]^\circ`] to the horizontal for a total of [`t \: = \: [$T] \: s`]. What is the power generated? The crate starts at rest and [`\mu_{k} \: = \: [$U]`].
 
-_use 9.80 for gravity and negative to indicate downwards_
+_use 9.8 for gravity in calculationss_
 
-[@ image( "20-P-FA-AF-0102.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-009.png", width=>[$width], height=>[$height]) @]*
 
-[`T = `][_____]{"$tension"}[`N`]
-
-[`a_{t} = `][_____]{"$acceleration"}[`m/s^2`]
+[`P = `][_____]{"$power"}[`W`]
 
 END_PGML
 
