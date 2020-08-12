@@ -80,7 +80,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The smooth rod follows a path described as [` r = 5/(1 - sin(\theta))`],  where [`\theta`] is in radians and [`r`] is in meters. The collar has a weight of [`[$W] \: = \: N`]. What is the normal force and force [`F`] when [`\theta \: = \: \pi/6 \: rad`] and [`\dot\theta \: = \: [$dtheta] \: rad/s`] ? 
+The smooth forked rod follows a path described as [` r = 5/(1 - sin(\theta))`],  where [`\theta`] is in radians and [`r`] is in meters. The collar has a weight of [`[$W] \: = \: N`]. What is the normal force and force [`F`] when [`\theta \: = \: \pi/6 \: rad`] and [`\dot\theta \: = \: [$dtheta] \: rad/s`] ? 
 
 [@ image( "20-P-FA-AF-012.png", width=>[$width], height=>[$height]) @]*
 

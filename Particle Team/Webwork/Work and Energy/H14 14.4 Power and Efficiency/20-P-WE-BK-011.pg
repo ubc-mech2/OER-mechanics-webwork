@@ -1,25 +1,34 @@
 ##DESCRIPTION
-## Preliminary problem
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(14: Work and Energy)
-## DBsection(1: The Work of a Force)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
 
+
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
 
 
 loadMacros(   
@@ -39,17 +48,18 @@ loadMacros(
 #
 #
 
-
 Context("Numeric");
 #given
-$d = random(1,4,1);
-$W = 400*$d;
+$m = random(1000,2000,100);
+$P = random(500,800,50);
+$cd = (0.5,1.5,0.1);
 
-$width = 300;
-$height = 300;
+#computation
+$v = ($P/$cd)**(1/3);
+
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.02,
 tolType=>'relative');
 
 ##############################################################
@@ -60,13 +70,16 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A constant force does work and displaces the block [`[$d] \: m`]. What is the magnitude of the work?
+A car's engine is rated for a power output of [`[$P] \: W`]. 
+Drag force on the car is equal to [`[$cd]v^2`], where [`v`] is in m/s.
+The car has a mass of [`[$m] \: kg`].
+Find the car's top speed.
 
-[@ image( "20-P-WE-AF-001.jpg", width=>[$width], height=>[$height]) @]*
-
-[`W = `][_____]{"$W"}[`J`]
+[`v_{max} =`] [______]{"$v"} [`m/s`]
 
 END_PGML
+
+
 
 ##############################################################
 

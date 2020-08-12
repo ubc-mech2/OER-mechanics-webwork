@@ -1,25 +1,34 @@
 ##DESCRIPTION
-## Preliminary problem
+##
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(14: Work and Energy)
-## DBsection(1: The Work of a Force)
+## DBchapter(12: Particle Kinematics)
+## DBsection()
 ## Institution(University of British Columbia)
-## Author(Ashli Forbes)
+## Author(Bryden Kinsella)
 ## Date(June 2020)
-## Level(Beginner)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## Level()
+## KEYWORDS('Kinematics')
+## RESOURCES('')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
 
+
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .5;
+
+#image aspect ratio
+$width = $imgScale*2508;
+$height = $imgScale*1688;
+
 
 
 loadMacros(   
@@ -39,17 +48,18 @@ loadMacros(
 #
 #
 
-
 Context("Numeric");
 #given
-$d = random(1,4,1);
-$W = 400*$d;
+$m = random(1000,2000,1000);
+$v = 100;
+$E = random(800,990,10);
 
-$width = 300;
-$height = 300;
+#computation
+$eff = 50*$m*((100/3.6)**2)/$E;
+
 #set tolerance
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.02,
 tolType=>'relative');
 
 ##############################################################
@@ -60,13 +70,14 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A constant force does work and displaces the block [`[$d] \: m`]. What is the magnitude of the work?
+An electric engine consumes [`[$E] \: kJ`] of energy to accelerate a car with a mass of [`[$m] \: kg`] from 
+rest to a speed of [`[$v] \: km/hr`]. Find the efficiency of this engine.
 
-[@ image( "20-P-WE-AF-001.jpg", width=>[$width], height=>[$height]) @]*
-
-[`W = `][_____]{"$W"}[`J`]
+[`Efficiency =`] [______]{"$eff"} [`%`]
 
 END_PGML
+
+
 
 ##############################################################
 

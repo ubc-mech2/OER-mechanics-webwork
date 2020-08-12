@@ -42,6 +42,7 @@ loadMacros(
 
 Context("Numeric");
 #given
+$d = random(1,4,1);
 $W = 100*$d*3/5;
 
 $width = 300;

@@ -43,7 +43,7 @@ loadMacros(
 Context("Numeric");
 #given
 $M = random(2, 10, 1);
-$U = random(0.5, 1, 0.1);
+$U = random(0.3,0.8, 0.1);
 $V = random(1,10,1);
 $R = random(1,5,1);
 
@@ -66,7 +66,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk with a rope attached. What is the tension in the rope if the velocity is found to be [`[$V] \: m/s`]? What is the tangential acceleration if [`\mu = [$U]`]?
+The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk that is accelerating with a rope attached. What is the tension in the rope if the velocity is found to be [`[$V] \: m/s`]? What is the tangential acceleration if [`\mu = [$U]`]?
 
 _use 9.80 for gravity and negative to indicate downwards_
 

@@ -56,8 +56,8 @@ $s2 = $d + 0.5;
 #work for force
 $Wf = $F*$d;
 
-#work for spring
-$Ws = 0.5*$k*(($s2)**2 - (0.5)**2);
+#work for spring and friction
+$Ws = 0.5*$k*(($s2)**2 - (0.5)**2) - $U*$M*9.8*($s2 - $s1);
 
 #total work
 $Wt = $Wf - $Ws;
