@@ -67,6 +67,10 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+
+[@ image( "20-P-WE-BK-004.png", width=>[$width], height=>[$height]) @]* 
+
 What is the work done by the force shown in the picture above when the block moves [`2 \: m`]?  
 The force is applied perpendicular to the motion.
 

@@ -68,6 +68,11 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+
+
+[@ image( "20-P-WE-BK-005.png", width=>[$width], height=>[$height]) @]* 
+
 What is the work done by the force shown in the picture above when the block moves [`2 \: m`]?  
 The magnitude of the force is a piecewise function. From [`s = 0`] to [`s = 1m`] 
 the magnitude of the force is [`F = 20*s \: N`],

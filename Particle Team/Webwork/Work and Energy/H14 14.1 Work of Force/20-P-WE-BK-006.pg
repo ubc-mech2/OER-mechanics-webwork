@@ -69,6 +69,10 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+
+[@ image( "20-P-WE-BK-006.png", width=>[$width], height=>[$height]) @]* 
+
 A block (mass = [`[$m] \: kg`]) is in circular motion as shown in the image above, 
 with a radius of [`[$r] \: m`] and a speed of [`[$v] \: m/s`].
 Find the block's kinetic energy.
