@@ -55,7 +55,7 @@ $v = random(2,9,1);
 $m = random(2,9,1);
 
 #computation
-$E = 0.5*$m*$v**2
+$E = 0.5*$m*$v**2;
 
 #set tolerance
 Context()->flags->set(

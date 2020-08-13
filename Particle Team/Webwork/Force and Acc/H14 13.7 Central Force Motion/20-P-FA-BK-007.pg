@@ -72,8 +72,8 @@ BEGIN_PGML
 
 *Constants:*  
 Radius of the earth: 	[`6378`] [`km`]  
-Mass of the earth: 	[`5.9767*10^{24}`] [`km`]  
-Mass of the sun: 	[`1.991*10^{30}`] [`km`]  
+Mass of the earth: 	[`5.9767*10^{24}`] [`kg`]  
+Mass of the sun: 	[`1.991*10^{30}`] [`kg`]  
 Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
 
 [@ image( "20-P-FA-BK-007.jpg", width=>[$width], height=>[$height]) @]* 
