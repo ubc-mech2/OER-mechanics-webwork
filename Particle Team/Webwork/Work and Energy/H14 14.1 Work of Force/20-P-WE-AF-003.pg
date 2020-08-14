@@ -42,8 +42,10 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(5,20,50;
-$T = $M*6**2/2;
+$M = (5,25,5);
+$theta = (20,50,5);
+$v = ( 1, 10, 1);
+$T = ($M*$v**2)/(2);
 
 $width = 300;
 $height = 300;
@@ -60,9 +62,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If the mass of the block is [`m = [$M]\:kg`], what is the kinetic energy of the block? 
+If the block has a velocity of [`v = [$v] \: m/s`] and has a mass of [`m = [$M]\: kg`] and the angle of the plane is [`\theta = [$theta]^\circ`]. What is the kinetic energy of the block? 
 
-[@ image( "20-P-WE-AF-003.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-003.png", width=>[$width], height=>[$height]) @]*
 
 [`T = `][_____]{"$T"}[`J`]
 
