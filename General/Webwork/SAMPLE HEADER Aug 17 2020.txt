@@ -19,8 +19,8 @@
 ## This work was completed on the traditional, ancestral, and unceded
 ## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
 ## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün,  
-## Niitsitapi (Blackfoot), and the people of the Treaty 7 region of Southern Alberta. 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
 ##
 ## ENDDESCRIPTION
 ##
@@ -29,7 +29,7 @@
 ## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
 ## Institution('University of British Columbia')
 ## Author([YOUR NAME])
-## Date([YYYY-MM-DD])
+## Date(Summer 2020)
 ## Difficulty([Beginner/Intermediate/Advanced])
 ## KEYWORDS('Dynamics', [etc])
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [X], section [X.X]')
