@@ -22,11 +22,11 @@ loadMacros(
 
 $mc1 = RadioButtons(
     [ "Kinetic Energy", "Gravitational Potential", "Elastic Potential", "Friction Loss"],
-    "Gravitational Potential"); #this will make D the correct answer
+    "Elastic Potential"); #this will make D the correct answer
 
 $mc2 = RadioButtons(
     [ "Kinetic Energy", "Gravitational Potential", "Elastic Potential", "Friction Loss"],
-    "Elastic Potential"); #this will make D the correct answer
+    "Gravitational Potential"); #this will make D the correct answer
 
 
 
