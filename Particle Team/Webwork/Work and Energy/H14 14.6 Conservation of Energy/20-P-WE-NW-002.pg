@@ -16,6 +16,7 @@
 
 DOCUMENT();
 
+#image scale
 $imgScale = .25;
 
 #image aspect ratio
