@@ -1,5 +1,6 @@
 ##DESCRIPTION
 ## Two blocks on a string, spring forces an acceleration and asked to find the other acceleration
+## Taking from P13-17
 ##ENDDESCRIPTION
 
 ##DESCRIPTION
@@ -35,8 +36,8 @@
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
 ## Difficulty([Intermediate])
-## KEYWORDS(`Multidimensional Motion`)
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 3-4')
+## KEYWORDS(`EoM Normal/Tangential Coordinates`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 5')
 
 ##############################################################
 
@@ -63,19 +64,16 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(10, 15, 1);
-$U = random(0.1, 0.5, 0.1);
-$K = random(50, 75, 5);
-$D = random(0.1, 0.8, 0.1);
+$ma = random(3, 10, 1);
+$mb = $ma;
+$uk = random(0.1,0.5,0.1);
 
 #computation for numerical answer
-$W = $M*9.81;
-$N = $W;
-$Atop = $W - $U*$N + $K*$D;
-$Abot = 2*$M;
+$Atop = $ma*9.8 - $uk*$mb*9.8;
+$Abot = $ma + $mb;
 $A = $Atop/$Abot;
-$T = $W - $M*$A;
 
+$T = $ma*9.8 - $ma*$A;
 
 $width = 350;
 $height = 300;
@@ -92,11 +90,11 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The friction coefficent for this bar is [`\mu = [$U]`] and both blocks has a mass of [`[$M]`] [`kg`]. When the spring with a constant of [`k \: = \: [$K] \: N/m`] is compressed [`[$D]`] [`m`] and then released, what is the magnitude of both B's acceleration and the tension of the rope?
+The friction coefficent for this block is [`\mu = [$uk]`], both blocks has a mass of [`[$mb] \: kg`]. What is the accleeration of block B? What is the tension in the rope?
 
 _use 9.81 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-003.png", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-AF-013.jpg", width=>[$width], height=>[$height]) @]* 
 
 [`T = `][_____]{"$T"}[`N`]
 
