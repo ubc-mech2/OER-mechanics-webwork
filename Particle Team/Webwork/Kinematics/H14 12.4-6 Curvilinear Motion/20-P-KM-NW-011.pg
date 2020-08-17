@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; ????????????????????????
+## Particle dynamics; Tennis ball hit past net - find required velocity to clear, range
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,7 +10,7 @@
 ## Date(2020-06-26)
 ## Level(Intermediate)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('??????????')
+## RESOURCES('inspired by Hibbeler 14th edition chapter 12 problem 12-98')
 
 ##############################################################
 
@@ -46,11 +46,11 @@ $velocity = $netDistance/sqrt(($playerHeight-$netHeight)*2/$acceleration);
 $range = $velocity*sqrt($playerHeight*2/$acceleration);
 
 #image scale
-$imgScale = 0.6;
+$imgScale = 0.3;
 
 #image aspect ratio
-$width = $imgScale*900;
-$height = $imgScale*500;
+$width = $imgScale*2260;
+$height = $imgScale*1243;
 
 #set tolerance
 Context()->flags->set(
@@ -65,7 +65,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-KM-NW-011.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-NW-011.png", width=>[$width], height=>[$height]) @]*
 
 A tennis player [`[$playerHeight]`] [`m`] tall serves a tennis ball with an initial velocity parallel to the ground. Determine the minimum speed [`v_{A}`] of the ball at [`A`] so that it passes over the net at [`B`], which is [`[$netDistance]`] [`m`] away and [`[$netHeight]`] [`m`] tall. Also, find the horizontal distance [`s`] travelled when the ball strikes the ground.
 
