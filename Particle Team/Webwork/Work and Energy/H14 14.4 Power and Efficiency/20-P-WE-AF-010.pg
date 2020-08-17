@@ -1,34 +1,25 @@
 ##DESCRIPTION
-##
+## Crate being lifted via ropes, motor, and another block
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
-## DBchapter(12: Particle Kinematics)
-## DBsection()
+## DBchapter(14: Work and Energy)
+## DBsection(4: Power and Efficiency)
 ## Institution(University of British Columbia)
-## Author(Bryden Kinsella)
+## Author(Ashli Forbes)
 ## Date(June 2020)
-## Level()
-## KEYWORDS('Kinematics')
-## RESOURCES('')
+## Level(intermediate)
+## KEYWORDS(Integration, crates, rope)
+## RESOURCES('inspired by Hibbeler 14E Section 14.4')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
 ## Section('TBD')
 ## Problem('TBD')
 
-
 ##############################################################
 
 DOCUMENT();
-
-#image scale
-$imgScale = .5;
-
-#image aspect ratio
-$width = $imgScale*2516;
-$height = $imgScale*3181;
-
 
 
 loadMacros(   
@@ -48,21 +39,24 @@ loadMacros(
 #
 #
 
+
 Context("Numeric");
 #given
-$m = random(0.3,0.7,0.1);
-$r = random(1.0,2.0,0.1);
-$v = random(5,9,1);
-$theta = random(10,30,2);
-$g = 9.81;
+$E = random (0.4,0.8,0.1);
+$M = random (20,50,1);
+$vel = random (3,5,1);
+$A = random (2,10,1);
 
-#computation
-$thetar = $theta*3.14159/180;
-$mu = sin($thetar)*$g/(cos($thetar)*$g + $v**2/$r);
+#calculations 
+$vp = 2*$vel;
+$T = ($M - $A)*9.8;
+$power = ($T*$vp)/($E);
 
+$width = 300;
+$height = 300;
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.03,
 tolType=>'relative');
 
 ##############################################################
@@ -73,17 +67,15 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-[@ image( "20-P-FA-BK-006.jpg", width=>[$width], height=>[$height]) @]* 
+Block A has a mass of [`[$A] \: kg`], block B has a mass of [`[$M] \: kg`] that moves upwards with a velocity of [`v \: = \: [$vel] \: m/s`]. The motor has an efficiency of [`\epsilon \: = \: [$E]`], determine the power supplied. 
 
-A [`[$m]kg`] block is sliding down a semicircular ramp with a radius of [`[$r] m`]. 
-If the block reaches a maximum velocity of [`[$v]m/s`] at a point where the slope is [`[$theta]^\circ`] from horizontal,
-find the coefficient of friction between the block and the ramp.
+_use 9.8 for gravity in calculations_
 
-[`\mu = `] [______]{"$mu"}
+[@ image( "20-P-WE-AF-010.png", width=>[$width], height=>[$height]) @]*
+
+[`P_{in} = `][_____]{"$power"}[`W`]
 
 END_PGML
-
-
 
 ##############################################################
 

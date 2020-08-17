@@ -18,15 +18,15 @@
 ##
 ##ENDDESCRIPTION
 
-## KEYWORDS('', '','')
+## KEYWORDS('Forced Damped Vibrations', 'Upgrade','Spring and damper system')
 ## DBsubject(Dynamics)
 ## DBchapter(Vibration)
-## DBsection()
-## Date(2020-6-30)
+## DBsection(Forced Damped Vibrations)
+## Date(2020-08-11)
 ## Author(Daniel Youm)
 ## Institution(University of British Columbia)
-## Level()
-## RESOURCES('20-R-VIB-DY-39.png')
+## Level(Advanced)
+## RESOURCES('20-R-VIB-DY-47.png')
 
 ########################################################
 
@@ -38,7 +38,6 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
-	"parserRadioButtons.pl",
 	"weightedGrader.pl",
 	"source.pl",			# allows code to be displayed on certain sites
 	"PGcourse.pl", 	 # Customization file for the course
@@ -47,7 +46,7 @@ loadMacros(
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 0;
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
@@ -62,85 +61,36 @@ $width = $imgScale*1000;		#aspect ratio
 $height = $imgScale*1000;
 
 #---- Random variables for this problem --------#
-$mass = 25;
-$c = 100;
-$k = 100;
-$force = 100;
-$freq = 20;
+$mass = 10;
+$k = 25;
+$c = 25;
+$force = 2;
+$freq = 5;
 
 #---- Formulas to compute answers --------------#
-
+$wN = sqrt($k/$mass);
+$cC = sqrt(4*$mass*$k);
+$cNew = ($cC*$wN/(2*$freq))*sqrt(3*(1-($freq/$wN)**2)**2+(2*$c/$cC*$freq/$wN)**2);
 
 #---- Answers to the problem -----------------------#
-$ansL = $mass;
-$ansR = $c;
-$ansC = 1/$k;
-$mc1 = RadioButtons(
-    [ "A", "B", "C", "D"],
-    "D"); #this will make D the correct answer
+$ansA = $k*2;
+$ansB = $cNew;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-39.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-47.png", width=>[$width], height=>[$height]) @]*
 
-A mass, [`m =`] [`[$mass]`] [`kg`], is supported by two springs in series and two dampers in series. 
-The dampers each have a damping constant [`c =`] [`[$c]`] [`Ns/m`] and the springs each have a spring 
-constant [`k = [$k] N/m`]. A force [`F = [$force]cos([$freq]t)`] is applied to the mass. 
-Determine the total resistance, ohms, and capacitance of an equilvalent electrical analog system.
+An old spring and damper system is due for an upgrade. A force [`F = [$force]sin([$freq]t)`] is applied vertically.
+The mass [`m = [$mass] kg`] is supported mid-air by a spring, [`k = [$k] N/m`], and damper, [`c = [$c] Ns/m`]. 
+Determine a new spring that will decrease the amplitude by 50% or a new damper that will achieve the same effect. 
 
-[`L =`] [____]{"$ansL"} [`H`]
+[`k_{new} =`] [____]{"$ansA"} [`N/m`]
 
-[`R =`] [____]{"$ansR"} [`\Omega`]
-
-[`C =`] [____]{"$ansC"} [`F`]
+[`c_{new} =`] [____]{"$ansB"} [`Ns/m`]
 
 END_PGML
-
-
-BEGIN_TEXT
-
-$BR
-\{ image( "20-R-VIB-DY-39-A.png", width=>250, height=>250,  
-tex_size=>700, extra_html_tags=>'alt=
-"A"' ) \}
-A
-
-$BR
-
-$BR
-\{ image( "20-R-VIB-DY-39-B.png", width=>250, height=>250,  
-tex_size=>700, extra_html_tags=>'alt=
-"B"' ) \}
-B
-
-$BR
-
-$BR
-\{ image( "20-R-VIB-DY-39-C.png", width=>250, height=>250,  
-tex_size=>700, extra_html_tags=>'alt=
-"C"' ) \}
-C
-
-$BR
-
-$BR
-\{ image( "20-R-VIB-DY-39-D.png", width=>250, height=>250,  
-tex_size=>700, extra_html_tags=>'alt=
-"D"' ) \}
-D
-
-$BR
-Which electrical analog system is equilvalent to the damped forced system.
-
-$BR
-\{ $mc1->buttons() \}
-
-END_TEXT
-
-
-ANS( $mc1->cmp() );
 
 ENDDOCUMENT();

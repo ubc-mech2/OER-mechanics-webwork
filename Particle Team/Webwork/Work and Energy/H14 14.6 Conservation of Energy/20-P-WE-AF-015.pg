@@ -1,16 +1,16 @@
 ##DESCRIPTION
-## Preliminary problem
+## Trapeze artist
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
 ## DBchapter(14: Work and Energy)
-## DBsection(1: The Work of a Force)
+## DBsection(6: Conservation of Energy)
 ## Institution(University of British Columbia)
 ## Author(Ashli Forbes)
 ## Date(June 2020)
 ## Level(Beginner)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 14.1 problems')
+## KEYWORDS(Integration, crates, rope)
+## RESOURCES('inspired by Hibbeler 14E Section 14.4')
 ## TitleText('TBD')
 ## EditionText('TBD')
 ## AuthorText('TBD')
@@ -42,10 +42,19 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = (5,25,5);
-$theta = (20,50,5);
-$v = ( 1, 10, 1);
-$T = ($M*$v**2)/(2);
+$M = random (3,5,1);
+$L = random (3,5,1);
+$H = random (3,5,1);
+$theta1 = random(1,3,1);
+$theta2 = random (200,500,100);
+
+#calculations
+$angle1 = $theta1*pi/180;
+$angle2 = $theta2*pi/180;
+$vin = 2*9.8*$L*(cos($angle2) - cos($angle1));
+$velocity = sqrt($vin);
+$an = $M*$velocity**2/$L;
+
 
 $width = 300;
 $height = 300;
@@ -62,11 +71,17 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If the block has a velocity of [`v = [$v] \: m/s`] and has a mass of [`m = [$M]\: kg`] and the angle of the plane is [`\theta = [$theta]^\circ`]. What is the kinetic energy of the block? 
+A trapeze artist of a mass of [`M = [$M]\: kg`] is attempting a new trick on a rope of [`l = [$L]\: m]. They are lifted to [`\theta_{1} = [$theta1]^\circ`] and then rope A is cut. The artist holds on until when [`\theta_{2} = [$theta2]^\circ`] then lets go for the next trick. If the ropes do NO work on the artist, what is the speed just before they let go? What is their normal acceleration? 
 
-[@ image( "20-P-WE-AF-003.png", width=>[$width], height=>[$height]) @]*
+_neglect size and air resistance_
 
-[`T = `][_____]{"$T"}[`J`]
+[@ image( "20-P-WE-AF-015.png", width=>[$width], height=>[$height]) @]*
+
+[`v = `][_____]{"$velocity"}[`m/s`]
+
+
+
+[`a_{n} = `][_____]{"$an"}[`m/s^2`]
 
 END_PGML
 

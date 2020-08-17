@@ -57,11 +57,10 @@ $massB = random(1,2,0.1);
 $k = $k1*$k2/($k1+$k2);
 $inertiaA = 1/2*$massA*$rA**2;
 $inertiaB = 1/2*$massB*$rB**2;
-$num = $k*$rA**2;
-$denom = $inertiaA + $inertiaB*$rA/$rB + $mass*$rA**2;
+$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
 
 #---- Answers to the problem -----------------------#
-$ansA = $num/$denom;
+$ansA = $wN;
 
 ########################################################;
 #PGML
@@ -73,7 +72,7 @@ BEGIN_PGML
 There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
 [`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
 [`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the vibration.
+Given a small vertical displacement, what is the natural frequency of the mass.
 
 [`w_n =`] [____]{"$ansA"} [`rad/s`]
 

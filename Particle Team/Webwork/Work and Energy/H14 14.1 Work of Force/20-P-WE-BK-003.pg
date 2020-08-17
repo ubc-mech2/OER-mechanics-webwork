@@ -77,12 +77,12 @@ tolType=>'relative');
 
 BEGIN_PGML
 Radius of the earth: 	[`6378`] [`km`]  
-Mass of the earth: 	[`5.9767*10^{24}`] [`km`]  
-Mass of the sun: 	[`1.991*10^{30}`] [`km`]  
+Mass of the earth: 	[`5.9767*10^{24}`] [`kg`]  
+Mass of the sun: 	[`1.991*10^{30}`] [`kg`]  
 Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
 
 Gravitational force is equal to [`\frac{-G M_1 M_2}{r^2}`]. Integrate to find the work done by gravity 
-on an object with a mass of [`[$m] \: kg `] that falls from a height of [`[$h1] \: km`] to a height of [`[$h2] \: km`].
+on an object with a mass of [`[$mo] \: kg `] that falls from a height of [`[$h1] \: km`] to a height of [`[$h2] \: km`].
 
 [`W=`] [______]{"$W"} [`kN`]
 

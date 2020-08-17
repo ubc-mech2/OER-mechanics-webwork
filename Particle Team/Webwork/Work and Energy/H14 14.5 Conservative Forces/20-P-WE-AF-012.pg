@@ -1,0 +1,64 @@
+DOCUMENT();
+
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+$mc1 = RadioButtons(
+    [ "Kinetic Energy", "Gravitational Potential", "Elastic Potential", "Friction Loss"],
+    "Gravitational Potential"); #this will make D the correct answer
+
+$mc2 = RadioButtons(
+    [ "Kinetic Energy", "Gravitational Potential", "Elastic Potential", "Friction Loss"],
+    "Elastic Potential"); #this will make D the correct answer
+
+
+
+##############################################################
+#
+#  TEXT
+#  This is NOT in PGML
+#
+
+BEGIN_TEXT
+
+
+The expression \(\frac{1}{2}ks^2\) refers to what type of energy? 
+$BR
+$BR
+\{ $mc1->buttons() \}
+$BR
+$BR
+$BR
+The expression \(Wy\) refers to what type of energy?
+$BR
+$BR
+\{ $mc2->buttons() \}
+
+
+END_TEXT
+
+
+ANS( $mc1->cmp() );
+ANS( $mc2->cmp() );
+
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,96 @@
+##DESCRIPTION
+## Crate being lifted via ropes, motor, and another block
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(14: Work and Energy)
+## DBsection(4: Power and Efficiency)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level(Advanced)
+## KEYWORDS(Integration, crates, rope)
+## RESOURCES('inspired by Hibbeler 14E Section 14.4')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$M = random (20,50,1);
+$l1 = random (3,5,1);
+$l2 = random (3,5,1);
+$r = random (3,5,1);
+$A = random (2,10,1);
+$theta = random (2,10,1);
+
+
+#variable set up 
+$angle = $theta*pi/180;
+$len1 = sqrt( ($l1 + $r)**2 + ($l2 + $r)**2);
+$len2 = ($r + $l2)/(sin($angle));
+$y2 = ($r + $l2)/(tan($angle)); ;
+$W = $M*9.8;
+
+#energy calculations
+$U1 = $W*$y2;
+$U2 = $A*($len1 - $len2);
+$Utot = $U1 + $U2;
+
+#power calculations
+$velocity = sqrt(2*($Utot)/$M);
+$power = $A*$velocity*cos($angle);
+
+$width = 300;
+$height = 300;
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A collar with a mass of [`[$M]\: kg`] starts from rest at [`A`] and moves along smooth rod by a pplying a constant force of [`F = [$A] \: N`] to the rope. If [`r = [$r], \: l_{1} = [$l1], \: l_{2} = [$l2]`], what is the power generated when the angle is [`\theta = [$theta]^\circ`]?
+
+_assume the angle is reached before the curve starts_
+
+[@ image( "20-P-WE-AF-011.png", width=>[$width], height=>[$height]) @]*
+
+[`P_{in} = `][_____]{"$power"}[`W`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};
