@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; 
+## Particle dynamics; Child pulls on toy box - find rope tension given net acceleration and geometry values
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -50,7 +50,7 @@ $acceleration = random(0.2,0.5,0.05);
 $mass = random(17,20,0.5);
 $fricCoeff = random(0.3,0.5,0.01);
 
-$g = 9.81;
+$g = 9.8;
 
 #computation
 $angle = $angleDegrees/180*pi;

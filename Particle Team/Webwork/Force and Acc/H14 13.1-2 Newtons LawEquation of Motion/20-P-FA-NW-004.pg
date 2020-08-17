@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Particle dynamics; Plane forces - balance thrust and lift with deceleration
+## Particle dynamics; Professor Splash belly flop - free fall motion finding speed and force
 ##ENDDESCRIPTION
 
 ## DBsubject(Dynamics)
@@ -10,14 +10,14 @@
 ## Date(2020-07-17)
 ## Level(Beginner)
 ## KEYWORDS('dynamics','force','acceleration','equations')
-## RESOURCES('special thanks to Whatcom Statics HW-002-002')
+## RESOURCES('special thanks to Douglas College Exams')
 
 ##############################################################
 
 DOCUMENT();
 
 #image scale
-$imgScale = .7;
+$imgScale = .9;
 
 #image aspect ratio
 $width = $imgScale*711;
@@ -45,16 +45,16 @@ loadMacros(
 Context("Numeric");
 
 #given
-$Fweight = random(100000, 155000, 50);
-$Fdrag = random(50000, 75000, 20);
-$thetadeg = random(5, 15, 0.1);
-$theta = pi*$thetadeg/180;
-$x = random(4,8,0.2);
-$deceleration = 2;
+$towerHeight = random(10,11,0.1);
+$distanceWater = random(30,50,10);
+$distanceAir = $towerHeight-$distanceWater/100;
+$mass = random(70,80,5);
 
-$acceleration = -$deceleration;
-$Flift = $Fweight*cos($theta);
-$Fthrust = $Fdrag + $Fweight * sin($theta) + $acceleration*$Fweight/32.2;
+$g = 9.8;
+
+#computation 
+$speed = sqrt(2*$g*$distanceAir);
+$force = $mass*$speed**2/2/$distanceWater*100;
 
 #set tolerance
 Context()->flags->set(
@@ -68,16 +68,17 @@ tolerance=>.002);
 
 BEGIN_PGML
 
-The airplane weighs [`[$Fweight]`] [`lb`] and flies at constant speed and trajectory given by [`\theta`] on the figure. The plane experiences a drag force of [`[$Fdrag]`] [`lb`].  
-
 [@ image("20-P-FA-NW-004.png", width=>[$width], height=>[$height]) @]*
 
-The lift force acts in the [`y'`] direction.  The weight acts in the negative [`y`] direction. The thrust and drag forces act in the positive and negative [`x'`]directions respectively.
+People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash has a weight of [`[$mass]`] [`kg`] and does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him at a depth of [`[$distanceWater]`] [`cm`].
 
-If [`\theta = [$thetadeg] ^{\circ}`], determine the thrust and lift forces required when an engine fails and the plane decelerates at [`[$deceleration]`] [`ft/s^2`].
+*a)* Ignoring friction and air resistance, how fast is he moving just before he hits the water? Graphically sketch the Professor's position, velocity, and acceleration as a function of time using a sheet of paper.
 
-[`F_T=`] [_____]{"$Fthrust"} [`lb`]  
-[`F_L=`] [_____]{"$Flift"} [`lb`]  
+[`v =`] [_____]{"$speed"} [`m/s`]  
+
+*b)* What is the magnitude of the water's force on Professor Splash?
+
+[`F =`] [_____]{"$force"} [`N`]  
 
 END_PGML
 
