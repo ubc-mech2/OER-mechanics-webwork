@@ -1,0 +1,78 @@
+##DESCRIPTION
+## Particle dynamics; Tied blocks on an inclined plane
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Work and Energy)
+## DBsection(???????)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-22)
+## Level(Intermediate)
+## KEYWORDS('dynamics','work','energy','???????????????????????????????????????')
+## RESOURCES('inspired by Hibbeler 14th edition chapter 14 question R14-8')
+
+##############################################################
+
+DOCUMENT();
+
+$imgScale = .25;
+
+#image aspect ratio
+$width = $imgScale*1200;
+$height = $imgScale*1553;
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGauxiliaryFunctions.pl",
+	"niceTables.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+
+#given
+$weightA = random(10,30,5);
+$weightB = $weightA+20;
+$distance = random(4,8,1);
+
+#computation
+$speedA = 2;
+$speedB = 2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.002);
+
+##############################################################
+#
+#  Text 
+#
+#
+
+BEGIN_PGML
+
+[@ image("20-P-FA-NW-010.png", width=>[$width], height=>[$height]) @]*
+
+Block [`A`], weighing [`[$weightA]`] [`lb`], and Block [`B`], weighing [`[$weightB]`] [`lb`], are tied together through a frictionless cable as shown. If the blocks are released from rest, determine the speed of each block after block [`A`] slides [`[$distance]`] feet up the inclined plane. Assume the blocks follow the frictionless grooved paths.
+
+[`v_A=`] [_____]{"$speedA"} [`ft/s`]  
+[`v_B=`] [_____]{"$speedB"} [`ft/s`]  
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT();

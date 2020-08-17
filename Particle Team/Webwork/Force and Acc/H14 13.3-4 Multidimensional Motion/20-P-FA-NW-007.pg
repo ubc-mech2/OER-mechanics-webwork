@@ -1,0 +1,82 @@
+##DESCRIPTION
+## Particle dynamics; Pulley block incline - find tension force on block given geometry and mechanical multiplication
+##ENDDESCRIPTION
+
+## DBsubject(Dynamics)
+## DBchapter(Force and Acceleration)
+## DBsection(Equations of Motion)
+## Institution(University of British Columbia)
+## Author(Nathan Wan)
+## Date(2020-07-22)
+## Level(Beginner)
+## KEYWORDS('dynamics','force','acceleration','equations','motion')
+## RESOURCES('inspired by Hibbeler 14th edition chapter 13 problem R13-2')
+
+##############################################################
+
+DOCUMENT();
+
+#image scale
+$imgScale = .3;
+
+#image aspect ratio
+$width = $imgScale*1200;
+$height = $imgScale*1553;
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGauxiliaryFunctions.pl",
+	"niceTables.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+
+#given
+$acceleration = 6;#random(4,8,2);
+$mass = 50;#random(40,60,10);
+$coeffFric = 0.3;#random(0.3,0.6,0.1);
+$angleDegrees = 30;#random(20,40,10);
+
+$g = 9.8;
+
+#computation
+$angle = $angleDegrees/180*pi;
+$Fg = $mass*$g;
+$Ftowing = ($coeffFric*$Fg*cos($angle)+$Fg*sin($angle)+$mass*$acceleration/3)/3;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.002);
+
+##############################################################
+#
+#  Text 
+#
+#
+
+BEGIN_PGML
+
+[@ image("20-P-FA-NW-007.png", width=>[$width], height=>[$height]) @]*
+
+The motor [`M`] pulls in its attached rope with an acceleration [`a_{p} = [$acceleration]`] [`m/s^2`]. Determine the towing force exerted by [`M`] on the rope in order to move the [`[$mass]`] [`kg`] crate up a [`[$angleDegrees]^\circ`] incline. The coefficient of kinetic friction between the crate and the plane is [`\mu_{k} = [$coeffFric]`]. Neglect the mass of the pulleys and the rope.
+
+[`F_T=`] [_____]{"$Ftowing"} [`N`]
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT();
