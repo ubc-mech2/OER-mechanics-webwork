@@ -71,11 +71,12 @@ $x = $A**2/4;
 $velbinside = 0.5*$vel - 9.8*$x;
 $velbsq = 2*$velbinside;
 $dydx = (sqrt($x) - $A)/(sqrt($x));
-$dydx2 = 1/(2*$x) - (sqrt($x) -$A)/(2*x**(3/2));
-$Ptop = (1 - $dydx**2)**(3/2);
-$Pbot = abs($dydx2);
-$P = $Ptop/$Pbot;
-$an = $velbsq/$P;
+$dydx2 = 1/(2*$x) - (sqrt($x) -$A)/(2*$x**(3/2));
+$Ptopin = (1 - $dydx**2);
+$Ptop = $Ptopin**(3/2);
+$Pbot = $dydx2;
+$Ptot = $Ptop/$Pbot;
+$an = $velbsq/$Ptot;
 
 $width = 300;
 $height = 300;
