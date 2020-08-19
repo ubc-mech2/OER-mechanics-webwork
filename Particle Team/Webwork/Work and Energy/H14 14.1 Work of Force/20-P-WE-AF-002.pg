@@ -83,7 +83,7 @@ BEGIN_PGML
 
 A constant force does work and displaces the block [`[$d] \: m`]. What is the magnitude of the work?
 
-[@ image( "20-P-WE-AF-002.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-002.png", width=>[$width], height=>[$height]) @]*
 
 [`W = `][_____]{"$W"}[`J`]
 
