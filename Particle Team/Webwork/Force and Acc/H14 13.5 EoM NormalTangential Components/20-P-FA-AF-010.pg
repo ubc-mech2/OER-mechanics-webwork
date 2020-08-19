@@ -2,20 +2,41 @@
 ## Cylindrical block being rotated around fast
 ##ENDDESCRIPTION
 
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(13: Force and Acceleration)
-## DBsection(5: Equations of Motion: Normal/Tangential Components)
-## Institution(University of British Columbia)
-## Author(Ashli Forbes)
-## Date(June 2020)
-## Level(Beginer)
-## KEYWORDS(Spring, Fun, Ball)
-## RESOURCES('inspired by Hibbeler 14E Section 13.5 problems')
-## TitleText('TBD')
-## EditionText('TBD')
-## AuthorText('TBD')
-## Section('TBD')
-## Problem('TBD')
+## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of British Columbia')
+## Author([ASHLI FORBES])
+## Date(Summer 2020)
+## Difficulty([Beginner])
+## KEYWORDS(`EoM Normal/Tangential Coordinates`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 5')
 
 ##############################################################
 
@@ -43,7 +64,7 @@ loadMacros(
 Context("Numeric");
 #given
 $M = random(2, 10, 1);
-$U = random(0.5, 1, 0.1);
+$U = random(0.3,0.8, 0.1);
 $V = random(1,10,1);
 $R = random(1,5,1);
 
@@ -66,7 +87,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk with a rope attached. What is the tension in the rope if the velocity is found to be [`[$V] \: m/s`]? What is the tangential acceleration if [`\mu = [$U]`]?
+The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk that is accelerating with a rope attached. What is the tension in the rope if the velocity is found to be [`[$V] \: m/s`]? What is the tangential acceleration if [`\mu = [$U]`]?
 
 _use 9.80 for gravity and negative to indicate downwards_
 

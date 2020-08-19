@@ -1,0 +1,96 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College 
+## and UBC Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+## KEYWORDS('Forced Damped Vibrations', 'Upgrade','Spring and damper system')
+## DBsubject(Dynamics)
+## DBchapter(Vibration)
+## DBsection(Forced Damped Vibrations)
+## Date(2020-08-11)
+## Author(Daniel Youm)
+## Institution(University of British Columbia)
+## Level(Advanced)
+## RESOURCES('20-R-VIB-DY-47.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1000;		#aspect ratio
+$height = $imgScale*1000;
+
+#---- Random variables for this problem --------#
+$mass = 10;
+$k = 25;
+$c = 25;
+$force = 2;
+$freq = 5;
+
+#---- Formulas to compute answers --------------#
+$wN = sqrt($k/$mass);
+$cC = sqrt(4*$mass*$k);
+$cNew = ($cC*$wN/(2*$freq))*sqrt(3*(1-($freq/$wN)**2)**2+(2*$c/$cC*$freq/$wN)**2);
+
+#---- Answers to the problem -----------------------#
+$ansA = $k*2;
+$ansB = $cNew;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-47.png", width=>[$width], height=>[$height]) @]*
+
+An old spring and damper system is due for an upgrade. A force [`F = [$force]sin([$freq]t)`] is applied vertically.
+The mass [`m = [$mass] kg`] is supported mid-air by a spring, [`k = [$k] N/m`], and damper, [`c = [$c] Ns/m`]. 
+Determine a new spring that will decrease the amplitude by 50% or a new damper that will achieve the same effect. 
+
+[`k_{new} =`] [____]{"$ansA"} [`N/m`]
+
+[`c_{new} =`] [____]{"$ansB"} [`Ns/m`]
+
+END_PGML
+
+ENDDOCUMENT();

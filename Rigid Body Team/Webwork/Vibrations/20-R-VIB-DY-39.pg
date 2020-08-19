@@ -72,6 +72,9 @@ $freq = 20;
 
 
 #---- Answers to the problem -----------------------#
+$ansL = $mass;
+$ansR = $c;
+$ansC = 1/$k;
 $mc1 = RadioButtons(
     [ "A", "B", "C", "D"],
     "D"); #this will make D the correct answer
@@ -85,7 +88,14 @@ BEGIN_PGML
 
 A mass, [`m =`] [`[$mass]`] [`kg`], is supported by two springs in series and two dampers in series. 
 The dampers each have a damping constant [`c =`] [`[$c]`] [`Ns/m`] and the springs each have a spring 
-constant [`k = [$k] N/m`]. A force [`F = [$force]cos([$freq]t)`] is applied to the mass.
+constant [`k = [$k] N/m`]. A force [`F = [$force]cos([$freq]t)`] is applied to the mass. 
+Determine the total resistance, ohms, and capacitance of an equilvalent electrical analog system.
+
+[`L =`] [____]{"$ansL"} [`H`]
+
+[`R =`] [____]{"$ansR"} [`\Omega`]
+
+[`C =`] [____]{"$ansC"} [`F`]
 
 END_PGML
 

@@ -57,7 +57,8 @@ $theta = random(10,30,2);
 $g = 9.81;
 
 #computation
-$mu = sin($theta)*$g/(cos($theta)*$g + $v**2/$r);
+$thetar = $theta*3.14159/180;
+$mu = sin($thetar)*$g/(cos($thetar)*$g + $v**2/$r);
 
 #set tolerance
 Context()->flags->set(

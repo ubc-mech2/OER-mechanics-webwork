@@ -86,7 +86,7 @@ A store's sign is mounted horizontally from a wall. The sign can be thought of a
 thin rectangle with a height of [`h =`] [`[$h]`] [`m`], length [`l =`] [`[$l]`] [`m`], 
 and density [`\rho =`] [`[$rho]`] [`kg/m^2`]. The pole the sign is mounted to has a spring 
 constant of [`k =`] [`[$k]`] [`N/rad`]. Due to a particularly strong gust of wind, 
-the sign experiences an initial angular velocity [`w_0 =`] [`[$angVel]`] [`rad/s`]. 
+the sign experiences an initial angular velocity [`w_0 =`] [`[$angVel]`] [`rad/s`] about the axis of the mounting pole. 
 What is the maximum angle displacement of the sign as a result of the wind. 
 
 [`\theta =`][___]{"$ansA"}[`rad`]

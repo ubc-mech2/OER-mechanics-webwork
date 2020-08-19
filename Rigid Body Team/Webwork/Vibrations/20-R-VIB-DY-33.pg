@@ -75,7 +75,7 @@ An eccentric motor is mounted halfway on a [`m =`] [`[$mass]`] [`kg`] bar which 
 The eccentric motion is equivalent to a [`[$eccent]`] [`kg`] mass located [`[$radi]`] [`m`] from the axis of rotation
 rotating at a angular velocity of [`w =`] [`[$angVel]`] [`rad/s`]. A spring of [`k =`] [`[$k]`] [`N/m`] 
 is attached to a [`m =`] [`[$mass2]`] [`kg`] which is fixed to the end of the bar. 
-Find the angle at [`t =`] [`[$time]`] [`s`] if starting from rest. 
+Find the angle at [`t =`] [`[$time]`] [`s`] if the bar starts from rest and the motor is initially spinning. 
 
 [`\theta =`] [____]{"$ansA"} [`rad`]
 
