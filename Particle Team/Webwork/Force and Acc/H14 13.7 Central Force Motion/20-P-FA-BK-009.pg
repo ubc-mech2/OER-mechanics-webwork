@@ -96,7 +96,7 @@ Mass of the earth: 	[`5.9767*10^{24}`] [`kg`]
 Mass of the sun: 	[`1.991*10^{30}`] [`kg`]  
 Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
 
-[@ image( "20-P-FA-BK-007.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-BK-007.png", width=>[$width], height=>[$height]) @]* 
 
 A spaceship is in a circular orbit around the earth, [`[$h]`] [`km`] above the surface.
 

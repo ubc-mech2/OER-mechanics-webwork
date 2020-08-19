@@ -93,7 +93,7 @@ Mass of the earth: 	[`5.9767*10^{24}`] [`kg`]
 Mass of the sun: 	[`1.991*10^{30}`] [`kg`]  
 Gravitational constant: [`66.73*10^{-12}`] [`\frac{m^3}{kg*s^2}`]
 
-[@ image( "20-P-FA-BK-007.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-BK-007.png", width=>[$width], height=>[$height]) @]* 
 
 When a satellite is in a geostationary orbit, it remains directly above the same point on the earth's surface. 
 For this to happen, its orbit must have a period of exactly 24 hours. Determine the speed and height above the earth's surface
