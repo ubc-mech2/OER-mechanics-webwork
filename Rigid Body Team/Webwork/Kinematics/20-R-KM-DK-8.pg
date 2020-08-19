@@ -62,7 +62,7 @@ BEGIN_PGML
 
 A wheel moves at a velocity of [`v_A =`][`[$velA]`] [`m/s`] to the right. If it rotates at an 
 angular velocity of [`\omega =`] [`[$angvel]`] [`rad/s`] clockwise, what is the magnitude of the 
-velocity at point B? The radius of the wheel is [`r =`] [`[$rB]`] [`m`].
+velocity at point B? The radius of the wheel is [`r =`] [`[$rB]`] [`m`] and B is at an angle of [`45^{\circ}`] with the vertical.
   
  
 [`v_B =`][____]{"$velB"}[`m/s`]
