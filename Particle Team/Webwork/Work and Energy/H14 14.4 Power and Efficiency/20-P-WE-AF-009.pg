@@ -82,7 +82,7 @@ $acc= $atop/$M;
 $velocity = $acc*$T;
 $power = $A*cos($angle)*$velocity;
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(
@@ -101,7 +101,7 @@ A block of mass of [`[$M] \: kg`] is being pushed by of force [`F \: = \: [$A]\:
 
 _use 9.8 for gravity in calculationss_
 
-[@ image( "20-P-WE-AF-009.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-0091.png", width=>[$width], height=>[$height]) @]*
 
 [`P = `][_____]{"$power"}[`W`]
 

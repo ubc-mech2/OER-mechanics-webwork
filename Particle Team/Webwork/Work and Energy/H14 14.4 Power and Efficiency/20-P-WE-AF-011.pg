@@ -87,7 +87,7 @@ $Utot = $U1 + $U2;
 $velocity = sqrt(2*($Utot)/$M);
 $power = $A*$velocity*cos($angle);
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(
@@ -106,7 +106,7 @@ A collar with a mass of [`[$M]\: kg`] starts from rest at [`A`] and moves along 
 
 _assume the angle is reached before the curve starts_
 
-[@ image( "20-P-WE-AF-011.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-0111.png", width=>[$width], height=>[$height]) @]*
 
 [`P_{in} = `][_____]{"$power"}[`W`]
 

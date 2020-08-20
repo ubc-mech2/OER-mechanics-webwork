@@ -92,7 +92,7 @@ Block A has a mass of [`[$A] \: kg`], block B has a mass of [`[$M] \: kg`] that 
 
 _use 9.8 for gravity in calculations_
 
-[@ image( "20-P-WE-AF-010.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-0101.png", width=>[$width], height=>[$height]) @]*
 
 [`P_{in} = `][_____]{"$power"}[`W`]
 
