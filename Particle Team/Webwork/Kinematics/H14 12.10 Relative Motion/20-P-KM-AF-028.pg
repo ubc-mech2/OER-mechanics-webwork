@@ -76,7 +76,7 @@ $vay = -sin($angle)*$va;
 $vax = cos($angle)*$va;
 $vabx = $vax - $D;
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(

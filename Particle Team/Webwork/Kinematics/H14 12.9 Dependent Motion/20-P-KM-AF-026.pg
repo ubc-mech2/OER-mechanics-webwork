@@ -72,7 +72,7 @@ $va = (-1*(2*$B - $C))/2;
 
 
 $width = 300;
-$height = 300;
+$height = 350;
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,

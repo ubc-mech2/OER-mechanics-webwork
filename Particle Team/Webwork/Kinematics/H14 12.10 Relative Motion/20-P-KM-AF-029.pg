@@ -73,8 +73,8 @@ $angle = $theta*180/pi;
 $vm = $B*cos($theta);
 $t = $C/$vm;
 
-$width = 500;
-$height = 500;
+$width = 350;
+$height = 300;
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
