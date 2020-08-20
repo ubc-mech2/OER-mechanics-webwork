@@ -89,7 +89,8 @@ BEGIN_PGML
 
 A motorcycle stunt rider wants to go around a vertical circular loop, as in the drawing above.
 Find the maximum possible radius of the loop so that make it all the way around without falling at the top
-if their bike has a speed of [`[$v] \: km/hr`] at the start of the loop.
+if their motorcycle has a speed of [`[$v] \: km/hr`] at the start of the loop.
+Assume that once the motorcycle enters the loop it is coasting (no further energy is added from the engine) and neglect friction.
 
 [`r =`] [______]{"$r"} [`m`]
 
