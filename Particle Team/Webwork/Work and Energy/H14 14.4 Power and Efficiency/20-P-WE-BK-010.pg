@@ -66,9 +66,9 @@ loadMacros(
 
 Context("Numeric");
 #given
-$m = random(1000,2000,1000);
+$m = random(1000,1500,1000);
 $v = 100;
-$E = random(800,990,10);
+$E = random(850,990,10);
 
 #computation
 $eff = 50*$m*((100/3.6)**2)/$E;
