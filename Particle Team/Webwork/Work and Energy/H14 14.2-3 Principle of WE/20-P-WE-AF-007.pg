@@ -82,7 +82,7 @@ $inside = -$M*9.8*$h2 + $A*$disp;
 $inside2 = 2*($inside)/$M;
 $velocity = sqrt($inside2);
 
-$width = 300;
+$width = 325;
 $height = 300;
 #set tolerance
 Context()->flags->set(
