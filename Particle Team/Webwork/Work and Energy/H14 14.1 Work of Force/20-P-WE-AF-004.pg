@@ -82,7 +82,7 @@ $Ws = 0.5*$k*(($s2)**2 - (0.5)**2) - $U*$M*9.8*($s2 - $s1);
 #total work
 $Wt = $Wf - $Ws;
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(

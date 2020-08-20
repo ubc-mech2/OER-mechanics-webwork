@@ -66,7 +66,7 @@ Context("Numeric");
 $d = random(1,4,1);
 $W = 400*$d;
 
-$width = 300;
+$width = 425;
 $height = 300;
 #set tolerance
 Context()->flags->set(
