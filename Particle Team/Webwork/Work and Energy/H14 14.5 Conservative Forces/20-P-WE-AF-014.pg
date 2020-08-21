@@ -95,6 +95,8 @@ END_PGML
    
    Context()->texStrings;
    BEGIN_TEXT
+   \(\nabla V\) = \{$P -> ans_array\}
+   END_TEXT
    Context()->normalStrings;
    
    ANS($P->cmp);
