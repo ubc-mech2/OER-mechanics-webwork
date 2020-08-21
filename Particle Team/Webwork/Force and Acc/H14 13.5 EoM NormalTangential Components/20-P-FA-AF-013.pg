@@ -94,7 +94,7 @@ The friction coefficent for this block is [`\mu = [$uk]`], block B has a mass of
 
 _use 9.81 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-013.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-AF-013.png", width=>[$width], height=>[$height]) @]* 
 
 [`T = `][_____]{"$T"}[`N`]
 
