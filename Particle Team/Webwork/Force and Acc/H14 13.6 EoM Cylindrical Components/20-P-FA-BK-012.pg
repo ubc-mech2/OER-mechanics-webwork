@@ -56,7 +56,7 @@ $vr = random(1.0,2.0,0.1);
 $m = random(4,8,1);
 
 #computation
-$a = sqrt((2*$vr*$dtheta)**2 + ($r*$dtheta**2)**2);
+$a = ($r*$dtheta**2);
 $T = $m*($a+9.8);
 
 
