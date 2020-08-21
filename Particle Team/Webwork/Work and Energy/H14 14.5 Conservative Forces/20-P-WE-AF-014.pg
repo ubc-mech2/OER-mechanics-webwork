@@ -87,7 +87,7 @@ $P = Point($x,$y,$z);
 
 BEGIN_PGML
 
-If force [`F = \: ( [$A]x^2, \: [$B], \: [$C]cos(z))`], what is the del at point [`([$D],\: [$E], \: [$F])`].
+If force [`F = \: ( [$A]x^2, \: [$B], \: [$C]cos(z))`], what is the gradient of the force at point [`([$D],\: [$E], \: [$F])`].
 
 _note all calculations are in rad_
 
@@ -95,7 +95,7 @@ END_PGML
    
    Context()->texStrings;
    BEGIN_TEXT
-   \(\nabla\) = \{$P->ans_array\}
+   \(\nabla F\) = \{$P->ans_array\}
    END_TEXT
    Context()->normalStrings;
    
