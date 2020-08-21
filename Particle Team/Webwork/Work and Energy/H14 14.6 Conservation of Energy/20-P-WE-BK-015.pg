@@ -99,7 +99,7 @@ Assume that all energy lost by the club is transferred to the ball, and that the
 Ignore air resistance, assume gravity is [`9.80 m/s^2`].  
 How far does the ball travel horizontally before hitting the ground?  
 
-[`h_{max} = `] [______]{"$h"} [`m`]
+[`h_{max} = `] [______]{"$hb"} [`m`]
 
 END_PGML
 
