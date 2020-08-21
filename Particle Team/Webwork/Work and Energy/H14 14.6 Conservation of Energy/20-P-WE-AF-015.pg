@@ -74,7 +74,7 @@ $angle1 = $theta1*pi/180;
 $angle2 = $theta2*pi/180;
 $vin = 2*9.8*$L*(cos($angle2) - cos($angle1));
 $velocity = sqrt($vin);
-$an = $M*$velocity**2/$L;
+$an = $velocity**2/$L;
 
 
 $width = 300;
