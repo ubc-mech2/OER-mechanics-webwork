@@ -78,7 +78,7 @@ BEGIN_PGML
 A monkey weighing [`[$m]\:kg`] is swinging through the jungle, when the vine it grabs onto begins to slip. 
 If the monkey is swinging with an angular velocity of [`[$dtheta]`] [`rad/s`], 
 and the vine is slipping at a constant rate of [`[$vr]`] [`m/s`],
-find the tension in the vine when it is completely vertical with a length of [`r=[$r]`].
+find the tension in the vine when it is completely vertical with a length of [`r=[$r] \: m`].
 
 [`T = `] [_____]{"$T"} [`N`]
 
