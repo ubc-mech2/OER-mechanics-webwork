@@ -43,8 +43,8 @@ DOCUMENT();
 $imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*1988;
+$height = $imgScale*1550;
 
 
 
@@ -91,14 +91,17 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-WE-BK-015.png", width=>[$width], height=>[$height]) @]*
+
 A golfer at a driving range hits a golfball at an angle of [`[$theta]^\circ`]. 
 The head of the club has a mass of [`[$mc] \: g`]. 
 The head of the club has a speed of [`[$vc1] \: m/s`] before hitting the ball and a speed of [`[$vc2] \: m/s`] after hitting the ball.
 The golfball has a mass of [`[$mb] \: g`].  
-Assume that all energy lost by the club is transferred to the ball.
-What is the maximum height the ball reaches? Ignore air resistance, assume gravity is [`9.80 m/s^2`].
+Assume that all energy lost by the club is transferred to the ball, and that the ground is perfectly flat. 
+Ignore air resistance, assume gravity is [`9.80 m/s^2`].  
+How far does the ball travel horizontally before hitting the ground?  
 
-[`h_{max} = `] [______]{"$h"} [`m`]
+[`h_{max} = `] [______]{"$hb"} [`m`]
 
 END_PGML
 

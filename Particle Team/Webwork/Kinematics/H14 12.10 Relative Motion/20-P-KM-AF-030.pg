@@ -101,7 +101,7 @@ $aby = -$atb*sin($thetab) - $anb*cos($thetab);
 $aabx = $aax - $abx;
 $aaby = $aay - $aby;
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(
@@ -120,7 +120,7 @@ Race tracks are ovals, however the curves can be described as a section of a cir
 
 _[`\alpha = [$G]`] [`^\circ`] [`\beta = [$H]`] [`^\circ`]_ 
 
-[@ image( "20-P-KM-AF-030.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-AF-0303.png", width=>[$width], height=>[$height]) @]*
 
 [`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vaby"}[`\hat{j}`]
 

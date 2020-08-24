@@ -2,41 +2,20 @@
 ## Block falling into a spring
 ##ENDDESCRIPTION
 
-##DESCRIPTION
-##
-## Created in collaboration between Douglas College Department of Physics and Astronomy
-## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
-##
-## Project led by Agnes d'Entremont and Jennifer Kirkey
-##
-## Contact: agnes.dentremont@mech.ubc.ca
-## 	    kirkeyj@douglascollege.ca
-## 
-##
-## This work, including related images, is licensed under the 
-## Creative Commons Attribution 4.0 International (CC BY 4.0)
-## <https://creativecommons.org/licenses/by/4.0/>
-##
-## This work was supported by funding from the BCcampus 
-## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
-##
-## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
-## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
-## and the people of the Treaty 7 region of Southern Alberta. 
-##
-## ENDDESCRIPTION
-##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## Institution('University of British Columbia')
-## Author([ASHLI FORBES])
-## Date(Summer 2020)
-## Difficulty([Advanced])
-## KEYWORDS(`Principle of Work and Energy`)
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 2-3')
+## DBchapter(14: Work and Energy)
+## DBsection(2-3: Principle of Work and Energy)
+## Institution(University of British Columbia)
+## Author(Ashli Forbes)
+## Date(June 2020)
+## Level(Advanced)
+## KEYWORDS(Integration)
+## RESOURCES('inspired by Hibbeler 14E Section 14.2-3')
+## TitleText('TBD')
+## EditionText('TBD')
+## AuthorText('TBD')
+## Section('TBD')
+## Problem('TBD')
 
 ##############################################################
 
@@ -99,9 +78,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Blcok [`A`] has a mass of [`[$M] \: kg`] and travels towards a spring with a constant of [`k = [$K]`]. The incline has a kinetic coefficient of [`u_{k} \: = \: [$U]`]. The block strickes the spring with an original length of [`2 \: m`] and compresses it [`[$D]\: m`] and comes to a stop. If the length is [`l \: = \: [$l] \: m`] and [`\theta \: = \: [$theta]^\circ`], what speed does the block move it?
-
-_use 9.8 for gravity in calculationss_
+Blcok [`A`] has a mass of [`[$M] \: kg`] and travels towards a spring with a constant of [`k = [$K]`]. The incline has a kinetic coefficient of [`u_{k} \: = \: [$U]`]. The block strikes the spring with an original length of [`2 \: m`] and comes to a stop by compressing it [`[$D]\: m`]. If the distance between the block and spring is [`l \: = \: [$l] \: m`] and [`\theta \: = \: [$theta]^\circ`], what initial speed does the block move at?
 
 [@ image( "20-P-WE-AF-008.png", width=>[$width], height=>[$height]) @]*
 

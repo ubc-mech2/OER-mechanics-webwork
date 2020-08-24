@@ -61,6 +61,8 @@ $thetar = $theta*3.14159/180;
 $mu = sin($thetar)*$g/(cos($thetar)*$g + $v**2/$r);
 
 #set tolerance
+$width = 300;
+$height = 300;
 Context()->flags->set(
 tolerance=>.02,
 tolType=>'relative');
