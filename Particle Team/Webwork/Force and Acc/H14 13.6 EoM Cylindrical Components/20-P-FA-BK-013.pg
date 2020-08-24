@@ -26,8 +26,8 @@ DOCUMENT();
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
+$width = $imgScale*2116;
+$height = $imgScale*1226;
 
 
 
@@ -82,6 +82,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+[@ image( "20-P-FA-BK-013.png", width=>[$width], height=>[$height]) @]*
 
 A slotted bar is pushing a particle with a mass of [`[$m]\:kg`] along the spiral [`r = e^{[$k]\theta}`] 
 with a constant angular velocity of [`[$thetad]\: rad/s`]. 
