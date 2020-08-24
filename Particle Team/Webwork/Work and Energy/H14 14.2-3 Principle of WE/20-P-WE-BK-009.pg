@@ -42,8 +42,8 @@ DOCUMENT();
 $imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*2657;
+$height = $imgScale*1320;
 
 
 

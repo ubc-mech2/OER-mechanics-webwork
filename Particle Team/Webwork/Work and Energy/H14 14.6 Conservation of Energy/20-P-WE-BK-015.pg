@@ -43,8 +43,8 @@ DOCUMENT();
 $imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*1988;
+$height = $imgScale*1550;
 
 
 
@@ -90,6 +90,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+[@ image( "20-P-WE-BK-015.png", width=>[$width], height=>[$height]) @]*
 
 A golfer at a driving range hits a golfball at an angle of [`[$theta]^\circ`]. 
 The head of the club has a mass of [`[$mc] \: g`]. 
