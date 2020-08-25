@@ -1,7 +1,7 @@
 ##DESCRIPTION
 ##
-## Created in collaboration between Douglas College 
-## and UBC Department of Mechanical Engineering. 
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
 ##
 ## Project led by Agnes d'Entremont and Jennifer Kirkey
 ##
@@ -13,20 +13,26 @@
 ## Creative Commons Attribution 4.0 International (CC BY 4.0)
 ## <https://creativecommons.org/licenses/by/4.0/>
 ##
-## This work was completed on the traditional, ancestral, and unceded
-## territory of the Musqueam people. 
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
-##ENDDESCRIPTION
-
-## KEYWORDS('Forced Damped Vibration', 'Bar','Particular Solution')
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(Vibration)
-## DBsection(Forced Damped Vibration)
-## Date(2020-08-05)
+## DBchapter(Vibrations)
+## DBsection(Forced Damped)
+## Institution('University of British Columbia')
 ## Author(Daniel Youm)
-## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-VIB-DY-37.png')
+## Date(Summer 2020)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics', 'Particular Solution', 'Pinned Bar')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.5')
 
 ########################################################
 
