@@ -85,7 +85,7 @@ $Utot = $U1 - $U2 - $U3;
 #final answer 
 $velocity = sqrt (-2*$Utot/$M);
 
-$width = 300;
+$width = 400;
 $height = 300;
 #set tolerance
 Context()->flags->set(

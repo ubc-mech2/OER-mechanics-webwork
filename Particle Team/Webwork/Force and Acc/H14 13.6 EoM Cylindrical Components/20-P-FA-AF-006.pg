@@ -91,7 +91,7 @@ $N = ($M*$ar)/(sin($angle2));
 $F = $M*$at - $N*cos($angle2);
 
 $width = 300;
-$height = 300;
+$height = 450;
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -107,7 +107,7 @@ BEGIN_PGML
 
 The forked rod moves a smooth [`[$M]`] [`kg`] particle around the shaped described by [`r = [$B]`] [`cos(\theta)`]. If [`\dot\theta`]  [`=`] [`[$C]*t`] [`rad/s`], find the magnitude of the force the rod exerts on the particle assuming [`r = \sqrt[$D1]`] and [`t = [$E]`] [`s`]. Assume they only make contact on one side. 
 
-_note: [`0 < `] [`\theta`] [`< pi/2`]
+_note: [`0 < `] [`\theta`] [`< \pi/2`]_
 
 [@ image( "20-P-FA-AF-006.png", width=>[$width], height=>[$height]) @]*
 

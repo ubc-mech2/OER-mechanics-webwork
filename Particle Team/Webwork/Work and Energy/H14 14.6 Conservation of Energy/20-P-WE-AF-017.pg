@@ -95,7 +95,7 @@ BEGIN_PGML
 
 The skate boarder reaches point A with a speed of [`v_{A} = [$vel] \: m/s`] up a ramp described as [`x^{1/2} + y^{1/2} = [$A]`]. Determine the normal acceleration at point B. Neglect friction and size of the skate boarder. 
 
-[@ image( "20-P-WE-AF-017.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-0171.png", width=>[$width], height=>[$height]) @]*
 
 [`a_{N} = `][_____]{"$an"}[`m/s^2`]
 
