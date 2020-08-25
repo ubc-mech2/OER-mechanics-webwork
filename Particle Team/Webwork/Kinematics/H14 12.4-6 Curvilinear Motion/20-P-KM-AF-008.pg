@@ -76,6 +76,8 @@ $y = -1*tan($L)*$t;
 $D = sqrt(($x)**2 + ($y)**2);
 $s = $D/$t;
 
+$width = 375;
+$height = 300;
 #set tolerance
 Context()->flags->set(
 tolerance=>.0003,
