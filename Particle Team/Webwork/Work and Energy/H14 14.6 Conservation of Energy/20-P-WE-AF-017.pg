@@ -63,8 +63,8 @@ loadMacros(
 
 Context("Numeric");
 #given
-$A = random (1,8,1);
-$vel = random (2,8,1);
+$A = random (1,4,1);
+$vel = random (4,14,1) + $A;
 
 #calculations
 $x = $A**2/4;
