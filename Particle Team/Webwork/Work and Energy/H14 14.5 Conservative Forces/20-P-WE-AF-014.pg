@@ -87,15 +87,15 @@ $P = Point($x,$y,$z);
 
 BEGIN_PGML
 
-If force [`F = \: ( [$A]x^2, \: [$B], \: [$C]cos(z))`], what is the gradient of the force at point [`([$D],\: [$E], \: [$F])`].
+If the potential of a particle is described as [`V = \: ( [$A]x^2, \: [$B], \: [$C]cos(z))`], what is the potential gradient at point [`([$D],\: [$E], \: [$F])`].
 
-_note all calculations are in rad_
+_note all calculations are in radians_
 
 END_PGML
    
    Context()->texStrings;
    BEGIN_TEXT
-   \(\nabla V\) = \{$P -> ans_array\}
+   \(-F\) = \{$P -> ans_array\}
    END_TEXT
    Context()->normalStrings;
    
