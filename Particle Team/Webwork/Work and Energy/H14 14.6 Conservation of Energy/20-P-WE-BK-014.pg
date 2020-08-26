@@ -87,7 +87,8 @@ tolType=>'relative');
 BEGIN_PGML
 
 A vertical spring has an unstretched length of [`2 \: m`] and a spring coefficient of [`[$k] \: N/m`].
-A mass of [`[$m] \: kg`] is positioned directly on top of the unstretched spring, then released and allowed to oscillate up and down. 
+You position a mass of [`[$m] \: kg`] is directly above the unstretched spring, so that it is touching but not compressing it. 
+You then release the mass, and it oscillates up and down. 
 Find the minimum height the mass reaches before being pushed back up. Assume energy is perfectly conserved.
 
 [`h_{minimum}=`] [_____]{"$hm"} [`m`]   
