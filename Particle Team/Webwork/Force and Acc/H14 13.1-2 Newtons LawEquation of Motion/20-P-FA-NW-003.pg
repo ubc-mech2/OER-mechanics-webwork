@@ -1,16 +1,38 @@
-##DESCRIPTION
-## Particle dynamics; Plane forces - balance thrust and lift with no acceleration, then constant deceleration
-##ENDDESCRIPTION
-
+## DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xÃÂ·mÃÂÃÂ¸kÃÂ·ÃÂyÃÂÃÂm), Squamish (SÃ¡Â¸ÂµwxÃÂ±wÃÂº7mesh), 
+## Tsleil-Waututh (sÃÂlÃÂilwÃÂtaÃÂÃÂ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÃÂÃÂwaÃÂ¸enaÃÂÃÂ¬ tÃÂmÃÂxÃÂ·), 
+## Chemainus (Stz'uminus), StÃÂ³:loÃÂ (SÃ¢ÂÂÃÂ³lh TÃÂ©mÃÂ©xw), Kwanlin DÃÂ¼n, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(Force and Acceleration)
-## DBsection(Equations of Motion)
-## Institution(University of British Columbia)
+## DBchapter(Kinetics of particles)
+## DBsection(2D equations of motion)
+## Institution('University of British Columbia')
 ## Author(Nathan Wan)
-## Date(2020-07-17)
-## Level(Beginner)
+## Date(Summer 2020)
+## Difficulty(Beginner)
 ## KEYWORDS('dynamics','force','acceleration','equations')
-## RESOURCES('special thanks to Whatcom Statics HW-002-002')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 13.2')
 
 ##############################################################
 
