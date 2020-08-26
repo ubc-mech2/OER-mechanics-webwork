@@ -1,4 +1,4 @@
-##DESCRIPTION
+## DESCRIPTION
 ## Particle dynamics; Basic graph - decreasing velocity graph, find acceleration
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
@@ -17,9 +17,9 @@
 ## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
 ## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
-## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## territory of many peoples - specifically the Musqueam (xÊ·mÉÎ¸kÊ·ÉyÌÉm), Squamish (Sá¸µwxÌ±wÃº7mesh), 
+## Tsleil-Waututh (sÉlÌilwÉtaÉÉ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÌÉwaÎ¸enaÉÉ¬ tÉmÉxÊ·), 
+## Chemainus (Stz'uminus), StÃ³:loÌ (SâÃ³lh TÃ©mÃ©xw), Kwanlin DÃ¼n, Niitsitapi (Blackfoot), 
 ## and the people of the Treaty 7 region of Southern Alberta. 
 ##
 ## ENDDESCRIPTION

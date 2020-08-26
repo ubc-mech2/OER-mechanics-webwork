@@ -1,17 +1,38 @@
-##DESCRIPTION
+## DESCRIPTION
 ## Particle dynamics; Model planet - circular motion, find average velocity
-##ENDDESCRIPTION
-
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xÃÂÃÂ·mÃÂÃÂÃÂÃÂ¸kÃÂÃÂ·ÃÂÃÂyÃÂÃÂÃÂÃÂm), Squamish (SÃÂ¡ÃÂ¸ÃÂµwxÃÂÃÂ±wÃÂÃÂº7mesh), 
+## Tsleil-Waututh (sÃÂÃÂlÃÂÃÂilwÃÂÃÂtaÃÂÃÂÃÂÃÂ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÃÂÃÂÃÂÃÂwaÃÂÃÂ¸enaÃÂÃÂÃÂÃÂ¬ tÃÂÃÂmÃÂÃÂxÃÂÃÂ·), 
+## Chemainus (Stz'uminus), StÃÂÃÂ³:loÃÂÃÂ (SÃÂ¢ÃÂÃÂÃÂÃÂ³lh TÃÂÃÂ©mÃÂÃÂ©xw), Kwanlin DÃÂÃÂ¼n, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Curvilinear Kinematics)
-## Institution(University of British Columbia)
+## DBchapter(Kinematics of particles)
+## DBsection(Curvilinear motion: polar coordinates)
+## Institution('University of British Columbia')
 ## Author(Nathan Wan)
-## Date(2020-06-29)
-## Level(Intermediate)
+## Date(Summer 2020)
+## Difficulty(Intermediate)
 ## KEYWORDS('dynamics','curvilinear','particle','kinematics')
-## RESOURCES('inspired by Hibbeler (14th edition) chapter 12 section 12.4 ')
-
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 12.4')
 ##############################################################
 
 DOCUMENT();

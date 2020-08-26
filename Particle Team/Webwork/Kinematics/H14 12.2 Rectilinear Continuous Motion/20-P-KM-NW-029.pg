@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## Particle dynamics; Two boats - given velocities, find relative velocity and time for distance
+## Particle dynamics; Professor Splash belly flop - free fall motion finding speed and deceleration
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
 ##
@@ -26,16 +26,24 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics of particles)
-## DBsection(Relative motion: translating axes)
+## DBsection(Rectilinear motion)
 ## Institution('University of British Columbia')
 ## Author(Nathan Wan)
 ## Date(Summer 2020)
-## Difficulty(Intermediate)
-## KEYWORDS('dynamics','relative','particle','kinematics')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 12.10')
+## Difficulty(Beginner)
+## KEYWORDS('dynamics','force','rectilinear',continuous')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 12.2')
+
 ##############################################################
 
 DOCUMENT();
+
+#image scale
+$imgScale = .9;
+
+#image aspect ratio
+$width = $imgScale*711;
+$height = $imgScale*263;
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
@@ -44,6 +52,8 @@ loadMacros(
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
 	"parserRadioButtons.pl",
+	"PGauxiliaryFunctions.pl",
+	"niceTables.pl",
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
@@ -54,48 +64,45 @@ loadMacros(
 #
 #
 
-Context("Numeric");         # or Complex
+Context("Numeric");
+
 #given
-$A = random(11,15,1);     # (lower, upper, stepsize)
-$B = random(6,10,1);
-$distance = random(400,600,100);
+$towerHeight = random(10,11,0.1);
+$distanceWater = random(30,50,10);
+$distanceAir = $towerHeight-$distanceWater/100;
 
-$angleA = 45/180*pi;
-$angleB = 30/180*pi;
+$g = 9.8;
 
-#computation
-$velocityAB = sqrt(($A*cos($angleA)+$B*cos($angleB))**2+($A*sin($angleA)-$B*sin($angleB))**2);
-$time = $distance/$velocityAB;
-
-#image scale
-$imgScale = 0.25;
-
-#image aspect ratio
-$width = $imgScale*2343;
-$height = $imgScale*1374;
+#computation 
+$speed = sqrt(2*$g*$towerHeight);
+$acceleration = $speed**2/2/$distanceWater*100;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.05,
-tolType=>'absolute');  #absolute or relative
+tolerance=>.002);
 
 ##############################################################
 #
-#  PGML 
+#  Text 
 #
 #
 
 BEGIN_PGML
 
-# [@ image( "20-P-KM-NW-027.png", width=>[$width], height=>[$height]) @]*
+[@ image("20-P-KM-NW-029.png", width=>[$width], height=>[$height]) @]*
 
-Two boats leave the shore at the same time and travel in the directions shown. If [`v_{A} = [$A]`] [`m/s`] and [`v_{B} = [$B]`] [`m/s`], determine the magnitude of the velocity of boat [`A`] with respect to boat [`B`]. How long after leaving the shore will the boats be [`[$distance]`] metres apart?
+People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him in [`[$distanceWater]`] [`cm`].
 
-_If you enter an answer as a expression of trigonometric functions, use radians._
+*a)* Ignoring friction and air resistance, how fast is he moving just before he hits the water? Graphically sketch the Professor's position, velocity, and acceleration as a function of time using a sheet of paper.
 
-[`v_{A/B} = `][___]{"$velocityAB"}[`m/s`]  
-[`t =`][___]{"$time"} [`s`]
+[`v =`] [_____]{"$speed"} [`m/s`]  
+
+*b)* What is the magnitude of the water's  acceleration on Professor Splash?
+
+[`a =`] [_____]{"$acceleration"} [`m/s^2`]  
 
 END_PGML
 
-ENDDOCUMENT()];     #save as .pg
+##############################################################
+
+ENDDOCUMENT();

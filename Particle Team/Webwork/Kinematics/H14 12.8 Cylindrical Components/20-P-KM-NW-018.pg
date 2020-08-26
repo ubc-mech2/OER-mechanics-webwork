@@ -1,16 +1,38 @@
-##DESCRIPTION
+## DESCRIPTION
 ## Particle dynamics; Find angular velocity of a baseball bat given area swung
-##ENDDESCRIPTION
-
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xÊ·mÉÎ¸kÊ·ÉyÌÉm), Squamish (Sá¸µwxÌ±wÃº7mesh), 
+## Tsleil-Waututh (sÉlÌilwÉtaÉÉ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÌÉwaÎ¸enaÉÉ¬ tÉmÉxÊ·), 
+## Chemainus (Stz'uminus), StÃ³:loÌ (SâÃ³lh TÃ©mÃ©xw), Kwanlin DÃ¼n, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Cylindrical Motion)
-## Institution(University of British Columbia)
+## DBchapter(Kinematics of particles)
+## DBsection(Curvilinear motion: cylindrical coordinates)
+## Institution('University of British Columbia')
 ## Author(Nathan Wan)
-## Date(2020-07-06)
-## Level(Beginner)
+## Date(Summer 2020)
+## Difficulty(Beginner)
 ## KEYWORDS('dynamics','cylindrical','particle','kinematics')
-## RESOURCES('')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 12.8')
 
 ##############################################################
 
@@ -43,11 +65,11 @@ $time = random(0.3,0.9,0.1);
 $velocity = $area/(pi*$length**2)*2*pi/$time;
 
 #image scale
-$imgScale = 0.6;
+$imgScale = 0.25;
 
 #image aspect ratio
-$width = $imgScale*900;
-$height = $imgScale*500;
+$width = $imgScale*1288;
+$height = $imgScale*1152;
 
 #set tolerance
 Context()->flags->set(
