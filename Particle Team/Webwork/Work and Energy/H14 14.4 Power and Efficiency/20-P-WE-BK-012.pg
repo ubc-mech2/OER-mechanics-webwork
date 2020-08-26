@@ -77,7 +77,7 @@ $tp = random(1.0,2.0,0.1);
 
 #computation
 $Ec = $mc*$hc*9.8;
-$Ep = 0.5*$mp*($v**2) + $mp*$hc*9.8;
+$Ep = 0.5*$mp*($v**2) + $mp*$hp*9.8;
 $tc = $Ec/$Pc;
 $Pp = $Ep/$tp;
 $eff = $Ep/$Ec;
