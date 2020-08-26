@@ -87,7 +87,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-What is the change in both gravitational and elastic potential energy? If the spring has a [`k = [$K], \: d = [$D]`] and the block has a mass of [`m = [$M] \: kg`].
+What is the change in both gravitational and elastic potential energy? If the spring has a [`k = [$K] \: N/m, \: d = [$D] \: m`] and the block has a mass of [`m = [$M] \: kg`].
 
 [@ image( "20-P-WE-AF-0131.png", width=>[$width], height=>[$height]) @]*
 

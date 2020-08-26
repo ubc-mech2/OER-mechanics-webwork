@@ -1,5 +1,5 @@
 ## DESCRIPTION
-##
+## Particle dynamics; Professor Splash belly flop - free fall motion finding speed and deceleration
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
 ##
@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Kinetics of particles)
-## DBsection(Free-body diagrams)
+## DBchapter(Kinematics of particles)
+## DBsection(Rectilinear motion)
 ## Institution('University of British Columbia')
 ## Author(Nathan Wan)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
-## KEYWORDS('dynamics','force','acceleration','equations')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 13.1')
+## KEYWORDS('dynamics','force','rectilinear',continuous')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 12.2')
 
 ##############################################################
 
@@ -70,13 +70,12 @@ Context("Numeric");
 $towerHeight = random(10,11,0.1);
 $distanceWater = random(30,50,10);
 $distanceAir = $towerHeight-$distanceWater/100;
-$mass = random(70,80,5);
 
 $g = 9.8;
 
 #computation 
-$speed = sqrt(2*$g*$distanceAir);
-$force = $mass*$speed**2/2/$distanceWater*100;
+$speed = sqrt(2*$g*$towerHeight);
+$acceleration = $speed**2/2/$distanceWater*100;
 
 #set tolerance
 Context()->flags->set(
@@ -90,17 +89,17 @@ tolerance=>.002);
 
 BEGIN_PGML
 
-[@ image("20-P-FA-NW-004.png", width=>[$width], height=>[$height]) @]*
+[@ image("20-P-KM-NW-029.png", width=>[$width], height=>[$height]) @]*
 
-People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash has a weight of [`[$mass]`] [`kg`] and does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him at a depth of [`[$distanceWater]`] [`cm`].
+People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him in [`[$distanceWater]`] [`cm`].
 
 *a)* Ignoring friction and air resistance, how fast is he moving just before he hits the water? Graphically sketch the Professor's position, velocity, and acceleration as a function of time using a sheet of paper.
 
 [`v =`] [_____]{"$speed"} [`m/s`]  
 
-*b)* What is the magnitude of the water's force on Professor Splash?
+*b)* What is the magnitude of the water's  acceleration on Professor Splash?
 
-[`F =`] [_____]{"$force"} [`N`]  
+[`a =`] [_____]{"$acceleration"} [`m/s^2`]  
 
 END_PGML
 

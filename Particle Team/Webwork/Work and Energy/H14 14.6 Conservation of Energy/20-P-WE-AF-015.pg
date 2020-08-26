@@ -77,7 +77,7 @@ $velocity = sqrt($vin);
 $an = $velocity**2/$L;
 
 
-$width = 300;
+$width = 350;
 $height = 300;
 #set tolerance
 Context()->flags->set(
