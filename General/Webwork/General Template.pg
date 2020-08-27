@@ -60,7 +60,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-# For general questions, PGML is the easier format to use
+# For general questions, PGML is the easier format to use. 'BEGIN' is needed to start formatting the question. 
 
 Here you can write the words within the question.
 
@@ -74,9 +74,16 @@ _This produces italic fonts_
 
 [@ image( "filename.png", width=>[$width], height=>[$height]) @]*
 
+# Where the image file is located is where it appears in the question. The image file name must be the same as the image in the directory, it is case sensitive.
+
 [`Answer =`] [_____]{"$answer"} [`unit`]  
 
+# The first chunk is where the preface for the answer, the second block is the space where the answer will go. The variable within {}, is the variable to be the correct answer. The last part (optional) is where the units go. 
+# Also note, that if you want there to be a new line in the displayed question, there has to be two new lines in the code. 
+
 END_PGML
+
+# 'END' is needed to end the formatting and code for displayed section of the quesiton. 
 
 ##############################################################
 
