@@ -26,8 +26,8 @@ DOCUMENT();
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*1305;
-$height = $imgScale*1543;
+$width = $imgScale*1725;
+$height = $imgScale*1808;
 
 
 
@@ -56,7 +56,7 @@ $vr = random(1.0,2.0,0.1);
 $m = random(4,8,1);
 
 #computation
-$a = sqrt((2*$vr*$dtheta)**2 + ($r*$dtheta**2)**2);
+$a = ($r*$dtheta**2);
 $T = $m*($a+9.8);
 
 
@@ -73,10 +73,12 @@ tolType=>'relative');
 
 BEGIN_PGML
 
+[@ image( "20-P-FA-BK-012.png", width=>[$width], height=>[$height]) @]*
+
 A monkey weighing [`[$m]\:kg`] is swinging through the jungle, when the vine it grabs onto begins to slip. 
 If the monkey is swinging with an angular velocity of [`[$dtheta]`] [`rad/s`], 
 and the vine is slipping at a constant rate of [`[$vr]`] [`m/s`],
-find the tension in the vine when it is completely vertical with a length of [`r=[$r]`].
+find the tension in the vine when it is completely vertical with a length of [`r=[$r] \: m`].
 
 [`T = `] [_____]{"$T"} [`N`]
 

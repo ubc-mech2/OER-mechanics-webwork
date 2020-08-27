@@ -1,22 +1,38 @@
 ##DESCRIPTION
 ##
-##ENDDESCRIPTION
-
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(12: Particle Kinematics)
-## DBsection()
-## Institution(University of British Columbia)
+## DBchapter(Kinetics of particles)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
 ## Author(Bryden Kinsella)
-## Date(June 2020)
-## Level()
-## KEYWORDS('Kinematics')
-## RESOURCES('')
-## TitleText('TBD')
-## EditionText('TBD')
-## AuthorText('TBD')
-## Section('TBD')
-## Problem('TBD')
-
+## Date(Summer 2020)
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 2-3')
 
 ##############################################################
 
@@ -26,8 +42,8 @@ DOCUMENT();
 $imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*2657;
+$height = $imgScale*1320;
 
 
 
@@ -73,7 +89,8 @@ BEGIN_PGML
 
 A motorcycle stunt rider wants to go around a vertical circular loop, as in the drawing above.
 Find the maximum possible radius of the loop so that make it all the way around without falling at the top
-if their bike has a speed of [`[$v] \: km/hr`] at the start of the loop.
+if their motorcycle has a speed of [`[$v] \: km/hr`] at the start of the loop.
+Assume that once the motorcycle enters the loop it is coasting (no further energy is added from the engine) and neglect friction.
 
 [`r =`] [______]{"$r"} [`m`]
 

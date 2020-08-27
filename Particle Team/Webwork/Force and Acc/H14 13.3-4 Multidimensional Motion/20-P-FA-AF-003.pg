@@ -2,20 +2,41 @@
 ## Two blocks on a string, spring forces an acceleration and asked to find the other acceleration
 ##ENDDESCRIPTION
 
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(13: Force and Acceleration)
-## DBsection(3/4: Force and Acceleration: Multidimensional Motion)
-## Institution(University of British Columbia)
-## Author(Ashli Forbes)
-## Date(June 2020)
-## Level(Intermediate)
-## KEYWORDS(Race Cars, Track, Translating Axes)
-## RESOURCES('inspired by Hibbeler 14E Section 13.3-4 problems')
-## TitleText('TBD')
-## EditionText('TBD')
-## AuthorText('TBD')
-## Section('TBD')
-## Problem('TBD')
+## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of British Columbia')
+## Author([ASHLI FORBES])
+## Date(Summer 2020)
+## Difficulty([Intermediate])
+## KEYWORDS(`Multidimensional Motion`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 3-4')
 
 ##############################################################
 
@@ -71,7 +92,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-The friction coefficent for this bar is [`\mu = [$U]`] and both blocks has a mass of [`[$M]`] [`kg`]. When the sping with a spring constant of [`k \: = \: [$K] \: N/m`] is compressed [`[$D]`] [`m`] and then released, what is the magnitude of both B's accleeration and the tension of the rope?
+The friction coefficent for this bar is [`\mu = [$U]`] and both blocks have a mass of [`[$M]`] [`kg`]. When the spring with a constant of [`k \: = \: [$K] \: N/m`] is compressed [`[$D]`] [`m`] and then released, what is the magnitude of both B's acceleration and the tension of the rope?
 
 _use 9.81 for gravity and negative to indicate downwards_
 

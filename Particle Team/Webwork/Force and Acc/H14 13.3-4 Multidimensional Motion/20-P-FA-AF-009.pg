@@ -2,20 +2,41 @@
 ## Inclined plane and force is given in terms of t
 ##ENDDESCRIPTION
 
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
 ## DBsubject(Dynamics)
-## DBchapter(13: Force and Acceleration)
-## DBsection(3/4: Force and Acceleration: Multidimensional Motion)
-## Institution(University of British Columbia)
-## Author(Ashli Forbes)
-## Date(June 2020)
-## Level(Advanced)
-## KEYWORDS(Inclined Plane, Pulley, Integration)
-## RESOURCES('inspired by Hibbeler 14E Section 13.3-4 problems')
-## TitleText('TBD')
-## EditionText('TBD')
-## AuthorText('TBD')
-## Section('TBD')
-## Problem('TBD')
+## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of British Columbia')
+## Author([ASHLI FORBES])
+## Date(Summer 2020)
+## Difficulty([Advanced])
+## KEYWORDS(`Multidimensional Motion`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 3-4')
 
 ##############################################################
 
@@ -42,10 +63,10 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(2, 10, 1);
+$M = random(2, 8, 1);
 $T = random(1, 3, 1);
-$A = random(2, 10, 1);
-$U = random(0.1, 0.5, 0.1);
+$A = random(8, 15, 1);
+$U = random(0.1, 0.4, 0.1);
 
 #set up of the variables
 $W = $M*9.81;
@@ -82,9 +103,9 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A pulley outputs a force as a function of time, [`F \: = \: [$A] \: t`] on a block of a mass of [`[$M]\: kg`]. After a change in time of [`[$T]\: s`], what is the displacement on the slope line? Note the kinetic coefficient of friction is [`\mu \: = \: [$U]`] and that the block is already in motion.
+A pulley outputs a force as a function of time, [`F \: = \: [$A] \: t`] on a block of a mass of [`[$M]\: kg`]. Assume that the force starts at time [`0`], between [`t = 2 \: s`] and [` t = [$T + 2]\: s`], what is the displacement on the slope line? Note the kinetic coefficient of friction is [`\mu \: = \: [$U]`] and that the block is already in motion.
 
-_use 9.81 for gravity_
+_use 9.8 for gravity_
 
 [@ image( "20-P-FA-AF-0092.png", width=>[$width], height=>[$height]) @]* 
 
