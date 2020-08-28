@@ -77,7 +77,7 @@ $g = 32.2;
 
 #computation
 $accelA = ($force-$coeffKinetic*$massA)/($massA/$g);
-$accelB = $coeffKinetic*$g;
+$accelB = ($massA/$massB)*$coeffKinetic*$g;
 
 #set tolerance
 Context()->flags->set(
