@@ -72,7 +72,7 @@ $mass = random(200,400,25);
 $distance = random(30,70,5);
 
 #computation
-$Ffriction = $mass*($speed/3.6)**2/2/$distance;
+$Ffriction = 0.5*$mass*($speed/3.6)**2/$distance;
 
 #set tolerance
 Context()->flags->set(
