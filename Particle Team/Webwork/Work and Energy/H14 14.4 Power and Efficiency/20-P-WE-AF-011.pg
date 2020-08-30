@@ -76,7 +76,7 @@ $angle = $theta*pi/180;
 $len1 = sqrt( ($l1 + $r)**2 + ($l2 + $r)**2);
 $len2 = ($r + $l2)/(sin($angle));
 $y2 = ($r + $l2)/(tan($angle));
-$y1 = ($r + $l2) - $y2;
+$y1 = ($r + $l1) - $y2;
 $W = $M*9.8;
 
 #energy calculations
