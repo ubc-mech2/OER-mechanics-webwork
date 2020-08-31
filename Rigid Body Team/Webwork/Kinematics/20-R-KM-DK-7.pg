@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Prank punching machine, find angular vel. of worm gear
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('punching machine', 'worm gear','velocity', 'gear','angular velocity')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Gear System)
-## Date(2020-06-25)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Intermediate)
-## RESOURCES('20-R-KM-DK-7.png')
+## Date(Summer 2020)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','punching machine', 'worm gear','velocity', 'gear','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
 
 ########################################################
 
@@ -56,7 +78,7 @@ $maxvel = random(0.5,1.5,0.1);
 $angvelB = $maxvel/($rB/100);
 $angvelC = $angvelB*$rB/$rC;
 $angvelD = $angvelC*$rC/$rD;
-$angvelE = $angvelD*10;
+$angvelF = $angvelD*10;
 
 
 ########################################################;
@@ -69,11 +91,11 @@ BEGIN_PGML
 An engineer tries to be really funny and creates a prank punching machine. She wants to ensure
 the fist won't actually hurt anyone. She calculates that it will be perfectly safe as long as the
 boxing glove has a maximum velocity of [`v =`] [`[$maxvel]`] [`m/s`]. What should the angular velocity
-of the worm gear (gear E) be to achieve this? For every 10 revolutions of gear E, gear D rotates once.
-Gears B, C, and D have radii [`r_B =`] [`[$rB]`][`cm`], [`r_C =`] [`[$rC]`][`cm`], and [`r_D =`] [`[$rD]`][`cm`]
+of the worm gear (gear F) be to achieve this? Gear E is rigidly attached to gear D. For every 10 revolutions of gear F, gear E rotates once.
+Gears B, C, and D have radii [`r_B =`] [`[$rB]`] [`cm`], [`r_C =`] [`[$rC]`] [`cm`], and [`r_D =`] [`[$rD]`] [`cm`]
 respectively.
  
-[`\omega_E =`] [____]{"$angvelE"}[`rad/s`]  
+[`\omega_F =`] [____]{"$angvelF"}[`rad/s`]  
 
 
 

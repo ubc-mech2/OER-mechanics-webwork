@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Coino flip about two axises. Find the moment of inertia
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('Composite Bodies', 'Moment of inertia','coin flip')
-## DBsubject(Dynamics)
-## DBchapter(Kinetics)
+##
+## DBsubject(Statics)
+## DBchapter(Distributed Forces: Centroid and Center of Gravity)
 ## DBsection(Composite Bodies)
-## Date(2020-06-23)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KIN-DK-4.png')
+## Date(Summer 2020)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','composite bodies','circular','kinetics','coin flip')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
 
 ########################################################
 
@@ -22,29 +44,30 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*2000;		#aspect ratio
-$height = $imgScale*1000;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
+
 $rho = random(5000,10000,100);
 $diameter = random(20,40.5);
 $thickness = 0.002;
@@ -58,7 +81,6 @@ $I_xxH =  1/12*($massHole*$holeSide**2);
 $I_zzD = 1/2*$massDisk*($diameter/2000)**2;
 $I_zzH =  1/12*($massHole*2*$holeSide**2);
 
-#---- Answers to the problem -----------------------#
 $ansA = $I_xxD - $I_xxH;
 $ansB =  $I_zzD - $I_zzH;
 
@@ -69,11 +91,16 @@ BEGIN_PGML
 
 [@ image( "20-R-KIN-DK-4.png", width=>[$width], height=>[$height]) @]*
 
-Your friend attempts to do tricks with an ancient Asian coin. He manages to flip it such that it rotates about the x-axis as well as spin it about its z-axis. 
-What woud the moment of inertia for these two cases? It has a thickness of [`t = 2mm`] and a diameter of [`d =`] [`[$diameter]`] [`mm`]. The density of the coin is [`\rho =`] [`[$rho]`] [`kg/m^3`].
+Your friend attempts to do tricks with an Asian coin. He is able to flip it in such a way that it can 
+rotate about its x-axis or spin about its z-axis. What would the moment of inertia be for these two cases?
+The coin has a thickness of [`t = `] [`[$thickness]`] [`m`] and a diameter of [`d = `] [`[$diameter]`] [`mm`].
+The density of the coin is [`\rho = `] [`[$rho]`] [`kg/m^3`]. The coin has a cut-out that is a [`[$holeSide]`] [`m`] x [`[$holeSide]`] [`m`]
+rectangular hole.
 
-[`I_x=`] [____]{"$ansA"} [`kg*m^2`]
+[`I_x=`] [____]{"$ansA"} [`kg*m^2`]  
 [`I_z =`] [____]{"$ansB"} [`kg*m^2`]
+
+
 
 END_PGML
 
