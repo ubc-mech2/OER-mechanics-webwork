@@ -1,0 +1,90 @@
+##DESCRIPTION
+## Put description of the question in here. 
+##ENDDESCRIPTION
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGbasicmacros.pl",
+	"PGchoicemacros.pl",
+	"PGanswermacros.pl",
+	"PGauxiliaryFunctions.pl"
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+	 
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#The context is important and must be used, numeric is a general context and can be used for calculations. 
+
+
+$A = random(2, 5, 1);
+# 'A' is the label of the variable, when addressing it throughout the code, it has a to have a '$' in front of it in order to compute
+# The function random generates a number as 'random(low, high, step)'. In this case, the lowest number is 2, with the highest number being 5 with a step size of 1. This means the numbers could be 2,3,4 or 5.
+
+$answer = cos($A*pi)/2;
+# To set any varible, $ must be used or else the file will not compile
+# Computations follow similar rules to Perl. * is multiplication, / is division, + is addition, - is subtraction
+# Calling pi within computations and functions can be used as shown above.
+# All computations are in RADIANS, to use degrees within the written question, simply convert to radians before any computations
+
+$width = 300;
+$height = 300;
+
+# Refer to image formatting below. NOTE: the width and height cannot be set within the image reference.
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+# For general questions, PGML is the easier format to use. 'BEGIN' is needed to start formatting the question. 
+
+Here you can write the words within the question.
+
+_This produces italic fonts_ 
+
+*This produces bold fonts*
+
+[` \mu = [$A] \: kg`]
+# within the 'brakets' all LateX rules apply, such as greek letters, '\:' spaces
+# when [$A] is typed within '' the number will display in the question, not A. If random generates 4, it will appear as 4 once WebWork loads. 
+
+[@ image( "filename.png", width=>[$width], height=>[$height]) @]*
+
+# Where the image file is located is where it appears in the question. The image file name must be the same as the image in the directory, it is case sensitive.
+
+[`Answer =`] [_____]{"$answer"} [`unit`]  
+
+# The first chunk is where the preface for the answer, the second block is the space where the answer will go. The variable within {}, is the variable to be the correct answer. The last part (optional) is where the units go. 
+# Also note, that if you want there to be a new line in the displayed question, there has to be two new lines in the code. 
+
+END_PGML
+
+# 'END' is needed to end the formatting and code for displayed section of the quesiton. 
+
+##############################################################
+
+ENDDOCUMENT()};

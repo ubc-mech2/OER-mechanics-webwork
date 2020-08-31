@@ -43,8 +43,8 @@ DOCUMENT();
 $imgScale = .5;
 
 #image aspect ratio
-$width = $imgScale*2508;
-$height = $imgScale*1688;
+$width = $imgScale*2420;
+$height = $imgScale*1783;
 
 
 
@@ -77,7 +77,7 @@ $tp = random(1.0,2.0,0.1);
 
 #computation
 $Ec = $mc*$hc*9.8;
-$Ep = 0.5*$mp*($v**2) + $mp*$hc*9.8;
+$Ep = 0.5*$mp*($v**2) + $mp*$hp*9.8;
 $tc = $Ec/$Pc;
 $Pp = $Ep/$tp;
 $eff = $Ep/$Ec;
@@ -94,6 +94,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+[@ image( "20-P-WE-BK-012.png", width=>[$width], height=>[$height]) @]*
 
 A trebuchet uses a falling counterweight to launch a projectile. It can be thought of 
 as a machine that converts the gravitational potential energy of the counterweight

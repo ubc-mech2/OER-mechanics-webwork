@@ -66,8 +66,8 @@ $ar = $rdd-$r*($thetad**2);
 
 $psi = atan(1/$k);
 
-$N = $m*$ar/(cos($psi) - sin($psi)*$mu);
-$F = $m*$atheta + (sin($psi) + cos($psi)*$mu)*$N;
+$N = $m*$ar/(sin($psi) - cos($psi)*$mu);
+$F = $m*$atheta + (cos($psi) + sin($psi)*$mu)*$N;
 
 
 #set tolerance

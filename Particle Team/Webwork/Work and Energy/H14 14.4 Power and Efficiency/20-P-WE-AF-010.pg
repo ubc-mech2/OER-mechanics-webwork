@@ -70,7 +70,7 @@ $A = random (2,10,1);
 
 #calculations 
 $vp = 2*$vel;
-$T = ($M - $A)*9.8;
+$T = ($M - $A)*9.8/2;
 $power = ($T*$vp)/($E);
 
 $width = 300;
