@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Record player, find revs, angular vel., angular accel. with given time
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('record player', 'angular acceleration','angle', 'revolution','angular velocity')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Pure Rotation)
-## Date(2020-06-25)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KM-DK-5.png')
+## Date(Summer 2020)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','record player','angular acceleration','angle', 'revolution','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
 
 ########################################################
 
@@ -68,7 +90,7 @@ BEGIN_PGML
 [@ image( "20-R-KM-DK-5.png", width=>[$width], height=>[$height]) @]*
 
 Stuck in quarantine, a retired engineer decides to jam out to his record player, 
-only to find out that it's broken. He notices a pattern in which the record rotates, 
+only to find out that it's broken. He notices a pattern in which the record rotates 
 and hypothesizes that the angular distance the record travels can be described by the 
 equation [`\theta =`] [`[$c] + [$b]t^2 +[$a]t^3`], where [`t`] is the time in seconds.
 Determine the number of revolutions, the angular velocity, and the angular aceleration

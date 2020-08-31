@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Gear rolling on fixed rack with angular vel. and angular accel., find accel.
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('acceleration', 'gear','angular velocity','angular acceleration')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Relative Motion Analysis)
-## Date(2020-06-26)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Translating Axes)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KM-DK-10.png')
+## Date(Summer 2020)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','acceleration', 'gear','angular velocity','angular acceleration')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.7')
 
 ########################################################
 

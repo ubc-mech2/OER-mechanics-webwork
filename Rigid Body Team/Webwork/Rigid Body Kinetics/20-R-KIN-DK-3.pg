@@ -1,16 +1,38 @@
-## DESCRIPTION
-## 20-R-KIN-DK-3 Circular weight being spun, find moment of inertia
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('inertia','moment','weight','circular','kinetics','parallel axis')
-## DBsubject(Dynamics)
-## DBchapter(Kinetics)
-## DBsection(Parallel Axis Theorem)
-## Date(2020-07-16)
+##
+## DBsubject(Statics)
+## DBchapter(Distributed Forces: Moment of Inertia)
+## DBsection(Parallel Axis Theorem: Mass Moment of Inertia)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KIN-DK-3.png')
+## Date(Summer 2020)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','weight','circular','kinetics','parallel axis')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
 
 ########################################################
 
@@ -65,7 +87,7 @@ BEGIN_PGML
 
 A circular weight is being spun on a rope in a planar motion about the point P. What is the moment of inertia of the weight?
 The weight has a density of [`\rho = `] [`[$density]`] [`kg/m^3`] and the radius of the disk is [`r = `] [`[$radius]`] [`m`].
-The rope has a length [`l = `] [`[$swingrad]`] [`m`] and the plate is [`t = `] [`[$thickness]`] [`m`].
+The rope has a length [`l = `] [`[$swingRad]`] [`m`] and the plate is [`t = `] [`[$thickness]`] [`m`].
 
 [`I_P =`] [____]{"$ansA"} [`kg*m^2`]
 

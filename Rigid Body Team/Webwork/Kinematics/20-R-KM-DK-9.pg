@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Multi-block and linkage system, find velocities
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('slider','relative motion','velocity','angular velocity')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Relative Motion Analysis)
-## Date(2020-06-26)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Velocity, Translating Axes)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Advanced)
-## RESOURCES('20-R-KM-DK-9.png')
+## Date(Summer 2020)
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics','slider','relative motion','velocity','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.5')
 
 ########################################################
 
@@ -76,10 +98,10 @@ The following mechanism has links length [`l_{AD} =`] [`[$rAD]`] [`m`], [`l_{BD}
  [`l_{CD} =`] [`[$rCD]`] [`m`], and [`l_{DE} =`][`[$rDE]`] [`m`]. If the slider block A moves upward 
  at a velocity of [`v_A =`] [`[$velA]`] [`m/s`], determine the velocities of blocks B and C at the instant shown.
  The angle between link BD and the horizontal is given as [`\theta_{BD} =`] [`[$degB]`][`^{\circ}`] 
- while the angle between link CD and the horizontal is [`\theta_{CD} =`] [`[$degC]`][`^{\circ}`].
+ while the angle between link CD and the horizontal is [`\phi_{CD} =`] [`[$degC]`][`^{\circ}`].
  
-[`v_B =`][____]{"$velB"}[`m/s`]  
-[`v_C =`][____]{"$velC"}[`m/s`]
+[`\vec{v_B} =`][____]{"$velB"}[`\hat{\imath}`] [`m/s`]  
+[`\vec{v_C} =`][____]{"$velC"}[`\hat{\jmath}`] [`m/s`]
 
 
 END_PGML
