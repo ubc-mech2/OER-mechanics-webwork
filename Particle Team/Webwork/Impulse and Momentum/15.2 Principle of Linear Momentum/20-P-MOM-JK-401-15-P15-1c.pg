@@ -1,0 +1,112 @@
+##DESCRIPTION
+## Preliminary problem
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of British Columbia')
+## Author([Patrick Thangarajah])
+## Date(Summer 2020)
+## Difficulty([Beginner])
+## KEYWORDS(`Impulse and Momentum`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 15, section 1')
+##############################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");         # or Complex
+#given
+$F = random(5,30,5);     # (lower, upper, stepsize)
+$t = random(1,5,0.5); 
+
+
+#Computation
+$I=$F*$t;
+
+   
+
+
+#image scale
+$imgScale = .2;
+
+#image aspect ratio
+$width = $imgScale*2500;
+$height = $imgScale*1981;
+
+
+
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.01,
+tolType=>'absolute');  #absolute or relative
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+[@ image( ".png", width=>[$width], height=>[$height]) @]*
+
+Determine the change in momentum of the force F= [`[$F]`] [`N`] for t= [`[$t]`] [`s`].
+ 
+
+
+[`I=`][___]{"$I"} [`N*s`]  
+
+
+_Round your answers to one decimal place_.
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT()};     #save as .pg
