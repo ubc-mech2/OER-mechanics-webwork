@@ -60,12 +60,12 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$F = random(5,30,5);     # (lower, upper, stepsize)
+$c = random(5,30,5);     # (lower, upper, stepsize)
 $t = random(1,5,0.5); 
 
 
 #Computation
-$I=$F*$t;
+$I=$c*$t*$t;
 
    
 
@@ -94,9 +94,9 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( ".png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-JK-403-15-P15-1c.png", width=>[$width], height=>[$height]) @]*
 
-Determine the change in momentum of the force F= [`[$F]`] [`N`] for t= [`[$t]`] [`s`].
+Determine the impulse of the force F= [`[$c]t`] [`N`] for t= [`[$t]`] [`s`].
  
 
 

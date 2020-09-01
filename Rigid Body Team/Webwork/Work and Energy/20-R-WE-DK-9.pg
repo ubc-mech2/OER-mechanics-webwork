@@ -84,13 +84,13 @@ $T = 0.5*$m*$v**2 + 0.5*$I*$angvel**2;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-9.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-9.png", width=>[$width], height=>[$height]) @]*
 
 Montana James is shooting a scene in which he is running away from a foam cylinder (it will be replaced by a boulder in post-production).
 If the cylinder has mass [`m = `] [`[$m]`] [`kg`] and a radius of [`r = `] [`[$r]`] [`m`], calculate the cylinders total kinetic energy.
 Assume the cylinder rolls without slipping at an angular velocity of [`\omega = `] [`[$angvel]`] [`rad/s`].
 
-[`T = `] [____]{"$U"} [`J`]    
+[`T = `] [____]{"$T"} [`J`]    
 
 END_PGML
 

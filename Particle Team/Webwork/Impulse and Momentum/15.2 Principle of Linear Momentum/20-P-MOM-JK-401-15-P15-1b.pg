@@ -74,7 +74,7 @@ $I=$F*$t;
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*2500;
+$width = $imgScale*4000;
 $height = $imgScale*1981;
 
 
@@ -94,7 +94,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( ".png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-JK-402-15-P15-1b.png", width=>[$width], height=>[$height]) @]*
 
 Determine the impulse of the force F= [`[$F]`] [`N`] for t= [`[$t]`] [`s`].
  
