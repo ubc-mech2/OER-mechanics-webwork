@@ -86,7 +86,7 @@ $angvel = sqrt($UM/(0.5*$I));
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-7.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-7.png", width=>[$width], height=>[$height]) @]*
 
 If a couple moment [`M = \theta^2 +`] [`[$constant1]`][`\theta +`] [`[$constant2]`] [`N \cdot m`] is applied to a disk,
 determine the angular velocity of the disk after it has rotated [`[$rot]`] times. The disk has a mass [`m = `] [`[$m]`] [`kg`]
