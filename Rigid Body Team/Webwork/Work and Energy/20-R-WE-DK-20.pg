@@ -90,7 +90,7 @@ $n = $P/$W;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-20.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-20.png", width=>[$width], height=>[$height]) @]*
 
 A gardening company is testing a wheelbarrow prototype for seniors. The wheel has a hub motor which can apply a moment [`M = `] [`[$M]`] [`N \cdot m`]. If the wheel has a radius [`r = `] [`[$r]`] [`m`] and 
 the wheel rolls without slipping, determine the power of the hub motor if it moves at a velocity of [`v = `] [`[$v]`] [`m/s`] when a force of [`F = `] [`[$F]`] [`N`] is applied at an angle of [`\theta = `] [`[$theta]`][`^{\circ}`].

@@ -90,7 +90,7 @@ $k = (-$mrod*9.81*($l*cos($thetarad)-$l*cos($theta0))-$mmass*9.81*($l*cos($theta
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-16.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-16.png", width=>[$width], height=>[$height]) @]*
 
 A hardworking engineering student is designing a lever system that will slowly lower the lever and its load.
 The [`[$mrod]`] [`kg`] slender rod BC has a mass [`m = `] [`[$mmass]`] [`kg`] attached at the rod's center of gravity G,

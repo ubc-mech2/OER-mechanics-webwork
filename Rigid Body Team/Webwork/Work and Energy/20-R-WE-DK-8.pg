@@ -98,7 +98,7 @@ else{
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-8.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-8.png", width=>[$width], height=>[$height]) @]*
 
 Students are working on a self-righting balance system consisting of a disk and two springs with spring constants
 [`k_1 = `] [`[$k1]`] [`N/m`] and [`k_2 = `] [`[$k2]`] [`N/m`]. If the disk with mass [`m = `] [`[$m]`] [`kg`] and 
