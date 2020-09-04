@@ -104,7 +104,7 @@ $theta = $thetarad/pi*180;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-21.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-21.png", width=>[$width], height=>[$height]) @]*
 
 A thin plate with dimensions [`a = `] [`[$a]`] [`m`], [`b = `] [`[$b]`] [`m`], has a mass [`m = `] [`[$m]`] [`kg`]. If the plate is at rest when [`\theta = `] [`0^{\circ}`], determine the angle at which it begins to 
 slip. The point of contact O between the plate and the ledge is located a length [`l = `] [`[$l]`] [`m`] from one side of the plate. Take the coefficient of static friction to be [`\mu_s = `] [`[$mu]`]. Give the answer 

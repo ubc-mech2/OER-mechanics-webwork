@@ -86,7 +86,7 @@ $V13 = $V3 - $V1;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-14.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-14.png", width=>[$width], height=>[$height]) @]*
 
 A modern art sculpture consists of a collar, a spring, and a circular track. The collar has a mass of [`m = `] [`[$m]`] [`kg`] and the 
 radius of the track is [`r = `] [`[$r]`] [`m`]. If the spring is attached to a point P which is a vertical distance [`d = `] [`[$d]`] [`m`]

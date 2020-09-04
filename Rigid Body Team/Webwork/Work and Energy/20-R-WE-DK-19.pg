@@ -90,7 +90,7 @@ $P = $F*$v*cos($thetarad);
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-19.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-19.png", width=>[$width], height=>[$height]) @]*
 
 For a sports day event, you are partnered with your little brother in order to pull a [`[$m]`] [`kg`] box up a hill angled at [`\gamma = `] [`[$gamma]`][`^{\circ}`] with a coefficient of kinetic friction 
 [`\mu_k = `] [`[$mu]`]. The event is a race and you really want to win so you apply a force at an angle [`\theta = `] [`[$theta]`][`^{\circ}`]. Your brother misheard the instructions so he applies a force 

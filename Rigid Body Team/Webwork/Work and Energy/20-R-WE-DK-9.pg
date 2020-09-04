@@ -90,7 +90,7 @@ Montana James is shooting a scene in which he is running away from a foam cylind
 If the cylinder has mass [`m = `] [`[$m]`] [`kg`] and a radius of [`r = `] [`[$r]`] [`m`], calculate the cylinders total kinetic energy.
 Assume the cylinder rolls without slipping at an angular velocity of [`\omega = `] [`[$angvel]`] [`rad/s`].
 
-[`T = `] [____]{"$T"} [`J`]    
+[`T = `] [____]{"$U"} [`J`]    
 
 END_PGML
 

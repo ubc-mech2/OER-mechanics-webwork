@@ -92,7 +92,7 @@ $cylUFF = 0;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-22.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-22.png", width=>[$width], height=>[$height]) @]*
 
 What is the work done by all forces to drag a box up an incline of [`[$theta]`][`^{\circ}`]? What is the work done by all forces to 
 roll a similar-sized cylinder up the same incline? Take the height of the box and the diameter of the cylinder to be 
