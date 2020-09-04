@@ -89,7 +89,7 @@ $UFF = -$mu*$N*$d;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-1.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-1.png", width=>[$width], height=>[$height]) @]*
 
 You ask your little cousin to move a [`[$m]`] [`kg`] box up a hill with a coefficient of kinetic friction [`\mu_k = `] [`[$mu]`].
 Rather than carrying the box, he overthinks things and drags the box up the hill with a rope. Determine the work done by your 
