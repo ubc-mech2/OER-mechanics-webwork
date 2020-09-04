@@ -88,7 +88,7 @@ $U = $M*$rad;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-4.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-4.png", width=>[$width], height=>[$height]) @]*
 
 A frisbee is thrown such that its final angular velocity is [`\omega = `] [`[$angvel]`] [`rad/s`] after being in flight for [`t = `] [`[$t]`] [`s`].
 As it flies, the wind applies a constant moment, causing the frisbee to rotate faster. If the frisbee was initially at rest, determine the moment of

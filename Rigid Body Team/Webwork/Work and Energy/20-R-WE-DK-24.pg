@@ -116,7 +116,7 @@ $vA2 = sqrt(($VB1 + $VG1 + $VA1 - $VG2 - $VA2)/$T2co);
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-24.png", width=>[$width], height=>[$height]) @]*
 
 For an experiment, your professor assembles a system as shown, consisting of a [`[$mdisk]`] [`kg`] disk, a [`[$mrod]`] [`kg`] slender rod, and a [`[$mcollar]`] [`kg`] smooth collar. The goal of the experiment is to 
 find information on the collar at given intervals. If the disk rolls without slipping, determine the velocity of the collar at the instant where [`\theta = `] [`[$theta]`][`^{\circ}`]. Assume the system is released from 

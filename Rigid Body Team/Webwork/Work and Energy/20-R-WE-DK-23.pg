@@ -95,7 +95,7 @@ $T = $TAB + $TCD;
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-WE-23.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-23.png", width=>[$width], height=>[$height]) @]*
 
 If collar B moves along the bar CD towards D at a constant rate of [`[$vrel]`] [`m/s`], find the kinetic energy of the
 entire mechanical system. Assume the collar has negligible mass and each bar can be treated as a slender rod. The links have
