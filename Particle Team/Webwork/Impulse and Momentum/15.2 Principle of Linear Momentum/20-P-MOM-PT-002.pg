@@ -94,7 +94,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-JK-403-15-P15-1c.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
 
 Determine the impulse of the force F= [`[$c]t`] [`N`] for t= [`[$t]`] [`s`].
  

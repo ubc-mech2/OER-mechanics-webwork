@@ -95,7 +95,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-JK-401-15-P15-1a.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-PT-001.png", width=>[$width], height=>[$height]) @]*
 
 A force F= [`[$F]`] [`N`] acts on an umoving box with a mass of m= [`[$m]`] [`kg`] for t= [`[$t]`] [`s`]. What is the Kinetic Energy of the box?
 Assume that there is no other force acting on the box.
