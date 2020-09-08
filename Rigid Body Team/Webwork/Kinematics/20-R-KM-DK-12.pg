@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Ladder sliding, find accel. at the bottom and angular accel.
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('ladder','relative motion','velocity','angular velocity','acceleration','angular acceleration')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Relative Motion Analysis)
-## Date(2020-06-26)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Translating Axes)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Beginner)
-## RESOURCES('20-R-KM-DK-12.png')
+## Date(Summer 2020)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','ladder','relative motion','velocity','angular velocity','acceleration','angular acceleration')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.7')
 
 ########################################################
 
@@ -56,8 +78,16 @@ $radA = $degA*pi/180;
 $angvel = $velB/($length*cos($radA));
 
 $angaccel = ($accelB-($angvel)**2*$length*sin($radA))/($length*cos($radA));
-$accelA = $angaccel*$length*sin($radA)-($angvel)**2*$length*cos($radA);
+if ($angaccel < 0)
+{
+	$angaccel = -1*$angaccel;
+}
 
+$accelA = $angaccel*$length*sin($radA)-($angvel)**2*$length*cos($radA);
+if ($accelA < 0)
+{
+	$accelA = -1*$accelA;
+}
 
 ########################################################;
 #PGML
@@ -68,7 +98,7 @@ BEGIN_PGML
 
 A handyman has left a ladder leaning on a wall which begins to slip. At a given instant, the top 
 of the ladder has an acceleration [`a_B =`] [`[$accelB]`] [`m/s^2`] and a velocity of [`v_B =`] [`[$velB]`] [`m/s`],
- both acting downward. Determine the acceleration at the bottom of the ladder, A, and the ladder's angular
+ both acting downward. Determine the magnitude of acceleration at the bottom of the ladder, A, and the magnitude of the ladder's angular
  acceleration at this instant. The length of the ladder is [`l =`] [`[$length]`] [`m`] and forms an angle of [`\theta =`] [`[$degA]`][`^{\circ}`]
  with the ground at A.
 

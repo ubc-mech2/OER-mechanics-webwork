@@ -1,0 +1,163 @@
+#######################################################################################
+#			WELCOME TO THE OER MECH PROJECT!				
+#
+# This document will serve as a day one introduction to creating webwork problems.
+#
+# The guide will be split into several sections:
+#	1. Writing   - coming up with problems
+#	2. Coding    - creating the .pg files for webwork
+#	3. Uploading - getting the files uploaded and working in the online database
+#
+# The goal here is to get you on your feet as quickly as possible, and to have
+# one document that you can refer back to throughout your first weeks.
+#
+######################################################################################
+#				    Writing
+#
+# Here are some rough guidelines for writing clear, effective physics problems.
+# 
+# 1. Give enough information. Most physics problems can be boiled down to an equation
+#     or a series of equations, so make sure you give enough values for a unique solution.
+#     It sounds simple, but it can be easy to forget an angle or force and make an impossible problem.
+#     You can always give the students more information than they need as a distraction, but
+#     you should do so intentionally to make problems harder, not accidentally.
+#
+# 2. Units. Makes sure that your units are consistent within a question, and that every value
+#     you give has units. Metric and imperial are both good, but take extra care with imperial,
+#     especially when it comes to mass vs force. Additionally, make sure you clearly state
+#     what units the answer should be in.
+#
+# 3. Assumptions. There are some common assumptions that come up in physics problems, including:
+#      g = 9.8 m/s^2
+#      an object starts at rest/at the origin
+#      neglect friction/air resistance
+#      positive directions are up and to the right
+#     make sure that when you use these assumptions, they're clearly stated in the question.
+#
+# 4. Clear answers. Take special care to make sure that what you're asking is clear.
+#     When you're writing a problem, sometimes what's in your head doesn't make it onto the screen,
+#     so make sure the students know what they're expected to do. Redundancy is a good thing here:
+#     ask in words ("What is the speed of the object at time t?") 
+#     and in the answer box ("v = [_____] m/s").
+#
+######################################################################################
+#				    Coding
+#
+# You'll find many useful templates and tips on the GitHub and the UBC wiki, but we'll cover
+# the basics of problem creation here. You may have noticed that this is a .pg file.
+# This is the type of file you will upload your problems as to webwork. Whatever program
+# you used to open it will suffice for problem creation, whether its Notepad or something fancier.
+# Creating a .pg file is a simple as renameing a .txt file to something with a .pg extension.
+#
+# Webwork problems are coded in PERL, and come in several parts. Anything proceeded by a pound sign (#),
+# such as all of this text, is a comment, and won't affect the code. You should start your document with some
+# information about the problem, as in the templates available. Begin the code section with this:
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+#
+#
+# The next section is where you set up your variables. All variables start with a dollar sign ($), 
+# and assigning them looks like this:
+
+$a = 3;
+
+# Note the semicolon to close every line. Variables can be randomized using the random function. 
+# The three inputs are the minimum value, the maximum value, and step size. For example:
+
+$a = random(20,50,5);
+
+# This generates one of the following values randomly for each student: [20,25,30,35,40,45,50]
+
+$a = random(2,3,0.2)
+
+# This generates one of the following values: [2.0,2.2,2.4,2.6,2.8,3.0]
+
+
+Operations in PERL are simple:
+
+$b = $a+3;
+$c = $a-3;
+$d = $a*3;
+$e = $a/3;
+$f = $a**3;
+
+# That last operation is how you do an exponent, $a^3 or $a cubed.
+# PERL also has functions like sin(), cos(), tan(), ln(), and more. All trigonometric functions are in radians, 
+# so if you want the sine of 45 degrees you'd have to convert it like so:
+
+$g = sin(45 * 3.14159/180);
+
+# To begin the user-facing text of the problem (what the students will see) use the following command:
+
+BEGIN_PGML
+
+Now everything that is typed will show up on webwork in plain text.
+Include images like this:
+[@ image( "20-P-FA-BK-003.jpg", width=>[$width], height=>[$height]) @]* 
+Here 20-P-FA-BK-003.jpg is an image uploaded to webwork in the same folder as this problem, 
+and $width and $height are values you would have set earlier in the code.
+
+You can include a variable in the text like this: [$a]
+
+LaTeX equations are bounded by the following: [``]. Note that it's not an apostrophe, it's a grave.
+Look in the upper left corner of your keyboard. For example, this will show up as an equation 
+rather than plain text: [`F_F = \mu*N`]. You can look up LaTeX commands, but some important ones are here:
+
+X^{2} or X_{2} will put the "2" in superscript (like an exponent) or subscript respectively. 
+\mu, \delta, or any other greek letter is replaced by the symbol for that greek letter
+\frac{1}{2} will display 1/2 as a real fraction
+\circ displays a circle, and you can use ^\circ for a degree sign (superscript circle)
+\: inserts a space
+
+Note that all of these will only work inside square brackets and graves.
+
+There are two ways to include a newline or line break: Either include a blank line, as used here, or end a line with two spaces.
+
+This sentence will show up on a new line because of the gap above.  
+This sentence will show up on a new line because the previous line ended with two spaces (highlight to see them).
+
+To put in an answer box, use the following syntax:
+
+[_______]{"$a"}
+
+This will show up as a blank, and the correct value is $a.
+
+To end the PGML section, simply use:
+
+END_PGML
+
+# There are other ways to take answers from students, and things get more complicated 
+# if you want a vector answer or multiple choice, but these are the basics.
+# at the end, make sure you include the following:
+
+ENDDOCUMENT()};
+
+######################################################################################
+#				    Uploading
+#
+# Uploading is relatively simple: in webwork, go to the File Manager in the menu on the left, 
+# find the folder you want to add your problem to, click Choose File, then upload.
+#
+# If you find that you need to upload multiple files at once, you can combine them into an archive before uploading.
+# There are instructions on the wiki.
+#
+#
+# To view your problem, you will need to add it to a homework set from the Hmwk Sets Editor in the menu.
+# Select the set you want to add your problem to (click the little pencil icon, then the hyperlinked name of the set on the next screen).
+# Finally, you can add new problems at the bottom, where it says "Add X blank problem template(s) to end of homework set"
+# and direct it to your problem source file with, for example, "setOER_Mechanics_2020/Rigid Body/Kinetics/20-R-KIN-DK1.pg"
+# You can also create a new problem set. Make sure you and anyone else who needs to see your problem are added to the set as students.
+#
+######################################################################################

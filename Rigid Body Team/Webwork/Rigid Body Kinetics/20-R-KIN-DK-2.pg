@@ -1,16 +1,38 @@
-## DESCRIPTION
-## 20-R-KIN-DK-1 Kid with foam hammer, find moment of inertia
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('inertia','moment','hammer','foam','kinetics','parallel axis','composite bodies')
-## DBsubject(Dynamics)
-## DBchapter(Kinetics)
-## DBsection(Parallel Axis Theorem)
-## Date(2020-07-16)
+##
+## DBsubject(Statics)
+## DBchapter(Distributed Forces: Moment of Inertia)
+## DBsection(Parallel Axis Theorem: Mass Moment of Inertia)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Intermediate)
-## RESOURCES('20-R-KIN-DK-2.png')
+## Date(Summer 2020)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','inertia','moment','hammer','foam','kinetics','parallel axis','composite bodies')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
 
 ########################################################
 
@@ -49,21 +71,21 @@ $density = random(100,200,10);     # (lower, upper, stepsize)
 $thicknesscm = random(0.5,0.8,0.05);
 $widthA = random(5,10,1);
 $lengthA = random(30,50,2);
-$widthB = random(8,10,0.5);
-$lengthB = random(15,30,1);
+$widthB = random(15,30,1);
+$lengthB = random(8,10,0.5);
 $widthC = random(5,10,1);
 $lengthC = random(12,16,1);
 $widthD = $widthC;
 $lengthD = $lengthC;
 #---- Formulas to compute answers --------------#
 $massA = $density*$widthA/100*$lengthA/100*$thicknesscm/100;
-$inertiaA = 1/12*($massA)*(($widthA/100)**2+($lengthA/100)**2) + $massA*($lengthA/2)**2;
+$inertiaA = 1/12*($massA)*(($widthA/100)**2+($lengthA/100)**2) + $massA*($lengthA/200)**2;
 
 $massB = $density*$widthB/100*$lengthB/100*$thicknesscm/100;
-$inertiaB = 1/12*($massB)*(($withB/100)**2+($lengthB/100)**2) + $massB*(($lengthA+$widthB/2)/100)**2;
+$inertiaB = 1/12*($massB)*(($widthB/100)**2+($lengthB/100)**2) + $massB*(($lengthA+$lengthB/2)/100)**2;
 
 $massC = $density*$widthC/100*$lengthC/100*$thicknesscm/100;
-$inertiaC = 1/12*$massC*(($widthC/100)+($lengthC/100)**2) + $massC*((($lengthA+$widthB/2)/100)**2+(($lengthB/2+$widthC/2)/100)**2);
+$inertiaC = 1/12*$massC*(($widthC/100)**2+($lengthC/100)**2) + $massC*((($lengthA+$lengthB/2)/100)**2+(($widthB/2+$widthC/2)/100)**2);
 $inertiaD = $inertiaC;
 
 $inertia = $inertiaA + $inertiaB + $inertiaC + $inertiaD;

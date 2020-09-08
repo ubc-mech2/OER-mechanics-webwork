@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Multi-linkage assembly, find agular accel.
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('linkage','relative motion','velocity','angular velocity','acceleration','angular acceleration')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Relative Motion Analysis)
-## Date(2020-07-02)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Translating Axes)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Intermediate)
-## RESOURCES('20-R-KM-DK-13.png')
+## Date(Summer 2020)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','linkage','relative motion','velocity','angular velocity','acceleration','angular acceleration')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.7')
 
 ########################################################
 
@@ -55,6 +77,8 @@ $angvelAB = -1*random(1,4,0.5);
 $angaccelAB = -1*random(1,5,0.5);
 $angvelBC = -1*$angvelAB*$rAB*cos($theta);
 
+$disp = -1*$angvelAB*$rAB;
+
 #---- Formulas to compute answers --------------#
 $angvelCD = -1*$angvelBC*2/$rCD;
 $angaccelABi = $angaccelAB*$rAB*sin($theta)+($angvelAB)**2*$rAB*cos(pi/4);
@@ -74,12 +98,12 @@ BEGIN_PGML
 [@ image( "20-R-KM-DK-13.png", width=>[$width], height=>[$height]) @]*
 
 Several arms are linked to form the system shown. Link AB has a length of [`l_{AB} =`] [`[$rAB]`] [`m`],
-link CD has a length of [`l_{CD} =`] [`[$rCD]`] [`m`], and the distance from B to C is [`r_{C/B} = [-1\imath + 1\jmath]`].
+link CD has a length of [`l_{CD} =`] [`[$rCD]`] [`m`], and the distance from B to C is [`\vec{r_{C/B}} = [-1\hat{\imath} + 1\hat{\jmath}]`] [`m`].
 If the angle between link AB and the horizontal is [`\theta = 45^{\circ}`], determine the angular acceleration of link CD.
-The angular velocities of the links are given as [`\omega_{AB} =`] [`[$angvelAB]`] [`rad/s`] and [`\omega_{BC} =`] [`[$angvelBC]`] [`rad/s`], while the
-angular acceleration of AB is given as [`\alpha_{AB} =`] [`[$angaccelAB]`] [`rad/s^2`].
+The angular velocities of the links are given as [`\vec{\omega_{AB}} =`] [`[$angvelAB]`] [`\hat{k}`] [`rad/s`] and [`\vec{\omega_{BC}} =`] [`[$disp]`] [`\cdot`] [`\frac{\sqrt{2}}{2}`] [`\hat{k}`] [`rad/s`], while the
+angular acceleration of AB is given as [`\vec{\alpha_{AB}} =`] [`[$angaccelAB]`] [`\hat{k}`] [`rad/s^2`].
 
-[`\alpha_{CD} =`][____]{"$angaccelCD"}[`rad/s^2`]
+[`\vec{\alpha_{CD}} =`][____]{"$angaccelCD"} [`\hat{k}`] [`rad/s^2`]
 
 
 

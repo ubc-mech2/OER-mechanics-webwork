@@ -68,11 +68,11 @@ Context("Numeric");
 
 #given
 $speed = random(10,30,5);
-$weight = random(200,400,25);
+$mass = random(200,400,25);
 $distance = random(30,70,5);
 
 #computation
-$Ffriction = $mass*($speed/3.6)**2/2/$distance;
+$Ffriction = 0.5*$mass*($speed/3.6)**2/$distance;
 
 #set tolerance
 Context()->flags->set(
@@ -88,7 +88,7 @@ BEGIN_PGML
 
 [@ image("20-P-FA-NW-006.png", width=>[$width], height=>[$height]) @]*
 
-The van is travelling at [`[$speed]`] [`km/h`] when the coupling of the trailer at A fails. If the trailer has a mass of [`[$weight]`] [`kg`] and coasts [`[$distance]`] [`m`] before coming to rest, determine the constant horizontal force [`F`] created by rolling friction which causes the trailer to stop.
+The van is travelling at [`[$speed]`] [`km/h`] when the coupling of the trailer at A fails. If the trailer has a mass of [`[$mass]`] [`kg`] and coasts [`[$distance]`] [`m`] before coming to rest, determine the constant horizontal force [`F`] created by rolling friction which causes the trailer to stop.
 
 [`F =`] [_____]{"$Ffriction"} [`N`]
 

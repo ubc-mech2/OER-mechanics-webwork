@@ -1,16 +1,38 @@
-## DESCRIPTION
-## Gear system with non-slip belt, determine accel. after number of revs
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
 ## ENDDESCRIPTION
-
-## KEYWORDS('engineering student', 'drive train','bike', 'pulley','angular velocity','angular velocity','revolutions')
+##
 ## DBsubject(Dynamics)
-## DBchapter(Kinematics)
-## DBsection(Pure Rotation)
-## Date(2020-06-25)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
 ## Author(David Kim)
-## Institution(University of British Columbia)
-## Level(Intermediate)
-## RESOURCES('20-R-KM-DK-6.png')
+## Date(Summer 2020)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','engineering student', 'drive train','bike', 'pulley','angular velocity','angular velocity','revolutions')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
 
 ########################################################
 
@@ -72,11 +94,11 @@ BEGIN_PGML
 [@ image( "20-R-KM-DK-6.png", width=>[$width], height=>[$height]) @]*
 
 An engineering student is trying to create a new drivetrain system for his bike, consisting of a pulley system.
-Pulley A is connected to pulley B by a non-slip belt. At the instant [`\omega_A =`] [`[$angvel]`] [`rad/s`],
-pulley A has an angular acceleration [`\alpha_A =`] [`[$coefficient]`][`\theta`] [`rad/s^2`], where [`\theta`] is in
+Pulley A is connected to pulley B by a non-slip belt and pulley B is rigidly attached to pulley C. Pulley A rotates at an initial angular velocity of [`\omega_A =`] [`[$angvel]`] [`rad/s`],
+and has an angular acceleration of [`\alpha_A =`] [`[$coefficient]`][`\theta`] [`rad/s^2`], where [`\theta`] is in
 radians. Use this relationship to determine the magnitude of acceleration at point D when pulley A rotates [`[$rev]`]
-revolutions. The radii of each pulley is given to be [`r_A = 10 cm`], [`r_B = 5 cm`], and [`r_C = 12 cm`], and
-point D is a distance [`r_D = 8 cm`] from point B.
+revolutions. The radii of each pulley is given to be [`r_A = 10`] [`cm`], [`r_B = 5`] [`cm`], and [`r_C = 12`] [`cm`], and
+point D is a distance [`r_D = 8`] [`cm`] from point B.
 
 
 [`a_D =`] [____]{"$accelD"}[`m/s^2`]  
