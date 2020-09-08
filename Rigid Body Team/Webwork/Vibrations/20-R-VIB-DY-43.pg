@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBsection(Free Damped)
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty([Beginner/Intermediate/Advanced])
-## KEYWORDS('Dynamics', '')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [X], section [X.X]')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Frame')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
 
 ########################################################
 
@@ -63,8 +63,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1500;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*1600*1.5;		#aspect ratio
+$height = $imgScale*1000*1.5;
 
 #---- Random variables for this problem --------#
 $length = random(1.5,2,0.1);

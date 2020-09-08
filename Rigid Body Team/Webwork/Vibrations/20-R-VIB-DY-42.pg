@@ -63,24 +63,25 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*1000*1.5;		#aspect ratio
+$height = $imgScale*1000*1.5;
 
 #---- Random variables for this problem --------#
-$mass = random();
-$rad = random();
-$length = random();
-$c = random();
-$time = random();
-$dis = random();
+$mass = random(10,0.1,25);
+$rad = random(30,1,50);
+$length = random(1.5,0.1,2.5);
+$c = random(25,1,30);
+$time = 10;
+$dis = random(0.025,0.01,0.05);
 
 #---- Formulas to compute answers --------------#
+$angVel = $rad;
 $k = $mass*9.81/$dis;
 $wN = sqrt($k/$mass);
 $cC = sqrt(4*$mass*$k);
 $force = $mass*$rad*$angVel**2;
 $D = ($force/$k)/sqrt((1-($angVel/$wN)**2)**2+(2*$c/$cC*$angVel/$wN)**2);
-$phi = atan((2*$c/$cC*$angVel/$wN)/((1-($angVel/$wN)**2));
+$phi = atan((2*$c/$cC*$angVel/$wN)/((1-($angVel/$wN)**2)));
 
 #---- Answers to the problem -----------------------#
 $ansA = $D*sin($angVel*$time+$phi);

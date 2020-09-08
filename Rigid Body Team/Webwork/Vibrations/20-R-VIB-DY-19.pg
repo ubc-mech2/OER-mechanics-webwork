@@ -63,8 +63,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1750;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*1750*1.5;		#aspect ratio
+$height = $imgScale*900*1.5;
 
 #---- Random variables for this problem --------#
 $mass = random(15,25,1);
@@ -74,8 +74,8 @@ $freq = random(1,5,1);
 $length = random(1,3,0.1);
 
 #---- Formulas to compute answers --------------#
-$num = 2*$k*$constant*$freq
-$denom = 4*$k-$freq**2*mass;
+$num = 2*$k*$constant*$freq;
+$denom = 4*$k-$freq**2*$mass;
 
 #---- Answers to the problem -----------------------#
 $ansA = abs($num/$denom);

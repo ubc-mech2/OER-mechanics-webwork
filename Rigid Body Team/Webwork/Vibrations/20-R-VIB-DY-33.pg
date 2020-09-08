@@ -63,8 +63,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*2000;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*2500;		#aspect ratio
+$height = $imgScale*1250;
 
 #---- Random variables for this problem --------#
 $mass = random(2.5,7.5,0.1);

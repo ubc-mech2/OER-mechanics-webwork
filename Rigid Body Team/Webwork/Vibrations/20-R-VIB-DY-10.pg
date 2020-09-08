@@ -63,8 +63,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1500;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*1250*1.5;		#aspect ratio
+$height = $imgScale*1000*1.5;
 
 #---- Random variables for this problem --------#
 $mass = random(5,15,0.1);
@@ -85,7 +85,7 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-10.png", width=>[$width], height=>[$height]) @]*
 
-Two springs, with spring constants [`k =`] [`[$k]`] [`N.m`] each, are used to connect a [`m =`] [`[$mass]`] [`kg`] cargo load to a wall, Assuming the floor is frictionless, determine
+Two springs, with spring constants [`k =`] [`[$k]`] [`N/m`] each, are used to connect a [`m =`] [`[$mass]`] [`kg`] cargo load to a wall, Assuming the floor is frictionless, determine
 the first order differential equation describing energy.
 
 [____]{"$ansA"} [`v^2 + `][_____]{"$ansB"} [`x^2 = 0`]

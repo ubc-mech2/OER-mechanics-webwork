@@ -63,8 +63,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1000;		#aspect ratio
-$height = $imgScale*1000;
+$width = $imgScale*1200*1.5;		#aspect ratio
+$height = $imgScale*1000*1.5;
 
 #---- Random variables for this problem --------#
 $length = random(0.75,2,0.01);
@@ -88,7 +88,7 @@ BEGIN_PGML
 
 A [`[$length]`] [`m`] bar is pinned by one end to the ceiling. Given that he mass of the bar is [`[$mass]`] [`kg`], what is the natural frequency of the system?
 
-[____]{"$ansA"} [`Hz`]
+[`w_n =`] [____]{"$ansA"} [`Hz`]
 
 END_PGML
 
