@@ -21,9 +21,9 @@
 ## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
 ## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
-## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## territory of many peoples - specifically the Musqueam (xÊ·mÉÎ¸kÊ·ÉyÌÉm), Squamish (Sá¸µwxÌ±wÃº7mesh), 
+## Tsleil-Waututh (sÉlÌilwÉtaÉÉ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÌÉwaÎ¸enaÉÉ¬ tÉmÉxÊ·), 
+## Chemainus (Stz'uminus), StÃ³:loÌ (SâÃ³lh TÃ©mÃ©xw), Kwanlin DÃ¼n, Niitsitapi (Blackfoot), 
 ## and the people of the Treaty 7 region of Southern Alberta. 
 ##
 ## ENDDESCRIPTION
@@ -60,12 +60,13 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$F = random(5,30,5);     # (lower, upper, stepsize)
-$t = random(1,5,0.5); 
-
+$t = random(1,10,1);     # (lower, upper, stepsize)
+$c = random(10,15,0.5); 
+$m=random(1,5,0.5);
 
 #Computation
-$I=$F*$t;
+$I=$t*$c*$t;
+$v=$I/$m;
 
    
 
@@ -74,7 +75,7 @@ $I=$F*$t;
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*4000;
+$width = $imgScale*3500;
 $height = $imgScale*1981;
 
 
@@ -83,7 +84,7 @@ $height = $imgScale*1981;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>0.01,
+tolerance=>0.2,
 tolType=>'absolute');  #absolute or relative
 
 ##############################################################
@@ -96,11 +97,15 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-PT-003.png", width=>[$width], height=>[$height]) @]*
 
-Determine the impulse of the force F= [`[$F]`] [`N`] for t= [`[$t]`] [`s`].
+Determine the impulse of the force F, when c= [`[$c]`] for time t= [`[$t]`] [`s`].
+Find the velocity of the box caused by the impulse. Assume the box is initially unmoving,has a mass of [`[$m]`] [`kg`] 
+and no other forces act on it.
  
 
 
-[`I=`][___]{"$I"} [`N*s`]  
+[`I=`][___]{"$I"} [`N*s`] 
+
+[`v=`][___]{"$v"} [`m/s`]  
 
 
 _Round your answers to one decimal place_.
