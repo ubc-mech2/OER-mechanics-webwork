@@ -63,7 +63,7 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1150*1.5;		#aspect ratio
+$width = $imgScale*1000*1.5;		#aspect ratio
 $height = $imgScale*1150*1.5;
 
 #---- Random variables for this problem --------#
@@ -89,7 +89,7 @@ BEGIN_PGML
 A window cleaner is hanging over the side of a building with a pulley system and a spring. 
 Due to the soap on the windows, the friction between the window and the machine is negliable. 
 Given that the radius of the pulley is [`[$radius]`] [`m`], the pulley's mass is [`m =`] [`[$massP]`] [`kg`],
-and the cleaner has a mass [`m = `] [`[$mass]`], what is the spring constant if the natural vibration of the system is [`[$natFreq]`] [`Hz`]?
+and the cleaner has a mass [`m = `] [`[$mass]`], what is the spring constant if the natural vibration of the pulley is [`[$natFreq]`] [`rad/s`]?
 
 [`k =`] [____]{"$ansA"} [`N/m`]
 
