@@ -77,7 +77,7 @@ $mass = random(5,10,0.1);
 #---- Formulas to compute answers --------------#
 $k = $k1*$k2/($k1+$k2);
 $num = 2*$constant*$k;
-$denom = $length*$mass*(2*(9.81/$length+2*$k/(3*$mass))-$freq**2);
+$denom = $length*$mass*(2*(9.81/$length+2*$k/($mass))-$freq**2);
 
 #---- Answers to the problem -----------------------#
 $ansA = abs($num/$denom);

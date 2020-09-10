@@ -88,10 +88,10 @@ BEGIN_PGML
 A mechanic finds two old springs in their storage room, but the spring constants are not labeled. 
 In order to figure out the k values, The mechanic decides to have some fun and loads the springs 
 in parallel and series orientations to find the spring constant of each spring. The mass used has the mass [`m =`] [`[$mass]`] [`kg`].
-Given that  the natural frequencies of the parallel and series setup are measured to be [`[$natFreqP]`] [`Hz`]and 
-[`[$natFreqS]`] [`Hz`] respectively after being perturbed, what are the spring constants? Answer as a pair of numbers.
+Given that  the natural frequencies of the parallel and series setup are measured to be [`[$natFreqP]`] [`rad/s`] and 
+[`[$natFreqS]`] [`rad/s`] respectively after being perturbed, what are the spring constants? Answer as a pair of numbers.
 
-[`k =`] [____]{"$ansA"} [`N/m`]
+[`k,k =`] [____]{"$ansA"} [`N/m`]
 
 END_PGML
 
