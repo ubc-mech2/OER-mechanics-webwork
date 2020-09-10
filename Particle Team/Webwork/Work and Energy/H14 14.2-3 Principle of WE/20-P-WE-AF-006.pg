@@ -92,7 +92,7 @@ A crate of mass [`[$M] \: kg`] is being lifted by a force described as [` F \: =
 
 _use 9.8 for gravity calculations_
 
-[@ image( "20-P-WE-AF-006.jpg", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-WE-AF-006.png", width=>[$width], height=>[$height]) @]*
 
 [`v = `][_____]{"$velocity"}[`m/s`]
 
