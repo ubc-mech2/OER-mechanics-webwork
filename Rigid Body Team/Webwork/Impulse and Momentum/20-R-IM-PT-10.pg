@@ -30,8 +30,8 @@
 ## Institution('University of British Columbia')
 ## Author(Patrick Thangarajah)
 ## Date(Summer 2020)
-## Difficulty(Intermediate)
-## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics','spinning','angular velocity','conservation of momentum','conservation of energy')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
 
 ########################################################
@@ -59,7 +59,7 @@ Context("Numeric");		# or Complex
 #---------------Tolerance------------------#
 Context()->flags->set(
 tolerance=>.03,
-tolType=>'relative');  #relative or absolute
+tolType=>'absolute');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
@@ -67,18 +67,41 @@ $imgScale = 0.2;
 
 
 #---- Random variables for this problem --------#
+$mc=random(0.25,0.5,0.05);
+$l=random(2,7,0.5);
+$v=random(700,1000,0.5);
+$m1=random(1,5,1);
+$m2=random(6,10,1);
+$m3=random(11,17,1);
+$m4=random(17,25,1);
+$r=random(0.15,0.20,0.5);
+$theta=random(30,50,0.5);
 
-$m = random(20,30,1);
-$m_c=random(25,40,5);
-$r= random(2,3,0.1);
-$angvel1 = random(1,8,0.5);
-$d= random(0.1,1,0.1);
+
+
+
 
 #---- Formulas to compute answers --------------#
 
-$I1 = 0.5*$m*$r**2;
-$I2= 0.5*$m*$r**2+ $m_c*$d**2;
-$angvel2=angvel1*$I1/$I2;
+#Conservation of Energy
+$h=$l*sin($theta*pi/180);
+$angvel2=9.81*$h/(1.5*$r**2);
+
+#Conservation of Momentum
+$mbullet=(1/2*$mc*$r**2*$angvel2)/($v*$r-1/2*$r**2*$angvel2)*1000;
+
+#Determining the closest mass
+if($mbullet>$m4){
+$ans=5;
+}elsif($mbullet>$m3){
+$ans=4;
+}elsif($mbullet>$m2){
+$ans=3;
+}elsif($mbullet>$m1){
+$ans=2;
+}else{
+$ans=1;
+}
 
 
 
@@ -88,16 +111,36 @@ $angvel2=angvel1*$I1/$I2;
 
 BEGIN_PGML	
 
-[@ image( "20-R-IM-PT-2.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-IM-PT-10.png", width=>[$width], height=>[$height]) @]*
 
-A merry-go-round is spun at to a speed of [`\omega_1 = `] [`[$angvel1]`] [`rad/s`] , maintaining the speed with no forces acting on it. At this speed a child, 
-with a mass of [`m_c = `] [`[$m_c]`] [`kg`], directly jumps on the merry go round at a distance of [`d = `] [`[$d]`] [`m`] from the centre. 
-What is the new speed of the merry go round? Assume the merry-go-round is a flat circle with a mass [`m = `] [`[$m]`] [`kg`] and radius [`r = `] [`[$r]`] [`m`], and the child can be treated as a point mass. Also assume 
-that the child does not slide on the merry-go-round, and that no external torques act on it once the child jumps on.
+In a game show, a participant must roll a solid cylinder [`[$l]`] [`m`] up a ramp with an incline
+ of [`\theta = `] [`[$theta]`] [`degrees`], where the cylinder would roll into a button. The participant has a gun to 
+shoot the cylinder, and move it up the ramp. Only one bullet can be chosen and the 
+participant has to pick the bullet with the lowest mass that will still allow them to 
+cross the chasm for the highest score. If they test multiple bullets, they will be 
+disqualified. The mass of bullet 1 is [`[$m1]`] [`g`],  2 is [`[$m2]`] [`g`],  3 is  [`[$m3]`] [`g`], and  4 is [`[$m4]`] [`g`].
+Which bullet should they choose? (Enter 5 if no bullet can roll the cylinder up the ramp)
+
+Assume that gun shoots all bullets with a speed of [`v = `] [`[$v]`] [`m/s`], the cylinder has a radius of [`r = `] [`[$r]`] [`m`] and a mass of [`m_c = `] [`[$mc]`] [`kg`].  
+Also assume that the participant can shoot the edge of the cylinder with extremely high accuracy, and there is no slipping of the cylinder or air resistance.
 
 
 
-[`\omega_2 = `] [____]{"$angvel2"} [`rad/s`]    
+
+
+
+
+
+
+
+
+
+ [`Bullet`][`:`] [____]{"$ans"} []
+
+
+
+
+
 
 END_PGML
 
