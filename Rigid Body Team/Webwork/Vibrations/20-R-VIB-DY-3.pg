@@ -89,7 +89,7 @@ BEGIN_PGML
 A new type of punching bag to be used in space consists of a [`m =`] [`[$mass]`] [`kg`] 
 ball suspended mid air by two [`l =`] [`[$length]`] [`m`] taut ropes, each with a tension 
 of [`T =`] [`[$tension]`] [`N`]. One rope connects the ball to the ceiling and the other to the ground. 
-If an impact results, in a initial horixontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], 
+If an impact results in a initial horizontal velocity [`v_0 =`] [`[$intVel]`] [`m/s`], 
 find the equation of horizontal displacement.
 
 END_PGML

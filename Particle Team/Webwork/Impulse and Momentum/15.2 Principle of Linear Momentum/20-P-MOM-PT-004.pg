@@ -60,13 +60,16 @@ loadMacros(
 
 Context("Numeric");         # or Complex
 #given
-$t = random(1,10,1);     # (lower, upper, stepsize)
-$c = random(10,15,0.5); 
-$m=random(1,5,0.5);
+$mg = random(1,10,1);     # (lower, upper, stepsize)
+$h = random(10,15,0.5); 
+$mb = random(1,10,1);
+$mt=random(1,5,0.5);
+$g = random(1,10,1);
 
 #Computation
-$I=$t*$c*$t;
-$v=$I/$m;
+$m=$mg+$mb+$mt;
+$v=sqrt(gh);
+
 
    
 
@@ -95,18 +98,22 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-PT-003.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-PT-004.png", width=>[$width], height=>[$height]) @]*
 
-Determine the impulse of the force F= 5t N for t= 5 s.
 
-A toboggan of mass 10.0 kilogram starts from rest at point A.
+
+A toboggan of mass[`m_t = `] [`[$mt]`] [`kg`] starts from rest at point A.
 There are two people on the toboggan.
-The person in front wearing green has a mass of 40.0 kilograms and the person in back wearing blue has a mass of 45.0 kilograms.
+The person in front wearing green has a mass of [`m_g = `] [`[$mg]`] [`kg`] 
+ and the person in back wearing blue has a mass of [`m_b = `] [`[$mb]`] [`kg`]
+The toboggan slides down the perfectly slippery hill with height [`h = `] [`[$h]`] [`m`] 
+and reaches point B at the bottom.  
+They are travelling horizontally at point B.  
+Ignoring all friction and other resistive or non-conservative forces, 
+what is the speed of the toboggan at point B?
 
- 
 
 
-[`I=`][___]{"$I"} [`N*s`] 
 
 [`v=`][___]{"$v"} [`m/s`]  
 
