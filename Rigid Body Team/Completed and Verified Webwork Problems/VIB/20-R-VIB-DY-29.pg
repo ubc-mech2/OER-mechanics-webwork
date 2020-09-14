@@ -1,0 +1,109 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free Damped)
+## Institution('University of British Columbia')
+## Author(Daniel Youm)
+## Date(Summer 2020)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics', 'Underwater', 'Equation of Displacement')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserImplicitEquation.pl",
+	"weightedGrader.pl",
+	"source.pl",			# allows code to be displayed on certain sites
+	"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.05,
+tolType=>'relative');  #relative or absolute
+Context()->variables->add(t=>"Real");
+
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+$width = $imgScale*1250*1.5;		#aspect ratio
+$height = $imgScale*1000*1.5;
+
+#---- Random variables for this problem --------#
+$mass = random(5,10,0.1);
+$k = random(25,40,1);
+$c = random(1,3,0.1);
+$intDis = random(0.1,0.3,0.01);
+
+#---- Formulas to compute answers --------------#
+$wN = sqrt($k/$mass);
+$zeta = $c/(2*$mass*$wN);
+$wD = $wN*sqrt(1-$zeta**2);
+$phi = arctan($wD/($wN*$zeta));
+$A = sqrt((($wN*$zeta*$intDis)**2+($intDis*$wD)**2)/$wD**2);
+
+#---- Answers to the problem -----------------------#
+$ans = Formula("$A*e**(-$wN*$zeta*t)sin($wD*t+$phi)");
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-VIB-DY-29.png", width=>[$width], height=>[$height]) @]*
+
+In Atlantis, the underwater city, an engineer sets up a [`m =`] [`[$mass]`] [`kg`] box and spring, [`k =`] [`[$k]`] [`N/m`]. 
+The water has a damping force on the box of [`F =`] [`[$c]`][`|vel|`]. Given that the engineer gives the box an 
+initial displacement [`x_0 =`] [`[$intDis]`] [`m`], determine the equation of displacement for the box.
+
+END_PGML
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+ANS($ans->cmp());
+
+
+ENDDOCUMENT();
