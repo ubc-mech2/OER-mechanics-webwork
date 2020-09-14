@@ -68,6 +68,7 @@ $height = $imgScale*1000*1.5;
 
 #---- Random variables for this problem --------#
 $mass = random(10,0.1,25);
+$eccent = random(0.3,0.5,0.1);
 $rad = random(30,1,50);
 $length = random(1.5,0.1,2.5);
 $c = random(25,1,30);
@@ -77,11 +78,13 @@ $dis = random(0.025,0.01,0.05);
 #---- Formulas to compute answers --------------#
 $angVel = $rad;
 $k = $mass*9.81/$dis;
-$wN = sqrt($k/$mass);
-$cC = sqrt(4*$mass*$k);
-$force = $mass*$rad*$angVel**2;
-$D = ($force/$k)/sqrt((1-($angVel/$wN)**2)**2+(2*$c/$cC*$angVel/$wN)**2);
-$phi = atan((2*$c/$cC*$angVel/$wN)/((1-($angVel/$wN)**2)));
+$cT = $c*($length/2)**2;
+$massT = 1/3*$mass*$length**2;
+$wN = sqrt($k/$massT);
+$cC = sqrt(4*$massT*$k);
+$force = $mass*$eccent*$angVel**2;
+$D = ($force/$k)/sqrt((1-($angVel/$wN)**2)**2+(2*$cT/$cC*$angVel/$wN)**2);
+$phi = atan((2*$cT/$cC*$angVel/$wN)/((1-($angVel/$wN)**2)));
 
 #---- Answers to the problem -----------------------#
 $ansA = $D*sin($angVel*$time+$phi);
@@ -96,7 +99,7 @@ BEGIN_PGML
 A [`m = [$mass] kg`] eccentric electric motor is mounted at the end of a [`l = [$length] m`] 
 solid horizontal bar which is cantilevered to a wall. The eccentric motion can be described as a 
 [`[$eccent] kg`] mass rotating at an angular velocity [`\omega = [$angVel] rad/s`] located 
-[`r = [$rad] m`] from the axis of rotation. A [`c =  [$c] Ns/m`] damper acts on the bar at the midpoint. 
+[`r = [$eccent] m`] from the axis of rotation. A [`c =  [$c] Ns/m`] damper acts on the bar at the midpoint. 
 If the bar deflects [`y_0 = [$dis] m`] when the motor is off, determine the angle of the steady-state vibration
  at [`t = [$time] s`].
 

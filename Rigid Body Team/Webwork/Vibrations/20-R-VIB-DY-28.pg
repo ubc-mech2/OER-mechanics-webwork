@@ -77,11 +77,11 @@ $dis = random(0.1,0.2,0.01);
 $wN = sqrt($k/$mass);
 $zeta = $c/(2*$mass*$wN);
 $wD = $wN*sqrt(1-$zeta**2);
-$tD = 2*pi/$wD;
+$tD = pi/$wD;
 $sigma = $zeta*$wN*$tD;
 
 #---- Answers to the problem -----------------------#
-$ansA = e**$sigma*$dis;
+$ansA = $dis*exp($sigma);
 
 ########################################################;
 #PGML

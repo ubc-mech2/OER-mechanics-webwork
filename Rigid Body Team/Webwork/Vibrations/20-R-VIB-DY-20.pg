@@ -63,7 +63,7 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*2500*1.5;		#aspect ratio
+$width = $imgScale*2000*1.5;		#aspect ratio
 $height = $imgScale*1000*1.5;
 
 #---- Random variables for this problem --------#
@@ -74,7 +74,7 @@ $k = random(750,1250,10);
 
 #---- Formulas to compute answers --------------#
 $natFreq = sqrt(4*$k/$mass);
-$timePeriod = 2*pi/$natFreq;
+$timePeriod = 1/(2*pi*$natFreq);
 $velocity = $lambda/$timePeriod;
 
 #---- Answers to the problem -----------------------#

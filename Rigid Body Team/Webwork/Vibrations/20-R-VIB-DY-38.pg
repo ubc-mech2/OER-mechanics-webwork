@@ -64,7 +64,7 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
 $width = $imgScale*1250*1.5;		#aspect ratio
-$height = $imgScale*1000*1.5;
+$height = $imgScale*1100*1.5;
 
 #---- Random variables for this problem --------#
 $mass = random(100,150,0.1);
@@ -95,7 +95,7 @@ BEGIN_PGML
 
 A [`m =`] [`[$mass]`] [`kg`] washing machine is mounted on a platform supported by 4 springs and 4 dampers, 
 [`c =`] [`[$c]`] [`Ns/m`]. A load in the machine causes an eccentric motion that is equivalent to a [`[$eccent]`] [`kg`] 
-mass located [`r = `] [`[$rad]`] [`m`] from the axis of rotation. When the machine is off, the springs are 
+mass located [`r = `] [`[$rad]`] [`m`] from the axis of rotation. When the machine is turned off, the springs are 
 compressed [`[$dis]`] [`m`]. Determine the maximum displacement, velocity, and acceleration of steady-state vibration of 
 the platform when the machine is on and spinning at [`w =`] [`[$angVel]`] [`rad/s`].
 

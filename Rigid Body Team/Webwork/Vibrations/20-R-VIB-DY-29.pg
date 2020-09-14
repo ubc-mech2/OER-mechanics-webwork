@@ -43,6 +43,7 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+	"parserImplicitEquation.pl",
 	"weightedGrader.pl",
 	"source.pl",			# allows code to be displayed on certain sites
 	"PGcourse.pl", 	 # Customization file for the course
@@ -57,8 +58,10 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.05,
 tolType=>'relative');  #relative or absolute
+Context()->variables->add(t=>"Real");
+
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
@@ -75,11 +78,11 @@ $intDis = random(0.1,0.3,0.01);
 $wN = sqrt($k/$mass);
 $zeta = $c/(2*$mass*$wN);
 $wD = $wN*sqrt(1-$zeta**2);
-$phi = arctan($wD*2*$mass/$c);
-$A = $intDis/sin($phi);
+$phi = arctan($wD/($wN*$zeta));
+$A = sqrt((($wN*$zeta*$intDis)**2+($intDis*$wD)**2)/$wD**2);
 
 #---- Answers to the problem -----------------------#
-$ansA = "$A*e**($c/(2*$mass))sin($wD*t+$phi)";
+$ans = Formula("$A*e**(-$wN*$zeta*t)sin($wD*t+$phi)");
 
 ########################################################;
 #PGML
@@ -100,7 +103,7 @@ BEGIN_TEXT
 
 END_TEXT
 
-ANS(function_cmp($ansA,'t'));
+ANS($ans->cmp());
 
 
 ENDDOCUMENT();
