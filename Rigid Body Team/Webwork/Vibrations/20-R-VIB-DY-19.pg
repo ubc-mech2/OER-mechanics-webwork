@@ -87,9 +87,9 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-19.png", width=>[$width], height=>[$height]) @]*
 
-A straight bar, of length [`l =`] [`[$length]`] [`m`], is pinned to the ceiling at point A. On one end there is a mass [`m =`] [`[$mass]`] [`kg`] and 
+A straight bar, of length [`l =`] [`[$length]`] [`m`] and negliable mass, is pinned to the ceiling at point A. On one end there is a mass [`m =`] [`[$mass]`] [`kg`] and 
 on the other there a spring with a spring constant of [`k =`] [`[$k]`] [`N/m`]. A motor applies a periodic force [`F =`] [`[$constant]`][`sin`][`[$freq]`][`t`] to the spring.
-What is the maximum velocity of the steady-state vibration?
+Assuming small angle displacementm, what is the maximum velocity of the steady-state vibration? Answer in absolute value.
 
 [`v =`] [____]{"$ansA"} [`m/s`]
 

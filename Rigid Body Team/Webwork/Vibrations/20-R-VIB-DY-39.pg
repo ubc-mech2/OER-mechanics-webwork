@@ -75,12 +75,13 @@ $force = 100;
 $freq = 20;
 
 #---- Formulas to compute answers --------------#
-
+$cTot = $c**2/($c*2);
+$kTot = $k**2/($k*2);
 
 #---- Answers to the problem -----------------------#
 $ansL = $mass;
-$ansR = $c;
-$ansC = 1/$k;
+$ansR = $kTot;
+$ansC = 1/$cTot;
 $mc1 = RadioButtons(
     [ "A", "B", "C", "D"],
     "D"); #this will make D the correct answer

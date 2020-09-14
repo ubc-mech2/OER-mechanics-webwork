@@ -92,7 +92,7 @@ BEGIN_PGML
 A rod of length [`l =`] [`[$length]`] [`m`] and mass [`m =`] [`[$mass]`] [`kg`] is pinned to the ceiling. 2/3 of the length down, it is connected to a series of springs horizontally. 
 The springs have a spring constant [`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. 
 Given that the rod is disturbed by a periodic displacement [`\delta =`] [`[$constant]`][`sin`][`[$freq]`][`t`], 
-find the steady-state vibration amplitude. 
+find the steady-state vibration amplitude. Answer in absolute value.
 
 [`Amplitude =`] [____]{"$ansA"} [`m`]
 
