@@ -89,8 +89,8 @@ BEGIN_PGML
 [@ image( "20-R-KIN-DK-29.png", width=>[$width], height=>[$height]) @]*
 
 Montana James is at it again! He jumps into a pipe to escape from monkeys, rolling the pipe at an angular velocity of [`\omega = `] [`[$angvel]`] [`rad/s`]. At this instant, the center of gravity of Montana and the pipe is at
-G, and their radius of gyration is [`k_G = `] [`[$k]`] [`m`]. Determine the angular acceleration of the pipe if the ocmbined mass of Montana James and the pipe is [`m = `] [`[$m]`] [`kg`]. Assume Montana does not move within the
-pipe and that the pipe rolls without slipping. The rardius of the pipe is [`r = `] [`[$r]`] [`m`] and G is a horizontal distance of [`d = `] [`[$d]`] [`m`] away from O.
+G, and their radius of gyration is [`k_G = `] [`[$k]`] [`m`]. Determine the angular acceleration of the pipe if the combined mass of Montana James and the pipe is [`m = `] [`[$m]`] [`kg`]. Assume Montana does not move within the
+pipe and that the pipe rolls without slipping. The radius of the pipe is [`r = `] [`[$r]`] [`m`] and G is a horizontal distance of [`d = `] [`[$d]`] [`m`] away from O.
 
 [`\alpha =`] [____]{"$angaccel"} [`rad/s^2`]  
 
