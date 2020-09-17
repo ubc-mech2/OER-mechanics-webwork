@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Rotating Axes)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','obstacle course','rotating frame','velocity','angular velocity','acceleration','angular acceleration')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.8')
 
 ########################################################
 
@@ -44,60 +44,53 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$angvel = random(1,7,0.2);
+$velrel = random(1,8,0.1);
+
+$platform = random(1,3,0.5);
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$vel = sqrt(($angvel*$platform/2)**2 + $velrel**2);
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
+$accel = sqrt(($angvel**2*$platform/2)**2+(2*$angvel*$velrel)**2);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-18.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+On a televised show, contestants run through an obstacle course. One obstacle is a turning platform which rotates at
+a constant [`\omega =`] [`[$angvel]`] [`rad/s`] clockwise. A contestant has successfully jumped onto one end 
+and runs at a constant speed of [`v =`] [`[$velrel]`] [`m/s`] relative to the platform. What is the magnitude of her velocity and acceleration
+when she reaches the other end of the platform? The platform has a length of [`l =`] [`[$platform]`] [`m`].
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
+[`v =`][____]{"$vel"}[`m/s`]  
+[`a =`][____]{"$accel"}[`m/s^2`]  
 
 END_PGML
 

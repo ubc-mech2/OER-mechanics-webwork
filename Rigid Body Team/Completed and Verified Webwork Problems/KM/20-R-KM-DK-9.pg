@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Velocity, Translating Axes)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
 ## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## KEYWORDS('Dynamics','slider','relative motion','velocity','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.5')
 
 ########################################################
 
@@ -44,15 +44,15 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
@@ -63,41 +63,46 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$velA = random(1,5,0.1);
+$degB = random(30,45,1);
+$rBD = random(0.2,0.3,0.2);
+$rAD = 0.5*$rBD;
+$rCD = 0.25;
+$rDE = 0.2;
+$degC = 30;
+
+
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$radB = $degB*pi/180;
+$radC = $degC*pi/180;
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
+$angvelAB = $velA/(($rAD+$rBD)*cos($radB));
+$velB = -$angvelAB*($rAD+$rBD)*sin($radB);
+
+$angvelCE = ($angvelAB*$rAD*sin($radB))/($rCD*sin($radC));
+$velC = ($velA-$angvelAB*$rAD*cos($radB))-$angvelCE*$rCD*cos($radC);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-9.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+The following mechanism has links length [`l_{AD} =`] [`[$rAD]`] [`m`], [`l_{BD} =`] [`[$rBD]`] [`m`],
+ [`l_{CD} =`] [`[$rCD]`] [`m`], and [`l_{DE} =`][`[$rDE]`] [`m`]. If the slider block A moves upward 
+ at a velocity of [`v_A =`] [`[$velA]`] [`m/s`], determine the velocities of blocks B and C at the instant shown.
+ The angle between link BD and the horizontal is given as [`\theta_{BD} =`] [`[$degB]`][`^{\circ}`] 
+ while the angle between link CD and the horizontal is [`\phi_{CD} =`] [`[$degC]`][`^{\circ}`].
+ 
+[`\vec{v_B} =`][____]{"$velB"}[`\hat{\imath}`] [`m/s`]  
+[`\vec{v_C} =`][____]{"$velC"}[`\hat{\jmath}`] [`m/s`]
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
 
 END_PGML
 

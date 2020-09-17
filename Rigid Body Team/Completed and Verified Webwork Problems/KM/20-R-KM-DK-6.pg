@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','engineering student', 'drive train','bike', 'pulley','angular velocity','angular velocity','revolutions')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
 
 ########################################################
 
@@ -44,15 +44,15 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
@@ -63,41 +63,47 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$angvel = random(1,5,0.5);
+$coefficient = random(1,6,0.1);
+$rev = random(0.5,2,0.25);
+$rA = 10;
+$rB = 5;
+$rC = 12;
+$rD = 8;
+
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$angle = $rev*2*pi;
+$angaccelA = $coefficient*$angle;
+$angvelA = sqrt($coefficient*$angle**2+$angvel**2);
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
+$angvelB = $angvelA*$rA/$rB;
+$angaccelB = $angaccelA*$rA/$rB;
+
+$accelD = sqrt(($angaccelB*$rD/100)**2+($angvelB**2*$rD/100)**2);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-6.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+An engineering student is trying to create a new drivetrain system for his bike, consisting of a pulley system.
+Pulley A is connected to pulley B by a non-slip belt and pulley B is rigidly attached to pulley C. Pulley A rotates at an initial angular velocity of [`\omega_A =`] [`[$angvel]`] [`rad/s`],
+and has an angular acceleration of [`\alpha_A =`] [`[$coefficient]`][`\theta`] [`rad/s^2`], where [`\theta`] is in
+radians. Use this relationship to determine the magnitude of acceleration at point D when pulley A rotates [`[$rev]`]
+revolutions. The radii of each pulley is given to be [`r_A = 10`] [`cm`], [`r_B = 5`] [`cm`], and [`r_C = 12`] [`cm`], and
+point D is a distance [`r_D = 8`] [`cm`] from point B.
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
+
+[`a_D =`] [____]{"$accelD"}[`m/s^2`]  
+
+_Hint: Express a relationship between [`\alpha`], [`\theta`], and [`\omega`] without time_
 
 END_PGML
 

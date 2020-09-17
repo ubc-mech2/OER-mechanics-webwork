@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Rotating Axes)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','bar','swing','collar','rotating frame','velocity','angular velocity','acceleration','angular acceleration')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.8')
 
 ########################################################
 
@@ -44,60 +44,62 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$angvelAC = random(1,3,0.2);
+$angaccelAC = random(1,3,0.2);
+
+$theta = random(15,35,5);
+$thetarad = $theta*pi/180;
+
+$rBD = random(0.1,0.9,0.1);
+$rAB = random(0.8,1.5,0.1);
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$angvelBD = -$angvelAC*$rAB/($rBD*cos($thetarad));
+$relvelAB = $rBD*sin($thetarad)*$angvelBD;
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
+$angaccelBD = ($angaccelAC*$rAB+2*$angvelAC*$relvelAB-($angvelBD)**2*$rBD*sin($thetarad))/(-$rBD*cos($thetarad));
+$relaccelAB = (($angvelBD)**2*$rBD*cos($thetarad)+$rBD*sin($thetarad)*$angaccelBD)+$angvelAC*$angvelAC*$rAB;
+
+$alphaBD = -$angvelBD;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-16.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+Bar AC rotates at [`\vec{\omega_{AC}} =`] [`[$angvelAC]`] [`\hat{k}`] [`rad/s`] with an angular acceleration of [`\vec{\alpha_{AC}} =`] [`[$angaccelAC]`] [`\hat{k}`] [`rad/s^2`].
+At that instant, it forms a [`\phi =`] [`55^{\circ}`] angle with the vertical. If link BD makes a [`\theta =`] [`[$theta]`][`^{\circ}`] angle with bar AC
+and has a length [`r_{BD} =`] [`[$rBD]`] [`m`], determine the magnitude of the angular velocity and the magnitude of angular acceleration of link BD, as well as the relative acceleration of collar B. The link is connected to a collar which slides along bar AC.
+The distance to B from A is [`r_{AB} =`] [`[$rAB]`] [`m`].
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
+[`{\omega_{BD}} =`][____]{"$alphaBD"} [`rad/s`]  
+[`{\alpha_{BD}} =`][____]{"$angaccelBD"} [`rad/s^2`]  
+[`(a_{B/A})_{rel.} =`][____]{"$relaccelAB"}[`m/s^2`]
 
 END_PGML
 

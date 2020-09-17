@@ -77,7 +77,7 @@ $d = random(0.02,0.05,0.01);
 $massP = $s**2*$d*$rho;
 $massC = pi*$radius**2*$rho*$d;
 $c = sqrt(2*$s**2)/2;
-$inertia = 1/12*$massP*(2*$s**2)**2-1/2*$massC*$radius**2;
+$inertia = 1/12*$massP*(2*$s**2)-1/2*$massC*$radius**2;
 $T = ($massP-$massC)*9.81/4;
 $natFreq = sqrt(4*$c**2*$T/($inertia*$length));
 
@@ -91,9 +91,10 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-23.png", width=>[$width], height=>[$height]) @]*
 
-A [`s*s*d`] square plate is supported by ropes, of length [`l =`] [`[$length]`] [`m`], on each of its four corners. 
-The plate has a large circular cut-out in the center of radius [`r =`] [`[$radius]`] [`m`]. The plate has a desnity 
-[`\rho =`] [`[$rho]`] [`kg/m^3`]. Given that the plate is given a small rotation about a vertical axis at its center, 
+A square plate is supported by ropes, of length [`l =`] [`[$length]`] [`m`], on each of its four corners.
+The plate has a side length of [`s = [$s] m`], depth [`d = [$d]`] m, and density [`\rho =`] [`[$rho]`] [`kg/m^3`]. 
+There is also a large circular cut-out in the center of the plate with a radius [`r =`] [`[$radius]`] [`m`]. 
+Given that the plate is given a small rotation about a vertical axis at its center, 
 what is the natural vibration of oscillation?
 
 [`w_n =`] [____]{"$ansA"} [`rad/s`]

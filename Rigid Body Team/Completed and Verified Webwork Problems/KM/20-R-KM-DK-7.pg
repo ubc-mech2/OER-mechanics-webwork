@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','punching machine', 'worm gear','velocity', 'gear','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
 
 ########################################################
 
@@ -44,15 +44,15 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
@@ -63,41 +63,41 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$rB = random(1,5,1);
+$rC = $rB + random(1,2,0.5);
+$rD = $rC + random(1,2,0.5);
+
+$maxvel = random(0.5,1.5,0.1);
+
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$angvelB = $maxvel/($rB/100);
+$angvelC = $angvelB*$rB/$rC;
+$angvelD = $angvelC*$rC/$rD;
+$angvelF = $angvelD*10;
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-7.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+An engineer tries to be really funny and creates a prank punching machine. She wants to ensure
+the fist won't actually hurt anyone. She calculates that it will be perfectly safe as long as the
+boxing glove has a maximum velocity of [`v =`] [`[$maxvel]`] [`m/s`]. What should the angular velocity
+of the worm gear (gear F) be to achieve this? Gear E is rigidly attached to gear D. For every 10 revolutions of gear F, gear E rotates once.
+Gears B, C, and D have radii [`r_B =`] [`[$rB]`] [`cm`], [`r_C =`] [`[$rC]`] [`cm`], and [`r_D =`] [`[$rD]`] [`cm`]
+respectively.
+ 
+[`\omega_F =`] [____]{"$angvelF"}[`rad/s`]  
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
+
 
 END_PGML
 

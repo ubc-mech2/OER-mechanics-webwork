@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Translating Axes)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','linkage','relative motion','velocity','angular velocity','acceleration','angular acceleration')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.7')
 
 ########################################################
 
@@ -44,60 +44,68 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
 #Setup
 
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$theta = pi/4; #write 45 degrees in the question
+
+$rAB = random(0.5,1,0.1);
+$rCD = $rAB;
+$rBC = 1;
+
+$angvelAB = -1*random(1,4,0.5);
+$angaccelAB = -1*random(1,5,0.5);
+$angvelBC = -1*$angvelAB*$rAB*cos($theta);
+
+$disp = -1*$angvelAB*$rAB;
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$angvelCD = -1*$angvelBC*2/$rCD;
+$angaccelABi = $angaccelAB*$rAB*sin($theta)+($angvelAB)**2*$rAB*cos(pi/4);
+$angaccelABj = $angaccelAB*$rAB*-1*cos($theta)+($angvelAB)**2*$rAB*sin(pi/4);
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
+$angaccelBC = ($angvelBC)**2*-1-($angvelCD)**2*$rCD+$angaccelABj;
+$angaccelCD = (-1*$angaccelBC+($angvelBC)**2+$angaccelABi)/$rCD;
+
+
+
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-13.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+Several arms are linked to form the system shown. Link AB has a length of [`l_{AB} =`] [`[$rAB]`] [`m`],
+link CD has a length of [`l_{CD} =`] [`[$rCD]`] [`m`], and the distance from B to C is [`\vec{r_{C/B}} = [-1\hat{\imath} + 1\hat{\jmath}]`] [`m`].
+If the angle between link AB and the horizontal is [`\theta = 45^{\circ}`], determine the angular acceleration of link CD.
+The angular velocities of the links are given as [`\vec{\omega_{AB}} =`] [`[$angvelAB]`] [`\hat{k}`] [`rad/s`] and [`\vec{\omega_{BC}} =`] [`[$disp]`] [`\cdot`] [`\frac{\sqrt{2}}{2}`] [`\hat{k}`] [`rad/s`], while the
+angular acceleration of AB is given as [`\vec{\alpha_{AB}} =`] [`[$angaccelAB]`] [`\hat{k}`] [`rad/s^2`].
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
+[`\vec{\alpha_{CD}} =`][____]{"$angaccelCD"} [`\hat{k}`] [`rad/s^2`]
+
+
 
 END_PGML
 

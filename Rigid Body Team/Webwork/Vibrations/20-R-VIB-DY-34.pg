@@ -77,7 +77,7 @@ $k = random(10,20,1);
 #---- Formulas to compute answers --------------#
 $cog = ($massB/2+$massS)*$length/($massB+$massS);
 $I = $length**2*($massB/3+$massS);
-$natFreq = ($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2)/$I;
+$natFreq = sqrt(($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2)/$I);
 $force = $cog*($massB+$massS)*$accel;
 $D = ($force/($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2))/(1-($freq/$natFreq)**2);
 
@@ -92,9 +92,9 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-34.png", width=>[$width], height=>[$height]) @]*
 
 A bus has handles for passengers to use while standing up. The handles consist of a bar and a ball at the end. 
-The bar is [`l =`] [`[$length]`] [`m_B`] long and [`m =`] [`[$mass]`] [`kg`] while the sphere has a mass 
-[`m_S =`] [`[$sphere]`] [`kg`]. A spring with a spring constant [`k =`] [`[$k]`] [`N/m`] is placed halfway down the bar. 
-While driving, the transmission breaks down on the bus causing a perdic accelertaion [`a =`] [`[$accel]`] [`m/s^2`].
+The [`m_B =`] [`[$massB]`] [`kg`] bar is [`l =`] [`[$length]`] [`m`] long and the sphere has a mass 
+[`m_S =`] [`[$massS]`] [`kg`]. A spring with a spring constant [`k =`] [`[$k]`] [`N/m`] is placed halfway down the bar. 
+While driving, the transmission breaks down on the bus causing a periodic deacceleration [`a =`] [`-[$accel]sin([$freq]t)`] [`m/s^2`].
 Assuming small angle displacements, determine the equation of displacement.
 
 END_PGML

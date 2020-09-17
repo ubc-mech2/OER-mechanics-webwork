@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Free Undamped)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Advanced)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','record player','angular acceleration','angle', 'revolution','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
 
 ########################################################
 
@@ -44,9 +44,10 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
 	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
 );
 
 #######################################################
@@ -63,41 +64,43 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1900;		#aspect ratio
-$height = $imgScale*2250;
+	#aspect ratio
+
 
 #---- Random variables for this problem --------#
-$mass = random(5,15,1);
-$k1 = random(50,100,1);
-$k2 = random(75,150,1);
-$rA = random(0.5,0.75,0.01);
-$rB = random(0.25,0.4,0.01);
-$massA = random(3,4,0.1);
-$massB = random(1,2,0.1);
+$a = random(1,6,1);
+$b = random(1,8,0.2);
+$c = random(1,40,1);
+
+$time = random(10,90,5);
+
 
 #---- Formulas to compute answers --------------#
-$k = $k1*$k2/($k1+$k2);
-$inertiaA = 1/2*$massA*$rA**2;
-$inertiaB = 1/2*$massB*$rB**2;
-$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
+$angle = $c + $b*($time)**2+$a*($time)**3;
+$rev = $angle/(2*pi);
+$angvel = $b*2*$time +$a*3*($time)**2;
+$angaccel = $b*2 + $a*3*2*$time;
 
-#---- Answers to the problem -----------------------#
-$ansA = $wN;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KM-DK-5.png", width=>[$width], height=>[$height]) @]*
 
-There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
-[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
-[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
-Given a small vertical displacement, what is the natural frequency of the mass. There is 
-no slipping between the mass-spring assembly and the rollers. 
+Stuck in quarantine, a retired engineer decides to jam out to his record player, 
+only to find out that it's broken. He notices a pattern in which the record rotates 
+and hypothesizes that the angular distance the record travels can be described by the 
+equation [`\theta =`] [`[$c] + [$b]t^2 +[$a]t^3`], where [`t`] is the time in seconds.
+Determine the number of revolutions, the angular velocity, and the angular aceleration
+at the instant when [`t =`] [`[$time]`][`s`]
 
-[`w_n =`] [____]{"$ansA"} [`rad/s`]
+
+[`Revolutions =`] [____]{"$rev"}  
+[`\omega =`] [____]{"$angvel"}[`rad/s`]  
+[`\alpha =`] [____]{"$angaccel"}[`rad/s^2`]
+
 
 END_PGML
 
