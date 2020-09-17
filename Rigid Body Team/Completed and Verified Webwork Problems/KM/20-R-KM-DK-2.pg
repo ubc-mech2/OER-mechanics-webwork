@@ -1,0 +1,79 @@
+## DESCRIPTION
+## Gear train, find angular vel.
+## ENDDESCRIPTION
+
+## KEYWORDS('gear train', 'gear','angular velocity')
+## DBsubject(Dynamics)
+## DBchapter(Kinematics)
+## DBsection(Gear System)
+## Date(2020-06-26)
+## Author(David Kim)
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-KM-DK-2.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+
+#---- Random variables for this problem --------#
+$angvelA = random(1,7,0.2);
+$rA = random(1,2.9,0.1);
+$rB = random(3,5,0.1);
+$rC = random(0.3,0.5,0.05);
+$rD = random(1.5,2,0.1);
+
+
+#---- Formulas to compute answers --------------#
+$angvelB = $angvelA*$rA/$rB;
+$angvelC = $angvelB;
+$angvelD = $angvelC*$rC/$rD;
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "20-R-KM-DK-2.png", width=>[$width], height=>[$height]) @]*
+
+In the following gear train, gear A is in contact with gear B. Gear B and gear C are rigidly
+attached, and gear C is also in contact with gear D. If gear A rotates at an angular velocity
+of [`\omega_A =`] [`[$angvelA]`] [`rad/s`] in the clockwise direction, what is the magnitude
+of the angular velocity of gear D? Take the radius of each gear to be [`r_A =`] [`[$rA]`] [`m`],
+[`r_B =`] [`[$rB]`] [`m`], [`r_C =`] [`[$rC]`] [`m`], and [`r_D =`] [`[$rD]`] [`m`].
+  
+ 
+[`\omega_D =`][____]{"$angvelD"}[`rad/s`]
+
+
+END_PGML
+
+ENDDOCUMENT();
