@@ -74,20 +74,16 @@ loadMacros(
 #
 
 Context("Numeric");         # or Complex
-#given
-$c = random(2,7,0.01);     # (lower, upper, stepsize)
-$t1 = random(2,7,0.01; 
-$difft =random(1,5,0.5); 
-$e=random(2,7,0.01);
-$m=random(2,10,0.5);
-$v1=random(5,10,0.01);
+#given    
+$t = random(0.07,0.5,0.001);  # (lower, upper, stepsize)
+$m=random(0.400,0.700,0.011);
+$h=random(0.5,4,0.01);
+
 
 
 #Computation
-$I=$c/($e+1)*$t2**($e+1)-$c/($e+1)*$t1**($e+1);
-$t2=$t1+$difft;
-$v2=($v1*$m+$I)/$m;
-
+$F=($m*$v)/$t;
+$v=sqrt(2*$g*$h)
    
 
 
@@ -117,19 +113,19 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
 
-Find the impulse of the force [`F=`][`[$c] t^ {[$e]}`] [`N`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] .
- 
+A ball with a mass of [`m=`] [`[$m]`] [`kg`]  is dropped from a height of [`h=`] [`[$h]`] [`m`].
+It lands on the table without rebounding. Ignore any forces cause by friction.
+What was the velocity of the ball before it hits the table?
 
-[`I=`][___]{"$I"} [`N*s`] 
+[`v=`][___]{"$v"} [`m/s`]
 
-The force acts on an object with a mass of [`m=`] [`[$m]`] [`kg`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] . If the object had an initial velocity of [`v_i=`] [`[$v1]`] [`m/s`], what is its new velocity?
-Assume that there are no other forces acting on the object.
+If the ball comes to rest in [`t=`] [`[$t]`] [`s`], what is the force exerted by the table on 
+the ball?
+
+[`F=`][___]{"$F"} [`N`]
 
 
-[`v_f=`][___]{"$v2"} [`m/s`] 
-_Round your answers to one decimal place_.
+_Round your answers to two decimal places_.
 
 END_PGML
 

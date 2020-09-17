@@ -74,20 +74,17 @@ loadMacros(
 #
 
 Context("Numeric");         # or Complex
-#given
-$c = random(2,7,0.01);     # (lower, upper, stepsize)
-$t1 = random(2,7,0.01; 
-$difft =random(1,5,0.5); 
-$e=random(2,7,0.01);
-$m=random(2,10,0.5);
-$v1=random(5,10,0.01);
+#given    
+$m=random(0.200,0.700,0.05);   # (lower, upper, stepsize)
+$v1=random(5,10,0.5);
+$v2=random(13,25,0.5);
+$F=random(150,500,25);
+
 
 
 #Computation
-$I=$c/($e+1)*$t2**($e+1)-$c/($e+1)*$t1**($e+1);
-$t2=$t1+$difft;
-$v2=($v1*$m+$I)/$m;
-
+$I=($v1+$v2)*$m;
+$T=$I/$F;
    
 
 
@@ -115,21 +112,21 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-PT-008.png", width=>[$width], height=>[$height]) @]*
 
-Find the impulse of the force [`F=`][`[$c] t^ {[$e]}`] [`N`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] .
- 
-
-[`I=`][___]{"$I"} [`N*s`] 
-
-The force acts on an object with a mass of [`m=`] [`[$m]`] [`kg`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] . If the object had an initial velocity of [`v_i=`] [`[$v1]`] [`m/s`], what is its new velocity?
-Assume that there are no other forces acting on the object.
+A volleyball has an initial velocity of [`v_1=`] [`[$v1]`] [`m/s`] up. It is spiked such 
+that the velocity changes to [`v_2=`] [`[$v2]`] [`m/s`]. If the mass of the ball is
+ [`m=`] [`[$m]`] [`kg`], what is the impulse?
 
 
-[`v_f=`][___]{"$v2"} [`m/s`] 
-_Round your answers to one decimal place_.
+[`I=`][___]{"$I"} [`kg`]  [`m/s`]
+
+If the force caused by the impulse was  [`F=`] [`[$F]`] [`N`], what is the time of contact? 
+
+[`T=`][___]{"$T"} [`s`]
+
+
+_Round your answers to two decimal places_.
 
 END_PGML
 

@@ -74,20 +74,20 @@ loadMacros(
 #
 
 Context("Numeric");         # or Complex
-#given
-$c = random(2,7,0.01);     # (lower, upper, stepsize)
-$t1 = random(2,7,0.01; 
-$difft =random(1,5,0.5); 
-$e=random(2,7,0.01);
-$m=random(2,10,0.5);
-$v1=random(5,10,0.01);
+#given    
+$m=random(0.200,0.700,0.05);   # (lower, upper, stepsize)
+$c1=random(5,10,0.5);
+$e1=random(13,25,0.5);
+$F=random(150,500,25);
+$t=random(5,50,2);
+
 
 
 #Computation
-$I=$c/($e+1)*$t2**($e+1)-$c/($e+1)*$t1**($e+1);
-$t2=$t1+$difft;
-$v2=($v1*$m+$I)/$m;
-
+$c2=$c1*$e1;
+$e2=$e1-1;
+$F="$c2*t^$e2";
+$F2=$c2*$t^$e2;
    
 
 
@@ -115,24 +115,30 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
-
-Find the impulse of the force [`F=`][`[$c] t^ {[$e]}`] [`N`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] .
+[@ image( "20-P-MOM-PT-008.png", width=>[$width], height=>[$height]) @]*
  
-
-[`I=`][___]{"$I"} [`N*s`] 
-
-The force acts on an object with a mass of [`m=`] [`[$m]`] [`kg`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] . If the object had an initial velocity of [`v_i=`] [`[$v1]`] [`m/s`], what is its new velocity?
-Assume that there are no other forces acting on the object.
-
-
-[`v_f=`][___]{"$v2"} [`m/s`] 
-_Round your answers to one decimal place_.
+If momentum "p" varies with time such that  [`p=`] [`[$c1]t^{[$e1]}`] and is measured in
+kg m/s, what is net force as a function of time? Assume the answer is measured in
+Newtons.
 
 END_PGML
 
-##############################################################
+BEGIN_TEXT
 
-ENDDOCUMENT()};     #save as .pg
+\{ans_rule(25) \} N
+
+END_TEXT
+ANS(function_cmp($F,'t'));
+
+BEGIN_PGML
+
+  
+  
+What is the net force at [`t`] =[`[$t]`][`s`]? 
+
+[`F=`][___]{"$F2"}[`N`]
+END_PGML
+
+
+
+ENDDOCUMENT();     #save as .pg     

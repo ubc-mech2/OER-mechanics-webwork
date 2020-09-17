@@ -74,20 +74,16 @@ loadMacros(
 #
 
 Context("Numeric");         # or Complex
-#given
-$c = random(2,7,0.01);     # (lower, upper, stepsize)
-$t1 = random(2,7,0.01; 
-$difft =random(1,5,0.5); 
-$e=random(2,7,0.01);
-$m=random(2,10,0.5);
-$v1=random(5,10,0.01);
+#given    
+$t = random(0.100,0.500,0.001);  # (lower, upper, stepsize)
+$m=random(0.400,0.700,0.001);
+$v1=random(30,45,0.5);
+$v2=random(70,87,0.5);
 
 
 #Computation
-$I=$c/($e+1)*$t2**($e+1)-$c/($e+1)*$t1**($e+1);
-$t2=$t1+$difft;
-$v2=($v1*$m+$I)/$m;
-
+$I=($v1+$v2)*$m;
+$F=$I/$t;
    
 
 
@@ -117,19 +113,23 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
 
-Find the impulse of the force [`F=`][`[$c] t^ {[$e]}`] [`N`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] .
+A baseball with a mass of [`m=`] [`[$m]`] [`kg`] moves toward a bat at a speed of [`v_i=`] [`[$v1]`] [`m/s`]  horizontally in the south
+direction. After the baseball is hit by the bat, it moves horizontally north at a speed of
+[`v_f=`] [`[$v2]`] [`m/s`] . What was the impulse exerted by the bat on the ball?
+
+[`I=`][___]{"$I"} [`N*s`]
+
+If the time of contact was [`t=`] [`[$t]`] [`s`], what is the force exerted by the bat on 
+the ball?
+
+[`F=`][___]{"$F"} [`N`]
+
+
+
  
 
-[`I=`][___]{"$I"} [`N*s`] 
 
-The force acts on an object with a mass of [`m=`] [`[$m]`] [`kg`] between [`t_1=`] [`[$t1]`] [`s`] and 
-[`t_2=`] [`[$t2]`] [`s`] . If the object had an initial velocity of [`v_i=`] [`[$v1]`] [`m/s`], what is its new velocity?
-Assume that there are no other forces acting on the object.
-
-
-[`v_f=`][___]{"$v2"} [`m/s`] 
-_Round your answers to one decimal place_.
+_Round your answers to two decimal places_.
 
 END_PGML
 
