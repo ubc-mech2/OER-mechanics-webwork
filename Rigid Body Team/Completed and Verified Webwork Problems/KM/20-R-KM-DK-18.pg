@@ -50,6 +50,8 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
 );
 
+TEXT(beginproblem());
+
 #######################################################
 #Setup
 
@@ -62,8 +64,10 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
-	#aspect ratio
+$imgScale = 0.3;
+	
+$width = $imgScale*1400;
+$height = $imgScale*1700; #image aspect ratio
 
 
 #---- Random variables for this problem --------#

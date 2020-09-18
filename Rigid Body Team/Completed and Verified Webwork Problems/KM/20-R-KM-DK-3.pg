@@ -46,6 +46,8 @@ loadMacros(
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
+   	
+TEXT(beginproblem());
 
 ##############################################################
 #
@@ -62,11 +64,11 @@ $b = random(2,9,1);
 
 
 #image scale
-$imgScale = .2;
+$imgScale = 0.35;
 
 #image aspect ratio
-$width = $imgScale*1847;
-$height = $imgScale*1981;
+$width = $imgScale*1700;
+$height = $imgScale*1250;
 
 #computation
 $angle = sqrt($angvel/($a/$b));
