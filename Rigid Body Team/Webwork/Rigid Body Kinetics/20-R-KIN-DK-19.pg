@@ -77,7 +77,8 @@ $dB = random(0.3,0.6,0.05);
 #---- Formulas to compute answers --------------#
 
 $ax = $mu*9.81;
-$NB = ($m*9.81*$mu+$m*$ax*$h)/($dA+$dB);
+$NB = ($m*9.81*$dA+$m*$ax*$h)/($dA+$dB);
+#originally had $mu instead of $da for NB calculation
 $NA = $m*9.81-$NB;
 
 ########################################################;
@@ -94,7 +95,7 @@ with a centre of gravity at G. Assume the coefficient of static and kinetic fric
 and [`\mu_k = `] [`0.15`] respectively. The center of gravity is located at a height [` = `] [`[$h]`] [`m`] from the ground.
 G is a horizontal distance [`d_A = `] [`[$dA]`] [`m`] from A while it is a horizontal distance [`d_B = `] [`[$dB]`] [`m`] from B.  
 
-[`a =`] [____]{"$s"} [`m/s^2`]  
+[`a =`] [____]{"$ax"} [`m/s^2`]  
 
 [`N_{A} =`] [____]{"$NA"} [`N`]  
 [`N_{B} =`] [____]{"$NB"} [`N`]  
