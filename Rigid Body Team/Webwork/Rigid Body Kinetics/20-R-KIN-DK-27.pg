@@ -116,7 +116,7 @@ BEGIN_PGML
   
 [`F_{tip} =`] [____]{"$Ftip"} [`N`]  
   
-If the movers can apply the force required for the statue to slip, where is the minimum height they should tie the rope to safely drag the statue?    
+If the movers can apply the force required for the statue to slip, where is the maximum height they should tie the rope to safely drag the statue?    
 [`y =`] [____]{"$newy"} [`m`]  
 
 
