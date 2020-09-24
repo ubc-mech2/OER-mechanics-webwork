@@ -75,8 +75,7 @@ $r = random(0.2,0.45,0.05);
 $y = 1;
 $mu = random(0.35,0.45,0.01);
 $muk = 0.3;
-
-$mc = RadioButtons(["Yes","No"], "No");
+#$mc = RadioButtons(["Yes","No"], "No");
 
 #---- Formulas to compute answers --------------#
 
@@ -84,6 +83,13 @@ $Ftip = $m*$r*9.81/$y;
 $Fslide = $mu*$m*9.81;
 
 $newy = $m*$r*9.81/$Fslide;
+
+#newly added condition for the case that the new height is the same height as the old one 
+if($newy>=$y){
+$mc = RadioButtons(["Yes","No"], "Yes");
+}else{
+$mc = RadioButtons(["Yes","No"], "No");
+}
 ########################################################;
 #PGML
 
@@ -112,7 +118,7 @@ BEGIN_PGML
   
 [`F_{tip} =`] [____]{"$Ftip"} [`N`]  
   
-If the movers can apply the force required for the statue to slip, where is the minimum height they should tie the rope to safely drag the statue?    
+If the movers can apply the force required for the statue to slip, where is the maximum height they should tie the rope to safely drag the statue?    
 [`y =`] [____]{"$newy"} [`m`]  
 
 
