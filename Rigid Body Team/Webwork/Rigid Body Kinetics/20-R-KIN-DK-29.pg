@@ -76,7 +76,7 @@ $d = random(0.15,0.3,0.05);
 #---- Formulas to compute answers --------------#
 
 $I = $m*($k)**2;
-$cx = -$m*$r;
+$cx = $m*$r;
 $cy = $m*$d;
 
 $angaccel = -($cx*$angvel**2*$d+$m*9.81*$d)/($cx*-$r+$cy*$d+$I);
