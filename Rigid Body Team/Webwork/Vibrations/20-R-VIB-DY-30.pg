@@ -52,6 +52,8 @@ loadMacros(
 #######################################################
 #Setup
 
+TEXT(beginproblem());
+
 $showPartialCorrectAnswers = 1;
 
 Context("Complex");		# or Complex

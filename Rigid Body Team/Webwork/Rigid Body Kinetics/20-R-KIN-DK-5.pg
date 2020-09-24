@@ -53,6 +53,8 @@ loadMacros(
 #######################################################
 #Setup
 
+TEXT(beginproblem());
+
 
 Context("Numeric");		# or Complex
 
@@ -62,8 +64,9 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
-	#aspect ratio
+$imgScale = 1;
+$width = $imgScale*1392;
+$height = $imgScale*718;
 
 
 #---- Random variables for this problem --------#

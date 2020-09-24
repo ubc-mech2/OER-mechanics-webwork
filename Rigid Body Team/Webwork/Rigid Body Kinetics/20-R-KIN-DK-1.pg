@@ -1,38 +1,16 @@
-##DESCRIPTION
-##
-## Created in collaboration between Douglas College Department of Physics and Astronomy
-## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
-##
-## Project led by Agnes d'Entremont and Jennifer Kirkey
-##
-## Contact: agnes.dentremont@mech.ubc.ca
-## 	    kirkeyj@douglascollege.ca
-## 
-##
-## This work, including related images, is licensed under the 
-## Creative Commons Attribution 4.0 International (CC BY 4.0)
-## <https://creativecommons.org/licenses/by/4.0/>
-##
-## This work was supported by funding from the BCcampus 
-## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
-##
-## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
-## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
-## and the people of the Treaty 7 region of Southern Alberta. 
-##
+## DESCRIPTION
+## 20-R-KIN-DK-1 Plate with hole, find moment of inertia
 ## ENDDESCRIPTION
-##
-## DBsubject(Statics)
-## DBchapter(Distributed Forces: Centroid and Center of Gravity)
+
+## KEYWORDS('inertia','moment','disk','hole','kinetics')
+## DBsubject(Dynamics)
+## DBchapter(Kinetics)
 ## DBsection(Composite Bodies)
-## Institution('University of British Columbia')
+## Date(2020-07-16)
 ## Author(David Kim)
-## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics','inertia','moment','disk','hole','kinetics')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## Institution(University of British Columbia)
+## Level(Beginner)
+## RESOURCES('20-R-KIN-DK-1.png')
 
 ########################################################
 
@@ -53,6 +31,7 @@ loadMacros(
 #######################################################
 #Setup
 
+TEXT(beginproblem());
 
 Context("Numeric");		# or Complex
 
@@ -62,7 +41,9 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale = 1;
+$width = $imgScale*620;
+$height = $imgScale*495;
 	#aspect ratio
 
 
