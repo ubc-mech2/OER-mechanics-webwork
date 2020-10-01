@@ -64,6 +64,8 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
 	#aspect ratio
+$width=500;
+$height=500;
 
 
 #---- Random variables for this problem --------#
