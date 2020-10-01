@@ -82,7 +82,7 @@ $y = random(0.1,0.9,0.1);
 #---- Formulas to compute answers --------------#
 
 $ax = $F/$m;
-$FB = ($m*9.81*$d-$F*($h-$y))/(2*$d);
+$FB = ($m*9.81*$d-$F*($h-$y)+$h/2*$m*$ax)/(2*$d);
 $FA = -$FB+$m*9.81;
 
 $s = $vel*$t + 0.5*$ax*$t**2;
