@@ -82,7 +82,7 @@ $v = random(2,8,1);
 
 #---- Formulas to compute answers --------------#
 
-$F = ($mu*$m*9.81*cos($gammarad) - $mu*$Fbro*sin($phirad) +$m*9.81*sin($gammarad) + $Fbro*cos($phirad)/(cos($thetarad)+$mu*sin($thetarad)));
+$F = (($mu*$m*9.81*cos($gammarad) - $mu*$Fbro*sin($phirad) +$m*9.81*sin($gammarad) + $Fbro*cos($phirad))/(cos($thetarad)+$mu*sin($thetarad)));
 $P = $F*$v*cos($thetarad);
 
 ########################################################;
