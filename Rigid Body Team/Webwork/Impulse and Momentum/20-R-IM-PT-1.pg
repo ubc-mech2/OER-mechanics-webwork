@@ -60,6 +60,8 @@ loadMacros(
 #
 #
 
+TEXT(beginproblem());
+
 
 $mc1 = RadioButtons(
     [ "Day will be shorter", "Day will be longer", "No change in the length of the day", "Effect cannot be determined"],
