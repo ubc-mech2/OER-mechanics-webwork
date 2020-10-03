@@ -70,7 +70,7 @@ $height = $imgScale*1385;
 
 $mc1 = RadioButtons(
     [ "Counterclockwise", "Clockwise"],
-    "Counterclockwise");
+    "Clockwise");
 
 
 #---- Random variables for this problem --------#
@@ -95,7 +95,7 @@ The pipe is actually not there and instead to be added in during post production
 you to calculate the proper physics of the pipe so that the CGI pipe may look as realistic as possible. If the pipe is
 meant to have a mass of [`[$m]`] [`kg`] and a mean radius of [`[$r]`] [`m`], determine the pipe's angular acceleration
 if the conveyor belt has an acceleration of [`[$a]`] [`m/s^2`]. Assume the pipe does not slip on the conveyor belt and
-neglect its thickness. Which way should the conveyor be rotating for the pipe to roll towards Mississippi if she is on
+neglect its thickness. Which way should the conveyor be rotating for the pipe to move towards Mississippi if she is on
 the right of the pipe?  
 
 [`\alpha =`] [____]{"$angaccel"} [`rad/s^2`]  

@@ -93,7 +93,7 @@ $IplateA = 1/12*$mplate*($l**2+$w**2)+$mplate*($rring+$l/2+$rcentral)**2;
 $dB = sqrt(($l/2+$rcentral)**2+$rring**2-2*($l/2+$rcentral)*($rring)*cos(108/180*pi));
 $IplateB = 1/12*$mplate*($l**2+$w**2)+$mplate*$dB**2;
 
-$dA = sqrt(($l/2+$rcentral)**2+$rring**2-2*($l/2+$rcentral)*($rring)*cos(36/108*pi));
+$dA = sqrt(($l/2+$rcentral)**2+$rring**2-2*($l/2+$rcentral)*($rring)*cos(36/180*pi));
 $IplateC = 1/12*$mplate*($l**2+$w**2)+$mplate*$dA**2;
 
 $I = $Iring + $Icentral + $IplateA + 2*$IplateB + 2*$IplateC;
