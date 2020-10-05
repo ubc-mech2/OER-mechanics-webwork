@@ -93,7 +93,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-43.png", width=>[$width], height=>[$height]) @]*
 
 A square frame is made up of 4 individual bars, each with length [`l = [$length] m`] and mass [`m = [$mass] kg`]. 
-The frame is pinned to the ceiling at a corner. A pair of springs  in series, each with a spring constant [`k = [$k] N/m], 
+The frame is pinned to the ceiling at a corner. A pair of springs  in series, each with a spring constant [`k = [$k] N/m`], 
 is attached to the left corner and a damper is installed on the right corner. 
 Determine the damping constant that will make the system critically damped.
 
