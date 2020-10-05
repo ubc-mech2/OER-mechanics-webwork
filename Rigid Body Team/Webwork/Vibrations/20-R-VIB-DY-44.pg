@@ -78,13 +78,13 @@ $mass = random(150,400,5);
 $wN = sqrt($k/$mass);
 $cC = 2*$mass*$wN;
 $zeta = $c/$cC;
-$wD = sqrt(1-$zeta**2*$wN);
+$wD = sqrt(1-$zeta**2)*$wN;
 $A = sqrt((($wN*$zeta*$dis)**2+($dis*$wD)**2)/$wD**2);
 $phi = atan($dis*$wD/($wN*$zeta*$dis));
 $limit = ln(0.05)/(-$wN*$zeta);
-for($n = 1; pi/2+pi*$n < $limit; $n++){
+for($n = 1; pi*$n/$wD < $limit; $n++){
 }
-$time = (pi/2+pi*$n-$phi)/$wD;
+$time = $n*pi/$wD;
 
 #---- Answers to the problem -----------------------#
 $ansA = $time;
