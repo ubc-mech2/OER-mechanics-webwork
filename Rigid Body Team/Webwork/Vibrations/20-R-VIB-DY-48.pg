@@ -90,7 +90,7 @@ BEGIN_PGML
 A coilover is a damper integrated with a spring used for car suspension. 
 Four of these are used to support the [`m = [$mass] kg`] body of a car. 
 Driving on the road produces a periodic displacement of [`\delta = [$dis]sin([$freq]t)`] at each wheel simultaneously. 
-If the damping and spring constant are the same, determine the damper and spring values 
+If the damping and spring constant have the same numerical value, determine the damper and spring values 
 that will produce the smallest displacement. 
 
 [`k =`] [____]{"$ansA"} [`N/m`]
