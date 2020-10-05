@@ -69,10 +69,10 @@ $width = $imgScale*1000*2;		#aspect ratio
 $height = $imgScale*1000*2;
 
 #---- Random variables for this problem --------#
-$c = 100;
-$k = 500;
-$dis = 0.5;
-$mass = 200;
+$c = random(75,120,1);
+$k = random(300,500,25);
+$dis=random(0.3,0.7,0.05);
+$mass = random(150,400,5);
 
 #---- Formulas to compute answers --------------#
 $wN = sqrt($k/$mass);
