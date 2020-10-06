@@ -87,6 +87,12 @@ $D = ($force/$k)/(2*$length*(1-($angVel/$natFreq)**2));
 
 #---- Answers to the problem -----------------------#
 $ansA = $D*sin($angVel*$time);
+$ansA =( $D*sin($angVel*$time));
+$exp=0;
+do {
+    $ansA = $ansA*10;
+    $exp= $exp-1;
+} until ( $ansA > 1 || $ansA <-1 );
 
 ########################################################;
 #PGML
@@ -101,7 +107,7 @@ rotating at a angular velocity of [`w =`] [`[$angVel]`] [`rad/s`]. A spring of [
 is attached to a [`m =`] [`[$mass2]`] [`kg`] which is fixed to the end of the bar. 
 Find the angle of the bar at [`t =`] [`[$time]`] [`s`] if the bar starts from rest and the motor is initially spinning. 
 
-[`\theta =`] [____]{"$ansA"} [`rad`]
+[`\theta =`] [____]{"$ansA"} [`*`] [`10`] ^[____]{"$exp"} [`rad`]
 
 END_PGML
 
