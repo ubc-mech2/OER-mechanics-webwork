@@ -26,13 +26,14 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free Damped)
+## DBsection(Free Undamped)
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty(Intermediate)
-## KEYWORDS('Dynamics', 'Underwater', 'Equation of Displacement')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Natural Frequency')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+
 ########################################################
 
 DOCUMENT();
@@ -43,7 +44,6 @@ loadMacros(
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
-	"parserImplicitEquation.pl",
 	"weightedGrader.pl",
 	"source.pl",			# allows code to be displayed on certain sites
 	"PGcourse.pl", 	 # Customization file for the course
@@ -60,52 +60,47 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.05,
+tolerance=>.02,
 tolType=>'relative');  #relative or absolute
-Context()->variables->add(t=>"Real");
-
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-$width = $imgScale*1250*1.5;		#aspect ratio
-$height = $imgScale*1000*1.5;
+$width = $imgScale*1900;		#aspect ratio
+$height = $imgScale*2250;
 
 #---- Random variables for this problem --------#
-$mass = random(5,10,0.1);
-$k = random(25,40,1);
-$c = random(1,3,0.1);
-$intDis = random(0.1,0.3,0.01);
+$mass = random(5,15,1);
+$k1 = random(50,100,1);
+$k2 = random(75,150,1);
+$rA = random(0.5,0.75,0.01);
+$rB = random(0.25,0.4,0.01);
+$massA = random(3,4,0.1);
+$massB = random(1,2,0.1);
 
 #---- Formulas to compute answers --------------#
-$wN = sqrt($k/$mass);
-$zeta = $c/(2*$mass*$wN);
-$wD = $wN*sqrt(1-$zeta**2);
-$phi = arctan($wD/($wN*$zeta));
-$A = sqrt((($wN*$zeta*$intDis)**2+($intDis*$wD)**2)/$wD**2);
+$k = $k1*$k2/($k1+$k2);
+$inertiaA = 1/2*$massA*$rA**2;
+$inertiaB = 1/2*$massB*$rB**2;
+$wN = sqrt($k/($mass+$inertiaB/$rB**2+$inertiaA/$rA**2));
 
 #---- Answers to the problem -----------------------#
-$ans = Formula("$A*e**(-$wN*$zeta*t)sin($wD*t+$phi)");
+$ansA = $wN;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-29.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-24.png", width=>[$width], height=>[$height]) @]*
 
-In Atlantis, the underwater city, an engineer sets up a [`m =`] [`[$mass]`] [`kg`] box and spring, [`k =`] [`[$k]`] [`N/m`]. 
-The water has a damping force on the box of [`F =`] [`[$c]`][`|vel|`]. Given that the engineer gives the box an 
-initial displacement [`x_0 =`] [`[$intDis]`] [`m`], determine the equation of displacement for the box.
+There is a [`m =`] [`[$mass]`] [`kg`] mass suspended vertically from the ceiling via rope and two springs in series with spring constants 
+[`k_1 =`] [`[$k1]`] [`N/m`] and [`k_2 =`] [`[$k2]`] [`N/m`]. To ensure straightness, the rope is held between two rollers of radius 
+[`r_A =`] [`[$rA]`] [`m`] and [`r_B =`] [`[$rB]`] [`m`] and mass [`m_A =`] [`[$massA]`] [`kg`] and [`m_B =`] [`[$massB]`] [`kg`] respectively. 
+Given a small vertical displacement, what is the natural frequency of the mass. There is 
+no slipping between the mass-spring assembly and the rollers. 
+
+[`w_n =`] [____]{"$ansA"} [`rad/s`]
 
 END_PGML
-
-BEGIN_TEXT
-
- $BR\{ans_rule(25) \}
-
-END_TEXT
-
-ANS($ans->cmp());
-
 
 ENDDOCUMENT();
