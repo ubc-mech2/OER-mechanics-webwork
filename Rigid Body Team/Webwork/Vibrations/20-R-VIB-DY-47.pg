@@ -78,10 +78,15 @@ $freq = 5;
 #---- Formulas to compute answers --------------#
 $wN = sqrt($k/$mass);
 $cC = sqrt(4*$mass*$k);
+$D = ($force/$k)/sqrt((1-($freq/$wN)**2)**2+(2*$c*$freq/($cC*$wN))**2);
+$A = 1;
+$B = -2*$freq**2*$mass;
+$C = $freq**4*$mass**2+$c**2*$freq**2-$force**2/(0.5*$D)**2;
+$kNew = (-$B+sqrt($B**2-4*$A*$C))/(2*$A);
 $cNew = ($cC*$wN/(2*$freq))*sqrt(3*(1-($freq/$wN)**2)**2+(2*$c/$cC*$freq/$wN)**2);
 
 #---- Answers to the problem -----------------------#
-$ansA = $k*2;
+$ansA = $kNew;
 $ansB = $cNew;
 
 ########################################################;
