@@ -87,12 +87,18 @@ $D = ($force/$k)/(2*$length*(1-($angVel/$natFreq)**2));
 
 #---- Answers to the problem -----------------------#
 $ansA = $D*sin($angVel*$time);
-$ansA =( $D*sin($angVel*$time));
 $exp=0;
+if( $ansA <= 1 || $ansA >=-1){
 do {
     $ansA = $ansA*10;
     $exp= $exp-1;
 } until ( $ansA > 1 || $ansA <-1 );
+} else{
+do {
+    $ansA = $ansA*10;
+    $exp= $exp-1;
+} until ( $ansA > 9 || $ansA <-9 );
+}
 
 ########################################################;
 #PGML
@@ -108,6 +114,8 @@ is attached to a [`m =`] [`[$mass2]`] [`kg`] which is fixed to the end of the ba
 Find the angle of the bar at [`t =`] [`[$time]`] [`s`] if the bar starts from rest and the motor is initially spinning. 
 
 [`\theta =`] [____]{"$ansA"} [`*`] [`10`] ^[____]{"$exp"} [`rad`]
+
+Please input the first blank as a number from 1 to 9, and the exponent according to the first blank.
 
 END_PGML
 
