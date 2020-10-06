@@ -115,7 +115,7 @@ Find the angle of the bar at [`t =`] [`[$time]`] [`s`] if the bar starts from re
 
 [`\theta =`] [____]{"$ansA"} [`*`] [`10`] ^[____]{"$exp"} [`rad`]
 
-Please input the first blank as a number from 1 to 9, and the exponent according to the first blank.
+Please input the first blank as a number from 1 to 9 or -1 to -9, and the exponent according to the first blank.
 
 END_PGML
 
