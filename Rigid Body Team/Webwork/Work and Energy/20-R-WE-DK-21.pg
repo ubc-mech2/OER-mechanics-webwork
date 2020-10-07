@@ -88,8 +88,8 @@ $alphacos = $m*9.81*($a/2-$l)/$I;
 $N1sin = ($m*9.81 + $m*-$ry*$alphasin + $m*$rx*$omegasquaredco)/$mu;
 $N1cos = $m*-$ry*$alphacos/$mu; 
 
-$N2sin = $m*-$rx*$alphasin -$m*$ry*$omegasquaredco;
-$N2cos = $m*-$rx*$alhpacos + $m*9.81;
+$N2sin = $m*-$rx*$alphasin - $m*$ry*$omegasquaredco;
+$N2cos = $m*-$rx*$alphacos + $m*9.81;
 
 $sin = $N1sin + $N2sin;
 $cos = $N2cos + $N1cos;
