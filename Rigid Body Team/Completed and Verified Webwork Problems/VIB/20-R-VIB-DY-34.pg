@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free Damped)
+## DBsection(Forced Undamped)
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics', 'Critical Dampening')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Equation of Displacement', 'Pendulum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.3')
 
 ########################################################
 
@@ -65,31 +65,48 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
-$width = $imgScale*1289;		#aspect ratio
-$height = $imgScale*1170;
+$width = $imgScale*2151;		#aspect ratio
+$height = $imgScale*1624;
 
 #---- Random variables for this problem --------#
-$k = random(5,15,1);
-$mass = random(10,20,1);
+$massS = random(2,5,1);
+$massB = random(4,6,1);
+$length = random(1.5,2.5,0.1);
+$accel = random(1,5,0.1);
+$freq = random(2,7,1);
+$k = random(10,20,1);
 
 #---- Formulas to compute answers --------------#
-$c = 2*$mass*sqrt($k/$mass);
+$cog = ($massB/2+$massS)*$length/($massB+$massS);
+$I = $length**2*($massB/3+$massS);
+$natFreq = sqrt(($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2)/$I);
+$force = $cog*($massB+$massS)*$accel;
+$D = ($force/($massB*9.81*$length/2+$massS*9.81*$length+$k*($length/2)**2))/(1-($freq/$natFreq)**2);
 
 #---- Answers to the problem -----------------------#
-$ansA = $c;
+$ansA = "$D*sin($freq*t)";
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-21.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-34.png", width=>[$width], height=>[$height]) @]*
 
-A simple spring, damper, and load system is configured as shown. Given that the [`k =`] [`[$k]`] [`N/m`] 
-and [`m =`] [`[$mass]`] [`kg`], what damping constant, [`c`], will make the system critically damped.
-
-[`c_c =`] [____]{"$ansA"} [`Ns/m`]
+A bus has handles for passengers to use while standing up. The handles consist of a bar and a ball at the end. 
+The [`m_B =`] [`[$massB]`] [`kg`] bar is [`l =`] [`[$length]`] [`m`] long and the sphere has a mass 
+[`m_S =`] [`[$massS]`] [`kg`]. A spring with a spring constant [`k =`] [`[$k]`] [`N/m`] is placed halfway down the bar. 
+While driving, the transmission breaks down on the bus causing a periodic deacceleration [`a =`] [`-[$accel]sin([$freq]t)`] [`m/s^2`].
+Assuming small angle displacements, determine the equation of displacement.
 
 END_PGML
+
+BEGIN_TEXT
+
+ $BR\{ans_rule(25) \}
+
+END_TEXT
+
+ANS(function_cmp($ansA,'t'));
 
 ENDDOCUMENT();

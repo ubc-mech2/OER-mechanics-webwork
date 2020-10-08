@@ -30,8 +30,8 @@
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics', 'Critical Dampening')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Jack in the box')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
 
 ########################################################
@@ -65,30 +65,43 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
-$width = $imgScale*1289;		#aspect ratio
-$height = $imgScale*1170;
+$width = $imgScale*1988;		#aspect ratio
+$height = $imgScale*1996;
 
 #---- Random variables for this problem --------#
-$k = random(5,15,1);
-$mass = random(10,20,1);
+$c = random(75,120,1);
+$k = random(300,500,25);
+$dis=random(0.3,0.7,0.05);
+$mass = random(150,400,5);
 
 #---- Formulas to compute answers --------------#
-$c = 2*$mass*sqrt($k/$mass);
+$wN = sqrt($k/$mass);
+$cC = 2*$mass*$wN;
+$zeta = $c/$cC;
+$wD = sqrt(1-$zeta**2)*$wN;
+$A = sqrt((($wN*$zeta*$dis)**2+($dis*$wD)**2)/$wD**2);
+$phi = atan($dis*$wD/($wN*$zeta*$dis));
+$limit = ln(0.05)/(-$wN*$zeta);
+for($n = 1; pi*$n/$wD < $limit; $n++){
+}
+$time = $n*pi/$wD;
 
 #---- Answers to the problem -----------------------#
-$ansA = $c;
+$ansA = $time;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-21.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-44.png", width=>[$width], height=>[$height]) @]*
 
-A simple spring, damper, and load system is configured as shown. Given that the [`k =`] [`[$k]`] [`N/m`] 
-and [`m =`] [`[$mass]`] [`kg`], what damping constant, [`c`], will make the system critically damped.
+A mad engineer created the worlds largest jack in the box - 11m tall. The internal mechanism consists of a spring, 
+[`k = [$k] N/m`], and a damper, [`c = [$c] Ns/m`]. The clown component has a mass of [`[$mass] kg`]. 
+Given that when closed the spring is compressed [`y_0 = [$dis] m`] below equilibrium, 
+determine how long it takes for the peak amplitude to drop to 5% of the initial displacement.
 
-[`c_c =`] [____]{"$ansA"} [`Ns/m`]
+[`Time =`] [____]{"$ansA"} [`s`]
 
 END_PGML
 

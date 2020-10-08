@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free Damped)
+## DBsection(Free Undamped)
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics', 'Critical Dampening')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Square plate', 'Natural Frequency')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
 
 ########################################################
 
@@ -65,30 +65,41 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
-$width = $imgScale*1289;		#aspect ratio
-$height = $imgScale*1170;
+$width = $imgScale*1416;		#aspect ratio
+$height = $imgScale*1212;
 
 #---- Random variables for this problem --------#
-$k = random(5,15,1);
-$mass = random(10,20,1);
+$rho = random(900,1100,1);
+$length = random(0.75,1.25,0.01);
+$s = random(1.5,2,0.01);
+$radius = random(0.25,0.5,0.01);
+$d = random(0.02,0.05,0.01);
 
 #---- Formulas to compute answers --------------#
-$c = 2*$mass*sqrt($k/$mass);
+$massP = $s**2*$d*$rho;
+$massC = pi*$radius**2*$rho*$d;
+$c = sqrt(2*$s**2)/2;
+$inertia = 1/12*$massP*(2*$s**2)-1/2*$massC*$radius**2;
+$T = ($massP-$massC)*9.81/4;
+$natFreq = sqrt(4*$c**2*$T/($inertia*$length));
 
 #---- Answers to the problem -----------------------#
-$ansA = $c;
+$ansA = $natFreq;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-21.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-23.png", width=>[$width], height=>[$height]) @]*
 
-A simple spring, damper, and load system is configured as shown. Given that the [`k =`] [`[$k]`] [`N/m`] 
-and [`m =`] [`[$mass]`] [`kg`], what damping constant, [`c`], will make the system critically damped.
+A square plate is supported by ropes, of length [`l =`] [`[$length]`] [`m`], on each of its four corners.
+The plate has a side length of [`s = [$s] m`], depth [`d = [$d]`] m, and density [`\rho =`] [`[$rho]`] [`kg/m^3`]. 
+There is also a large circular cut-out in the center of the plate with a radius [`r =`] [`[$radius]`] [`m`]. 
+Given that the plate is given a small rotation about a vertical axis at its center, 
+what is the natural vibration of oscillation?
 
-[`c_c =`] [____]{"$ansA"} [`Ns/m`]
+[`w_n =`] [____]{"$ansA"} [`rad/s`]
 
 END_PGML
 

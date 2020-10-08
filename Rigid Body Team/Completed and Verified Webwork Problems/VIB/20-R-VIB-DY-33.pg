@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free Damped)
+## DBsection(Forced Undamped)
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics', 'Critical Dampening')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Eccentric Motor', 'Angle')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.3')
 
 ########################################################
 
@@ -65,30 +65,57 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
-$width = $imgScale*1289;		#aspect ratio
-$height = $imgScale*1170;
+$width = $imgScale*1813;		#aspect ratio
+$height = $imgScale*1012;
 
 #---- Random variables for this problem --------#
-$k = random(5,15,1);
-$mass = random(10,20,1);
+$mass = random(2.5,7.5,0.1);
+$mass2 = random(2.5,7.5,0.1);
+$length = random(2,3,0.1);
+$eccent = random(1,3,0.1);
+$radi = random(0.05,0.15,0.01);
+$angVel = random(2,7,1);
+$k = random(20,30,1);
+$time = random(2.5,7.5,0.1);
 
 #---- Formulas to compute answers --------------#
-$c = 2*$mass*sqrt($k/$mass);
+$m = $length**2*($mass2+$mass/3);
+$k2 = $k*$length**2;
+$natFreq = sqrt($k2/$m);
+$force = $eccent*$radi*$angVel**2;
+$D = ($force/$k)/(2*$length*(1-($angVel/$natFreq)**2));
 
 #---- Answers to the problem -----------------------#
-$ansA = $c;
+$ansA = $D*sin($angVel*$time);
+$exp=0;
+if( $ansA <= 1 || $ansA >=-1){
+do {
+    $ansA = $ansA*10;
+    $exp= $exp-1;
+} until ( $ansA > 1 || $ansA <-1 );
+} else{
+do {
+    $ansA = $ansA*10;
+    $exp= $exp-1;
+} until ( $ansA > 9 || $ansA <-9 );
+}
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-21.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-33.png", width=>[$width], height=>[$height]) @]*
 
-A simple spring, damper, and load system is configured as shown. Given that the [`k =`] [`[$k]`] [`N/m`] 
-and [`m =`] [`[$mass]`] [`kg`], what damping constant, [`c`], will make the system critically damped.
+An eccentric motor is mounted halfway on a [`m =`] [`[$mass]`] [`kg`] bar which is [`l =`] [`[$length]`] [`m`] long. 
+The eccentric motion is equivalent to a [`[$eccent]`] [`kg`] mass located [`[$radi]`] [`m`] from the axis of rotation
+rotating at a angular velocity of [`w =`] [`[$angVel]`] [`rad/s`]. A spring of [`k =`] [`[$k]`] [`N/m`] 
+is attached to a [`m =`] [`[$mass2]`] [`kg`] which is fixed to the end of the bar. 
+Find the angle of the bar at [`t =`] [`[$time]`] [`s`] if the bar starts from rest and the motor is initially spinning. 
 
-[`c_c =`] [____]{"$ansA"} [`Ns/m`]
+[`\theta =`] [____]{"$ansA"} [`*`] [`10`] ^[____]{"$exp"} [`rad`]
+
+Please input the first blank as a number from 1 to 9 or -1 to -9, and the exponent according to the first blank.
 
 END_PGML
 

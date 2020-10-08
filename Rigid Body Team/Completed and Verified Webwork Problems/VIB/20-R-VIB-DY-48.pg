@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free Damped)
+## DBsection(Forced Damped)
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics', 'Critical Dampening')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics', 'Amplitude')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.5')
 
 ########################################################
 
@@ -65,30 +65,37 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
-$width = $imgScale*1289;		#aspect ratio
-$height = $imgScale*1170;
+$width = $imgScale*1988;		#aspect ratio
+$height = $imgScale*1164;
 
 #---- Random variables for this problem --------#
-$k = random(5,15,1);
-$mass = random(10,20,1);
+$mass = random(1500,2500,1);
+$dis = random(0.0002,0.0008,0.0001);
+$freq = random(20,50,1);
 
 #---- Formulas to compute answers --------------#
-$c = 2*$mass*sqrt($k/$mass);
+$x = $freq**2*$mass;
 
 #---- Answers to the problem -----------------------#
-$ansA = $c;
+$ansA = $x/4;
+$ansB = $x/4;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-VIB-DY-21.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-VIB-DY-48.png", width=>[$width], height=>[$height]) @]*
 
-A simple spring, damper, and load system is configured as shown. Given that the [`k =`] [`[$k]`] [`N/m`] 
-and [`m =`] [`[$mass]`] [`kg`], what damping constant, [`c`], will make the system critically damped.
+A coilover is a damper integrated with a spring used for car suspension. 
+Four of these are used to support the [`m = [$mass] kg`] body of a car. 
+Driving on the road produces a periodic displacement of [`\delta = [$dis]sin([$freq]t)`] at each wheel simultaneously. 
+If the damping and spring constant have the same numerical value, determine the damper and spring values 
+that will produce the largest displacement. 
 
-[`c_c =`] [____]{"$ansA"} [`Ns/m`]
+[`k =`] [____]{"$ansA"} [`N/m`]
+
+[`c =`] [____]{"$ansB"} [`Ns/m`]
 
 END_PGML
 

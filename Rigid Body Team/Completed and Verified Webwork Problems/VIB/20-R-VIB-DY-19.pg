@@ -64,9 +64,9 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
-$width = $imgScale*1750*1.5;		#aspect ratio
-$height = $imgScale*900*1.5;
+$imgScale =0.35;
+$width = $imgScale*1996;		#aspect ratio
+$height = $imgScale*1026;
 
 #---- Random variables for this problem --------#
 $mass = random(15,25,1);
