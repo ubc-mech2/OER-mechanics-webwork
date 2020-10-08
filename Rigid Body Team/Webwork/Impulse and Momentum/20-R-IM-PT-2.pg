@@ -60,7 +60,7 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.03,
+tolerance=>.01,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
