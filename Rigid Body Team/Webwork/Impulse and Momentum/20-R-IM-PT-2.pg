@@ -80,7 +80,7 @@ $d= random(0.1,1,0.1);
 
 $I1 = 0.5*$m*$r**2;
 $I2= 0.5*$m*$r**2+ $m_c*$d**2;
-$angvel2=angvel1*$I1/$I2;
+$angvel2=$angvel1*$I1/$I2;
 
 
 
