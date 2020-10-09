@@ -87,7 +87,7 @@ $theta=random(30,50,0.5);
 
 #Conservation of Energy
 $h=$l*sin($theta*pi/180);
-$angvel2=9.81*$h/(1.5*$r**2);
+$angvel2=sqrt(9.81*$h/(1.5*$r**2));
 
 #Conservation of Momentum
 $mbullet=(1/2*$mc*$r**2*$angvel2)/($v*$r-1/2*$r**2*$angvel2)*1000;
