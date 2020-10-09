@@ -114,6 +114,8 @@ A 4 rotor drone is hovering above the ground with no change in position or rotat
 Drone rotors 1 and 2 rotate with an angular velocity of [`\omega_r = `] [`[$angvel1]`] [`rad/s`] in the clockwise direction, 
 and  rotors 3 and 4 rotate with the same angular speed in the opposite direction. 
 What is the new  angular velocity of the drone if rotors 3 and 4 stop working?
+The drone does not flip after the rotors stop working, but instead rotates.
+
 
 Assume that the drone consists of a square shaped center, with a mass of [`m_{center} = `] [`[$mc]`] [`g`] 
 and a side length of [`l_{center} = `] [`[$lc]`] [`cm`]. The center is connected to each motor and rotor 

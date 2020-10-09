@@ -70,12 +70,14 @@ $imgScale = 0.2;
 
 #---- Random variables for this problem --------#
 
-$h= random(20,25,0.5);
-$hm= $h+$h*0.25;
+$h= random(20,35,0.5);
+$hm= $h+$h*0.2;
 $he= random(0.5,2,0.25);
-$ld= random(1.6,1.9,0.05);
+$ld= random(1.55,1.95,0.05);
+$ratio=random(0.4,0.7,0.01);
+$ld2=$ld*$ratio;
 $m= random(60,85,5);
-$angvel1=random(1,2,0.1);
+$angvel1=random(1,7,0.1);
 $g=9.81;
 
 
@@ -100,16 +102,16 @@ BEGIN_PGML
 [@ image( "20-R-IM-PT-8.png", width=>[$width], height=>[$height]) @]*
 
 
-A high diver jumps from their diving board [`h = `] [`[$h]`] [`m`] from the  water,
-starts the dive fully extended, with an angular momentum of [`\omega_1 = `] [`[$angvel1]`] [`rad/s`]. 
+A high diver jumps from their diving board [`h = `] [`[$h]`] [`m`] from the  water. They
+start the dive fully extended with an angular momentum of [`\omega_1 = `] [`[$angvel1]`] [`rad/s`]. 
 Then they bring in their body to complete a several rotations before 
-extending once again , and landing in the water. If the persons center of mass 
+extending once again and landing in the water. If the persons center of mass 
 is   [`h_{max} = `] [`[$hm]`] [`m`] above the water when they start to tuck, and [`[$he]`] [`m`] above the water when 
 they extend their body, how many full revolutions can they complete before they 
 have to extend into the water? 
-Assume that, when fully extended the divers body 
-can be considered as a rod with a length of [`l_{diver} = `] [`[$ld]`] [`m`], and when they tuck, their body can be considered 
-as a rod of half that length, with a constant mass of [`m = `] [`[$m]`] [`kg`]. 
+Assume that, when fully extended, the divers body 
+can be considered as a rod with a length of [`l_{diver} = `] [`[$ld]`] [`m`]. When they tuck, their body can be considered 
+as a rod of length [`l_{diver_2} = `] [`[$ld2]`] [`m`], with a constant mass of [`m = `] [`[$m]`] [`kg`]. 
 
 
 
@@ -119,8 +121,7 @@ as a rod of half that length, with a constant mass of [`m = `] [`[$m]`] [`kg`].
 
 
  _Enter your answers as a whole number_.
-
-
+ 
 END_PGML
 
 ENDDOCUMENT();
