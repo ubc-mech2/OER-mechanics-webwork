@@ -67,25 +67,25 @@ tolType=>'absolute');  #relative or absolute
 $imgScale = 0.2;
 	#aspect ratio
 
-
 #---- Random variables for this problem --------#
 
-$mp = random(11000,15000,500);
-$m_p=$mp*10**24;
-$rp= random(10000,20000,2000);
+$mp = random(3,15,0.5);
+$m_p=$mp*10**23;
+$rp= random(1000,7000,50);
 $r_p=$rp*1000;
-$angvel1 = random(4,7,0.5);
-$ma=random(2,3,0.1);
-$m_a=$mp*10**21;
-$va=random(33000,40000,1000);
-$g=9.81;
+$angvel1 = random(3,7,0.5);
+$ang_vel1=$angvel1/(10**5);
+$ma=random(5,10,0.1);
+$m_a=$ma*10**20;
+$va=random(180000,400000,500);
+
 
 #---- Formulas to compute answers --------------#
 
 
 $Ip1=2/5*$m_p*$r_p**2;
-$Ip2=2/5*($m_p+$m_a)*$r_p**2;
-$angvel2=($Ip1*$angvel1+$m_a*$va*r_p)/$Ip2;
+$Ip2=$Ip1+$m_a*$r_p**2;
+$angvel2=($Ip1*$ang_vel1+$m_a*$va*$r_p)/$Ip2;
 
 
 
@@ -100,7 +100,7 @@ BEGIN_PGML
 
 An uninhabited rogue planet is spinning in space with a mass of [`m_p = `] [`[$mp]`][`* 10^{24}`] [`kg`], 
 and a radius of [`r_p = `] [`[$rp]`] [`km`]. It is spinning with an angular velocity 
-of [`\omega_1 = `] [`[$angvel1]`] [`rad/s`] clockwise, when an asteroid collides at point P 
+of [`\omega_1 = `] [`[$angvel1]`][`* 10^{-5}`] [`rad/s`] clockwise, when an asteroid collides at point P 
  and sticks with the edge of the planet. The mass of the asteroid is [`m_a = `] [`[$ma]`][`* 10^{21}`] [`kg`], 
 and  collides with a speed of [`v_a= `] [`[$va]`] [`m/s`]. The asteroid collides with the planet along 
 its equator, in the same direction as its rotation. 
