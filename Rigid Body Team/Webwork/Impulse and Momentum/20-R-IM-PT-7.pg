@@ -130,7 +130,7 @@ Assume that, when extended, student's 1 body on the chair is a cylinder of radiu
 and a length of [`l_{arm1} = `] [`[$la1]`] [`m`]. When their arms are retracted, 
 the body can be considered as a cylinder of [`r_{s1_2} = `] [`[$rs12]`] [`kg`] radius, 
 with the weights acting as point masses on the outer radius . 
-The initial speed is [`omega_{s1} = `] [`[$angvels1]`] [`rad/s`].
+The initial speed is [`omega_{s1} = `] [`[$angvels11]`] [`rad/s`].
 
 Student 2 weighs [`m_{s2} = `] [`[$ms2]`] [`kg`]  and holds  one weight that is 
 [`m_{w2} = `] [`[$mw2]`] [`kg`] in each arm.  
@@ -138,7 +138,7 @@ Assume that, when extended, student's 1 body on the chair is a cylinder of radiu
 and a length of [`l_{arm2} = `] [`[$la2]`] [`m`]. When their arms are retracted, 
 the body can be considered as a cylinder of [`r_{s2_2} = `] [`[$rs12]`] [`kg`] radius, 
 with the weights acting as point masses on the outer radius . 
-The initial speed is [`omega_{s2} = `] [`[$angvels2]`] [`rad/s`].
+The initial speed is [`omega_{s2} = `] [`[$angvels21]`] [`rad/s`].
 
 
 Neglecting the frictional forces, and  effects due to mass of the chairs, who completes 35 revolutions first, and in how much time does that student complete it?

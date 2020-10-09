@@ -90,8 +90,8 @@ $mm=random(70,100,0.5);
 #---- Formulas to compute answers --------------#
 
 $I3=1/12*($mrt)/1000*($lrt/100)**2;
-$Ic=($lc/100)**2/2*$mr/1000;
-$d=$lr/1000/2+(sqrt(2)*$lc/100/2);
+$Ic=1/6*($lc/100)**2*($mc/1000);
+$d=$lr/100/2+(sqrt(2)*$lc/100/2);
 $Ir=4*(1/12*$mr/1000*($lr/100)**2+$mr/1000*$d**2);
 $dm=$lr/100+(sqrt(2)*$lc/100/2);
 $Irt=4*(($mm+$mrt)/1000*$dm**2+1/12*$mrt/1000*($lrt/100)**2);
@@ -129,7 +129,6 @@ through rods with a length of [`l_{rod} = `] [`[$lr]`] [`cm`] and a mass [`m_{ro
 
 
  [`\omega_{drone}`][`=`] [____]{"$angvel2"} [`rad/s`]
-
 
 
  _Round your answer to two digits_.
