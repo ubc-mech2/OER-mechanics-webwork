@@ -107,10 +107,10 @@ $angvels22=$Is21*$angvels21/$Is22;
 
 if($angvels22>$angvels12){
 $ans=2;
-$ans2=35/$angvels22;
+$ans2=35*2*pi/$angvels22;
 }else{
 $ans=1;
-$ans2=35/$angvels12;
+$ans2=35*2*pi/$angvels12;
 }
 
 
