@@ -17,21 +17,21 @@
 ## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
 ## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
-## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## territory of many peoples - specifically the Musqueam (xÊ·mÉÎ¸kÊ·ÉyÌÉm), Squamish (Sá¸µwxÌ±wÃº7mesh), 
+## Tsleil-Waututh (sÉlÌilwÉtaÉÉ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÌÉwaÎ¸enaÉÉ¬ tÉmÉxÊ·), 
+## Chemainus (Stz'uminus), StÃ³:loÌ (SâÃ³lh TÃ©mÃ©xw), Kwanlin DÃ¼n, Niitsitapi (Blackfoot), 
 ## and the people of the Treaty 7 region of Southern Alberta. 
 ##
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Planar Kinetics of Rigid Bodies)
-## DBsection(Conservation of Momentum)
+## DBsection(Kinetic Energy)
 ## Institution('University of British Columbia')
-## Author(David Kim)
+## Author(Patrick Thangarajah)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
-## KEYWORDS('Dynamics','moment','impulse','momentum','inertia','angular velocity','bullet','target','velocity')
+## KEYWORDS('Dynamic','rolling','wheel','angular velocity','momentum','conservation')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
 
 ########################################################
@@ -58,6 +58,7 @@ TEXT(beginproblem());
 
 Context("Numeric");		# or Complex
 
+
 #---------------Tolerance------------------#
 Context()->flags->set(
 tolerance=>.03,
@@ -66,37 +67,70 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale =0.35
 
-$height = $imgScale*1301;
+$height = $imgScale*1498;
 
-$width = $imgScale*1394;
+$width = $imgScale*1975;
 	#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$l = random(1,3,0.1);
-$m = random(15,30,1);
-$mbulletg = 5;
-$mbullet = $mbulletg/1000;
-$v = random(300,500,10);
-$h = $l - (0.2,0.5,0.05);
+
+$h=random(0.02, 0.05,0.01);
+$r1=random(0.5,0.75,0.01);
+$r2=random(0.5,0.75,0.01);
+$m1 = random(5,10,0.25);
+$m2=random(5,10,0.25);
+$m3=random(0.2,0.7,0.05);
+$r= random(2,3,0.1);
+$g=9.81;
+
+
+
+
 
 #---- Formulas to compute answers --------------#
+#Wheel 1
+$I1=1/2*$m1*$r1**2;
+$v1_2=sqrt(2*$m1*$g*$h/($m1+$I1/($r1**2)));
+$v1_1=($r1*$m1+$I1/$r1)/(($r1-$h)*$m1+$I1/$r1)*$v1_2;
 
-$omega = $mbullet*$v*$h/($mbullet*$h*$h +$m*$l/2*$l/2+1/12*$m*$l**2);
+#Wheel 2
+$I2=$m2*$r2**2+1/3*5*$m3*$r2**2;
+$mtot = $m2 + 5*$m3;
+$v2_2=sqrt(2*$mtot*$g*$h/($mtot+$I2/($r2**2)));
+$v2_1=($r2*$mtot+$I2/$r2)/(($r2-$h)*$mtot+$I2/$r2)*$v2_2;
+
+if($v2_1>$v1_1){
+$ans=2;
+$v=$v2_1-$v1_1;
+}else{
+$ans=1;
+$v=$v1_1-$v2_1;
+}
+
+
+
+
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-IM-DK-12.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-IM-PT-3.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$l]`] [`m`] by [`[$l]`] [`m`] thin plate is used as target practice at a firing range where participants are shooting for sport. If the plate has a mass of [`m_{plate} = `] [`[$m]`] [`kg`] and is pinned at
-point O, determine the angular velocity of the plate just after a [`[$mbulletg]`] [`g`] bullet, shot at a velocity of [`v_{bullet} = `] [`[$v]`] [`m/s`], is embedded in it. The bullet hits a vertical distance
-[`h = `] [`[$h]`] [`m`] away from point O.  
+Two wheels roll over identical obstructions of a height [`h = `] [`[$h]`] [`m`] on a road. One wheel is a solid
+wooden wheel, with a mass [`m_1 = `] [`[$m1]`] [`kg`] and radius [`r_1 = `] [`[$r1]`] [`m`]. The other wheel
+has 5 spokes, a mass of [`m_2 = `] [`[$m2]`] [`kg`], and a radius of [`r_2 = `] [`[$r2]`] [`m`]. The mass of each spoke for wheel 2 
+is [`m_s = `] [`[$m3]`] [`kg`]  Which wheel
+needs a higher velocity to roll over the obstacle and by how much?
 
-[`\omega = `] [____]{"$omega"} [`rad/s`]  
+
+
+[`Wheel`][`:`] [____]{"$ans"} [] 
+
+[`\Delta`][`v= `] [____]{"$v"} [`m/s`]   
 
 END_PGML
 
-ENDDOCUMENT();
+ENDDOCUMENT()};
