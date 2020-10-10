@@ -30,8 +30,8 @@
 ## Institution('University of British Columbia')
 ## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Intermediate)
-## KEYWORDS('Dynamics','power','principle of work and energy','hill','work','angular velocity','efficiency')
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','power','principle of work and energy','wheelbarrow','work','angular velocity','efficiency')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 14.4')
 
 ########################################################
@@ -67,37 +67,37 @@ $imgScale = 0.2;
 
 
 #---- Random variables for this problem --------#
-$m = random(8,20,2);
-$mu = random(0.15,0.3,0.01);
-$Fbro = random(5,10,1);
+$M = random(10,30,1);
+$r = random(0.2,0.4,0.05);
+$v = random(1.5,3,0.5);
+$F = 15;
 
-$theta = random(10,30,5);
-$phi = random(10,30,2);
-$gamma = random(25,45,5);
+$theta = 30;
 $thetarad = $theta/180*pi;
-$phirad = $phi/180*pi;
-$gammarad = $gamma/180*pi;
 
-$v = random(2,8,1);
+$W = random(340,400,5);
 
 #---- Formulas to compute answers --------------#
+$omega = $v/$r;
 
-$F = (($mu*$m*9.81*cos($gammarad) - $mu*$Fbro*sin($phirad) +$m*9.81*sin($gammarad) + $Fbro*cos($phirad))/(cos($thetarad)+$mu*sin($thetarad)));
-$P = $F*$v*cos($thetarad);
+$P = $F*$v*cos($thetarad) + $M*$omega;
+
+$n = $P/$W;
+
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-WE-DK-19.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-20.png", width=>[$width], height=>[$height]) @]*
 
-For a sports day event, you are partnered with your little brother in order to pull a [`[$m]`] [`kg`] box up a hill angled at [`\gamma = `] [`[$gamma]`][`^{\circ}`] with a coefficient of kinetic friction 
-[`\mu_k = `] [`[$mu]`]. The event is a race and you really want to win so you apply a force at an angle [`\theta = `] [`[$theta]`][`^{\circ}`]. Your brother misheard the instructions so he applies a force 
-[`F_{bro} = `] [`[$Fbro]`] [`N`] at an angle [`\phi = `] [`[$phi]`][`^{\circ}`] in the opposite direction. You estimate the box must have a constant velocity [`v = `] [`[$v]`] [`m/s`] up the hill to win. 
-What is the power you must exert?
+A gardening company is testing a wheelbarrow prototype for seniors. The wheel has a hub motor which can apply a moment [`M = `] [`[$M]`] [`N \cdot m`]. If the wheel has a radius [`r = `] [`[$r]`] [`m`] and 
+the wheel rolls without slipping, determine the power of the hub motor if it moves at a velocity of [`v = `] [`[$v]`] [`m/s`] when a force of [`F = `] [`[$F]`] [`N`] is applied at an angle of [`\theta = `] [`[$theta]`][`^{\circ}`].
+Determine the efficiency of the motor if a total of [`[$W]`] [`W`] is put into it.
 
 [`P = `] [____]{"$P"} [`W`]  
+[`\eta = `] [____]{"$n"}  
 
 END_PGML
 

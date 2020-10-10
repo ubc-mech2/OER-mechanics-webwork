@@ -93,16 +93,16 @@ $angvels21=random(0.55,0.65,0.01);
 
 #---- Formulas to compute answers --------------#
 #Student 1
-$Is11=2*$mw1*($rs11+$la1)**2+2*1/12*$ma1*$la1**2+2*$ma1*($la1/2+$rs11)+1/2*$ma1*$rs11**2;
-$Is12= (2*$mw1+1/2*$ms1)*$rs12**2;
+$Is11=2*$mw1*($rs11+$la1)**2+2*1/12*$ma1*$la1**2+2*$ma1*($la1/2+$rs11)**2+1/2*$ms1*$rs11**2;
+$Is12= (2*$mw1+1/2*($ms1+2*$ma1))*$rs12**2;
 $angvels12=$Is11*$angvels11/$Is12;
 
 
 
 #Student 2
 
-$Is21=2*$mw2*($rs21+$la2)**2+2*1/12*$ma1*$la2**2+2*$ma2*($la2/2+$rs21)+1/2*$ma2*$rs21**2;
-$Is22= (2*$mw2+1/2*$ms2)*$rs22**2;
+$Is21=2*$mw2*($rs21+$la2)**2+2*1/12*$ma2*$la2**2+2*$ma2*($la2/2+$rs21)**2+1/2*$ms2*$rs21**2;
+$Is22= (2*$mw2+1/2*($ms2+2*$ma2))*$rs22**2;
 $angvels22=$Is21*$angvels21/$Is22;
 
 if($angvels22>$angvels12){
@@ -136,7 +136,7 @@ Student 2 weighs [`m_{s2} = `] [`[$ms2]`] [`kg`]  and holds  one weight that is
 [`m_{w2} = `] [`[$mw2]`] [`kg`] in each arm.  
 Assume that, when extended, student's 1 body on the chair is a cylinder of radius [`r_{s2_1} = `] [`[$rs21]`] [`m`], and their arms are thin rods with a weight of [`m_{arm2} = `] [`[$ma2]`] [`kg`] each 
 and a length of [`l_{arm2} = `] [`[$la2]`] [`m`]. When their arms are retracted, 
-the body can be considered as a cylinder of [`r_{s2_2} = `] [`[$rs12]`] [`kg`] radius, 
+the body can be considered as a cylinder of [`r_{s2_2} = `] [`[$rs22]`] [`kg`] radius, 
 with the weights acting as point masses on the outer radius . 
 The initial speed is [`omega_{s2} = `] [`[$angvels21]`] [`rad/s`].
 
