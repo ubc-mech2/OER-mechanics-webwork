@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Planar Kinetics of Rigid Bodies)
-## DBsection(Conservation of Momentum)
+## DBsection(Power and Efficiency)
 ## Institution('University of British Columbia')
 ## Author(David Kim)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
-## KEYWORDS('Dynamics','moment','impulse','momentum','inertia','angular velocity','bullet','target','velocity')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+## KEYWORDS('Dynamics','power','principle of work and energy','wheelbarrow','work','angular velocity','efficiency')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 14.4')
 
 ########################################################
 
@@ -53,8 +53,6 @@ loadMacros(
 #######################################################
 #Setup
 
-TEXT(beginproblem());
-
 
 Context("Numeric");		# or Complex
 
@@ -64,38 +62,42 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale =0.35
-
-$height = $imgScale*1301;
-
-$width = $imgScale*1394;
+$imgScale = 0.2;
 	#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$l = random(1,3,0.1);
-$m = random(15,30,1);
-$mbulletg = 5;
-$mbullet = $mbulletg/1000;
-$v = random(300,500,10);
-$h = $l - (0.2,0.5,0.05);
+$M = random(10,30,1);
+$r = random(0.2,0.4,0.05);
+$v = random(1.5,3,0.5);
+$F = 15;
+
+$theta = 30;
+$thetarad = $theta/180*pi;
+
+$W = random(340,400,5);
 
 #---- Formulas to compute answers --------------#
+$omega = $v/$r;
 
-$omega = $mbullet*$v*$h/($mbullet*$h*$h +$m*$l/2*$l/2+1/12*$m*$l**2);
+$P = $F*$v*cos($thetarad) + $M*$omega;
+
+$n = $P/$W;
+
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-IM-DK-12.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-20.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$l]`] [`m`] by [`[$l]`] [`m`] thin plate is used as target practice at a firing range where participants are shooting for sport. If the plate has a mass of [`m_{plate} = `] [`[$m]`] [`kg`] and is pinned at
-point O, determine the angular velocity of the plate just after a [`[$mbulletg]`] [`g`] bullet, shot at a velocity of [`v_{bullet} = `] [`[$v]`] [`m/s`], is embedded in it. The bullet hits a vertical distance
-[`h = `] [`[$h]`] [`m`] away from point O.  
+A gardening company is testing a wheelbarrow prototype for seniors. The wheel has a hub motor which can apply a moment [`M = `] [`[$M]`] [`N \cdot m`]. If the wheel has a radius [`r = `] [`[$r]`] [`m`] and 
+the wheel rolls without slipping, determine the power of the hub motor if it moves at a velocity of [`v = `] [`[$v]`] [`m/s`] when a force of [`F = `] [`[$F]`] [`N`] is applied at an angle of [`\theta = `] [`[$theta]`][`^{\circ}`].
+Determine the efficiency of the motor if a total of [`[$W]`] [`W`] is put into it.
 
-[`\omega = `] [____]{"$omega"} [`rad/s`]  
+[`P = `] [____]{"$P"} [`W`]  
+[`\eta = `] [____]{"$n"}  
 
 END_PGML
 

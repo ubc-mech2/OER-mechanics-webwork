@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Planar Kinetics of Rigid Bodies)
-## DBsection(Power and Efficiency)
+## DBsection(Kinetic Energy)
 ## Institution('University of British Columbia')
-## Author(David Kim)
+## Author(Patrick Thangarajah)
 ## Date(Summer 2020)
-## Difficulty(Intermediate)
-## KEYWORDS('Dynamics','power','principle of work and energy','hill','work','angular velocity','efficiency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 14.4')
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
 
 ########################################################
 
@@ -53,6 +53,8 @@ loadMacros(
 #######################################################
 #Setup
 
+TEXT(beginproblem());
+
 
 Context("Numeric");		# or Complex
 
@@ -62,42 +64,50 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35
+
+$height = $imgScale*1188;
+
+$width = $imgScale*1940;
 	#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$m = random(8,20,2);
-$mu = random(0.15,0.3,0.01);
-$Fbro = random(5,10,1);
 
-$theta = random(10,30,5);
-$phi = random(10,30,2);
-$gamma = random(25,45,5);
-$thetarad = $theta/180*pi;
-$phirad = $phi/180*pi;
-$gammarad = $gamma/180*pi;
-
-$v = random(2,8,1);
+$m = random(100000,750000,50000);
+$r1= random(70,100,5);
+$angvel1 = random(0.1,0.3,0.05);
+$g=9.81;
 
 #---- Formulas to compute answers --------------#
 
-$F = (($mu*$m*9.81*cos($gammarad) - $mu*$Fbro*sin($phirad) +$m*9.81*sin($gammarad) + $Fbro*cos($phirad))/(cos($thetarad)+$mu*sin($thetarad)));
-$P = $F*$v*cos($thetarad);
+$angvel2=($g**2/($angvel1*$r1**2))**(1/3);
+$r2=$g/($angvel2**2);
+
+
+
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-WE-DK-19.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-IM-PT-4.png", width=>[$width], height=>[$height]) @]*
 
-For a sports day event, you are partnered with your little brother in order to pull a [`[$m]`] [`kg`] box up a hill angled at [`\gamma = `] [`[$gamma]`][`^{\circ}`] with a coefficient of kinetic friction 
-[`\mu_k = `] [`[$mu]`]. The event is a race and you really want to win so you apply a force at an angle [`\theta = `] [`[$theta]`][`^{\circ}`]. Your brother misheard the instructions so he applies a force 
-[`F_{bro} = `] [`[$Fbro]`] [`N`] at an angle [`\phi = `] [`[$phi]`][`^{\circ}`] in the opposite direction. You estimate the box must have a constant velocity [`v = `] [`[$v]`] [`m/s`] up the hill to win. 
-What is the power you must exert?
 
-[`P = `] [____]{"$P"} [`W`]  
+
+A circular space station, shown below,  is built with a retracting feature. 
+If the station rotates fast enough, artificial  gravity can be created from 
+centripetal acceleration. The space station is similar to a thin ring, with 
+an initial radius of [`r = `] [`[$r1]`] [`m`], a mass of [`m = `] [`[$m]`] [`kg`] and an initial angular speed of 
+[`\omega_1 = `] [`[$angvel1]`] [`rad/s`]. 
+What radius should it retract to for artificial gravity?
+
+
+
+
+
+[`r_2 = `] [____]{"$r2"} [`m`]    
 
 END_PGML
 
