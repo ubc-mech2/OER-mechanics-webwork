@@ -73,7 +73,7 @@ $velB = random(20,30,1);
 
 #---- Formulas to compute answers --------------#
 $massT = $massA + $massB;
-$velF = ($massA*$velA + $massB*$velB)/$massT;
+$velF = ($massA*$velA - $massB*$velB)/$massT;
 
 #---- Answers to the problem -----------------------#
 $ansA = $velF;

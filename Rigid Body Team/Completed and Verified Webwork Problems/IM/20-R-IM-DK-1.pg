@@ -70,11 +70,6 @@ $height = $imgScale*1253;
 
 $width = $imgScale*1211;
 
-$width = $imgScale*1211;
-	#aspect ratio
-$width=500;
-$height=500;
-
 
 #---- Random variables for this problem --------#
 

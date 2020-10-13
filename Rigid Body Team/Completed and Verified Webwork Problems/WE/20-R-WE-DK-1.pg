@@ -69,8 +69,6 @@ $imgScale =0.35;
 $height = $imgScale*1218;
 
 $width = $imgScale*1900;
-
-$width = $imgScale*1900;
 	#aspect ratio
 
 
