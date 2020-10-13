@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Planar Kinematics of Rigid Bodies)
-## DBsection(Relative Motion: Acceleration, Rotating Axes)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Power and Efficiency)
 ## Institution('University of British Columbia')
 ## Author(David Kim)
 ## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics','boats','collar','relative','velocity','angular velocity','acceleration','angular acceleration')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.8')
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','power','principle of work and energy','hill','work','angular velocity','efficiency')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 14.4')
 
 ########################################################
 
@@ -50,8 +50,6 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
 );
 
-TEXT(beginproblem());
-
 #######################################################
 #Setup
 
@@ -64,47 +62,42 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.35;
-	
-$width = $imgScale*1750;
-$height = $imgScale*1600; #image aspect ratio
+$imgScale = 0.2;
+	#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$velA = random(10,40,2);
-$velB = random(1,10,1);
-$accelA = random(5,20,1);
-$accelB = random(10,30,5);
+$m = random(8,20,2);
+$mu = random(0.15,0.3,0.01);
+$Fbro = random(5,10,1);
 
-$rB = random(10,30,5);
-$d = random(10,40,5);
+$theta = random(10,30,5);
+$phi = random(10,30,2);
+$gamma = random(25,45,5);
+$thetarad = $theta/180*pi;
+$phirad = $phi/180*pi;
+$gammarad = $gamma/180*pi;
 
-$zero = 0;
+$v = random(2,8,1);
+
 #---- Formulas to compute answers --------------#
-$angvelB = $velB/$rB;
-$velrel = ($velA - $velB - $angvelB*$d);
-$angaccelB = $accelB/$rB;
 
-$accelrelx = -$angvelB**2*$rB-2*$angvelB*$velrel-$angvelB**2*$d;
-$accelrely = $accelA -$accelB - $angaccelB*$d;
-
+$F = (($mu*$m*9.81*cos($gammarad) - $mu*$Fbro*sin($phirad) +$m*9.81*sin($gammarad) + $Fbro*cos($phirad))/(cos($thetarad)+$mu*sin($thetarad)));
+$P = $F*$v*cos($thetarad);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-KM-DK-22.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-WE-DK-19.png", width=>[$width], height=>[$height]) @]*
 
-Two boats are sailing on the high seas. At one instant, the boats are a distance [`d =`] [`[$d]`] [`m`] apart
-and have parallel velocities. Boat A is heading straight while boat B sails in a circular path with radius [`r_B =`] [`[$rB]`] [`m`].
-Boat A has a velocity [`v_{A} =`] [`[$velA]`] [`m/s`] and an acceleration of [`a_{A} =`] [`[$accelA]`] [`m/s^2`] in the same direction.
-Boat B has a velocity [`v_{B} =`] [`[$velB]`] [`m/s`] and a tangential acceleration of [`(a_{B})_{tangential} =`] [`[$accelB]`] [`m/s^2`].
-Determine the velocity and acceleration of boat A as seen from boat B.
+For a sports day event, you are partnered with your little brother in order to pull a [`[$m]`] [`kg`] box up a hill angled at [`\gamma = `] [`[$gamma]`][`^{\circ}`] with a coefficient of kinetic friction 
+[`\mu_k = `] [`[$mu]`]. The event is a race and you really want to win so you apply a force at an angle [`\theta = `] [`[$theta]`][`^{\circ}`]. Your brother misheard the instructions so he applies a force 
+[`F_{bro} = `] [`[$Fbro]`] [`N`] at an angle [`\phi = `] [`[$phi]`][`^{\circ}`] in the opposite direction. You estimate the box must have a constant velocity [`v = `] [`[$v]`] [`m/s`] up the hill to win. 
+What is the power you must exert?
 
-[`(v_{A/B})_{rel.} =`][_]{"$zero"}[`i + `][_]{"$velrel"}[`j`] [`m/s`]  
-[`(a_{A/B})_{rel.} =`][_]{"$accelrelx"}[`i + `][_]{"$accelrely"}[`j`] [`m/s^2`]  
-
+[`P = `] [____]{"$P"} [`W`]  
 
 END_PGML
 
