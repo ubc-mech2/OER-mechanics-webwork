@@ -53,6 +53,8 @@ loadMacros(
 #######################################################
 #Setup
 
+TEXT(beginproblem());
+
 
 Context("Numeric");		# or Complex
 
@@ -62,7 +64,13 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1667;
+
+$width = $imgScale*1855;
+
+$width = $imgScale*1855;
 	#aspect ratio
 
 
@@ -90,7 +98,7 @@ $vG2 = $omegaco*$rGIC;
 
 $omegadiskco = $vB2/$r;
 
-$T2co = 0.5*$mrod*$vG2**2 + 0.5*1/12*$mrod*$l**2*$omegaco**2 + 0.5*$mdisk*$vB2**2 + 0.5*0.5*$mdisk*$r**2*$omegadiskco**2 + 0.5*$mcollar;
+$T2co = 0.5*$mrod*$vG2**2 + 0.5*1/12*$mrod*$l**2*$omegaco**2 + 0.5*$mdisk*$vB2 + 0.5*0.5*$mdisk*$r**2*$omegadiskco**2 + 0.5*$mcollar;
 
 $s = $l*cos($thetarad) - $l*cos(pi/4);
 $hB1 = $s*sin($phirad);

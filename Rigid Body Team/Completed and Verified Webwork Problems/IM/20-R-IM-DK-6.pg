@@ -64,7 +64,7 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale =0.35
+$imgScale =0.35;
 
 $height = $imgScale*1458;
 
