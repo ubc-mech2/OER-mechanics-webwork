@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Particle)
 ## DBchapter(Momentum)
-## DBsection(Conservation of linear momentum)
+## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
-## Author(Jennifer Kirkley)
-## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Particle', 'Momentum Conservation')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.3]')
+## Author(Daniel Youm)
+## Date(Fall 2020)
+## Difficulty([Beginner/Intermediate/Advanced])
+## KEYWORDS('Particle', '')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [X.X]')
 
 ########################################################
 
@@ -65,33 +65,26 @@ tolType=>'relative');  #relative or absolute
 $imgScale = 0.2;
 		#aspect ratio
 
+
 #---- Random variables for this problem --------#
-$massA = random(1000,2000,10);
-$massB = random(1000,2000,10);
-$velA = random(20,30,1);
-$velB = random(20,30,1);
+
 
 #---- Formulas to compute answers --------------#
-$massT = $massA + $massB;
-$velF = ($massA*$velA - $massB*$velB)/$massT;
+
 
 #---- Answers to the problem -----------------------#
-$ansA = $velF;
+$ansA = ;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-433.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-.png", width=>[$width], height=>[$height]) @]*
 
-What would be the final velocity of both the cars immediately after the collision? 
-Assume this is a perfectly inelastic collision. Assume the two cars were travelling towards each other.
-They collide and stick together. Assume that car A has a mass [`m_A = [$massA] kg`] and was heading to the 
-right at [`v_A = [$velA] m/s`]. Car B has a mass [`m_B = [$massB] kg`] and was heading to the left at [`v_B = [$velB] m/s`]
-before the collision.
 
-[`v_{final} =`] [____]{"$ansA"} [`m/s`]
+
+[` =`] [____]{"$ansA"} [``]
 
 END_PGML
 
