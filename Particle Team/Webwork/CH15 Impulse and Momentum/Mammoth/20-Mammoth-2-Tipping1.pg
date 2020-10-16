@@ -28,11 +28,11 @@
 ## DBchapter(Momentum)
 ## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
-## Author(Jennifer Kirkley)
+## Author(Jennifer Kirkey)
 ## Date(Fall 2020)
 ## Difficulty([Beginner/Intermediate/Advanced])
 ## KEYWORDS('Particle', 'Mammoth')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.3]')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [17], section [X.X]')
 
 ########################################################
 
@@ -69,34 +69,59 @@ $imgScale = 0.2;
 
 
 #---- Random variables for this problem --------#
-$massA = random(3000,4000,10);
-$massB = random(5000,6000,10);
-$velA = random(5.5,7,0.1);
-$velB = random(1.2,2.5,0.1);
+$heightM = random(3.00,4.25,0.05);
+$heightG = 0.55*$heightM;
+$mass = random(4000,8000,1000);
+$b = 0.8;
+$force = 400;
+$c = 1.5;
+$d = 1.2;
 
 #---- Formulas to compute answers --------------#
-$massT = $massA + $massB;
-$velF = ($massA*$velA - $massB*$velB)/$massT;
+$forceTip = $mass*9.81*$b/($heightG-$d);
+if($force>=$forcetip){
+	$tip = "Y";
+}
+if($force<$forceTip){
+	$tip = "N";
+}
+$tipAns = PopUp(["?","Y","N"], $tip);
+$accel = $force/$mass;
 
 #---- Answers to the problem -----------------------#
-$ansA = $velF;
+$ansA = $forceTip;
+$ansC = $accel;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-499.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-Mammoth-Tipping.png", width=>[$width], height=>[$height]) @]*
 
-What would be the final velocity of both the mammoths immediately after the collision?
-Assume this is a perfectly inelastic collision - that means they collide and stick together
-after the collision. Mammoth A has a mass [`m_A = [$massA] kg`] and was heading to othe right
-at [`v_A = [$velA] m/s`]. Mammoth B has a mass [`m_B = [$massB] kg`] and was leading to the
-left at [`v_B = [$velB] m/s`] before the collision.
+You wish to move a [`m = [$mass]`] mammoth that is blocking your path. The mammoth has a height of [`h = [$heightM] m`], 
+base width of [`b = [$b] m`], and the center of gravity is [`[$heightG] m`] from the ground. 
+The mammtoh is standing on ice. You do not want the mammoth to topple over on top of you and crush you.
 
-Take to the right to be positive.
+a) If you can shove the mammoth at a height [`d = [$d]`] from the ground, 
+how much force, [`F`], will it take to tip the mammoth?
 
-[`v_{final} =`] [____]{"$ansA"} [`m/s`]
+[`F =`] [____]{"$ansA"} [`N`]
+
+b) If you can produce a maximum of [`[$force] N`] in a shove, are you in danger of 
+tipping the mammoth on top of you? [`(Y/N)`]
+
+answer: [@ $tipAns->menu() @]*  
+
+END_PGML
+
+ANS($tipAns->cmp);
+
+BEGIN_PGML
+
+c) If you apply 400N, what acceleration will the mammoth have?
+
+[`a =`] [____]{"$ansC"} [`m/s^2`]
 
 END_PGML
 

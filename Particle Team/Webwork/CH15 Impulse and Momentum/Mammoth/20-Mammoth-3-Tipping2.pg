@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Particle)
 ## DBchapter(Momentum)
-## DBsection(Conservation of linear momentum)
+## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
 ## Author(Jennifer Kirkey)
-## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Particle', 'Momentum Conservation')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.3]')
+## Date(Fall 2020)
+## Difficulty([Beginner/Intermediate/Advanced])
+## KEYWORDS('Particle', 'Mammoth')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [17], section [X.X]')
 
 ########################################################
 
@@ -67,35 +67,40 @@ tolType=>'relative');  #relative or absolute
 $imgScale = 0.2;
 		#aspect ratio
 
+
 #---- Random variables for this problem --------#
-$massA = random(900,1200,10);
-$massB = random(1700,2000,10);
-$velA = random(24,28,1);
-$velB = random(20,23,1);
+$heightM = random(3.00,4.25,0.05);
+$heightG = 0.55*$heightM;
+$mass = random(4000,8000,1000);
+$ang = random(25,35,1);
+$forceP = 400;
+$c = 1.5;
+$e = 0.3;
+$rad = $ang*pi/180;
 
 #---- Formulas to compute answers --------------#
-$massT = $massA + $massB;
-$velF = ($massA*$velA - $massB*$velB)/$massT;
+$force = $mass*9.81*$c/($e*sin($rad)+$heightM*cos($rad));
+for($int = 1; $force > $int*$forceP; $int++){
+}
+$people = $int+1;
 
 #---- Answers to the problem -----------------------#
-$ansA = $velF;
+$ansA = $people;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-433.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-Mammoth-Tipping.png", width=>[$width], height=>[$height]) @]*
 
-What would be the final velocity of both the cars immediately after the collision? 
-Assume this is a perfectly inelastic collision. Assume the two cars were travelling towards each other.
-They collide and stick together. Assume that car A has a mass [`m_A = [$massA] kg`] and was heading to the 
-right at [`v_A = [$velA] m/s`]. Car B has a mass [`m_B = [$massB] kg`] and was heading to the left at [`v_B = [$velB] m/s`]
-before the collision.
+You wish to tip a mammoth with mass [`m = [$mass] kg`]. The mammoth has a height of [`h = [$heightM] m`], 
+base length [`c = [$c] m`], and a center of gravity [`h_g = [$heightG] m`] off the ground.
+You and your friends manage to lasso the mammoth around the top of it's head. The lasso point is [`e = [$e] m`] away
+from the mammoth's front leg. If each person can apply 400N into pulling the mammoth, how many people will you need to 
+tip the mammoth? [`\theta = [$ang]^{o}`]. You can assume that the ground is rough and will not allow slipping.
 
-Take to the right to be positive.
-
-[`v_{final} =`] [____]{"$ansA"} [`m/s`]
+[____]{"$ansA"} [`People`]
 
 END_PGML
 
