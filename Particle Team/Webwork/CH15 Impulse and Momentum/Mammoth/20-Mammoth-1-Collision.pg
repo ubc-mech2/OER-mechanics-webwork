@@ -94,7 +94,7 @@ after the collision. Mammoth A has a mass [`m_A = [$massA] kg`] and was heading 
 at [`v_A = [$velA] m/s`]. Mammoth B has a mass [`m_B = [$massB] kg`] and was leading to the
 left at [`v_B = [$velB] m/s`] before the collision.
 
-Take to the right to be positive.
+Assume to the right is positive.
 
 [`v_{final} =`] [____]{"$ansA"} [`m/s`]
 

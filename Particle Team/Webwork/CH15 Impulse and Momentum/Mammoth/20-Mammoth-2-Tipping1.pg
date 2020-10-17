@@ -103,12 +103,12 @@ You wish to move a [`m = [$mass]`] mammoth that is blocking your path. The mammo
 base width of [`b = [$b] m`], and the center of gravity is [`[$heightG] m`] from the ground. 
 The mammtoh is standing on ice. You do not want the mammoth to topple over on top of you and crush you.
 
-a) If you can shove the mammoth at a height [`d = [$d]`] from the ground, 
+[`a)`] If you can shove the mammoth at a height [`d = [$d]`] from the ground, 
 how much force, [`F`], will it take to tip the mammoth?
 
 [`F =`] [____]{"$ansA"} [`N`]
 
-b) If you can produce a maximum of [`[$force] N`] in a shove, are you in danger of 
+[`b)`] If you can produce a maximum of [`[$force] N`] in a shove, are you in danger of 
 tipping the mammoth on top of you? [`(Y/N)`]
 
 answer: [@ $tipAns->menu() @]*  
@@ -119,7 +119,7 @@ ANS($tipAns->cmp);
 
 BEGIN_PGML
 
-c) If you apply 400N, what acceleration will the mammoth have?
+[`c)`] If you apply 400N, what acceleration will the mammoth have?
 
 [`a =`] [____]{"$ansC"} [`m/s^2`]
 
