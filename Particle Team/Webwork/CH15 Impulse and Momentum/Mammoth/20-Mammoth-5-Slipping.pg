@@ -28,11 +28,11 @@
 ## DBchapter(Momentum)
 ## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
-## Author(Jennifer Kirkey)
+## Author(Agnes d'Entremont)
 ## Date(Fall 2020)
 ## Difficulty([Beginner/Intermediate/Advanced])
 ## KEYWORDS('Particle', 'Mammoth')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [17], section [X.X]')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [X.X]')
 
 ########################################################
 
@@ -69,38 +69,27 @@ $imgScale = 0.2;
 
 
 #---- Random variables for this problem --------#
-$heightM = random(3.00,4.25,0.05);
-$heightG = 0.55*$heightM;
-$mass = random(4000,8000,1000);
-$ang = random(25,35,1);
-$forceP = 400;
-$c = 1.5;
-$e = 0.3;
-$rad = $ang*pi/180;
+$u = random(0.7,0.8,0.01);
 
 #---- Formulas to compute answers --------------#
-$force = $mass*9.81*$c/($e*sin($rad)+$heightM*cos($rad));
-for($int = 1; $force > $int*$forceP; $int++){
-}
-$people = $int+1;
+$theta = atan($u);
 
 #---- Answers to the problem -----------------------#
-$ansA = $people;
+$ansA = $theta*180/pi;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-Mammoth-3-Tipping.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-Mammoth-5-Slipping.png", width=>[$width], height=>[$height]) @]*
 
-You wish to tip a mammoth with mass [`m = [$mass] kg`]. The mammoth has a height of [`h = [$heightM] m`], 
-base length [`c = [$c] m`], and a center of gravity [`h_g = [$heightG] m`] off the ground.
-You and your friends manage to lasso the mammoth around the top of it's head. The lasso point is [`e = [$e] m`] away
-from the mammoth's front leg. If each person can apply 400N into pulling the mammoth, how many people will you need to 
-tip the mammoth? [`\theta = [$ang]^{o}`]. You can assume that the ground is rough and will not allow slipping.
+If a mammoth is hung by a strap so that strap is [`0.2 m`] in front of its centre of gravity, G. 
+The strap has a coefficient of friction of [`\mu = [$u]`] with the mammoth.
+If the mammoth is released from rest(horizontal), at what angle from the horizontal will the mammoth 
+start to slide within it's hoist strap?
 
-[____]{"$ansA"} [`People`]
+[`\theta =`] [____]{"$ansA"} [`^{o}`]
 
 END_PGML
 

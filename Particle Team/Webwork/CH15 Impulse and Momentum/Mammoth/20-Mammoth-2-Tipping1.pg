@@ -97,7 +97,7 @@ $ansC = $accel;
 
 BEGIN_PGML	
 
-[@ image( "20-Mammoth-Tipping.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-Mammoth-2-Tipping.png", width=>[$width], height=>[$height]) @]*
 
 You wish to move a [`m = [$mass]`] mammoth that is blocking your path. The mammoth has a height of [`h = [$heightM] m`], 
 base width of [`b = [$b] m`], and the center of gravity is [`[$heightG] m`] from the ground. 
