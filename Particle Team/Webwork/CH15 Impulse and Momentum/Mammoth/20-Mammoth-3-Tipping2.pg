@@ -96,7 +96,7 @@ BEGIN_PGML
 
 You wish to tip a mammoth with mass [`m = [$mass] kg`]. The mammoth has a height of [`h = [$heightM] m`], 
 base length [`c = [$c] m`], and a center of gravity [`h_g = [$heightG] m`] off the ground.
-You and your friends manage to lasso the mammoth around the top of it's head. The lasso point is [`e = [$e] m`] away
+You and your friends manage to lasso the mammoth around the top of its head. The lasso point is [`e = [$e] m`] away
 from the mammoth's front leg. If each person can apply 400N into pulling the mammoth, how many people will you need to 
 tip the mammoth? [`\theta = [$ang]^{o}`]. You can assume that the ground is rough and will not allow slipping.
 
