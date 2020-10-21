@@ -90,9 +90,9 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-JK-455.png", width=>[$width], height=>[$height]) @]*
 
-A car, [`m_c = [$massC] kg`], and van, [`m_v = [$massV] kg`], have a collision in the moddle of an intersection. 
-The car had an inital velocity [`v_c = [$velC] m/s`] int the positive x direction and the van had an initial velocity 
-[`v_v = [$velV] m/s`] in the positive y direction. The collision is completely elastic. 
+A car, [`m_c = [$massC] kg`], and van, [`m_v = [$massV] kg`], have a collision in the middle of an intersection. 
+The car had an inital velocity [`v_c = [$velC] m/s`] in the positive x direction and the van had an initial velocity 
+[`v_v = [$velV] m/s`] in the positive y direction. The collision is completely inelastic as shown. 
 Determine the final velocity of the car and the van after the collision. 
 Give the answer in [`m/s`] and [`^{o}`] above the x-axis. Assume that linear momentum was conserved.
 

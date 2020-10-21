@@ -89,12 +89,12 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-JK-455.png", width=>[$width], height=>[$height]) @]*
 
-A car, [`m_C = [$massA] kg`], and van, [`m_V = [$massB] kg`], have a collision in the moddle of an intersection. 
-The collision is completely elastic and the resulting mass has a trajectory [`\theta = [$ang]^{o}`] above the horizontal 
-axis. What was the initial velocity of the van if the car had been traveling at [`v_A = [$kmA] km/h`] in the positive 
-x direction before the collision? Assume that linear momentum was conserved.
+A car, [`m_C = [$massA] kg`], and van, [`m_V = [$massB] kg`], have a collision in the middle of an intersection. 
+The collision is completely inelastic and the resulting mass has a trajectory [`\theta = [$ang]^{o}`] above the x- 
+axis as shown. What was the initial speed of the van if the car had been traveling at [`v_A = [$kmA] km/h`] in the positive 
+x-direction before the collision? Assume that linear momentum was conserved.
 
-[`v_V =`] [____]{"$ansA"} [`m/s`]
+[`s =`] [____]{"$ansA"} [`m/s`]
 
 END_PGML
 
