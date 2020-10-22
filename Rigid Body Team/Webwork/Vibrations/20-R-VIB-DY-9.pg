@@ -76,7 +76,7 @@ $radius = random(0.5,1.5,0.01);
 
 #---- Formulas to compute answers --------------#
 $inertia = 1/2*$massP*$radius**2;
-$natFreq = sprintf("%0.3f",sqrt($k*$radius**2/($inertia+$radius*$mass)));
+$natFreq = sprintf("%0.3f",sqrt($k*$radius**2/($inertia+$radius**2*$mass)));
 
 #---- Answers to the problem -----------------------#
 $ansA = $k;
@@ -90,8 +90,8 @@ BEGIN_PGML
 
 A window cleaner is hanging over the side of a building with a pulley system and a spring. 
 Due to the soap on the windows, the friction between the window and the machine is negligible. 
-Given that the radius of the pulley is [`[$radius]`] [`m`], the pulley's mass is [`m =`] [`[$massP]`] [`kg`],
-and the cleaner has a mass [`m = `] [`[$mass]`], what is the spring constant if the natural vibration of the pulley is [`[$natFreq]`] [`rad/s`]?
+Given that the radius of the pulley is [`[$radius]`] [`m`], the pulley's mass is [`m_P =`] [`[$massP]`] [`kg`],
+and the cleaner has a mass [`m_C = `] [`[$mass] kg`], what is the spring constant if the natural vibration of the pulley is [`[$natFreq]`] [`rad/s`]?
 
 [`k =`] [____]{"$ansA"} [`N/m`]
 
