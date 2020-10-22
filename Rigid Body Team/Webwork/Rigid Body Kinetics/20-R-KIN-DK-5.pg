@@ -90,7 +90,7 @@ $inertiaP = 1/2*$massP*$radP**2;
 $inertiaC = 1/2*$massC*$radC**2;
 $inertiaH = 1/2*$massH*($radH**2+2*$radHP**2);
 
-$ansA = 2*$inertiaP + $inertiaC - 6*$inertiaH;
+$ansA = 2*$inertiaP + $inertiaC - 12*$inertiaH;
 
 ########################################################;
 #PGML
