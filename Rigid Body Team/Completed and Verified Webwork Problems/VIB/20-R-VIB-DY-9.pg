@@ -89,7 +89,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-9.png", width=>[$width], height=>[$height]) @]*
 
 A window cleaner is hanging over the side of a building with a pulley system and a spring. 
-Due to the soap on the windows, the friction between the window and the machine is negliable. 
+Due to the soap on the windows, the friction between the window and the machine is negligible. 
 Given that the radius of the pulley is [`[$radius]`] [`m`], the pulley's mass is [`m =`] [`[$massP]`] [`kg`],
 and the cleaner has a mass [`m = `] [`[$mass]`], what is the spring constant if the natural vibration of the pulley is [`[$natFreq]`] [`rad/s`]?
 
