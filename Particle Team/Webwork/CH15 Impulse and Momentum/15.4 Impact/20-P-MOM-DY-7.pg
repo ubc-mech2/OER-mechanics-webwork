@@ -28,11 +28,11 @@
 ## DBchapter(Momentum)
 ## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
-## Author(Agnes d'Entremont)
+## Author(Daniel Youm)
 ## Date(Fall 2020)
-## Difficulty([Beginner/Intermediate/Advanced])
-## KEYWORDS('Particle', 'Mammoth')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [X.X]')
+## Difficulty(Intermediate)
+## KEYWORDS('Particle', 'Collision')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.4]')
 
 ########################################################
 
@@ -69,37 +69,45 @@ $imgScale = 0.2;
 
 
 #---- Random variables for this problem --------#
-$u = random(0.7,0.8,0.01);
-$e = random(0.15,0.25,0.01);
-$f = random(1,1.5,0.1);
-$mass = random(5000,5500,1);
-$kg = random(2.5,3.5,0.1);
+$velA = 2;
+$velB = 3;
+$rad = 30;
+$e = 0.4;
 
 #---- Formulas to compute answers --------------#
-$Ig = $mass*$kg**2;
-$Ic = $Ig + $mass*sqrt($f**2+$e**2);
-$a = (1 - ($f**2*$mass-$u*$e*$f*$mass)/($Ig+$e**2*$mass+$f**2*$mass) + ($mass*$e**2+$u*$mass*$e*$f)/$Ic);
-$b = -($u - ($f*$e*$mass-$u*$e**2*$mass)/($Ig+$e**2*$mass+$f**2*$mass) - ($mass*$e*$f+$u*$mass*$f**2)/$Ic);
-$c = -2*($mass*$f*$e+$u*$mass*$f**2)/$Ic;
-$theta = acos(c/sqrt($a**2+$b**2))+atan($a/$b);
+$angle = $rad*pi/180;
+$velAx = $velA*cos($angle);
+$velAy = -$velA*sin($angle);
+$velBx = $velB*cos($angle);
+$velBy = $velB*sin($angle);
+$velA2y = ($velAy+$velBy-$e*($velAy-$velBy))/2;
+$velB2y = ($velAy+$velBy)-$velA2y;
+$velA2 = sqrt($velA2y**2+$velAx**2);
+$velB2 = sqrt($velB2y**2+$velBx**2);
+$angA = atan($velA2y/$velAx);
+$angB = atan($velB2y/$velBx);
 
 #---- Answers to the problem -----------------------#
-$ansA = $theta*180/pi;
+$ansAi = $velA2*cos($angA+$rad/180*pi);
+$ansAj = $velA2*sin($angA+$rad/180*pi);
+$ansBi = $velB2*cos($angB+$rad/180*pi);
+$ansBj = $velA2*sin($angB+$rad/180*pi);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-Mammoth-5-Slipping.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-7.png", width=>[$width], height=>[$height]) @]*
 
-If a [`[$mass] kg`] mammoth is hung by a strap so that strap is [`[$e] m`] in front of its centre of gravity, G. 
-Furthermore the bottom of the strap is [`[$f] m`] below the center of gravity, [`G`] and the strap has a coefficient 
-of friction of [`\mu = [$u]`] with the mammoth. The mammoth has a radius of gyration [`k = [$kg] m`]. If the mammoth 
-is released from rest(horizontal), at what angle from the horizontal will the mammoth start to slide within it's 
-hoist strap?
+On an air hockey table, two pucks of identical collide in the middle of the rink. Puck A had an initial velocity 
+[`v_A = [$velA] m/s`] and puck B had an initial velocity [`v_B = [$velB] m/s`] according to the xy-axis shown. 
+The line of impact can be thought of as a line angled [`\theta = [$rad]^{o}`] above the x-axis. 
+If the coefficient of restitution is [`e = [$e]`] between the pucks, what are the velocities of the pucks after the impact?
 
-[`\theta =`] [____]{"$ansA"} [`^{o}`]
+[`v_A =`] [____]{"$ansAi"} [`\hat{i}`] [____]{"$ansAj"} [`\hat{j}`]
+
+[`v_B =`] [____]{"$ansBi"} [`\hat{i}`] [____]{"$ansBj"} [`\hat{j}`]
 
 END_PGML
 
