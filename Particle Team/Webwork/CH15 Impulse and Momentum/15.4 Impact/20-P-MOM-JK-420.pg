@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*866;
+
+$width = $imgScale*2709;
 		#aspect ratio
 
 
@@ -103,7 +107,7 @@ right at a speed of [`v_{B2} = [$velB2] m/s`]. Assume to the right is positive.
 [`B)`] If freight car A and B were in contact for [`t = [$time] s`], what is the average impulsive force 
 that acts between them?
 
-[`Force_{ave} =`] [____]{"$ansB"} [`N`]
+[`F_{ave} =`] [____]{"$ansB"} [`N`]
 
 END_PGML
 

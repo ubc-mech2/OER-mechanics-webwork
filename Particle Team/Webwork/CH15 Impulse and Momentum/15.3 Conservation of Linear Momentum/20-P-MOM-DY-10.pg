@@ -64,7 +64,8 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
 		#aspect ratio
 
 
@@ -94,9 +95,9 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-10.png", width=>[$width], height=>[$height]) @]*
 
-A box slides down a frictionless ramp. The box and the ramp have a mass [`m_b = [$massB] kg`] and [`m_r = [$massR] kg`]
-respectively. Determine the final velocity of the box when it reaches the end of the ramp. The ramp has a height 
-[`h = [$h] m`] and base [`b = [$b] m`].
+A box slides down a frictionless ramp with wheels. The box and the ramp have a mass [`m_b = [$massB] kg`] and [`m_r = [$massR] kg`]
+respectively. If the ramp has a height [`h = [$h] m`] and base [`b = [$b] m`], determine the final velocity of the box when it reaches 
+the end of the ramp.
 
 [`v_b =`] [____]{"$ansI"} [`\hat{i}`] [`+`] [____]{"$ansJ"} [`\hat{j}`] [`m/s`]
 

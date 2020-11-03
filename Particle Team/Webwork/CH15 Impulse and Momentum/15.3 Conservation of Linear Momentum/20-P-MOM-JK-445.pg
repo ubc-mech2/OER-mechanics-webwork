@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1844;
+
+$width = $imgScale*3045;
 		#aspect ratio
 
 
@@ -87,7 +91,7 @@ $ansA = $velB;
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-455.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-JK-445.png", width=>[$width], height=>[$height]) @]*
 
 A car, [`m_C = [$massA] kg`], and van, [`m_V = [$massB] kg`], have a collision in the middle of an intersection. 
 The collision is completely inelastic and the resulting mass has a trajectory [`\theta = [$ang]^{o}`] above the x- 

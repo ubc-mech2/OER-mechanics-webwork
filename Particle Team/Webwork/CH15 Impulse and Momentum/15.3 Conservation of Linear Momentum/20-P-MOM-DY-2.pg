@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1172;
+
+$width = $imgScale*2307;
 		#aspect ratio
 
 
@@ -79,7 +83,7 @@ $vel = random(15,20,1);
 $velC = $massB*$vel/$massC;
 $accel = 9.81*$u;
 $disC = $velC**2/(2*$accel);
-$velT = $massB*$vel/$massT;
+$velT = $massB*$vel/($massT+$massB);
 $disT = $velT**2/(2*$accel);
 
 #---- Answers to the problem -----------------------#
@@ -94,8 +98,8 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-2.png", width=>[$width], height=>[$height]) @]*
 
 A [`m_c = [$massC] kg`] cannon on a block shoots a [`m_b = [$massB] kg`] cannonball at a target. The cannonball travels 
-[`v_b = [$vel] m/s`] and hits the [`m_t = [$massT] kg`] target. Assume the target slides and does not tip over and that 
-the collision is completely elastic. If the target and cannon have a coefficient of friction of [`\mu = [$u]`] with the 
+[`v_b = [$vel] m/s`] and hits the [`m_t = [$massT] kg`] target. As a result of the elastic collision, the target slides backwards and does not tip over. 
+If the target and cannon have a coefficient of friction of [`\mu = [$u]`] with the 
 ground, determine how the distance each of them slide before coming to a stop.
 
 [`d_c =`] [____]{"$ansA"} [`m`]

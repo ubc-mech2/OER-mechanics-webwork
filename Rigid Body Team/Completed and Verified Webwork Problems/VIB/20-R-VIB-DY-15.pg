@@ -78,7 +78,7 @@ $freq = random(2,5,1);
 
 #---- Formulas to compute answers --------------#
 $natFreq = sqrt($k/$mass);
-$intA = $intVel/$natFreq - $constant*$freq/($natFreq-$freq**2/$natFreq);
+$intA = $intVel/$natFreq;
 $intB = $intDis;
 $xP = $constant/(1-($freq/$natFreq)**2);
 
