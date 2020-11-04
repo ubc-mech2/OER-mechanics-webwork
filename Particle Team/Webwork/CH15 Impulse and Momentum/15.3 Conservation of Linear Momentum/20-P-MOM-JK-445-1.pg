@@ -28,7 +28,7 @@
 ## DBchapter(Momentum)
 ## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
-## Author(Jennifer Kirkey)
+## Author(Daniel Youm)
 ## Date(Fall 2020)
 ## Difficulty([Beginner/Intermediate/Advanced])
 ## KEYWORDS('Particle', '')
@@ -66,42 +66,43 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
 
-$height = $imgScale*1358;
+$height = $imgScale*1844;
 
-$width = $imgScale*2439;
+$width = $imgScale*3045;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$massA = random(4,6,1);
-$massB = random(7,9,1);
-$velA = random(4,6,0.5);
-$h = random(1.25,1.75,0.05);
+$massC = random(1500,2000,1);
+$massV = random(2500,4000,1);
+$velC = random(15.1,19.9,0.1);
+$velV = random(10.1,13.9,0.1);
 
 #---- Formulas to compute answers --------------#
-$massT = $massA + $massB;
-$T1 = 1/2*$massA*$velA**2;
-$V1 = $massA*9.81*$h;
-$vel2 = sqrt(2*($T1+$V1)/$massA);
-$speed = $massA*$vel2/($massT);
+$rad = atan(($massV*$velV)/($massC*$velC));
+$velF = sqrt(($massC*$velC)**2+($massV*$velV)**2)/($massC+$massV);
+$ang = $rad*180/pi;
 
 #---- Answers to the problem -----------------------#
-$ansA = $speed;
+$ansA = $velF;
+$ansB = $ang;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-422.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-JK-445-1.png", width=>[$width], height=>[$height]) @]*
 
-The [`[$massA] kg`] block has an initial velocity [`v_A = [$velA] m/s`] as it slides down the smooth ramp. 
-Smooth means it is frictionless. At the bottom it collides with the stationary block B of mass [`m_B = [$massB] kg`]. 
-The height [`h`] shown in the diagram is [`[$height] m`]. This is a perfectly inelastic collision so the two blocks
-couple together after the collision. What is the common speed of the two blocks immediately after the collision?
-The direction is clearly left, so just input the speed.
+A car, [`m_c = [$massC] kg`], and van, [`m_v = [$massV] kg`], have a collision in the middle of an intersection. 
+The car had an inital velocity [`v_c = [$velC] m/s`] in the positive x direction and the van had an initial velocity 
+[`v_v = [$velV] m/s`] in the positive y direction. The collision is completely inelastic as shown and you can 
+assume that linear momentum was conserved. Determine the final velocity of the car and the van after the collision. 
+Give the answer in [`m/s`] and [`^{o}`] above the x-axis.
 
-[`S =`] [____]{"$ansA"} [`m/s`]
+[`v_f =`] [____]{"$ansA"} [`m/s`]
+
+[`\theta =`] [____]{"$ansB"} [`^{o}`]
 
 END_PGML
 

@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1125;
+
+$width = $imgScale*2439;
 		#aspect ratio
 
 
@@ -89,7 +93,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-JK-423.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$k] Nm`] spring is sandwhiched between block A and block B. Block A and Block B have a mass [`m_A = [$massA] kg`] 
+A [`[$k] N/m`] spring is sandwhiched between block A and block B. Block A and Block B have a mass [`m_A = [$massA] kg`] 
 and [`m_B = [$massB] kg`] respectively. If the spring is compressed [`s = [$dist] m`] and then released,
 determine the final velocities of the blocks.
 

@@ -28,7 +28,7 @@
 ## DBchapter(Momentum)
 ## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
-## Author(Jennifer Kirkey)
+## Author(Daniel Youm)
 ## Date(Fall 2020)
 ## Difficulty([Beginner/Intermediate/Advanced])
 ## KEYWORDS('Particle', '')
@@ -66,42 +66,39 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
 
-$height = $imgScale*1358;
+$height = $imgScale*1844;
 
-$width = $imgScale*2439;
+$width = $imgScale*3045;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$massA = random(4,6,1);
-$massB = random(7,9,1);
-$velA = random(4,6,0.5);
-$h = random(1.25,1.75,0.05);
+$ang = random(50.1,60.5,0.1);
+$massA = random(1500,2000,1);
+$massB = random(2501,2999,1);
+$velA = random(12,13.5,0.1);
+$kmA = $velA*3.6;
 
 #---- Formulas to compute answers --------------#
-$massT = $massA + $massB;
-$T1 = 1/2*$massA*$velA**2;
-$V1 = $massA*9.81*$h;
-$vel2 = sqrt(2*($T1+$V1)/$massA);
-$speed = $massA*$vel2/($massT);
+$rad = $ang*pi/180;
+$velB = $massA*$velA*tan($rad)/$massB;
 
 #---- Answers to the problem -----------------------#
-$ansA = $speed;
+$ansA = $velB;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-422.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-JK-445.png", width=>[$width], height=>[$height]) @]*
 
-The [`[$massA] kg`] block has an initial velocity [`v_A = [$velA] m/s`] as it slides down the smooth ramp. 
-Smooth means it is frictionless. At the bottom it collides with the stationary block B of mass [`m_B = [$massB] kg`]. 
-The height [`h`] shown in the diagram is [`[$height] m`]. This is a perfectly inelastic collision so the two blocks
-couple together after the collision. What is the common speed of the two blocks immediately after the collision?
-The direction is clearly left, so just input the speed.
+A car, [`m_C = [$massA] kg`], and van, [`m_V = [$massB] kg`], have a collision in the middle of an intersection. 
+The collision is completely inelastic and the resulting mass has a trajectory [`\theta = [$ang]^{o}`] above the x- 
+axis as shown. What was the initial speed of the van if the car had been traveling at [`v_A = [$kmA] km/h`] in the positive 
+x-direction before the collision? Assume that linear momentum was conserved.
 
-[`S =`] [____]{"$ansA"} [`m/s`]
+[`s =`] [____]{"$ansA"} [`m/s`]
 
 END_PGML
 

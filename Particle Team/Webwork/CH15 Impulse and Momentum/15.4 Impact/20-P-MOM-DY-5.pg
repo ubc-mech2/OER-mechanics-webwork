@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*822;
+
+$width = $imgScale*2765;
 		#aspect ratio
 
 
@@ -92,7 +96,7 @@ BEGIN_PGML
 
 After years of hard work and research, engineers create the world's strongest car and van. To showcase their strength,
 the engineers bounce the vehicles off each other in a head on collision. The [`[$massC] kg`] car and [`[$massV] kg`] 
-van have an initial speed of [`[$velC] m/s`] and [`[$velV] m/s`] respectively. Determine the final velocities if the
+van have an initial speed of [`[$velC1] m/s`] and [`[$velV1] m/s`] respectively. Determine the final velocities if the
 coefficient of restitution is [`e = [$e]`].
 
 [`v_c =`] [____]{"$ansA"} [`m/s`]

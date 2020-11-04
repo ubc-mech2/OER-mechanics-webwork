@@ -30,9 +30,9 @@
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Fall 2020)
-## Difficulty([Beginner/Intermediate/Advanced])
-## KEYWORDS('Particle', '')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [X.X]')
+## Difficulty([Advanced)
+## KEYWORDS('Particle', 'Ramp')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.3]')
 
 ########################################################
 
@@ -64,37 +64,42 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$ang = random(50.1,60.5,0.1);
-$massA = random(1500,2000,1);
-$massB = random(2501,2999,1);
-$velA = random(12,13.5,0.1);
-$kmA = $velA*3.6;
+$massB = random(5,10,1);
+$massR = random(50.60,1);
+$h = random(1.5,2,0.1);
+$b = random(3,3.5,0.1);
 
 #---- Formulas to compute answers --------------#
-$rad = $ang*pi/180;
-$velB = $massA*$velA*tan($rad)/$massB;
+$angle = atan($h/$b);
+$A = ($massR+$massB)/($massB*cos($angle));
+$B = 2*$massB*9.81*$h/$massR+$A**2*2*$massB*9.81*$h/$massR-2*$A*2*$mass*$9.81*$h/$massR*cos($angle);
+$C = (1+$massB/$massR+$A**2*$massB/$massR+2*$A*cos($angle)*$massB/$massR);
+$velB = sqrt($B/$C);
+$velR = sqrt((2*$massB*9.81*$h-$massB*$velB**2)/$massR);
+$velBR = ($massR+$massB)/($massB*cos($angle))*$velR;
 
 #---- Answers to the problem -----------------------#
-$ansA = $velB;
+$ansI = $velR-$velBR*cos($angle);
+$ansJ = -$velBR*sin($angle);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-455.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-10.png", width=>[$width], height=>[$height]) @]*
 
-A car, [`m_C = [$massA] kg`], and van, [`m_V = [$massB] kg`], have a collision in the middle of an intersection. 
-The collision is completely inelastic and the resulting mass has a trajectory [`\theta = [$ang]^{o}`] above the x- 
-axis as shown. What was the initial speed of the van if the car had been traveling at [`v_A = [$kmA] km/h`] in the positive 
-x-direction before the collision? Assume that linear momentum was conserved.
+A box slides down a frictionless ramp with wheels. The box and the ramp have a mass [`m_b = [$massB] kg`] and [`m_r = [$massR] kg`]
+respectively. If the ramp has a height [`h = [$h] m`] and base [`b = [$b] m`], determine the final velocity of the box when it reaches 
+the end of the ramp.
 
-[`s =`] [____]{"$ansA"} [`m/s`]
+[`v_b =`] [____]{"$ansI"} [`\hat{i}`] [`+`] [____]{"$ansJ"} [`\hat{j}`] [`m/s`]
 
 END_PGML
 

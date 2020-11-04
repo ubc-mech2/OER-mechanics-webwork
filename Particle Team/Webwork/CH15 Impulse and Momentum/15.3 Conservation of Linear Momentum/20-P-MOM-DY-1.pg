@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1393;
+
+$width = $imgScale*2089;
 		#aspect ratio
 
 
@@ -74,12 +78,13 @@ $velA2 = random(1,1.5,0.1);
 $angle = random(25,35,1);
 
 #---- Formulas to compute answers --------------#
-$angleB = arctan(($velA2*sin($angle))/($velA1-$velA2*cos($angle)));
-$velB = $velA1*sin($angle)/sin($angleB);
+$rad = $angle/180*pi;
+$angleB = atan(($velA2*sin($rad))/($velA1-$velA2*cos($rad)));
+$velB = $velA2*sin($rad)/sin($angleB);
 
 #---- Answers to the problem -----------------------#
 $ansA = $velB;
-$ansB = $angleB;
+$ansB = $angleB*180/pi;
 
 ########################################################;
 #PGML
@@ -88,9 +93,9 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-1.png", width=>[$width], height=>[$height]) @]*
 
-A pool ball [`A`] is shot at ball [`B`], at a velocity [`v_{A1} = [$velA1] m/s`]. After the collision, 
-ball A is sent off at an angle of [`[$angle]`] from its initial trajectory at a velocity [`v_{A2} = [$velA2]`].
-Determine ball B's velocity and angle off the x-axis. Assume the balls have the same mass.
+A pool ball [`A`] is shot at ball [`B`], at a velocity [`v_{A1} = [$velA1] m/s`]. Both pool ball have the same mass
+After the collision, ball A is sent off at an angle of [`[$angle]^{o}`] from its initial trajectory at a velocity 
+[`v_{A2} = [$velA2] m/s`]. Determine ball B's velocity and angle off the x-axis. Pool ball B was initially at rest.
 
 Take the right to be positive.
 

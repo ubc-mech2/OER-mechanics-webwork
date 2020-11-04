@@ -64,41 +64,34 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$massC = random(1500,2000,1);
-$massV = random(2500,4000,1);
-$velC = random(15.1,19.9,0.1);
-$velV = random(10.1,13.9,0.1);
+$massS = random(100,120,1);
+$massP = random(55,90,1);
+$length = random(1.8,2.2,0.1);
 
 #---- Formulas to compute answers --------------#
-$rad = atan(($massV*$velV)/($massC*$velC));
-$velF = sqrt(($massC*$velC)**2+($massV*$velV)**2)/($massC+$massV);
-$ang = $rad*180/pi;
+$dist = ($length*$massP)/($massP+$massS);
 
 #---- Answers to the problem -----------------------#
-$ansA = $velF;
-$ansB = $ang;
+$ansA = abs($dist);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-455.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-11.png", width=>[$width], height=>[$height]) @]*
 
-A car, [`m_c = [$massC] kg`], and van, [`m_v = [$massV] kg`], have a collision in the middle of an intersection. 
-The car had an inital velocity [`v_c = [$velC] m/s`] in the positive x direction and the van had an initial velocity 
-[`v_v = [$velV] m/s`] in the positive y direction. The collision is completely inelastic as shown. 
-Determine the final velocity of the car and the van after the collision. 
-Give the answer in [`m/s`] and [`^{o}`] above the x-axis. Assume that linear momentum was conserved.
+A large [`m_s = [$massS] kg`] ice sled is in the middle of a frozen lake. A person walks the length of the sled, 
+from one end to the other. The length of the sled is [`l = [$length] m`]. If the person has a mass [`m_p = [$massP] kg`], 
+determine the distance the sled traveled after the movement.
 
-[`v_f =`] [____]{"$ansA"} [`m/s`]
-
-[`\theta =`] [____]{"$ansB"} [`^{o}`]
+[`d =`] [____]{"$ansA"} [`m`]
 
 END_PGML
 
