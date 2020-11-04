@@ -92,7 +92,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-15.png", width=>[$width], height=>[$height]) @]*
 
 A [`m =`] [`[$mass]`] [`kg`] load is hanging from the ceiling via a spring with [`k =`] [`[$k]`] [`N/m`]. Due to the upstairs neighbours, 
-the support moves in a vertical direction according to the function [`\delta =`] [`[$constant]`][`cos`][`[$freq]`][`t`]. Given a initial velocity 
+the support moves in a vertical direction according to the function [`\delta =`] [`[$constant]`][`sin`][`[$freq]`][`t`]. Given an initial velocity 
 [`v =`] [`[$intVel]`] [`m/s`] and initial displacement [`d =`] [`[$intDis]`] [`m`], determine the equation of displacement of the load.
 
 END_PGML

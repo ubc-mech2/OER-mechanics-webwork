@@ -64,9 +64,9 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
-$width = $imgScale*1000*1.5;		#aspect ratio
-$height = $imgScale*1000*1.5;
+$imgScale =0.35;
+$width = $imgScale*1187;		#aspect ratio
+$height = $imgScale*1190;
 
 #---- Random variables for this problem --------#
 $intDis = random(-0.05,-0.2,0.01);
@@ -78,7 +78,7 @@ $freq = random(2,5,1);
 
 #---- Formulas to compute answers --------------#
 $natFreq = sqrt($k/$mass);
-$intA = $intVel/$natFreq - $constant*$freq/($natFreq-$freq**2/$natFreq);
+$intA = $intVel/$natFreq;
 $intB = $intDis;
 $xP = $constant/(1-($freq/$natFreq)**2);
 
@@ -92,7 +92,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-15.png", width=>[$width], height=>[$height]) @]*
 
 A [`m =`] [`[$mass]`] [`kg`] load is hanging from the ceiling via a spring with [`k =`] [`[$k]`] [`N/m`]. Due to the upstairs neighbours, 
-the support moves in a vertical direction according to the function [`\delta =`] [`[$constant]`][`cos`][`[$freq]`][`t`]. Given a initial velocity 
+the support moves in a vertical direction according to the function [`\delta =`] [`[$constant]`][`sin`][`[$freq]`][`t`]. Given an initial velocity 
 [`v =`] [`[$intVel]`] [`m/s`] and initial displacement [`d =`] [`[$intDis]`] [`m`], determine the equation of displacement of the load.
 
 END_PGML
