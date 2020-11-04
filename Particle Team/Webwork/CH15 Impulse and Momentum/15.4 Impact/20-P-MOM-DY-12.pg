@@ -31,8 +31,8 @@
 ## Author(Daniel Youm)
 ## Date(Fall 2020)
 ## Difficulty(Intermediate)
-## KEYWORDS('Particle', 'Box')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.3]')
+## KEYWORDS('Particle', 'Platform')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.4]')
 
 ########################################################
 
@@ -64,42 +64,39 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale =0.35;
-
-$height = $imgScale*1125;
-
-$width = $imgScale*2439;
+$imgScale = 0.2;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$massA = random(10,15,1);
-$massB = random(15,20,1);
-$dist = random(0.15,0.2,0.01);
-$k = random(4000,5000,100);
+$massA = random(3,5,0.1);
+$massB = random(2,2.5,0.1);
+$h = random(1,1.5,0.1);
+$e = random(0.45,0.65,0.01);
 
 #---- Formulas to compute answers --------------#
-$velB = sqrt($k*$dist**2/($massB*($massB/$massA+1)));
-$velA = -($massB*$velB/$massA);
+$velA1 = sqrt(2*$h*9.81);
+$velA2 = ($massA$velA1 - $massB*$e*sqrt(2*9.81*$h))/($massA+$massB);
+$velB2 = $e*sqrt(2*9.81*$h) + $velA2;
 
 #---- Answers to the problem -----------------------#
-$ansA = $velA;
-$ansB = $velB;
+$ansA = $velA2;
+$ansB = $velB2;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-JK-423.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-12.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$k] N/m`] spring is sandwhiched between block A and block B. Block A and Block B have a mass [`m_A = [$massA] kg`] 
-and [`m_B = [$massB] kg`] respectively. If the spring is compressed [`s = [$dist] m`] and then released,
-determine the final velocities of the blocks.
+A shipping package falls onto a platform supported by two springs. The package has a mass [] and the platform []. 
+The springs have a spring constant []. The coefficient of restitution between the package and platform is [].
+If the packages falls from [], determine the velocity of the platform and the box after impact.
 
-[`v_A =`] [____]{"$ansA"} [`m/s`]
+[`v_{Package} =`] [____]{"$ansA"} [`m/s`]
 
-[`v_B =`] [____]{"$ansB"} [`m/s`]
+[`v_{Platform} =`] [____]{"$ansB"} [`m/s`]
 
 END_PGML
 
