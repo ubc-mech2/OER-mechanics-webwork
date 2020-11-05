@@ -90,13 +90,13 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-12.png", width=>[$width], height=>[$height]) @]*
 
-A shipping package falls onto a platform supported by two springs. The package has a mass [] and the platform []. 
-The springs have a spring constant []. The coefficient of restitution between the package and platform is [].
-If the packages falls from [], determine the velocity of the platform and the box after impact.
+A shipping package comes loose from a suction arm and falls onto a platform supported by two springs. 
+The package and platform have a mass of [`m_b = [$massA] kg`] and [`m_p = [$massB] kg`] respectively 
+and the springs have a spring constant of [`k = [$k] N/m`] each. 
+The coefficient of restitution between the package and platform is [`e = [$e]`].
+If the packages falls from [`$h = [$h] m`], determine the velocity of the platform right after impact.
 
 [`v_{Package} =`] [____]{"$ansA"} [`m/s`]
-
-[`v_{Platform} =`] [____]{"$ansB"} [`m/s`]
 
 END_PGML
 

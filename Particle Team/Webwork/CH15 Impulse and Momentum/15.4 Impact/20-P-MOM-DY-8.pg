@@ -96,11 +96,11 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-8.png", width=>[$width], height=>[$height]) @]*
 
-A pendulum is used to hit a [`m_b = [$massB]`] baseball off a tee. The pendulum consists of a [`m_p = [$massP] kg`] 
-mass and a rope. The coefficient of restitution is [`e = [$e]`]. If the mass is lifted to [`h = [$h]`] above the ball, 
-how much energy is lost in the impact?
+A pendulum strikes a [`m_b = [$massB]`] baseball off a tee at the lowest point of the it's swing. 
+The pendulum consists of some rope and a [`m_p = [$massP] kg`] mass, which has the coefficient of restitution [`e = [$e]`] with the baseball. 
+If the mass is lifted to [`h = [$h]`] above the ball, how much energy is lost in the impact?
 
-[`Loss =`] [____]{"$ansA"} [`J`]
+[`E_{loss} =`] [____]{"$ansA"} [`J`]
 
 END_PGML
 

@@ -73,10 +73,10 @@ $width = $imgScale*1726;
 
 
 #---- Random variables for this problem --------#
-$velA = 2;
-$velB = 3;
-$rad = 30;
-$e = 0.4;
+$velA = random(1.5,2,0.1);
+$velB = random(3,3.5,0.1);
+$rad = random(30,35,1);
+$e = random(0.4,0.5,0.01);
 
 #---- Formulas to compute answers --------------#
 $angle = $rad*pi/180;
@@ -104,9 +104,9 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-7.png", width=>[$width], height=>[$height]) @]*
 
-On an air hockey table, two pucks of identical collide in the middle of the rink. Puck A had an initial velocity 
-[`v_A = [$velA] m/s`] and puck B had an initial velocity [`v_B = [$velB] m/s`] according to the xy-axis shown. 
-The line of impact can be thought of as a line angled [`\theta = [$rad]^{o}`] above the x-axis. 
+On an air hockey table, two pucks of identical mass collide in the middle of the rink. Puck A had an initial velocity 
+[`v_A = [$velA] m/s`] and puck B had an initial velocity [`v_B = [$velB] m/s`] according to the x-y axis shown. 
+The plane of contact can be thought of as a line angled [`\theta = [$rad]^{o}`] above the x-axis. 
 If the coefficient of restitution is [`e = [$e]`] between the pucks, what are the velocities of the pucks after the impact?
 
 [`v_A =`] [____]{"$ansAi"} [`\hat{i}`] [` + `] [____]{"$ansAj"} [`\hat{j}`]

@@ -86,10 +86,10 @@ $ansA = $d;
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-DY-.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-13.png", width=>[$width], height=>[$height]) @]*
 
-A tennis ball, of mass [`m = [$mass] kg`], is dropped onto a gym floor. 
-The ball has a coefficient of restitution [`e = [$e]`] with the floor. 
+A tennis ball, of mass [`m = [$mass] kg`], is dropped onto a gym floor,
+which has a coefficient of restitution [`e = [$e]`] with the ball. 
 If the tennis ball bounces up to a height [`h_f = [$h] m`], 
 determine the height from which the ball was dropped.
 
