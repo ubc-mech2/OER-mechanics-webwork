@@ -97,7 +97,7 @@ BEGIN_PGML
 
 The [`[$massA] kg`] block has an initial velocity [`v_A = [$velA] m/s`] as it slides down the smooth ramp. 
 Smooth means it is frictionless. At the bottom it collides with the stationary block B of mass [`m_B = [$massB] kg`]. 
-The height [`h`] shown in the diagram is [`[$height] m`]. This is a perfectly inelastic collision so the two blocks
+The height [`h`] shown in the diagram is [`[$h] m`]. This is a perfectly inelastic collision so the two blocks
 couple together after the collision. What is the common speed of the two blocks immediately after the collision?
 The direction is clearly left, so just input the speed.
 
