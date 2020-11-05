@@ -73,14 +73,14 @@ $width = $imgScale*2338;
 
 
 #---- Random variables for this problem --------#
-$h = random(25,35,5);
+$h = random(5,10,1);
 $massB = random(20,30,1);
 $massP = random(60,80,1);
 
 #---- Formulas to compute answers --------------#
-$vel = sqrt(9.81*($h/2));
+$vel = sqrt(9.81*$h);
 $vel2 = ($massB+$massP*2)*$vel/($massB+$massP);
-$vel3 = sqrt(9.81*($h/2)+$vel2**2);
+$vel3 = sqrt(9.81*$h+$vel2**2);
 
 #---- Answers to the problem -----------------------#
 $ansA = $vel3;
