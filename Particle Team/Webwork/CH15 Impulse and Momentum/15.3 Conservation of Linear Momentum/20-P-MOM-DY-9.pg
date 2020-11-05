@@ -87,9 +87,9 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-9.png", width=>[$width], height=>[$height]) @]*
 
-A container on a freight ship has borken through its straps and slides at a velocity [`v = [$vel] m/s`] relative to the ship.
+A container on a freight ship has broken through its straps and slides at a velocity [`v = [$vel] m/s`] relative to the ship.
 Assuming the ship is initially at rest, determine the final velocity of the ship. The ship's mass is [`m_s = [$massS] t`]
-and the container has a mass [`m_c = [$massC] t`]. [`1 t = [`1000 kg`]].
+and the container has a mass [`m_c = [$massC] t`]. [`1 t = 1000 kg`].
 
 [`v_{ship} =`] [____]{"$ansA"} [`m/s`]
 
