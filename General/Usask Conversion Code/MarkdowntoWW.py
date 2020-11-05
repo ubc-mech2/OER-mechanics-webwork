@@ -17,8 +17,7 @@ import glob, os
  # _ is also a blank
  #if there are variable parameters, do a certain way
  #input file location below
-filelocation=r'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
-
+filelocation=r'C:\Users\ptemm\Downloads\Export-2401a9dd-4c35-488b-bd51-4af373634d6a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90'
 #moving and renaming images
 def imgmove(imgline,imgcount,filename,filetowrite,qtype):
   m = re.search("\/(.*?)\]", imgline)
@@ -31,9 +30,9 @@ def imgmove(imgline,imgcount,filename,filetowrite,qtype):
       imgname=imgname.split('%',1)[0]+'.png'
     else:
       imgname=imgname.split('%',1)[0]+' '+str(imgcount)+'.png'
-  newname=r"C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948"+'\\'+filename+str(imgcount)+'.png'
+  newname=filelocation+'\\'+filename+str(imgcount)+'.png'
   newimgname=filename+str(imgcount)+'.png'
-  originpath=r"C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948"+"\\"+filename+"\\"+imgname
+  originpath=filelocation+"\\"+filename+"\\"+imgname
   try:
     os.rename(originpath,newname)
   except:
@@ -108,8 +107,11 @@ def file_len(file):
   return i + 1  
 
 def translateline(line):
+  #line=line.replace('__','[__]')
   line=re.sub('text{(.)}',r'[`\1`]',line)
   line=line.replace('\cdot','[`\\cdot`]')
+  line=line.replace('left(','')
+  line=line.replace('right)','')
   line=line.replace('$\\','')
   line=line.replace('$','')
   line=line.replace('\\','')
@@ -122,7 +124,8 @@ def translateline(line):
   line=re.sub('hat{(.)}',r'[`\\hat{\1}`]',line)
   line=line.replace('\cos','[`cos`]')
   line=line.replace('\sin','[`sin`]')
-  line=line.replace('\tan','[`tan`]')  
+  line=line.replace('\tan','[`tan`]') 
+  line=re.sub('mathrm{(.)}',r'[`\1`]',line)
   if '_' in line:
     line=re.sub(' (._.) ',r'[`\1`]',line)
   return line
@@ -185,14 +188,20 @@ def Numerical():
           with open(newfile, 'w') as f2:
             #Starting the document
               beginfile(f2,file)
-                          
-                       
-      
+
       #finding variables
       
               searchquery='Variable'
               for i, line in enumerate(lines):
-                  if searchquery in line:
+                if 'Range' in line:
+                    f2.write('random(')
+                    m = re.search("\((.*?)\)", line)
+                    f2.write(m.group(1))
+                    m = re.search("\((.*?)\)", line)
+
+                    f2.write(',1);')
+                    f2.write('\n')                  
+                elif searchquery in line:
                       n=1
                       while 'Answer' not in lines[i+n]:
                           #f2.write('substitueavoid3')
@@ -202,30 +211,21 @@ def Numerical():
                               m=m.replace('[','')
                               m=m.replace(']','')
                               f2.write(m+'=')
-                              if 'Range' in lines[i+n]:
-                                  f2.write('random(')
-                                  m = re.search("\((.*?)\)", lines[i+n])
-                                  f2.write(m.group(1))
-                                  m = re.search("\((.*?)\)", lines[i+n])
-                                                                
-                                  
-                                  f2.write(',1);')
-                                  f2.write('\n')
-                              else:
-                                      line=lines[i+n]
-                                      if ':' in line and '=' in line:
-                                          line=line.split('=',1)[1]
-                                      else:   
-                                          line=line.split(':',1)[1]
-                                      line=line.replace('\\times',r'*')
-                                      line=line.replace('^\\circ',r'*3.141592654/180')
-                                      line=line.replace('\\','')
-                                      
-                                      line=line.replace('$','')
-                                      line=line.replace('[','$')
-                                      line=line.replace(']','')
-                                      f2.write(line.rstrip('\n')+';')
-                                      f2.write('\n')
+                              
+                              line=lines[i+n]
+                              if ':' in line and '=' in line:
+                                  line=line.split('=',1)[1]
+                              else:   
+                                  line=line.split(':',1)[1]
+                              line=line.replace('\\times',r'*')
+                              line=line.replace('^\\circ',r'*3.141592654/180')
+                              line=line.replace('\\','')
+                              
+                              line=line.replace('$','')
+                              line=line.replace('[','$')
+                              line=line.replace(']','')
+                              f2.write(line.rstrip('\n')+';')
+                              f2.write('\n')
                                   
                           f2.write('\n')
                           n=n+1
@@ -253,7 +253,10 @@ def Numerical():
                                     f2.write(';\n')                                    
                                   else:
                                     l=line.split('=',1)[1]
-                                    f2.write(l)
+                                    l=l.replace('$$','')
+                                    l=l.replace('[','$')#could use re.sub
+                                    l=l.replace(']','')
+                                    f2.write(l.rstrip('\n'))
                                     f2.write(';\n')
                                
                               
@@ -319,11 +322,18 @@ def Numerical():
                               #looking for where to input the answers
                               if '\_\_' in lines[i+count]:
                                   line=lines[i+count]
-                                  l=line.split('=',1)[0]
-                                  e=line.split('_\,',1)[1]
-                                  f2.write(l+'='+'[_]{"\$ans'+str(ansnum)+'"}'+e.rstrip('\n')+'\n\n')
-                                  f2.write('$BR\n')
-                                  ansnum=ansnum+1
+                                  counter = line.count('\_\_') 
+                                  while counter>=0:
+                                    #line=re.sub('\$___\$','[____]{"$ans'+str(ansnum)+'"}',line)
+                                    line=re.sub(r'\\_\\_','[____]{"$ans'+str(ansnum)+'"}',line,1)
+                                    counter=counter-1
+                                    ansnum=ansnum+1
+                                  line=translateline(line)
+                                  f2.write(line+'\n')                                   
+                                  #l=line.split('=',1)[0]
+                                  #e=line.split('_\,',1)[1]
+                                  #f#2.write(l+'='+'[_]{"\$ans'+str(ansnum)+'"}'+e.rstrip('\n')+'\n\n')
+                                  ##ansnum=ansnum+1                              
                           
                           
                           
@@ -335,7 +345,7 @@ def Numerical():
                                       line=re.sub('________','[____]{"$ans'+str(ansnum)+'"}',line,1)
                                       counter=counter-1
                                       ansnum=ansnum+1
-                                  line=translateline(line)
+                                  #line=translateline(line)
                                   f2.write(line+'\n')
                                   
                               elif '$_' in lines[i+count]:
@@ -394,9 +404,7 @@ def Numerical():
               
               
 #setUsaskMCQuestions/STATICS-ASV01 01 01 faefa0460d484e039accabc59f8495a0.pg              
-              
-              
-def Multiplechoice():
+def TrueorFalse():
   imgcount=0
   with open(file, 'r', encoding='utf-8') as f:
       f_len=file_len(file)
@@ -455,6 +463,225 @@ def Multiplechoice():
                               f2.write('"'+line.rstrip('\n')+ '",')
                           num=num+1
           else:
+              a=''
+              for i, line in enumerate(lines):
+                  if '- [ ]' in line:
+                    for n in line: 
+                      if n.isalpha():
+                        a=a+n
+                        initial=0
+                      else:
+                        if a!='':
+                          f2.write(a+'",' )
+                          a=''                   
+                    #for n in line:
+                      #while  i+num<f_len:
+                              #written=0
+                              #if '![' not in lines[i+num]:
+                                  #line=lines[i+num]
+                                  #if line[0].isalpha():
+                                      #ans=line[0]+line[1]
+                                      
+                                      #for n, line in enumerate(lines):
+                                          #if 'Question' in line:
+                                              #count=0
+                                              #while 'Answer' not in lines[n+count] and written==0:
+                                                  #if lines[n+count].startswith(ans):
+                                                      #f2.write('\n"'+lines[n+count].rstrip('\n')+ '",')
+                                                      
+                                                      #written=1
+                                                      #break
+                                                  #count=count+1                              
+                              #num=num+1
+                              
+                                
+                                                  
+              
+                                                  
+          f2.write('],')                    
+          searchquery='Good job'
+          searchquery2= 'Well done'
+          if answernum==1:
+            for i, line in enumerate(lines):
+              if 'Answer' in line:
+                count=1
+                while 'eedback' not in lines[i+count]:
+                  if lines[i+count].strip() and not'![' in lines[i+count]:
+                    f2.write('\n"'+lines[i+count].rstrip('\n')+ '");')
+                    break
+                  count=count+1
+            else:
+              for i, line in enumerate(lines):
+                  if searchquery in line or searchquery2 in line or 'Correct' in line:
+                      ans=line[0]+line[1]
+                      for i, line in enumerate(lines):
+                          if 'Answer' in line:
+                              count=0
+                              while 'eedback' not in lines[i+count]:
+                                  if ans in lines[i+count]:
+                                      f2.write('\n"'+lines[i+count].rstrip('\n')+ '");')
+                                      break
+                                  count=count+1
+              
+    
+                        
+          #PGML and Question
+          f2.write('\n')
+          f2.write('########################################################')
+          f2.write('\n')
+          f2.write('# Not in PGML')
+          f2.write('\n')
+          f2.write('\n')
+          f2.write('BEGIN_TEXT')
+          f2.write('\n$BR\n')
+          f2.write('\n$BR\n')
+          searchquery='# Q'
+          for i, line in enumerate(lines):
+              if searchquery in line:
+                  if answernum>1:
+                      skiptxt='# A'
+                      count=1
+                      skipimg='.png]' #find a way to get image name
+                      while skiptxt not in lines[i+count]:
+                          if '![' in lines[i+count]:
+                            imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
+                            #m = re.search("\/(.*?)\]", lines[i+count])                        
+                          else: 
+                              f2.write(lines[i+count])
+                          count=count+1
+                  else:
+                      skiptxt='a)'
+                      count=1
+                      skipimg='.png]' #find a way to get image name
+                      while  '# Answer' not in lines[i+count]:
+                          if '![' in lines[i+count]:
+                            imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
+                            #m = re.search("\/(.*?)\]", lines[i+count])                        
+                          elif skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and '- [ ]' not in lines[i+count]: 
+                              f2.write(lines[i+count])
+                          count=count+1                        
+                      
+          if Answerimg==1:
+              for i, line in enumerate(lines):
+                  if 'Answer' in line:
+                      num=1
+                      while 'eedback' not in lines[i+num]:
+                          if '![' in lines[i+num]:
+                            imgcount=imgmove(lines[i+num],imgcount,file,f2,'mc')
+                            #m = re.search("\/(.*?)\]", lines[i+num])
+                            #f2.write('\n$BR\n')
+                            #f2.write('\{ image("'+ m.group(1) +'" , width=>400, height=>400,tex_size=>700, extra_html_tags=>'+"'alt=")
+                            count=1
+                            n=i+num
+                            while 'Answer' not in lines[n-count]:
+                                if lines[n-count].strip():
+                                    l=lines[n-count]
+                                    anstext=l[0]+l[1]
+                                    f2.write(anstext+'\n'+anstext+"\n\n$BR\n$BR")
+                                    break
+                                count=count+1
+                          num=num+1
+                              
+ 
+              
+         
+          f2.write('\n')
+          f2.write('\n$BR')
+          f2.write('\n$BR\n')
+          f2.write('\{$mc1->buttons()\}')
+          f2.write('\n \n \n \n')
+          f2.write('END_TEXT \n \nANS( $mc1->cmp() );')
+          searchquery='_ '
+          for i, line in enumerate(lines):
+              if searchquery in line:
+                      f2.write(line)
+          f2.write('\n')
+          f2.write('ENDDOCUMENT();')
+          
+
+
+  #replacing variables
+  with open(newfile, 'r') as f:
+      ln = f.readlines()
+      data=''
+      for i, line in enumerate(ln):      
+        line=mctranslate(line)
+        data=data+line
+
+  with open(newfile, 'w') as f:
+      f.write(data)               
+              
+def Multiplechoice():
+  f_len=file_len(file)
+  imgcount=0
+  with open(file, 'r', encoding="utf-8") as f:
+      f_len=file_len(file)
+      with open(newfile, 'w', encoding="utf-8") as f2:
+
+                      #Starting the document
+          beginfile(f2,file)
+
+
+
+                    #check if images are a part of the answer
+          Answerimg=0
+          Qimg=0
+          for num, line in enumerate(lines):
+              if 'Answer' in line and '###' not in line:
+                  count=1
+                  while 'eedback' not in lines[num+count]:
+                      if '.png' in lines[num+count]:
+                          Answerimg=1
+                      count=count+1
+                     
+               #check if images are a part of the answer
+          for i, line in enumerate(lines):
+              if 'Question' in line:
+                  count=1
+                  while 'Answer' not in lines[i+count]:
+                      if '.png' in lines[i+count]:
+                          Qimg=1
+                      count=count+1
+                      
+           
+                      
+                   
+
+          #MC answers if image is outside the answer choices
+          searchquery='Answer'
+          f2.write('$mc1 = RadioButtons([\n')
+          for i, line in enumerate(lines):
+                  if 'Answer' in line and '###' not in line:
+                      num=1
+                      answernum=3
+                      while 'eedback' not in lines[i+num]:
+                          if lines[i+num].strip() and '![' not in lines[i+num]:
+                              line=lines[i+num]
+                              ans=line[0]+line[1]
+                              for n, line in enumerate(lines):
+                                if '# Question' in line:
+                                  number=1
+                                  while 'Answer' not in lines[n+number]:
+                                    #print(line)
+                                    if ans in lines[n+number]:
+                                      answernum=0
+                                    number=number+1
+                              #answernum=answernum+1
+                              print(answernum)
+                          num=num+1
+                          
+                      
+                      
+          if answernum>1:
+              for i, line in enumerate(lines):
+                  if 'Answer' in line and '###' not in line:
+                      num=1
+                      while 'eedback' not in lines[i+num]:
+                          if lines[i+num].strip() and '![' not in lines[i+num]:
+                              line=lines[i+num]
+                              f2.write('"'+line.rstrip('\n')+ '",')
+                          num=num+1
+          else:
               ans=''
               for i, line in enumerate(lines):
                   if 'Feedback' in line:
@@ -481,12 +708,12 @@ def Multiplechoice():
                                 
                                                   
               
-                                                  
-          f2.write('],')                    
-          searchquery='Good job'
+                                   
+          f2.write('],') 
+          searchquery='Good'
           searchquery2= 'Well done'
           for i, line in enumerate(lines):
-              if searchquery in line or searchquery2 in line or 'Correct' in line:
+              if searchquery in line or searchquery2 in line or 'Correct' in line or 'Good' in line:
                   ans=line[0]+line[1]
                   for i, line in enumerate(lines):
                       if 'Answer' in line:
@@ -518,21 +745,23 @@ def Multiplechoice():
           for i, line in enumerate(lines):
               if searchquery in line:
                   if answernum>1:
+                      print('aaaaaa')
                       skiptxt='# A'
                       count=1
                       skipimg='.png]' #find a way to get image name
-                      while skiptxt not in lines[i+count]:
+                      while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and 'a)' not in lines[i+count]:
+                          print(count)
                           if '![' in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
-                          else: 
+                          elif lines[i+count].strip: 
                               f2.write(lines[i+count])
                           count=count+1
                   else:
                       skiptxt='a)'
                       count=1
-                      skipimg='.png]' #find a way to get image name
-                      while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and '# Answers:' not in lines[i+count]:
+                      #skipimg='.png]' #find a way to get image name
+                      while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and '# Answer' not in lines[i+count]:
                           if '![' in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
@@ -544,22 +773,28 @@ def Multiplechoice():
               for i, line in enumerate(lines):
                   if 'Answer' in line:
                       num=1
-                      while 'eedback' not in lines[i+num]:
-                          if '![' in lines[i+num]:
-                            imgcount=imgmove(lines[i+num],imgcount,file,f2,'mc')
-                            #m = re.search("\/(.*?)\]", lines[i+num])
-                            #f2.write('\n$BR\n')
-                            #f2.write('\{ image("'+ m.group(1) +'" , width=>400, height=>400,tex_size=>700, extra_html_tags=>'+"'alt=")
-                            count=1
-                            n=i+num
-                            while 'Answer' not in lines[n-count]:
-                                if lines[n-count].strip():
-                                    l=lines[n-count]
-                                    anstext=l[0]+l[1]
-                                    f2.write(anstext+'\n'+anstext+"\n\n$BR\n$BR")
-                                    break
-                                count=count+1
-                          num=num+1
+                      try:
+                        while 'eedback' not in lines[i+num] and i+num<f_len:
+                            print(lines[i+num])
+                            if '![' in lines[i+num]:
+                              imgcount=imgmove(lines[i+num],imgcount,file,f2,'mc')
+                              #f2.write('tex_size=>700, extra_html_tags=>'+"'alt=")                            
+                              #m = re.search("\/(.*?)\]", lines[i+num])
+                              #f2.write('\n$BR\n')
+                              count=1
+                              n=i+num
+                              while 'Answer' not in lines[n-count]:
+                                  if lines[n-count].strip():
+                                      l=lines[n-count]
+                                      anstext=l[0]+l[1]
+                                      f2.write(anstext+'\n'+anstext+"\n\n$BR\n$BR")
+                                      break
+                                  count=count+1
+                              if 'eedback' in lines[i+num]:
+                                break
+                            num=num+1
+                      except:
+                          continue
                               
                           
                       
@@ -601,6 +836,7 @@ def Multiplechoice():
               
               
 def Multipleanswer():
+  imgcount=0
   with open(file, 'r', encoding='utf-8') as f:
       with open(newfile, 'w') as f2:
           lines = f.readlines()
@@ -762,13 +998,13 @@ def Multipleanswer():
                       while 'Answer' not in lines[i+num]:
                           if '![' in lines[i+num]:
                               #m = re.search("\/(.*?)\]", lines[i+num])
-                              imgcount=imgmove(lines[i+num],imgcount,file,f2,mc)
+                              imgcount=imgmove(lines[i+num],imgcount,file,f2,'mc')
                               f2.write('\n$BR\n')
-                              f2.write('\{ image("'+ m.group(1) +'" , width=>400, height=>400,tex_size=>700, extra_html_tags=>'+"'alt=")
+                              #f2.write('\{ image("'+ m.group(1) +'" , width=>400, height=>400,tex_size=>700, extra_html_tags=>'+"'alt=")
                               count=1
                           num=num+1
                               
-              f2.write('\{ image("'+ imgname +'.png" , width=>400, height=>400)\}')#copy image name
+              #f2.write('\{ image("'+ imgname +'.png" , width=>400, height=>400)\}')#copy image name
               f2.write('\n$BR\n')
               searchquery='# Q'
               for i, line in enumerate(lines):
@@ -873,15 +1109,19 @@ for file in glob.glob("*.md"):
         lines = f.readlines()
         for i, line in enumerate(lines):
             if 'Question Format' in line:
-                  if 'Numerical' in line:
-                      Numerical()
-                  elif 'Multiple Choice' or 'Multiple choice' or 'multiple choice'  in line:
-                      count=0
-                      for i, line in enumerate(lines):
-                            if 'Good job' in line or 'Well done' in line or 'Correct.' in line:
-                                count=count+1
-                      if count>1:
-                            Multipleanswer()
-                      else:
-                            Multiplechoice()
+              if 'Numerical' in line:
+                  Numerical()
+              elif 'Multiple Choice' in line or 'Multiple choice' in line or 'multiple choice'  in line:
+                  count=0
+                  for i, line in enumerate(lines):
+                        if 'Good job' in line or 'Well done' in line or 'Correct.' in line:
+                            count=count+1
+                  if count>1:
+                        Multipleanswer()
+                  else:
+                        Multiplechoice()              
+              elif 'True' in line or 'true' in line:
+                TrueorFalse()
+              else:
+                print(':question format not recognized')
                              
