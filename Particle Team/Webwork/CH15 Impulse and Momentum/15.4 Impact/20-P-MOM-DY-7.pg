@@ -105,13 +105,13 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-7.png", width=>[$width], height=>[$height]) @]*
 
 On an air hockey table, two pucks of identical mass collide in the middle of the rink. Puck A had an initial velocity 
-[`v_A = [$velA] m/s`] and puck B had an initial velocity [`v_B = [$velB] m/s`] according to the x-y axis shown. 
+[`v_A = [$velA]\hat{i}`] [`m/s`] and puck B had an initial velocity [`v_B = [$velB]\hat{j}`] [`m/s`] according to the x-y axis shown. 
 The plane of contact can be thought of as a line angled [`\theta = [$rad]^{o}`] above the x-axis. 
 If the coefficient of restitution is [`e = [$e]`] between the pucks, what are the velocities of the pucks after the impact?
 
-[`v_A =`] [____]{"$ansAi"} [`\hat{i}`] [` + `] [____]{"$ansAj"} [`\hat{j}`] [` 	m/s`]
+[`v_A =`] [____]{"$ansAi"} [`\hat{i}`] [` + `] [____]{"$ansAj"} [`\hat{j}`] [`   `] [`m/s`]
 
-[`v_B =`] [____]{"$ansBi"} [`\hat{i}`] [` + `] [____]{"$ansBj"} [`\hat{j}`] [` 	m/s`]
+[`v_B =`] [____]{"$ansBi"} [`\hat{i}`] [` + `] [____]{"$ansBj"} [`\hat{j}`] [`   `][`m/s`]
 
 END_PGML
 
