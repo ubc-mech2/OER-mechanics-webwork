@@ -93,7 +93,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-JK-423.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$k] N/m`] spring is sandwhiched between block A and block B. Block A and Block B have a mass [`m_A = [$massA] kg`] 
+A [`[$k] N/m`] spring is sandwhiched between block A and block B. Block A and block B have a mass [`m_A = [$massA] kg`] 
 and [`m_B = [$massB] kg`] respectively. If the spring is compressed [`s = [$dist] m`] and then released,
 determine the final velocities of the blocks.
 

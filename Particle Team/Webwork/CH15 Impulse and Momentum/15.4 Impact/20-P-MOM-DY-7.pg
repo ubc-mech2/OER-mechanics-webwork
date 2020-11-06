@@ -109,9 +109,9 @@ On an air hockey table, two pucks of identical mass collide in the middle of the
 The plane of contact can be thought of as a line angled [`\theta = [$rad]^{o}`] above the x-axis. 
 If the coefficient of restitution is [`e = [$e]`] between the pucks, what are the velocities of the pucks after the impact?
 
-[`v_A =`] [____]{"$ansAi"} [`\hat{i}`] [` + `] [____]{"$ansAj"} [`\hat{j}`]
+[`v_A =`] [____]{"$ansAi"} [`\hat{i}`] [` + `] [____]{"$ansAj"} [`\hat{j}`] [` 	m/s`]
 
-[`v_B =`] [____]{"$ansBi"} [`\hat{i}`] [` + `] [____]{"$ansBj"} [`\hat{j}`]
+[`v_B =`] [____]{"$ansBi"} [`\hat{i}`] [` + `] [____]{"$ansBj"} [`\hat{j}`] [` 	m/s`]
 
 END_PGML
 

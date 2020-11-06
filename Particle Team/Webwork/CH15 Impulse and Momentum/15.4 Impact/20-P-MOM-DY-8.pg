@@ -97,7 +97,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-8.png", width=>[$width], height=>[$height]) @]*
 
 A pendulum strikes a [`m_b = [$massB]`] baseball off a tee at the lowest point of the its swing. 
-The pendulum consists of some rope and a [`m_p = [$massP] kg`] mass, which has the coefficient of restitution [`e = [$e]`] with the baseball. 
+The pendulum consists of some rope and a [`m_p = [$massP] kg`] mass, which has a coefficient of restitution of [`e = [$e]`] with the baseball. 
 If the mass is lifted to [`h = [$h]`] above the ball, how much energy is lost in the impact?
 
 [`E_{loss} =`] [____]{"$ansA"} [`J`]
