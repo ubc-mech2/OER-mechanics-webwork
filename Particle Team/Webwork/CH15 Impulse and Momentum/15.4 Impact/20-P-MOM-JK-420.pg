@@ -81,7 +81,7 @@ $velB = random(1.5,2.5,0.1);
 $velB2 = random(2.5,3,0.1);
 
 #---- Formulas to compute answers --------------#
-$velA2 = (-$massA*$velA+$massB*$velB+$massB*$velB2)/$massA;
+$velA2 = ($massA*$velA-$massB*$velB-$massB*$velB2)/$massA;
 $fAve = ($massB*($velB+$velB2))/($time);
 
 #---- Answers to the problem -----------------------#
@@ -104,7 +104,7 @@ right at a speed of [`v_{B2} = [$velB2] m/s`]. Assume to the right is positive.
 
 [`v_{A2} =`] [____]{"$ansA"} [`m/s`]
 
-[`B)`] If freight car A and B were in contact for [`t = [$time] s`], what is the average impulsive force 
+[`B)`] If freight car A and B were in contact for [`t = [$time] s`], what is the magnitude of the average impulsive force 
 that acts between them?
 
 [`F_{ave} =`] [____]{"$ansB"} [`N`]
