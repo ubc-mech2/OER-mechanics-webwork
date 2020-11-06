@@ -93,7 +93,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-3.png", width=>[$width], height=>[$height]) @]*
 
 Two people are on a two seater bicycle and go rolling down a [`h = [$h] m`] hill. Halfway down the hill, 
-one of the passengers falls off the bike. Determine the velocity of the bike at the bottom of the hill 
+one of the passengers falls off the bike with a velocity of [`0 m/s`]. Determine the velocity of the bike at the bottom of the hill 
 if the bike has a mass [`m_b = [$massB] kg`] and each passenger has a mass [`m_p = [$massP] kg`]. Ignore
 air resistance.
 
