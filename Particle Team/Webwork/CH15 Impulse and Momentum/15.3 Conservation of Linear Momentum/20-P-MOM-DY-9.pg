@@ -79,7 +79,8 @@ $massC = random(4,6,0.1);
 $vel = random(2.5,3.5,0.1);
 
 #---- Formulas to compute answers --------------#
-$velS = $vel/(1+$massC/$massS);
+$velC = $vel/(1+$massC/$massS);
+$velS = $velC - $vel;
 
 #---- Answers to the problem -----------------------#
 $ansA = $velS;
