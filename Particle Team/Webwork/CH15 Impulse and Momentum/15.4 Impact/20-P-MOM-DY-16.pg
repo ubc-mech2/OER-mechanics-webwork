@@ -30,9 +30,9 @@
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Fall 2020)
-## Difficulty(Intermediate)
-## KEYWORDS('Particle', 'Platform')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.4]')
+## Difficulty([Beginner/Intermediate/Advanced])
+## KEYWORDS('Particle', '')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [X.X]')
 
 ########################################################
 
@@ -64,44 +64,38 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale =0.35;
-
-$height = $imgScale*2026;
-
-$width = $imgScale*1526;
+$imgScale = 0.2;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$massA = random(3,5,0.1);
-$massB = random(2,2.5,0.1);
-$h = random(1,1.5,0.1);
-$e = random(0.45,0.65,0.01);
-$k = random(50,100,1);
+$velA = -random(3,3.2,0.1):
+$velB = random(2,2.5,0.1):
+$massA = random(4,6,1):
+$massB = random(8,12,1):
+$theta = random(60,70,1):
+$e = random(0.5,0.6,0.01):
 
 #---- Formulas to compute answers --------------#
-$velA1 = sqrt(2*$h*9.81);
-$velA2 = ($massA*$velA1 - $massB*$e*sqrt(2*9.81*$h))/($massA+$massB);
-$velB2 = $e*sqrt(2*9.81*$h) + $velA2;
+
 
 #---- Answers to the problem -----------------------#
-$ansA = $velA2;
-$ansB = $velB2;
+$ansA = ;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-DY-12.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-.png", width=>[$width], height=>[$height]) @]*
 
-A shipping package comes loose from a suction arm and falls onto a platform supported by two springs. 
-The package and platform have a mass of [`m_b = [$massA] kg`] and [`m_p = [$massB] kg`] respectively 
-and the springs have a spring constant of [`k = [$k] N/m`] each. 
-The coefficient of restitution between the package and platform is [`e = [$e]`].
-If the packages falls from [`h = [$h] m`], determine the velocity of the package right after impact.
+Two disks, A and B, collide on a frictionless surface. A and B have a mass of [`m_A = [$massA] kg`] and [`m_B = [$massA] kg`] 
+and velocity [`v_A = [$velA]`] [`\hat{j}`] [`m/s`] and [`v_B = [$velB]`] [`\hat{j}`] [`m/s`] respectively. The line of impact can be thought of as a line
+angled [`\theta = [$theta]^{o}`] below the x-axis. Determine the final speeds of A & B if the coefficient of restitution [`e = [$e]`].
 
-[`v_{Package} =`] [____]{"$ansA"} [`m/s`]
+[`s_A =`] [____]{"$ansA"} [`m/s`]
+
+[`s_B =`] [____]{"$ansB"} [`m/s`]
 
 END_PGML
 
