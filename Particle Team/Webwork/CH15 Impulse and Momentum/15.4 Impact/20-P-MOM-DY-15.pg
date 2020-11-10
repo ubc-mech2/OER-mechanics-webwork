@@ -30,9 +30,9 @@
 ## Institution('University of British Columbia')
 ## Author(Daniel Youm)
 ## Date(Fall 2020)
-## Difficulty([Beginner/Intermediate/Advanced])
-## KEYWORDS('Particle', '')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [X.X]')
+## Difficulty(Advanced)
+## KEYWORDS('Particle', 'rail')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [15], section [15.4]')
 
 ########################################################
 
@@ -66,46 +66,48 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
 
-$height = $imgScale*1874;
+$height = $imgScale*2314;
 
-$width = $imgScale*1747;
+$width = $imgScale*1827;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$velA = -random(3,3.2,0.1);
-$velB = random(2,2.5,0.1);
-$massA = random(4,6,1);
-$massB = random(8,12,1);
-$theta = random(60,70,1);
-$e = random(0.5,0.6,0.01);
+$k = random(20,25,1);
+$mass = random(1,2,0.1);
+$d = random(0.2,0.4,0.1);
+$e = random(0.5,0.7,0.01);
+$time = random(0.1,0.3,0.01);
 
 
 #---- Formulas to compute answers --------------#
-$rad = (90-$theta)*pi/180;
-$velA2j = ($massA*$velA*cos($rad)+$massB*$velB*cos($rad)-$e*$massB*($velA-$velB)*cos($rad))/($massA*$massB);
-$velB2j = $velA2j+$e*($velA-$velB)*cos($rad);
-$velA2i = $velA*sin($rad);
-$velB2i = $velB*sin($rad);
+$vel = sqrt($k*3*$d**2/$mass);
+$velA2 = $vel*(1-$e)/2;
+$velB2 = $vel*$e+$velA2;
+$forceAve = ($mass*$velB2-$mass*$vel)/$time;
 
 #---- Answers to the problem -----------------------#
-$ansA = sqrt($velA2j**2 + $velA2i**2);
-$ansB = sqrt($velB2j**2 + $velB2i**2);
+$ansA = $velA2;
+$ansB = $velB2;
+$ansC = abs($forceAve);
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-P-MOM-DY-16.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-DY-15.png", width=>[$width], height=>[$height]) @]*
 
-Two disks, A and B, collide on a frictionless surface. A and B have a mass of [`m_A = [$massA] kg`] and [`m_B = [$massA] kg`] 
-and velocity [`v_A = [$velA]`] [`\hat{j}`] [`m/s`] and [`v_B = [$velB]`] [`\hat{j}`] [`m/s`] respectively. The line of impact can be thought of as a line
-angled [`\theta = [$theta]^{o}`] below the x-axis. Determine the final speeds of A & B if the coefficient of restitution [`e = [$e]`].
+A collar on a frictionless rail is connected to a spring with spring constant [`k = [$k] N/m`]. The collar moves from 
+point A to B as shown and impacts a free collar, which is at rest. The impact between the two objects lasts [`t = [$time] s`].
+Both collars have an identical mass of [`m = [$mass] kg`] and a coefficient of restituion [`e = [$e]`] between each other.
+If [`d = [$d] m`], determine the speeds of the collars after impact and the magnitude of the average impact force on collar B.
 
 [`s_A =`] [____]{"$ansA"} [`m/s`]
 
 [`s_B =`] [____]{"$ansB"} [`m/s`]
+
+[`|F_{ave}| =`] [____]{"$ansC"} [`N`]
 
 END_PGML
 
