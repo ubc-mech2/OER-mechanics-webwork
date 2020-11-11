@@ -92,7 +92,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-13.png", width=>[$width], height=>[$height]) @]*
 
-A tennis ball, of mass [`m = [$mass] kg`], is dropped onto a gym floor,
+A tennis ball, of mass [`m = [$mass] kg`], is dropped from rest onto a gym floor,
 which has a coefficient of restitution [`e = [$e]`] with the ball. 
 If the tennis ball bounces up to a height [`h_f = [$h] m`], 
 determine the height from which the ball was dropped.
