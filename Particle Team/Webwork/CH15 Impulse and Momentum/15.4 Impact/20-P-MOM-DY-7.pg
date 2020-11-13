@@ -95,7 +95,7 @@ $angB = atan($velB2y/$velBx);
 $ansAi = $velA2*cos($angA+$rad/180*pi);
 $ansAj = $velA2*sin($angA+$rad/180*pi);
 $ansBi = $velB2*cos($angB+$rad/180*pi);
-$ansBj = $velA2*sin($angB+$rad/180*pi);
+$ansBj = $velB2*sin($angB+$rad/180*pi);
 
 ########################################################;
 #PGML
