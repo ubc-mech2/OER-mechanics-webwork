@@ -87,16 +87,16 @@ $h = $vel1y*$time-0.5*9.81*$time**2;
 $vel2y = $vel1y-9.81*$time;
 $vel2 = sqrt($vel2y**2+$vel1x**2);
 $ang = atan($vel2y/$vel1x)*180/pi;
-$vel2i = $vel2*sin((90-$phi-$ang)*pi/180);
-$vel2j = $vel2*cos((90-$phi-$ang)*pi/180);
+$vel2i = $vel2*sin((90-$phi+$ang)*pi/180);
+$vel2j = -$vel2*cos((90-$phi+$ang)*pi/180);
 $vel3j = -$e*$vel2j;
 $ang2 = atan($vel2i/$vel3j)*180/pi;
-$angFloor = 15+$ang2;
+$angFloor = 90-$phi+$ang2;
 $vel3 = sqrt($vel3j**2+$vel2i**2);
-$vel3x = -$vel3*cos($angFloor);
-$vel3y = $vel3*sin($angFloor);
+$vel3x = -$vel3*cos($angFloor*pi/180);
+$vel3y = $vel3*sin($angFloor*pi/180);
 $a = 0.5*9.81;
-$b = -$vel3y;
+$b = $vel3y;
 $c = -$h;
 $time2 = (-$b+sqrt($b**2-4*$a*$c))/(2*$a);
 $s = $d + $vel3x*$time2;
@@ -116,7 +116,7 @@ The ball leaves the ground with [`v_b = [$vel] m/s`] at [`\theta = [$theta]^{o}`
 [`d = [$d] m`] away from the kickoff spot. If the coefficient of restitution between the wall and ball is [`e = [$e]`], 
 how far away from the kickoff spot, [`s`], does the ball hit the ground.
 
-[`s =`] [____]{"$ansA"} [`m`]
+[`s =`] [____]{"$ansA"} [`m`]
 
 END_PGML
 
