@@ -96,7 +96,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-6.png", width=>[$width], height=>[$height]) @]*
 
 A tennis ball bounces off the floor and then the wall. The ball has a coefficient of restitution [`e = [$e]`]
-with the floor and the wall. The inital velocity of the ball is [`v_o = [$velInt] m/s`] at [`[$angle]^{o}`] 
+with the floor and the wall. The inital velocity of the ball is [`v_i = [$velInt] m/s`] at [`[$angle]^{o}`] 
 below the horizontal axis. Determine the magnitude of the final velocity and angle with respect to the wall.
 
 [`|v_f| =`] [____]{"$ansA"} [`m/s`]

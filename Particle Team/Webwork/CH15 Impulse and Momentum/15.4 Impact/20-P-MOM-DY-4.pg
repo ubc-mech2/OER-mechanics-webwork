@@ -92,7 +92,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-4.png", width=>[$width], height=>[$height]) @]*
 
 Two blocks are sliding towards each other on a frictionless floor. The speeds of block A and B were
-[`[$velA1] m/s`] and [`[$velB1] m/s`] before the impact. After the impact, the speeds of block A and B are 
+[`[$velA1] m/s`] and [`[$velB1] m/s`] respectively before the impact. After the impact, the speeds of block A and B are 
 [`[$velA2] m/s`] and [`[$velB2] m/s`] respectively. Determine the coefficient of restitution, [`e`], 
 between block A and B. 
 

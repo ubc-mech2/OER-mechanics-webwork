@@ -98,9 +98,9 @@ BEGIN_PGML
 A shipping package comes loose from a suction arm at rest and falls from [`h = [$h] m`] onto a platform supported by 
 two springs. The package and platform have a mass of [`m_b = [$massA] kg`] and [`m_p = [$massB] kg`] respectively 
 and the springs have a spring constant of [`k = [$k] N/m`] each. If the coefficient of restitution between the package 
-and platform is [`e = [$e]`], determine the speed of the package right after impact.
+and platform is [`e = [$e]`], determine the magnitude of velocity of the package right after impact.
 
-[`s_{Package} =`] [____]{"$ansA"} [`m/s`]
+[`|v_{Package}| =`] [____]{"$ansA"} [`m/s`]
 
 END_PGML
 

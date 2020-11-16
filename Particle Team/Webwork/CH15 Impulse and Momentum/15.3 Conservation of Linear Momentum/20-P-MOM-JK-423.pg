@@ -93,9 +93,9 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-JK-423.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$k] N/m`] spring is sandwiched between block A and block B. Block A and block B have a mass [`m_A = [$massA] kg`] 
-and [`m_B = [$massB] kg`] respectively. If the spring is compressed [`s = [$dist] m`] and then released,
-determine the final velocities of the blocks. Assume to the right is positive.
+A [`[$k] N/m`] spring is held in place between block A and block B and compressed. Block A and block B have a mass 
+[`m_A = [$massA] kg`] and [`m_B = [$massB] kg`] respectively. If the spring is compressed [`s = [$dist] m`] and then 
+released, determine the final velocities of the blocks. Assume to the right is positive.
 
 [`v_A =`] [____]{"$ansA"} [`m/s`]
 

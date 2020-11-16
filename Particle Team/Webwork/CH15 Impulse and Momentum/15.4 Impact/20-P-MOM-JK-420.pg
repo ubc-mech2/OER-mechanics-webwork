@@ -96,8 +96,8 @@ BEGIN_PGML
 [@ image( "20-P-MOM-JK-420.png", width=>[$width], height=>[$height]) @]*
 
 Two railroad freight cars collide and then separate. Freight car A has a mass [`m_A = [$massA] kg`] 
-and initial velocity [`v_A = [$velA] m/s`] to the right. Freight car B has a mass [`m_B = [$massB] kg`] 
-and initial velocity [`v_B = [$velB] m/s`] to the left. After the collision, freight car B moves to the 
+and initial velocity [`v_{A1} = [$velA] m/s`] to the right. Freight car B has a mass [`m_B = [$massB] kg`] 
+and initial velocity [`v_{B1} = [$velB] m/s`] to the left. After the collision, freight car B moves to the 
 right at a speed of [`v_{B2} = [$velB2] m/s`]. Assume to the right is positive.
 
 [`A)`] What is the final velocity of freight car A?
