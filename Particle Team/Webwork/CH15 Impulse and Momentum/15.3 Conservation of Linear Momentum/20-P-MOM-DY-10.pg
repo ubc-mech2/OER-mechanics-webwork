@@ -66,9 +66,9 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
 
-$height = $imgScale*1326;
+$height = $imgScale*1348;
 
-$width = $imgScale*2044;
+$width = $imgScale*1992;
 
 		#aspect ratio
 

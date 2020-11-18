@@ -66,9 +66,10 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
 
-$height = $imgScale*2314;
+$height = $imgScale*2226;
 
-$width = $imgScale*1827;
+$width = $imgScale*1498;
+
 		#aspect ratio
 
 
@@ -84,7 +85,7 @@ $time = random(0.1,0.3,0.01);
 $vel = sqrt($k*3*$d**2/$mass);
 $velA2 = $vel*(1-$e)/2;
 $velB2 = $vel*$e+$velA2;
-$forceAve = ($mass*$velB2-$mass*$vel)/$time;
+$forceAve = ($mass*$velB2)/$time;
 
 #---- Answers to the problem -----------------------#
 $ansA = $velA2;
@@ -98,14 +99,12 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-15.png", width=>[$width], height=>[$height]) @]*
 
-A collar on a frictionless rail is connected to a spring with spring constant [`k = [$k] N/m`]. The collar moves from 
-point A to B as shown and impacts a free collar, which is at rest. The impact between the two objects lasts [`t = [$time] s`].
-Both collars have an identical mass of [`m = [$mass] kg`] and a coefficient of restituion [`e = [$e]`] between each other.
-If [`d = [$d] m`], determine the magnitude of velocities of the collars after impact and the magnitude of the average impact force on collar B.
+A collar on a frictionless rail is connected to a spring with spring constant [`k = [$k] N/m`]. The collar slides from 
+point [`A`] to [`B`] as shown and impacts a free collar, which is at rest. The impact between the two objects lasts [`t = [$time] s`]
+and both collars have an identical mass of [`m = [$mass] kg`]. The coefficient of restituion is [`e = [$e]`] between the two collars.
+If [`d = [$d] m`], determine the magnitude of final velocity of the free collar and the magnitude of the average impact force on the collar.
 
-[`|v_A| =`] [____]{"$ansA"} [`m/s`]
-
-[`|v_B| =`] [____]{"$ansB"} [`m/s`]
+[`|v_f| =`] [____]{"$ansB"} [`m/s`]
 
 [`|F_{ave}| =`] [____]{"$ansC"} [`N`]
 
