@@ -101,7 +101,7 @@ BEGIN_PGML
 
 Two disks, A and B, collide on a frictionless surface. A and B have a mass of [`m_A = [$massA] kg`] and [`m_B = [$massB] kg`] 
 and velocity [`v_A = [$velA]`] [`\hat{j}`] [`m/s`] and [`v_B = [$velB]`] [`\hat{j}`] [`m/s`] respectively. The line of impact can be thought of as a line
-angled [`\theta = [$theta]^{o}`] below the x-axis. Determine the magnitude of the final velocities of [`A`] & [`B`] if the coefficient of restitution [`e = [$e]`].
+angled [`\theta = [$theta]^{o}`] below the x-axis. Determine the magnitude of the final velocities of [`A`] & [`B`] if the coefficient of restitution is [`e = [$e]`].
 
 [`|v_A| =`] [____]{"$ansA"} [`m/s`]
 
