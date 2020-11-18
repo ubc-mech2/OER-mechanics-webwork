@@ -3,26 +3,20 @@ import glob, os
 import re
 
 import zipfile
-os.chdir(r"C:\Users\ptemm\Downloads\Oct 22 Notion Exports\Oct 22 Notion Exports\Multiple Choice")
+filelocation=r'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
+os.chdir(filelocation)
 filename=[]
 count=1
-for file in glob.glob("*.zip"):
-    with zipfile.ZipFile(file, 'r') as zip_ref:
-        zip_ref.extractall(r'C:\Users\ptemm\OneDrive\Testing2')
+problemcount=0;
+problemset=''
+setcount=0
+for file in glob.glob("*.png"):
+  filename=file.replace(' ','')
+  newname=filelocation+'\\'+filename
+  newimgname=filename+'.png'
+  originpath=filelocation+"\\"+file
+  os.rename(originpath,newname)
 
-print('\\')
-imgline='![STATICS-MPA03%2001%2004%20(Combined)%20a9d6c642c3cb4f6baf82164ce81c5744/Untitled%203.png](STATICS-MPA03%2001%2004%20(Combined)%20a9d6c642c3cb4f6baf82164ce81c5744/Untitled%203.png)'
-m = re.search("\/(.*?)\.", imgline)
-imgname=m.group(1)
-print(imgname)
-print(m.group(1))
-if '%' in imgname:
-    print('ok')
-    delete=0
-    #m = re.search('(?<=\%)\w+', imgname)
-   # print(m.group(1))
-    imgname=imgname.split('%',1)[0]
-    print(imgname)
 
 
 

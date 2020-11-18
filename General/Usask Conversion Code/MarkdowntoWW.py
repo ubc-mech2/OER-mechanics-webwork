@@ -17,7 +17,7 @@ import glob, os
  # _ is also a blank
  #if there are variable parameters, do a certain way
  #input file location below
-filelocation=r'C:\Users\ptemm\OneDrive\Testing2\Completed and Ready to Upload'
+filelocation=r'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
 #moving and renaming images
 def imgmove(imgline,imgcount,filename,filetowrite,qtype):
   m = re.search("\/(.*?)\]", imgline)
@@ -32,6 +32,7 @@ def imgmove(imgline,imgcount,filename,filetowrite,qtype):
       imgname=imgname.split('%',1)[0]+' '+str(imgcount)+'.png'
   newname=filelocation+'\\'+filename+str(imgcount)+'.png'
   newimgname=filename+str(imgcount)+'.png'
+  newimgname=newimgname.replace(' ','')
   originpath=filelocation+"\\"+filename+"\\"+imgname
   try:
     os.rename(originpath,newname)
@@ -129,8 +130,9 @@ def translateline(line):
   line=line.replace('phi','[`\\phi`]')
   line=re.sub('mathrm{(.)}',r'[`\1`]',line)
   line=re.sub('\$(.)\$',r'$\1*$',line)
-  line=line.replace('ans','$ans')
+  line=re.sub('ans(\d)',r'$ans\1',line)#re.sub
   line=line.replace('$answer','answer')
+  line=re.sub('vec{(.*?)}',r'[`\\vec{\1}`]',line)
   if '_' in line:
     line=re.sub(' (._.) ',r'[`\1`]',line)
   return line
@@ -157,6 +159,7 @@ def mctranslate(data):
   data=data.replace('**','')
   data=data.replace('\cdot','\(\cdot\)')
   data=data.replace('\\\\\\','')
+  data=re.sub('mathrm{(.)}',r'\\(mathr',data)
   
   x='alpha\\'
 
@@ -258,7 +261,7 @@ def Numerical():
                       count=1
                       ansnum=0
                       while 'eedback' not in lines[i+count]:
-                          if '=' in lines[i+count]:
+                          if '=' in lines[i+count] and 'hat' not in lines[i+count]:
                               line=lines[i+count]
                               if line.startswith('$$') or line.startswith('['):
                                   f2.write('$ans'+str(ansnum) +'=')
@@ -278,6 +281,25 @@ def Numerical():
                                     l=re.sub('tan(.*?)\]',r'tan(\1*pi/180)',l) 
                                     l=l.replace(']$','*$')
                                     l=l.replace(']','')
+                                    l=l.replace('^','**')
+                                    l=re.sub('sqrt{(.*?)}',r'sqrt(\1)',l)
+                                    l=l.replace('{','')
+                                    l=l.replace('}','')
+                                    l=l.replace('[','$')
+                                    l=l.replace(']','')
+                                    l=l.replace('frac','')
+                                    l=l.replace('overrightarrow','')
+                                    l=l.replace('|','')
+                                    l=l.replace('\\','')
+                                    l=l.replace('right','')
+                                    l=l.replace('left','')
+                                    l=l.replace('alpha','')
+                                    l=l.replace('beta','')
+                                    l=l.replace('gamma','')
+                                    #l=re.sub('\w{3,}',r'',l)
+                                    
+                                    
+                                    
                                     #l=re.sub('\$(.)\$',r'$\1*$',line)
                                     f2.write(l.rstrip('\n'))
                                     f2.write(';\n')
@@ -300,31 +322,35 @@ def Numerical():
                                     f2.write(';\n')
                               
                           else:
+                            if '=' in lines[i+count]:
                               line=lines[i+count]
-                              a=''
-                              initial=0
-                              for n in line: 
-                                  if n.isdigit() or n=='-':
-                                      a=a+n
-                                      initial=0
-                                  elif n.isalpha() and n.isupper():
-                                      if initial==0:
-                                          m='$'
-                                          a=a+m
-                                          initial=1
-                                      a=a+n
-                                      if initial==1 and '$' not in a:
-                                          m='$'
-                                          a=m+a
-                                          initial=1                                        
-                                  
-                                  elif n==',' or n=='$' or not n.isalpha() or not n.isupper():
-                                      if a!='':
-                                          f2.write('$ans'+str(ansnum) +'='+a+';\n')
-                                          a=''
-                                          ansnum=ansnum+1
-                                          intial=0
-                         
+                              line=line.split('=')[1]
+                            else:
+                              line=lines[i+count]
+                            a=''
+                            initial=0
+                            for n in line: 
+                                if n.isdigit() or n=='-':
+                                    a=a+n
+                                    initial=0
+                                elif n.isalpha() and n.isupper():
+                                    if initial==0:
+                                        m='$'
+                                        a=a+m
+                                        initial=1
+                                    a=a+n
+                                    if initial==1 and '$' not in a:
+                                        m='$'
+                                        a=m+a
+                                        initial=1                                        
+                                
+                                elif n==',' or n=='$' or not n.isalpha() or not n.isupper():
+                                    if a!='':
+                                        f2.write('$ans'+str(ansnum) +'='+a+';\n')
+                                        a=''
+                                        ansnum=ansnum+1
+                                        intial=0
+                       
                                   
                           count=count+1
                       
@@ -348,6 +374,8 @@ def Numerical():
                       ansnum=0
                       while 'ariable' not in lines[i+count] and 'Answer' not in lines[i+count] and 'Range' not in lines[i+count]:
                           data=''
+                          if 'Express' in lines[i+count]:
+                            print(lines[i+count])
                           #m = re.search("\[(.*?)\]", lines[i+count]) #add for loop to print text
                           #print(m.group(1))
                           if lines[i+count].strip():
@@ -382,6 +410,17 @@ def Numerical():
                                   line=translateline(line)
                                   f2.write(line+'\n')
                                   
+                              elif '__$' in lines[i+count]:
+                                line=lines[i+count]
+                                counter = line.count('__$')
+                                blanks=1
+                                while counter>=0:
+                                    line=re.sub('__\$','[____]{"$ans'+str(ansnum)+'"}',line,1)
+                                    counter=counter-1
+                                    ansnum=ansnum+1
+                                line=translateline(line)
+                                f2.write(line+'\n')                                
+                                  
                               elif '$_' in lines[i+count]:
                                   line=lines[i+count]
                                   blanks=1
@@ -393,18 +432,9 @@ def Numerical():
                                   line=translateline(line)
                                   f2.write(line+'\n')
                                   
-                              elif '__$' in lines[i+count]:
-                                line=lines[i+count]
-                                counter = line.count('__$')
-                                blanks=1
-                                while counter>=0:
-                                    line=re.sub('__\$','[____]{"$ans'+str(ansnum)+'"}',line,1)
-                                    counter=counter-1
-                                    ansnum=ansnum+1
-                                line=translateline(line)
-                                f2.write(line+'\n')   
+                             
                                 
-                              elif '__' in lines[i+count]:
+                              elif '__'  or '__' in lines[i+count]:
                                 line=lines[i+count]
                                 counter = line.count('__')
                                 blanks=1
@@ -412,7 +442,7 @@ def Numerical():
                                     line=re.sub('__','[____]{"$ans'+str(ansnum)+'"}',line,1)
                                     counter=counter-1
                                     ansnum=ansnum+1
-                                #line=translateline(line)
+                                line=translateline(line)
                                 f2.write(line+'\n')                                   
                                   
                                   
@@ -426,7 +456,7 @@ def Numerical():
                                     line=re.sub(' _','[____]{"$ans'+str(ansnum)+'"}',line,1)
                                     counter=counter-1
                                     ansnum=ansnum+1
-                                #line=translateline(line)
+                                line=translateline(line)
                                 f2.write(line+'\n')                                 
                                 
                               elif '.png' in lines[i+count]:
@@ -434,15 +464,20 @@ def Numerical():
                                   #m = re.search("\/(.*?)\]", line)
                                   #f2.write(m.group(1))
                                   imgcount=imgmove(lines[i+count],imgcount,file,f2,'n')
-                                  f2.write('\n$BR\n')
+                                  #f2.write('\n$BR\n')
                          
                               elif 'Range' not in lines[i+count]:    
-                                  data=data+lines[i+count]
+                                  data=lines[i+count]
+                                  
                                   #data=data.replace('[','a7')
                                   #data=data.replace(']','a8')
                                   data=translateline(data)
+                                  if 'Express' in data:
+                                    print(data)                                  
                                   f2.write(data+'\n')
                           count=count+1
+                          
+                          
               if blanks==0:
                 while anscount>0:
                   f2.write('[____]{"$ans'+str(ansnum)+'"}\n')
@@ -529,7 +564,7 @@ def TrueorFalse():
                         initial=0
                       else:
                         if a!='':
-                          f2.write(a+'",' )
+                          f2.write('"'+a+'",' )
                           a=''                   
                     #for n in line:
                       #while  i+num<f_len:
@@ -582,7 +617,7 @@ def TrueorFalse():
               
     
                         
-          #PGML and Question
+          #TEXT and Question
           f2.write('\n')
           f2.write('########################################################')
           f2.write('\n')
@@ -706,14 +741,14 @@ def Multiplechoice():
                    
 
           #Multiple choice answers and buttons
-          searchquery='Answer'
           f2.write('$mc1 = RadioButtons([\n')
           #finding location of answer
           for i, line in enumerate(lines):
                   if 'Answer' in line and '###' not in line:
                       num=1
                       answernum=3
-                      while 'eedback' not in lines[i+num]:
+                      number=0
+                      while 'eedback' not in lines[i+num] and number==0:
                           if lines[i+num].strip() and '![' not in lines[i+num]:
                               line=lines[i+num]
                               ans=line[0]+line[1]
@@ -804,12 +839,12 @@ def Multiplechoice():
           for i, line in enumerate(lines):
               if searchquery in line:
                   if answernum>1:
-                      print('aaaaaa')
+                      #print('aaaaaa')
                       skiptxt='# A'
                       count=1
                       skipimg='.png]' #find a way to get image name
                       while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and 'a)' not in lines[i+count]:
-                          print(count)
+                          #print(count)
                           if '![' in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
@@ -865,18 +900,13 @@ def Multiplechoice():
               
               
          
-          f2.write('\n')
-          f2.write('\n$BR')
-          f2.write('\n$BR\n')
-          f2.write('\{$mc1->buttons()\}')
-          f2.write('\n \n \n \n')
-          f2.write('END_TEXT \n \nANS( $mc1->cmp() );')
-          searchquery='_ '
-          for i, line in enumerate(lines):
-              if searchquery in line:
-                      f2.write(line)
-          f2.write('\n')
-          f2.write('ENDDOCUMENT();')
+          f2.write('\n\n$BR\n$BR\n\{$mc1->buttons()\}\n \n \n \nEND_TEXT \n \nANS( $mc1->cmp() );\nENDDOCUMENT();')
+  
+          #searchquery='_ '
+          #for i, line in enumerate(lines):
+              #if searchquery in line:
+                      #f2.write(line)
+         
           
 
 
@@ -1166,7 +1196,7 @@ for file in glob.glob("*.md"):
     imgcount=0
     newfile=file.rstrip('.md')+'.pg'
     newfile=newfile.replace(' ','')
-    print(newfile)
+    #print(newfile)
     if problemcount<10:
       problemset=problemset+ 'setUsaskMCQuestions/'+newfile+ ', 0 \n'
       problemcount=problemcount+1;
@@ -1195,8 +1225,10 @@ for file in glob.glob("*.md"):
                   if count>1:
                         Multipleanswer()
                   else:
+                        print('MultipleChoice')
                         Multiplechoice()              
               elif 'True' in line or 'true' in line:
+                print('Torf')
                 TrueorFalse()
               else:
                 print(':question format not recognized')
