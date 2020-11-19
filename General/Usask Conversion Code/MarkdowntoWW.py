@@ -10,14 +10,13 @@ import os
 import shutil
 import glob, os
 
-#This script converts Markdown into Webwork Questions
+#This script converts Markdown Format into Webwork Question format
 #
  
- # \_ is a blank
- # _ is also a blank
- #if there are variable parameters, do a certain way
+ 
  #input file location below
-filelocation=r'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
+filelocation=r'C:\Users\ptemm\OneDrive\Testing2'
+#'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
 #moving and renaming images
 def imgmove(imgline,imgcount,filename,filetowrite,qtype):
   m = re.search("\/(.*?)\]", imgline)
@@ -148,9 +147,10 @@ def mctranslate(data):
   data=data.replace(',]', ']')
   data=data.replace('$', '')
   #specifcally search within line for string
-  data=data.replace('vec','hbc')
-  data=data.replace('\hbc{', '\( '+'\hbc{')
-  data=data.replace('hbc','vec')
+  data=re.sub('vec{(.*?)}',r'(\\vec{(\1)}\\)',data)
+  #data=data.replace('vec','hbc')
+  #data=data.replace('\hbc{', '\( '+'\hbc{')
+  #data=data.replace('hbc','vec')
   #data=data.replace('}=', '} \)='
   data=re.sub('hat{(.)}',r'(\\hat{\1}\\)',data)
   data=data.replace('mc', '$mc')
@@ -159,7 +159,10 @@ def mctranslate(data):
   data=data.replace('**','')
   data=data.replace('\cdot','\(\cdot\)')
   data=data.replace('\\\\\\','')
-  data=re.sub('mathrm{(.)}',r'\\(mathr',data)
+  data=re.sub('mathrm{(.)}',r'\1',data)
+  data=data.replace('\\sum',r'\(\sum\)')
+  data=data.replace('\;\;','')
+  
   
   x='alpha\\'
 
@@ -273,7 +276,7 @@ def Numerical():
                                   else:
                                     l=line.split('=',1)[1]
                                     l=l.replace('$$','')
-                                    l=l.replace('\\','/')
+                                    l=l.replace('\\','')
                                                                       
                                     l=l.replace('[','$')#could use re.sub
                                     l=re.sub('cos(.*?)\]',r'cos(\1*pi/180)',l)
@@ -434,7 +437,7 @@ def Numerical():
                                   
                              
                                 
-                              elif '__'  or '__' in lines[i+count]:
+                              elif '__' in lines[i+count] or '__' in lines[i+count]:
                                 line=lines[i+count]
                                 counter = line.count('__')
                                 blanks=1
@@ -468,6 +471,7 @@ def Numerical():
                          
                               elif 'Range' not in lines[i+count]:    
                                   data=lines[i+count]
+                                  print(data)
                                   
                                   #data=data.replace('[','a7')
                                   #data=data.replace(']','a8')
