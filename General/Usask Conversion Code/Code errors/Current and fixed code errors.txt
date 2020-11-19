@@ -41,3 +41,24 @@ extra check
 
 STATICS-PSE110101113001dc475b4e31a18d604a546ccb3a.pg
 formatting issue
+
+
+STATICS-CVF090101a25606ca87f343b6a772f4826c1c1f70.pg
+$ans0=5.92$ or$\sqrt{35}$;
+
+STATICS-CVF090801ca3c21ea99fa4eaaa2cb0060394f6102.pg
+
+
+STATICS-PSE01010452e35e799e8a450c93e903d467839865.pg
+combining numerical with mc
+
+STATICS-PSE0301035aa3a91b26df4902b7bd8e7f2e9f9842.pg
+
+STATICS-PSE0402012fdef1f4284140c6995ae85e6c85645c.pg
+
+usaskmc28
+source file does not exist
+
+STATICS-PSE060201210155d7d85445bcbd30dbcc9d4a138b.pg
+no answer
+
