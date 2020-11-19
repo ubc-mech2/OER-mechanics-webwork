@@ -1,0 +1,34 @@
+USASKMC41
+4) PG Error
+
+PG warning messages
+
+------
+---- PGML (eval 5108) 1351 ------
+==================
+Errors parsing PGML:
+'_' was not closed before paragraph ends
+'_' was not closed before paragraph ends
+==================
+
+
+USASKMC45
+7) Error
+
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-VDP0701010e4b62fd7050410fa0a648431ce6ae0.pg
+****************
+ERRORS from evaluating PG file: 
+ Search pattern not terminated at line 61 of (eval 9851)
+
+
+USASKMC49
+9) PG Error
+
+PG warning messages
+
+------
+---- PGML (eval 8615) 1351 ------
+==================
+Errors parsing PGML:
+'__' was not closed before paragraph ends
+==================
