@@ -1,0 +1,43 @@
+-setUsaskMCQuestions/STATICS-ASV060202f4c3186497264b4080693cbdece49dc5.pg
+setUsaskMCQuestions/STATICS-ASV0601049244a10a01d048ac8cf4e597c901293c.pg
+STATICS-CVF010301894a35d9a5bd48a6a90430ef8e6c66c9.pg
+STATICS-MPA0502014bcc182b16c74c98973d681546c2f9c0.pg
+
+---------------------------------------------------------
+STATICS-CVF0601010197111142264b80bf14923f37093e36.pg
+need to create a way to add variable changes from the problem to the question
+
+*fixed:STATICS-CVF030602c61cc12362a4498e9d64ae7f7a26f93c.pg
+mc buttons not working
+
+*fixed:STATICS-CVF03060379691cc1f5b14f509774628e3085f654.pg
+multiple issues( answers not showing, not included in equations
+
+*fixed:setUsaskMCQuestions/STATICS-CVF020303d70cd36c681f4fb198c489ffb98e0a0c.pg
+Additional line printed after answers in mc format
+
+
+***add condition for ranges and variables in problems
+
+setUsaskMCQuestions/STATICS-ASV080209a2b8286760f145be93d5ec769ac79e09.pg
+ Invalid [] range "S-A" in regex; marked by <-- HERE in m/qquad C_y=1;
+
+setUsaskMCQuestions/STATICS-CVF01010194ed976cb581480e81160aea61635443.pg
+images dont show up, and text is not reflecting it properly
+
+
+STATICS-CVF030101be82aea2f3844a35aa9a2b6f80d0e9c5.pg
+fix the error on answers for vec v
+
+
+STATICS-CVF040101b9bb38f04cb24e5fabf69d3afa5632e1.pg
+/sqrt->sqrt
+add answers and blanks
+
+
+STATICS-CVF040101b9bb38f04cb24e5fabf69d3afa5632e1.pg
+extra check
+
+
+STATICS-PSE110101113001dc475b4e31a18d604a546ccb3a.pg
+formatting issue
