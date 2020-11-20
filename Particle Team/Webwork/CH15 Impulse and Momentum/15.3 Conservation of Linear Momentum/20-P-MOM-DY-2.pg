@@ -99,9 +99,9 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-2.png", width=>[$width], height=>[$height]) @]*
 
 A [`m_c = [$massC] kg`] cannon on a block shoots a [`m_b = [$massB] kg`] cannonball at a target. The cannonball travels 
-[`v_b = [$vel] m/s`] and hits the [`m_t = [$massT] kg`] target. As a result of the inelastic collision (e=0), the target slides backwards and does not tip over. 
+at [`v_b = [$vel] m/s`] and hits the [`m_t = [$massT] kg`] target. As a result of the inelastic collision (e=0), the target slides backwards and does not tip over. 
 If the target and cannon have a coefficient of friction of [`\mu = [$u]`] with the 
-ground, determine how the distance each of them slide before coming to a stop.
+ground, determine how the distance the cannon and target slide before coming to a stop.
 
 [`d_c =`] [____]{"$ansA"} [`m`]
 
