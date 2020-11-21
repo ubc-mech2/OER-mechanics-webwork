@@ -15,7 +15,7 @@ import glob, os
  
  
  #input file location below
-filelocation=r'C:\Users\ptemm\OneDrive\Testing2'
+filelocation=r'C:\Users\ptemm\Downloads\Module 1\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
 #'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
 #moving and renaming images
 def imgmove(imgline,imgcount,filename,filetowrite,qtype):
@@ -803,7 +803,7 @@ def Multiplechoice():
                     #check if images are a part of the answer
           Answerimg=0
           Qimg=0
-          for num, line in enumerate(lines):
+          for i, line in enumerate(lines):
             if 'Variable' in line:
               print('11111111111111111111111111111111')
               count=0
@@ -1312,7 +1312,7 @@ for file in glob.glob("*.md"):
     newfile=file.rstrip('.md')+'.pg'
     newfile=newfile.replace(' ','')
     #print(newfile)
-    if problemcount<10:
+    if problemcount<100:
       problemset=problemset+ 'setUsaskMCQuestions/'+newfile+ ', 0 \n'
       problemcount=problemcount+1;
     else:
@@ -1328,6 +1328,7 @@ for file in glob.glob("*.md"):
     #copying comments
     with open(file, 'r', encoding='utf-8') as f:
         lines = f.readlines()
+        torf=0
         for i, line in enumerate(lines):
             if 'Question Format' in line:
               if 'Numerical' in line:
@@ -1335,10 +1336,15 @@ for file in glob.glob("*.md"):
               elif 'Multiple Choice' in line or 'Multiple choice' in line or 'multiple choice'  in line:
                   count=0
                   for i, line in enumerate(lines):
+                        if '- [ ]  Yes' in line:
+                          torf=1
                         if 'Good job' in line or 'Well done' in line or 'Correct.' in line:
                             count=count+1
                   if count>1:
                         Multipleanswer()
+                  elif torf==1:
+                    print('Torf')
+                    TrueorFalse()                    
                   else:
                         print('MultipleChoice')
                         Multiplechoice()              
