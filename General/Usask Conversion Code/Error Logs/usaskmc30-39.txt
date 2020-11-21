@@ -1,0 +1,104 @@
+USASKMC30
+1) minor error - for options a,b,c,d it displays the letter twice. Ex. a. a. , b. b.
+
+8) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-PSE070403f7a0514546164426aa3cb6ab650f0a48.pg
+****************
+ERRORS from evaluating PG file: 
+ syntax error at (eval 2347) line 75, at EOF
+  (Might be a runaway multi-line << string starting on line 51)
+
+
+USASKMC31
+No files except for 10
+
+
+USASKMC32
+1) no WW error code, but major formating error
+
+7) no WW error code, but different major formating error
+
+8) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-PSE090302611a0c335b5c4158909cfbccf91184f6.pg
+****************
+ERRORS from evaluating PG file: 
+ The correct choice must be one of the button values at line 263 of [PG]/macros/parserRadioButtons.pl
+   Died within Value::Error called at line 333 of [PG]/macros/parserRadioButtons.pl
+   from within parserRadioButtons::getCorrectChoice called at line 263 of [PG]/macros/parserRadioButtons.pl
+   from within parserRadioButtons::new called at line 2 of (eval 2600)
+   from within main::RadioButtons called at line 46 of (eval 2347)
+
+
+USASKMC33
+No files
+
+
+
+USASKMC34
+1) Sum sign not displaying correctly
+
+2) sigma and \overrightarrow{} not showing correctly
+
+
+USASKMC35
+1) textbox not showing correctly, 
+"The force along the strut directed from point A to point B is _____________."
+
+\mathrm{kg} not displaying correctly
+
+error on option B 
+<BR/><BR/><label><INPUTTYPE=RADIONAME="AnSwEr0001"id="AnSwEr0001"aria−label="answer1option1"VALUE="B0">a)318kg</label><BR/><label><INPUTTYPE=RADIONAME="AnSwEr0001"id="AnSwEr0001"aria−label="answer1option1"VALUE="B1">b)318  mathr
+
+2)formatting error
+F=600\;\mathr. The spring AC has a spring constant \(k_{AC}=20\;\mathrm{N/m}.
+
+4) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-PSE1303017b0251426b374232bb9aab25d682c056.pg
+****************
+ERRORS from evaluating PG file: 
+ syntax error at (eval 9594) line 80, at EOF
+  (Might be a runaway multi-line << string starting on line 52)
+
+10) Formatting error
+F1 =100\;\mathrandthesecondropeispullingwithaforce\(F2=150\;\mathr.
+
+
+USASKMC36
+1) Formatting error
+\text{cos}^{-1}(\frac{C}{AB})
+
+4) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-VDP0104018341ddba2dc241bea823420d793c4d94.pg
+****************
+ERRORS from evaluating PG file: 
+ syntax error at (eval 3391) line 66, at EOF
+  (Might be a runaway multi-line << string starting on line 51)
+
+5) Formatting error
+d. [A]cos(90^\circ-[B]^\circ)
+
+9) Formatting error - no question description
+
+
+USASKMC37
+2) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-VDP02040149b1c19633ca43928f40b147048aecc8.pg
+****************
+ERRORS from evaluating PG file: 
+ syntax error at (eval 3408) line 66, at EOF
+  (Might be a runaway multi-line << string starting on line 51)
+
+8) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-VDP030101c40b64e5836e4695b1121664f326d2f9.pg
+****************
+ERRORS from evaluating PG file: 
+ syntax error at (eval 3394) line 49, near ""a. Good job. The dot product of two vectors would be positive if the angle between them is acute (\\(\\theta\\)<90^\\circ). The solution to this question is provided below. ")"
+
+
+USASKMC39
+1) Error
+1. ERROR caught by Translator while processing problem file:setUsaskMCQuestions/STATICS-VDP040106c353e3c4de8b4ddcb07af48055d1ddaa.pg
+****************
+ERRORS from evaluating PG file: 
+ syntax error at (eval 4115) line 69, at EOF
+  (Might be a runaway multi-line << string starting on line 51)
