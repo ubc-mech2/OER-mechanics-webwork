@@ -132,6 +132,7 @@ def translateline(line):
   line=re.sub('ans(\d)',r'$ans\1',line)#re.sub
   line=line.replace('$answer','answer')
   line=re.sub('vec{(.*?)}',r'[`\\vec{\1}`]',line)
+  line=line.replace('|','')
   if '_' in line:
     line=re.sub(' (._.) ',r'[`\1`]',line)
   return line
@@ -142,6 +143,11 @@ def mctranslate(data):
     data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data)
     p=re.search(r"begin{vmatrix}(.*?)end{vmatrix}", data)
     data=data.replace(p.group(0),m.group(0))
+  elif 'overrightarrow' in data:
+      m=re.search(r"overrightarrow{(.*?)}", data)
+      data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data,1)
+      p=re.search(r"overrightarrow{(.*?)}", data)
+      data=data.replace(p.group(0),m.group(0))
   else:
     data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data)
   data=data.replace(',]', ']')
@@ -167,12 +173,13 @@ def mctranslate(data):
   x='alpha\\'
 
   data=data.replace( x , '(alpha\)' )
-  o= '(\\\overrightarrow{.}\\\)' 
   
   data=sub('\\\overrightarrow{(.)}_', r'11111111111111{\1}',data)
-  data=sub('\\\overrightarrow{(.)}', r'\(\\overrightarrow{\1}\\)',data)
+  data=sub('\\\overrightarrow{(.*?)}', r'\(\\overrightarrow{\1}\\)',data)
   data=data.replace('\\(\\(\\', r'\(\\')
   data=sub('11111111111111{(.)}', r'\\overrightarrow{\1}_',data)
+  #data=re.sub('overrightarrow{(.*?)}',r'(\\overrightarrow{\1}\)',data)
+  #data=sub('\\((.*?)\\)',r'\1',data)
   data=data.replace('\\)\\)',r'\\)')
   data=sub('\\)_(.)',r'_\1 \\)',data)
   data=data.replace('\\_','_')
@@ -185,6 +192,17 @@ def mctranslate(data):
   data=data.replace('\sin','\(\sin\)')
   data=data.replace('\tan','\(\tan\)')
   data=data.replace('\\theta','\(\\theta\)')
+  data=data.replace('~','')
+  if '\\text' in data:
+    m=re.search(r"\\text{(.*?)}", data)
+    data=data.replace(m.group(0), m.group(1))
+
+  leftbracket=0
+  if 'RadioButtons' not in data and '[' in data:
+    data=data.replace('[','\\($')
+    leftbracket=1
+  if leftbracket==1:
+    data=data.replace(']','\\)')
   #        \begin{vmatrix}B_x&B_y\A_x&A_y\)\\end{vmatrix}
   #\begin{vmatrix}A_x&B_x\\A_y&B_y\\\end{vmatrix}
   #data=re.sub(r'begin{vmatrix}(\.*?)\\',r'test',data)
@@ -275,7 +293,7 @@ def Numerical():
                                     f2.write(';\n')                                    
                                   else:
                                     l=line.split('=',1)[1]
-                                    l=l.replace('$$','')
+                                    l=l.replace('$','')
                                     l=l.replace('\\','')
                                                                       
                                     l=l.replace('[','$')#could use re.sub
@@ -299,6 +317,8 @@ def Numerical():
                                     l=l.replace('alpha','')
                                     l=l.replace('beta','')
                                     l=l.replace('gamma','')
+                                    if 'or' in l:
+                                      l=l.split('or',1)[0]
                                     #l=re.sub('\w{3,}',r'',l)
                                     
                                     
@@ -317,10 +337,32 @@ def Numerical():
                                     f2.write(';\n')                                    
                                   else:
                                     l=line.split('=',1)[1]
-                                    l=l.replace('$$','')
+                                    l=l.replace('$','')
+                                    l=l.replace('\\','')
+                                                                      
                                     l=l.replace('[','$')#could use re.sub
+                                    l=re.sub('cos(.*?)\]',r'cos(\1*pi/180)',l)
+                                    l=re.sub('sin(.*?)\]',r'sin(\1*pi/180)',l)
+                                    l=re.sub('tan(.*?)\]',r'tan(\1*pi/180)',l) 
                                     l=l.replace(']$','*$')
                                     l=l.replace(']','')
+                                    l=l.replace('^','**')
+                                    l=re.sub('sqrt{(.*?)}',r'sqrt(\1)',l)
+                                    l=l.replace('{','')
+                                    l=l.replace('}','')
+                                    l=l.replace('[','$')
+                                    l=l.replace(']','')
+                                    l=l.replace('frac','')
+                                    l=l.replace('overrightarrow','')
+                                    l=l.replace('|','')
+                                    l=l.replace('\\','')
+                                    l=l.replace('right','')
+                                    l=l.replace('left','')
+                                    l=l.replace('alpha','')
+                                    l=l.replace('beta','')
+                                    l=l.replace('gamma','')
+                                    if 'or' in l:
+                                      l=l.split('or',1)[0]
                                     f2.write(l.rstrip('\n'))
                                     f2.write(';\n')
                               
@@ -400,7 +442,18 @@ def Numerical():
                                   ##ansnum=ansnum+1                              
                           
                           
-                          
+                              elif '__________' in lines[i+count]:
+                                blanks=1
+                                line=lines[i+count]
+                                counter = line.count('__________')
+                                while counter>=0:
+                                    #line=re.sub('\$___\$','[____]{"$ans'+str(ansnum)+'"}',line)
+                                    line=re.sub('__________','[____]{"$ans'+str(ansnum)+'"}',line,1)
+                                    counter=counter-1
+                                    ansnum=ansnum+1
+                                line=translateline(line)
+                                f2.write(line+'\n')  
+                                
                               elif '________' in lines[i+count]:
                                   blanks=1
                                   line=lines[i+count]
@@ -523,7 +576,7 @@ def TrueorFalse():
                       count=count+1
                      
                #check if images are a part of the answer
-          for i, line in enumerate(lines):
+          for i, line in enumerate(lines):               
               if 'Question' in line:
                   count=1
                   while 'Answer' not in lines[i+count]:
@@ -534,7 +587,33 @@ def TrueorFalse():
            
                       
                    
-
+          for i, line in enumerate(lines):
+            if 'Variable' in line:
+              count=0
+              while 'Answer' not in lines[i+count]:
+                if 'Range' in lines[i+count]:
+                    l=lines[i+count]
+                    line=lines[i+count]
+                    l=l.split('(', 1 )[0]
+                    l=l.replace('$','')
+                    l=l.replace('[','$')
+                    l=l.replace(']','')
+                    l=l.replace(':','=')
+                    l=l.replace('Range','random(')
+                    f2.write(l)
+                    m = re.search("\((.*?)\)", line)
+                    f2.write(m.group(1))
+                    m = re.search("\((.*?)\)", line)
+                    f2.write(',1);')
+                    f2.write('\n')
+                elif '=' in lines[i+count]:
+                  l=lines[i+count]
+                  l=l.replace('$','')
+                  l=l.replace('[','$')
+                  l=l.replace(']','')
+                  f2.write(l.rstrip('\n')+';\n')                    
+                count=count+1
+                
           #MC answers if image is outside the answer choices
           searchquery='Answer'
           f2.write('$mc1 = RadioButtons([\n')
@@ -638,7 +717,7 @@ def TrueorFalse():
                       skiptxt='# A'
                       count=1
                       skipimg='.png]' #find a way to get image name
-                      while skiptxt not in lines[i+count]:
+                      while skiptxt not in lines[i+count] and 'Variable' not in lines[i+count]:
                           if '![' in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
@@ -649,7 +728,7 @@ def TrueorFalse():
                       skiptxt='a)'
                       count=1
                       skipimg='.png]' #find a way to get image name
-                      while  '# Answer' not in lines[i+count]:
+                      while  '# Answer' not in lines[i+count] and 'Variable' not in lines[i+count]:
                           if '![' in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
@@ -661,7 +740,7 @@ def TrueorFalse():
               for i, line in enumerate(lines):
                   if 'Answer' in line:
                       num=1
-                      while 'eedback' not in lines[i+num]:
+                      while 'eedback' not in lines[i+num] and 'Variable' not in lines[i+count]:
                           if '![' in lines[i+num]:
                             imgcount=imgmove(lines[i+num],imgcount,file,f2,'mc')
                             #m = re.search("\/(.*?)\]", lines[i+num])
@@ -669,7 +748,7 @@ def TrueorFalse():
                             #f2.write('\{ image("'+ m.group(1) +'" , width=>400, height=>400,tex_size=>700, extra_html_tags=>'+"'alt=")
                             count=1
                             n=i+num
-                            while 'Answer' not in lines[n-count]:
+                            while 'Answer' not in lines[n-count] and 'Variable' not in lines[i+count]:
                                 if lines[n-count].strip():
                                     l=lines[n-count]
                                     anstext=l[0]+l[1]
@@ -700,8 +779,9 @@ def TrueorFalse():
   with open(newfile, 'r') as f:
       ln = f.readlines()
       data=''
-      for i, line in enumerate(ln):      
-        line=mctranslate(line)
+      for i, line in enumerate(ln): 
+        if 'random' not in line and ';' not in line:
+          line=mctranslate(line)
         data=data+line
 
   with open(newfile, 'w') as f:
@@ -724,6 +804,34 @@ def Multiplechoice():
           Answerimg=0
           Qimg=0
           for num, line in enumerate(lines):
+            if 'Variable' in line:
+              print('11111111111111111111111111111111')
+              count=0
+              while 'Answer' not in lines[i+count]:
+                print(lines[i+count])
+                if 'Range' in lines[i+count]:
+                    l=lines[i+count]
+                    line=lines[i+count]
+                    l=l.split('(', 1 )[0]
+                    l=l.replace('$','')
+                    l=l.replace('[','$')
+                    l=l.replace(']','')
+                    l=l.replace(':','=')
+                    l=l.replace('Range','random(')
+                    f2.write(l)
+                    m = re.search("\((.*?)\)", line)
+                    f2.write(m.group(1))
+                    m = re.search("\((.*?)\)", line)
+  
+                    f2.write(',1);')
+                    f2.write('\n') 
+                elif '=' in lines[i+count]:
+                  l=lines[i+count]
+                  l=l.replace('$','')
+                  l=l.replace('[','$')
+                  l=l.replace(']','')
+                  f2.write(l)   
+                count=count+1              
               if 'Answer' in line and '###' not in line:
                   count=1
                   while 'eedback' not in lines[num+count]:
@@ -733,6 +841,7 @@ def Multiplechoice():
                      
                #check if images are a part of the answer
           for i, line in enumerate(lines):
+                
               if 'Question' in line:
                   count=1
                   while 'Answer' not in lines[i+count]:
@@ -747,7 +856,9 @@ def Multiplechoice():
           #Multiple choice answers and buttons
           f2.write('$mc1 = RadioButtons([\n')
           #finding location of answer
+
           for i, line in enumerate(lines):
+       
                   if 'Answer' in line and '###' not in line:
                       num=1
                       answernum=3

@@ -18,6 +18,8 @@ Additional line printed after answers in mc format
 
 
 ***add condition for ranges and variables in problems
+************************************************************
+IN PROGRESS
 
 setUsaskMCQuestions/STATICS-ASV080209a2b8286760f145be93d5ec769ac79e09.pg
  Invalid [] range "S-A" in regex; marked by <-- HERE in m/qquad C_y=1;
@@ -26,35 +28,35 @@ setUsaskMCQuestions/STATICS-CVF01010194ed976cb581480e81160aea61635443.pg
 images dont show up, and text is not reflecting it properly
 
 
-STATICS-CVF030101be82aea2f3844a35aa9a2b6f80d0e9c5.pg
+*fixed:STATICS-CVF030101be82aea2f3844a35aa9a2b6f80d0e9c5.pg
 fix the error on answers for vec v
 
 
-STATICS-CVF040101b9bb38f04cb24e5fabf69d3afa5632e1.pg
+*fixed:STATICS-CVF040101b9bb38f04cb24e5fabf69d3afa5632e1.pg
 /sqrt->sqrt
 add answers and blanks
 
 
-STATICS-CVF040101b9bb38f04cb24e5fabf69d3afa5632e1.pg
-extra check
 
-
-STATICS-PSE110101113001dc475b4e31a18d604a546ccb3a.pg
+*fixed:STATICS-PSE110101113001dc475b4e31a18d604a546ccb3a.pg
 formatting issue
 
 
-STATICS-CVF090101a25606ca87f343b6a772f4826c1c1f70.pg
+*fixed:STATICS-CVF090101a25606ca87f343b6a772f4826c1c1f70.pg
 $ans0=5.92$ or$\sqrt{35}$;
 
-STATICS-CVF090801ca3c21ea99fa4eaaa2cb0060394f6102.pg
+*fixed:STATICS-CVF090801ca3c21ea99fa4eaaa2cb0060394f6102.pg
 
 
-STATICS-PSE01010452e35e799e8a450c93e903d467839865.pg
+*********************************************************
+
+
+*fixed:STATICS-PSE01010452e35e799e8a450c93e903d467839865.pg
 combining numerical with mc
 
-STATICS-PSE0301035aa3a91b26df4902b7bd8e7f2e9f9842.pg
+*fixed:STATICS-PSE0301035aa3a91b26df4902b7bd8e7f2e9f9842.pg
 
-STATICS-PSE0402012fdef1f4284140c6995ae85e6c85645c.pg
+*fixed:STATICS-PSE0402012fdef1f4284140c6995ae85e6c85645c.pg
 
 usaskmc28
 source file does not exist
