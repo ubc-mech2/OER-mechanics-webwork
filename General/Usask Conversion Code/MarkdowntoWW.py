@@ -140,7 +140,7 @@ def translateline(line):
 def mctranslate(data):
   if 'begin{vmatrix}' in data:
     m=re.search(r"begin{vmatrix}(.*?)end{vmatrix}", data)
-    data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data)
+    data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data,1)
     p=re.search(r"begin{vmatrix}(.*?)end{vmatrix}", data)
     data=data.replace(p.group(0),m.group(0))
   elif 'overrightarrow' in data:

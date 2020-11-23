@@ -61,6 +61,8 @@ combining numerical with mc
 usaskmc28
 source file does not exist
 
-STATICS-PSE060201210155d7d85445bcbd30dbcc9d4a138b.pg
+fixed:STATICS-PSE060201210155d7d85445bcbd30dbcc9d4a138b.pg
 no answer
 
+
+STATICS-ASV010301f69eff7e28a5404f93094271d8e052dc.pg
