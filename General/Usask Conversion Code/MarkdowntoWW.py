@@ -183,10 +183,11 @@ def mctranslate(data):
     p=re.search(r"begin{vmatrix}(.*?)end{vmatrix}", data)
     data=data.replace(p.group(0),m.group(0))
   elif 'overrightarrow' in data:
-      m=re.search(r"overrightarrow{(.*?)}", data)
-      data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data,1)
-      p=re.search(r"overrightarrow{(.*?)}", data)
-      data=data.replace(p.group(0),m.group(0))
+        data=re.sub('overrightarrow{(.*?)}',r'(\\overrightarrow{\1}\)',data)
+        #m=re.search(r"overrightarrow{(.*?)}", data)
+        data=re.sub('((\S*)_(\w*))',r'\\(\1'+'\\)', data)
+        #p=re.search(r"overrightarrow{(.*?)}", data)
+        #data=data.replace(p.group(0),m.group(0))
   elif '_{' in data:
     #m=re.search(r"_{(.*?)}", data)
     data=sub('((\w*)_(\w*))',r'\\(\1', data)
@@ -222,6 +223,9 @@ def mctranslate(data):
   data=data.replace('\cdot','\(\cdot\)')
   data=data.replace('\\\\\\','')
   data=data.replace('\\\\','\\')
+  data=data.replace('text{sin}','\sin')
+  data=data.replace('text{tan}','\tan')
+  data=data.replace('text{cos}','\cos')
   data=data.replace('mathrm','text')
   data=data.replace('\\sum',r'\(\sum\)')
   data=data.replace('\;\;','')
@@ -230,20 +234,24 @@ def mctranslate(data):
   x='alpha\\'
 
   data=data.replace( x , '(alpha\)' )
-  
-  data=sub('\\\overrightarrow{(.)}_', r'11111111111111{\1}',data)
-  data=sub('\\\overrightarrow{(.*?)}', r'\(\\overrightarrow{\1}\\)',data)
+  #data=sub('overrightarrow{(.)}_', r'11111111111111{\1}',data)
+  #data=sub('\\\overrightarrow{(.*?)}', r'\(\\overrightarrow{\1}\\)',data,1)
   data=data.replace('\\(\\(\\', r'\(\\')
-  data=sub('11111111111111{(.)}', r'\\overrightarrow{\1}_',data)
-  #data=re.sub('overrightarrow{(.*?)}',r'(\\overrightarrow{\1}\)',data)
+  data=data.replace('\(\\','\(\\')
+  #data=sub('11111111111111{(.)}', r'overrightarrow{\1}_',data)
   #data=sub('\\((.*?)\\)',r'\1',data)
-  data=data.replace('\\)\\)',r'\\)')
+  #data=data.replace('\\)\\)',r'\\)')
+  data=data.replace('\)\(\(_','_')
   data=sub('\\)_(.)',r'_\1 \\)',data)
   data=data.replace('\\_','_')
   #data=data.replace('overright','123')
   #data=data.replace('\\\\','\\')
   data=data.replace('\(BEGIN_TEXT\)','BEGIN_TEXT')
   data=data.replace('\(END_TEXT\)','END_TEXT')
+  data=data.replace('}\(_','}_rep')
+  data=re.sub('{(.*?)}_rep',r'\\(\1_', data)
+  #data=data.replace('){','(repl){')
+  data=re.sub('\){(.*?)}',r')\\(\1\\)', data)
   #replacecos,sin,tan,theta
   data=data.replace('\cos','\(\cos\)')
   data=data.replace('\sin','\(\sin\)')
@@ -253,6 +261,8 @@ def mctranslate(data):
   data=data.replace('\\beta','\(\\beta\)')
   data=data.replace('\\gamma','\(\\gamma\)')
   data=data.replace('~','')
+  data=data.replace('\)\(_','_')
+  data=data.replace('\(\\','\(\\')
   if '\\text' in data:
     m=re.search(r"\\text{(.*?)}", data)
     data=data.replace(m.group(0), m.group(1),1) 
@@ -272,11 +282,40 @@ def mctranslate(data):
   data=data.replace('\\text','deletee')
   data=re.sub('deletee{(.*?)}',r' \1',data)
   data=data.replace('\degree',' \(^\circ\)')
-  data
+  data=data.replace('\)\)','\)')
+  data=data.replace('\)_','_')
+  data=data.replace('\\\\','\\')
+  data=re.sub('\)\^{(.*?)}',r'^{\1}\)',data)
+  data=data.replace('\^','^')
+  if 'frac{' in data:
+    try:
+      data=data.replace('\\','/')
+      n=re.search(r"frac{(.*?)}", data)
+      d=re.search(r"}{(.*?)}\)", data)
+      n=n.group(1).replace('/(','')
+      #n=n.replace('(','')
+      n=n.replace('/)','')
+      d=d.group(1).replace('/(','')
+      d=d.replace('/)','')
+      #d=d.replace('sqrt{','{')
+      #n=re.sub('root{(.*?)}',r'sqrt(\1)}',n)
+      d=re.sub('sqrt{(.*?)}',r'sqrt{\1}}',d)
+      #d=d.replace('(','')
+      str2='frac({'+n+'}{'+d
+      data=re.sub('frac{(.*?)}{(.*?)}',str2,data)
+      data=data.replace('/','\\')
+      data=data.replace('(\\frac','\(\\frac')
+      
+    except Exception as e: print(e)
+      
+
+  #data=data.replace('rep','')
   #        \begin{vmatrix}B_x&B_y\A_x&A_y\)\\end{vmatrix}
   #\begin{vmatrix}A_x&B_x\\A_y&B_y\\\end{vmatrix}
   #data=re.sub(r'begin{vmatrix}(\.*?)\\',r'test',data)
   #\begin{vmatrix}A_x&B_x\\A_y&B_y\end{vmatrix}\( \hat{k} \)
+  #data=data.replace('overrightarrow',r'\overrightarrow')
+  #data=data.replace('(sum\)','(\sum\)')
   return data
  
  
@@ -990,7 +1029,7 @@ def Multiplechoice():
           searchquery='Good'
           searchquery2= 'Well done'
           for i, line in enumerate(lines):
-              if searchquery in line or searchquery2 in line or 'Correct' in line or 'Good' in line:
+              if searchquery in line or searchquery2 in line or 'Correct' in line or 'Good' in line or 'Great' in line:
                   ans=line[0]+line[1]
                   for i, line in enumerate(lines):
                       if 'Answer' in line:
