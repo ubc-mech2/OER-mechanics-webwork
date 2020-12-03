@@ -3,19 +3,39 @@ import glob, os
 import re
 
 import zipfile
-filelocation=r'C:\Users\ptemm\Downloads\Module 1\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
+filelocation=r'C:\Users\ptemm\Downloads\Dec 1 Module 2 Questions\GE 124 Question Database - Module 2 b93ac1f22a354b71bb477fc66b46d9f2'
 os.chdir(filelocation)
 filename=[]
 count=1
 problemcount=0;
 problemset=''
 setcount=0
-for file in glob.glob("*.png"):
-  filename=file.replace(' ','')
-  newname=filelocation+'\\'+filename
-  newimgname=filename+'.png'
-  originpath=filelocation+"\\"+file
-  os.rename(originpath,newname)
+newimglocation=r'C:\Users\ptemm\Downloads\Dec 1 Module 2 Questions\GE 124 Question Database - Module 2 b93ac1f22a354b71bb477fc66b46d9f2\New Images'
+file2=os.listdir(newimglocation)
+oldimglocation=r'C:\Users\ptemm\Downloads\Dec 1 Module 2 Questions\GE 124 Question Database - Module 2 b93ac1f22a354b71bb477fc66b46d9f2\Past Images'
+print(file2)
+with open('mod2imagetracker.txt', 'w') as f2:
+    for file in glob.glob("*.png"):
+        name=file[:19]
+        for i in range(len(file2)):
+            if name in file2[i] and '-G' not in file2[i]:
+                #moveoldfile
+                oldimgoriginpath=filelocation+"\\"+file
+                oldimgnewpath=oldimglocation+"\\"+file
+                try:
+                    os.rename(oldimgoriginpath,oldimgnewpath)
+                    newimgoriginpath=newimglocation+"\\"+file2[i]
+                    os.rename(newimgoriginpath,oldimgoriginpath)
+                except:
+                    pass
+            else:
+                f2.write(file+'\n')
+#for file in glob.glob("*.png"):
+  #filename=file.replace(' ','')
+  #newname=filelocation+'\\'+filename
+  #newimgname=filename+'.png'
+  #originpath=filelocation+"\\"+file
+  #os.rename(originpath,newname)
 
 
 
