@@ -64,23 +64,27 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1562;
+
+$width = $imgScale*1743;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
-$mass = 5;
-$vel = 3;
-$lA = 0.75;
-$lB = 0.5;
+$mass = random(4,6,1);
+$vel = random(2,3,0.1);
+$lA = random(0.4,0.5,0.01);
+$lB = random(0.75,1,0.01);
 
 #---- Formulas to compute answers --------------#
 $a = 1;
-$b = $vel**2/($lA*9.81);
+$b = $vel**2/($lB*9.81);
 $c = -1;
 $root = (-$b+sqrt($b**2-4*$a*$c))/(2*$a);
 $theta = acos($root);
-$d = ($lA*sin($theta)*$vel/$lB)**2/($lA*9.81);
+$d = ($lB*sin($theta)*$vel/$lA)**2/($lB*9.81);
 $buff = 90;
 for($i = 0; $i <= 90; $i += 0.1){
 	$diff = 1-2*cos($i)**2+cos($i)**4-$d*cos($i);
@@ -89,7 +93,7 @@ for($i = 0; $i <= 90; $i += 0.1){
 		$theta2 = $i
 	}
 }
-$vel2 = $lA*sin($theta)*$vel/($lB*sin($theta2*pi/180));
+$vel2 = $lB*sin($theta)*$vel/($lA*sin($theta2*pi/180));
 
 #---- Answers to the problem -----------------------#
 $ansA = $vel2;
@@ -102,9 +106,9 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-26.png", width=>[$width], height=>[$height]) @]*
 
 A [`m = [$mass] kg`] mass is suspended by a rope and hook. The mass is given a horizontal speed [`v = [$vel] m/s`]
- such that it rotates around the circular path [`A`]. The downward force on the cord, [`F`], increases so that the 
- mass rises and follows the circular path [`B`] instead. The length of the cords at [`A`] and [`B`] are  
- [`l_A = [$lA] m`] and [`l_B = [$lB] m`] respectively. Determine the magnitude of the velocity of the mass after it rises.
+such that it rotates around the circular path [`B`]. The downward force on the cord, [`F`], increases so that the 
+mass rises and follows the circular path [`A`] instead. The length of the cords at [`A`] and [`B`] are 
+[`l_A = [$lA] m`] and [`l_B = [$lB] m`] respectively. Determine the magnitude of the velocity of the mass after it rises.
 
 [`|vel| =`] [____]{"$ansA"} [`m/s`]
 

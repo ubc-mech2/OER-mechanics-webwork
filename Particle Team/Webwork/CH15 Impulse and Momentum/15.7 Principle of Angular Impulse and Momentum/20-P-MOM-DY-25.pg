@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1429;
+
+$width = $imgScale*1486;
 		#aspect ratio
 
 
@@ -84,7 +88,7 @@ $vel2 = sqrt($velf**2+$velc**2);
 
 #---- Answers to the problem -----------------------#
 $ansA = $vel2;
-$ansA = $U;
+$ansB = $U;
 
 ########################################################;
 #PGML
@@ -96,7 +100,7 @@ BEGIN_PGML
 A [`m = [$mass] kg`] ball, that is attached to a cord, travels around on top of a frictionless disk with a hole in the middle. 
 The ball travels in a path that can be described as a circle with radius [`r = [$rad] m`] with a constant speed 
 [`v_r = [$velr] m/s`]. If the cord begins at rest and then is pulled downwards through a hole with a constant velocity 
-[`v = [$vel] m/s`], determine the magnitude of the velocity of the ball at time [`t = [$time] s`] and the work done by the cord.
+[`v = [$velc] m/s`], determine the magnitude of the velocity of the ball at time [`t = [$time] s`] and the work done by the cord.
 
 [`|vel| =`] [____]{"$ansA"} [`m/s`]
 
