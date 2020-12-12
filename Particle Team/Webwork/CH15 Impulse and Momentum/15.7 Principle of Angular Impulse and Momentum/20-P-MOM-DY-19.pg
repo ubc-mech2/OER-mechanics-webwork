@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1917;
+
+$width = $imgScale*2265;
 		#aspect ratio
 
 
@@ -79,8 +83,8 @@ $vk = random(1,2,0.1);
 
 #---- Formulas to compute answers --------------#
 $Hi = $mass*($j*$vk-$k*$vj);
-$Hj = $mass*-($i*$vk-$k*$vi)
-$Hk = $mass*($j*$vi-$j*$vi)
+$Hj = $mass*-($i*$vk-$k*$vi);
+$Hk = $mass*($j*$vi-$j*$vi);
 
 #---- Answers to the problem -----------------------#
 $ansA = $Hi;
