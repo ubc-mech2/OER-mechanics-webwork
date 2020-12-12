@@ -1,0 +1,68 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: Triangular distributed load
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+#---- Formulas to compute answers --------------#
+
+$ans0=90;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+As shown in the figure below, a bulkhead is subjected to water pressure. Knowing the water pressure increases linearly with the depth measured from the water's surface, determine the magnitude of the equivalent resultant force. 
+
+Enter your answer: 
+
+The magnitude of the equivalent resultant force =  [____]{"$ans0"} kN
+
+
+
+[@ image( "STATICS-EPL02-02-04-2d59bb89b9834ac2809db4b59a1bf67e0.png", width=>266.0, height=>251.29999999999998) @]*
+
+
+
+END_PGML
+ENDDOCUMENT();

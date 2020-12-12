@@ -1,0 +1,70 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: force and couple system, moment
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Calculate an equivalent force-couple system in 2D given a diagram showing one force or one moment and its perpendicular distance from a point or axis
+#Needs Calculator: No
+#Sean Reviewed: Yes
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+#---- Formulas to compute answers --------------#
+
+$ans0=0;
+$ans1=-200;
+$ans2=0;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+Determine the x and y components of the resultant force and the resultant couple moment for the equivalent force couple at point O. Express the sense of the moment with a + or - sign in front of your answer, where + is for CCW and - is for CW.
+
+Resultant force at point O: [____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`] N
+
+Resultant couple moment at point O: [____]{"$ans2"} [`N`][`\cdot`][`m`]
+
+
+
+[@ image( "STATICS-CMC08-01-03-81d4f59600074e9291a7b085b421a0140.png", width=>312.2736418511067, height=>500.00000000000006) @]*
+
+
+
+END_PGML
+ENDDOCUMENT();

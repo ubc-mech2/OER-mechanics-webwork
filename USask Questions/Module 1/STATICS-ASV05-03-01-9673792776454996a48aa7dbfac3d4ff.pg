@@ -1,0 +1,73 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 2D, Concepts, Unit vector
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Caelia Gardiner
+#Learning Outcome: Define the unit vectors i and j
+#On Mobius: Yes
+#Shaobo Reviewed: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a) Infinity","b) Zero","c) One","d) Undefined"],
+"c) One");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+Select the multiple choice answer that best fills in the blank:
+
+"A unit vector is a normalized spatial vector that has a length of \(____\)."
+
+
+
+$BR
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

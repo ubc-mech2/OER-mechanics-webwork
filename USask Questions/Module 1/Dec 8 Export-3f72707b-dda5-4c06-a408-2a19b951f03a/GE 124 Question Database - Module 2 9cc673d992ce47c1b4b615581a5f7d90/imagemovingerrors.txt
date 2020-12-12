@@ -1,0 +1,459 @@
+Image Scaling Errors
+
+
+
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC02-01-01-2c70981b209943c89dacf4da81dc127f0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC02-02-01-fb38a706669c4f4598a17769626641540.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC02-02-02-4cc3fa63e4344a27b6d2a3d3433cde790.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-MPA01-01-01-0480276c6e6a444ba9ca1ebefbd4e4320.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-MPA01-01-03-59f167f041f44fba9ab2cebd048969a10.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-MPA01-01-04-323df2c92ebb4ce0b7eaf6ef1244cf420.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-02-6933987d6a2544a89366e83136e8849d0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-03-fa2df8d939984923b5e90e92f354c85e0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-04-cf01d9b20b2e44daa97e00830e37b2260.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-05-f77910e9af8b499a8baa6bf9f940e23b0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-02-3e12c6f784c74fb69024215a58d4252f0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-03-8318fa4d57994ae3998113b142264fd40.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-04-27d3b782e15142eca90db7e82c94f5270.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-05-2f0268d7d8be4cacb57f9958a4be1f2c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-02-03bc9dc775cf4c408722384f7506cbd30.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-03-8aedee4333ce465fb73e89b08cd055890.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-04-0bcff63ed8f542fba37c3dbe0c99e9050.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-05-fe7734d176ec4ac48c311dcfa7a4adfe0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-02-02-d9178846f4264ed788b57e60abff6fad0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-02-04-9c5111dd0bb743b2a232005851f43a040.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-02-05-e2e7938d35454b3d84d881c6cbb25a860.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf7184.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf7184.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3114.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3114.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c54.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c54.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9474.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9474.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa64.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa64.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-06-fc89b22f70bf4c6cbccae87b1a08ecad4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-06-fc89b22f70bf4c6cbccae87b1a08ecad4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-07-b11553a6252e47bab7dc1c436e7b96f14.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-07-b11553a6252e47bab7dc1c436e7b96f14.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-08-e718423ced594aed90388451a8444cc44.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-08-e718423ced594aed90388451a8444cc44.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-01-b732f9db20ce49f4be5ddde5515822cc4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-01-b732f9db20ce49f4be5ddde5515822cc4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-02-76e7d67a0c6d4a5f9c7c822f930969e74.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-02-76e7d67a0c6d4a5f9c7c822f930969e74.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-03-0224d889130548c3b69cfc28391849924.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-03-0224d889130548c3b69cfc28391849924.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-04-01bff493205c463cac3832d334954fea4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-04-01bff493205c463cac3832d334954fea4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-05-5f1aa13426c14f63951da072ebd600884.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-05-5f1aa13426c14f63951da072ebd600884.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE07-01-01-7c0a18f1cead441499cd66b8738629db0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-01-01-a39bb0b167934278a4b2e5ad85618a0f0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea1.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea1.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea1.png
+Image Moving Errors
+
+
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC02-01-01-2c70981b209943c89dacf4da81dc127f0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC02-02-01-fb38a706669c4f4598a17769626641540.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC02-02-02-4cc3fa63e4344a27b6d2a3d3433cde790.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a910.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-MPA01-01-01-0480276c6e6a444ba9ca1ebefbd4e4320.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-MPA01-01-03-59f167f041f44fba9ab2cebd048969a10.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-MPA01-01-04-323df2c92ebb4ce0b7eaf6ef1244cf420.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-02-6933987d6a2544a89366e83136e8849d0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-03-fa2df8d939984923b5e90e92f354c85e0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-04-cf01d9b20b2e44daa97e00830e37b2260.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-01-05-f77910e9af8b499a8baa6bf9f940e23b0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-02-3e12c6f784c74fb69024215a58d4252f0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-03-8318fa4d57994ae3998113b142264fd40.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-04-27d3b782e15142eca90db7e82c94f5270.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE02-02-05-2f0268d7d8be4cacb57f9958a4be1f2c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-02-03bc9dc775cf4c408722384f7506cbd30.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-03-8aedee4333ce465fb73e89b08cd055890.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-04-0bcff63ed8f542fba37c3dbe0c99e9050.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-01-05-fe7734d176ec4ac48c311dcfa7a4adfe0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-02-02-d9178846f4264ed788b57e60abff6fad0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-02-04-9c5111dd0bb743b2a232005851f43a040.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE03-02-05-e2e7938d35454b3d84d881c6cbb25a860.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf7184.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf7184.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3114.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3114.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c54.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c54.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9474.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9474.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa64.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa64.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-06-fc89b22f70bf4c6cbccae87b1a08ecad4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-06-fc89b22f70bf4c6cbccae87b1a08ecad4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-07-b11553a6252e47bab7dc1c436e7b96f14.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-07-b11553a6252e47bab7dc1c436e7b96f14.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-08-e718423ced594aed90388451a8444cc44.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-08-e718423ced594aed90388451a8444cc44.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-01-b732f9db20ce49f4be5ddde5515822cc4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-01-b732f9db20ce49f4be5ddde5515822cc4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-02-76e7d67a0c6d4a5f9c7c822f930969e74.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-02-76e7d67a0c6d4a5f9c7c822f930969e74.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-03-0224d889130548c3b69cfc28391849924.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-03-0224d889130548c3b69cfc28391849924.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-04-01bff493205c463cac3832d334954fea4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-04-01bff493205c463cac3832d334954fea4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-05-5f1aa13426c14f63951da072ebd600884.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-05-5f1aa13426c14f63951da072ebd600884.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b4.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-RBSE07-01-01-7c0a18f1cead441499cd66b8738629db0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-01-01-a39bb0b167934278a4b2e5ad85618a0f0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff70.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb19990.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda0.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea1.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea1.png
+C:\Users\ptemm\Downloads\Dec 8 Export-3f72707b-dda5-4c06-a408-2a19b951f03a\GE 124 Question Database - Module 2 9cc673d992ce47c1b4b615581a5f7d90\STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea1.png
+New Errors<_io.TextIOWrapper name='STATICS-CMC02-01-01-2c70981b209943c89dacf4da81dc127f.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-CMC02-02-01-fb38a706669c4f4598a1776962664154.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-CMC02-02-02-4cc3fa63e4344a27b6d2a3d3433cde79.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-03-01-b43cee44204a4cc98300beb337a3c6df.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-CMC04-04-01-7b510172fc9d43dcb34a3fb253c63a91.pg' mode='w' encoding='cp1252'>
+<_io.TextIOWrapper name='STATICS-MPA01-01-03-59f167f041f44fba9ab2cebd048969a1.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE02-01-02-6933987d6a2544a89366e83136e8849.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE02-01-04-cf01d9b20b2e44daa97e00830e37b226.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE02-02-02-3e12c6f784c74fb69024215a58d4252f.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE02-02-05-2f0268d7d8be4cacb57f9958a4be1f2c.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf718.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf718.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c5.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c5.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa6.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa6.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-07-b11553a6252e47bab7dc1c436e7b96f1.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-08-e718423ced594aed90388451a8444cc4.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-01-b732f9db20ce49f4be5ddde5515822cc.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-02-76e7d67a0c6d4a5f9c7c822f930969e7.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-03-0224d889130548c3b69cfc2839184992.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-03-0224d889130548c3b69cfc2839184992.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-04-01bff493205c463cac3832d334954fea.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-04-01bff493205c463cac3832d334954fea.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-05-5f1aa13426c14f63951da072ebd60088.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-05-5f1aa13426c14f63951da072ebd60088.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-RBSE07-01-01-7c0a18f1cead441499cd66b8738629db.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-01-01-a39bb0b167934278a4b2e5ad85618a0f.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff7.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff7.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff7.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff7.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb1999.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb1999.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb1999.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb1999.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea.pg' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea.pg' mode='w' encoding='utf-8'>

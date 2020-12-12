@@ -1,0 +1,72 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Calculate the vector moment of a force about a point in 2D, given a Cartesian force vector and a Cartesian position vector (text and diagram)
+#Module: Module 2: Identify and solve introductory level rigid body statics problems
+#Origin/Author: Caelia
+#Status: Approved
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+#---- Formulas to compute answers --------------#
+
+$ans0=10;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+The 2D diagram below depicts a force vector being applied to a strut:
+
+
+
+[@ image( "STATICS-MPA06-01-03-5f026570735b4e979d2b6f7e15a95e8b0.png", width=>667.8779069767442, height=>500.0) @]*
+
+The Cartesian representation of the force vector and the position vector describing the moment arm are:
+
+[`\overrightarrow{r}`]={4[`\hat{i}`]+2[`\hat{j}`]}  ft [`\overrightarrow{F}`]={-3[`\hat{i}`]+[`\hat{j}`]}  lb
+
+Calculate the moment created by force vector [`\overrightarrow{F}`] about point O.  Submit your answer in natural numbers with the correct positive or negative sign, in the blank below:
+
+[`\overrightarrow{M}_O`] = {[____]{"$ans0"}  lb [`\cdot`] ft}[`\hat{k}`]
+
+
+
+END_PGML
+ENDDOCUMENT();

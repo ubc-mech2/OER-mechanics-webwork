@@ -1,0 +1,97 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: FBD, method of sections, truss
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a.","b.","c.","d."],
+"b.");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+Assume you decided to cut the truss as shown in the figure below, to employ the Method of Sections.  What would the FBDs of the two truss parts look like? (assuming tension forces in all of the unknown members)
+
+
+$BR
+$BR
+\{ image("STATICS-TFM04-03-02-116facc189d54df184b7922d950e6ede0.png" , width=>259.34999999999997, height=>143.14999999999998) \}
+
+$BR
+
+
+$BR
+$BR
+\{ image("STATICS-TFM04-03-02-116facc189d54df184b7922d950e6ede1.png" , width=>352.45, height=>125.99999999999999) \}a.
+
+
+$BR
+$BR
+\{ image("STATICS-TFM04-03-02-116facc189d54df184b7922d950e6ede2.png" , width=>345.79999999999995, height=>120.74999999999999) \}b.
+
+
+$BR
+$BR
+\{ image("STATICS-TFM04-03-02-116facc189d54df184b7922d950e6ede3.png" , width=>344.04999999999995, height=>119.35) \}c.
+
+
+$BR
+$BR
+\{ image("STATICS-TFM04-03-02-116facc189d54df184b7922d950e6ede4.png" , width=>339.5, height=>119.35) \}d.
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();
