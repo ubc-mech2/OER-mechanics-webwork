@@ -1,0 +1,46 @@
+# STATICS-EPL04.02.04
+
+Automatic Grading: Yes
+Copyright Clearance: No
+Keywords: 3D, Centre of gravity, calculate, metric, rectangular plate
+Last Edit: Dec 1, 2020 4:54 PM
+Last Edited By: Nicholas Betancourt
+Learning Outcome: calculate the magnitude of the centers of gravity (NFITB)
+Module: Module 3:
+Needs Calculator: Yes
+On Mobius: Yes
+Origin/ Author: Caelia
+Question Format: Numerical Fill in the Blank
+Question Type: A
+Randomizable Parameters: No
+Sean Reviewed: Yes
+Status: Approved
+Sub-Outcome: 2. square, rectangular, circular and triangular 3D plates
+Sub-outcome Code: https://www.notion.so/STATICS-EPL04-02-955533978b5d455fb17b299f8c8c9005
+Topic/ Unit: Locate and calculate equivalent point loads for simple distributed 2D loads and centers of gravity (EPL)
+
+# Question:
+
+Consider the uniform rectangular plate in the diagram below with the given centre of gravity (COG) and weight (force due to gravity) shown:
+
+![STATICS-EPL04%2002%2004%20c47f3e3456fe4c93bb5e85c7eed91b1f/Untitled.png](STATICS-EPL04%2002%2004%20c47f3e3456fe4c93bb5e85c7eed91b1f/Untitled.png)
+
+If the plate has an area mass density of $13\,\mathrm{kg/m^2}$, what is the correct **magnitude** of the weight (force due to gravity)? Submit your answer to three significant figures:
+
+$$|\overrightarrow{W}|=\,\_\_\_\_\_\,\,\mathrm{N}$$
+
+# Answer:
+
+$$|\overrightarrow{W}|=\underline\bold{1.47}\,\mathrm{N}$$
+
+# Feedback:
+
+When an **area mass density** is given (in $\mathrm{kg/m^2}$), it must be multiplied by the area of the surface of the plate to find the actual mass of the object (and the dimensions must match):
+
+$$m_\mathrm{plate}= 13\,\mathrm{kg/m^2}(0.144\,\mathrm{m}\times0.080\,\mathrm{m})$$
+
+Then, the mass of the plate, $m_\mathrm{plate}$, can be multiplied by the acceleration due to gravity,  $g=9.81\,\mathrm{m/s^2}$, to get the magnitude of the weight, or the force due to gravity:
+
+$$|\overrightarrow{W}|=m_\mathrm{plate}{g}$$
+
+Don't forget to round your answer to **three** significant digits!

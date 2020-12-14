@@ -1,0 +1,39 @@
+# STATICS-CMC05.03.03
+
+Automatic Grading: Yes
+Keywords: couple, equivalent couples, moment
+Last Edit: Oct 30, 2020 11:22 AM
+Last Edited By: Nicholas Betancourt
+Learning Outcome: Identify an equivalent couple moment, given a complete 2D diagram
+Margin of Error: N/A
+Module: Module 2: Identify and solve introductory level rigid body statics problems
+Needs Calculator: No
+On Mobius: Yes
+Origin/Author: Zoe
+Question Format: True or false
+Question Type: A
+Randomizable Parameters: No
+Sean Reviewed: Yes
+Shaobo Reviewed: No
+Sig Fig: N/A
+Status: Approved
+Sub-Outcome: 3. opposite sense, same mag
+Sub-Outcome Code: https://www.notion.so/STATICS-CMC05-03-878640bedb0b4288a229fa6371ff279d
+Topic/ Unit: 3. Incorporate couples in moment calculations (CMC)
+
+# Question:
+
+Are the two couples below equivalent?
+
+- [ ]  Yes
+- [ ]  No
+
+![STATICS-CMC05%2003%2003%20e9b5fa4ecdad430aac1c18e9db2c1caa/Untitled.png](STATICS-CMC05%2003%2003%20e9b5fa4ecdad430aac1c18e9db2c1caa/Untitled.png)
+
+# Answer:
+
+No
+
+# Feedback:
+
+If two couples produce a moment with the same magnitude and direction, then these two couples are equivalent. In this question, each couple moment has a magnitude of $|\overrightarrow{M}|=100~\text{N}~(3 ~\text{m})=50~\text{N}~(6 ~\text{m})= 300~\text{N}\cdot\text{m}$. However, the one on the left hand side causes a tendency of CCW rotation, while the one on the right hand side causes a tendency of CW rotation. Thus, the two couples presented in this question are **NOT** equivalent.
