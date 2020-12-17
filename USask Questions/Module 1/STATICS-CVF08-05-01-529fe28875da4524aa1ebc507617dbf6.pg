@@ -70,7 +70,7 @@ Consider the following three-dimensional vector, represented in Cartesian form:
 
 [`\overrightarrow{v}`]=[`[$A]`][`\hat{i}`]+[`[$B]`][`\hat{j}`]+[`[$C]`][`\hat{k}`]  N
 
-Find the magnitude and each direction angle (in radians), alpha, beta, and gamma, from the Cartesian coordinates above.
+Find the magnitude of the vector and each direction angle (in radians), alpha, beta, and gamma, from the Cartesian coordinates above.
 
 [____]{"$ans0"}
 [____]{"$ans1"}

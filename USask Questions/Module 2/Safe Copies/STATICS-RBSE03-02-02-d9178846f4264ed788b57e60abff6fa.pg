@@ -1,0 +1,86 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Recognize the best (unknown) information to Find in a simple scenario, given a description (words and diagram)
+#Module: Module 2: Identify and solve introductory level rigid body statics problems
+#Origin/Author: Caelia
+#Status: Approved
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a) \(B_z\), \(C_z\), & \(A_z\) ","b) \(\overrightarrow{C}_z\), the vertical reaction at point C, \(\overrightarrow{B}_z\), the vertical reaction at point B, \(\overrightarrow{A}_z\), the vertical reaction at point A","c) \(\overrightarrow{B}_z\) & \(\overrightarrow{C}_z\), the vertical reactions at point B and C, \(\overrightarrow{A}_z\), the reaction at point A","d) C, the vertical reaction at point C, B, the vertical reaction at point B, A, the reaction at point A"],
+"d) C, the vertical reaction at point C, B, the vertical reaction at point B, A, the reaction at point A");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+Consider the following problem statement:
+
+
+
+The 50lb mulching machine has a center of gravity at G. Determine the vertical reactions at the wheels C and B and the smooth contact point A. 
+
+
+$BR
+$BR
+\{ image("STATICS-RBSE04-02-02-76e7d67a0c6d4a5f9c7c822f930969e71.png" , width=>257.25, height=>220.5) \}
+$BR
+
+
+
+From the list below, select the option that is not acceptable as a list of information that you are required to find in this problem:  
+
+
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

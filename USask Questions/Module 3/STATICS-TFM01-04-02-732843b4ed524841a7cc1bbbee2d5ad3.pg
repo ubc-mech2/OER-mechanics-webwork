@@ -50,11 +50,11 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #---- Random variables for this problem --------#
-$Scenario1 = PopUp(["?","a","b","d"],
+$Scenario1 = PopUp(["?","a","b","c","d"],
  "a");
-$Scenario2 = PopUp(["?","a","b","d"],
+$Scenario2 = PopUp(["?","a","b","c","d"],
  "b");
-$Scenario3 = PopUp(["?","a","b","d"],
+$Scenario3 = PopUp(["?","a","b","c","d"],
  "c");
 $Scenario4 = PopUp(["?","a","b","c","d"],
  "d");
@@ -71,7 +71,7 @@ BEGIN_PGML
 Match the following typical roof trusses with their corresponding names.
 
 a:
-[@ image( STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad30.png", width=>596, height=>209) @]* 
+[@ image( "STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad30.png", width=>596, height=>209) @]* 
 
 b: 
 [@ image( "STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad31.png", width=>619, height=>216) @]*

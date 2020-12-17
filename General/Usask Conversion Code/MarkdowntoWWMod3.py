@@ -355,8 +355,6 @@ def mctranslate(data):
     data=re.sub('111','____',data)
     data=sub('((\w*)_(\w*))',r'\\(\1', data)
     data=sub('_(\w*)',r'_\1'+'\\)',data)
-    #data=sub('(\w*)_(\w*)',r'\\(\\\1'+'\\)', data)
-    #print('1')
   data=data.replace(',]', ']')
   if 'random' not in data:
     data=data.replace('$', '')
@@ -549,20 +547,7 @@ def mctranslate(data):
   data=data.replace('"ZFMs"','ZFMs')
   #data=data.replace(r'\\(\begin',r'\(\'begin
   #data=re.sub(r'{(.*?)\\,N\\\(\\cdot\\\) m\\},',r'\1\\(\\cdot\\) m',data)
-  #data=data.replace('{\(','\(')#only for the case of formatting usask mc3q96 If it doesnt work, one fix formatting could work and this can be deleted
-  #data=data.replace('\)}','\)')
-
-
-  
-      
-
-  #data=data.replace('rep','')
-  #        \begin{vmatrix}B_x&B_y\A_x&A_y\)\\end{vmatrix}
-  #\begin{vmatrix}A_x&B_x\\A_y&B_y\\\end{vmatrix}
-  #data=re.sub(r'begin{vmatrix}(\.*?)\\',r'test',data)
-  #\begin{vmatrix}A_x&B_x\\A_y&B_y\end{vmatrix}\( \hat{k} \)
-  #data=data.replace('overrightarrow',r'\overrightarrow')
-  #data=data.replace('(sum\)','(\sum\)')
+  #data=data.replace('\)}','\)'
   return data
  
  
@@ -821,30 +806,6 @@ def Numerical():
                                       else:
                                         l=line.split('=',1)[1]
                                         l=formulatranslate(l,continued,anglesint)
-                                        #l=l.replace('$','')
-                                        #l=l.replace('\\','')
-                                                                          
-                                        #l=l.replace('[','$')#could use re.sub
-                                        #l=re.sub('cos(.*?)\]',r'cos(\1*pi/180)',l)
-                                        #l=re.sub('sin(.*?)\]',r'sin(\1*pi/180)',l)
-                                        #l=re.sub('tan(.*?)\]',r'tan(\1*pi/180)',l) 
-                                        #l=l.replace(']$','*$')
-                                        #l=l.replace(']','')
-                                        #l=l.replace('^','**')
-                                        #l=re.sub('sqrt{(.*?)}',r'sqrt(\1)',l)
-                                        #l=l.replace('{','')
-                                        #l=l.replace('}','')
-                                        #l=l.replace('[','$')
-                                        #l=l.replace(']','')
-                                        #l=l.replace('frac','')
-                                        #l=l.replace('overrightarrow','')
-                                        #l=l.replace('|','')
-                                        #l=l.replace('\\','')
-                                        #l=l.replace('right','')
-                                        #l=l.replace('left','')
-                                        #l=l.replace('alpha','')
-                                        #l=l.replace('beta','')
-                                        #l=l.replace('gamma','')
                                         if 'or' in l:
                                           l=l.split('or',1)[0]
                                         f2.write(l.rstrip('\n'))
@@ -934,11 +895,7 @@ def Numerical():
                                     counter=counter-1
                                     ansnum=ansnum+1
                                   line=translateline(line)
-                                  f2.write(line+'\n')                                   
-                                  #l=line.split('=',1)[0]
-                                  #e=line.split('_\,',1)[1]
-                                  #f#2.write(l+'='+'[_]{"\$ans'+str(ansnum)+'"}'+e.rstrip('\n')+'\n\n')
-                                  ##ansnum=ansnum+1                              
+                                  f2.write(line+'\n')                                                                
                           
                           
                               elif '__________' in lines[i+count]:
@@ -1073,7 +1030,7 @@ def Numerical():
               
               
               
-#setUsaskMCQuestions/STATICS-ASV01 01 01 faefa0460d484e039accabc59f8495a0.pg              
+            
 def TrueorFalse():
   imgcount=0
   with open(file, 'r', encoding='utf-8') as f:
@@ -1295,7 +1252,6 @@ def TrueorFalse():
           f2.write('ENDDOCUMENT();')
           
 
-
   #replacing variables
   with open(newfile, 'r') as f:
       ln = f.readlines()
@@ -1318,8 +1274,6 @@ def Multiplechoice():
 
                       #Starting the document
           beginfile(f2,file)
-
-
 
                     #check if images are a part of the answer
           Answerimg=0
@@ -1371,9 +1325,7 @@ def Multiplechoice():
                           Qimg=1
                       count=count+1
                       
-           
-                      
-                   
+  
 
           #Multiple choice answers and buttons
           f2.write('$mc1 = RadioButtons([\n')
@@ -1502,7 +1454,6 @@ def Multiplechoice():
                       print(ans)
                       if ans in options[i]:
                           f2.write('\n'+options[i].rstrip(',')+ ');')
-                          print(ans)
                                  
                   #for i, line in enumerate(lines):
                       #if 'Answer' in line:
@@ -1615,26 +1566,10 @@ def Multiplechoice():
                             num=num+1
                       except:
                           continue
-                              
-                          
-                      
-                  
-
-            
-                  
-              
-              
-              
+ 
          
           f2.write('\n\n$BR\n\{$mc1->buttons()\}\n \n \n \nEND_TEXT \n \nANS( $mc1->cmp() );\nENDDOCUMENT();')
   
-          #searchquery='_ '
-          #for i, line in enumerate(lines):
-              #if searchquery in line:
-                      #f2.write(line)
-         
-          
-
 
   #replacing variables
   with open(newfile, 'r') as f:
@@ -1718,10 +1653,6 @@ def Multipleanswer():
                           f2.write('\n"'+lines[n+count].rstrip('\n')+ '",\n')  
                       count=count+1
                   
-              
-          #"\( e^{x^2} e^{1/x} \)$BR",
-          #"\( e^{x^2} e^{x^{-1}} \)$BR",                
-          #"\( e^{ (x^3+1) / x } \)$BR",
           f2.write(');\n')
           f2.write('$mc -> makeLast(')
           writtenans=0
@@ -1794,10 +1725,6 @@ def Multipleanswer():
                                                   count=count+1                              
                               num=num+1                               
           f2.write(');\n')
-          #"\( \displaystyle \frac{ e^{x^2} }{ e^x } \)$BR",
-          #"\( e^{x^2} + e^{1/x} \)$BR",
-          #);
-          #$mc -> makeLast("None of the above");
 
           Answerimg=0
           Qimg=0
@@ -1941,12 +1868,6 @@ def Multipleanswer():
           f2.write('END_TEXT\n  ')                     
       
           f2.write('\nANS( checkbox_cmp( $mc->correct_ans() ) );\nENDDOCUMENT();')
-          
-          #searchquery='_ '
-          #for i, line in enumerate(lines):
-              #if searchquery in line:
-                      #f2.write(line)
-          
   
   
   #replacing variables
@@ -1958,20 +1879,11 @@ def Multipleanswer():
         line=mctranslate(line)
       data=data+line    
 
-      
-  
-  
-  
   with open(newfile, 'w') as f:
       f.write(data)
 
               
-              
-              
-              
- 
-                
-                
+           
  
 #Input file location
 os.chdir(filelocation)
