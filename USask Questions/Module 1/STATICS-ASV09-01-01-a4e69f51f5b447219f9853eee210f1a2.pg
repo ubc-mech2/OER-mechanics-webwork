@@ -55,7 +55,7 @@ BEGIN_PGML
 
 Consider vectors A and B in the diagram below: 
 
-[@ image( "STATICS-ASV09-01-01-a4e69f51f5b447219f9853eee210f1a20.png", width=>906.25, height=>500) @]*
+[@ image( "STATICS-ASV09-01-01-a4e69f51f5b447219f9853eee210f1a20.png", width=>906.25, height=>500.0) @]*
 
 Find the resultant vector C as a difference of vectors A and B. Fill in the blanks below to express the vector in the Cartesian form: 
 

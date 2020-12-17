@@ -92,7 +92,7 @@ BEGIN_TEXT
 $BR
 
 
-\{ image("STATICS-PSE13-05-01-eabc67229bbd492a8a245dfefb8756a50.png" , width=>416.51376146788994, height=>500.0) \}
+\{ image("STATICS-PSE13-05-01-eabc67229bbd492a8a245dfefb8756a50.png" , width=>521.5716486902928, height=>500.0) \}
 $BR
 
 
