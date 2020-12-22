@@ -1,0 +1,70 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 2D, Cartesian, Direction, Magnitude
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Resolve a 2D vector, given its magnitude and direction, into Cartesian vector notation
+#On Mobius: Yes
+#Shaobo Reviewed: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+
+
+
+
+
+$A= random( 1, 20,1);
+$B= random( 270, 359,1);
+#---- Formulas to compute answers --------------#
+
+$ans0=$A*cos((pi/180)*($B));
+$ans1=$A*sin((pi/180)*($B));
+
+########################################################
+#PGML
+BEGIN_PGML
+
+For a vector with a magnitude of [`[$A]`] N directed at an angle of [`[$B]`][`^{\circ}`] CCW from the positive x-axis, determine the x and y components to express the vector in Cartesian form:
+
+[`\overrightarrow{v}`]=[____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`]  N
+
+
+
+END_PGML
+ENDDOCUMENT();

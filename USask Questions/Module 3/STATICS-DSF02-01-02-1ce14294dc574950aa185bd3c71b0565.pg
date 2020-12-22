@@ -1,0 +1,77 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: no impending motion, static friction
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a. The object has no impending motion.","b. The object is in equilibrium.","c. The object is not in equilibrium.","d. The frictional force is equal to 5 N."],
+"c. The object is not in equilibrium.");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+As shown in the figure below, a horizontal force is pushing on an object. Given P=5N, and \(F_s\)=8 kN, which one of the following statement is incorrect?
+
+
+$BR
+$BR
+\{ image("STATICS-DSF02-01-02-1ce14294dc574950aa185bd3c71b05650.png" , width=>150.14999999999998, height=>65.1) \}
+
+$BR
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

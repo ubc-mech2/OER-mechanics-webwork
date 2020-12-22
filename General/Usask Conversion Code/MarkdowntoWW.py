@@ -9,7 +9,8 @@ from re import sub
 import os
 import shutil
 import glob, os
-
+import PIL
+from PIL import Image
   # -*- coding: UTF-8 -*-
 
 #This script converts Markdown Format into Webwork Question format
@@ -20,41 +21,86 @@ import glob, os
 filelocation=r'C:\Users\ptemm\Downloads\Module 1 Dec 2\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
 #'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
 #moving and renaming images
+imglinelist=[]
+newimglinelist=[]
+imgerrormovinglist=[]
+imgscaleerrors=[]
 def imgmove(imgline,imgcount,filename,filetowrite,qtype):
-  m = re.search("\/(.*?)\]", imgline)
-  filename=filename.replace('.md','')
-  imgname=m.group(1)
-  if '%' in imgname:
-    #m = re.search("%/(.*?)\.", imgname)
-    #imgname=imgname.rstrip(m.group(1))
-    if imgcount==0:
-      imgname=imgname.split('%',1)[0]+'.png'
-    else:
-      imgname=imgname.split('%',1)[0]+' '+str(imgcount)+'.png'
-  newname=filelocation+'\\'+filename+str(imgcount)+'.png'
-  newimgname=filename+str(imgcount)+'.png'
-  newimgname=newimgname.replace(' ','-')
-  originpath=filelocation+"\\"+filename+"\\"+imgname
-  try:
-    os.rename(originpath,newname)
-  except:
-    print('image not found!')
-    print(originpath)
-    print(newname)
-    pass
-  imgcount=imgcount+1
-  if qtype=='n':
-    filetowrite.write('[@ image( "'+newimgname+'", width=>[$width], height=>[$height]) @]*\n')
-    filetowrite.write('END_PGML\nBEGIN_PGML\n')
+  #print(imgline)
+  if imgline in imglinelist:
+    imgindex=imglinelist.index(imgline)
+    linetowrite=newimglinelist[imgindex]
+    filetowrite.write(linetowrite)
   else:
-    filetowrite.write('\n$BR\n')
-    filetowrite.write('\{ image("'+ newimgname +'" , width=>400, height=>400) \}')   
+    imglinelist.append(imgline)
+    m = re.search("\/(.*?)\]", imgline)
+    filename=filename.replace('.md','')
+    imgname=m.group(1)
+    if '%' in imgname:
+      #m = re.search("%/(.*?)\.", imgname)
+      #imgname=imgname.rstrip(m.group(1))
+      if imgcount==0:
+        imgname=imgname.split('%',1)[0]+'.png'
+      else:
+        imgname=imgname.split('%',1)[0]+' '+str(imgcount)+'.png'
+    newname=filelocation+'\\'+filename+str(imgcount)+'.png'
+    newimgname=filename+str(imgcount)+'.png'
+    originpath=filelocation+"\\"+filename+"\\"+imgname
+    subfolders = [ f.path for f in os.scandir(r'C:\Users\ptemm\OneDrive\Testing Module 1 Usask') if f.is_dir() ]
+    width,height=0,0
+    #print(subfolders)
+    for i in range(len(subfolders)):
+      if  filename in subfolders[i]:
+        originpath=subfolders[i]+"\\"+imgname
+    try:
+      with Image.open(originpath) as img:
+        width, height = img.size;
+        imgScale = 0.35; 
+        imgscale=0.35
+        width=width*imgscale
+        height=height*imgscale
+    except:
+      try:
+        newimgname=newimgname.replace(' ','-')
+        originpath=filelocation+"\\"+newimgname
+        with Image.open(originpath) as img:
+          width, height = img.size;
+          imgscale=0.35
+          width=width*imgscale
+          height=height*imgscale
+      except:
+          imgscaleerrors.append(originpath)
+          pass
+    
+    try:
+      os.rename(originpath,newname)
+    except:
+      #print('image not found!')
+      imgerrormovinglist.append(originpath)
+      #print(originpath)
+      #print(newname)
+      pass
+    imgcount=imgcount+1
+    if qtype=='n':
+      newimgname=newimgname.replace(' ','-')
+      newimgline='[@ image( "'+newimgname+'", width=>['+str(width)+'], height=>['+str(height)+']) @]*\n'
+      newimglinelist.append(newimgline)
+      filetowrite.write(newimgline)
+      filetowrite.write('END_PGML\nBEGIN_PGML\n')
+    else:
+      newimgname=newimgname.replace(' ','-')
+      filetowrite.write('\n$BR\n')
+      newimgline='\{ image("'+ newimgname +'" , width=>'+str(width)+', height=>'+str(height)+') \}'
+      newimglinelist.append(newimgline)
+      filetowrite.write(newimgline) 
+
   return imgcount
   
   
   
   
-def formulatranslate(l,continuation):
+def formulatranslate(l,continuation,anglesint):
+  l=re.sub('sqrt{(.*?)}',r'sqrt(\1)',l)
   l=re.sub('frac{(.*?)}{(.*?)}',r'(\1)/(\2)',l)
   if continuation==0:
     l=l.replace('$','')
@@ -62,15 +108,22 @@ def formulatranslate(l,continuation):
   l=l.replace('\\','')
   l=l.replace('text','')
   l=l.replace('cdot','*')
-  l=l.replace('{cos}^{-1}','sec')
-  l=l.replace('{sin}^{-1}','csc')
-  l=l.replace('{tan}^{-1}','cot')
+  l=l.replace('{cos}^{-1}','arccos')
+  l=l.replace('{sin}^{-1}','arcsin')
+  l=l.replace('{tan}^{-1}','arctan')
   
                                     
   l=l.replace('[','$')#could use re.sub
   l=l.replace('arccos','arcc')
   l=l.replace('arcsin','arcs')
   l=l.replace('arctan','arct')
+  l=re.sub('sec\((.*?)\)',r'sec((\1))',l)
+  l=re.sub('cos\({(.*?)}\)',r'cos((\1))',l)
+  l=re.sub('sin\({(.*?)}\)',r'sin((\1))',l)
+  l=re.sub('tan\({(.*?)}\)',r'tan((\1))',l)
+  l=re.sub('cot\({(.*?)}\)',r'cot((\1))',l)
+  l=re.sub('csc\({(.*?)}\)',r'csc((\1))',l)
+  l=re.sub('sec\({(.*?)}\)',r'sec((\1))',l)
   l=re.sub('cos(.*?)\]',r'cos((pi/180)*\1)',l)
   l=re.sub('sin(.*?)\]',r'sin((pi/180)*\1)',l)
   l=re.sub('tan(.*?)\]',r'tan((pi/180)*\1)',l)
@@ -92,7 +145,6 @@ def formulatranslate(l,continuation):
   l=l.replace(']$','*$')
   l=l.replace(']','')
   l=l.replace('^','**')
-  l=re.sub('sqrt{(.*?)}',r'sqrt(\1)',l)
   l=l.replace('{','')
   l=l.replace('}','')
   l=l.replace('[','$')
@@ -101,9 +153,17 @@ def formulatranslate(l,continuation):
   l=l.replace('\\','')
   l=l.replace('right','')
   l=l.replace('left','')
-  l=l.replace('alpha','')
-  l=l.replace('beta','')
-  l=l.replace('gamma','')
+  
+  if anglesint==1:
+    l=l.replace('alpha','$alpha')
+    l=l.replace('beta','$beta')
+    l=l.replace('gamma','$gamma')
+    l=l.replace('cos($alpha','cos((pi/180)*$alpha').replace('cos($beta','cos((pi/180)*$beta').replace('cos($gamma','cos((pi/180)*$gamma')
+    l=l.replace('sin($alpha','sin((pi/180)*$alpha').replace('sin($beta','sin((pi/180)*$beta').replace('sin($gamma','sin((pi/180)*$gamma')
+    l=l.replace('tan($alpha','tan((pi/180)*$alpha').replace('tan($beta','tan((pi/180)*$beta').replace('tan($gamma','tan((pi/180)*$gamma')
+    
+  #else:
+    ##l=l.replace('arccos','(180/pi)*arccos)' #for degrees
   
   return l
   
@@ -170,6 +230,10 @@ def translateline(line):
   if '_' in line:
     line=re.sub(' ((\S*)_(\w*)) ',r'[`\1`]',line)  
   #line=line.replace('__','[__]')
+  line=line.replace('Find the three coordinate direction angles','Find the three coordinate direction angles (in radians) ')#degrees?
+  line=line.replace('Find the magnitude and each direction angle','Find the magnitude and each direction angle (in radians)')
+  if 'Calculate' in line and 'the' in line and 'angle' in line:
+    line=line.replace('angle','angle (in radians)')
   line=re.sub('text{(.)}',r'[`\1`]',line)
   line=line.replace('left(','')
   line=line.replace('right)','')
@@ -198,25 +262,40 @@ def translateline(line):
   line=line.replace('|','')
   line=re.sub('bold{(.*?)}',r'[`\1`]',line)
   line=re.sub('`]_(.w*)',r'_\1`]',line)
-  line=line.replace('circ','(\circ)')
+  line=line.replace('circ','[`^{\circ}`]')
+  line=line.replace('\xb0','[`^{\circ}`]')
+  line=line.replace('degree',' [`^{\circ}`]')
   line=re.sub('\^\((.*?)\)',r'[`^{\1}`]',line)
+  line=line.replace('}^[`^','}[`^')
+  line=re.sub('\(hat\{\[`\[(.*?)\]`\]i\}\)',r'[`[\1]`][`\\hat{i}`]',line) 
   while '_[' in line or ']_' in line:
           line=line.replace('_[','[')
           line=line.replace(']_',']')  
   return line
 
 def mctranslate(data):
+  #data=re.search
+  data=data.replace('overrightarrow{}','arrow1')
+  data=re.sub('bold{(.*?)}_(w*?)',r'mathbf-/-\1_\2',data)
   if 'begin{vmatrix}' in data:
     m=re.search(r"begin{vmatrix}(.*?)end{vmatrix}", data)
     data=sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data,1)
     p=re.search(r"begin{vmatrix}(.*?)end{vmatrix}", data)
     data=data.replace(p.group(0),m.group(0))
+  elif 'overrightarrow ' in data:
+      data=re.sub('overrightarrow (w*?)\$',r'(\\overrightarrow{\1}\\)',data)    
   elif 'overrightarrow' in data:
         data=re.sub('overrightarrow{(.*?)}',r'(\\overrightarrow{\1}\)',data)
-        #m=re.search(r"overrightarrow{(.*?)}", data)
+        m=re.findall(r"overrightarrow{(.*?)}", data)
         data=re.sub('((\w*)_(\w*))',r'\\(\1'+'\\)', data)
-        #p=re.search(r"overrightarrow{(.*?)}", data)
-        #data=data.replace(p.group(0),m.group(0))
+        p=re.findall(r"overrightarrow{(.*?)}", data)
+        for i in range(len(m)):
+            data=data.replace(p[i],m[i])
+
+
+
+
+        
   elif '_{' in data:
     #m=re.search(r"_{(.*?)}", data)
     data=sub('((\w*)_(\w*))',r'\\(\1', data)
@@ -226,7 +305,9 @@ def mctranslate(data):
     #data=sub('_{(\w*)}',r'_{\1\}'+'\\)', data,1)
     #data=sub('{(.*?)}',r'{\1}\\)',data)
   else:
+    data=re.sub('_{2,}_','111',data)
     data=data.replace('_ ','_')
+    data=re.sub('111','____',data)
     data=sub('((\w*)_(\w*))',r'\\(\1', data)
     data=sub('_(\w*)',r'_\1'+'\\)',data)
     #data=sub('(\w*)_(\w*)',r'\\(\\\1'+'\\)', data)
@@ -258,6 +339,8 @@ def mctranslate(data):
   data=data.replace('mathrm','text')
   data=data.replace('\\sum',r'\(\sum\)')
   data=data.replace('\;\;','')
+  data=data.replace('}!\($','}')
+  #data=data.replace('force vectors in red,', 'force vectors') #MODULE 2 
   
   
   x='alpha\\'
@@ -292,6 +375,7 @@ def mctranslate(data):
   data=data.replace('~','')
   data=data.replace('\)\(_','_')
   data=data.replace('\(\\','\(\\')
+  
   if '\\text' in data:
     try:
       m=re.search(r"\\text{(.*?)}", data)
@@ -325,18 +409,50 @@ def mctranslate(data):
   newline = [w.replace('\\', '') for w in line]
   num=len(line)
   for i in range(num):
-          data=data.replace('sqrt{'+line[i]+'}','sqrt{'+newline[i]+'}')  
+          data=data.replace('sqrt{'+line[i]+'}','(\\sqrt{'+newline[i]+'}\\)')  
   line=re.findall('frac{(.*?)}\)',data,flags=0)
+  other=0
+  if not line:
+    other=1
+    line=re.findall('frac{(.*?)}"',data,flags=0)   
   newline = [w.replace('\\', '/') for w in line]
   newline= [w.replace('/)', '') for w in newline]
   newline= [w.replace('/(', '') for w in newline]
   newline= [w.replace('/', '\\') for w in newline]
   num=len(line)
   for i in range(num):
+    if other==0:
           data=data.replace('frac{'+line[i]+'})','frac{'+newline[i]+'}\\)')
           data=data.replace('(\\frac','\(\\frac')
-          data=data.replace('\\\\\\\\','\\')
-    
+          data=data.replace('\\\\\\\\','\\')          
+    elif other==1:
+      data=data.replace('frac{'+line[i]+'}"','(\\frac{'+newline[i]+'}\\)"')
+    data=data.replace('\\\\\\',"\\")
+  data=data.replace('Sigma','(\Sigma\)')
+  data=data.replace('arrow1','(\overrightarrow{}\)')
+  data=re.sub('mathbf-/-(.*?)\)',r'(\\mathbf{\1}\)',data)
+  data=data.replace('mathbf{\(','mathbf{')
+  data=data.replace('^\circ','\(^\circ\)')  
+  data=data.replace('\\','///21q')
+  data=data.replace('///21q(///21q(','///21q(')
+  data=data.replace('///21q)///21q)','///21q)')
+  data=re.sub('rrightarrow{(.*?)}\]',r'rrightarrow{\1}///21q)',data)
+  data=re.sub('mathbf{(.*?)///21q}',r'mathbf{\1}',data)
+  data=data.replace('///21q','\\')
+  data=data.replace('\(phi','\(\phi')
+  data=data.replace('\\\\','\\')
+  data=data.replace('\\','//i/')
+  data=re.sub('overrightarrow{(.*?)}_//i/\)//i/\((.*?)//i/\)',r'overrightarrow{\1}_{\2}//i/)',data)
+  data=data.replace('//i/','\\')
+  
+  
+  #data=data.replace('9.81m/s^2','9.81 \(m/s^2\)')
+  
+  #data=data.replace('{\(','\(')#only for the case of formatting usask mc3q96 If it doesnt work, one fix formatting could work and this can be deleted
+  #data=data.replace('\)}','\)')
+
+
+  
       
 
   #data=data.replace('rep','')
@@ -360,11 +476,11 @@ def Numerical():
               beginfile(f2,file)
 
       #finding variables
-      
+              anglesint=0
               searchquery='Variable'
               for i, line in enumerate(lines):
                 if 'Range' in line:
-                    if 'alpha'in line:
+                    if 'alpha'in line or 'beta' in line or 'gamma' in line:
                       anglesint=1
                     l=line.split('(', 1 )[0]
                     l=l.replace('$','')
@@ -418,20 +534,47 @@ def Numerical():
               f2.write('\n')
               #magnitude of vectorcheck
               for n, line in enumerate(lines):
-                if 'need to find the magnitude' in line:
+                if 'find the magnitude' in line:
                   for i, line in enumerate(lines): 
                     if 'Answer' in line:
-                      f2.write('aaa\n\n')
                       count=0
+                      written=1
                       while 'Feedback' not in lines[i+count] and i+count<len(file) and written==1:
-                        print('aaa')
-                        written=1
                         if '|\overrightarrow' in lines[i+count]:
                           f2.write('$v=sqrt($A**2+$B**2+$C**2);\n')
                           written=0
                         count=count+1#need to adjust later
                       
-                  
+              for i, line in enumerate(lines):
+                    if 'Answer' in line:
+                      count=0
+                      written=0
+                      while 'Feedback' not in lines[i+count] and i+count<len(file) and written==0:
+                        if '=' in lines[i+count]:
+                          line=lines[i+count]
+                          line=line.split('=',1)[1]
+                          if 'alpha' in line or 'beta'in line or 'gamma' in line and written==0:
+                            written=1
+                            writtena,writtenb,writtenc=0,0,0
+                            for n, line in enumerate(lines):
+                              if 'alpha=' in line and writtena==0:
+                                m=re.search('alpha=(.*?)\$',line)
+                                m=formulatranslate(m.group(1),0,anglesint)
+                                f2.write('$alpha='+m+';\n')
+                                writtena==0
+                                anglesint=1
+                              if'beta=' in line and writtenb==0:
+                                m=re.search('beta=(.*?)\$',line)
+                                m=formulatranslate(m.group(1),0,anglesint)
+                                f2.write('$beta='+m+';\n')  
+                                writtenb==1
+                              
+                              if'gamma=' in line and writtenc==0:
+                                m=re.search('gamma=(.*?)\$',line)
+                                m=formulatranslate(m.group(1),0,anglesint)
+                                f2.write('$gamma='+m+';\n') 
+                                writtenc==1
+                        count=count+1#need to adjust later                  
               f2.write('\n')
               searchquery='Answer'
               continued=0
@@ -451,11 +594,12 @@ def Numerical():
                         pass
                     elif '=' in lines[i+count] and left in lines[i+count] and left != '' and continued==0:
                       continued=1
-                      print(continued)
+
                       left=''
                     count=count+1
 
-              ansnum=0          
+              ansnum=0 
+              anseq=''
               if continued==1:
                 for i, line in enumerate(lines):
                   if searchquery in line:
@@ -466,20 +610,27 @@ def Numerical():
                       line=lines[i+count]
                       eqnum=line.count('=')
                       if eqnum==1:
-                        line=re.sub('\$\$(.*?)\$\$',r'$\1',line)
-                        line=line.replace('\\','')
-                        line=formulatranslate(line,continued)
-                        anseq=anseq+line
+                        if '$overarrowv=sqrt' not in line:
+                          line=re.sub('\$\$(.*?)\$\$',r'$\1',line)
+                          if '=' in line:
+                            line=line.split('=',1)[1]
+                            line=line.replace('\\','')
+                            line=formulatranslate(line,0,anglesint)
+                            anseq=anseq+'$ans'+str(ansnum)+'='+line.rstrip('\n')+';\n'
+                            ansnum=ansnum+1
                       elif eqnum>1 and 'quad' not in line:
                         ans=line.split('=',eqnum)[eqnum]
-                        ans=formulatranslate(ans,0)
+                        ans=formulatranslate(ans,0,anglesint)
+                        anseq=''
+                        ansnum=0
                         f2.write('$ans'+str(ansnum)+'='+ans.rstrip('\n')+';')
                         ansnum=ansnum+1
                       
                         
                       count=count+1
                       
-                
+              if anseq!='':
+                f2.write(anseq)
               elif continued==0:
                 for i, line in enumerate(lines):
                     if searchquery in line :
@@ -496,15 +647,15 @@ def Numerical():
                                     num2=line.count('s(')
                                     num3=line.count('n(')
                                     num4=line.count('t(')
-                                    num5=num1-num2-num3-num4
+                                    num5=num1-num2-num3-num4                                     
                                     if'(' in line and num5>0:
-                                      m=re.search("\((.*?)\)", line) 
-                                      m=formulatranslate(m.group(1),continued)
+                                      m=re.search("\((.*?)\)", line)
+                                      m=formulatranslate(m.group(1),continued,anglesint)
                                       f2.write(m.rstrip('\n'))
                                       f2.write(';\n')                                    
                                     else:
                                       l=line.split('=',1)[1]
-                                      l=formulatranslate(l,continued)
+                                      l=formulatranslate(l,continued,anglesint)
                                       if 'or' in l:
                                         l=l.split('or',1)[0]
                                       #l=re.sub('\w{3,}',r'',l)
@@ -517,11 +668,11 @@ def Numerical():
                                  
                                 
                                 else:
-                                    f2.write('$ans'+str(ansnum) +'=123')
+                                    f2.write('$ans'+str(ansnum) +'=')
                                     ansnum=ansnum+1
                                     if'(' in line:
                                       m=re.search("\((.*?)\)", line) 
-                                      line=formulatranslate(m.group(1),continued)
+                                      line=formulatranslate(m.group(1),continued,anglesint)
                                       f2.write(line.rstrip('\n'))
                                       f2.write(';\n')                                    
                                     else:
@@ -530,10 +681,10 @@ def Numerical():
                                         
                                         l1=line.split('qquad',1)[0]
                                         l2=line.split('qquad',1)[1]
-                                        if 'qquad' in l1:
+                                        if '=' in l1:
                                           l1=l1.split('=',1)[1]
-                                        line=formulatranslate(l1,continued)
-                                        f2.write(l1.rstrip('\n'))
+                                        line=formulatranslate(l1,continued,anglesint)
+                                        f2.write(line.rstrip('\n'))
                                         if ';' in l1:
                                           f2.write('\n')
                                         else:
@@ -541,8 +692,8 @@ def Numerical():
                                         l2=l2.split('=',1)[1]
                                         f2.write('$ans'+str(ansnum) +'=')
                                         ansnum=ansnum+1                                      
-                                        line=formulatranslate(l2,continued)
-                                        f2.write(l2.rstrip('\n'))
+                                        line=formulatranslate(l2,continued,anglesint)
+                                        f2.write(line.rstrip('\n'))
                                         f2.write(';\n')   
                                       else:
                                         l=line.split('=',1)[1]
@@ -572,11 +723,11 @@ def Numerical():
                                         l=l.replace('gamma','')
                                         if 'or' in l:
                                           l=l.split('or',1)[0]
-                                        f2.write('111'+l.rstrip('\n'))
+                                        f2.write(l.rstrip('\n'))
                                         f2.write(';\n')
                             elif 'text' in lines[i+count]:
                               f2.write('$ans'+str(ansnum) +'=')
-                              ans=formulatranslate(lines[i+count],0)
+                              ans=formulatranslate(lines[i+count],0,anglesint)
                               f2.write(ans.rstrip('\n')+';')                                
                             else:
                               if '=' in lines[i+count]:
@@ -631,9 +782,6 @@ def Numerical():
                       ansnum=0
                       while 'ariable' not in lines[i+count] and 'Answer' not in lines[i+count] and 'Range' not in lines[i+count]:
                           data=''
-                            #print(lines[i+count])
-                          #m = re.search("\[(.*?)\]", lines[i+count]) #add for loop to print text
-                          #print(m.group(1))
                           if lines[i+count].strip():
                               #looking for where to input the answers
                               if '\_\_' in lines[i+count]:
@@ -735,10 +883,6 @@ def Numerical():
                          
                               elif 'Range' not in lines[i+count]:    
                                   data=lines[i+count]
-                                  #print(data)
-                                  
-                                  #data=data.replace('[','a7')
-                                  #data=data.replace(']','a8')
                                   data=translateline(data)
                                   #if 'Express' in data:
                                     #print(data)                                  
@@ -1083,7 +1227,6 @@ def Multiplechoice():
                                 if '# Question' in line:
                                   number=1
                                   while 'Answer' not in lines[n+number]:
-                                    #print(line)
                                     if lines[n+number].startswith(ans):
                                       answernum=0
                                     number=number+1
@@ -1091,8 +1234,7 @@ def Multiplechoice():
                           num=num+1
                   
                           
-                      
-          print(answernum)           
+                                
           if answernum>1:
               for i, line in enumerate(lines):
                   if 'Answer' in line and '###' not in line:
@@ -1100,7 +1242,9 @@ def Multiplechoice():
                       while 'eedback' not in lines[i+num]:
                           if lines[i+num].strip() and '![' not in lines[i+num] and '[]' not in lines[i+num] and '()' not in lines[i+num]:
                               line=lines[i+num]
-                              f2.write('"'+line.rstrip('\n')+ '",')
+                              choice='"'+line.rstrip('\n')+ '",'
+                              choice=re.sub('"(\w),"',r'"\1."',choice)
+                              f2.write(choice)
                           num=num+1
           else:
               ans=''
@@ -1118,7 +1262,7 @@ def Multiplechoice():
                                           if 'Question' in line:
                                               count=0
                                               while 'Answer' not in lines[n+count] and written==0:
-                                                  if lines[n+count].startswith(ans):
+                                                  if lines[n+count].startswith(ans):                                                     
                                                       f2.write('\n"'+lines[n+count].rstrip('\n')+ '",')
                                                       
                                                       written=1
@@ -1136,12 +1280,16 @@ def Multiplechoice():
           for i, line in enumerate(lines):
               if searchquery in line or searchquery2 in line or 'Correct' in line or 'Good' in line or 'Great' in line:
                   ans=line[0]+line[1]
+                  #print(ans)
                   for i, line in enumerate(lines):
                       if 'Answer' in line:
                           count=0
                           while 'eedback' not in lines[i+count] and '###' not in lines[i+count]:
-                              if ans in lines[i+count]:
-                                  f2.write('\n"'+lines[i+count].rstrip('\n')+ '");')
+                              ansalt=ans.rstrip('.')+','
+                              if ans in lines[i+count] or lines[i+count].startswith(ansalt):
+                                  line=lines[i+count].replace(ansalt,ans)
+                                  answer='"'+line.rstrip('\n')+'"'
+                                  f2.write('\n"'+line.rstrip('\n')+ '");')
                                   break
                               count=count+1
           
@@ -1166,14 +1314,13 @@ def Multiplechoice():
           for i, line in enumerate(lines):
               if searchquery in line:
                   if answernum>1:
-                      #print('aaaaaa')
                       skiptxt='# A'
                       count=1
                       skipimg='.png]' #find a way to get image name
-                      while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and 'a)' not in lines[i+count] and 'Variable' not in lines[i+count]:
-                          #print(count)
-                          if '![' in lines[i+count]:
+                      while skiptxt not in lines[i+count] and not lines[i+count].startswith('a.') and not lines[i+count].startswith('a)') and 'Variable' not in lines[i+count]:
+                          if '![' in lines[i+count] and 'in_to_the_page' not in lines[i+count] and 'out_of_the_page' not in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
+                            f2.write("\n\n$BR\n$BR")
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
                           elif lines[i+count].strip: 
                               f2.write(lines[i+count])
@@ -1183,32 +1330,47 @@ def Multiplechoice():
                       count=1
                       #skipimg='.png]' #find a way to get image name
                       while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and '# Answer' not in lines[i+count] and 'Variable' not in lines[i+count]:
-                          if '![' in lines[i+count]:
+                          if '![' in lines[i+count] and 'in_to_the_page' not in lines[i+count] and 'out_of_the_page' not in lines[i+count]:
                             imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
                             f2.write("\n\n$BR\n$BR")
                             #m = re.search("\/(.*?)\]", lines[i+count])                        
                           else: 
                               f2.write(lines[i+count])
                           count=count+1                        
-                      
-          if Answerimg==1:
+          if answernum<=1: 
+            for i, line in enumerate(lines):
+              count=0
+              ansimg=0
+              if 'Question' in line:
+                while 'Answer' not in lines[i+count]:
+                  if lines[i+count].startswith('a.') or lines[i+count].startswith('a)'):
+                    ansimg=1
+                  if ansimg==1 and '![' in lines[i+count] and 'in_to_the_page' not in lines[i+count] and 'out_of_the_page' not in lines[i+count]:
+                    imgcount=imgmove(lines[i+count],imgcount,file,f2,'mc')
+                    f2.write("\n\n$BR\n$BR")  
+                  count=count+1
+                    
+                
+            
+          elif Answerimg==1:
               for i, line in enumerate(lines):
                   if 'Answer' in line:
                       num=1
                       try:
                         while 'eedback' not in lines[i+num] and i+num<f_len:
-                            #print(lines[i+num])
-                            if '![' in lines[i+num]:
+                            if '![' in lines[i+num] and 'in_to_the_page' not in lines[i+count] and 'out_of_the_page' not in lines[i+count]: 
                               imgcount=imgmove(lines[i+num],imgcount,file,f2,'mc')
+                              #f2.write("\n\n$BR\n$BR") 
                               #f2.write('tex_size=>700, extra_html_tags=>'+"'alt=")                            
                               #m = re.search("\/(.*?)\]", lines[i+num])
                               #f2.write('\n$BR\n')
                               count=1
                               n=i+num
                               while 'Answer' not in lines[n-count]:
-                                  if lines[n-count].strip():
+                                  if lines[n-count].strip() and '![' not in lines[n-count]:
                                       l=lines[n-count]
                                       anstext=l[0]+l[1]
+                                      anstext=anstext.replace(',','.')
                                       f2.write(anstext+'\n'+"\n\n$BR\n$BR")
                                       break
                                   count=count+1
@@ -1245,6 +1407,13 @@ def Multiplechoice():
       for i, line in enumerate(ln):      
         line=mctranslate(line)
         data=data+line
+      try:
+        answercheck=re.findall('"'+ans+'(.*?)"',data)
+        if answercheck[0]!=answercheck[1]:
+          data=data.replace(answercheck[0],answercheck[1])
+      except Exception as e:
+        print(e)      
+        
 
   with open(newfile, 'w') as f:
       f.write(data)  
@@ -1254,6 +1423,8 @@ def Multiplechoice():
               
 def Multipleanswer():
   imgcount=0
+  qtype=0
+  ansdetermined=0
   f_len=file_len(file)
   with open(file, 'r', encoding='utf-8') as f:
       with open(newfile, 'w') as f2:
@@ -1267,10 +1438,15 @@ def Multipleanswer():
           count=1
           f2.write('"')
           for i,line in enumerate(lines):
+            if 'From the list below' in line:
+              qtype=1
+            
+          for i,line in enumerate(lines):
             if 'Question:' in line:
+              count=1
               while skiptxt not in lines[i+count] and 'a.' not in lines[i+count] and '# Answer' not in lines[i+count] and 'Variable' not in lines[i+count]:
                 if '![' not in lines[i+count] and line.rstrip(): 
-                    f2.write(lines[i+count])
+                    f2.write(lines[i+count].replace('"',''))
                 count=count+1 
           f2.write('",')
           searchquery='Good job!'
@@ -1278,6 +1454,7 @@ def Multipleanswer():
           for i, line in enumerate(lines):
               if searchquery in line or searchquery2 in line or 'Correct.' in line:
                   ans=line[0]+line[1]
+                  ansdetermined=1
                   newsearch='Answer'
                   for n, line in enumerate(lines):
                       if 'Answer' in line and 'specific' not in line:
@@ -1287,24 +1464,47 @@ def Multipleanswer():
                           extraans=[]
                           while 'Feedback' not in lines[n+count]:
                               if ans in lines[n+count] and '![' not in lines[n+count]:
-                                  print(lines[n+count])
                                   f2.write('\n"'+lines[n+count].rstrip('\n')+ '",\n')
                               elif '![' not in lines[n+count] and lines[n+count].rstrip() and '#' not in lines[n+count]:
                                 extraans.append(lines[n+count])
                                 num=num+1
                               count=count+1                      
-          
+          if ansdetermined==0:
+            if qtype==1:
+              for n, line in enumerate(lines):
+                if 'Answer' in line and 'specific' not in line:
+                  count=1
+                  num=1
+                  extraans=[]
+                  while 'Feedback' not in lines[n+count]:
+                      if lines[n+count].strip() and '![' not in lines[n+count]:
+                          f2.write('\n"'+lines[n+count].rstrip('\n')+ '",\n')  
+                      count=count+1
+                  
+              
           #"\( e^{x^2} e^{1/x} \)$BR",
           #"\( e^{x^2} e^{x^{-1}} \)$BR",                
           #"\( e^{ (x^3+1) / x } \)$BR",
           f2.write(');\n')
           f2.write('$mc -> makeLast(')
+          writtenans=0
           #Multiple choice answers and buttons
           #finding location of answer
-
+        
           for i, line in enumerate(lines):
-       
-                  if 'Answer' in line and '###' not in line:
+                  if 'From the list below' in line:
+                    num,write=1,0
+                    while 'Answer' not in lines[i+num]:
+                            if lines[i+num].startswith('a)') or line.startswith('a.'):
+                              write=1
+                            if lines[i+num].strip() and '![' not in lines[i+num] and '[]' not in lines[i+num] and '()' not in lines[i+num] and write==1:
+                                line=lines[i+num]
+                                f2.write('"'+line.rstrip('\n')+ '",\n')
+                                writtenans=1
+                            num=num+1
+                          
+                                               
+                  elif 'Answer' in line and '###' not in line:
                       num=1
                       answernum=3
                       number=0
@@ -1316,7 +1516,6 @@ def Multipleanswer():
                                 if '# Question' in line:
                                   number=1
                                   while 'Answer' not in lines[n+number]:
-                                    #print(line)
                                     if ans in lines[n+number]:
                                       answernum=0
                                     number=number+1
@@ -1325,7 +1524,7 @@ def Multipleanswer():
                           
                       
                       
-          if answernum>1:
+          if answernum>1 and writtenans==0:
               for i, line in enumerate(lines):
                   if 'Answer' in line and '###' not in line:
                       num=1
@@ -1334,7 +1533,7 @@ def Multipleanswer():
                               line=lines[i+num]
                               f2.write('"'+line.rstrip('\n')+ '",')
                           num=num+1
-          else:
+          elif writtenans==0:
               ans=''
               for i, line in enumerate(lines):
                   if 'Feedback' in line:
@@ -1351,7 +1550,7 @@ def Multipleanswer():
                                               count=0
                                               while 'Answer' not in lines[n+count] and written==0:
                                                   if lines[n+count].startswith(ans):
-                                                      f2.write('\n"'+lines[n+count].rstrip('\n')+ '",')
+                                                      f2.write('\n"'+lines[n+count].rstrip('\n')+ '",\n')
                                                       
                                                       written=1
                                                       break
@@ -1469,15 +1668,15 @@ def Multipleanswer():
               #f2.write('\{ image("'+ imgname +'.png" , width=>400, height=>400)\}')#copy image name
               f2.write('\n$BR\n')
               searchquery='# Q'
-              for i, line in enumerate(lines):
-                  if searchquery in line:
-                      skiptxt='# A'
-                      count=1
-                      skipimg='.png]' #find a way to get image name
-                      while skiptxt not in lines[i+count]:
-                          if skipimg not in lines[i+count]:
-                              f2.write(lines[i+count])
-                          count=count+1
+              #for i, line in enumerate(lines):
+                  #if searchquery in line:
+                      #skiptxt='# A'
+                      #count=1
+                      #skipimg='.png]' #find a way to get image name
+                      #while skiptxt not in lines[i+count]:
+                          #if skipimg not in lines[i+count]:
+                              #f2.write(lines[i+count])
+                          #count=count+1
           if Answerimg==1:
               for i, line in enumerate(lines):
                   if 'Answer' in line and 'specific' not in line:
@@ -1515,23 +1714,30 @@ def Multipleanswer():
   
   #replacing variables
   with open(newfile, 'r') as f:
-      data = f.read()
-      data=data.replace(',]', ']')
-      data=data.replace('$', '')
-      #specifcally search within line for string
-      data=data.replace('vec','hbc')
-      data=data.replace('\hbc{', '\( '+'\hbc{')
-      data=data.replace('hbc','vec')
-      data=data.replace('}=', '} \)=')
-      data=data.replace('\hat{i}','\( \hat{i} \)' )
-      data=data.replace('\hat{j}', '\( \hat{j} \)')
-      data=data.replace('\hat{k}', '\( \hat{k} \)')
-      data=data.replace('mc', '$mc')
-      data=data.replace(',)',')')
-      data=data.replace('BR', '$BR')
-      data=data.replace('**','')
-      x='alpha\\'
-      data=data.replace( x , '(alpha\)' )
+    ln = f.readlines()
+    data=''
+    for i, line in enumerate(ln): 
+      if 'new_checkbox_multiple_choice' not in line and 'print_q()' not in line and 'print_a()' not in line and 'checkbox_cmp' not in line:
+        line=mctranslate(line)
+      data=data+line    
+      #data = f.read()
+      #data=data.replace(',]', ']')
+      #data=data.replace('$', '')
+      ##specifcally search within line for string
+      #data=data.replace('vec','hbc')
+      #data=data.replace('\hbc{', '\( '+'\hbc{')
+      #data=data.replace('hbc','vec')
+      #data=data.replace('}=', '} \)=')
+      #data=data.replace('\hat{i}','\( \hat{i} \)' )
+      #data=data.replace('\hat{j}', '\( \hat{j} \)')
+      #data=data.replace('\hat{k}', '\( \hat{k} \)')
+      #data=data.replace('mc', '$mc')
+      #data=data.replace(',)',')')
+      #data=data.replace('BR', '$BR')
+      #data=data.replace('**','')
+      #x='alpha\\'
+      #data=data.replace( x , '(alpha\)' )
+      
   
   
   
@@ -1602,6 +1808,8 @@ for file in glob.glob("*.md"):
                             torf=1
                           if 'Good job' in line or 'Well done' in line or 'Correct.' in line:
                               count=count+1
+                          if 'all the correct options' in line:
+                            count=count+3
                     if count>1:
                           Multipleanswer()
                     elif torf==1:
@@ -1623,5 +1831,13 @@ with open(setname, 'w') as f:
   f.write('\nopenDate = 1/7/00 at 6:00am\ndueDate = 1/20/09 at 6:00am\nanswerDate = 1/21/09 at 6:00\npaperHeaderFile = set34/paperHeaderFile0.pg\nscreenHeaderFile = set34/screenHeaderFile0.pg\nproblemList =\n ' )    
   f.write(problemset)
 
-
+with open('imagemovingerrors.txt','w') as f:
+  f.write('Image Scaling Errors\n\n\n\n')
+  for i in range(len(imgscaleerrors)):
+    f.write(imgscaleerrors[i]+'\n')
+  f.write('Image Moving Errors\n\n\n')
+  for i in range(len(imgerrormovinglist)):
+    f.write(imgerrormovinglist[i]+'\n')  
+  
+  
                              

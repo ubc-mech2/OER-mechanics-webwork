@@ -1,0 +1,70 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: definition, truss
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a. A truss is a structure made of slender two-force members joined at end points.","b. A truss is a structure made of pin-connected slender members.","c. A truss is typically used for bridges and buildings (roofs).","d. A truss is made of pin-connected multi-force members."],
+"a. A truss is a structure made of slender two-force members joined at end points.");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+Which one of the following is the correct definition of a truss?
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

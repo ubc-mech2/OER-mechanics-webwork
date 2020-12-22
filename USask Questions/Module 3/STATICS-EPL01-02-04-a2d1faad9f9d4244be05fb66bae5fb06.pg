@@ -1,0 +1,64 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: Triangular distributed load
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+#---- Formulas to compute answers --------------#
+
+$ans0=4;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+As shown in the figure below, a beam is subjected to a triangular distributed load. Determine the location of the equivalent resultant force. 
+
+Enter your answer: d= [____]{"$ans0"} m.
+
+[@ image( "STATICS-EPL01-02-04-a2d1faad9f9d4244be05fb66bae5fb060.png", width=>501.2738854, height=>500) @]*
+
+
+
+END_PGML
+ENDDOCUMENT();

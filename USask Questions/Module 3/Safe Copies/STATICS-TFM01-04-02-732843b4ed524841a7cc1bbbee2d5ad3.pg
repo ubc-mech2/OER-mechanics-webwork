@@ -1,0 +1,111 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: dry friction, equations, friction
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: match the type of dry friction problem with the correct equations
+#Margin of Error: N.A.
+#Module: Module 3:
+#Needs Calculator: No
+#On Mobius: Yes
+#Origin/ Author: Zoe
+#Question Format: Matching
+#Question Type: A
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+$Scenario1 = PopUp(["?","a","b","c","d"],
+ "a");
+$Scenario2 = PopUp(["?","a","b","c","d"],
+ "b");
+$Scenario3 = PopUp(["?","a","b","c","d"],
+ "c");
+$Scenario4 = PopUp(["?","a","b","c","d"],
+ "d");
+
+
+
+#---- Formulas to compute answers --------------#
+
+
+########################################################
+#PGML
+BEGIN_PGML
+
+Match the following typical roof trusses with their corresponding names.
+
+a:
+[@ image( STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad30.png", width=>596, height=>209) @]* 
+
+b: 
+[@ image( "STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad31.png", width=>619, height=>216) @]*
+
+c: 
+[@ image( "STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad32.png", width=>599, height=>200) @]*
+
+d: 
+[@ image( "STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad33.png", width=>591, height=>203) @]*
+
+
+Howe
+
+[@ $Scenario1->menu() @]*  
+
+
+Pratt 
+
+[@ $Scenario2->menu() @]* 
+
+Warren
+
+[@ $Scenario3->menu() @]* 
+
+K truss
+
+
+[@ $Scenario4->menu() @]* 
+
+
+
+
+
+
+
+END_PGML
+ENDDOCUMENT();

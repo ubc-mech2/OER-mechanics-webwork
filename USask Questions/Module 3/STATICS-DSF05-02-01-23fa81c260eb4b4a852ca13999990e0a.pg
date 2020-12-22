@@ -1,0 +1,77 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: dry friction, equations, kinetic friction
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a. \(F_f\)=\(F_s\)=\(\mu_s\)(W\(\cos\)\(\theta\))","b. \(F_f\)=\(F_k\)=\(\mu_k\)(W\(\cos\)\(\theta\))","c. \(F_f\)=W\(\sin\)\(\theta\)"],
+"b. \(F_f\)=\(F_k\)=\(\mu_k\)(W\(\cos\)\(\theta\))");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+A box is sliding down an inclined plane as shown in the figure below. Assume the box's weight is W lb , determine the magnitude of the friction force. 
+
+
+$BR
+$BR
+\{ image("STATICS-DSF05-02-01-23fa81c260eb4b4a852ca13999990e0a0.png" , width=>259.34999999999997, height=>162.39999999999998) \}
+
+$BR
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

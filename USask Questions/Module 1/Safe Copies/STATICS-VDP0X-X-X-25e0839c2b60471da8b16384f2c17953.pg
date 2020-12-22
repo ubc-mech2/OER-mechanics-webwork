@@ -1,0 +1,71 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 3D, Dot product
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Sean Maw
+#Margin of Error: 0.01
+#Origin/Author: Zoe
+#Sig Fig: 3 sig figs
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+
+
+
+
+
+
+
+$C= random( -20, 20,1);
+$A= random( 5, 9,1);
+$B= random( 4, 8,1);
+#---- Formulas to compute answers --------------#
+
+$ans0=arccos(($C)/($A* $B));
+########################################################
+#PGML
+BEGIN_PGML
+
+Knowing the dot product of two vectors is [`[$C]`], and their magnitudes are [`[$A]`] and [`[$B]`], respectively. What is the angle between these two vectors? Round your answer to 3 significant figures.
+
+Enter your answer: [____]{"$ans0"}[`^{\circ}`]
+
+
+
+END_PGML
+ENDDOCUMENT();

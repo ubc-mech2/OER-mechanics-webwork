@@ -1,0 +1,100 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: Given, Problem solving
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Sean Maw
+#Learning Outcome: Recognize the correct given (known) information in a scenario, given a description (words and/or diagram)
+#On Mobius: Yes
+#Shaobo Reviewed: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc = new_checkbox_multiple_choice();
+$mc -> qa (
+"
+Consider the following scenario:
+
+
+
+A support pin on the edge of a shelf supports three different forces. \(F_1\)=700lb is directed with an angle of \(\phi_1\)=30 \(^\circ\), measured CCW from the negative x axis. \(F_2\)=400 lb is directed straight downward on the support pin. \(F_3\)=600 lb is directed with an angle \(\phi_3\)=45 \(^\circ\), measured CW from the positive x axis. What is the resultant force vector experienced by the pin, expressed in Cartesian form?
+
+
+
+From the list below, select all the correct options depicting the information that is given in the above problem.  
+
+",
+"a) A support pin supporting three forces",
+
+"d) \(F_1\)=700lb",
+
+"f) \(\phi_1\)=30 \(^\circ\), measured CCW from the negative x axis",
+
+"g) \(F_2\)=400lb",
+
+"k) \(F_3\)=600lb",
+
+"m) \(\phi_3\)=45 \(^\circ\), measured CW from the positive x axis",
+);
+$mc -> makeLast("a) A support pin supporting three forces",
+"b) Angles as shown",
+"c) F=700lb",
+"d) \(F_1\)=700lb",
+"e) \phi=30 \(^\circ\), measured CCW from the negative x axis",
+"f) \(\phi_1\)=30 \(^\circ\), measured CCW from the negative x axis",
+"g) \(F_2\)=400lb",
+"h) \(F_2\)=400",
+"i) \(\phi_2\)=30 \(^\circ\), measured CCW from the positive x axis",
+"j) \(f_3\)=600lb",
+"k) \(F_3\)=600lb",
+"l) \(\phi_3\)=45 \(^\circ\), measured CW from the negative x axis",
+"m) \(\phi_3\)=45 \(^\circ\), measured CW from the positive x axis",
+"n) Coordinate axes as shown",
+);
+
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+
+$BR
+\{ $mc -> print_q() \}
+$BR\{ $mc -> print_a() \}
+END_TEXT
+  
+ANS( checkbox_cmp( $mc->correct_ans() ) );
+ENDDOCUMENT();

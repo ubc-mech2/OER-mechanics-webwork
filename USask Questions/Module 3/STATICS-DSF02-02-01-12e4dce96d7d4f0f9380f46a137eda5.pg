@@ -1,0 +1,77 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: dry friction, equations, friction, static friction
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a. \(F_f\)=\(\mu_sN\)","b. \(F_f\)<\(\mu_sN\)","c. \(F_f\)=0","d. \(F_f\)>\(\mu_sN\)"],
+"b. \(F_f\)<\(\mu_sN\)");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+As shown in the figure below,  a non-zero horizontal force, P, is applied to the crate. If the crate is not moving and has no impending motion, then the friction force, \(F_f\), acting on the crate is \(____\).
+
+
+$BR
+$BR
+\{ image("STATICS-DSF02-02-01-12e4dce96d7d4f0f9380f46a137eda5d0.png" , width=>182.35, height=>88.55) \}
+
+$BR
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

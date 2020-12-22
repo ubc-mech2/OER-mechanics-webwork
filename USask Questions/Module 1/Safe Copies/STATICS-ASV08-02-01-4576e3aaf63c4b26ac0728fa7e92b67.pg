@@ -1,0 +1,67 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 2D, Addition, Cartesian, Diagram, vector
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Determine the resultant of two 2D vectors' sum, given a vector diagram, using Cartesian components
+#Needs Calculator: No
+#Sean Reviewed: Yes
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+#---- Formulas to compute answers --------------#
+
+$ans0=3; 
+$ans1=3;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+Consider vectors A and B in the diagram below: 
+
+[@ image( "STATICS-ASV08-02-01-4576e3aaf63c4b26ac0728fa7e92b67d0.png", width=>915.615141955836, height=>500.0) @]*
+
+Find the resultant vector C as a sum of vectors A and B. Fill in the blanks below to express the vector in the Cartesian form: 
+
+[`C`]=[____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`]
+
+
+
+END_PGML
+ENDDOCUMENT();

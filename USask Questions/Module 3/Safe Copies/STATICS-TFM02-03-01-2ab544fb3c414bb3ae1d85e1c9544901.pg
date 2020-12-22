@@ -1,0 +1,92 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Copyright Clearance: Yes
+#Keywords: FBD, method of joints, truss
+#Last Edit: Dec 1, 2020 4:54 PM
+#Last Edited By: Nicholas Betancourt
+#Module: Module 3:
+#Randomizable Parameters: No
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a. ","b.","c.","d. No FBD needs to be constructed, because member AD and AC are ZFMs."],
+"b.");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+From the options below, select the correct FBD of joint A. You can either assume the members are in compression or in tension.
+
+
+$BR
+$BR
+\{ image("STATICS-TFM02-03-01-2ab544fb3c414bb3ae1d85e1c95449010.png" , width=>240.45, height=>265.65) \}
+
+$BR
+
+
+$BR
+$BR
+\{ image("STATICS-TFM02-03-01-2ab544fb3c414bb3ae1d85e1c95449011.png" , width=>110.94999999999999, height=>110.6) \}a.
+
+
+$BR
+$BR
+\{ image("STATICS-TFM02-03-01-2ab544fb3c414bb3ae1d85e1c95449012.png" , width=>107.1, height=>116.19999999999999) \}b.
+
+
+$BR
+$BR
+\{ image("STATICS-TFM02-03-01-2ab544fb3c414bb3ae1d85e1c95449013.png" , width=>134.75, height=>109.89999999999999) \}c.
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

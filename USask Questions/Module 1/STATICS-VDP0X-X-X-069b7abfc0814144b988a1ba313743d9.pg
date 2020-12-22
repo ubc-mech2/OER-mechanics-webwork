@@ -1,0 +1,80 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 3D, Dot product
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Zoe Mao
+#Margin of Error: 0
+#Origin/Author: Zoe
+#Sig Fig: Exact Integer
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$X= random( -8, 8,1);
+$Y= random( -8, 8,1);
+$Z= random( -8, 8,1);
+$O= random( -9, 9,1);
+$P= random( -9, 9,1);
+$Q= random( -9, 9,1);
+#---- Formulas to compute answers --------------#
+
+
+########################################################
+#PGML
+BEGIN_PGML
+
+Calculate the dot product of [`\overrightarrow{A}`]=([`[$X]`][`\hat{i}`]+[`[$Y]`][`\hat{j}`]+[`[$Z]`][`\hat{k}`]) and [`\overrightarrow{B}`]=([`[$O]`][`\hat{i}`]+[`[$P]`][`\hat{j}`]+[`[$Q]`][`\hat{k}`]). 
+
+Enter your answer: [____]{"$ans0"}
+
+
+
+END_PGML
+ENDDOCUMENT();
