@@ -14,8 +14,8 @@ import PIL
 from PIL import Image
 
 #User Input
-pgfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 2'#Input the location of webwork questions
-mkdownfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 2 Markdown'#Input the location of markdown files
+pgfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 3'#Input the location of webwork questions
+mkdownfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 3 Markdown'#Input the location of markdown files
 headerlocation=r'C:\Users\ptemm\Downloads\Usask Header Sample AD-2.txt'#Input the location/path of the header file
 
 os.chdir(mkdownfilelocation)
@@ -49,14 +49,15 @@ for file in glob.glob("*.md"):
                 pgfile=''
                 for i, line in enumerate(ln):
                         if 'DESCRIPTION' in line and 'END' not in line:
-                                delete=1 
+                                delete=1
                         if delete==1:
-                                line=line.replace(line,'')
+                                if 'END' in line and 'DESCRIPTION' in line:
+                                        print('30')
+                                        delete=0                                 
                         else:
                                 pgfile=pgfile+line
                                 
-                        if 'END DESCRIPTION' in line:
-                                delete=0                        
+                       
                                 
         #rewriting the question with the new header                        
         with open(pglocation,'w',encoding='utf-8') as f2:

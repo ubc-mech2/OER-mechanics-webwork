@@ -1,0 +1,76 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 2FM
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Identify 2 and 3 force members
+#Needs Calculator: No
+#Sean Reviewed: Yes
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"Yes","No"],
+"Yes");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+As shown in the figure below, can the link CD be considered a two-force member?
+
+
+
+$BR
+$BR
+\{ image("STATICS-RBSE08-01-03-a7cc1886b479471a9948f0ea89c7d9730.png" , width=>762.1359223300971, height=>499.99999999999994) \}
+
+
+$BR
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();
