@@ -14,8 +14,8 @@ import PIL
 from PIL import Image
 
 #User Input
-pgfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 1'#Input the location of webwork questions
-mkdownfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 1 Markdown'#Input the location of markdown files
+pgfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 2'#Input the location of webwork questions
+mkdownfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 2 Markdown'#Input the location of markdown files
 headerlocation=r'C:\Users\ptemm\Downloads\Usask Header Sample AD-2.txt'#Input the location/path of the header file
 
 os.chdir(mkdownfilelocation)
