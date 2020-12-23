@@ -17,9 +17,9 @@
 ## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
 ## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
-## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
-## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## territory of many peoples - specifically the Musqueam (xÊ·mÉÎ¸kÊ·ÉyÌÉm), Squamish (Sá¸µwxÌ±wÃº7mesh), 
+## Tsleil-Waututh (sÉlÌilwÉtaÉÉ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÌÉwaÎ¸enaÉÉ¬ tÉmÉxÊ·), 
+## Chemainus (Stz'uminus), StÃ³:loÌ (SâÃ³lh TÃ©mÃ©xw), Kwanlin DÃ¼n, Niitsitapi (Blackfoot), 
 ## and the people of the Treaty 7 region of Southern Alberta. 
 ##
 ## ENDDESCRIPTION
@@ -84,7 +84,7 @@ $vk = random(1,2,0.1);
 #---- Formulas to compute answers --------------#
 $Hi = $mass*($j*$vk-$k*$vj);
 $Hj = $mass*-($i*$vk-$k*$vi);
-$Hk = $mass*($j*$vi-$j*$vi);
+$Hk = $mass*($i*$vj-$j*$vi);
 
 #---- Answers to the problem -----------------------#
 $ansA = $Hi;
@@ -99,7 +99,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-19.png", width=>[$width], height=>[$height]) @]*
 
 A [`m = [$mass] kg`] particle is [`d = [$i]i + [$j]j +[$k]k`] away from point [`O`]. If the particle has the velocity 
-[`v = [`$vi`]i + [`$vj`]j + [`$vk`]k`], determine the angular momentum of the particle about [`O`].
+[`v = [$vi]i + [$vj]j + [$vk]k`], determine the angular momentum of the particle about [`O`].
 
 [`H_O =`] [____]{"$ansA"} [`\hat{i}`] [`+`] [____]{"$ansB"} [`\hat{j}`] [`+`] [____]{"$ansC"} [`\hat{k}`]
 

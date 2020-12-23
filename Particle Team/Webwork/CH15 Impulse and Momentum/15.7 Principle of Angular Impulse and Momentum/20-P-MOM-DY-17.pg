@@ -76,8 +76,8 @@ $dist = random(3.5,5,0.1);
 $theta = random(30,45,1);
 
 #---- Formulas to compute answers --------------#
-$di = $dist*cos($theta);
-$dj = $dist*sin($theta);
+$di = $dist*cos($theta/180*pi);
+$dj = $dist*sin($theta/180*pi);
 $H = $mass*($di*$j-$dj*$i);
 
 #---- Answers to the problem -----------------------#
