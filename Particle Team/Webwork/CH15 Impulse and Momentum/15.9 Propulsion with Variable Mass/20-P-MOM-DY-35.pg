@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2510;
+
+$width = $imgScale*2535;
 		#aspect ratio
 
 
@@ -75,7 +79,7 @@ $q = random(50,75,1);
 
 #---- Formulas to compute answers --------------#
 $c= $q*1004;
-$velF(9.81*$massF/($c)+11190)/ln($mass/($mass-$massF));
+$velF = (9.81*$massF/($c)+11190)/ln($mass/($mass-$massF));
 
 #---- Answers to the problem -----------------------#
 $ansA = $velF;
@@ -87,7 +91,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-35.png", width=>[$width], height=>[$height]) @]*
 
-A rocket ship has the mass [`m = [$mass] kg`], [$massF] kg of which is fuel with the density [`\rho = 1004 kg/m^3`]. 
+A rocket ship has the mass [`m = [$mass] kg`], [`[$massF]`] kg of which is fuel with the density [`\rho = 1004 kg/m^3`]. 
 The fuel exits the nozzle at a volumetric rate [`Q = [$q] m^3/s`] and the escape velocity of Earth is [`11.19 km/s`]. 
 What magnitude of velocity relative to the rocket ship does the fuel need to be ejected to reach the escape velocity 
 by the time the fuel runs out?

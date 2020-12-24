@@ -64,13 +64,17 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*1950;
+
+$width = $imgScale*1749;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
 $mass = random(15,20,1);
-$force = random(200,225,1);
+$force = random(125,150,1);
 $time = random(3,5,0.1);
 
 #---- Formulas to compute answers --------------#
@@ -78,7 +82,7 @@ $timeStop = ($mass*9.81/$force)**2;
 $vel = ($force*2/3*($time)**(3/2)-$force*2/3*($timeStop)**(3/2))/$mass;
 
 #---- Answers to the problem -----------------------#
-$ansA = $vel;
+$ansA = abs($vel);
 
 ########################################################;
 #PGML
@@ -88,7 +92,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-21.png", width=>[$width], height=>[$height]) @]*
 
 A motor is lifting a crate with mass [`m = [$mass] kg`]. The motor provides a force that can be described by the function 
-[`F = [$force]t^(1/2) N`]. If starting from rest, determine the magnitude of velocity of the crate at time t = 3s.
+[`F = [$force]t^{(1/2)} N`]. If starting from rest, determine the magnitude of velocity of the crate at time [`t = [$time] s`].
 
 [`|v| =`] [____]{"$ansA"} [`m/s`]
 

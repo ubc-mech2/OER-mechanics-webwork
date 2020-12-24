@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2147;
+
+$width = $imgScale*2333;
 		#aspect ratio
 
 
@@ -74,7 +78,7 @@ $vel = random(3,5,0.1);
 
 #---- Formulas to compute answers --------------#
 $radius = $rad/100;
-$force = sqrt(2*(997*pi*$radius**2*vel**2)**2);
+$force = sqrt(2*(997*pi*$radius**2*$vel**2)**2);
 
 #---- Answers to the problem -----------------------#
 $ansA = $force;

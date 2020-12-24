@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*1661;
+
+$width = $imgScale*2571;
 		#aspect ratio
 
 
@@ -84,7 +88,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-36.png", width=>[$width], height=>[$height]) @]*
 
-A `m = [$mass] kg`] minecart is initially traveling at [`v = [$vel] m/s`] collects rainwater as it travels. 
+A [`m = [$mass] kg`] minecart is initially traveling at [`v = [$vel] m/s`] collects rainwater as it travels. 
 Rainwater collects inside the cart at a rate of [`[$dm] g/s`]. Determine the equation of velocity for the cart. 
 Assume the rain has no horizontal velocity.
 

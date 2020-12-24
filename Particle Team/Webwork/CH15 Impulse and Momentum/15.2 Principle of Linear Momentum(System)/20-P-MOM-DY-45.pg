@@ -64,17 +64,21 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2092;
+
+$width = $imgScale*1333;
 		#aspect ratio
 
 
 #---- Random variables for this problem --------#
 $mass = random(15,20);
-$force = random(,220,5);
+$force = random(85,90,1);
 $time = random(3,5,1);
 
 #---- Formulas to compute answers --------------#
-$s = 2/$mass*($force*$time**2/2+$time**4/12)-$mass*9.81*$time**2/2;
+$s = 2/$mass*($force*$time**2/2+$time**4/12)-9.81*$time**2/2;
 
 #---- Answers to the problem -----------------------#
 $ansA = $s;
@@ -87,7 +91,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-45.png", width=>[$width], height=>[$height]) @]*
 
 A [`m = [$mass] kg`] mass is connected to a complex pulley system. The force on the other side of the rope is 
-[`F = ([$force] +t^2)N`]. Determine the distance the mass travels in [`t = [$time] s`].
+[`F = ([$force] +t^2)N`]. Determine the distance the mass travels in [`t = [$time] s`] assuming the system starts at rest.
 
 
 [`d =`] [____]{"$ansA"} [`m`]

@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2771;
+
+$width = $imgScale*2491;
 		#aspect ratio
 
 
@@ -74,7 +78,7 @@ $vel = random(1,3,0.1);
 
 #---- Formulas to compute answers --------------#
 $rad = $radcm/100;
-$area = pi*$rad**2
+$area = pi*$rad**2;
 $forcei = -997*$area*$vel**2;
 $forcej = 997*$area/4*$vel**2-997*$area*3/4*$vel**2;
 
@@ -95,7 +99,7 @@ in the positive y direction and 3/4th of the stream travels in the negative y-di
 the blade by the water. The density of water is [`\rho = 997 kg/m^3`].
 
 
-[`F =`] [____]{"$ansA"} [`\hat{i}`] [`+`] [____]{"$ansB"} [`\hat{j}`] ['N']
+[`F =`] [___]{"$ansA"} [`\hat{i}`] [`+`] [___]{"$ansB"} [`\hat{j}`] [`N`]
 
 END_PGML
 

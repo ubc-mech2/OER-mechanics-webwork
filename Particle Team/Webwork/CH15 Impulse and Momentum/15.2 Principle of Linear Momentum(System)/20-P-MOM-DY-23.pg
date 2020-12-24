@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*1114;
+
+$width = $imgScale*1885;
 		#aspect ratio
 
 
@@ -80,7 +84,7 @@ $const1 = ($force*$time-$mu*$massA*9.81)/$massA;
 $Fab1 = $time/$massA;
 $const2 = $mu*$time*9.81;
 $Fab2 = $time/$massB;
-$f = ($const1*$const2)/($Fab1 + $Fab2);
+$f = ($const1+$const2)/($Fab1 + $Fab2);
 $vel = $f*$Fab2-$const2;
 
 
@@ -96,7 +100,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-DY-23.png", width=>[$width], height=>[$height]) @]*
 
 Block [`A`] and [`B`], with mass [`m_A = [$massA] kg`] and [`m_B = [$massB] kg`] respectively, are subject to the force 
-[`F = [$force] N`]. The blocks have a coefficient of friction [`\mu = [$mu]`] with the floor and are initally at rest. 
+[`F = [$force] N`]. The blocks have a kinetic coefficient of friction [`\mu_k = [$mu]`] with the floor and are initally at rest. 
 Determine the final velocity of the blocks when time [`t = [$time] s`] and the force exerted by block [`A`] onto block 
 [`B`] during the movement. Assume to the right is positive.
 
