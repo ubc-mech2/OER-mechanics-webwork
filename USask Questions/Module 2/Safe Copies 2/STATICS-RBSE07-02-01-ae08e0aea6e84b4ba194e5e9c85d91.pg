@@ -1,0 +1,94 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: conclusion, sig figs
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Zoe Mao
+#Learning Outcome: Recognize the most appropriate conclusion to a simple problem, given a statement of the problem and a numeric answer
+#Needs Calculator: No
+#Sean Reviewed: Yes
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a. 75","b. 74.6","c. 74.58","d. 75.0"],
+"b. 74.6");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+Consider the following scenario:
+
+
+
+
+$BR
+\{ image("STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf7180.png" , width=>1013, height=>115) \}
+
+$BR
+
+
+$BR
+\{ image("STATICS-RBSE04-01-01-83d1fc53553940b8ba82cf8aca4cf7181.png" , width=>534.9907918968693, height=>500.0) \}
+
+$BR
+
+
+
+Assume you have solved this problem.  The FBD below shows your calculated values. If this question requires you to round your final results to three sig figs, select the best presentation of the conclusion in the form of "The tension in the cable is \(____\) lb." from the list below the FBD.
+
+
+$BR
+\{ image("STATICS-RBSE07-02-01-ae08e0aea6e84b4ba194e5e9c85d91dd0.png" , width=>766, height=>447) \}
+
+$BR
+
+
+
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

@@ -1,0 +1,98 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 2D, equilibrium, free body diagram, inclined surface, particle
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Recognize the most appropriate free body diagram of a particle subjected to forces in 2D
+#Needs Calculator: No
+#Sean Reviewed: Yes
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#Tolerance#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#- Random variables for this problem --#
+
+$mc1 = RadioButtons([
+"a.","b.","c.","d. "],
+"a.");
+########################################################
+# Not in PGML
+
+BEGIN_TEXT
+$BR
+
+$BR
+
+Which one of the following is the most appropriate FBD for the ball?
+
+
+$BR
+$BR\{ image("STATICS-PSE06-06-02-950079a3f6fd430dbaf9fffcb6dda3790.png" , width=>729.0969899665552, height=>500.0) \}
+
+$BR
+$BR\{ image("STATICS-PSE06-06-02-950079a3f6fd430dbaf9fffcb6dda3791.png" , width=>306.4516129032258, height=>500.0) \}a.
+
+
+$BR
+
+$BR
+$BR\{ image("STATICS-PSE06-06-02-950079a3f6fd430dbaf9fffcb6dda3792.png" , width=>350, height=>489) \}b.
+
+
+$BR
+
+$BR
+$BR\{ image("STATICS-PSE06-06-02-950079a3f6fd430dbaf9fffcb6dda3793.png" , width=>390.29126213592235, height=>500.0) \}c.
+
+
+$BR
+
+$BR
+$BR\{ image("STATICS-PSE06-06-02-950079a3f6fd430dbaf9fffcb6dda3794.png" , width=>118.77394636015326, height=>500.0) \}d.
+
+
+$BR
+
+
+$BR
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+ENDDOCUMENT();

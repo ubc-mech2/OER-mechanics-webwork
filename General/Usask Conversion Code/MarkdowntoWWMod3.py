@@ -14,12 +14,12 @@ from PIL import Image
   # -*- coding: UTF-8 -*-
 
 #This script converts Markdown Format into Webwork Question format
-#
  
  
  #input file location below
 filelocation=r'C:\Users\ptemm\Downloads\Dec 2 Module 3\GE 124 Question Database - Module 3 795ce0a4330f418baa3d485f72bcf63b'
 #'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
+
 #moving and renaming images
 imglinelist=[]
 newimglinelist=[]
@@ -1745,60 +1745,6 @@ def Multipleanswer():
                           Qimg=1
                       count=count+1
                       
-           
-                      
-                   
-  
-  #MC answers if image is outside the answer choices
-          #searchquery='Answer'
-          #f2.write('$mc1 = RadioButtons([\n')
-          #if Answerimg ==1:
-              #for i, line in enumerate(lines):
-                  #if 'Answer' in line:
-                      #num=1
-                      #while 'Feedback' not in lines[i+num]:
-                          #if lines[i+num].strip() and '![' not in lines[i+num]:
-                              #line=lines[i+num]
-                              #f2.write('"'+line[0]+line[1]+ '",')
-                          #num=num+1
-                      #f2.write('],')
-                  #searchquery='Good job'
-                  #searchquery2= 'Well done'
-              #for i, line in enumerate(lines):
-                  #count=0
-                  #if searchquery in line or searchquery2 in line or 'Correct.' in line:
-                      #ans=line[0]+line[1]
-                      #count=count+1
-                      #f2.write('\n"'+ans+ '");')
-                  
-                          
-                          
-          #else:
-              #for i, line in enumerate(lines):
-                  #if 'Answer' in line:
-                      #num=1
-                      #while 'Feedback' not in lines[i+num]:
-                          #if lines[i+num].strip():
-                              #f2.write('"'+lines[i+num].rstrip('\n')+ '",')
-                          #num=num+1
-                      #f2.write('],')
-                  #searchquery='Good job'
-                  #searchquery2= 'Well done'
-                  #for i, line in enumerate(lines):
-                      #if searchquery in line or searchquery2 in line or 'Correct.' in line:
-                          #ans=line[0]+line[1]
-                          #newsearch='Answer'
-                          #for n, line in enumerate(lines):
-                              #if 'Answer' in line:
-                                  #avoidq= 'Feedback'
-                                  #count=0
-                                  #while 'Feedback' not in lines[n+count]:
-                                      #if ans in lines[n+count]:
-                                          #f2.write('\n"'+lines[n+count].rstrip('\n')+ '");')
-                                          #break
-                                      #count=count+1
-                                  #break
-                              #break
           
     
                  
@@ -1891,7 +1837,9 @@ filename=[]
 count=1
 problemcount=0;
 problemset=''
-setcount=10
+setcount=10 #intial problem set number
+
+#Main function for going through files in folder
 for file in glob.glob("*.md"):
     print(file)
     count=count+1
@@ -1957,13 +1905,14 @@ for file in glob.glob("*.md"):
               else:
                 print(':question format not recognized')
                 
-#print set.def file
+#set.def file: Used to upload problem sets to webwork
 setname='setusaskmc'+str(setcount)+'.def'
 with open(setname, 'w') as f:
   f.write('setNumber=Usaskmc'+str(setcount))
   f.write('\nopenDate = 1/7/00 at 6:00am\ndueDate = 1/20/09 at 6:00am\nanswerDate = 1/21/09 at 6:00\npaperHeaderFile = set34/paperHeaderFile0.pg\nscreenHeaderFile = set34/screenHeaderFile0.pg\nproblemList =\n ' )    
   f.write(problemset)
 
+#Image moving error logs
 with open('imagemovingerrors.txt','w') as f:
   f.write('Image Scaling Errors\n\n\n\n')
   for i in range(len(imgscaleerrors)):

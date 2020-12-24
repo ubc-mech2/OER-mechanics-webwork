@@ -1,0 +1,64 @@
+#DESCRIPTION
+#Automatic Grading: Yes
+#Keywords: 3D, Magnitude
+#Last Edit: Oct 30, 2020 11:22 AM
+#Last Edited By: Nicholas Betancourt
+#Learning Outcome: Given a vector diagram of a 3D position vector, determine its magnitude
+#Needs Calculator: Yes
+#Sean Reviewed: Yes
+# END DESCRIPTION
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+#---- Formulas to compute answers --------------#
+
+$ans0=5.92 ;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+Calculate the magnitude of the vector shown in the figure below. Round your answer to 3 significant figures.
+
+[`\overrightarrow{v}`]= [____]{"$ans0"}
+
+[@ image( "STATICS-CVF09-01-01-a25606ca87f343b6a772f4826c1c1f700.png", width=>482.3008849557522, height=>500.0) @]*
+
+
+
+END_PGML
+ENDDOCUMENT();
