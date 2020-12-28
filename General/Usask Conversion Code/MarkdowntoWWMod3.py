@@ -14,11 +14,15 @@ from PIL import Image
   # -*- coding: UTF-8 -*-
 
 #This script converts Markdown Format into Webwork Question format
+#Inputs: File location
+#Outputs:.pg file,.def file question images are moved to the same folder as the questions
+#Notes: Sometimes code may need to be adjusted to address different problems 
+
  
  
- #input file location below
+#input file location below
 filelocation=r'C:\Users\ptemm\Downloads\Dec 2 Module 3\GE 124 Question Database - Module 3 795ce0a4330f418baa3d485f72bcf63b'
-#'C:\Users\ptemm\Downloads\Export-814d98e7-2abf-4127-a900-6ab08c4fe6c8\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
+
 
 #moving and renaming images
 imglinelist=[]
@@ -26,7 +30,6 @@ newimglinelist=[]
 imgerrormovinglist=[]
 imgscaleerrors=[]
 def imgmove(imgline,imgcount,filename,filetowrite,qtype):
-  #print(imgline)
   if imgline in imglinelist:
     imgindex=imglinelist.index(imgline)
     linetowrite=newimglinelist[imgindex]
@@ -115,7 +118,9 @@ def imgmove(imgline,imgcount,filename,filetowrite,qtype):
   
   
   
-  
+#Translating the formula from markdown to webwork in numerical format questions
+#Inputs: l->line of code, continuation-> 1 if formulas have values in multiple equations and 0 if otherwise, anglesint-> 1 if angles are intialized and 0 otherwise
+#output: Translated line for formulas
 def formulatranslate(l,continuation,anglesint):
   l=re.sub('mathrm{.*?}','',l)
   l=l.replace(r'\times','*').replace(',','')
@@ -185,10 +190,14 @@ def formulatranslate(l,continuation,anglesint):
     l=l.replace('tan($alpha','tan((pi/180)*$alpha').replace('tan($beta','tan((pi/180)*$beta').replace('tan($gamma','tan((pi/180)*$gamma')
     
   #else:
-    ##l=l.replace('arccos','(180/pi)*arccos)' #for degrees
+    ##l=l.replace('arccos','(180/pi)*arccos').replace('arcsin','(180/pi)*arcsin').replace('arctan','(180/pi)*arctan') #use this get for degrees
   
   return l
-  
+
+
+#function to write the beginning of file
+#Input: f2-> file to write to, f-> original file
+#output: writing the beginning of the new file
 def beginfile(f2,f):
 
     searchquery = 'Key'
@@ -240,13 +249,16 @@ def beginfile(f2,f):
 
 
                            
-  
+#finds the legnth of the original file  
 def file_len(file):
   with open(file, 'r', encoding='utf-8') as f:
     for i, l in enumerate(f):
       pass
   return i + 1  
 
+#Translates lines for Numerical response format questions from markdown to webwork
+#Input: line to translate
+#Output: Translated Line
 def translateline(line):
   encoding='utf-8'
   if '_' in line:
@@ -313,6 +325,9 @@ def translateline(line):
   
   return line
 
+#Translates lines for Numerical response format questions from markdown to webwork
+#Input: data->line to translate
+#Output: Translated Line
 def mctranslate(data):
   #data=re.search
   data=data.replace(r'\,\mathr',' mathr')
