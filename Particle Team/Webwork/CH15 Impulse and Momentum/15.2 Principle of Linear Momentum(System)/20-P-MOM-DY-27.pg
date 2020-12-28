@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*965;
+
+$width = $imgScale*2465;
 		#aspect ratio
 
 
@@ -76,7 +80,7 @@ $time = random(5,7,1);
 
 #---- Formulas to compute answers --------------#
 $massTot = $massT + $massRV;
-$accel = $force/$massTot;
+$accel = $force*1000/$massTot;
 $vel = $accel*$time;
 $T = $force-$massT*$accel;
 
@@ -93,7 +97,7 @@ BEGIN_PGML
 
 A [`m_T = [$massT] kg`] truck starts at rest and beings to pull a [`m_{RV} = [$massRV] kg`] RV behind it with a cable. 
 If the tires provide a force of [`F = [$force] kN`], determine the velocity of the truck at time [`t = [$time] s`] 
-and the tension, [`T`], in the cord. Assume to the right is positive.
+and the force applied by the cord onto, [`T`]. Assume to the right is positive.
 
 [`v =`] [____]{"$ansA"} [`m/s`]
 

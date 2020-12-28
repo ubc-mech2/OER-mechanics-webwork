@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*925;
+
+$width = $imgScale*2211;
 		#aspect ratio
 
 
@@ -90,9 +94,10 @@ BEGIN_PGML
 
 A team of engineers is performing experiments on the tires of a new sports car. To follow regulations the car must 
 be able to stop completely from a starting velocity of [`v = [$vel] m/s`] in [`d = [$dist] m`]. Assuming the wheels 
-lock up, determine the coefficient of friction of the tires and how long it takes for the car to come to a stop.
+lock up, determine the kinetic coefficient of friction of the tires and how long it takes for the car to come to a stop.
+Assume that the force of friction is constant.
 
-[`\mu =`] [____]{"$ansA"}
+[`\mu_k =`] [____]{"$ansA"}
 
 [`t =`] [____]{"$ansB"} [`s`]
 

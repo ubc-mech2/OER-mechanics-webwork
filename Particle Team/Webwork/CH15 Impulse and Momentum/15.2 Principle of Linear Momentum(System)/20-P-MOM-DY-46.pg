@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2092;
+
+$width = $imgScale*2563;
 		#aspect ratio
 
 
@@ -90,7 +94,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-46.png", width=>[$width], height=>[$height]) @]*
 
-A [`m = [$mass] kg`]birdie is traveling at [`v = [$vel1] m/s`] before a player hits it with a racket [`h = [$h] m`] above the ground. 
+A [`m = [$mass] kg`] birdie is traveling at [`v = [$vel1] m/s`] before a player hits it with a racket [`h = [$h] m`] above the ground. 
 The racket applies an average force [`F = [$force] N`] which sends the birdie on a trajectory which is [`\theta = 75^{o}`] 
 above the horizontal. The birdie lands on the ground [`d = [$d] m`] away. Determine the contact time between the racket and the birdie.
 

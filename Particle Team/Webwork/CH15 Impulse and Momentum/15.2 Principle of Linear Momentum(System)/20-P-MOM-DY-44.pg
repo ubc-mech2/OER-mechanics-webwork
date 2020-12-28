@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*1530;
+
+$width = $imgScale*2562;
 		#aspect ratio
 
 
@@ -72,7 +76,7 @@ $imgScale = 0.2;
 $mass = random(2000,2500,100);
 $vel = random(10,15,1);
 $k = random(50,100,1);
-$mcScenario11 = PopUp(["Higher","Lower","Same"], "Feasible");
+$mcScenario11 = PopUp(["Higher","Lower","Same"], "Same");
 
 #---- Formulas to compute answers --------------#
 $impulse = $mass*($vel);
@@ -91,9 +95,10 @@ A [`k = [$k] N/m`] spring is used to stop the momentum of a [`m = [$mass] kg`] c
 Assuming that the car does not deform. Determine the horizontal impulse needed to stop the car.
 
 
-[` =`] [____]{"$ansA"} [``]
+[`J =`] [____]{"$ansA"} [`Ns`]
 
 How would the horizontal impulse of rigid brace compare to the horizontal impulse of the spring?: 
+
 [@ $mcScenario11->menu() @]*  
 
 END_PGML

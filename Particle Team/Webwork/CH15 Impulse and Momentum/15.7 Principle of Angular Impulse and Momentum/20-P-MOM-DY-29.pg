@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2310;
+
+$width = $imgScale*2418;
 		#aspect ratio
 
 
@@ -81,7 +85,7 @@ $angVel = $radA*$massA*$vel/($radA**2*$massA+$radB**2*$massB);
 $velA2 = $angVel*$radA;
 
 #---- Answers to the problem -----------------------#
-$ansA = $velA2;
+$ansA = abs($velA2);
 
 ########################################################;
 #PGML
@@ -90,10 +94,10 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-29.png", width=>[$width], height=>[$height]) @]*
 
-A [`m_A = [$massA] kg]` block is attached to the end of a [`l = [$length] m`] rigid rod with negligible mass. 
+A [`m_A = [$massA] kg`] block is attached to the end of a [`l = [$length] m`] rigid rod with negligible mass. 
 The other end of the rod is  connected to a pivot which allows the rod to rotate in the horizontal plane.  
-If the mass is traveling at the velocity [`v = [$vel] m/s`] before the rod has a completely inelastic collision 
-with a [`m_B = [$massB] kg`] mass at the middle of the rod, determine the magnitude of the velocity of the block 
+If the mass is traveling at the velocity [`v_A = [$vel] m/s`] before the rod has a completely inelastic collision 
+with a [`m_B = [$massB] kg`] mass at the middle of the rod, determine the magnitude of the velocity of block [`A`]
 after the collision.
 
 

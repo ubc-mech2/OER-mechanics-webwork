@@ -80,7 +80,7 @@ $force = random(5,10,1);
 $time = random(2,4,0.1);
 
 #---- Formulas to compute answers --------------#
-$vel = ($moment*$time**3/3 + $force*($length/2)*$time)/(2*$length*$mass/2);
+$vel = abs(($moment*$time**3/3 + $force*($length/2)*$time)/(2*$length*$mass/2));
 
 #---- Answers to the problem -----------------------#
 $ansA = $vel;

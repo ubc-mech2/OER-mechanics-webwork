@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*1486;
+
+$width = $imgScale*2335;
 		#aspect ratio
 
 
@@ -73,12 +77,12 @@ $mass = random(5,10,1);
 $u = random(0.5,0.6,0.01);
 $forceC = random(60,70,1);
 $forceT = random(4,6,1);
-$time = random(4,7,1);
+$time = random(2,5,1);
 $ang = random(30,45,1);
 
 #---- Formulas to compute answers --------------#
 $theta = $ang/180*pi;
-$vel = (($force-$u*$mass*9.81+$u*$force*sin($theta))*$time+$forceT*$time**2/2(cos($theta)+$u*sin($theta)))/$mass;
+$vel = (($forceC-$u*$mass*9.81+$u*$force*sin($theta))*$time+$forceT*$time**2/2*(cos($theta)+$u*sin($theta)))/$mass;
 
 #---- Answers to the problem -----------------------#
 $ansA = $vel;

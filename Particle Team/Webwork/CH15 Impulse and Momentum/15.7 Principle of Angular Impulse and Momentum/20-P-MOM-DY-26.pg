@@ -73,10 +73,10 @@ $width = $imgScale*1743;
 
 
 #---- Random variables for this problem --------#
-$mass = random(4,6,1);
-$vel = random(2,3,0.1);
-$lA = random(0.4,0.5,0.01);
-$lB = random(0.75,1,0.01);
+$mass = 5;
+$vel = 3;
+$lA = 0.5;
+$lB = 0.75;
 
 #---- Formulas to compute answers --------------#
 $a = 1;
@@ -90,13 +90,13 @@ for($i = 0; $i <= 90; $i += 0.1){
 	$diff = 1-2*cos($i)**2+cos($i)**4-$d*cos($i);
 	if(abs($diff) < $buff){
 		$buff = abs($diff);
-		$theta2 = $i
+		$theta2 = $i;
 	}
 }
 $vel2 = $lB*sin($theta)*$vel/($lA*sin($theta2*pi/180));
 
 #---- Answers to the problem -----------------------#
-$ansA = $vel2;
+$ansA = abs($vel2);
 
 ########################################################;
 #PGML
@@ -105,12 +105,12 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-26.png", width=>[$width], height=>[$height]) @]*
 
-A [`m = [$mass] kg`] mass is suspended by a rope and hook. The mass is given a horizontal speed [`v = [$vel] m/s`]
+A [`m = [$mass] kg`] mass is suspended by a rope and hook. The mass is given a horizontal speed [`v_B = [$vel] m/s`]
 such that it rotates around the circular path [`B`]. The downward force on the cord, [`F`], increases so that the 
 mass rises and follows the circular path [`A`] instead. The length of the cords at [`A`] and [`B`] are 
 [`l_A = [$lA] m`] and [`l_B = [$lB] m`] respectively. Determine the magnitude of the velocity of the mass after it rises.
 
-[`|vel| =`] [____]{"$ansA"} [`m/s`]
+[`|v_A| =`] [____]{"$ansA"} [`m/s`]
 
 END_PGML
 

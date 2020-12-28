@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2013;
+
+$width = $imgScale*1550;
 		#aspect ratio
 
 
@@ -88,7 +92,7 @@ BEGIN_PGML
 
 A heavy metal chain is lowered onto the floor at a constant velocity [`v = [$vel] m/s`]. 
 The chain has a density [`\rho = [$rho] kg/m`] and length of [`l = [$length] m`]. 
-Determine the normal force exerted by the floor as a function of time.
+Determine the normal force exerted by the floor as a function of time. Assume the upward direction to be postive.
 
 END_PGML
 

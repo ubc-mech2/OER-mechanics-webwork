@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*2133;
+
+$width = $imgScale*2625;
 		#aspect ratio
 
 
@@ -92,11 +96,11 @@ BEGIN_PGML
 
 A nozzle attachment has a different sized input and output radius. The input has a radius of [`r_i = [$radicm] cm`] 
 and the output has a radius of [`r_o = [$radocm] cm`]. Water has the density [`\rho = 997 kg/m^3`] 
-and the input velocity of the water is [`v = [$vel] m/s`]. Determine the exit velocity of the water and 
+and the input velocity of the water is [`v_i = [$vel] m/s`]. Determine the exit velocity of the water and 
 the magnitude of the force required to keep the attachment on.
 
 
-[`v_{exit} =`] [____]{"$ansA"} [`m/s`]
+[`v_{o} =`] [____]{"$ansA"} [`m/s`]
 
 [`|F| =`] [____]{"$ansB"} [`N`]
 

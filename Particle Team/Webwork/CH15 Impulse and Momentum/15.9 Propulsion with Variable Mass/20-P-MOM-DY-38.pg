@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.2;
+
+$height = $imgScale*1434;
+
+$width = $imgScale*2537;
 		#aspect ratio
 
 
@@ -72,15 +76,15 @@ $imgScale = 0.2;
 $mass = random(4000,5000,100);
 $force = random(1500,1750,10);
 $intake = random(190,200,1);
-$eject = $intake+5;
-$drag = random(8,10,1);
+$eject = $intake+1;
+$drag = random(50,60,1);
 $velkm = random(450,500,10);
-$velF = random(9000,10000,100);
+$velF = random(7000,7500,10);
 $time = random(5,10,1);
 
 #---- Formulas to compute answers --------------#
 $vel = $velkm/3.6;
-$accel = ($force+$velF*$eject-$drag*$vel**2-$vel*$intake)/($mass-5*$time);
+$accel = ($force+$velF*$eject-$drag*$vel**2-$vel*$intake)/($mass-*$time);
 
 #---- Answers to the problem -----------------------#
 $ansA = $accel;
@@ -94,7 +98,7 @@ BEGIN_PGML
 
 A [`m = [$mass] kg`] jet powered car combines the power of a jet engine and a traditioned internal combustion engine to achieve high 
 velocities. The internal combustion engine provides a thrust force [`F = [$force] N`]. The jet engine intakes air 
-at a rate of [`[$intake] kg/s`] and ejects [`[$eject] kg/s`] of a fuel and air mixture at [`v = [$velF] m/s`] 
+at a rate of [`Q_{in} = [$intake] kg/s`] and ejects [`Q_{out} = [$eject] kg/s`] of a fuel and air mixture at [`v = [$velF] m/s`] 
 relative to the vehicle. If the drag force is [`F = [$drag]v^2`], determine the acceleration of the vehicle when 
 its velocity is [`v = [$velkm] km/h`] and time [`t = [$time] s`].
 

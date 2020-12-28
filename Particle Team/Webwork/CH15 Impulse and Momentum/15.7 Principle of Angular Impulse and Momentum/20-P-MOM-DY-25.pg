@@ -83,11 +83,11 @@ $time = random(3,5,1);
 $d = $rad-$velc*$time;
 $velf = $velr*$rad/$d;
 $vel = sqrt($velc**2+$velr**2);
-$U = $velf**2-$vel**2;
 $vel2 = sqrt($velf**2+$velc**2);
+$U = $mass/2*($velf**2-$vel**2);
 
 #---- Answers to the problem -----------------------#
-$ansA = $vel2;
+$ansA = abs($vel2);
 $ansB = $U;
 
 ########################################################;
