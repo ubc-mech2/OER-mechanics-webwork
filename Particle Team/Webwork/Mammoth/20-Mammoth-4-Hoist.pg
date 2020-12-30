@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1625;
+
+$width = $imgScale*1882;
 		#aspect ratio
 
 
@@ -101,6 +105,7 @@ BEGIN_PGML
 [@ image( "20-Mammoth-4-Hoist.png", width=>[$width], height=>[$height]) @]*
 
 You are hoisting a wooly mammoth([`m = [$mass] kg`]) upwards using a moment, [`M`], applied at pulley [`B`].
+The radius of the pulleys at A and B are [`r_A = [$radA] m`] and [`r_B = [$radB] m`] respectively.
 
 [`1)`] If the pulley at [`B`] applies a moment of [`300t^{2} + 30000 Nm`], determine the velocity
 of the mammoth at [`t = [$time] s`]. The mammoth starts from rest.

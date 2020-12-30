@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1551;
+
+$width = $imgScale*2583;
 		#aspect ratio
 
 
@@ -92,7 +96,7 @@ $ansA = $people;
 
 BEGIN_PGML	
 
-[@ image( "20-Mammoth-3-Tipping.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-Mammoth-3-Tipping2.png", width=>[$width], height=>[$height]) @]*
 
 You wish to tip a mammoth with mass [`m = [$mass] kg`]. The mammoth has a height of [`h = [$heightM] m`], 
 base length [`c = [$c] m`], and a center of gravity [`h_g = [$heightG] m`] off the ground.

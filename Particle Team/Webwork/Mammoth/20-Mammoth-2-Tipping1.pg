@@ -64,7 +64,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale =0.35;
+
+$height = $imgScale*1625;
+
+$width = $imgScale*2566;
 		#aspect ratio
 
 
@@ -97,7 +101,7 @@ $ansC = $accel;
 
 BEGIN_PGML	
 
-[@ image( "20-Mammoth-2-Tipping.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-Mammoth-2-Tipping1.png", width=>[$width], height=>[$height]) @]*
 
 You wish to move a [`m = [$mass] kg`] mammoth that is blocking your path. The mammoth has a height of [`h = [$heightM] m`], 
 base width of [`2b = [$b] m`], and the center of gravity is [`[$heightG] m`] from the ground. 
