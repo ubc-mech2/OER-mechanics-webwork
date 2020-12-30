@@ -1,0 +1,21 @@
+setNumber=Usaskmc15 # input set name
+openDate = 1/7/00 at 6:00am #open date of set
+dueDate = 1/20/09 at 6:00am #close date of set
+answerDate = 1/21/09 at 6:00 #date for answers
+paperHeaderFile = ASimpleCombinedHeaderFile.pg #header file for set(use existing files)
+screenHeaderFile = ASimpleCombinedHeaderFile.pg #header file for set(use existing files)
+problemList =
+ setUsaskQuestions/STATICS-VDP08-02-18-04bf9b9baac0445398659a5255dfae0b.pg, 0 #input problem names and weighting
+setUsaskQuestions/STATICS-VDP08-02-19-bc26f754dc2347c2a2dc987d3acaf70e.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-20-97301d45ce554f4c829eedfa2b0fac18.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-21-15060e6f0020445f821d0536c302f6e.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-22-79ac334572f740b593a3b43c526302e1.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-23-ec4f2488c953465e98b3f6d1263db978.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-24-f43c371e268644af9c6ece7540b54590.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-25-48b7f04614aa4f05a6355614cf557ccb.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-26-be7f9e0506b64656bef8d3c4a5db9969.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-27-8d971bfd67a14126995dbf83a98b7adb.pg, 0 
+setUsaskQuestions/STATICS-VDP08-02-28-19a3c0c97ea3415e8989d877641724ae.pg, 0 
+setUsaskQuestions/STATICS-VDP0X-X-X-069b7abfc0814144b988a1ba313743d9.pg, 0 
+setUsaskQuestions/Untitled-592b665e35a544718899bc3428ffc952.pg, 0 
+setUsaskQuestions/Untitled-7bc9668bed5142c9a7b76ec7700c8165.pg, 0 

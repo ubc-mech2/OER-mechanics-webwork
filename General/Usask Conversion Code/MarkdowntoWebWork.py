@@ -1840,7 +1840,7 @@ for file in glob.glob("*.md"):
         lines = f.readlines()
         torf=0
         for i, line in enumerate(lines):
-            if 'Question Format' in line or 'STATICS-MPA06' in line:#specific question exception
+            if 'Question Format' in line or 'STATICS-MPA06' in line:#specific question exception and numerical answers
               if 'Numerical' in line or 'STATICS-MPA06' in line:
                 for i, line in enumerate(lines):
                   if line.startswith('a.') or line.startswith('a)'):
@@ -1874,11 +1874,11 @@ for file in glob.glob("*.md"):
                     else:
                           print('MultipleChoice')
                           Multiplechoice()              
-              elif 'True' in line or 'true' in line:
+              elif 'True' in line or 'true' in line: #check for true or false or multiple choice
                 print('Torf')
                 TrueorFalse()
               else:
-                print(':question format not recognized')
+                print(':question format not recognized') #prints if question format is not recognized
                 
 #set.def file: Used to upload problem sets to webwork
 #input: string containing problem set image
