@@ -91,6 +91,7 @@ BEGIN_PGML
 
 A small particle is within a tube that is curved into a semicircle with a radius [`r = [$rad] m`]. 
 Determine the angular acceleration of the particle with respect to [`O`] when the angle [`\theta = [$theta]^{o}`].
+Assume that the tube is frictionless and vertical.
 
 
 [`\alpha =`] [____]{"$ansA"} [`rad/s^2`]

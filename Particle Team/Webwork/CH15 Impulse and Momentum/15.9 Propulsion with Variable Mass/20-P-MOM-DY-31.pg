@@ -90,7 +90,7 @@ BEGIN_PGML
 
 [@ image( "20-P-MOM-DY-31.png", width=>[$width], height=>[$height]) @]*
 
-A prototype [`m = [$mass] kg`] UFO consists of a single fan that pushes air downwards. 
+A [`m = [$mass] kg`] UFO consists of a single fan that pushes air downwards. 
 The fan moves air at a volumetric rate of [`Q = [$q] m^3/s`]. Assuming the density of air is [`\rho = [$rho] kg/m^3`], 
 determine the magnitude of velocity that the air has to travel at to lift the UFO off the ground.
 

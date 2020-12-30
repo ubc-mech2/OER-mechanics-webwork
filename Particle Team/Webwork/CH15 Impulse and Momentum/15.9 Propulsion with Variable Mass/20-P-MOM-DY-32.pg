@@ -93,8 +93,7 @@ BEGIN_PGML
 A plumbing tube redirects water traveling in the positive y-direction to the positive x-direction. 
 The pipe has a circular cross section with a radius [`r = [$rad] cm`] and the water moves at a velocity [`v = [$vel] m/s`] 
 in and out of the tube. Determine the magnitude of force that the tube experiences assuming the mass of the tube and the 
-mass of the water on the tube is negligible. The density of water is [`\rho = 997 kg/m^3`].
-
+mass of the water in the tube is negligible. The density of water is [`\rho = 997 kg/m^3`].
 
 [`|F| =`] [____]{"$ansA"} [`N`]
 
