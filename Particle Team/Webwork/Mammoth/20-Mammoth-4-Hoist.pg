@@ -107,7 +107,7 @@ of the mammoth at [`t = [$time] s`]. The mammoth starts from rest.
 
 [`v =`] [____]{"$ans1"} [`m/s`]
 
-[`2)`] If the mammoth has a radius of gyration, [`k_G = [$kG] m`], determine the natural frequency
+[`2)`] If the mammoth has a radius of gyration, [`k_G = [$kg] m`], determine the natural frequency
 of the system if the mammoth is hanging [`h = [$h] m`] from the top.
 
 [`\omega_n =`] [____]{"$ans2"} [`rad/s`]
