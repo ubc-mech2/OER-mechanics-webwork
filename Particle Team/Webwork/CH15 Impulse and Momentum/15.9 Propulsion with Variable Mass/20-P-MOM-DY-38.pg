@@ -84,7 +84,7 @@ $time = random(5,10,1);
 
 #---- Formulas to compute answers --------------#
 $vel = $velkm/3.6;
-$accel = ($force+$velF*$eject-$drag*$vel**2-$vel*$intake)/($mass-*$time);
+$accel = ($force+$velF*$eject-$drag*$vel**2-$vel*$intake)/($mass-$time);
 
 #---- Answers to the problem -----------------------#
 $ansA = $accel;

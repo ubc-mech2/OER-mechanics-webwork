@@ -95,7 +95,7 @@ BEGIN_PGML
 
 A [`m = [$mass] kg`] rocket has [`[$massF] kg`] of its mass dedicated to fuel. During flight, it is discovered that there is a 
 puncture that allows [`Q_L = [$mL] kg/s`] of fuel to leak from the system at [`v_L = [$velL] m/s`] relative to the rocket. 
-The rocket engine ejects fuel at [`Q_f = [$mF] kg/s`] with the velocity [`v = [$velf] km/s`] relative to the rocket. 
+The rocket engine ejects fuel at [`Q_f = [$mF] kg/s`] with the velocity [`v = [$velF] km/s`] relative to the rocket. 
 Determine the magnitude of the maximum velocity of the rocket. Assume to the up to be positive.
 
 

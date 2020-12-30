@@ -81,7 +81,7 @@ $vel1 = random(2,4,0.1);
 #---- Formulas to compute answers --------------#
 $buff = $vel1;
 for($i = 0; $i <= $vel1; $i += 0.01){
-	$diff = $mass*$i**4/($rad*$vel1)-$k*$rad*$vel1+$k*$rad1*$i;
+	$diff = $mass*$i**4/($rad*$vel1)-$k*$rad*$vel1+$k*$rad*$i;
 	if(abs($diff) < $buff){
 		$buff = abs($diff);
 		$vel2 = $i;
