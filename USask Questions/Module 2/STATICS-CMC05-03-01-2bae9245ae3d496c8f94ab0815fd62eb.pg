@@ -82,7 +82,7 @@ tolType=>'relative');  #relative or absolute
 
 $mc1 = RadioButtons([
 "Yes","No"],
-"No");
+"Yes");
 ########################################################
 # Not in PGML
 

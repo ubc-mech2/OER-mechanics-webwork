@@ -83,7 +83,7 @@ tolType=>'relative');  #relative or absolute
 $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
-In the diagram below, there are two couples. The two force vectors, \(\overrightarrow{F}_A\) and \(\overrightarrow{F}_B\), create one couple moment.  What is the sense of the couple moment created by the force vectors?
+In the diagram below, there are two couples. The two force vectors, \(\overrightarrow{F}_1\) and \(\overrightarrow{F}_2\), create one couple moment.  What is the sense of the couple moment created by the force vectors?
 
 
 ",

@@ -84,7 +84,7 @@ tolType=>'relative');  #relative or absolute
 $A= random( 3, 10,1);
 $B= random( 1, 90,1);
 $mc1 = RadioButtons([
-"a. \($A\)","b. \($B\)","c.  \($A\)\(\cos\)(\($B\)\(^\circ\))","d.  \($A\)\(\cos\)(90\(^\circ\)-\($B\)\(^\circ\))"],
+"a. \($A\)","b. \($B\)","c.  \($A\)\(\cos\)(\($B\)\(^\circ\))","d.  \($A\)\(\cos\)(\(90\)\(^\circ\)-\($B\)\(^\circ\))"],
 "c.  \($A\)\(\cos\)(\($B\)\(^\circ\))");
 ########################################################
 # Not in PGML

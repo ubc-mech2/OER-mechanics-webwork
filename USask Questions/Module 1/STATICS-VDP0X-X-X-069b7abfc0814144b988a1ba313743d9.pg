@@ -102,7 +102,7 @@ $P= random( -9, 9,1);
 $Q= random( -9, 9,1);
 #---- Formulas to compute answers --------------#
 
-
+$ans0=$X*$O+$Y*$P+$Z*$Q;
 ########################################################
 #PGML
 BEGIN_PGML

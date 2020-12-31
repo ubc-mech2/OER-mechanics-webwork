@@ -79,7 +79,8 @@ tolerance=>.03,
 tolType=>'relative');  #relative or absolute
 
 #---- Random variables for this problem --------#
-
+$A= random( 5, 10,1);
+$B= random( 5, 10,1);
 
 
 
@@ -108,8 +109,7 @@ $F= $A*sin(45*3.141592654/180);
 
 
 
-$A= random( 5, 10,1);
-$B= random( 5, 10,1);
+
 #---- Formulas to compute answers --------------#
 
 $ans0=$D;
