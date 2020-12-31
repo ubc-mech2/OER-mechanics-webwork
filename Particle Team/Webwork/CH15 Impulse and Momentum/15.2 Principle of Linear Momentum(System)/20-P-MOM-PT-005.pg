@@ -76,7 +76,7 @@ loadMacros(
 Context("Numeric");         # or Complex
 #given
 $c = random(2,7,0.01);     # (lower, upper, stepsize)
-$t1 = random(2,7,0.01; 
+$t1 = random(2,7,0.01); 
 $difft =random(1,5,0.5); 
 $e=random(2,7,0.01);
 $m=random(2,10,0.5);
@@ -115,7 +115,6 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
 
 Find the impulse of the force [`F=`][`[$c] t^ {[$e]}`] [`N`] between [`t_1=`] [`[$t1]`] [`s`] and 
 [`t_2=`] [`[$t2]`] [`s`] .
@@ -129,6 +128,7 @@ Assume that there are no other forces acting on the object.
 
 
 [`v_f=`][___]{"$v2"} [`m/s`] 
+
 _Round your answers to one decimal place_.
 
 END_PGML

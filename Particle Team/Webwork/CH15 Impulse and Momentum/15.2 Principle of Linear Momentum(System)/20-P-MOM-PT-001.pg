@@ -75,8 +75,8 @@ $E_k=1/2*$m*$v**2;
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*2500;
-$height = $imgScale*1981;
+$width = $imgScale*2209;
+$height = $imgScale*1549;
 
 
 

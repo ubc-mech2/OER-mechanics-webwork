@@ -91,8 +91,8 @@ $F=$I/$t;
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*4000;
-$height = $imgScale*1981;
+$width = $imgScale*2530;
+$height = $imgScale*2058;
 
 
 
@@ -111,7 +111,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-PT-002.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-MOM-PT-006.png", width=>[$width], height=>[$height]) @]*
 
 A baseball with a mass of [`m=`] [`[$m]`] [`kg`] moves toward a bat at a speed of [`v_i=`] [`[$v1]`] [`m/s`]  horizontally in the south
 direction. After the baseball is hit by the bat, it moves horizontally north at a speed of

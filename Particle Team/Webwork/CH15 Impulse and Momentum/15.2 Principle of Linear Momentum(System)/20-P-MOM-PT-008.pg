@@ -92,8 +92,8 @@ $T=$I/$F;
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*4000;
-$height = $imgScale*1981;
+$width = $imgScale*2172;
+$height = $imgScale*1528;
 
 
 
@@ -115,7 +115,7 @@ BEGIN_PGML
 [@ image( "20-P-MOM-PT-008.png", width=>[$width], height=>[$height]) @]*
 
 A volleyball has an initial velocity of [`v_1=`] [`[$v1]`] [`m/s`] up. It is spiked such 
-that the velocity changes to [`v_2=`] [`[$v2]`] [`m/s`]. If the mass of the ball is
+that the velocity changes to [`v_2=`] [`[$v2]`] [`m/s`] down. If the mass of the ball is
  [`m=`] [`[$m]`] [`kg`], what is the impulse?
 
 

@@ -115,7 +115,6 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-[@ image( "20-P-MOM-PT-008.png", width=>[$width], height=>[$height]) @]*
  
 If momentum "p" varies with time such that  [`p=`] [`[$c1]t^{[$e1]}`] and is measured in
 kg m/s, what is net force as a function of time? Assume the answer is measured in

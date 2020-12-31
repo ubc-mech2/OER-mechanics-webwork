@@ -96,7 +96,7 @@ Resultant force at point O: [____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`
 
 Resultant couple moment at point O: [____]{"$ans2"} [`N`][`\cdot`][`m`]
 
-[@ image( "STATICS-CMC08-03-01-b833191d480d45fe88fb756fbac465a50.png", width=>[1037.05], height=>[392.34999999999997]) @]*
+[@ image( "STATICS-CMC08-03-01-b833191d480d45fe88fb756fbac465a50.png", width=>1321.5878679750224, height=>500.0) @]*
 
 
 END_PGML

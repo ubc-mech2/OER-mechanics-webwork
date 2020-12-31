@@ -14,12 +14,12 @@ from PIL import Image
 
 
  
-filelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 1'
-newfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 1 Images'
+filelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 2'
+newfilelocation=r'C:\GitHub\OER-mechanics-webwork\USask Questions\Module 2 Images'
 os.chdir(filelocation)
           
 for file in glob.glob("*.pg"):
-        with open(file,'r') as f:
+        with open(file,'r',encoding='utf-8') as f:
                 lines = f.readlines()
                 data=''
                 for i, line in enumerate(lines):
@@ -44,6 +44,6 @@ for file in glob.glob("*.pg"):
                                 except:
                                         pass  
                         data=data+line
-        with open(file,'w') as f:
+        with open(file,'w',encoding='utf-8') as f:
                 f.write(data)        
      

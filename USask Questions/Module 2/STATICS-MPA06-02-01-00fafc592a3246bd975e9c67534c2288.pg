@@ -93,7 +93,7 @@ The 2D diagram below depicts a force vector being applied to a strut:
 
 
 
-[@ image( "STATICS-MPA06-02-01-00fafc592a3246bd975e9c67534c22880.png", width=>1039, height=>472) @]*
+[@ image( "STATICS-MPA06-02-01-00fafc592a3246bd975e9c67534c22880.png", width=>1037.3226403454657, height=>500.00000000000006) @]*
 
 The Cartesian representation of both the force vector and the position vector describing the moment arm are:
 

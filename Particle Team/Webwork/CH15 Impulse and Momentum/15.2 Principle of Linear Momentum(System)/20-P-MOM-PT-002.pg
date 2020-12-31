@@ -74,8 +74,8 @@ $I=$c*$t*$t;
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*4000;
-$height = $imgScale*1981;
+$width = $imgScale*2524;
+$height = $imgScale*1187;
 
 
 
