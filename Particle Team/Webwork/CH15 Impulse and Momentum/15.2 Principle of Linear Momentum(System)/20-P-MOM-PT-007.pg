@@ -82,8 +82,9 @@ $h=random(0.5,4,0.01);
 
 
 #Computation
-$F=($m*$v)/$t;
 $v=sqrt(2*$g*$h);
+$F=($m*$v)/$t;
+
    
 
 

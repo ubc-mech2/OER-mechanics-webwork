@@ -21,7 +21,7 @@ from PIL import Image
  
  
 #input file location below
-filelocation=r'C:\Users\ptemm\Downloads\Module 1\GE 124 Question Database - Module 1 c7df8e2393214b0a9d40fca105b01948'
+filelocation=r''
 #input intial problem set number- need to be updated between modules
 setcount=10 
 

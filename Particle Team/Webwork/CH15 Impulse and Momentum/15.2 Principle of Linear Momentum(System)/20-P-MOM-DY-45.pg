@@ -73,12 +73,12 @@ $width = $imgScale*1333;
 
 
 #---- Random variables for this problem --------#
-$mass = random(15,20);
-$force = random(85,90,1);
+$mass = random(5,10,1);
+$force = random(185,390,1);
 $time = random(3,5,1);
 
 #---- Formulas to compute answers --------------#
-$s = 2/$mass*($force*$time**2/2+$time**4/12)-9.81*$time**2/2;
+$s = 2/$mass*($force*$time**2/2+$time**4/12)-9.81*$mass*$time**2/2;
 
 #---- Answers to the problem -----------------------#
 $ansA = $s;

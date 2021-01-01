@@ -82,7 +82,7 @@ $ang = random(30,45,1);
 
 #---- Formulas to compute answers --------------#
 $theta = $ang/180*pi;
-$vel = (($forceC-$u*$mass*9.81+$u*$force*sin($theta))*$time+$forceT*$time**2/2*(cos($theta)+$u*sin($theta)))/$mass;
+$vel = (($forceC*cos($theta)-$u*$mass*9.81+$u*$forceC*sin($theta))*$time+$forceT*$time**2/2*(cos($theta)+$u*sin($theta)))/$mass;
 
 #---- Answers to the problem -----------------------#
 $ansA = $vel;
