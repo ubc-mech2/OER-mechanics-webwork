@@ -82,7 +82,7 @@ tolType=>'relative');  #relative or absolute
 
 #---- Formulas to compute answers --------------#
 
-$ans0=2.02*10**3;
+$ans0=2.02;
 
 ########################################################
 #PGML

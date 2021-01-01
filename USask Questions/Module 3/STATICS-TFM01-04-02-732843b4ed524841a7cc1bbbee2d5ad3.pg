@@ -130,11 +130,12 @@ K truss
 
 [@ $Scenario4->menu() @]* 
 
-
-
-
-
-
-
 END_PGML
+
+ANS($Scenario1->cmp);
+ANS($Scenario2->cmp);
+ANS($Scenario3->cmp);
+ANS($Scenario4->cmp);
+
+
 ENDDOCUMENT();

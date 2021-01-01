@@ -81,8 +81,8 @@ tolType=>'relative');  #relative or absolute
 #- Random variables for this problem --#
 
 $mc1 = RadioButtons([
-"a. 75","b. 74.6","c. 74.58","d. 75.0"],
-"b. 74.6");
+"a. 75 lb","b. 74.6 lb","c. 74.58 lb","d. 75.0 lb"],
+"b. 74.6 lb");
 ########################################################
 # Not in PGML
 
