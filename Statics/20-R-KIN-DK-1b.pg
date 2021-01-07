@@ -60,7 +60,7 @@ $massholekg = $density*pi*($holeradiusmm/1000)**2*($thicknesscm/100);
 $inertiahole = 0.5*$massholekg*($holeradiusmm/1000)**2;
 
 $inertia = $inertiadisk-$inertiahole;
-$kG = sqrt($inertia/($massdiskkg-$massholekg))
+$kG = ($inertia/($massdiskkg-$massholekg))**(0.5)
 
 
 ########################################################
