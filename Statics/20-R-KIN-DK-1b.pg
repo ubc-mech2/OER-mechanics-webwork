@@ -63,7 +63,7 @@ $inertia = $inertiadisk-$inertiahole;
 $kG = sqrt($inertia/($massdiskkg-$massholekg))
 
 
-########################################################;
+########################################################
 #PGML
 
 BEGIN_PGML	
