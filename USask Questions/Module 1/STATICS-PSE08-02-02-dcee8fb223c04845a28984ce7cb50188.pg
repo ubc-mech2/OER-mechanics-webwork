@@ -84,16 +84,12 @@ tolType=>'relative');  #relative or absolute
 $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
-Consider the following scenario:
-
-
-
-If a downward force of 450lb is applied to point A in the strut system shown above, what is the force directed from point A to point B?
 
 
 
 
-From the list below, select all the correct options depicting the information that is given in the above problem.  
+
+From the list below, select all the correct options depicting the information that is given in the image above.  
 
 ",
 "a) Two struts connected at a point, supporting a load",
