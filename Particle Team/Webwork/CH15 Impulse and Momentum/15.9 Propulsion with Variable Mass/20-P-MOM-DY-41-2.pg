@@ -84,7 +84,7 @@ $v_L = random(20, 30, 1);
 $g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$v_max = ($Q_f * $v_f / ($Q_f + $Q_L)) * ln($mass_0 / $mass_r) - $g * $mass_f / ($Q_f + $Q_L);
+$v_max = (($Q_f * $v_f + $Q_L * $v_L)/ ($Q_f + $Q_L)) * ln($mass_0 / $mass_r) - $g * $mass_f / ($Q_f + $Q_L);
 
 #---- Answers to the problem -----------------------#
 $ansA = abs($v_max);
@@ -101,7 +101,6 @@ puncture that allows [`Q_L = [$Q_L] \: kg/s`] of fuel to leak from the system at
 The rocket engine ejects fuel at [`Q_f = [$Q_f] \: kg/s`] with the velocity [`v = [$v_f] \: m/s`] relative to the rocket. 
 Assuming up to be positive, determine the magnitude of the maximum velocity of the rocket if the rocket begins at rest.
 Ignore the effect of altitude on the weight of the rocket, and drag forces.
-Assume the *propulsion* of the leaking fuel is negligible towards the system.
 Use [`g = [$g] \: N/kg`].
 
 
