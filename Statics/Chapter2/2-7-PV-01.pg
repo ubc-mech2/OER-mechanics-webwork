@@ -101,9 +101,9 @@ $ansD = $BCmag;
 
 BEGIN_PGML
 
-[@ image( "STATICS-MPA08-01-12-881e2206c6c54199a9490474a13d24b90.png", width=>[$width], height=>[$height]) @]*
+[@ image( "2-7-PV-01.png", width=>[$width], height=>[$height]) @]*
 
-What is the position vector from point B to point C.
+A rope is attached to a pipe as shown above. Find the position vector from point B to point C.
 
 [`\overrightarrow{r_{BC}} = \: <`] [_]{"$ansA"} [`, \:`] [_]{"$ansB"} [`, \:`] [_]{"$ansC"} [`> \: ft`]
 
