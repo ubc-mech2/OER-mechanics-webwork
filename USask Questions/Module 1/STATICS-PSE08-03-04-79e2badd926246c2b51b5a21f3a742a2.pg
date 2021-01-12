@@ -88,7 +88,7 @@ Consider the following scenario:
 
 
 
-A washer on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\phi_1\), is 30 \(^\circ\). What is the resultant force vector experienced by the washer, expressed in Cartesian form?
+A washer on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\theta\), is 30 \(^\circ\).
 
 
 
@@ -100,7 +100,7 @@ From the list below, select all the correct options depicting the information th
 
 "c) Angles as shown",
 
-"e) \(\phi_1\)=30 \(^\circ\)",
+"e) \(\theta\)=30 \(^\circ\)",
 
 "g) \(F_1\)=700lb",
 
@@ -114,7 +114,7 @@ $mc -> makeLast("a) A washer supporting three forces",
 "b) See figure",
 "c) Angles as shown",
 "d) 30 \(^\circ\)",
-"e) \(\phi_1\)=30 \(^\circ\)",
+"e) \(\theta\)=30 \(^\circ\)",
 "f) \(F_1\)=400lb",
 "g) \(F_1\)=700lb",
 "h) \(F_2\)=400lb",

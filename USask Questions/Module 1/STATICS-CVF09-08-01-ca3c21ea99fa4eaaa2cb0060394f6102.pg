@@ -91,7 +91,7 @@ BEGIN_PGML
 
 Calculate the magnitude of the vector shown in the figure below. Round your answer to 3 significant figures.
 
-[`\overrightarrow{v}`]= [____]{"$ans0"}
+[`|\overrightarrow{v}|`]= [____]{"$ans0"}
 
 [@ image( "STATICS-CVF09-08-01-ca3c21ea99fa4eaaa2cb0060394f61020.png", width=>508.443908323281, height=>499.99999999999994) @]*
 

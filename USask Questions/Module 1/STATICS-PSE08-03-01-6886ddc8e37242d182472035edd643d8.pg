@@ -88,7 +88,7 @@ Consider the following scenario:
 
 
 
-The hook depicted in the image below has two ropes pulling on it. The first rope is pulling with a force \(F_1\)=100N and the second rope is pulling with a force \(F_2\)=150 N. The angles \(\theta_1\) and \(\theta_2\) are 15 \(^\circ\) and 10 \(^\circ\) respectively. What is the magnitude of the resultant force acting on the hook due to the two ropes?
+The hook depicted in the image below has two ropes pulling on it. The first rope is pulling with a force \(F_1\)=100N and the second rope is pulling with a force \(F_2\)=150 N. The angles \(\theta_1\) and \(\theta_2\) are 15 \(^\circ\) and 10 \(^\circ\) respectively.
 
 
 
@@ -130,7 +130,7 @@ $BR
 
 
 $BR
-$BR\{ image("STATICS-PSE09-03-01-8633ffcdb2724b97b8db483b73ffba9e0.png" , width=>416.51376146788994, height=>500.0) \}
+$BR\{ image("STATICS-PSE09-02-01-57faf6c0bb184746b5a302a5385ba77f0.png" , width=>416.51376146788994, height=>416.0) \}
 $BR
 
 
