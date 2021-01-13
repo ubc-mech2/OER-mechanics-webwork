@@ -51,7 +51,7 @@ loadMacros(
 "PGauxiliaryFunctions.pl"
 #"source.pl", # allows code to be displayed on certain sites.
 #"PGcourse.pl", # Customization file for the course
- );
+);
  
 ##############################################################
 #
@@ -92,7 +92,7 @@ $F_R_angle = arctan($F_R_y/$F_R_x)*180/pi;
 $ansA = $F_R_mag;
 $ansB = $F_R_angle;
 
-########################################################;
+########################################################
 #PGML
 
 BEGIN_PGML
@@ -110,11 +110,13 @@ A hook screwed onto a surface is pulled by two ropes, which exert forces [`F_1`]
 [`\theta_2 = [$theta2]^{\circ}`]
 
 
-[`|\overrightarrow{F_R}| =`] [_____]{"$ansA"} [`N`] 
+[`|\overrightarrow{F_R}| =`] [_____]{"$ansA"} [`N`]
 
 
 [`\phi =`] [_____]{"$ansB"} [`^{\circ}`]
 
 END_PGML
 
-ENDDOCUMENT()};
+##############################################################
+
+ENDDOCUMENT();

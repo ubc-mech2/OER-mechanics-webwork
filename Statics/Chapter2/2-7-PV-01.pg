@@ -51,7 +51,7 @@ loadMacros(
 "PGauxiliaryFunctions.pl"
 #"source.pl", # allows code to be displayed on certain sites.
 #"PGcourse.pl", # Customization file for the course
- );
+);
  
 ##############################################################
 #
@@ -96,7 +96,7 @@ $ansB = $BCy;
 $ansC = $BCz;
 $ansD = $BCmag;
 
-########################################################;
+########################################################
 #PGML
 
 BEGIN_PGML
@@ -113,4 +113,6 @@ What is the magnitude of [`\overrightarrow{r_{BC}}`].
 
 END_PGML
 
-ENDDOCUMENT()};
+##############################################################
+
+ENDDOCUMENT();
