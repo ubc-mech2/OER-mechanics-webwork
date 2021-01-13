@@ -1,0 +1,41 @@
+setNumber=USask_Chapter_8_Friction
+openDate = 1/7/00 at 6:00am
+dueDate = 1/20/09 at 6:00am
+answerDate = 1/21/09 at 6:00
+paperHeaderFile = set34/paperHeaderFile0.pg
+screenHeaderFile = set34/screenHeaderFile0.pg
+problemList =
+ setUsaskQuestions/STATICS-DSF01-01-01-813188fa6bb64c2da020f74652d23d93.pg, 0 
+setUsaskQuestions/STATICS-DSF01-01-02-2e671588ee494aea8cd4361c1fc5b054.pg, 0 
+setUsaskQuestions/STATICS-DSF01-02-01-4a8e69f9ff3d43ce9d48cff1a7f33371.pg, 0 
+setUsaskQuestions/STATICS-DSF01-02-02-7d08849aaa654f1d926a6ab2e9f4006e.pg, 0 
+setUsaskQuestions/STATICS-DSF01-03-01-34a1e1534eaa40c0bef3dc1c912b33b4.pg, 0 
+setUsaskQuestions/STATICS-DSF01-03-02-b49a30ee7ab844dd84b674092a6eefbc.pg, 0 
+setUsaskQuestions/STATICS-DSF02-01-01-d29edca99749495fbd60732f6e385f97.pg, 0 
+setUsaskQuestions/STATICS-DSF02-01-02-1ce14294dc574950aa185bd3c71b0565.pg, 0 
+setUsaskQuestions/STATICS-DSF02-01-03-245333247b7e47098a727d1061b776d7.pg, 0 
+setUsaskQuestions/STATICS-DSF02-01-04-0c4e6448e23b4240a77e8a05a22a30bb.pg, 0 
+setUsaskQuestions/STATICS-DSF02-02-01-12e4dce96d7d4f0f9380f46a137eda5.pg, 0 
+setUsaskQuestions/STATICS-DSF02-02-02-3987a1527f1d4b2cac71a0e3b16f8fe2.pg, 0 
+setUsaskQuestions/STATICS-DSF02-02-03-9ad05ec4f29241c9a10269aa52ffc875.pg, 0 
+setUsaskQuestions/STATICS-DSF02-02-04-de633c2b32c348059e4ede4c6cfb2dfc.pg, 0 
+setUsaskQuestions/STATICS-DSF03-01-01-3078c9f076b840d2be4caa6ab9b9a3.pg, 0 
+setUsaskQuestions/STATICS-DSF03-01-02-2910c21dbb104a79956ab202b17c1d67.pg, 0 
+setUsaskQuestions/STATICS-DSF03-01-03-2e3a1101410c46b19ef33c03afba11de.pg, 0 
+setUsaskQuestions/STATICS-DSF03-01-04-bd74604d0da84afaa0e8e9d1b0433353.pg, 0 
+setUsaskQuestions/STATICS-DSF03-02-01-da790255ae804b37b74d794c29712d91.pg, 0 
+setUsaskQuestions/STATICS-DSF03-02-02-288e06d2176849219da4fef73ce356dc.pg, 0 
+setUsaskQuestions/STATICS-DSF03-02-03-142653d4945b4719b0839503b01fc562.pg, 0 
+setUsaskQuestions/STATICS-DSF03-02-04-db3773109e4c4eb1810d073ec4c35e73.pg, 0 
+setUsaskQuestions/STATICS-DSF04-01-01-cfafaf18ae2d411aa989f80ee2b9b836.pg, 0 
+setUsaskQuestions/STATICS-DSF04-02-01-90525ba0cbd2475a88f1645859d2372c.pg, 0 
+setUsaskQuestions/STATICS-DSF04-02-XX-2d0441eb5b85463ea31f7be3973de40b.pg, 0 
+setUsaskQuestions/STATICS-DSF05-01-01-e002b8503f324658b870e17c93df2568.pg, 0 
+setUsaskQuestions/STATICS-DSF05-01-02-2d15d62f7e164c1aac20328f6988df9a.pg, 0 
+setUsaskQuestions/STATICS-DSF05-01-03-100b1983f0e6437d87edf70ff7fdadca.pg, 0 
+setUsaskQuestions/STATICS-DSF05-01-04-a14b3bb7f92c44b68109851859d806bf.pg, 0 
+setUsaskQuestions/STATICS-DSF05-02-01-23fa81c260eb4b4a852ca13999990e0a.pg, 0 
+setUsaskQuestions/STATICS-DSF05-02-02-7e5290e6801849dd86830196f499d50.pg, 0 
+setUsaskQuestions/STATICS-DSF05-02-03-9941ff693fc549d0b1f7d33239bcb8fb.pg, 0 
+setUsaskQuestions/STATICS-DSF05-02-04-125f37bde9524f80b000a352f195933a.pg, 0 
+setUsaskQuestions/STATICS-DSF06-01-01-6eb6489cd59e4183b8f028d3d1274ab0.pg, 0 
