@@ -127,7 +127,7 @@ $ansD = $Projz;
 
 BEGIN_PGML
 
-[@ image( "2-9-DP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-FV-RP-03.png", width=>[$width], height=>[$height]) @]*
 
 A rope is attached to a pipe as shown above. Use the following values:
 
