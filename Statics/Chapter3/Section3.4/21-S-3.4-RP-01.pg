@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Force Vectors)
-## DBsection(Vector Addition of Forces)
+## DBchapter(Equilibrium of a Particle)
+## DBsection(Three-Dimensional Force Systems)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Two Ropes')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [2], section [2.3]')
+## KEYWORDS('Statics', 'Three Ropes Pulling Tower')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.4]')
 
 ########################################################
 
@@ -51,7 +51,7 @@ loadMacros(
 "PGauxiliaryFunctions.pl"
 #"source.pl", # allows code to be displayed on certain sites.
 #"PGcourse.pl", # Customization file for the course
-);
+ );
  
 ##############################################################
 #
@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Numeric");		# or Complex
+Context("Vector");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -69,51 +69,78 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale =0.2;
+$imgScale = 0.15;
 
-$height = $imgScale*2648;
+$height = $imgScale*3108;
 
-$width = $imgScale*2925;
+$width = $imgScale*3509;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F_1 = random(100, 200, 10);
-$F_2 = random(100, 200, 10);
-$theta1 = 15;
-$theta2 = 10;
+$AB = Vector(10, -15, -30);
+$AC = Vector(-15, -10, -30);
+$AD = Vector(0, 12.5, -30);
+
+$F_AD = random(1200, 1400, 100);
 
 #---- Formulas to compute answers --------------#
-$F_R_x = $F_1*cos($theta1*pi/180) + $F_2*sin($theta2*pi/180);
-$F_R_y = $F_1*sin($theta1*pi/180) + $F_2*cos($theta2*pi/180);
-$F_R_mag = ($F_R_x**2 + $F_R_y**2)**(0.5);
-$F_R_angle = arctan($F_R_y/$F_R_x)*180/pi;
+$uAB = unit($AB);
+$uAC = unit($AC);
+$uAD = unit($AD);
+
+$ABmag = norm($AB);
+$ACmag = norm($AC);
+$ADmag = norm($AD);
+
+$F_AC = $ACmag / $ADmag * 12.5 / (15 ** 2 / 10 + 10) * $F_AD;
+
+$F_AB = $ABmag / $ACmag * 15 / 10 * $F_AC;
 
 #---- Answers to the problem -----------------------#
-$ansA = $F_R_mag;
-$ansB = $F_R_angle;
+$ansA = $uAB;
+$ansB = $uAC;
+$ansC = $uAD;
+
+$ansD = 0;
+$ansE = 12.5 / $ADmag * $F_AD;
+$ansF = -30 / $ADmag * $F_AD;
+
+$ansG = $F_AB;
+$ansH = $F_AC;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-FV-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.4-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-A hook screwed onto a surface is pulled by two ropes, which exert forces [`F_1`] and [`F_2`] at specified angles. Using the values below, calculate the magnitude of the resultant force and its angle [`\phi`] from horizontal (in DEGREES).
+Three ropes are attached to a tower as shown above. In order for the tower to remain upright, the ropes must exert forces such that there is static equilibrium. If the tension in the rope [`AD`] is [`F_{AD} = [$F_AD] \: \textrm{lbs}`], find the forces exerted by the [`AB`] and [`AC`] ropes.
 
-[`F_1 = [$F_1] N`]
+Find the unit vectors in the direction of [`\overrightarrow{AB}`], [`\overrightarrow{AC}`], and [`\overrightarrow{AD}`]. Enter your answers as vectors.
 
-[`F_2 = [$F_2] N`]
+[`\hat{AB} =`] [___]{"$ansA"}
 
-[`\theta_1 = [$theta1]^{\circ}`]
+[`\hat{AC} =`] [___]{"$ansB"}
 
-[`\theta_2 = [$theta2]^{\circ}`]
-
-
-[`|\overrightarrow{F_R}| =`] [_____]{"$ansA"} [`N`]
+[`\hat{AD} =`] [___]{"$ansC"}
 
 
-[`\phi =`] [_____]{"$ansB"} [`^{\circ}`]
+Find the cartesian force components of the rope [`AD`]. *Use - to distinguish direction*
+
+[`F_{ADx} =`] [__]{"$ansD"} [`\: \textrm{lbs}`]
+
+[`F_{ADy} =`] [__]{"$ansE"} [`\: \textrm{lbs}`]
+
+[`F_{ADz} =`] [__]{"$ansF"} [`\: \textrm{lbs}`]
+
+
+Find the tensions in the other ropes.
+
+[`||\overrightarrow{F_{AB}}|| =`] [___]{"$ansG"} [`\: \textrm{lbs}`]
+
+[`||\overrightarrow{F_{AC}}|| =`] [___]{"$ansH"} [`\: \textrm{lbs}`]
+
 
 END_PGML
 

@@ -127,19 +127,19 @@ $ansD = $Projz;
 
 BEGIN_PGML
 
-[@ image( "21-S-FV-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-2.9-RP-01.png", width=>[$width], height=>[$height]) @]*
 
 A rope is attached to a pipe as shown above. Use the following values:
 
-[`d_1 = [$d1] \: ft`]
+[`d_1 = [$d1] \: \textrm{ft}`]
 
-[`d_2 = [$d2] \: ft`]
+[`d_2 = [$d2] \: \textrm{ft}`]
 
-[`d_3 = [$d3] \: ft`]
+[`d_3 = [$d3] \: \textrm{ft}`]
 
-[`d_4 = [$d4] \: ft`]
+[`d_4 = [$d4] \: \textrm{ft}`]
 
-[`|\overrightarrow{F}| = [$Fmag] \: N`]
+[`||\overrightarrow{F}|| = [$Fmag] \: \textrm{lbs}`]
 
 
 Calculate the angle [`\theta`] (in DEGREES) between [`\overrightarrow{BC}`] and [`\overrightarrow{OA}`].
@@ -148,7 +148,7 @@ Calculate the angle [`\theta`] (in DEGREES) between [`\overrightarrow{BC}`] and 
 
 Find the vector projection of [`\overrightarrow{F}`] along the [`OA`] member ([`Proj_{\overrightarrow{OA}} \overrightarrow{F}`]).
 
-[`Proj_{\overrightarrow{OA}} \overrightarrow{F} = \: <`] [__]{"$ansB"} [`, \:`] [__]{"$ansC"} [`, \:`] [__]{"$ansD"} [`> \: N`]
+[`Proj_{\overrightarrow{OA}} \overrightarrow{F} = \: <`] [__]{"$ansB"} [`, \:`] [__]{"$ansC"} [`, \:`] [__]{"$ansD"} [`> \: \textrm{lbs}`]
 
 
 END_PGML

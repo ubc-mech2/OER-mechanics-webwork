@@ -101,15 +101,15 @@ $ansD = $BCmag;
 
 BEGIN_PGML
 
-[@ image( "21-S-FV-RP-02.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-2.7-RP-01.png", width=>[$width], height=>[$height]) @]*
 
 A rope is attached to a pipe as shown above. Find the position vector from point B to point C.
 
-[`\overrightarrow{r_{BC}} = \: <`] [_]{"$ansA"} [`, \:`] [_]{"$ansB"} [`, \:`] [_]{"$ansC"} [`> \: ft`]
+[`\overrightarrow{r_{BC}} = \: <`] [_]{"$ansA"} [`, \:`] [_]{"$ansB"} [`, \:`] [_]{"$ansC"} [`> \: \textrm{ft}`]
 
 What is the magnitude of [`\overrightarrow{r_{BC}}`].
 
-[`|\overrightarrow{r_{BC}}| =`] [___]{"$ansD"} [`ft`]
+[`||\overrightarrow{r_{BC}}|| =`] [___]{"$ansD"} [`\: \textrm{ft}`]
 
 END_PGML
 
