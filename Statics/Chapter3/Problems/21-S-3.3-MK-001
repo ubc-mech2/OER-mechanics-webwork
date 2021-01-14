@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-MK-001
+## 21-S-3.3-MK-001
 ## Ropes with weight attached
 ## ENDDESCRIPTION
 
@@ -11,7 +11,7 @@
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Beginner)
-## RESOURCES('21-S-MK-001.png')
+## RESOURCES('21-S-3.3-MK-001.png')
 
 ########################################################
 
@@ -82,11 +82,11 @@ $Mass = ($TensionCy+$TensionAy)/$gravity;
 
 BEGIN_PGML	
 
-[@ image( "21-S-MK-001.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-MK-001.png", width=>[$width], height=>[$height]) @]*
 
-What is the mass of the suspended weight, [`D`], if the tension in rope [`AB=`][`[$TensionA]`][`N`] and [`\theta=`][`[$angleBC]`][`^{\circ}`]?
+What is the mass of the suspended weight, [`D`], if the tension in rope *AB* is [`T_{AB}=`] [`[$TensionA]`] [`\textrm{N}`] and [`\theta=`] [`[$angleBC]`] [`^{\circ}`]?
 
-[`D=`][___]{"$Mass"} [`kg`] 
+[`D=`][___]{"$Mass"} [`\textrm{kg}`] 
 
 END_PGML
 

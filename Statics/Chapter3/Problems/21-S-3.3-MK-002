@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-MK-003
+## 21-S-3.3-MK-002
 ## Ropes with weight attached
 ## ENDDESCRIPTION
 
@@ -11,7 +11,7 @@
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Beginner)
-## RESOURCES('21-S-MK-001.png')
+## RESOURCES('21-S-3.3-MK-001.png')
 
 ########################################################
 
@@ -56,38 +56,39 @@ $height = $imgScale*1056;
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
- 
 
-$mass = random(40,60,5);
-$degreeBC = random(30,50,5);
+$tensionA = random(400,430,5);  
+$mass = random(30,40,2);
 $angleBA = atan(3/4);
 $gravity = 9.81;
 
 
 #---- Formulas to compute answers --------------#
 
-$angleBC = $degreeBC*pi/180;
 $weight = $mass*$gravity;
-$tbc = $weight/(sin($angleBC)+cos($angleBC)*tan($angleBA));
-$tba = $tbc*cos($angleBC)/cos($angleBA);
+$tensionAy = $tensionA*sin($angleBA);
+$tensionAx = $tensionA*cos($angleBA);
+$tensionCx = $tensionAx;
+$tensionCy = $weight-$tensionAy;
+$angleBC = atan($tensionCy/$tensionCx)*180/pi;
 
 #For Troubleshooting
-#[`1=`][___]
-#[`2=`][___]
-#[`3=`][___]
-#[`4=`][___]
+#[`1=`][___]{"$weight"} 
+#[`2=`][___]{"$tensionAy"}
+#[`3=`][___]{"$tensionAx"} 
+#[`4=`][___]{"$tensionCx"} 
+#[`5=`][___]{"$tensionCy"}  
+
 ########################################################
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "21-S-MK-001.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-MK-001.png", width=>[$width], height=>[$height]) @]*
 
-Determine the tension in ropes *BA* and rope *BC* if the mass *D* equals [`[$mass]`][`kg`] and [`\theta=`] [`[$degreeBC]`][`^{\circ}`]
+Management at UBC want to decrease the overall length of their ropes for the apparatus displayed above. An employee believes that decreasing [`\theta`] will be the best option.  If each rope has a tensile rating of [`[$tensionA]`] [`\textrm{N}`] and mass [`D=`] [`[$mass]`] [`\textrm{kg}`] find the minimum value of [`\theta`].
 
-[`T_{BC}=`][___]{"$tbc"}[`N`] 
-
-[`T_{BA}=`][___]{"$tba"}[`N`] 
+[`\theta=`][___]{"$angleBC"} [`^{\circ}`] 
 
 END_PGML
 
