@@ -146,7 +146,7 @@ BEGIN_PGML
 
 [@ image( "21-S-3.4-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-Three ropes are attached to a tower as shown above. In order for the tower to remain upright, the ropes must exert forces such that there is static equilibrium. If the maximum allowable tension in all ropes is [`[$Fmax] \: \textrm{lbs}`], find the maximum forces exerted by all ropes. Use the values provided below:
+Three ropes are attached to a tower as shown above. In order for the tower to remain upright, the ropes must exert forces such that there is static equilibrium. If the maximum allowable tension in all ropes is [`F_{max} = [$Fmax] \: \textrm{lbs}`], find the maximum forces exerted by all ropes. Use the values provided below:
 
 [`d_1 = [$d1] \: \textrm{ft}`]
 
