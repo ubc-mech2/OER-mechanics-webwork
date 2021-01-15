@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-3.3-MK-001
+## 21-S-3.3-MK-03
 ## Ropes with weight attached
 ## ENDDESCRIPTION
 
@@ -7,11 +7,11 @@
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Particle)
 ## DBsection(Coplanar Force Systems)
-## Date(2021-01-12)
+## Date(2021-01-13)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Beginner)
-## RESOURCES('21-S-3.3-MK-001.png')
+## RESOURCES('21-S-3.3-MK-01.png')
 
 ########################################################
 
@@ -56,37 +56,38 @@ $height = $imgScale*1056;
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
+ 
 
-$TensionA = random(300,500,20);  
-$angleBC = random(10,60,5);
+$mass = random(40,60,5);
+$degreeBC = random(30,50,5);
 $angleBA = atan(3/4);
 $gravity = 9.81;
 
 
 #---- Formulas to compute answers --------------#
 
-$radsBC=$angleBC*pi/180;
-$TensionAy = $TensionA*sin($angleBA);
-$TensionAx = $TensionA*cos($angleBA);
-$TensionCx = $TensionAx;
-$TensionCy = $TensionCx*tan($radsBC);
-$Mass = ($TensionCy+$TensionAy)/$gravity;
+$angleBC = $degreeBC*pi/180;
+$weight = $mass*$gravity;
+$tbc = $weight/(sin($angleBC)+cos($angleBC)*tan($angleBA));
+$tba = $tbc*cos($angleBC)/cos($angleBA);
 
 #For Troubleshooting
-#[`1=`][___]{"$TensionAy"} 
-#[`2=`][___]{"$TensionAx"}
-#[`3=`][___]{"$TensionCx"} 
-#[`4=`][___]{"$TensionCy"} 
+#[`1=`][___]
+#[`2=`][___]
+#[`3=`][___]
+#[`4=`][___]
 ########################################################
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "21-S-3.3-MK-001.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-What is the mass of the suspended weight, [`D`], if the tension in rope *AB* is [`T_{AB}=`] [`[$TensionA]`] [`\textrm{N}`] and [`\theta=`] [`[$angleBC]`] [`^{\circ}`]?
+Determine the tension in ropes *BA* and rope *BC* if [`D=`] [`[$mass]`] [`\textrm{kg}`] and [`\theta=`] [`[$degreeBC]`] [`^{\circ}`]
 
-[`D=`][___]{"$Mass"} [`\textrm{kg}`] 
+[`T_{BC}=`][___]{"$tbc"} [`\textrm{N}`] 
+
+[`T_{BA}=`][___]{"$tba"} [`\textrm{N}`] 
 
 END_PGML
 

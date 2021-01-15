@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-3.3-MK-002
+## 21-S-3.3-MK-01
 ## Ropes with weight attached
 ## ENDDESCRIPTION
 
@@ -7,11 +7,11 @@
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Particle)
 ## DBsection(Coplanar Force Systems)
-## Date(2021-01-13)
+## Date(2021-01-12)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Beginner)
-## RESOURCES('21-S-3.3-MK-001.png')
+## RESOURCES('21-S-3.3-MK-01.png')
 
 ########################################################
 
@@ -57,38 +57,36 @@ $height = $imgScale*1056;
 #---- Provided --------#
 # random(lower, upper, stepsize)
 
-$tensionA = random(400,430,5);  
-$mass = random(30,40,2);
+$TensionA = random(300,500,20);  
+$angleBC = random(10,60,5);
 $angleBA = atan(3/4);
 $gravity = 9.81;
 
 
 #---- Formulas to compute answers --------------#
 
-$weight = $mass*$gravity;
-$tensionAy = $tensionA*sin($angleBA);
-$tensionAx = $tensionA*cos($angleBA);
-$tensionCx = $tensionAx;
-$tensionCy = $weight-$tensionAy;
-$angleBC = atan($tensionCy/$tensionCx)*180/pi;
+$radsBC=$angleBC*pi/180;
+$TensionAy = $TensionA*sin($angleBA);
+$TensionAx = $TensionA*cos($angleBA);
+$TensionCx = $TensionAx;
+$TensionCy = $TensionCx*tan($radsBC);
+$Mass = ($TensionCy+$TensionAy)/$gravity;
 
 #For Troubleshooting
-#[`1=`][___]{"$weight"} 
-#[`2=`][___]{"$tensionAy"}
-#[`3=`][___]{"$tensionAx"} 
-#[`4=`][___]{"$tensionCx"} 
-#[`5=`][___]{"$tensionCy"}  
-
+#[`1=`][___]{"$TensionAy"} 
+#[`2=`][___]{"$TensionAx"}
+#[`3=`][___]{"$TensionCx"} 
+#[`4=`][___]{"$TensionCy"} 
 ########################################################
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "21-S-3.3-MK-001.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-Management at UBC want to decrease the overall length of their ropes for the apparatus displayed above. An employee believes that decreasing [`\theta`] will be the best option.  If each rope has a tensile rating of [`[$tensionA]`] [`\textrm{N}`] and mass [`D=`] [`[$mass]`] [`\textrm{kg}`] find the minimum value of [`\theta`].
+What is the mass of the suspended weight, [`D`], if the tension in rope *AB* is [`T_{AB}=`] [`[$TensionA]`] [`\textrm{N}`] and [`\theta=`] [`[$angleBC]`] [`^{\circ}`]?
 
-[`\theta=`][___]{"$angleBC"} [`^{\circ}`] 
+[`D=`][___]{"$Mass"} [`\textrm{kg}`] 
 
 END_PGML
 
