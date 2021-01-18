@@ -117,7 +117,7 @@ BEGIN_PGML
 
 Three ropes are attached to a tower as shown above. In order for the tower to remain upright, the ropes must exert forces such that there is static equilibrium. If the tension in the rope [`AD`] is [`F_{AD} = [$F_AD] \: \textrm{lbs}`], find the forces exerted by the [`AB`] and [`AC`] ropes.
 
-Find the unit vectors in the direction of [`\overrightarrow{AB}`], [`\overrightarrow{AC}`], and [`\overrightarrow{AD}`]. Enter your answers as vectors.
+Find the unit vectors in the direction of [`\overrightarrow{AB}`], [`\overrightarrow{AC}`], and [`\overrightarrow{AD}`]. Enter your answers as vectors by using angle brackets '< >'.
 
 [`\hat{AB} =`] [___]{"$ansA"}
 

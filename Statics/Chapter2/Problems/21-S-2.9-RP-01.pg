@@ -117,10 +117,22 @@ $Projz = $X * $AOz;
 $theta = acos(($BCx * $AOx + $BCy * $AOy + $BCz * $AOz) / ($BCmag * $AOmag)) * 180 / pi;
 
 #---- Answers to the problem -----------------------#
-$ansA = $theta;
-$ansB = $Projx;
-$ansC = $Projy;
-$ansD = $Projz;
+$ansA = $BCx;
+$ansB = $BCy;
+$ansC = $BCz;
+
+$ansD = $AOx;
+$ansE = $AOy;
+$ansF = $AOz;
+
+$ansG = $BCmag;
+$ansH = $AOmag;
+
+$ansI = $theta;
+
+$ansJ = $Projx;
+$ansK = $Projy;
+$ansL = $Projz;
 
 ########################################################
 #PGML
@@ -129,7 +141,7 @@ BEGIN_PGML
 
 [@ image( "21-S-2.9-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-A rope is attached to a pipe as shown above. Use the following values:
+A rope is attached to a pipe as shown above. Determine the vector projection of [`\overrightarrow{F}`] along the [`AO`] member. Use the following values:
 
 [`d_1 = [$d1] \: \textrm{ft}`]
 
@@ -142,13 +154,25 @@ A rope is attached to a pipe as shown above. Use the following values:
 [`||\overrightarrow{F}|| = [$Fmag] \: \textrm{lbs}`]
 
 
+Find vectors [`\overrightarrow{BC}`] and [`\overrightarrow{AO}`] as well as their magnitudes.
+
+[`\overrightarrow{BC} = \: <`] [__]{"$ansA"} [`, \:`] [__]{"$ansB"} [`, \:`] [__]{"$ansC"} [`> \: \textrm{ft}`]
+
+[`\overrightarrow{AO} = \: <`] [__]{"$ansD"} [`, \:`] [__]{"$ansE"} [`, \:`] [__]{"$ansF"} [`> \: \textrm{ft}`]
+
+[`||\overrightarrow{BC}|| =`] [___]{"$ansG"} [`\: \textrm{ft}`]
+
+[`||\overrightarrow{AO}|| =`] [___]{"$ansH"} [`\: \textrm{ft}`]
+
+
 Calculate the angle [`\theta`] (in DEGREES) between [`\overrightarrow{BC}`] and [`\overrightarrow{AO}`].
 
-[`\theta =`] [___]{"$ansA"} [`^{\circ}`]
+[`\theta =`] [___]{"$ansI"} [`^{\circ}`]
+
 
 Find the vector projection of [`\overrightarrow{F}`] along the [`AO`] member ([`Proj_{\overrightarrow{AO}} \overrightarrow{F}`]).
 
-[`Proj_{\overrightarrow{AO}} \overrightarrow{F} = \: <`] [__]{"$ansB"} [`, \:`] [__]{"$ansC"} [`, \:`] [__]{"$ansD"} [`> \: \textrm{lbs}`]
+[`Proj_{\overrightarrow{AO}} \overrightarrow{F} = \: <`] [__]{"$ansJ"} [`, \:`] [__]{"$ansK"} [`, \:`] [__]{"$ansL"} [`> \: \textrm{lbs}`]
 
 
 END_PGML

@@ -77,78 +77,54 @@ $width = $imgScale*3640;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$d1 = random(2, 4, 0.5);
-$d2 = $d1;
-$d3 = $d1 + random(1, 2, 0.5);
+$d1 = 3;
+$d2 = 3;
+$d3 = 4;
 
-$kAB = random(25, 35, 5);
-$kAC = $kAB - random(5, 10, 5);
-$kAD = random(20, 40, 5);
+$kAB = 30;
 
-$m = random(2, 4, 1);
+$x0 = random(2, 3.5, 0.5);
+
 $g = 9.81;
 
 #---- Formulas to compute answers --------------#
 $ABmag = ($d1 ** 2 + $d3 ** 2) ** (0.5);
 $ACmag = ($d1 ** 2 + $d2 ** 2) ** (0.5);
 
-$T_AD = $m * $g;
-$T_AC = ($d3 * $ACmag) / ($d1 * ($d2 + $d3)) * $T_AD;
-$T_AB = ($d2 * $ABmag) / ($d3 * $ACmag) * $T_AC;
+$xAB = $ABmag - $x0;
+$T_AB = $xAB * $kAB;
+$T_AD = ($d1 * ($d2 + $d3)) / ($d2 * $ABmag) * $T_AB;
 
-$xAB = $T_AB / $kAB;
-$xAC = $T_AC / $kAC;
-$xAD = $T_AD / $kAD;
+$m = $T_AD / $g;
 
 #---- Answers to the problem -----------------------#
-$ansA = $T_AB;
-$ansB = $T_AC;
-$ansC = $T_AD;
-
-$ansD = $xAB;
-$ansE = $xAC;
-$ansF = $xAD;
+$ansA = $xAB;
+$ansB = $T_AB;
+$ansC = $m;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.3-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-In the 2D system above, the springs are stretched and are in static equilibrium. Find the stretch in each spring. Use the values below:
-
-[`d_1 = [$d1] \: \textrm{m}`]
-
-[`d_2 = [$d2] \: \textrm{m}`]
-
-[`d_3 = [$d3] \: \textrm{m}`]
-
-[`k_{AB} = [$kAB] \: \textrm{N/m}`]
-
-[`k_{AC} = [$kAC] \: \textrm{N/m}`]
-
-[`k_{AD} = [$kAD] \: \textrm{N/m}`]
-
-[`m_D = [$m] \: \textrm{kg}`]
+In the 2D system above, the springs are stretched and are in static equilibrium. If the unstretched length of spring [`AB`] is [`[$x0] \: \textrm{m}`], find the mass of the block at D. Assume the spring [`AB`] includes the uncoiled length between [`A`] and [`B`].
 
 
-Find the elastic tension in each spring.
+What is the stretch of spring [`AB`]?
 
-[`T_{AB} =`] [___]{"$ansA"} [`\: \textrm{N}`]
-
-[`T_{AC} =`] [___]{"$ansB"} [`\: \textrm{N}`]
-
-[`T_{AD} =`] [___]{"$ansC"} [`\: \textrm{N}`]
+[`\Delta x_{AB} =`] [__]{"$ansA"} [`\: \textrm{m}`]
 
 
-Finally, determine the stretch in each spring.
+Determine the force exerted by the [`AB`] spring.
 
-[`\Delta x_{AB} =`] [___]{"$ansD"} [`\: \textrm{m}`]
+[`F_{AB} =`] [__]{"$ansB"} [`\: \textrm{N}`]
 
-[`\Delta x_{AC} =`] [___]{"$ansE"} [`\: \textrm{m}`]
 
-[`\Delta x_{AD} =`] [___]{"$ansF"} [`\: \textrm{m}`]
+Finally, find the mass of the block at D.
+
+[`m_D =`] [__]{"$ansC"} [`\: \textrm{kg}`]
 
 
 END_PGML
