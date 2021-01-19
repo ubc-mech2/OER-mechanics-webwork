@@ -133,7 +133,7 @@ if ($BCratio > 1) {
 
 #---- Answers to the problem -----------------------#
 $ansA = $limittingRope;
-$mc = RadioButtons([ "AB", "AC", "AD" ], $ansA,);
+$mc = RadioButtons([ "AB", "AC", "AD" ], $ansA);
 
 $ansB = $F_AB;
 $ansC = $F_AC;

@@ -77,42 +77,42 @@ $width = $imgScale*3811;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$theta = random(20, 40, 5);
-$F_A = random(500, 800, 100);
+$theta = random(30, 60, 5);
 $k = random(30, 60, 10);
+$x0 = random(10, 15, 1);
+$xf = $x0 + random(15, 25, 1);
 
 #---- Formulas to compute answers --------------#
-$F_AC = (4 + 3 * tan($theta * pi / 180)) / 5 * $F_A;
-
-$deltaX = $F_AC / $k;
+$T_AC = $k * ($xf - $x0);
+$F = (5 * $T_AC) / (3 * tan($theta * pi / 180) + 4);
 
 #---- Answers to the problem -----------------------#
-$ansA = $F_AC;
-$ansB = $deltaX;
+$ansA = $T_AC;
+$ansB = $F;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.3-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-RP-04.png", width=>[$width], height=>[$height]) @]*
 
-In the 2D equilibrium system above, find the stretch of the spring [`\Delta x`] given a force [`F = [$F_A]`].
+If the unstretched length of spring [`AC`] is [`x_0 = [$x0] \: \textrm{cm}`], find the magnitude of the force necessary for the spring to have an equilibrium length of [`x_f = [$xf] \: \textrm{cm}`].
 Draw a FBD to simplify the system. Use the following values:
 
-[`\theta = [$theta] ^\circ`]
+[`k = [$k] \: \textrm{N/cm}`]
 
-[`k = [$k] \: \textrm{N/m}`]
-
-
-Find the tension in the spring.
-
-[`F_{AC} =`] [__]{"$ansA"} [`\: \textrm{N}`]
+[`\theta = [$theta]^\circ`]
 
 
-Find the stretch of the spring.
+Find the elastic tension in the spring.
 
-[`\Delta x =`] [__]{"$ansB"} [`\: \textrm{m}`]
+[`T_{AC} =`] [__]{"$ansA"} [`\: \textrm{N}`]
+
+
+Find the magnitude of the force [`F`].
+
+[`F =`] [__]{"$ansB"} [`\: \textrm{N}`]
 
 
 END_PGML

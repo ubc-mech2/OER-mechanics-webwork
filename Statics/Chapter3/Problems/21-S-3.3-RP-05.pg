@@ -69,50 +69,77 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.12;
+$imgScale = 0.13;
 
-$height = $imgScale*3460;
+$height = $imgScale*4048;
 
-$width = $imgScale*3811;
+$width = $imgScale*3212;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$theta = random(20, 40, 5);
-$F_A = random(500, 800, 100);
-$k = random(30, 60, 10);
+$theta = random(20, 45, 5);
+$d1 = random(0.3, 0.6, 0.1);
+$d2 = $d1 + random(0.2, 0.3, 0.1);
+$k = random(100, 150, 10);
+$m = random(120, 180, 10);
+$g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$F_AC = (4 + 3 * tan($theta * pi / 180)) / 5 * $F_A;
-
-$deltaX = $F_AC / $k;
+$phi = $theta + arctan($d1 / $d2) * 180 / pi;
+$thetaRad = $theta * pi / 180;
+$phiRad = $phi * pi / 180;
+$T = ($m * $g * sin($thetaRad)) / (cos($thetaRad) * cos($phiRad) + sin($thetaRad) * sin($phiRad));
+$x0 = ($d1 ** 2 + $d2 ** 2) ** (0.5) - $T / $k;
 
 #---- Answers to the problem -----------------------#
-$ansA = $F_AC;
-$ansB = $deltaX;
+$mc = RadioButtons([ "2", "3", "4", "5" ], "1");
+$ansB = $phi;
+$ansC = $T;
+$ansD = $x0;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.3-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.3-RP-05.png", width=>[$width], height=>[$height]) @]*
 
-In the 2D equilibrium system above, find the stretch of the spring [`\Delta x`] given a force [`F = [$F_A]`].
+A block with mass [`m = [$m] \: \textrm{kg}`] is in equilibrium and is attached to a spring that is firmly stuck on a wall. Assuming that the surfaces are frictionless, determine the unstretched length of the spring.
 Draw a FBD to simplify the system. Use the following values:
 
-[`\theta = [$theta] ^\circ`]
+[`\theta = [$theta]^\circ`]
+
+[`d_1 = [$d1] \: \textrm{m}`]
+
+[`d_2 = [$d2] \: \textrm{m}`]
 
 [`k = [$k] \: \textrm{N/m}`]
 
 
-Find the tension in the spring.
+How many external forces act on the block?
 
-[`F_{AC} =`] [__]{"$ansA"} [`\: \textrm{N}`]
+[@ $mc->buttons() @]*
+
+END_PGML
+
+ANS( $mc->cmp() );
+
+BEGIN_PGML
 
 
-Find the stretch of the spring.
+What is the smallest angle [`\phi`] (in DEGREES) between the spring and the horizontal?
 
-[`\Delta x =`] [__]{"$ansB"} [`\: \textrm{m}`]
+[`\phi =`] [__]{"$ansB"} [`^\circ`]
+
+
+Find the magnitude of the elastic tension [`T`] along the spring.
+
+[`T =`] [__]{"$ansC"} [`\: \textrm{N}`]
+
+
+Finally, determine the unstretched length of the spring.
+
+[`x_0 =`] [__]{"$ansD"} [`\: \textrm{m}`]
 
 
 END_PGML
