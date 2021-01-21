@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Matrix");		# or Complex
+Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -77,37 +77,53 @@ $width = $imgScale*3509;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$AB = Vector(10, -15, -30);
-$AC = Vector(-15, -10, -30);
-$AD = Vector(0, 12.5, -30);
+$ABx = 10;
+$ABy = -15;
+$ABz = -30;
+
+$ACx = -15;
+$ACy = -10;
+$ACz = $ABz;
+
+$ADx = 0;
+$ADy = 12.5;
+$ADz = $ABz;
 
 $F_AD = random(1200, 1400, 100);
 
 #---- Formulas to compute answers --------------#
-$uAB = Matrix(unit($AB));
-$uAC = Matrix(unit($AC));
-$uAD = Matrix(unit($AD));
+$ABmag = ($ABx ** 2 + $ABy ** 2 + $ABz ** 2) ** (0.5);
+$ACmag = ($ACx ** 2 + $ACy ** 2 + $ACz ** 2) ** (0.5);
+$ADmag = ($ADx ** 2 + $ADy ** 2 + $ADz ** 2) ** (0.5);
 
-$ABmag = norm($AB);
-$ACmag = norm($AC);
-$ADmag = norm($AD);
+$uABx = $ABx / $ABmag;
+$uABy = $ABy / $ABmag;
+$uABz = $ABz / $ABmag;
+
+$uACx = $ACx / $ACmag;
+$uACy = $ACy / $ACmag;
+$uACz = $ACz / $ACmag;
+
+$uADx = $ADx / $ADmag;
+$uADy = $ADy / $ADmag;
+$uADz = $ADz / $ADmag;
 
 $F_AC = $ACmag / $ADmag * 12.5 / (15 ** 2 / 10 + 10) * $F_AD;
 
 $F_AB = $ABmag / $ACmag * 15 / 10 * $F_AC;
 
 #---- Answers to the problem -----------------------#
-$ansAx = $uAB->element(1, 1);
-$ansAy = $uAB->element(1, 2);
-$ansAz = $uAB->element(1, 3);
+$ansAx = $uABx;
+$ansAy = $uABy;
+$ansAz = $uABz;
 
-$ansBx = $uAC->element(1, 1);
-$ansBy = $uAC->element(1, 2);
-$ansBz = $uAC->element(1, 3);
+$ansBx = $uACx;
+$ansBy = $uACy;
+$ansBz = $uACz;
 
-$ansCx = $uAD->element(1, 1);
-$ansCy = $uAD->element(1, 2);
-$ansCz = $uAD->element(1, 3);
+$ansCx = $uADx;
+$ansCy = $uADy;
+$ansCz = $uADz;
 
 $ansD = 0;
 $ansE = 12.5 / $ADmag * $F_AD;
