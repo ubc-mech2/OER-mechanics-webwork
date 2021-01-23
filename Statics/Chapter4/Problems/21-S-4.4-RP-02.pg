@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Equilibrium of a Particle)
-## DBsection(Coplanar Force Systems)
+## DBchapter(Force System Resultants)
+## DBsection(Principle of Moments)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'FBD', '2D')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.3]')
+## KEYWORDS('Statics', 'Hands on Rod', 'Moments')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.4]')
 
 ########################################################
 
@@ -69,51 +69,85 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.12;
+$imgScale = 0.3;
 
-$height = $imgScale*3460;
+$height = $imgScale*1655;
 
-$width = $imgScale*3811;
+$width = $imgScale*2668;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$theta = random(20, 40, 5);
-$F_A = random(500, 800, 100);
-$k = random(30, 60, 10);
+$F_B = random(60, 80, 5);
+$F_C = random(45, 70, 5);
+
+$d1 = random(1.75, 2.5, 0.25);
+$d2 = random(0.5, 1.25, 0.25);
+$theta_A = random(25, 35, 5);
+$theta_B = random(20, 35, 5);
+$theta_C = random(25, 40, 5);
 
 #---- Formulas to compute answers --------------#
-$F_AC = (4 + 3 * tan($theta * pi / 180)) / 5 * $F_A;
-
-$deltaX = $F_AC / $k;
+$M_AB = $d1 * $F_B * cos($theta_B * pi / 180);
+$M_AC = ($d1 + $d2) * $F_C * cos($theta_C * pi / 180);
+$M_AT = $M_AB + $M_AC;
 
 #---- Answers to the problem -----------------------#
-$ansA = $F_AC;
-$ansB = $deltaX;
+$ansA = $M_AB;
+$mc1 = RadioButtons([ "Up", "Down", "Left", "Right", "Into the page", "Out of the page" ], "Out of the page");
+
+$ansB = $M_AC;
+$mc2 = RadioButtons([ "Up", "Down", "Left", "Right", "Into the page", "Out of the page" ], "Out of the page");
+
+$ansC = $M_AT;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.3-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.4-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-In the 2D equilibrium system above, find the stretch of the spring [`\Delta x`] given a force [`F = [$F_A] \: \textrm{N}`].
-Draw a FBD to simplify the system. Use the following values:
+A rod is pushed by an engineer with force magnitudes of [`F_B = [$F_B] \: \textrm{lbs}`] and [`F_C = [$F_C] \: \textrm{lbs}`]. Find the total moment formed about point [`A`] as a result of [`F_B`] and [`F_C`]. Assume that the rod pivots about point [`A`].
 
-[`\theta = [$theta] ^\circ`]
+Use the following values:
 
-[`k = [$k] \: \textrm{N/m}`]
+[`d_1 = [$d1] \: \textrm{ft}`]
+
+[`d_2 = [$d2] \: \textrm{ft}`]
+
+[`\theta_A = [$theta_A]^\circ`]
+
+[`\theta_B = [$theta_B]^\circ`]
+
+[`\theta_C = [$theta_C]^\circ`]
 
 
-Find the tension in the spring.
+What are the magnitudes and directions of the moment vectors formed by [`F_B`] and [`F_C`] about point [`A`]?
 
-[`F_{AC} =`] [__]{"$ansA"} [`\: \textrm{N}`]
+[`|M_{AB}| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+
+[@ $mc1->buttons() @]*
+
+END_PGML
+
+ANS( $mc1->cmp() );
+
+BEGIN_PGML
+
+[`|M_{AC}| =`] [___]{"$ansB"} [`\: \textrm{lbs*ft}`]
+
+[@ $mc2->buttons() @]*
+
+END_PGML
+
+ANS( $mc2->cmp() );
+
+BEGIN_PGML
 
 
-Find the stretch of the spring.
+What is the magnitude of the total moment formed about point [`A`] by the engineer?
 
-[`\Delta x =`] [__]{"$ansB"} [`\: \textrm{m}`]
-
+[`|M_{A \: Total}| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
 
 END_PGML
 
