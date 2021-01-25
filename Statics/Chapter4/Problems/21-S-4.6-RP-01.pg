@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Force System Resultants)
-## DBsection(Principle of Moments)
+## DBsection(Moment of a Couple)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Ropes on Pole', 'Moments')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.4]')
+## KEYWORDS('Statics', 'Steering Wheel', 'Couple Moment')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.6]')
 
 ########################################################
 
@@ -69,95 +69,62 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.18;
+$imgScale = 0.23;
 
-$height = $imgScale*1993;
+$height = $imgScale*2183;
 
-$width = $imgScale*3056;
+$width = $imgScale*1821;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(120, 180, 10);
-$P = random(80, 120, 10);
-
-$h1 = random(8, 12, 2);
-$h2 = $h1 / 2;
-$theta = random(30, 45, 5);
+$F = random(10, 20, 1);
+$r = random(7, 9, 1);
 
 #---- Formulas to compute answers --------------#
-$M_AF = $h1 * 4 / 5 * $F;
-$M_AP = ($h1 + $h2) * $P * cos($theta * pi / 180);
-$rotation;
-
-if ($M_AF > $M_AP) {
-    $rotation = "Clockwise";
-} else {
-    if ($M_AF < $M_AP) {
-        $rotation = "Counterclockwise";
-    } else {
-        $rotation = "No rotation";
-    }
-}
+$M = 2 * $r * $F;
 
 #---- Answers to the problem -----------------------#
-$ansA = $M_AF;
-$ansB = "Clockwise";
-$mc1 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansB);
+$ansA = $M;
 
-$ansC = $M_AP;
-$ansD = "Counterclockwise";
-$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansD);
+$ansB = "Yes";
+$mc1 = RadioButtons([ "Yes", "No", "Maybe" ], $ansB);
 
-$ansE = $rotation;
-$mc3 = RadioButtons([ "Clockwise", "Counterclockwise", "No rotation" ], $ansE);
+$ansC = "Into the page";
+$mc2 = RadioButtons([ "Up", "Down", "Left", "Right", "Into the page", "Out of the page" ], $ansC);
+
+$ansD = "Clockwise";
+$mc3 = RadioButtons([ "Clockwise", "Counterclockwise", "No turn" ], $ansD);
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-4.4-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.6-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-A pole stands initially at equilibrium. After a while, two men begin to pull on ropes attached to the pole as seen above. If forces of [`F = [$F] \: \textrm{lbs}`] and [`P = [$P] \: \textrm{lbs}`] are exerted on the ropes, find the magnitudes of the moments of each force about [`A`] and their rotation direction. Will the pole rotate clockwise, counterclockwise, or remain upright (Assuming that the pole can pivot about [`A`])?
+A driver is turning their steering wheel. If the driver applies opposing forces with equal magnitude [`F = [$F] \: \textrm{lbs}`] on a steering wheel with radius [`r = [$r] \: \textrm{in}`], find the couple moment formed. Ignore any other external forces.
 
-Use the following values:
-
-[`h_1 = [$h1] \: \textrm{ft}`]
-
-[`h_2 = [$h2] \: \textrm{ft}`]
-
-[`\theta = [$theta]^\circ`]
+[`|M| =`] [___]{"$ansA"} [`\: \textrm{lbs*in}`]
 
 
-Find the moments about A.
-
-[`|(M_A)_F| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+Is there force equilibrium?
 
 [@ $mc1->buttons() @]*
 
-END_PGML
 
-ANS( $mc1->cmp() );
-
-BEGIN_PGML
-
-[`|(M_A)_P| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
+Which direction does the moment vector point?
 
 [@ $mc2->buttons() @]*
 
-END_PGML
 
-ANS( $mc2->cmp() );
-
-BEGIN_PGML
-
-
-Will the pole rotate clockwise, counterclockwise, or remain upright?
+Which way will the wheel turn?
 
 [@ $mc3->buttons() @]*
 
 END_PGML
 
+ANS( $mc1->cmp() );
+ANS( $mc2->cmp() );
 ANS( $mc3->cmp() );
 
 ##############################################################

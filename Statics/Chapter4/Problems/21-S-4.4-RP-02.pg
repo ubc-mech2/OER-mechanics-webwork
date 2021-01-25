@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Ropes on Pole', 'Moments')
+## KEYWORDS('Statics', 'Hands on Rod', 'Moments')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.4]')
 
 ########################################################
@@ -69,69 +69,62 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.18;
+$imgScale = 0.3;
 
-$height = $imgScale*1993;
+$height = $imgScale*1655;
 
-$width = $imgScale*3056;
+$width = $imgScale*2668;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(120, 180, 10);
-$P = random(80, 120, 10);
+$F_B = random(60, 80, 5);
+$F_C = random(45, 70, 5);
 
-$h1 = random(8, 12, 2);
-$h2 = $h1 / 2;
-$theta = random(30, 45, 5);
+$d1 = random(1.75, 2.5, 0.25);
+$d2 = random(0.5, 1, 0.25);
+$theta_A = random(25, 35, 5);
+$theta_B = random(20, 35, 5);
+$theta_C = random(25, 40, 5);
 
 #---- Formulas to compute answers --------------#
-$M_AF = $h1 * 4 / 5 * $F;
-$M_AP = ($h1 + $h2) * $P * cos($theta * pi / 180);
-$rotation;
-
-if ($M_AF > $M_AP) {
-    $rotation = "Clockwise";
-} else {
-    if ($M_AF < $M_AP) {
-        $rotation = "Counterclockwise";
-    } else {
-        $rotation = "No rotation";
-    }
-}
+$M_AB = $d1 * $F_B * cos($theta_B * pi / 180);
+$M_AC = ($d1 + $d2) * $F_C * cos($theta_C * pi / 180);
+$M_AT = $M_AB + $M_AC;
 
 #---- Answers to the problem -----------------------#
-$ansA = $M_AF;
-$ansB = "Clockwise";
-$mc1 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansB);
+$ansA = $M_AB;
+$mc1 = RadioButtons([ "Up", "Down", "Left", "Right", "Into the page", "Out of the page" ], "Out of the page");
 
-$ansC = $M_AP;
-$ansD = "Counterclockwise";
-$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansD);
+$ansB = $M_AC;
+$mc2 = RadioButtons([ "Up", "Down", "Left", "Right", "Into the page", "Out of the page" ], "Out of the page");
 
-$ansE = $rotation;
-$mc3 = RadioButtons([ "Clockwise", "Counterclockwise", "No rotation" ], $ansE);
+$ansC = $M_AT;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-4.4-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.4-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-A pole stands initially at equilibrium. After a while, two men begin to pull on ropes attached to the pole as seen above. If forces of [`F = [$F] \: \textrm{lbs}`] and [`P = [$P] \: \textrm{lbs}`] are exerted on the ropes, find the magnitudes of the moments of each force about [`A`] and their rotation direction. Will the pole rotate clockwise, counterclockwise, or remain upright (Assuming that the pole can pivot about [`A`])?
+A rod is pushed by an engineer with force magnitudes of [`F_B = [$F_B] \: \textrm{lbs}`] and [`F_C = [$F_C] \: \textrm{lbs}`]. Find the total moment formed about point [`A`] as a result of [`F_B`] and [`F_C`]. Assume that the rod pivots about point [`A`].
 
 Use the following values:
 
-[`h_1 = [$h1] \: \textrm{ft}`]
+[`d_1 = [$d1] \: \textrm{ft}`]
 
-[`h_2 = [$h2] \: \textrm{ft}`]
+[`d_2 = [$d2] \: \textrm{ft}`]
 
-[`\theta = [$theta]^\circ`]
+[`\theta_A = [$theta_A]^\circ`]
+
+[`\theta_B = [$theta_B]^\circ`]
+
+[`\theta_C = [$theta_C]^\circ`]
 
 
-Find the moments about A.
+What are the magnitudes and directions of the moment vectors formed by [`F_B`] and [`F_C`] about point [`A`]?
 
-[`|(M_A)_F| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+[`|(M_A)_B| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
 
 [@ $mc1->buttons() @]*
 
@@ -141,7 +134,7 @@ ANS( $mc1->cmp() );
 
 BEGIN_PGML
 
-[`|(M_A)_P| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
+[`|(M_A)_C| =`] [___]{"$ansB"} [`\: \textrm{lbs*ft}`]
 
 [@ $mc2->buttons() @]*
 
@@ -152,13 +145,11 @@ ANS( $mc2->cmp() );
 BEGIN_PGML
 
 
-Will the pole rotate clockwise, counterclockwise, or remain upright?
+What is the magnitude of the total moment formed about point [`A`] by the engineer?
 
-[@ $mc3->buttons() @]*
+[`|(M_A)_{Total}| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
 
 END_PGML
-
-ANS( $mc3->cmp() );
 
 ##############################################################
 

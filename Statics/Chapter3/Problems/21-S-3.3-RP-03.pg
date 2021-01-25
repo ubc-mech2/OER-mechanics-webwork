@@ -97,7 +97,7 @@ BEGIN_PGML
 
 [@ image( "21-S-3.3-RP-03.png", width=>[$width], height=>[$height]) @]*
 
-In the 2D equilibrium system above, find the stretch of the spring [`\Delta x`] given a force [`F = [$F_A]`].
+In the 2D equilibrium system above, find the stretch of the spring [`\Delta x`] given a force [`F = [$F_A] \: \textrm{N}`].
 Draw a FBD to simplify the system. Use the following values:
 
 [`\theta = [$theta] ^\circ`]

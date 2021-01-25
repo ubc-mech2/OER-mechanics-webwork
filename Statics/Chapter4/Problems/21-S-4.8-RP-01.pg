@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Force System Resultants)
-## DBsection(Principle of Moments)
+## DBsection(Further Simplification of a Force and Couple System)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Ropes on Pole', 'Moments')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.4]')
+## KEYWORDS('Statics', 'Wooden Frame', 'Couple Moments')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.8]')
 
 ########################################################
 
@@ -69,96 +69,109 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.18;
+$imgScale = 0.2;
 
-$height = $imgScale*1993;
+$height = $imgScale*2482;
 
-$width = $imgScale*3056;
+$width = $imgScale*1908;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(120, 180, 10);
-$P = random(80, 120, 10);
+$F1 = random(200, 300, 10);
+$F2 = random(400, 500, 10);
+$F3 = random(700, 800, 10);
+$F4 = random(500, 600, 10);
 
-$h1 = random(8, 12, 2);
-$h2 = $h1 / 2;
-$theta = random(30, 45, 5);
+$d1 = random(1, 1.25, 0.25);
+$d2 = random(1.5, 2, 0.25);
+$d3 = random(0.5, 0.75, 0.25);
+$d4 = random(0.75, 1, 0.25);
+$d5 = random(1, 1.25, 0.25);
+
+$theta = random(20, 35, 5);
 
 #---- Formulas to compute answers --------------#
-$M_AF = $h1 * 4 / 5 * $F;
-$M_AP = ($h1 + $h2) * $P * cos($theta * pi / 180);
-$rotation;
+$thetaRad = $theta * pi / 180;
 
-if ($M_AF > $M_AP) {
-    $rotation = "Clockwise";
+$F_Rx = ($F1 - $F2) * sin($thetaRad) + ($F4 - $F3) * 4 / 5;
+$F_Ry = ($F1 - $F2) * cos($thetaRad) + ($F4 - $F3) * 3 / 5;
+
+$M_CC = ($d1 + $d2 + $d3) * ($F2 - $F1) * sin($thetaRad) + $d4 * $F1 * cos($thetaRad) - ($d4 + $d5) * $F2 * cos($thetaRad) + ($d1 + $d2) * $F3 * 4 / 5 - $d1 * $F4 * 4 / 5;
+$M = abs($M_CC);
+$direction;
+
+if ($M_CC > 0) {
+    $direction = "Out of the page";
 } else {
-    if ($M_AF < $M_AP) {
-        $rotation = "Counterclockwise";
-    } else {
-        $rotation = "No rotation";
-    }
+    $direction = "Into the page";
 }
 
+$d_in = - $M_CC / $F_Rx;
+
 #---- Answers to the problem -----------------------#
-$ansA = $M_AF;
-$ansB = "Clockwise";
-$mc1 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansB);
+$ansA = $F_Rx;
+$ansB = $F_Ry;
 
-$ansC = $M_AP;
-$ansD = "Counterclockwise";
-$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansD);
+$ansC = $M;
+$mc = RadioButtons([ "Up", "Down", "Left", "Right", "Into the page", "Out of the page" ], $direction);
 
-$ansE = $rotation;
-$mc3 = RadioButtons([ "Clockwise", "Counterclockwise", "No rotation" ], $ansE);
+$ansD = $d_in;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-4.4-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.8-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-A pole stands initially at equilibrium. After a while, two men begin to pull on ropes attached to the pole as seen above. If forces of [`F = [$F] \: \textrm{lbs}`] and [`P = [$P] \: \textrm{lbs}`] are exerted on the ropes, find the magnitudes of the moments of each force about [`A`] and their rotation direction. Will the pole rotate clockwise, counterclockwise, or remain upright (Assuming that the pole can pivot about [`A`])?
+A wooden frame is acted upon by multiple forces. Simplify the loadings into a single resultant force and specify where the line of action intersects the vertical line [`AB`], measured from [`A`].
 
-Use the following values:
+Use the values below:
 
-[`h_1 = [$h1] \: \textrm{ft}`]
+[`||\overrightarrow{F_1}|| = [$F1] \: \textrm{N}`]
 
-[`h_2 = [$h2] \: \textrm{ft}`]
+[`||\overrightarrow{F_2}|| = [$F2] \: \textrm{N}`]
 
-[`\theta = [$theta]^\circ`]
+[`||\overrightarrow{F_3}|| = [$F3] \: \textrm{N}`]
+
+[`||\overrightarrow{F_4}|| = [$F4] \: \textrm{N}`]
+
+[`d_1 = [$d1] \: \textrm{m}`]
+
+[`d_2 = [$d2] \: \textrm{m}`]
+
+[`d_3 = [$d3] \: \textrm{m}`]
+
+[`d_4 = [$d4] \: \textrm{m}`]
+
+[`d_5 = [$d5] \: \textrm{m}`]
+
+[`\theta_1 = [$theta]^\circ`]
 
 
-Find the moments about A.
+Find the resultant force vector assuming the positive directions are up and right.
 
-[`|(M_A)_F| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+[`\overrightarrow{F_R} = \: <`] [__]{"$ansA"} [`, \:`] [__]{"$ansB"} [`> \: \textrm{N}`]
 
-[@ $mc1->buttons() @]*
+
+Find the total resultant moment magnitude and direction about point [`A`].
+
+[`|(M_A)_R| =`] [___]{$ansC} [`\: \textrm{N*m}`]
+
+[@ $mc->buttons() @]*
 
 END_PGML
 
-ANS( $mc1->cmp() );
+ANS( $mc->cmp() );
 
 BEGIN_PGML
 
-[`|(M_A)_P| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
 
-[@ $mc2->buttons() @]*
+Specify where the line of action intersects the vertical line [`AB`], measured from [`A`], assuming up is positive.
 
-END_PGML
-
-ANS( $mc2->cmp() );
-
-BEGIN_PGML
-
-
-Will the pole rotate clockwise, counterclockwise, or remain upright?
-
-[@ $mc3->buttons() @]*
+[`d =`] [___]{$ansD} [`\: \textrm{m}`]
 
 END_PGML
-
-ANS( $mc3->cmp() );
 
 ##############################################################
 
