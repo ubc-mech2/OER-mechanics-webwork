@@ -81,7 +81,7 @@ $F_B = random(60, 80, 5);
 $F_C = random(45, 70, 5);
 
 $d1 = random(1.75, 2.5, 0.25);
-$d2 = random(0.5, 1.25, 0.25);
+$d2 = random(0.5, 1, 0.25);
 $theta_A = random(25, 35, 5);
 $theta_B = random(20, 35, 5);
 $theta_C = random(25, 40, 5);
@@ -124,7 +124,7 @@ Use the following values:
 
 What are the magnitudes and directions of the moment vectors formed by [`F_B`] and [`F_C`] about point [`A`]?
 
-[`|M_{AB}| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+[`|(M_A)_B| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
 
 [@ $mc1->buttons() @]*
 
@@ -134,7 +134,7 @@ ANS( $mc1->cmp() );
 
 BEGIN_PGML
 
-[`|M_{AC}| =`] [___]{"$ansB"} [`\: \textrm{lbs*ft}`]
+[`|(M_A)_C| =`] [___]{"$ansB"} [`\: \textrm{lbs*ft}`]
 
 [@ $mc2->buttons() @]*
 
@@ -147,7 +147,7 @@ BEGIN_PGML
 
 What is the magnitude of the total moment formed about point [`A`] by the engineer?
 
-[`|M_{A \: Total}| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
+[`|(M_A)_{Total}| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
 
 END_PGML
 

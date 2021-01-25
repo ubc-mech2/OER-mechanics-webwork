@@ -124,7 +124,7 @@ BEGIN_PGML
 
 [@ image( "21-S-4.8-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-A wooden frame is acted upon by multiple forces. Simplify the loadings into a single resultant force and specify where the line of action intersects the vertical line [`AB`], measured from [`A`]. The distance between point [`B`] and [`\overrightarrow{F_1}`] is [`d_4`] and the distance between [`\overrightarrow{F_1}`] and [`\overrightarrow{F_2}`] is [`d_5`].
+A wooden frame is acted upon by multiple forces. Simplify the loadings into a single resultant force and specify where the line of action intersects the vertical line [`AB`], measured from [`A`].
 
 Use the values below:
 
@@ -146,6 +146,8 @@ Use the values below:
 
 [`d_5 = [$d5] \: \textrm{m}`]
 
+[`\theta_1 = [$theta]^\circ`]
+
 
 Find the resultant force vector assuming the positive directions are up and right.
 
@@ -154,7 +156,7 @@ Find the resultant force vector assuming the positive directions are up and righ
 
 Find the total resultant moment magnitude and direction about point [`A`].
 
-[`|M_{AR}| =`] [___]{$ansC} [`\: \textrm{N*m}`]
+[`|(M_A)_R| =`] [___]{$ansC} [`\: \textrm{N*m}`]
 
 [@ $mc->buttons() @]*
 
