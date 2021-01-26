@@ -131,7 +131,7 @@ Use the following values:
 
 Find the moments about A.
 
-[`|(M_A)_F| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+[`|(M_F)_A| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
 
 [@ $mc1->buttons() @]*
 
@@ -141,7 +141,7 @@ ANS( $mc1->cmp() );
 
 BEGIN_PGML
 
-[`|(M_A)_P| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
+[`|(M_P)_A| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
 
 [@ $mc2->buttons() @]*
 
