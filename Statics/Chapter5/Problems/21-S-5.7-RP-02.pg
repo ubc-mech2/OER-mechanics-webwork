@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Rigid Body)
-## DBsection(Two- and Three-Force Members)
+## DBsection(Constraints and Statical Determinancy)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Metal Bar', 'Rigid Body', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
+## KEYWORDS('Statics', 'Two Hinges on Door', 'Rigid Body', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.7]')
 
 ########################################################
 
@@ -71,58 +71,66 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
 
-$height = $imgScale*2549;
+$height = $imgScale*2578;
 
-$width = $imgScale*3318;
+$width = $imgScale*1933;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(200, 300, 10);
-$theta = random(25, 35, 5);
-
-$d1 = random(0.3, 0.4, 0.05);
-$d2 = random(0.15, 0.2, 0.05);
-$ab = 0.15;
+$W = random(80, 110, 10);
+$d1 = random(16, 18, 2);
+$d2 = random(20, 24, 2);
+$d3 = $d2;
+$d4 = random(16, 18, 2);
+$theta = random(20, 30, 10);
 
 #---- Formulas to compute answers --------------#
-$thetaRad = $theta * pi / 180;
-
-$N_C = $F * sin($thetaRad + pi/6) / sin(pi/6);
-
-$N_A = (($d1 + $d2) * $F * cos($thetaRad) - $d2 * $N_C) / ($ab * sin(pi/6));
-
-$N_B = $N_A + $F * cos($thetaRad + pi/6) - $N_C * cos(pi/6);
+$Az = $W;
+$By = -($d1) / ($d2 + $d3) * $W;
+$Ax = 0;
+$Bx = 0;
+$Ay = -$By;
 
 #---- Answers to the problem -----------------------#
-$ansA = $N_A;
-$ansB = $N_B;
-$ansC = $N_C;
+$ansA = $Ax;
+$ansB = $Ay;
+$ansC = $Az;
+
+$ansD = $Bx;
+$ansE = $By;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.4-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.7-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-A bar is held in equilibrium as shown. Find the reactions at the smooth contact points [`A`], [`B`], and [`C`].
+A door with uniform mass weighs [`W = [$W] \: \textrm{lbs}`] and is supported by hinges [`A`] and [`B`]. If hinge [`A`] resists *forces* in all directions, while hinge [`B`] resists *only forces* in the x and y directions, determine the components of reaction at both hinges.
+Assume all force component vectors point in the positive x, y, and z - axes.
 
-Use the values below:
+Use the following values:
 
-[`||\overrightarrow{F}|| = [$F] \: \textrm{N}`]
+[`d_1 = [$d1] \: \textrm{in}`]
 
-[`d_1 = [$d1] \: \textrm{m}`]
+[`d_2 = [$d2] \: \textrm{in}`]
 
-[`d_2 = [$d2] \: \textrm{m}`]
+[`d_3 = [$d3] \: \textrm{in}`]
 
-[`\theta_1 = [$theta]^\circ`]
+[`d_4 = [$d4] \: \textrm{in}`]
+
+[`\theta = [$theta]^\circ`]
 
 
-[`N_A =`] [___]{"$ansA"} [`\: \textrm{N}`]
+[`A_x =`] [___]{"$ansA"} [`\: \textrm{lbs}`]
 
-[`N_B =`] [___]{"$ansB"} [`\: \textrm{N}`]
+[`A_y =`] [___]{"$ansB"} [`\: \textrm{lbs}`]
 
-[`N_C =`] [___]{"$ansC"} [`\: \textrm{N}`]
+[`A_z =`] [___]{"$ansC"} [`\: \textrm{lbs}`]
+
+[`B_x =`] [___]{"$ansD"} [`\: \textrm{lbs}`]
+
+[`B_y =`] [___]{"$ansE"} [`\: \textrm{lbs}`]
 
 
 END_PGML
