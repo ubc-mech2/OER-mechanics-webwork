@@ -82,7 +82,7 @@ tolType=>'relative');  #relative or absolute
 
 $mc1 = RadioButtons([
 "a.","b.","c.","d."],
-"c.");
+"d.");
 ########################################################
 # Not in PGML
 
@@ -91,40 +91,39 @@ $BR
 
 $BR
 
-From the options below, select the best FBD for solving the following problem:
 
 
-$BR
-$BR
-\{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9470.png" , width=>1032, height=>111) \}
+
 
 $BR
 
 
 $BR
-\{ image("STATICS-RBSE02-01-04-cf01d9b20b2e44daa97e00830e37b2260.png" , width=>840.2518656716418, height=>500.0) \}
-
+\{ image("STATICS-RBSE02-01-04-cf01d9b20b2e44daa97e00830e37b2260.png" , width=>400, height=>250) \}
 $BR
-
-
+Determine the horizontal and vertical components of reaction at pin \(A\) and the reaction of the rocker \(B\)
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9471.png" , width=>877, height=>355) \}a.
-
+From the options below, select the best FBD for solving the problem above:
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9472.png" , width=>855, height=>376) \}b.
+a.  \{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9471.png" , width=>400, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9473.png" , width=>863, height=>380) \}c.
+b.  \{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9472.png" , width=>400, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9474.png" , width=>877, height=>402) \}d.
+c.  \{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9473.png" , width=>400, height=>250) \}
+
+
+$BR
+$BR
+d.  \{ image("STATICS-RBSE04-01-04-2f8e26cc34f740999373560a70b8d9474.png" , width=>400, height=>250) \}
 
 
 

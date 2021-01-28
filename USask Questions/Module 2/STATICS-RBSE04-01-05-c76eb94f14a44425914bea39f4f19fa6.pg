@@ -91,40 +91,35 @@ $BR
 
 $BR
 
-From the options below, select the best FBD for solving the following problem:
+
+
+
+$BR
+\{ image("STATICS-RBSE02-01-05-f77910e9af8b499a8baa6bf9f940e23b0.png" , width=>400, height=>250) \}
+$BR
+Determine the reactions at the smooth contact points \(A\), \(B\) and \(C\) on the bar.
+$BR
+$BR
+From the options below, select the best FBD for solving the problem above:
+
+$BR
+$BR
+a.  \{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa61.png" , width=>400, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa60.png" , width=>856, height=>48) \}
-
-$BR
-
-
-$BR
-\{ image("STATICS-RBSE02-01-05-f77910e9af8b499a8baa6bf9f940e23b0.png" , width=>817.1641791044776, height=>500.0) \}
-
-$BR
+b.  \{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa62.png" , width=>400, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa61.png" , width=>780, height=>499) \}a.
+c.  \{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa63.png" , width=>400, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa62.png" , width=>736.1904761904761, height=>500.0) \}b.
-
-
-$BR
-$BR
-\{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa63.png" , width=>779.7270955165692, height=>500.0) \}c.
-
-
-$BR
-$BR
-\{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa64.png" , width=>737.5954198473282, height=>500.0) \}d.
+d.  \{ image("STATICS-RBSE04-01-05-c76eb94f14a44425914bea39f4f19fa64.png" , width=>400, height=>250) \}
 
 
 

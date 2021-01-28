@@ -91,40 +91,35 @@ $BR
 
 $BR
 
-From the options below, select the best FBD for solving the following problem:
+$BR
+
+$BR
+\{ image("STATICS-RBSE02-01-02-6933987d6a2544a89366e83136e8849d0.png" , width=>270, height=>250) \}
+
+$BR
+Determine the horizontal and vertical components of the reaction at pin \(A\) and the reation on the beam at \(C\).
+
+$BR
+$BR
+From the options below, select the best FBD for solving the problem above:
+
+$BR
+a.  \{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3111.png" , width=>270, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3110.png" , width=>998, height=>87) \}
-
-$BR
-
-
-$BR
-\{ image("STATICS-RBSE02-01-02-6933987d6a2544a89366e83136e8849d0.png" , width=>539.5141451414514, height=>500.0) \}
-
-$BR
+b.  \{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3112.png" , width=>270, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3111.png" , width=>726, height=>490) \}a.
+c.  \{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3113.png" , width=>270, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3112.png" , width=>747, height=>454) \}b.
-
-
-$BR
-$BR
-\{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3113.png" , width=>712, height=>474) \}c.
-
-
-$BR
-$BR
-\{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3114.png" , width=>710, height=>489) \}d.
+d.  \{ image("STATICS-RBSE04-01-02-bf10fc39a91d4444876dfb47b107b3114.png" , width=>270, height=>250) \}
 
 
 

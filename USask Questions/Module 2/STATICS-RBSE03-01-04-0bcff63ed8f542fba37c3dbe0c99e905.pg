@@ -81,7 +81,7 @@ tolType=>'relative');  #relative or absolute
 #- Random variables for this problem --#
 
 $mc1 = RadioButtons([
-"a) \(A_x\), \(A_y\), \(B_x\), \(B_y\)","b) \(\overrightarrow{A}_x}\) & \(\overrightarrow{A}_y\), the reaction components at pin A, \(\overrightarrow{R}_B\), the reaction of the rocker B","c) \(A_x\) & \(A_y\), the reaction components at pin A, \(B_x\) & \(B_y\), the reaction components at rocker B","d) \(\overrightarrow{F}_A\), the reaction force at pin A, \(\overrightarrow{F}_B\), the reaction force at rocker B"],
+"a) \(A_x\), \(A_y\), \(B_x\), \(B_y\)","b) \(\overrightarrow{A}_x\) & \(\overrightarrow{A}_y\), the reaction components at pin A, \(\overrightarrow{R}_B\), the reaction of the rocker B","c) \(A_x\) & \(A_y\), the reaction components at pin A, \(B_x\) & \(B_y\), the reaction components at rocker B","d) \(\overrightarrow{F}_A\), the reaction force at pin A, \(\overrightarrow{F}_B\), the reaction force at rocker B"],
 "d) \(\overrightarrow{F}_A\), the reaction force at pin A, \(\overrightarrow{F}_B\), the reaction force at rocker B");
 ########################################################
 # Not in PGML

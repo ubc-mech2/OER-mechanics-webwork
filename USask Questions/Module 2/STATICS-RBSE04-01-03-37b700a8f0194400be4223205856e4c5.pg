@@ -87,44 +87,34 @@ $mc1 = RadioButtons([
 # Not in PGML
 
 BEGIN_TEXT
-$BR
 
 $BR
+\{ image("STATICS-RBSE02-01-03-fa2df8d939984923b5e90e92f354c85e0.png" , width=>270, height=>250) \}
+$BR
 
-From the options below, select the best FBD for solving the following problem:
-
+A truss is supported by a pin at \(A\) and a roller at \(B\).  Determine the support reactions.
+$BR
+$BR
+From the options below, select the best FBD for solving the problem above:
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c50.png" , width=>973, height=>60) \}
-
-$BR
-
-
-$BR
-\{ image("STATICS-RBSE02-01-03-fa2df8d939984923b5e90e92f354c85e0.png" , width=>679.9717414341221, height=>499.99999999999994) \}
-
-$BR
+a.  \{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c51.png" , width=>270, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c51.png" , width=>770.220588235294, height=>500.0) \}a.
+b.  \{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c52.png" , width=>270, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c52.png" , width=>810.6884057971015, height=>500.0) \}b.
+c.  \{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c53.png" , width=>270, height=>250) \}
 
 
 $BR
 $BR
-\{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c53.png" , width=>745.5516014234876, height=>500.0) \}c.
-
-
-$BR
-$BR
-\{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c54.png" , width=>749.1039426523298, height=>500.0) \}d.
+d.  \{ image("STATICS-RBSE04-01-03-37b700a8f0194400be4223205856e4c54.png" , width=>270, height=>250) \}
 
 
 
