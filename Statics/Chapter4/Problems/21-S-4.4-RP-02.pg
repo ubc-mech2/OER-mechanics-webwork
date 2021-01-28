@@ -124,7 +124,7 @@ Use the following values:
 
 What are the magnitudes and directions of the moment vectors formed by [`F_B`] and [`F_C`] about point [`A`]?
 
-[`|(M_B)_A| =`] [___]{"$ansA"} [`\: \textrm{lbs*ft}`]
+[`|(M_B)_A| =`] [___]{"$ansA"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
 [@ $mc1->buttons() @]*
 
@@ -134,7 +134,7 @@ ANS( $mc1->cmp() );
 
 BEGIN_PGML
 
-[`|(M_C)_A| =`] [___]{"$ansB"} [`\: \textrm{lbs*ft}`]
+[`|(M_C)_A| =`] [___]{"$ansB"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
 [@ $mc2->buttons() @]*
 
@@ -147,7 +147,7 @@ BEGIN_PGML
 
 What is the magnitude of the total moment formed about point [`A`] by the engineer?
 
-[`|(M_{Total})_A| =`] [___]{"$ansC"} [`\: \textrm{lbs*ft}`]
+[`|(M_{Total})_A| =`] [___]{"$ansC"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
 END_PGML
 

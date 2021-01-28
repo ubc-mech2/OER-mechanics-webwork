@@ -104,7 +104,7 @@ BEGIN_PGML
 
 A driver is turning their steering wheel. If the driver applies opposing forces with equal magnitude [`F = [$F] \: \textrm{lbs}`] on a steering wheel with radius [`r = [$r] \: \textrm{in}`], find the couple moment formed. Ignore any other external forces.
 
-[`|M| =`] [___]{"$ansA"} [`\: \textrm{lbs*in}`]
+[`|M| =`] [___]{"$ansA"} [`\: \textrm{lb} \cdot \textrm{in}`]
 
 
 Is there force equilibrium?
@@ -112,7 +112,7 @@ Is there force equilibrium?
 [@ $mc1->buttons() @]*
 
 
-Which direction does the moment vector point?
+In which direction does the moment vector point?
 
 [@ $mc2->buttons() @]*
 

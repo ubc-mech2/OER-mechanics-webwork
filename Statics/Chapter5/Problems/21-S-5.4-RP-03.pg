@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Force System Resultants)
-## DBsection(Principle of Moments)
+## DBchapter(Equilibrium of a Rigid Body)
+## DBsection(Two- and Three-Force Members)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Ropes on Pole', 'Moments')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.4]')
+## KEYWORDS('Statics', 'Cantilevered Beam', 'Rigid Body', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
 
 ########################################################
 
@@ -69,96 +69,42 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.18;
+$imgScale = 0.2;
 
-$height = $imgScale*1993;
+$height = $imgScale*2457;
 
-$width = $imgScale*3056;
+$width = $imgScale*3892;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(120, 180, 10);
-$P = random(80, 120, 10);
-
-$h1 = random(8, 12, 2);
-$h2 = $h1 / 2;
-$theta = random(30, 45, 5);
 
 #---- Formulas to compute answers --------------#
-$M_AF = $h1 * 4 / 5 * $F;
-$M_AP = ($h1 + $h2) * $P * cos($theta * pi / 180);
-$rotation;
-
-if ($M_AF > $M_AP) {
-    $rotation = "Clockwise";
-} else {
-    if ($M_AF < $M_AP) {
-        $rotation = "Counterclockwise";
-    } else {
-        $rotation = "No rotation";
-    }
-}
+$Ax = - 4 * cos(pi / 6);
+$Ay = 6 + 4 * sin(pi / 6);
+$M_A = 1.5 * 6 + (3 + 1.5 * cos(pi / 6)) * 4 * sin(pi / 6) + 1.5 * sin(pi / 6) * 4 * cos(pi / 6);
 
 #---- Answers to the problem -----------------------#
-$ansA = $M_AF;
-$ansB = "Clockwise";
-$mc1 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansB);
-
-$ansC = $M_AP;
-$ansD = "Counterclockwise";
-$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansD);
-
-$ansE = $rotation;
-$mc3 = RadioButtons([ "Clockwise", "Counterclockwise", "No rotation" ], $ansE);
+$ansA = $Ax;
+$ansB = $Ay;
+$ansC = $M_A;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-4.4-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.4-RP-03.png", width=>[$width], height=>[$height]) @]*
 
-A pole stands initially at equilibrium. After a while, two men begin to pull on ropes attached to the pole as seen above. If forces of [`F = [$F] \: \textrm{lbs}`] and [`P = [$P] \: \textrm{lbs}`] are exerted on the ropes, find the magnitudes of the moments of each force about [`A`] and their rotation direction. Will the pole rotate clockwise, counterclockwise, or remain upright (Assuming that the pole can pivot about [`A`])?
+Find the support reaction components at the *fixed* support [`A`] if the forces above are acting on the cantilevered beam. Assume the mass of the beam is negligible, that reaction force component vectors point upward and right ( - components if force is exerted in the other direction) and that counterclockwise moments are positive.
 
-Use the following values:
+[`A_x =`] [___]{"$ansA"} [`\: \textrm{kN}`]
 
-[`h_1 = [$h1] \: \textrm{ft}`]
+[`A_y =`] [___]{"$ansB"} [`\: \textrm{kN}`]
 
-[`h_2 = [$h2] \: \textrm{ft}`]
+[`M_A =`] [___]{"$ansC"} [`\: \textrm{kN} \cdot \textrm{m}`]
 
-[`\theta = [$theta]^\circ`]
-
-
-Find the moments about A.
-
-[`|(M_F)_A| =`] [___]{"$ansA"} [`\: \textrm{lb} \cdot \textrm{ft}`]
-
-[@ $mc1->buttons() @]*
 
 END_PGML
-
-ANS( $mc1->cmp() );
-
-BEGIN_PGML
-
-[`|(M_P)_A| =`] [___]{"$ansC"} [`\: \textrm{lb} \cdot \textrm{ft}`]
-
-[@ $mc2->buttons() @]*
-
-END_PGML
-
-ANS( $mc2->cmp() );
-
-BEGIN_PGML
-
-
-Will the pole rotate clockwise, counterclockwise, or remain upright?
-
-[@ $mc3->buttons() @]*
-
-END_PGML
-
-ANS( $mc3->cmp() );
 
 ##############################################################
 

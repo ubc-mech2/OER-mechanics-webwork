@@ -137,13 +137,13 @@ Find the support reactions at point [`A`] and [`B`]. Use *0* if the reaction com
 
 [`A_y =`] [___]{"$ansC"} [`\: \textrm{N}`]
 
-[`M_A =`] [___]{"0"} [`\: \textrm{N*m}`]
+[`M_A =`] [___]{"0"} [`\: \textrm{N} \cdot \textrm{m}`]
 
 [`B_x =`] [___]{"0"} [`\: \textrm{N}`]
 
 [`B_y =`] [___]{"$ansD"} [`\: \textrm{N}`]
 
-[`M_B =`] [___]{"0"} [`\: \textrm{N*m}`]
+[`M_B =`] [___]{"0"} [`\: \textrm{N} \cdot \textrm{m}`]
 
 
 END_PGML
