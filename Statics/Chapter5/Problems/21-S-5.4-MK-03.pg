@@ -50,62 +50,71 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1500;
-$height = $imgScale*1056;
+$width = $imgScale*1600;
+$height = $imgScale*1256;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
 
-$d1 = random(3,5,1);
-$Bx = 0;
-$M = random(500,600,20);
-$F = random(400,600,20);
+
+$F1 = 6;
+$F2 = 4;
+$theta = 30;
+$d1 = 1.5;
+$d2 = 1.5;
+$d3 = 1.5;
 
 
 #---- Formulas to compute answers --------------#
 
-$Fx = 3/5 * $F;
-$Fy = 4/5 * $F;
+$rad = $theta * pi / 180;
+$Ax = $F2 * cos($rad);
+$Ay = $F1 + $F2 * sin($rad);
+$Ma = $F1*$d1 + $F2*cos($rad)*$d2*sin($rad) + $F2*sin($rad)*($d3*cos($rad)+$d1+$d2);
 
-$Ax = $Fx;
-$By = ($M + $Fy * $d1)/($d1 * 2);
-$Ay = $Fy - $By;
+#Multiple Coice
 
+$mc1 = RadioButtons([ "Up", "Down", "Left", "Right" ], "Left");
+$mc2 = RadioButtons([ "Up", "Down", "Left", "Right" ], "Up");
+$mc3 = RadioButtons([ "Counter-Clockwise", "Clockwise" ], "Counter-Clockwise");
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.4-MK-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.4-MK-03.png", width=>[$width], height=>[$height]) @]*
 
-Determine the horizontal and vertical reaction forces at supports [`A`] and [`B`] where;
+Determine the absolute values of the reactions at the fixed support [`A`] on the cantilevered beam.
 
-[`d_{1}`] = [`[$d1]`] [`\textrm{ft}`]
-
-
-[`F`] = [`[$F]`] [`\textrm{lb}`]
+[`|F_{A_x}|`] = [____]{$Ax} [`\textrm{kN}`]
 
 
-[`M`] = [`[$M]`] [`\textrm{lb-ft}`]
+[`|F_{A_y}|`] = [____]{$Ay} [`\textrm{kN}`]
 
 
-Neglect the thickness of the beam.
+[`|M_{A}|`] = [____]{$Ma} [`\textrm{kN-m}`]
 
 
-[`F_{A_x}`] = [___]{"$Ax"} [`\textrm{lb}`]
+What direction does [`F_{A_x}`] act?
+
+[@ $mc1->buttons() @]*
 
 
-[`F_{A_y}`] = [___]{"$Ay"} [`\textrm{lb}`]
+What direction does [`F_{A_y}`] act?
 
+[@ $mc2->buttons() @]*
 
-[`F_{B_x}`] = [___]{"$Bx"} [`\textrm{lb}`]
+What direction does [`M_{A}`] act?
 
-
-[`F_{B_y}`] = [___]{"$By"} [`\textrm{lb}`] 
+[@ $mc3->buttons() @]*
 
 END_PGML
+
+ANS( $mc1->cmp() );
+ANS( $mc2->cmp() );
+ANS( $mc3->cmp() );
 
 ######################################################
 

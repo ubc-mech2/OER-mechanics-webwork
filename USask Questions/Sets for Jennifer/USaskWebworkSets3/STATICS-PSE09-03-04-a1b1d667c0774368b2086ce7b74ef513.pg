@@ -85,7 +85,7 @@ $mc1 = RadioButtons([
 
 "a) the magnitude of \(F_2\) ",
 "b) the magnitude and direction of the resultant force vector experienced by the washer",
-"c) the angle between \(F_1\) and the positive x axis, \(\phi_1\)",
+"c) the angle between \(F_1\) and the positive x axis, \(\theta\)",
 "d) the resultant force vector experienced by the washer, expressed in Cartesian form"],
 "d) the resultant force vector experienced by the washer, expressed in Cartesian form");
 ########################################################
@@ -100,7 +100,7 @@ Consider the following scenario:
 
 
 
-A washer on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\phi_1\), is 30 \(^\circ\). What is the resultant force vector experienced by the washer, expressed in Cartesian form?
+A washer on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\theta\), is 30 \(^\circ\). What is the resultant force vector experienced by the washer, expressed in Cartesian form?
 
 \{ image("STATICS-PSE08-03-04-79e2badd926246c2b51b5a21f3a742a20.png" , width=>522.8571428571429, height=>500.0) \}
 $BR
