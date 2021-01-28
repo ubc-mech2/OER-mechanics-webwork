@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Force System Resultants)
-## DBsection(Principle of Moments)
+## DBchapter(Equilibrium of a Rigid Body)
+## DBsection(Two- and Three-Force Members)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Ropes on Pole', 'Moments')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.4]')
+## KEYWORDS('Statics', 'Smooth Collar', 'Rigid Body', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
 
 ########################################################
 
@@ -71,94 +71,42 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.18;
 
-$height = $imgScale*1993;
+$height = $imgScale*2803;
 
-$width = $imgScale*3056;
+$width = $imgScale*3843;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(120, 180, 10);
-$P = random(80, 120, 10);
-
-$h1 = random(8, 12, 2);
-$h2 = $h1 / 2;
-$theta = random(30, 45, 5);
 
 #---- Formulas to compute answers --------------#
-$M_AF = $h1 * 4 / 5 * $F;
-$M_AP = ($h1 + $h2) * $P * cos($theta * pi / 180);
-$rotation;
-
-if ($M_AF > $M_AP) {
-    $rotation = "Clockwise";
-} else {
-    if ($M_AF < $M_AP) {
-        $rotation = "Counterclockwise";
-    } else {
-        $rotation = "No rotation";
-    }
-}
+$N_A = 2500 / 63;
+$N_B = $N_A * 52 / 25;
+$M_A = 500 - 62 * 400 / 63;
 
 #---- Answers to the problem -----------------------#
-$ansA = $M_AF;
-$ansB = "Clockwise";
-$mc1 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansB);
-
-$ansC = $M_AP;
-$ansD = "Counterclockwise";
-$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], $ansD);
-
-$ansE = $rotation;
-$mc3 = RadioButtons([ "Clockwise", "Counterclockwise", "No rotation" ], $ansE);
+$ansA = $N_A;
+$ansB = $N_B;
+$ansC = $M_A;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-4.4-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.4-RP-04.png", width=>[$width], height=>[$height]) @]*
 
-A pole stands initially at equilibrium. After a while, two men begin to pull on ropes attached to the pole as seen above. If forces of [`F = [$F] \: \textrm{lbs}`] and [`P = [$P] \: \textrm{lbs}`] are exerted on the ropes, find the magnitudes of the moments of each force about [`A`] and their rotation direction. Will the pole rotate clockwise, counterclockwise, or remain upright (Assuming that the pole can pivot about [`A`])?
+A bent bar is supported by a smooth collar at [`A`], which freely slides along the inclined bar, and a smooth surface at [`B`]. Find the support reactions at point [`A`] and [`B`]. Ignore the mass of the bent bar.
 
-Use the following values:
+[`N_A =`] [___]{"$ansA"} [`\: \textrm{lbs}`]
 
-[`h_1 = [$h1] \: \textrm{ft}`]
+[`N_B =`] [___]{"$ansB"} [`\: \textrm{lbs}`]
 
-[`h_2 = [$h2] \: \textrm{ft}`]
+[`M_A =`] [___]{"$ansC"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
-[`\theta = [$theta]^\circ`]
+[`M_B =`] [___]{"0"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
-
-Find the moments about A.
-
-[`|(M_F)_A| =`] [___]{"$ansA"} [`\: \textrm{lb} \cdot \textrm{ft}`]
-
-[@ $mc1->buttons() @]*
 
 END_PGML
-
-ANS( $mc1->cmp() );
-
-BEGIN_PGML
-
-[`|(M_P)_A| =`] [___]{"$ansC"} [`\: \textrm{lb} \cdot \textrm{ft}`]
-
-[@ $mc2->buttons() @]*
-
-END_PGML
-
-ANS( $mc2->cmp() );
-
-BEGIN_PGML
-
-
-Will the pole rotate clockwise, counterclockwise, or remain upright?
-
-[@ $mc3->buttons() @]*
-
-END_PGML
-
-ANS( $mc3->cmp() );
 
 ##############################################################
 
