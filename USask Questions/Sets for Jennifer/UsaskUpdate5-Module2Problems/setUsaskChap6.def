@@ -1,0 +1,40 @@
+setNumber=USask_Chapter_6_Structural_Analysis
+openDate = 1/7/00 at 6:00am
+dueDate = 1/20/09 at 6:00am
+answerDate = 1/21/09 at 6:00
+paperHeaderFile = set34/paperHeaderFile0.pg
+screenHeaderFile = set34/screenHeaderFile0.pg
+problemList =
+ setUsaskQuestions/STATICS-TMF01-01-01-7cce525cc1f24082946a7179ed9d2a01.pg, 0 
+setUsaskQuestions/STATICS-TFM01-01-02-d5dd54e7ce274627a214779518c8d2b0.pg, 0 
+setUsaskQuestions/STATICS-TFM01-02-01-6c781b83dc1843ca961c3de79e919875.pg, 0 
+setUsaskQuestions/STATICS-TFM01-03-01-cdc84f591f5846b6b0e82ce6356b1211.pg, 0 
+setUsaskQuestions/STATICS-TFM01-03-02-02466aa812984da4b83bdc0b3e9dff70.pg, 0 
+setUsaskQuestions/STATICS-TFM01-04-01-38179c0d51b240cba991ee1b857357ec.pg, 0 
+setUsaskQuestions/STATICS-TFM01-04-02-732843b4ed524841a7cc1bbbee2d5ad3.pg, 0 
+setUsaskQuestions/STATICS-TFM01-05-01-fa2112da34664978a3e69d7513cdfdd4.pg, 0 
+setUsaskQuestions/STATICS-TFM01-05-02-64b54c45c3f3444d9f9716af262b3832.pg, 0 
+setUsaskQuestions/STATICS-TFM01-06-01-4386b26cf79f49778f5ff304e41efd50.pg, 0 
+setUsaskQuestions/STATICS-TFM01-06-02-a4a26404410b4380ad7ad919b6ea23d3.pg, 0 
+setUsaskQuestions/STATICS-TFM02-01-01-f66c36cb4ee649f6b9ae7b12d00dcc19.pg, 0 
+setUsaskQuestions/STATICS-TFM02-01-02-be056323527c4ac390e05744d6f19024.pg, 0 
+setUsaskQuestions/STATICS-TFM02-02-01-fcac7ecedb0e4eaea25e4966b9a91da1.pg, 0 
+setUsaskQuestions/STATICS-TFM02-02-02-e3bbc96fbc7643f0a31ff2cdbd815e3.pg, 0 
+setUsaskQuestions/STATICS-TFM02-03-01-2ab544fb3c414bb3ae1d85e1c9544901.pg, 0 
+setUsaskQuestions/STATICS-TFM02-03-02-d97465e470cb4b7baf5df2fce865c992.pg, 0 
+setUsaskQuestions/STATICS-TFM03-01-01-9a95b5606d5a4bbc802cbc10e2e83b96.pg, 0 
+setUsaskQuestions/STATICS-TFM03-01-02-007877c7ecdc47f6835dae947d7cbdba.pg, 0 
+setUsaskQuestions/STATICS-TFM03-02-01-b6660678636a4ec2a3df817a33cf0dc9.pg, 0 
+setUsaskQuestions/STATICS-TFM03-02-02-0b1217b8f029463ab841fbfd868ad6c7.pg, 0 
+setUsaskQuestions/STATICS-TFM03-02-03-0be4de5c5988428a85f1f801e971f751.pg, 0 
+setUsaskQuestions/STATICS-TFM04-01-01-0fa171da91d348608df192e22357c04a.pg, 0 
+setUsaskQuestions/STATICS-TFM04-01-02-007b41cd8d6c4bebb1b7b8fee2b49c4f.pg, 0 
+setUsaskQuestions/STATICS-TFM04-02-01-8a6ce0b679734225b81fbf954e748c61.pg, 0 
+setUsaskQuestions/STATICS-TFM04-02-02-0f781b41021b4f5f847a2b1dc038e0b2.pg, 0 
+setUsaskQuestions/STATICS-TFM04-03-01-da4dfda964004260b3bbf08061515621.pg, 0 
+setUsaskQuestions/STATICS-TFM04-03-02-116facc189d54df184b7922d950e6ede.pg, 0 
+setUsaskQuestions/STATICS-TFM04-03-03-188044ddbd8e44b1ae0785e46acd3514.pg, 0 
+setUsaskQuestions/STATICS-TFM05-01-01-05a8d8d637f842c3a2ca2e3335d484a8.pg, 0 
+setUsaskQuestions/STATICS-TFM05-01-02-4fd139bcd96e4edea8183cb072543048.pg, 0 
+setUsaskQuestions/STATICS-TFM05-02-01-47a65ec971da43b78acea9cac639b865.pg, 0 
+setUsaskQuestions/STATICS-TFM05-02-02-50059d8ce0ec4cc5a3cdc89198601b4a.pg, 0 
