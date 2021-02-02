@@ -1,0 +1,191 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Statics)
+## DBchapter(Equilibrium of a Rigid Body)
+## DBsection(Free-Body Diagrams)
+## Institution('University of British Columbia')
+## Author(Ralph Pascual)
+## Date(Winter 2021)
+## Difficulty(Intermediate)
+## KEYWORDS('Statics', 'Free-Body Diagrams', 'Rigid Body', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.2]')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl",
+#"source.pl", # allows code to be displayed on certain sites.
+"PGcourse.pl"
+ );
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 0;
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.18;
+
+$height = $imgScale*2768;
+
+$width = $imgScale*2239;
+		#aspect ratio
+
+#---- Setting up multiple choices -----------------#
+$mcA = new_checkbox_multiple_choice();
+$mcA -> qa( "Point `A`", "`A_x`" );
+$mcA -> makeLast( "`A_x`", "`A_y`" );
+
+$mcB = new_checkbox_multiple_choice();
+$mcB -> qa( "Point `B`", "`B_y`" );
+$mcB -> makeLast( "`B_x`", "`B_y`" );
+
+$mcC = new_checkbox_multiple_choice();
+$mcC -> qa( "Point `C`", "`C_x`" );
+$mcC -> makeLast( "`C_x`", "`C_y`" );
+
+$mcD = RadioButtons([ "Yes", "No" ], "No");
+
+$mcE = new_checkbox_multiple_choice();
+$mcE -> qa( "`A_x`", "`= 0`", "`\lt 0`", "`\gt 0`" );
+$mcE -> makeLast( "`= 0`", "`\lt 0`", "`\gt 0`" );
+
+$mcF = new_checkbox_multiple_choice();
+$mcF -> qa( "`A_y`", "`= 0`" );
+$mcF -> makeLast( "`= 0`", "`\lt 0`", "`\gt 0`" );
+
+$mcG = new_checkbox_multiple_choice();
+$mcG -> qa( "`B_x`", "`= 0`" );
+$mcG -> makeLast( "`= 0`", "`\lt 0`", "`\gt 0`" );
+
+$mcH = new_checkbox_multiple_choice();
+$mcH -> qa( "`B_y`", "`= 0`", "`\gt 0`" );
+$mcH -> makeLast( "`= 0`", "`\lt 0`", "`\gt 0`" );
+
+$mcI = new_checkbox_multiple_choice();
+$mcI -> qa( "`C_x`", "`= 0`", "`\lt 0`" );
+$mcI -> makeLast( "`= 0`", "`\lt 0`", "`\gt 0`" );
+
+$mcJ = new_checkbox_multiple_choice();
+$mcJ -> qa( "`C_y`", "`= 0`" );
+$mcJ -> makeLast( "`= 0`", "`\lt 0`", "`\gt 0`" );
+
+#---- Answers to the problem -----------------------#
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "21-S-5.2-RP-01.png", width=>[$width], height=>[$height]) @]*
+
+A bar supported by a pin connected to a smooth collar at point [`A`], a roller at point [`B`], and a cable at point [`C`] is in equilibrium. If the bar has a non-negligible mass, find the number of unknowns in the system.
+
+If the x-axis is the horizontal axis and the y-axis is the vertical axis, select the unknown force reaction components for each support. There may be more than one correct answer.
+
+[@ $mcA -> print_q() @]*
+[@ $mcA -> print_a() @]*
+
+
+[@ $mcB -> print_q() @]*
+[@ $mcB -> print_a() @]*
+
+
+[@ $mcC -> print_q() @]*
+[@ $mcC -> print_a() @]*
+
+
+Are there any couple moments formed by the supports?
+
+[@ $mcD -> buttons() @]*
+
+
+Find the possible values of the force reactions assuming that forces are positive when directed to the right or upwards and moments are positive counterclockwise.
+
+[@ $mcE -> print_q() @]*
+[@ $mcE -> print_a() @]*
+
+
+[@ $mcF -> print_q() @]*
+[@ $mcF -> print_a() @]*
+
+
+[@ $mcG -> print_q() @]*
+[@ $mcG -> print_a() @]*
+
+
+[@ $mcH -> print_q() @]*
+[@ $mcH -> print_a() @]*
+
+
+[@ $mcI -> print_q() @]*
+[@ $mcI -> print_a() @]*
+
+
+[@ $mcJ -> print_q() @]*
+[@ $mcJ -> print_a() @]*
+
+
+END_PGML
+
+install_problem_grader(~~&std_problem_grader);
+
+ANS( checkbox_cmp( $mcA->correct_ans() ) );
+ANS( checkbox_cmp( $mcB->correct_ans() ) );
+ANS( checkbox_cmp( $mcC->correct_ans() ) );
+ANS( $mcD->cmp() );
+ANS( checkbox_cmp( $mcE->correct_ans() ) );
+ANS( checkbox_cmp( $mcF->correct_ans() ) );
+ANS( checkbox_cmp( $mcG->correct_ans() ) );
+ANS( checkbox_cmp( $mcH->correct_ans() ) );
+ANS( checkbox_cmp( $mcI->correct_ans() ) );
+ANS( checkbox_cmp( $mcJ->correct_ans() ) );
+
+##############################################################
+
+ENDDOCUMENT();
