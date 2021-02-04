@@ -114,6 +114,19 @@ BEGIN_PGML
 
 A bar with total mass [`m = [$m] \: \textrm{kg}`] and a center of mass at [`G`] is supported by a roller at [`A`], a cable [`AB`], and a smooth peg inside a slot within the bar at [`C`]. Determine the reactions at the supports. Assume [`g = [$g] \: \textrm{N/kg}`].
 
+Use the following values:
+
+[`d_1 = [$d1] \: \textrm{m}`]
+
+[`d_2 = [$d2] \: \textrm{m}`]
+
+[`d_3 = [$d3] \: \textrm{m}`]
+
+[`\theta_1 = [$theta1]^\circ`]
+
+[`\theta_2 = [$theta2]^\circ`]
+
+
 [`N_A =`] [___]{"$ansA"} [`\: \textrm{N}`]
 
 [`T_{AB} =`] [___]{"$ansB"} [`\: \textrm{N}`]

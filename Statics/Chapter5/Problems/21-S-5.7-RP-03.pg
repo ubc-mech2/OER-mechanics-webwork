@@ -90,7 +90,7 @@ $Cy = - $F2;
 $Cx = - $d3 / $d4 * $F1;
 $Bz = - ($d4 * $Cy + ($d1 + $d2) * $F1) / $d1;
 $Az = - $Bz - $F1;
-$Bx = $d3 / $d1 * $Cy;
+$Bx = ($d3 * $Cy - ($d1 + $d2) * $Cx) / $d1;
 $Ax = - $Bx - $Cx;
 
 #---- Answers to the problem -----------------------#
@@ -113,7 +113,7 @@ BEGIN_PGML
 
 [@ image( "21-S-5.7-RP-03.png", width=>[$width], height=>[$height]) @]*
 
-The bent rod is supported by three smooth journal bearings at point [`A`], [`B`], and [`C`]. If two forces [`\overrightarrow{F_1} = [$F1] \: \hat{k} \: \textrm{N}`] and [`\overrightarrow{F_2} = [$F2] \: \hat{j} \: \textrm{N}`] are exerted onto the rod as shown, find the reactions at the supports. Assume there are no couple moments formed by the supports and that the bar has negligible mass.
+The bent rod is supported by three smooth journal bearings at point [`A`], [`B`], and [`C`]. If two forces [`\overrightarrow{F_1} = [$F1] \: \hat{k} \: \textrm{N}`] and [`\overrightarrow{F_2} = [$F2] \: \hat{j} \: \textrm{N}`] are exerted onto the rod as shown, find the reactions at the supports. Assume there are no couple moments formed by the supports and that the bar has negligible mass. Enter 0 if the reaction component is not supported by the given support type.
 
 Use the following values:
 

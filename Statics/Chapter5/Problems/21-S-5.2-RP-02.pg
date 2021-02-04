@@ -87,14 +87,14 @@ $theta = atan(3 / 4) * 180 / pi;
 #---- Setting up multiple choices -----------------#
 $mcA = new_checkbox_multiple_choice();
 $mcA -> qa( 
-"Which of the following components are unknown?", 
+"Which of the following reation components need to be included in the FBD?", 
 "`A_x`", "`A_y`", "`F_B`" 
 );
 $mcA -> makeLast( "`A_x`", "`A_y`", "`M_A`", "`F_B`", "`M_B`" );
 
 $mcB = new_checkbox_multiple_choice();
 $mcB -> qa( 
-"Which of the following unknowns have limitations in its range (Ex. vector cannot be inverted)?", 
+"Which of the following reaction components have limitations in its range of values (Ex. normal reaction can only apply a 'push' force, not a 'pull' force)?", 
 "`F_B`" );
 $mcB -> makeLast( "`A_x`", "`A_y`", "`M_A`", "`F_B`", "`M_B`" );
 

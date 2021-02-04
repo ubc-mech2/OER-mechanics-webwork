@@ -126,7 +126,7 @@ Use the values below:
 [`\theta = [$theta]^\circ`]
 
 
-How many unknown reaction components need to be determined in this *2D* system?
+How many unknown reaction components need to be determined in this *2D* system given the support types used?
 
 [__]{"$ansA"} Unknowns
 
