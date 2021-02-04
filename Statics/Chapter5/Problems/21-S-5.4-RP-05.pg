@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Truss', 'Rigid Body', 'Equilibrium')
+## KEYWORDS('Statics', 'Smooth Peg', 'Rigid Body', 'Equilibrium')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
 
 ########################################################
@@ -59,7 +59,7 @@ loadMacros(
 
 TEXT(beginproblem());
 
-$showPartialCorrectAnswers = 0;
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
@@ -69,51 +69,52 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.18;
+$imgScale = 0.19;
 
-$height = $imgScale*2831;
+$height = $imgScale*2584;
 
-$width = $imgScale*3850;
+$width = $imgScale*3496;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F1 = random(4000, 6000, 1000);
-$F2 = random(8000, 12000, 1000);
+$d1 = random(0.5, 0.7, 0.1);
+$d2;
+if ($d1 == 0.7) {
+    $d2 = 0.3;
+} else {
+    $d2 = 0.2;
+}
+$d3 = $d1 - $d2;
 
-$d2 = random(2, 2.5, 0.5);
-$d1 = $d2 * 2;
-$d3 = $d2;
-$d4 = random(4, 6, 1);
+$theta1 = random(10, 20, 5);
+$theta2 = $theta1 * 2;
 
-$theta = random(30, 60, 15);
+$m = random(20, 30, 5);
+$g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$thetaRad = $theta * pi / 180;
+$theta1Rad = $theta1 * pi / 180;
+$theta2Rad = $theta2 * pi / 180;
 
-$Ax = - $F1 * sin($thetaRad);
-$By = ($d1 * $F1 + (($d1 + $d2) * cos($thetaRad) + $d3) * $F2) / (($d1 + $d2) * cos($thetaRad) + $d3 + $d4);
-$Ay = $F1 * cos($thetaRad) + $F2 - $By;
+$N_C = ($d1 * cos($theta2Rad) * $m * $g) / ($d1 + $d2);
+$T_AB = $N_C * sin($theta2Rad) / cos($theta1Rad);
+$N_A = $m * $g - $T_AB * sin($theta1Rad) - $N_C * cos($theta2Rad);
 
 #---- Answers to the problem -----------------------#
-$ansA = 3;
-$ansB = $Ax;
-$ansC = $Ay;
-$ansD = $By;
+$ansA = $N_A;
+$ansB = $T_AB;
+$ansC = $N_C;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.4-RP-02.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.4-RP-05.png", width=>[$width], height=>[$height]) @]*
 
-A truss has two forces [`\overrightarrow{F_1}`] and [`\overrightarrow{F_2}`] acting on it as shown above. If the truss is supported by a pin at [`A`] and a roller at [`B`], find the support reaction components needed to achieve static equilibrium. Ignore the mass of the truss.
+A bar with total mass [`m = [$m] \: \textrm{kg}`] and a center of mass at [`G`] is supported by a roller at [`A`], a cable [`AB`], and a smooth peg inside a slot within the bar at [`C`]. Determine the reactions at the supports. Assume [`g = [$g] \: \textrm{N/kg}`].
 
-Use the values below:
-
-[`||\overrightarrow{F_1}|| = [$F1 / 1000] \: \textrm{kN}`]
-
-[`||\overrightarrow{F_2}|| = [$F2 / 1000] \: \textrm{kN}`]
+Use the following values:
 
 [`d_1 = [$d1] \: \textrm{m}`]
 
@@ -121,29 +122,16 @@ Use the values below:
 
 [`d_3 = [$d3] \: \textrm{m}`]
 
-[`d_4 = [$d4] \: \textrm{m}`]
+[`\theta_1 = [$theta1]^\circ`]
 
-[`\theta = [$theta]^\circ`]
-
-
-How many unknown reaction components need to be determined in this *2D* system given the support types used?
-
-[__]{"$ansA"} Unknowns
+[`\theta_2 = [$theta2]^\circ`]
 
 
-Find the support reactions at point [`A`] and [`B`]. Use *0* if the reaction component does not exist for the specified support. Assume reaction components are positive if they point up or right.
+[`N_A =`] [___]{"$ansA"} [`\: \textrm{N}`]
 
-[`A_x =`] [___]{"$ansB"} [`\: \textrm{N}`]
+[`T_{AB} =`] [___]{"$ansB"} [`\: \textrm{N}`]
 
-[`A_y =`] [___]{"$ansC"} [`\: \textrm{N}`]
-
-[`M_A =`] [___]{"0"} [`\: \textrm{N} \cdot \textrm{m}`]
-
-[`B_x =`] [___]{"0"} [`\: \textrm{N}`]
-
-[`B_y =`] [___]{"$ansD"} [`\: \textrm{N}`]
-
-[`M_B =`] [___]{"0"} [`\: \textrm{N} \cdot \textrm{m}`]
+[`N_C =`] [___]{"$ansC"} [`\: \textrm{N}`]
 
 
 END_PGML

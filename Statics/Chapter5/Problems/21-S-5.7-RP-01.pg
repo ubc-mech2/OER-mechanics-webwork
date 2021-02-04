@@ -109,7 +109,7 @@ BEGIN_PGML
 Determine the reaction components of the *fixed* support [`A`] in the above equilibrium system.
 
 
-How many unknowns are there in the system?
+How many unknowns reaction *components* (split force and moment reactions into cartesian components) are there in the system (need to be included in a FBD) given the support types used?
 
 [__]{"$ansA"} Unknowns
 
