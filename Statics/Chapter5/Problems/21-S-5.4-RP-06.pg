@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Rigid Body)
-## DBsection(Constraints and Statical Determinancy)
+## DBsection(Two- and Three-Force Members)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Square Collar', 'Rigid Body', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.7]')
+## KEYWORDS('Statics', 'Smooth Collar', 'Rigid Body', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
 
 ########################################################
 
@@ -69,48 +69,68 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
+$imgScale = 0.18;
 
-$height = $imgScale*2557;
+$height = $imgScale*2821;
 
-$width = $imgScale*2803;
+$width = $imgScale*2227;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
+$d = random(3, 5, 1);
+$theta = random(30, 60, 15);
+
+$m = random(30, 50, 5);
+$g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$A_x = -300;
-$A_y = -500;
-$N_B = 400;
-$M_x_A = -1000;
-$M_y_A = 200;
-$M_z_A = -1500;
+$thetaRad = $theta * pi / 180;
+
+$F_A = $m * $g / (2 * tan($thetaRad));
+$F_BC = $F_A;
+$F_B = $m * $g;
+
+$thetaA = 0;
+$thetaB = 90;
+$thetaBC = 180;
 
 #---- Answers to the problem -----------------------#
-$ansA = $A_x;
-$ansB = $A_y;
-$ansC = $M_x_A;
-$ansD = $M_y_A;
-$ansE = $M_z_A;
-$ansF = $N_B;
+$ansA = $F_A;
+$ansB = $F_B;
+$ansC = $F_BC;
+
+$ansD = $thetaA;
+$ansE = $thetaB;
+$ansF = $thetaBC;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.7-RP-06.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.4-RP-06.png", width=>[$width], height=>[$height]) @]*
 
-The metal member is held in equilibrium. The member is supported by a square bar fitted through a smooth square hole of the attached collar at point [`A`] and by a roller at point [`B`]. Determine the components of reactions at supports [`A`] and [`B`] considering the load that is applied to the member at point [`C`]. Ignore the mass of the member. Assume that components are positive if they point along the positive axes.
+A bar [`AB`] with a total uniform mass of [`m = [$m] \: \textrm{kg}`] is supported by a smooth collar attached through a pin at point [`A`], a roller at point [`B`], and a cable [`BC`]. Find the magnitude of the reaction forces [`F_A`], [`F_B`], and [`F_{BC}`], as well as the counter clockwise angle, [`\theta`] such that [`0^\circ \le \theta \lt 360^\circ`], between the force vector and the positive x - axis (horizontal line). Assume [`g = [$g] \: \textrm{N/kg}`].
+
+Use the following values:
+
+[`d = [$d] \: \textrm{m}`]
+
+[`\theta = [$theta]^\circ`]
 
 
-[`A_x =`] [___]{"$ansA"} [`\: \textrm{N}`]
+[`F_A =`] [___]{"$ansA"} [`\: \textrm{N}`]
 
-[`A_y =`] [___]{"$ansB"} [`\: \textrm{N}`]
+[`F_B =`] [___]{"$ansB"} [`\: \textrm{N}`]
 
-[`\overrightarrow{M_A} = \: <`] [__]{"$ansC"} [`, \:`] [__]{"$ansD"} [`, \:`] [__]{"$ansE"} [`> \: \textrm{N} \cdot \textrm{m}`]
+[`F_{BC} =`] [___]{"$ansC"} [`\: \textrm{N}`]
 
-[`N_B =`] [___]{"$ansF"} [`\: \textrm{N}`]
+
+[`\theta_A =`] [___]{"$ansD"} [`^\circ`]
+
+[`\theta_B =`] [___]{"$ansE"} [`^\circ`]
+
+[`\theta_{BC} =`] [___]{"$ansF"} [`^\circ`]
 
 
 END_PGML
