@@ -77,7 +77,7 @@ $May = 0;
 $Maz = 3/7 * $T;
 
 $mc1 = RadioButtons([ "Clockwise", "Counterclockwise" ], "Clockwise");
-$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], "Clockwise");
+$mc2 = RadioButtons([ "Clockwise", "Counterclockwise" ], "Counterclockwise");
 
 
 ######################################################

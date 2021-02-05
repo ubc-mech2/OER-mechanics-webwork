@@ -75,8 +75,6 @@ $Ma = $F1*$d1 + $F2*cos($rad)*$d2*sin($rad) + $F2*sin($rad)*($d3*cos($rad)+$d1+$
 
 #Multiple Coice
 
-$mc1 = RadioButtons([ "Up", "Down", "Left", "Right" ], "Left");
-$mc2 = RadioButtons([ "Up", "Down", "Left", "Right" ], "Up");
 $mc3 = RadioButtons([ "Counter-Clockwise", "Clockwise" ], "Counter-Clockwise");
 
 ########################################################
@@ -97,23 +95,12 @@ Determine the absolute values of the reactions at the fixed support [`A`] on the
 [`|M_{A}|`] = [____]{$Ma} [`\textrm{kN-m}`]
 
 
-What direction does [`F_{A_x}`] act?
-
-[@ $mc1->buttons() @]*
-
-
-What direction does [`F_{A_y}`] act?
-
-[@ $mc2->buttons() @]*
-
 What direction does [`M_{A}`] act?
 
 [@ $mc3->buttons() @]*
 
 END_PGML
 
-ANS( $mc1->cmp() );
-ANS( $mc2->cmp() );
 ANS( $mc3->cmp() );
 
 ######################################################

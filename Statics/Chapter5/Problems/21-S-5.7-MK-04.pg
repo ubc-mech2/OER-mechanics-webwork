@@ -120,8 +120,8 @@ What direction is the moment [`(M_{A})_{z}`] turning around the z-axis?
 
 END_PGML
 
-ANS( $mc1->cmp() );
 ANS( $mc2->cmp() );
+ANS( $mc1->cmp() );
 ######################################################
 
 ENDDOCUMENT();

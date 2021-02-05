@@ -90,7 +90,7 @@ $Fd = $Wa + $Wb + $Wc - $Ff - $Fe;
 
 BEGIN_PGML
 
-[@ image( "21-S-5.7-MK-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.7-MK-05.png", width=>[$width], height=>[$height]) @]*
 
 
 Due to the unequal distribution of fuel in the wing tanks, the centers of gravity for the airplane fuselage [`A`] and wings [`B`] and [`C`] are located as shown with the following dimension:  
