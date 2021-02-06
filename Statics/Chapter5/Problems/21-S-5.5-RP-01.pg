@@ -101,13 +101,13 @@ $mcI = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for gi
 
 $mcJ = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "Not applicable for given support type");
 
-$mcK = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "Not applicable for given support type");
+$mcK = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "`\ge 0`");
 
 $mcL = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "Not applicable for given support type");
 
 $mcM = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "Not applicable for given support type");
 
-$mcN = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "`\ge 0`");
+$mcN = RadioButtons([ "`\le 0`", "`\ge 0`", "All values", "Not applicable for given support type" ], "Not applicable for given support type");
 
 #---- Answers to the problem -----------------------#
 
