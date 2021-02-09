@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-5.4-MK-01
-## Position Vectors
+## 21-S-5.4-MK-06
+## Two and three force members
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Rigid Body)
 ## DBsection(Two and Three-Force Members)
-## Date(2021-01-26)
+## Date(2021-02-08)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-5.4-MK-01.png')
+## RESOURCES('21-S-5.4-MK-06.png')
 
 ########################################################
 
@@ -57,20 +57,18 @@ $height = $imgScale*1056;
 #---- Provided --------#
 # random(lower, upper, stepsize)
 
-$d1 = random(3,5,1);
-$Bx = 0;
-$M = random(500,600,20);
-$F = random(400,600,20);
-
+$d1 = random(30,70,10);
+$d2 = $d1;
+$d3 = random(5,10,1);
+$F = random (1,10,1);
 
 #---- Formulas to compute answers --------------#
 
-$Fx = 3/5 * $F;
-$Fy = 4/5 * $F;
-
-$Ax = $Fx;
-$By = ($M + $Fy * $d1)/($d1 * 2);
-$Ay = $Fy - $By;
+$z = $d1 / 3; 
+$x1 = $z * $d3 / ($d1 + $d2 - $z);
+$x2 = ($d1 - $z) * $x1 / $z;
+$k1 = $F / $x1;
+$k2 = $k1;
 
 
 ########################################################
@@ -78,32 +76,29 @@ $Ay = $Fy - $By;
 
 BEGIN_PGML
 
-[@ image( "21-S-5.4-MK-01.png", width=>[$width], height=>[$height]) @]*
-
-Determine the horizontal and vertical reaction forces at supports [`A`] and [`B`] where;
-
-[`d_{1}`] = [`[$d1]`] [`\textrm{ft}`]
+[@ image( "21-S-5.4-MK-05.png", width=>[$width], height=>[$height]) @]*
 
 
-[`F`] = [`[$F]`] [`\textrm{lb}`]
+The rigid metal strip of negligible weight is used as part of an electromagnetic switch with the following dimensions:
 
 
-[`M`] = [`[$M]`] [`\textrm{lb-ft}`]
+[`d_{1}`] = [`[$d1]`] [`\textrm{mm}`]
 
 
-Neglect the thickness of the beam.
+[`d_{2}`] = [`[$d2]`] [`\textrm{mm}`]
 
 
-[`F_{A_x}`] = [___]{"$Ax"} [`\textrm{lb}`]
+[`d_{3}`] = [`[$d3]`] [`\textrm{mm}`]
 
 
-[`F_{A_y}`] = [___]{"$Ay"} [`\textrm{lb}`]
+If the switch requires a force of [`F`] = [`[$F]`] [`\textrm{N}`] to close the contact, find the stiffness of the springs [`k_1`] and [`k_2`] if both springs have equal stiffness. 
 
 
-[`F_{B_x}`] = [___]{"$Bx"} [`\textrm{lb}`]
+[`k_1`] = [___]{"$k1"} [`\textrm{N/mm}`]
 
 
-[`F_{B_y}`] = [___]{"$By"} [`\textrm{lb}`] 
+[`k_2`] = [___]{"$k2"} [`\textrm{N/mm}`]
+
 
 END_PGML
 
