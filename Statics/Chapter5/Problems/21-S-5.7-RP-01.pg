@@ -123,11 +123,11 @@ Assume component vectors are pointing along the positive x, y, and z-axes.
 
 [`A_z =`] [___]{"$ansD"} [`\: \textrm{N}`]
 
-[`(M_A)_x =`] [___]{"$ansE"} [`\: \textrm{N} \cdot \textrm{m}`]
+[`(M_x)_A =`] [___]{"$ansE"} [`\: \textrm{N} \cdot \textrm{m}`]
 
-[`(M_A)_y =`] [___]{"$ansF"} [`\: \textrm{N} \cdot \textrm{m}`]
+[`(M_y)_A =`] [___]{"$ansF"} [`\: \textrm{N} \cdot \textrm{m}`]
 
-[`(M_A)_z =`] [___]{"$ansG"} [`\: \textrm{N} \cdot \textrm{m}`]
+[`(M_z)_A =`] [___]{"$ansG"} [`\: \textrm{N} \cdot \textrm{m}`]
 
 
 END_PGML
