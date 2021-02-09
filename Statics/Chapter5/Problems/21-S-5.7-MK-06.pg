@@ -1,0 +1,123 @@
+## DESCRIPTION
+## 21-S-5.7-MK-06
+## Position Vectors
+## ENDDESCRIPTION
+
+## KEYWORDS('statics')
+## DBsubject(Statics)
+## DBchapter(Equilibrium of a Rigid Body)
+## DBsection(Constraints and Statical Determinancy)
+## Date(2021-02-04)
+## Author(Matthew Koebel)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('21-S-5.7-MK-06.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl",
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+ );
+
+#######################################################
+
+#Setup
+
+TEXT(beginproblem());
+
+Context("Matrix");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scale---------------#
+$imgScale =0.35;
+
+
+#-------------- Image Aspect Ratio---------------#
+$width = $imgScale*1300;
+$height = $imgScale*1056;
+
+
+#---- Provided --------#
+# random(lower, upper, stepsize)
+
+$d1 = random(1.5,2,0.1);
+$d2 = random(1.5,2,0.1);
+$theta = random(0,180,10);
+$rad = $theta * pi / 180;
+$F = random(50,200,25);
+
+#-----Calculations------#
+
+$Mx = sin($rad) * $F * $d2;
+$My = sin($rad) * -$F * $d1;
+$Mz = cos($rad) * $F *$d1;
+
+$Fx = 0;
+$Fy = -1 * cos($rad) * $F;
+$Fz = -1 * sin($rad) * $F;
+
+######################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "21-S-5.7-MK-06.png", width=>[$width], height=>[$height]) @]*
+
+The above structure has the following values:
+
+
+[`d_1`] = [`[$d1]`] [`\textrm{m}`]
+
+
+[`d_2`] = [`[$d2]`] [`\textrm{m}`]
+
+
+[`\theta`] = [`[$theta]`] [`^{\circ}`]
+
+
+[`F`] = [`[$F]`] [`\textrm{N}`]
+
+
+
+Determine the components of reaction around point [`A`].
+ 
+
+[`A_{x}`] = [___]{"$Fx"} [`\textrm{N}`]
+
+
+[`A_{y}`] = [___]{"$Fy"} [`\textrm{N}`]
+
+
+[`A_{z}`] = [___]{"$Fz"} [`\textrm{N}`]
+
+
+[`(M_{A})_{x}`] = [___]{"$Mx"} [`\textrm{N-m}`]
+
+
+[`(M_{A})_{y}`] = [___]{"$My"} [`\textrm{N-m}`]
+
+
+[`(M_{A})_{z}`] = [___]{"$Mz"} [`\textrm{N-m}`]
+
+END_PGML
+
+######################################################
+
+ENDDOCUMENT();
