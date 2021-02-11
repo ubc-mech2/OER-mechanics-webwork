@@ -50,7 +50,7 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1300;
+$width = $imgScale*1056;
 $height = $imgScale*1056;
 
 
@@ -65,9 +65,9 @@ $F = random(50,200,25);
 
 #-----Calculations------#
 
-$Mx = sin($rad) * $F * $d2;
-$My = sin($rad) * -$F * $d1;
-$Mz = cos($rad) * $F *$d1;
+$Mx = -1*sin($rad) * $F * $d2;
+$My = -1*sin($rad) * -$F * $d1;
+$Mz = -1*cos($rad) * $F *$d1;
 
 $Fx = 0;
 $Fy = -1 * cos($rad) * $F;
@@ -86,7 +86,7 @@ The above structure has the following values:
 [`d_1`] = [`[$d1]`] [`\textrm{m}`]
 
 
-[`d_2`] = [`[$d2]`] [`\textrm{m}`]
+[`d_1`] = [`[$d2]`] [`\textrm{m}`]
 
 
 [`\theta`] = [`[$theta]`] [`^{\circ}`]

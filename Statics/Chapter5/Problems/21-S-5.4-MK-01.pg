@@ -50,7 +50,7 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1500;
+$width = $imgScale*2000;
 $height = $imgScale*1056;
 
 
