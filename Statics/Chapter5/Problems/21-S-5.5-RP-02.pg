@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Rigid Body)
-## DBsection(Two- and Three-Force Members)
+## DBsection(Free-Body Diagrams)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Cantilevered Beam', 'Rigid Body', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
+## KEYWORDS('Statics', 'Free-Body Diagrams', 'Rigid Body', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.5]')
 
 ########################################################
 
@@ -48,9 +48,9 @@ loadMacros(
 "PGbasicmacros.pl",
 "PGchoicemacros.pl",
 "PGanswermacros.pl",
-"PGauxiliaryFunctions.pl"
+"PGauxiliaryFunctions.pl",
 #"source.pl", # allows code to be displayed on certain sites.
-#"PGcourse.pl", # Customization file for the course
+"PGcourse.pl"
  );
  
 ##############################################################
@@ -59,7 +59,7 @@ loadMacros(
 
 TEXT(beginproblem());
 
-$showPartialCorrectAnswers = 1;
+$showPartialCorrectAnswers = 0;
 
 Context("Numeric");		# or Complex
 
@@ -69,71 +69,40 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.23;
+$imgScale = 0.2;
 
-$height = $imgScale*1867;
+$height = $imgScale*2818;
 
-$width = $imgScale*3809;
+$width = $imgScale*2760;
 		#aspect ratio
 
-#---- Random variables for this problem --------#
-$d1 = random(1, 2, 0.25);
-$d2 = $d1 + random(-0.25, 0.25, 0.25);
-$d3 = $d1 + random(-0.25, 0.25, 0.25);
-
-$theta_1 = random(25, 45, 5);
-$theta_2 = random(25, 45, 5);
-
-$F_1 = random(5, 7, 0.5);
-$F_2 = random(3, 5, 0.5);
-
-#---- Formulas to compute answers --------------#
-$theta_1_Rad = $theta_1 * pi / 180;
-$theta_2_Rad = $theta_2 * pi / 180;
-
-$Ax = - $F_2 * cos($theta_2_Rad);
-$Ay = $F_1 + $F_2 * sin($theta_2_Rad);
-$M_A = $d1 * $F_1 + ($d1 + $d2 + $d3 * cos($theta_1_Rad)) * $F_2 * sin($theta_2_Rad) + $d3 * sin($theta_1_Rad) * $F_2 * cos($theta_2_Rad);
+#---- Setting up multiple choices -----------------#
+$mcA = new_checkbox_multiple_choice();
+$mcA -> qa( "", "`A_x`", "`A_y`", "`A_z`", "`M_{Ax}`", "`M_{Az}`", "`T_{CB}`" );
+$mcA -> makeLast( "`A_x`", "`A_y`", "`A_z`", "`M_{Ax}`", "`M_{Ay}`", "`M_{Az}`", "`T_{CB}`" );
 
 #---- Answers to the problem -----------------------#
-$ansA = $Ax;
-$ansB = $Ay;
-$ansC = $M_A;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.5-RP-02-1.png", width=>[$width], height=>[$height]) @]*
 
-Find the support reaction components at the *fixed* support [`A`] if the forces above are acting on the cantilevered beam. Assume the mass of the beam is negligible, that reaction force component vectors point upward and right ( - components if force is exerted in the other direction) and that counterclockwise moments are positive.
+A member carrying a load is supported by a pin at point [`A`] and a cable [`BC`]. Using the FBD below, indicate which of the drawn reaction components need to be considered given the supports used.
 
-Use the following values:
+[@ image( "21-S-5.5-RP-02-2.png", width=>[$width], height=>[$height]) @]*
 
-[`d_1 = [$d1] \: \textrm{m}`]
-
-[`d_2 = [$d2] \: \textrm{m}`]
-
-[`d_3 = [$d3] \: \textrm{m}`]
-
-[`\theta_1 = [$theta_1]^\circ`]
-
-[`\theta_2 = [$theta_2]^\circ`]
-
-[`||\overrightarrow{F_1}|| = [$F_1] \: \textrm{kN}`]
-
-[`||\overrightarrow{F_2}|| = [$F_2] \: \textrm{kN}`]
-
-
-[`A_x =`] [___]{"$ansA"} [`\: \textrm{kN}`]
-
-[`A_y =`] [___]{"$ansB"} [`\: \textrm{kN}`]
-
-[`M_A =`] [___]{"$ansC"} [`\: \textrm{kN} \cdot \textrm{m}`]
+[@ $mcA -> print_q() @]*
+[@ $mcA -> print_a() @]*
 
 
 END_PGML
+
+install_problem_grader(~~&std_problem_grader);
+
+ANS( checkbox_cmp( $mcA->correct_ans() ) );
 
 ##############################################################
 
