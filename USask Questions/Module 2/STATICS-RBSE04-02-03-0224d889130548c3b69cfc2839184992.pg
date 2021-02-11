@@ -81,7 +81,7 @@ tolType=>'relative');  #relative or absolute
 #- Random variables for this problem --#
 
 $mc1 = RadioButtons([
-"a.","b.","c.","d."],
+"a.","b.","c."],
 "c.");
 ########################################################
 # Not in PGML
@@ -113,9 +113,6 @@ $BR
 c.  \{ image("STATICS-RBSE04-02-03-0224d889130548c3b69cfc28391849923.png" , width=>300, height=>300) \}
 
 
-$BR
-$BR
-d.  \{ image("STATICS-RBSE04-02-03-0224d889130548c3b69cfc28391849924.png" , width=>300, height=>300) \}
 
 
 
