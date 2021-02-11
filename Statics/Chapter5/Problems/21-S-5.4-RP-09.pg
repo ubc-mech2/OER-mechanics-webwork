@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Cantilevered Beam', 'Rigid Body', 'Equilibrium')
+## KEYWORDS('Statics', 'Worker Carrying Load', 'Rigid Body', 'Equilibrium')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [5], section [5.4]')
 
 ########################################################
@@ -69,68 +69,45 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.23;
+$imgScale = 0.14;
 
-$height = $imgScale*1867;
+$height = $imgScale*3513;
 
-$width = $imgScale*3809;
+$width = $imgScale*3225;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$d1 = random(1, 2, 0.25);
-$d2 = $d1 + random(-0.25, 0.25, 0.25);
-$d3 = $d1 + random(-0.25, 0.25, 0.25);
+$d1 = random(3.5, 5, 0.5);
+$d2 = 0.5;
+$d3 = $d1 - random(0.5, 1, 0.25);
 
-$theta_1 = random(25, 45, 5);
-$theta_2 = random(25, 45, 5);
-
-$F_1 = random(5, 7, 0.5);
-$F_2 = random(3, 5, 0.5);
+$W = random(80, 160, 20);
 
 #---- Formulas to compute answers --------------#
-$theta_1_Rad = $theta_1 * pi / 180;
-$theta_2_Rad = $theta_2 * pi / 180;
-
-$Ax = - $F_2 * cos($theta_2_Rad);
-$Ay = $F_1 + $F_2 * sin($theta_2_Rad);
-$M_A = $d1 * $F_1 + ($d1 + $d2 + $d3 * cos($theta_1_Rad)) * $F_2 * sin($theta_2_Rad) + $d3 * sin($theta_1_Rad) * $F_2 * cos($theta_2_Rad);
+$theta_min = acos($d3 / $d1) * 180 / pi;
 
 #---- Answers to the problem -----------------------#
-$ansA = $Ax;
-$ansB = $Ay;
-$ansC = $M_A;
+$ansA = $theta_min;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-5.4-RP-09.png", width=>[$width], height=>[$height]) @]*
 
-Find the support reaction components at the *fixed* support [`A`] if the forces above are acting on the cantilevered beam. Assume the mass of the beam is negligible, that reaction force component vectors point upward and right ( - components if force is exerted in the other direction) and that counterclockwise moments are positive.
+A worker carries a load with weight [`W`] and centre of gravity [`G`]. If the worker stands on a smooth floor, find the smallest angle [`\theta`] that will allow the worker to lift the load in the position shown above.
 
 Use the following values:
 
-[`d_1 = [$d1] \: \textrm{m}`]
+[`d_1 = [$d1] \: \textrm{ft}`]
 
-[`d_2 = [$d2] \: \textrm{m}`]
+[`d_2 = [$d2] \: \textrm{ft}`]
 
-[`d_3 = [$d3] \: \textrm{m}`]
-
-[`\theta_1 = [$theta_1]^\circ`]
-
-[`\theta_2 = [$theta_2]^\circ`]
-
-[`||\overrightarrow{F_1}|| = [$F_1] \: \textrm{kN}`]
-
-[`||\overrightarrow{F_2}|| = [$F_2] \: \textrm{kN}`]
+[`d_3 = [$d3] \: \textrm{ft}`]
 
 
-[`A_x =`] [___]{"$ansA"} [`\: \textrm{kN}`]
-
-[`A_y =`] [___]{"$ansB"} [`\: \textrm{kN}`]
-
-[`M_A =`] [___]{"$ansC"} [`\: \textrm{kN} \cdot \textrm{m}`]
+[`\theta_{min} =`] [___]{"$ansA"} [`^\circ`]
 
 
 END_PGML
