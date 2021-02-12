@@ -126,7 +126,7 @@ Draw a FBD for the [`CD`] member and find the smallest angle (in DEGREES) betwee
 
 [`\theta_{CD} =`] [___]{"$ansA"} [`^\circ`]
 
-[`\theta_F =`] [___]{"$ansB"} [`^\circ`]
+[`\theta_{F_{CD}} =`] [___]{"$ansB"} [`^\circ`]
 
 
 Find the angle between the [`CD`] member and the force it exerts on the [`AB`] member.
