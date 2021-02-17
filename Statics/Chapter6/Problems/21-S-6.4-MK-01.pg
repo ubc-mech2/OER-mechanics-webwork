@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-6.3-MK-03
+## 21-S-6.4-MK-01
 ## Structural Analysis
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Structural Analysis)
-## DBsection(Zero-Force Members)
-## Date(2021-02-16)
+## DBsection(The Method of Sections)
+## Date(2021-02-17)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-6.3-MK-03.png')
+## RESOURCES('21-S-6.4-MK-01.png')
 
 ########################################################
 
