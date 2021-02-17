@@ -1,0 +1,39 @@
+DOCUMENT();
+loadMacros(
+    "PGstandard.pl",
+    "PGML.pl",
+);
+beginproblem();
+my $options = [
+    [ 3.31, 218, 577, ],
+    [ 4.12, 116, 382, ],
+    [ 3.17, 330, 837, ],
+    [ 3.55, 211, 599, ],
+    [ 3.8, 116, 353, ],
+    [ 3.02, 357, 863, ],
+    [ 3.3, 272, 718, ],
+    [ 3.52, 140, 394, ],
+    [ 3.81, 103, 314, ],
+    [ 3.28, 125, 328, ],
+];
+my ( $d, $F, $answer, ) = @{$options->[random(0, scalar @$options -1)]};
+$answer = Real($answer);
+BEGIN_PGML
+What is the moment of the force in this 2D situaiton.  Give me the magnitude only as this silly program cannot handle units.  3 significant figures please.  333 = 3.33E2 in exponential notation.  If by chance the aswer is 390 then you have to use exponential notation 3.90E3 or 390.   The . is very important as it tells the program you know it is 3 sig. figs.   
+
+  The force F has a magnitude of [$F] newtons.  The distances shown are d1 = 1.5 m and d2 = [$d] metres.  
+
+  [@ image("_4591133_1_a.png", width=>1547, height=>809) @]*  
+
+
+[_]{$answer}
+
+END_PGML
+BEGIN_PGML_HINT
+
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+[<math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>4</mn><mn>5</mn></mfrac><mo>&#xD7;</mo><mi mathvariant="normal">F</mi><mo>&#xD7;</mo><mi mathvariant="normal">d</mi></math>]*
+END_PGML_SOLUTION
+ENDDOCUMENT();

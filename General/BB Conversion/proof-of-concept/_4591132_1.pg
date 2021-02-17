@@ -1,0 +1,28 @@
+DOCUMENT();
+loadMacros(
+    "PGstandard.pl",
+    "PGML.pl",
+    "parserRadioButtons.pl",
+);
+beginproblem();
+$options = [
+    "<p>no direction as the moment is zero. </p>",
+    "<p>counter clockwise also called positive.  </p>",
+    "<p>north</p>",
+    "<p>clockwise also called negative </p>",
+];
+$correct = "<p>counter clockwise also called positive.  </p>";
+$answer = RadioButtons([$options], $correct);
+BEGIN_PGML
+The force F causes a moment about point O in this situation has a direction of ...?  [@ image("_4591132_1_a.png", width=>1547, height=>809) @]*
+[_]{$answer}
+
+END_PGML
+BEGIN_PGML_HINT
+
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+[$answer]
+END_PGML_SOLUTION
+ENDDOCUMENT();
