@@ -1,0 +1,41 @@
+DOCUMENT();
+loadMacros(
+    "PGstandard.pl",
+    "PGML.pl",
+);
+beginproblem();
+my $options = [
+    [ 2.15, 5.25, 391, -559, ],
+    [ 2.73, 4.94, 229, -179, ],
+    [ 2.27, 5.28, 104, -141, ],
+    [ 2.36, 5.18, 259, -316, ],
+    [ 2.37, 4.64, 367, -326, ],
+    [ 2.81, 4.2, 280, -76.2, ],
+    [ 2.39, 4.06, 301, -158, ],
+    [ 2.82, 4.9, 335, -229, ],
+    [ 2.1, 5.89, 143, -265, ],
+    [ 2.34, 5.18, 227, -281, ],
+];
+my ( $f, $d, $F, $answer, ) = @{$options->[random(0, scalar @$options -1)]};
+$answer = Real($answer);
+BEGIN_PGML
+What is the moment of the force  F around point O in this 2D situation?  Remember that positive is counter-clockwise.   
+
+  Give me the magnitude only as this silly program cannot handle units.  3 significant figures please.  333 = 3.33E2 in exponential notation.  If by chance the aswer is 390 then you have to use exponential notation 3.90E3 or 390.   The . is very important as it tells the program you know it is 3 sig. figs.   
+
+  The force F has a magnitude of [$F] newtons.  The distances shown are d1 = [$d] m  and d2 = [$f] metres.  
+
+  [@ image("_4591135_1_a.png", width=>1587, height=>1111) @]*  
+
+
+[_]{$answer}
+
+END_PGML
+BEGIN_PGML_HINT
+
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+[<math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>4</mn><mn>5</mn></mfrac><mo>&#xD7;</mo><mi mathvariant="normal">F</mi><mo>&#xD7;</mo><mi mathvariant="normal">f</mi><mo>&#xA0;</mo><mo>-</mo><mo>&#xA0;</mo><mfrac><mn>3</mn><mn>5</mn></mfrac><mo>&#xD7;</mo><mi mathvariant="normal">F</mi><mo>&#xD7;</mo><mi mathvariant="normal">d</mi></math>]*
+END_PGML_SOLUTION
+ENDDOCUMENT();
