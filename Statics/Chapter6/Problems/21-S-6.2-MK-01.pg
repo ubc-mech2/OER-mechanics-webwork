@@ -86,23 +86,28 @@ Determine the force in each member and whether they are in compression or tensio
 
 
 [@ $mc1->buttons() @]*  
+END_PGML
+ANS( $mc1->cmp() );
+
+BEGIN_PGML
 
 
 [`F_{BC}`] = [_____]{$FAC} [`\textrm{kN}`]
 
 
 [@ $mc2->buttons() @]*  
+END_PGML
+ANS( $mc2->cmp() );
+
+BEGIN_PGML
 
 
 [`F_{AC}`] = [_____]{$FAC} [`\textrm{kN}`]
 
 
 [@ $mc3->buttons() @]*  
-
 END_PGML
 
-ANS( $mc1->cmp() );
-ANS( $mc2->cmp() );
 ANS( $mc3->cmp() );
 
 ######################################################
