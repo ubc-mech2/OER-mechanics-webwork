@@ -7,7 +7,7 @@
 ## DBsubject(Statics)
 ## DBchapter(Structural Analysis)
 ## DBsection(The Method of Sections)
-## Date(2021-02-17)
+## Date(2021-02-18)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
@@ -51,124 +51,57 @@ $imgScale =0.35;
 
 #-------------- Image Aspect Ratio---------------#
 $width = $imgScale*1500;
-$height = $imgScale*1200;
+$height = $imgScale*818;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
 
-$f = random(100,900,100);
-$dab = random(1,5,1);
-$dbc = $dab;
-$dcd = $dab;
-$dae = sqrt($dbc**2+$dcd**2);
+$fc = random(1,5,1);
+$fd = random(1,10,1);
+$d1 = random(1,5,1);
+$d2 = $d1 + 2;
+
 
 #-----Calculations------#
 
 #---Reaction Forces----
-$Ay = $f * $dbc / ($dbc + $dab);
-$Dy = $f - $Ay;
+$Ey = ($fc*$d2*2 + $fd*$d2*3) / ($d2*4);
+$Ay = $fd + $fc - $Ey;
 
-#---Point A---
-$Fae = $dae * $Ay / $dcd;
-$Fab = $Fae * $dab / $dae;
+#---Similar triangles---
+$x = $d2 * $d2 / $d1;
 
-#---Point B---
-$Fbe = $f;
-$Fbc = $Fab;
-
-#---Point C---
-$Fce = $Fbc * $dae / $dbc;
-$Fcd = $Fce * $dcd / $dae;
-
-#---Point D---
-$Fde = 0;
+#---moments around o---
+$Fcf = ($fd * $x - $Ey * ($x-$d2)) / (($x + $d2) * sin(45*pi/180)) ;
 
 
-$mae = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Compression");
-$mab = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mbe = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mbc = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mce = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Compression");
-$mcd = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mde = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Non of the above");
+$mfcf = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Compression");
 
 ######################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-6.3-MK-03.png", width=>[$width], height=>[$height]) @]*
-
-Determine the force in each member of the truss and state whether the members are in tension or compression when the force [`F`] = [`[$f]`] [`\textrm{kN}`] while the dimensions [`d_{1}`] = [`[$dab]`] [`\textrm{m}`], [`d_{2}`] = [`[$dbc]`] [`\textrm{m}`], and [`d_{3}`] = [`[$dcd]`] [`\textrm{m}`].  Point [`A`] is supported by a roller while Point [`D`] is supported by a pinned connection.
-
-
-[`F_{AE}`] = [_____]{$Fae} [`\textrm{kN}`]
-
-[@ $mae->buttons() @]*  
-
-END_PGML
-ANS( $mae->cmp() );
+[`[$Ay]`]
+[`[$Ey]`]
+[`[$x]`]
 
 
-BEGIN_PGML
+[@ image( "21-S-6.4-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-[`F_{AB}`] = [_____]{$Fab} [`\textrm{kN}`]
+In above truss assembly [`d_{1}`] = [`[$d1]`] [`\textrm{m}`] and [`d_{2}`] = [`[$d2]`] [`\textrm{m}`].  A force at points [`C`] and [`D`] are pulling down at [`[$fc]`] [`\textrm{kN}`] and [`[$fd]`] [`\textrm{kN}`] respectively.
 
-[@ $mab->buttons() @]*  
+
+Determine the force in member [`CF`] of the truss shown above and indicate whether the member is in tension or compression. Assume each member is connected by a pin.
+
+
+[`F_{CF}`] = [_____]{$Fcf} [`\textrm{kN}`]
+
+[@ $mfcf->buttons() @]*  
 
 END_PGML
-ANS( $mab->cmp() );
-
-BEGIN_PGML
-
-[`F_{BE}`] = [_____]{$Fbe} [`\textrm{kN}`]
-
-
-[@ $mbe->buttons() @]*  
-
-END_PGML
-ANS( $mbe->cmp() );
-
-
-BEGIN_PGML
-
-[`F_{BC}`] = [_____]{$Fbc} [`\textrm{kN}`] 
-
-[@ $mbc->buttons() @]*  
-
-END_PGML
-ANS( $mbc->cmp() );
-
-
-BEGIN_PGML
-
-[`F_{CE}`] = [_____]{$Fce} [`\textrm{kN}`]
-
-[@ $mce->buttons() @]*  
-
-END_PGML
-ANS( $mce->cmp() );
-
-BEGIN_PGML
-
-[`F_{CD}`] = [_____]{$Fcd} [`\textrm{kN}`]
-
-
-[@ $mcd->buttons() @]*  
-
-END_PGML
-ANS( $mcd->cmp() );
-
-BEGIN_PGML
-
-[`F_{DE}`] = [_____]{$Fde} [`\textrm{kN}`]
-
-
-[@ $mde->buttons() @]*  
-
-END_PGML
-ANS( $mde->cmp() );
+ANS( $mfcf->cmp() );
 
 
 ######################################################
