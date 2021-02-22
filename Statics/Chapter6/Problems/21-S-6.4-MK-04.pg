@@ -88,7 +88,6 @@ $mfcf = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension"
 
 BEGIN_PGML
 
-[`[$rad2]`]
 
 [@ image( "21-S-6.4-MK-02.png", width=>[$width], height=>[$height]) @]*
 
