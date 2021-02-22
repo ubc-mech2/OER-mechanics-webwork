@@ -76,7 +76,7 @@ $x = $d2 * $d2 / $d1;
 $Fcf = ($fd * $x - $Ey * ($x-$d2)) / (($x + $d2) * sin(45*pi/180)) ;
 
 
-$mfcf = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Compression");
+$mfcf = RadioButtons([ "Tension", "Compression", "None of the above" ], "Compression");
 
 ######################################################
 #PGML

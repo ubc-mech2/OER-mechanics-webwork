@@ -81,7 +81,7 @@ $Dy = ($f1*$Ldex + $f2*$d1*1.5 + $f3*($d1*3-$Ldex)) / ($d1*3);
 #---moments around C---
 $Fcf = $f3 * $Ldex / ($d1*sin($rad2));
 
-$mfcf = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
+$mfcf = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension");
 
 ######################################################
 #PGML

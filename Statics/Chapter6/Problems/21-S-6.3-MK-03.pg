@@ -85,13 +85,13 @@ $Fcd = $Fce * $dcd / $dae;
 $Fde = 0;
 
 
-$mae = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Compression");
-$mab = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mbe = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mbc = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mce = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Compression");
-$mcd = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Tension");
-$mde = RadioButtons([ "Tension", "Compression", "Non of the above" ], "Non of the above");
+$mae = RadioButtons([ "Tension", "Compression", "None of the above" ], "Compression");
+$mab = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension");
+$mbe = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension");
+$mbc = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension");
+$mce = RadioButtons([ "Tension", "Compression", "None of the above" ], "Compression");
+$mcd = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension");
+$mde = RadioButtons([ "Tension", "Compression", "None of the above" ], "None of the above");
 
 ######################################################
 #PGML
