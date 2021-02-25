@@ -152,7 +152,7 @@ Use the following values:
 [`d_3 = [$d3] \: \textrm{m}`]
 
 
-Find the reaction forces at point [`A`] and point [`E`].
+Find the magnitudes of the reaction forces at point [`A`] and point [`E`].
 
 [`A_x =`] [___]{"$ansA"} [`\: \textrm{kN}`]
 
