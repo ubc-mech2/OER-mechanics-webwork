@@ -94,11 +94,11 @@ $mc -> qa (
 Which of the following notations can be used to represent the reaction force vector at B? (Select all that apply)
 
 ",
-"a. \(\bf{N_{B}}\)",
+"\(\bf{N_{B}}\)",
 
-"c. \(\overrightarrow{N}_B\)",
+"\(\overrightarrow{N}_B\)",
 );
-$mc -> makeLast("a. \(\bf{N_B}\)","b. \(\bf{T_B}\)","c. \(\overrightarrow{N}_B\)","d. \(\overrightarrow{M}_B\)",);
+$mc -> makeLast("\(\bf{N_B}\)","\(\bf{T_B}\)","\(\overrightarrow{N}_B\)","\(\overrightarrow{M}_B\)",);
 
 ########################################################
 # Not in PGML

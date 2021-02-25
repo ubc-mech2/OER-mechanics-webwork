@@ -81,8 +81,8 @@ tolType=>'relative');  #relative or absolute
 #- Random variables for this problem --#
 
 $mc1 = RadioButtons([
-"a. Solve for ground support reactions \(\rightarrow\) Draw the FBD of the truss \(\rightarrow\) use three equilibrium equations to solve for unknown forces ","b. Decide how to cut the truss through the members of interest \(\rightarrow\) Solve for ground support reactions \(\rightarrow\) Draw the FBD of one of the two truss parts \(\rightarrow\) use three equilibrium equations to solve for unknown forces ","c. Solve for ground reaction forces \(\rightarrow\) Find the easiest joint to solve \(\rightarrow\) Solve it \(\rightarrow\) Find the next easiest joint to solve \(\rightarrow\) Solve it \(\rightarrow\) Continue until all members are solved \(\rightarrow\) Last joint should be a check of your work"],
-"c. Solve for ground reaction forces \(\rightarrow\) Find the easiest joint to solve \(\rightarrow\) Solve it \(\rightarrow\) Find the next easiest joint to solve \(\rightarrow\) Solve it \(\rightarrow\) Continue until all members are solved \(\rightarrow\) Last joint should be a check of your work");
+"a. Solve for ground support reactions \(\rightarrow\) Draw the FBD of the truss \(\rightarrow\) use three equilibrium equations to solve for unknown forces ","b. Decide how to cut the truss through the members of interest \(\rightarrow\) Solve for ground support reactions \(\rightarrow\) Draw the FBD of one of the two truss parts \(\rightarrow\) use three equilibrium equations to solve for unknown forces ","c. Decide how to cut the truss through the members of interest \(\rightarrow\) Solve for ground support reactions, as needed \(\rightarrow\) Draw the FBD of one of the two truss parts \(\rightarrow\) use three equilibrium equations to solve for unknown forces"],
+"c. Decide how to cut the truss through the members of interest \(\rightarrow\) Solve for ground support reactions, as needed \(\rightarrow\) Draw the FBD of one of the two truss parts \(\rightarrow\) use three equilibrium equations to solve for unknown forces");
 ########################################################
 # Not in PGML
 

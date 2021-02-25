@@ -56,18 +56,16 @@ $height = $imgScale*1100;
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$M = 30;
-$f = 10;
-$d1 = 1.5;
-$d2 = 1.5;
-$d3 = 1.5;
-$d4 = 1.5;
+$f = random(1,5,1);
+$d1 = random(2,3,1);
+$d2 = random(2,3,1);
+$d3 = random(3,5,1);
 
 #---Reaction Forces---
-$Ay = ($M - $f*($d4))/($d2+$d3);
-$Nc = 0;
-$Vc = $Ay;
-$Mc = $M - $Vc*$d2;
+$Ay = $f*($d1+$d2)*(($d1+$d2)/2)/($d1+$d2);
+$Nb = 0;
+$Vb = $f*$d1 - $Ay;
+$Mb = $Ay*$d1 - $f*$d1*$d1/2;
 
 ######################################################
 #PGML
@@ -85,22 +83,18 @@ Use the following values for the image above;
 
 * [`d_3`] = [`[$d3]`] [`\textrm{m}`]
 
-* [`d_4`] = [`[$d4]`] [`\textrm{m}`]
+* [`w_1`] = [`[$f]`] [`\textrm{kN/m}`]
 
-* [`M`] = [`[$M]`] [`\textrm{kN-m}`]
-
-* [`F`] = [`[$f]`] [`\textrm{kN}`]
-
-Determine the absolute values of the normal force, shear force, and moment at point [`C`] 
+Determine the normal force, shear force, and bending moment at point [`C`] 
 
 
-[`N_{C}`] = [_____]{$Nc} [`\textrm{kN}`]
+[`N_{B}`] = [_____]{$Nb} [`\textrm{kN}`]
 
  
-[`V_{C}`] = [_____]{$Vc} [`\textrm{kN}`]
+[`V_{B}`] = [_____]{$Vb} [`\textrm{kN}`]
 
 
-[`M_{C}`] = [_____]{$Mc} [`\textrm{kN-m}`]
+[`M_{B}`] = [_____]{$Mb} [`\textrm{kN-m}`]
   
 
 END_PGML

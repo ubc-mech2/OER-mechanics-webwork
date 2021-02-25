@@ -50,26 +50,26 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1700;
+$width = $imgScale*2200;
 $height = $imgScale*1100;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$f1 = 12;
-$f2 = 9;
-$d1 = 1.5;
-$d2 = 1.5;
-$d3 = 1.5;
-$d4 = 1.5;
+$f1 = random(5,15,1);
+$f2 = random(5,10,1);
+$d1 = random(1,2,0.1);
+$d2 = random(1,2,0.1);
+$d3 = random(1,2,0.1);
+$d4 = random(1,2,0.1);
 $d = $d3 + $d4;
 
 #---Reaction Forces---
 $fd2 = $f2 * $d;
-$Ay = ($fd2 * $d4 + $f1 * ($d2 + $d3 + $d4)) / ($d1 + $d2 + $d3 + $d4);
+$Ay = ($fd2 * ($d3+$d4)/2 + $f1 * ($d2 + $d3 + $d4)) / ($d1 + $d2 + $d3 + $d4);
 $Nc = 0;
-$Vc = $f2*$d3 + $f1 - $Ay;
-$Mc = abs($Ay*($d1+$d2+$d3) - $f1*($d2+$d3) - $f2 * ($d3) * ($d3/2));
+$Vc = $Ay - $f2*$d3 - $f1;
+$Mc = $Ay*($d1+$d2+$d3) - $f1*($d2+$d3) - $f2 * ($d3) * ($d3/2);
 
 ######################################################
 #PGML
@@ -91,10 +91,10 @@ Use the following values for the image above;
 
 * [`F_1`] = [`[$f1]`] [`\textrm{kN}`]
 
-* [`F_2`] = [`[$f2]`] [`\textrm{kN/m}`]
+* [`P`] = [`[$f2]`] [`\textrm{kN/m}`]
 
 
-Determine the absolute values of the normal force, shear force, and moment at point [`C`].
+Determine the normal force, shear force, and bending moment at point [`C`].
 
 
 [`N_{C}`] = [_____]{$Nc} [`\textrm{kN}`]

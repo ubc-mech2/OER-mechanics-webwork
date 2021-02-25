@@ -1,0 +1,84 @@
+setNumber=USask_Chapter_4.2_Cross_Product
+openDate = 1/7/00 at 6:00am
+dueDate = 1/20/09 at 6:00am
+answerDate = 1/21/09 at 6:00
+paperHeaderFile = set34/paperHeaderFile0.pg
+screenHeaderFile = set34/screenHeaderFile0.pg
+problemList =
+ setUsaskQuestions/STATICS-VCP01-01-01-a39bb0b167934278a4b2e5ad85618a0f.pg, 0 
+setUsaskQuestions/STATICS-VCP01-01-02-a2587f30d0544b638e07f8f832a02fae.pg, 0 
+setUsaskQuestions/STATICS-VCP01-01-03-d4494ed33429410eac3541dd06dcc4f5.pg, 0 
+setUsaskQuestions/STATICS-VCP01-01-04-a340a310a9084032971f19defaec1884.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-01-996a6022dd4a444e827e113920936d0a.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-02-6af6a144055240cda05be1ff1eed4e16.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-03-952de0af2099461595c35483aea80762.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-04-d167ee00bf364073bcd4bdb45ccb110e.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-05-182273d5228a4135bd90ad938981dfbf.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-06-b7321a50ff84400abc973634a40a94b0.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-07-ed5a196008eb4ac3b8bb5f32c5c06ff7.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-08-8e02155ce4eb4b029a0d2ee2bf3c4358.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-09-2b08993a213945d39154c907edd9d09c.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-10-3947ce85fbe941e58d7d6ab263be21a7.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-11-ae25c8ddf5804b74a3242db367bb1999.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-12-f6991ee429d7441faa6dcb9e8e5a5953.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-13-8d84c6cc40e34c118e18c1c433b8ebda.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-14-a510f7b5c9c14ab58ff9488b45f01d8b.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-15-84ff37f30ed34454b63e351ac874adea.pg, 0 
+setUsaskQuestions/STATICS-VCP01-02-16-616773f5dc0147d9afaefe4e9f236557.pg, 0 
+setUsaskQuestions/STATICS-VCP02-01-01-f350d196178346b8be4b082ad17d20b7.pg, 0 
+setUsaskQuestions/STATICS-VCP02-01-02-bd04ab5853464cc39f86ab0788924b1e.pg, 0 
+setUsaskQuestions/STATICS-VCP02-01-03-11b027104895493c92d61050e6d3e811.pg, 0 
+setUsaskQuestions/STATICS-VCP02-01-04-5b03ce9d0f2b420a814bcc08ab2080c9.pg, 0 
+setUsaskQuestions/STATICS-VCP02-01-05-98e7d9a76f82474596b2990aac77b002.pg, 0 
+setUsaskQuestions/STATICS-VCP02-02-01-6646bb2c86eb4f43b8af0f61f2c5227f.pg, 0 
+setUsaskQuestions/STATICS-VCP02-02-02-c121d36db75e43ee9ec76e4db1ea805e.pg, 0 
+setUsaskQuestions/STATICS-VCP02-02-03-5c86878e9a7c466eacb4cd9fa1d40156.pg, 0 
+setUsaskQuestions/STATICS-VCP02-02-04-639b7b6394404b3692b9e972ce9d12e9.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-01-dfa5d66867314ecda81292b8cef6feab.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-02-8565ffa2085e4307b53752e85b965217.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-03-78e6f4190e9744fcbaf3da605a6ab879.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-04-1daf59e6983a49eda4f222edddd5623b.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-05-d26858da35c04e9495a55d49c1d52bd0.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-06-69bf3769e51b4267acb32ef84dae26ff.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-07-68de7de8436740f399924bda4d9a7f97.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-08-a5bf5f386242411d8806a730c6b5b204.pg, 0 
+setUsaskQuestions/STATICS-VCP03-01-09-dbb543cb36a24f62be80e55baca933bc.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-01-05bc8a300e3d4c29a52598ce4ee7c58f.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-02-564613f2a4104f3c8574e25c35ddeeeb.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-03-9ad5dd5d453843f6b858c1a9536440b2.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-04-0bc7eacdb5c944cf9b47908fc2d74747.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-05-f42e4804a1f444a582d4f109680c1cf2.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-06-fac907ebf020461c95f1b7f98d85000f.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-07-4b33d171784147ffa8e32ed15f4f1e69.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-08-22c354a430574eeaa361b09945a07200.pg, 0 
+setUsaskQuestions/STATICS-VCP03-02-09-09fe0345235446dfb6e33da429b8a707.pg, 0 
+setUsaskQuestions/STATICS-VCP04-01-01-5d4ade331a2a4a94b69c1ab2377704c0.pg, 0 
+setUsaskQuestions/STATICS-VCP04-01-02-f8060cac38104d1a8963261ce8fd1eac.pg, 0 
+setUsaskQuestions/STATICS-VCP04-01-03-e5aed6f500634b118868f022cd262201.pg, 0 
+setUsaskQuestions/STATICS-VCP04-01-04-417121a29bae4710adb5ff6a23101a4b.pg, 0 
+setUsaskQuestions/STATICS-VCP04-02-01-f0098201aa564d9a9accfa220b9aa0a1.pg, 0 
+setUsaskQuestions/STATICS-VCP04-02-02-c30888ed7358404e974ccc75a8453b93.pg, 0 
+setUsaskQuestions/STATICS-VCP04-02-03-f7ca523cbfa04e4e9edc991ef7e79ca7.pg, 0 
+setUsaskQuestions/STATICS-VCP04-02-04-706023aa10684d28b1c2cdd2a28b9fa8.pg, 0 
+setUsaskQuestions/STATICS-VCP04-03-01-5a6271a583a840f09fb96726632c92eb.pg, 0 
+setUsaskQuestions/STATICS-VCP04-03-02-fe46bd1c6dda4026b73896c97d576011.pg, 0 
+setUsaskQuestions/STATICS-VCP04-03-03-e949494764b848a19994ffcba21c3b1b.pg, 0 
+setUsaskQuestions/STATICS-VCP04-03-04-77918cf9b2b3409eb03c616ac1763777.pg, 0 
+setUsaskQuestions/STATICS-VCP05-01-01-4c4475761fb14b7ab25f6959a44f55d2.pg, 0 
+setUsaskQuestions/STATICS-VCP05-01-02-45282fd6dae44534a5cedd698c82a8f1.pg, 0 
+setUsaskQuestions/STATICS-VCP05-01-03-c2d8677d1c4245d08ede4778d88bd7ca.pg, 0 
+setUsaskQuestions/STATICS-VCP05-01-04-9347b5e0b9d443e58f4118b614746c44.pg, 0 
+setUsaskQuestions/STATICS-VCP05-02-01-aee3379008f744b8907d21d523d43b0f.pg, 0 
+setUsaskQuestions/STATICS-VCP05-02-02-fabdc5a3359a430c9c246aae042f8981.pg, 0 
+setUsaskQuestions/STATICS-VCP05-02-03-d37c0bf7970b4634afffd8560bc44bdb.pg, 0 
+setUsaskQuestions/STATICS-VCP05-02-04-81e8628b2f6c49778dd6c067e5555eb1.pg, 0 
+setUsaskQuestions/STATICS-VCP06-01-01-86e17a623ad94be5847b6cd349291c53.pg, 0 
+setUsaskQuestions/STATICS-VCP07-01-01-b29d36f0879547c5bf0a7f58b9303e5c.pg, 0 
+setUsaskQuestions/STATICS-VCP07-01-02-150b28553042439c8ac261e3765a29e0.pg, 0 
+setUsaskQuestions/STATICS-VCP07-01-03-05bb0e790b1c46ccbd6d679b4a8167d2.pg, 0 
+setUsaskQuestions/STATICS-VCP07-01-04-d2ea574448db4b8188f2623b33e64f6a.pg, 0 
+setUsaskQuestions/STATICS-VCP07-02-01-c6940712177741fcad836e223d790f56.pg, 0 
+setUsaskQuestions/STATICS-VCP07-02-02-e0be06ba6e0f41c0b811b87ba991db48.pg, 0 
+setUsaskQuestions/STATICS-VCP07-02-03-a4feca9762914ac8abf0fc511634a1e1.pg, 0 
+setUsaskQuestions/STATICS-VCP07-02-04-82d9fd00bbf54807a85cbeeef3e50263.pg, 0 
+setUsaskQuestions/STATICS-VCP08-01-01-74267ab2ac574bf0aaa551e1765774eb.pg, 0 

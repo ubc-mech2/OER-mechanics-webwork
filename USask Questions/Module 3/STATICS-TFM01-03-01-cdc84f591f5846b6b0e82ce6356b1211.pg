@@ -95,8 +95,8 @@ $mc -> makeLast("a. Loads are transferred through axial tension and compression 
 # Not in PGML
 
 BEGIN_TEXT
-
 $BR
+Which of the following statements are correct when analysing a truss system. 
 \{ $mc -> print_q() \}
 $BR\{ $mc -> print_a() \}
 END_TEXT
