@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Structural Analysis)
-## DBsection(Method of Joints)
+## DBchapter(Internal Forces)
+## DBsection(Internal Loadings Developed in Structural Members)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Simple Truss', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [6], section [6.2]')
+## KEYWORDS('Statics', 'Bent Pipe', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [7], section [7.1]')
 
 ########################################################
 
@@ -69,101 +69,68 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.21;
+$imgScale = 0.23;
 
-$height = $imgScale*2379;
+$height = $imgScale*2167;
 
-$width = $imgScale*3036;
+$width = $imgScale*2255;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$P_1 = random(4, 5, 0.5);
-$P_2 = random(2.5, 3.5, 0.5);
-$d1 = random(2, 2.5, 0.5);
+$F_1x = random(300, 400, 10);
+$F_1y = random(-450, -350, 10);
+$F_2y = random(-350, -250, 10);
+$F_2z = random(100, 200, 10);
+
+$d1 = random(2.5, 3.5, 0.5);
 $d2 = $d1 - random(0.5, 1, 0.5);
+$d3 = $d2 - 0.5;
 
 #---- Formulas to compute answers --------------#
-$A_x = $d1 / $d2 * $P_1 + $P_2;
-$A_y = 0;
-$B_x = $d1 / $d2 * $P_1;
-$B_y = $P_1;
+$C_x = - $F_1x;
+$C_y = - $F_1y - $F_2y;
+$C_z = - $F_2z;
 
-$F_AD = $A_x;
-$F_BC = 0;
-$F_BD = (($d1 ** 2 + $d2 ** 2) ** 0.5) / $d2 * $P_1;
-$F_CD = $P_1;
-
-#---- Setting Up Multiple Choices -----------------------#
-$mcAD = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Compressive");
-
-$mcBC = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Neither");
-
-$mcBD = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Tensile");
-
-$mcCD = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Compressive");
+$M_C_x = $d1 * $F_1y;
+$M_C_y = $d2 * $F_2z - $d1 * $F_1x;
+$M_C_z = - $d2 * ($F_1y + $F_2y);
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-6.2-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-7.1-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-A truss assembly has two forces [`P_1 = [$P_1] \: \textrm{kN}`] and [`P_2 = [$P_2] \: \textrm{kN}`] acting on joint [`C`] and [`D`] and is supported by two pins on [`A`] and [`B`]. Determine the reaction forces in the pin supports as well as the internal force in each member. Assume members are pin connected and member mass is negligible.
+A pipe fixed on a wall supports two loads [`\overrightarrow{F_1}`] and [`\overrightarrow{F_2}`] as shown above. Find the force and moment components in the pipe at point [`C`]. Ignore the mass of the pipe. Let the component be positive if it points along the positive axes.
 
-Use [`d_1 = [$d1] \: \textrm{m}`] and [`d_2 = [$d2] \: \textrm{m}`].
+Use the following values:
+
+[`\overrightarrow{F_1} = \{[$F_1x] \hat{i} + [$F_1y] \hat{j}\} \: \textrm{lbs}`]
+
+[`\overrightarrow{F_2} = \{[$F_2y] \hat{j} + [$F_2z] \hat{k}\} \: \textrm{lbs}`]
+
+[`d_1 = [$d1] \: \textrm{ft}`]
+
+[`d_2 = [$d2] \: \textrm{ft}`]
+
+[`d_3 = [$d3] \: \textrm{ft}`]
 
 
-Find the magnitude of the reaction forces on [`A`] and [`B`].
+[`C_x =`] [___]{"$C_x"} [`\: \textrm{lbs}`]
 
-[`A_x =`] [___]{"$A_x"} [`\: \textrm{kN}`]
+[`C_y =`] [___]{"$C_y"} [`\: \textrm{lbs}`]
 
-[`A_y =`] [___]{"$A_y"} [`\: \textrm{kN}`]
+[`C_z =`] [___]{"$C_z"} [`\: \textrm{lbs}`]
 
-[`B_x =`] [___]{"$B_x"} [`\: \textrm{kN}`]
+[`(M_C)_x =`] [___]{"$M_C_x"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
-[`B_y =`] [___]{"$B_y"} [`\: \textrm{kN}`]
+[`(M_C)_y =`] [___]{"$M_C_y"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
+[`(M_C)_z =`] [___]{"$M_C_z"} [`\: \textrm{lb} \cdot \textrm{ft}`]
 
-Determine the magnitude of the internal force in each member. Identify if the force is tensile, compressive, or neither.
-
-[`F_{AD}`] = [___]{"$F_AD"} [`\: \textrm{kN}`]
-
-[@ $mcAD->buttons() @]*  
-
-END_PGML
-
-ANS( $mcAD->cmp() );
-
-BEGIN_PGML
-
-[`F_{BC}`] = [___]{"$F_BC"} [`\: \textrm{kN}`]
-
-[@ $mcBC->buttons() @]*  
 
 END_PGML
-
-ANS( $mcBC->cmp() );
-
-BEGIN_PGML
-
-[`F_{BD}`] = [___]{"$F_BD"} [`\: \textrm{kN}`]
-
-[@ $mcBD->buttons() @]*  
-
-END_PGML
-
-ANS( $mcBD->cmp() );
-
-BEGIN_PGML
-
-[`F_{CD}`] = [___]{"$F_CD"} [`\: \textrm{kN}`]
-
-[@ $mcCD->buttons() @]*  
-
-END_PGML
-
-ANS( $mcCD->cmp() );
 
 ##############################################################
 

@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Structural Analysis)
-## DBsection(Method of Joints)
+## DBchapter(Internal Forces)
+## DBsection(Internal Loadings Developed in Structural Members)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Simple Truss', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [6], section [6.2]')
+## KEYWORDS('Statics', 'Fixed Bar', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [7], section [7.1]')
 
 ########################################################
 
@@ -69,101 +69,61 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.21;
+$imgScale = 0.3;
 
-$height = $imgScale*2379;
+$height = $imgScale*1585;
 
-$width = $imgScale*3036;
+$width = $imgScale*2613;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$P_1 = random(4, 5, 0.5);
-$P_2 = random(2.5, 3.5, 0.5);
-$d1 = random(2, 2.5, 0.5);
-$d2 = $d1 - random(0.5, 1, 0.5);
+$P = random(150, 300, 50);
+$d = random(2.5, 3.5, 0.5);
 
 #---- Formulas to compute answers --------------#
-$A_x = $d1 / $d2 * $P_1 + $P_2;
-$A_y = 0;
-$B_x = $d1 / $d2 * $P_1;
-$B_y = $P_1;
+$m = $P / (2 * $d);
+$A_x = 0;
+$A_y = $d * $P;
+$M_A = 4 / 3 * ($d ** 2) * $P;
 
-$F_AD = $A_x;
-$F_BC = 0;
-$F_BD = (($d1 ** 2 + $d2 ** 2) ** 0.5) / $d2 * $P_1;
-$F_CD = $P_1;
-
-#---- Setting Up Multiple Choices -----------------------#
-$mcAD = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Compressive");
-
-$mcBC = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Neither");
-
-$mcBD = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Tensile");
-
-$mcCD = RadioButtons([ "Tensile", "Compressive", "Neither" ], "Compressive");
+$N_B = 0;
+$V_B = 3 / 4 * $d * $P;
+$M_B = 5 / 12 * ($d ** 2) * $P;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-6.2-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-7.1-RP-03.png", width=>[$width], height=>[$height]) @]*
 
-A truss assembly has two forces [`P_1 = [$P_1] \: \textrm{kN}`] and [`P_2 = [$P_2] \: \textrm{kN}`] acting on joint [`C`] and [`D`] and is supported by two pins on [`A`] and [`B`]. Determine the reaction forces in the pin supports as well as the internal force in each member. Assume members are pin connected and member mass is negligible.
-
-Use [`d_1 = [$d1] \: \textrm{m}`] and [`d_2 = [$d2] \: \textrm{m}`].
+A bar that is fixed on a wall at point [`A`] supports a gradually increasing distributed load with a maximum value of [`P = [$P] \: \textrm{N/m}`]. If [`d_1 = d_2 = [$d] \: \textrm{m}`], find the magnitudes of the internal forces and bending moment in the bar at point [`B`].
 
 
-Find the magnitude of the reaction forces on [`A`] and [`B`].
+Find the slope of the distributed load function.
 
-[`A_x =`] [___]{"$A_x"} [`\: \textrm{kN}`]
-
-[`A_y =`] [___]{"$A_y"} [`\: \textrm{kN}`]
-
-[`B_x =`] [___]{"$B_x"} [`\: \textrm{kN}`]
-
-[`B_y =`] [___]{"$B_y"} [`\: \textrm{kN}`]
+[`m =`] [___]{"$m"}
 
 
-Determine the magnitude of the internal force in each member. Identify if the force is tensile, compressive, or neither.
+Determine the reaction forces at [`A`].
 
-[`F_{AD}`] = [___]{"$F_AD"} [`\: \textrm{kN}`]
+[`A_x =`] [___]{"$A_x"} [`\: \textrm{N}`]
 
-[@ $mcAD->buttons() @]*  
+[`A_y =`] [___]{"$A_y"} [`\: \textrm{N}`]
 
-END_PGML
+[`M_A =`] [___]{"$M_A"} [`\: \textrm{N} \cdot \textrm{m}`]
 
-ANS( $mcAD->cmp() );
 
-BEGIN_PGML
+Find the magnitudes of the normal force, shear force, and bending moment in the bar at point [`B`].
 
-[`F_{BC}`] = [___]{"$F_BC"} [`\: \textrm{kN}`]
+[`N_B =`] [___]{"$N_B"} [`\: \textrm{N}`]
 
-[@ $mcBC->buttons() @]*  
+[`V_B =`] [___]{"$V_B"} [`\: \textrm{N}`]
+
+[`M_B =`] [___]{"$M_B"} [`\: \textrm{N} \cdot \textrm{m}`]
+
 
 END_PGML
-
-ANS( $mcBC->cmp() );
-
-BEGIN_PGML
-
-[`F_{BD}`] = [___]{"$F_BD"} [`\: \textrm{kN}`]
-
-[@ $mcBD->buttons() @]*  
-
-END_PGML
-
-ANS( $mcBD->cmp() );
-
-BEGIN_PGML
-
-[`F_{CD}`] = [___]{"$F_CD"} [`\: \textrm{kN}`]
-
-[@ $mcCD->buttons() @]*  
-
-END_PGML
-
-ANS( $mcCD->cmp() );
 
 ##############################################################
 
