@@ -64,9 +64,9 @@ $theta1 = random(30,40,1);
 $rad1 = $theta1 * pi / 180;
 
 #---Reaction Forces---
-$Rb = $f1*$d1 / ($d2+$d3);
-$Vc = -$Rb;
-$Mc = $Rb * $d3;
+$Rb = abs($f1*$d1 / ($d2+$d3));
+$Vc = abs(-$Rb);
+$Mc = abs($Rb * $d3);
 
 ######################################################
 #PGML

@@ -121,16 +121,16 @@ Use the following values for the image above;
 Find the reaction forces at [`A`], [`C`], [`D`], and [`F`]
 
 
-[`A_{y}`] = [_____]{$Ay} [`\textrm{m}`]
+[`A_{y}`] = [_____]{$Ay} [`\textrm{kN}`]
 
 
-[`C_{y}`] = [_____]{$Cy} [`\textrm{m}`]
+[`C_{y}`] = [_____]{$Cy} [`\textrm{kN}`]
 
 
-[`D_{y}`] = [_____]{$Dy} [`\textrm{m}`]
+[`D_{y}`] = [_____]{$Dy} [`\textrm{kN}`]
 
 
-[`F_{y}`] = [_____]{$Fy} [`\textrm{m}`]
+[`F_{y}`] = [_____]{$Fy} [`\textrm{kN}`]
 
 Find the three distances ([`x_1`], [`x_2`], [`x_3`])  from support [`A`] where the shear force of the beam equals zero.
 

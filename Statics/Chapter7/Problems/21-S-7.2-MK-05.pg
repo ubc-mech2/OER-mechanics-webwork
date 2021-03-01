@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-7.2-MK-05
+## 21-S-7.1-MK-01
 ## Internal Forces
 ## ENDDESCRIPTION
 
@@ -64,19 +64,17 @@ $d3 = random(3,5,0.5);
 #---Reaction Forces---
 $Ay = $f*($d1+$d2)*(($d1+$d2)/2)/($d1+$d2);
 $Nb = 0;
-$V0a = $Ay;
+$Va = $Ay;
+$Vc = $Va - $f * ($d1 + $d2);
  
 
-if($V0a<$Vab){
-	$Vmax = $V0a;
+if($Va<$Vc){
+	$Vmax = $Vc;
 }else{
-	$Vmax = $Vab;
+	$Vmax = $Va;
 }
 
-$Mmax = $f1 * $d1**2 /2;
-
-$Vmax = $f*$d1 - $Ay;
-$Mmax = $Ay*$d1 - $f*$d1*$d1/2;
+$Mc = $Va * $d3 - $f * ($d1+$d2) * $d3;
 
 ######################################################
 #PGML
@@ -96,14 +94,13 @@ Use the following values for the image above;
 
 * [`P`] = [`[$f]`] [`\textrm{kN/m}`]
 
-Determine the absolute value of the maximum shear force and the maximum bending moment of the beam shown above.
-
+Determine the maximum shear force and the maximum bending moment of the beam shown above.
 
  
 [`V_{Max}`] = [_____]{$Vmax} [`\textrm{kN}`]
 
 
-[`M_{Max}`] = [_____]{$Mmax} [`\textrm{kN-m}`]
+[`M_{Max}`] = [_____]{$Mc} [`\textrm{kN-m}`]
   
 
 END_PGML
