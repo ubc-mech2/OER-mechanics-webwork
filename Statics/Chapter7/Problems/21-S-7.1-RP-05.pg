@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Fixed Bar', 'Equilibrium')
+## KEYWORDS('Statics', 'Internal Loadings', 'Equilibrium')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [7], section [7.1]')
 
 ########################################################
@@ -69,52 +69,60 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.3;
+$imgScale = 0.4;
 
-$height = $imgScale*1585;
+$height = $imgScale*1037;
 
-$width = $imgScale*2613;
+$width = $imgScale*2713;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$P = random(150, 300, 50);
-$d = random(2.5, 3.5, 0.5);
+$m = random(3, 6, 1);
+$M = random(200, 400, 50);
+$d1 = random(1, 1.5, 0.25);
+$d2 = $d1;
+$d3 = 2 * $d1 - random(0.25, 0.5, 0.25);
+$g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$m = $P / (2 * $d);
-$A_x = 0;
-$A_y = $d * $P;
-$M_A = 4 / 3 * ($d ** 2) * $P;
+$rho = $m / ($d1 + $d2 + $d3);
+$A_y = (($d1 + $d2 - $d3) / 2 * $m * $g - $M) / ($d1 + $d2);
 
 $N_B = 0;
-$V_B = 3 / 4 * $d * $P;
-$M_B = 5 / 12 * ($d ** 2) * $P;
+$V_B = abs($A_y - $rho * $g * $d1);
+$M_B = abs($d1 * ($A_y + $d1 / 2 * $rho * $g));
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-7.1-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-7.1-RP-05.png", width=>[$width], height=>[$height]) @]*
 
-A bar that is fixed on a wall at point [`A`] supports a gradually increasing distributed load with a maximum value of [`P = [$P] \: \textrm{N/m}`]. If [`d_1 = d_2 = [$d] \: \textrm{m}`], find the magnitudes of the internal forces and bending moment in the bar at point [`B`].
+A bar experiencing a couple moment [`M = [$M] \: \textrm{N} \cdot \textrm{m}`] is supported by a pin at [`A`] and a roller at [`C`]. Assuming the bar has a total uniform mass of [`m = [$m] \: \textrm{kg}`], find the magnitudes of the internal loadings in the bar at [`B`]. Assume [`g = [$g] \: \textrm{N/kg}`].
+
+Use the following values:
+
+[`d_1 = [$d1] \: \textrm{m}`]
+
+[`d_2 = [$d2] \: \textrm{m}`]
+
+[`d_3 = [$d3] \: \textrm{m}`]
 
 
-Find the slope of the distributed load function.
+Find the mass per unit length, [`\rho`], of the bar.
 
-[`m =`] [___]{"$m"} [`\: \textrm{N/m^2}`]
+[`\rho =`] [___]{"$rho"} [`\: \textrm{kg/m}`]
 
 
-Determine the reaction forces at [`A`].
+Find the reaction components at [`A`]. Let the component be positive if pointing upwards or to the right.
 
-[`A_x =`] [___]{"$A_x"} [`\: \textrm{N}`]
+[`A_x =`] [___]{0} [`\: \textrm{N}`]
 
 [`A_y =`] [___]{"$A_y"} [`\: \textrm{N}`]
 
-[`M_A =`] [___]{"$M_A"} [`\: \textrm{N} \cdot \textrm{m}`]
 
-
-Find the magnitudes of the normal force, shear force, and bending moment in the bar at point [`B`].
+Determine the magnitudes of the internal loadings in the bar at [`B`].
 
 [`N_B =`] [___]{"$N_B"} [`\: \textrm{N}`]
 
