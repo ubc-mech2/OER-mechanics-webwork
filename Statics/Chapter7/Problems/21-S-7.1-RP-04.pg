@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Fixed Bar', 'Equilibrium')
+## KEYWORDS('Statics', 'Billboard Sign', 'Equilibrium')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [7], section [7.1]')
 
 ########################################################
@@ -69,58 +69,67 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.3;
+$imgScale = 0.23;
 
-$height = $imgScale*1585;
+$height = $imgScale*2205;
 
-$width = $imgScale*2613;
+$width = $imgScale*1690;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$P = random(150, 300, 50);
-$d = random(2.5, 3.5, 0.5);
+$rho = random(4000, 7000, 500);
+$P = random(800, 1000, 50);
+$d1 = random(5, 7, 0.5);
+$d2 = random(2, 3, 0.5);
+$d3 = random(3.5, 4.5, 0.5);
+$t = random(0.5, 1, 0.25);
+$g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$m = $P / (2 * $d);
-$A_x = 0;
-$A_y = $d * $P;
-$M_A = 4 / 3 * ($d ** 2) * $P;
+$m = $rho * $t * $d1 * $d2;
+$F_W = $P * $d1 * $d2;
 
-$N_B = 0;
-$V_B = 3 / 4 * $d * $P;
-$M_B = 5 / 12 * ($d ** 2) * $P;
+$N_A = $m * $g;
+$V_A = $F_W;
+$M_A = (($d1 / 2 * $m * g) ** 2 + (($d3 + $d2 / 2) * $F_W) ** 2) ** 0.5;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-7.1-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-7.1-RP-04.png", width=>[$width], height=>[$height]) @]*
 
-A bar that is fixed on a wall at point [`A`] supports a gradually increasing distributed load with a maximum value of [`P = [$P] \: \textrm{N/m}`]. If [`d_1 = d_2 = [$d] \: \textrm{m}`], find the magnitudes of the internal forces and bending moment in the bar at point [`B`].
+A billboard sign has a uniform mass density of [`\rho = [$rho] \: \textrm{kg/m}^3`] and a thickness of [`t = [$t] \: \textrm{m}`]. The sign was designed with a maximum expected uniform wind loading of [`P = [$P] \: \textrm{Pa}`] that would travel into the broad side of the sign. Assuming negligible mass in the pole and [`g = [$g] \: \textrm{N/kg}`], find the magnitudes of the internal loadings in the pole at [`A`].
+
+Use the following values:
+
+[`d_1 = [$d1] \: \textrm{m}`]
+
+[`d_2 = [$d2] \: \textrm{m}`]
+
+[`d_3 = [$d3] \: \textrm{m}`]
+
+[`d_4 = [$d3] \: \textrm{m}`]
 
 
-Find the slope of the distributed load function.
+Calculate the total mass of the sign.
 
-[`m =`] [___]{"$m"} [`\: \textrm{N/m^2}`]
+[`m =`] [___]{"$m"} [`\: \textrm{kg}`]
 
 
-Determine the reaction forces at [`A`].
+Calculate the magnitude of the force due to the wind.
 
-[`A_x =`] [___]{"$A_x"} [`\: \textrm{N}`]
+[`F_W =`] [___]{"$F_W"} [`\: \textrm{N}`]
 
-[`A_y =`] [___]{"$A_y"} [`\: \textrm{N}`]
+
+Find the magnitude of the internal normal force, shear force, and bending moment in the pole at [`A`].
+
+[`N_A =`] [___]{"$N_A"} [`\: \textrm{N}`]
+
+[`V_A =`] [___]{"$V_A"} [`\: \textrm{N}`]
 
 [`M_A =`] [___]{"$M_A"} [`\: \textrm{N} \cdot \textrm{m}`]
-
-
-Find the magnitudes of the normal force, shear force, and bending moment in the bar at point [`B`].
-
-[`N_B =`] [___]{"$N_B"} [`\: \textrm{N}`]
-
-[`V_B =`] [___]{"$V_B"} [`\: \textrm{N}`]
-
-[`M_B =`] [___]{"$M_B"} [`\: \textrm{N} \cdot \textrm{m}`]
 
 
 END_PGML
