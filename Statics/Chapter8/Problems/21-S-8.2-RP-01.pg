@@ -92,7 +92,7 @@ BEGIN_PGML
 
 [@ image( "21-S-8.2-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-Megan is skiing down a slope as shown above. If she weighs [`W = [$W] \: \textrm{lbs}`], find the largest angle of the slope, [`\theta`], such that she remains in static equilibrium and the angle in which she skis at constant velocity assuming she uses her ski poles to propel herself initially.
+Megan the skier is skiing down a slope as shown above. If she weighs [`W = [$W] \: \textrm{lbs}`], find the largest angle of the slope, [`\theta`], such that she remains in static equilibrium and the angle in which she skis at constant velocity assuming she uses her ski poles to propel herself initially.
 
 Use the following values:
 
