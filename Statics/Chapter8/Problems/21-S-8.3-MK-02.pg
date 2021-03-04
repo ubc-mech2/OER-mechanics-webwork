@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-8.3-MK-01
+## 21-S-8.3-MK-02
 ## Friction
 ## ENDDESCRIPTION
 
@@ -7,7 +7,7 @@
 ## DBsubject(Statics)
 ## DBchapter(Friction)
 ## DBsection(Wedges)
-## Date(2021-03-02)
+## Date(2021-03-03)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
@@ -56,17 +56,17 @@ $height = $imgScale*1000;
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$p2 = random(1000,10000,100);
-$theta = random(10,20,1);
-$u1 = random(0.2,0.3,0.05);
-$u2 = random(0.3,0.4,0.05);
+$p2 = random(1000,3000,100);
+$theta = random(13,17,1);
+$u1 = random(0.19,0.21,0.01);
+$u2 = random(0.09,0.11,0.01);
 $rad = $theta * pi / 180;
 
 #---Reaction Forces Block B---
-$N = $p2 / (cos($rad) - $u2*sin($rad) - $u1 * $u2 * cos($rad) - $u1 * sin($rad));
-$Nd = $u2 * $N * cos($rad) + $N * sin($rad);
-$Nc = $N*cos($rad) - $u2*$N*sin($rad);
-$P1 = $u1*$Nc + $u2*$N*cos($rad) + $N*sin($rad);
+$N = $p2 / (cos($rad) + $u2*sin($rad) - $u1 * $u2 * cos($rad) + $u1 * sin($rad));
+$Nd = -$u2 * $N * cos($rad) + $N * sin($rad);
+$Nc = $N*cos($rad) + $u2*$N*sin($rad);
+$P1 = $u1*$Nc + $u2*$N*cos($rad) - $N*sin($rad);
 
 
 ######################################################
@@ -78,13 +78,13 @@ BEGIN_PGML
 [@ image( "21-S-8.3-MK-01.png", width=>[$width], height=>[$height]) @]*
 
 
-Determine the smallest force [`P_1`] needed to lift a load, [`P_2`], of [`[$p2]`] [`\textrm{lb}`]. Also determine the force, [`N_D`], exerted on wall [`D`] by block [`B`]. The coefficient of static friction between [`A`] and [`C`] and between [`B`] and [`D`] is [`\mu_s`] = [`[$u1]`], while the coefficient of static friction between [`A`] and [`B`] is [`\mu_{s'}`] = [`[$u2]`]. Use [`\theta`] = [`[$theta]`][`^\circ`] and neglect the weight of the blocks.
+Determine the reversed horizontal force -[`P_1`] needed to pull out wedge [`A`]. Also determine the force, [`N_D`], exerted on wall [`D`] by block [`B`]. The coefficient of static friction between [`A`] and [`C`] and between [`B`] and [`D`] is [`\mu_s`] = [`[$u1]`], while the coefficient of static friction between [`A`] and [`B`] is [`\mu_{s'}`] = [`[$u2]`]. Use [`\theta`] = [`[$theta]`][`^\circ`] and neglect the weight of the blocks.
    
 
-[`N_D`] = [_____]{$Nd} [`\textrm{lb}`]
+[`N_D`] = [_____]{-$Nd} [`\textrm{lb}`]
 
 
-[`P_1`] = [_____]{$P1} [`\textrm{lb}`]
+[`-P_1`] = [_____]{$P1} [`\textrm{lb}`]
 
 
 END_PGML
