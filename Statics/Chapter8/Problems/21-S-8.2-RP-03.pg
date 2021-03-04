@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Friction)
-## DBsection(Characteristics of Dry Friction)
+## DBsection(Problems Involving Dry Friction)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Friction', 'Mammoth', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [8], section [8.1]')
+## KEYWORDS('Statics', 'Friction', 'Horse and Sleigh', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [8], section [8.2]')
 
 ########################################################
 
@@ -69,81 +69,53 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.3;
+$imgScale = 0.25;
 
-$height = $imgScale*1625;
+$height = $imgScale*1962;
 
-$width = $imgScale*2566;
+$width = $imgScale*2337;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$m = random(5000, 6000, 100);
-$mu_s = random(0.2, 0.35, 0.01);
-$b = random(0.5, 0.8, 0.1);
-$d = random(1.3, 1.8, 0.1);
-$F = random(11000, 14000, 500);
-$h = random(4, 5, 0.1);
-$h_G = 2 * $d;
+$m_J = random(60, 80, 5);
+$m_H = random(500, 700, 10);
+$m_s = random(40, 70, 5);
+$mu_s = random(0.3, 0.4, 0.05);
+$mu_k = random(0.15, 0.2, 0.05);
 $g = 9.81;
+$thetaDeg = random(20, 40, 5);
+$s = random(4, 6, 0.5);
 
 #---- Formulas to compute answers --------------#
-$F_max = $mu_s * $m * $g;
-$F_tip = $b / $d * $m * $g;
-$Result;
-
-if(($F <= $F_max) && ($F <= $F_tip)) {
-    $Result = "Remain still";
-} else {
-    if($F_max <= $F_tip) {
-        $Result = "Slide";
-    } else {
-        $Result = "Tip over";
-    }
+$theta = $thetaDeg * pi / 180;
+$m_T = $m_J + $m_s;
+$P_min = $m_T * $g * (sin($theta) - $mu_s * cos($theta));
+if($P_min < 0) {
+    $P_min = 0;
 }
-
-#---- Setting up Multiple choices --------------#
-$mc = RadioButtons([ "Remain still", "Slide", "Tip over" ], $Result);
+$P_max = $m_T * $g * (sin($theta) + $mu_s * cos($theta));
+$P = $m_T * $g * (sin($theta) + $mu_k * cos($theta));
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-8.1-RP-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-RP-03.png", width=>[$width], height=>[$height]) @]*
 
-Mocha the Mammoth has a total mass of [`m = [$m] \: \textrm{kg}`] and is initially standing still on the ice. If a force [`F = [$F] \: \textrm{N}`] is applied on Mocha as shown above, determine if she will remain still, slide, or tip over. Mocha's center of gravity is indicated by G. Assume [`g = [$g] \: \textrm{N/kg}`].
+Justin and his trusty steed Herman the Horse are on their way to a friend's house in the snowy forest. Due to his nervousness, Justin decides to rest at the bottom of the snowy hill. If the static coefficient of friction between the sleigh and the snow is [`[$mu_s]`], and Justin and Herman have masses of [`[$m_J] \: \textrm{kg}`] and [`[$m_H] \: \textrm{kg}`] respectively, find the minimum and maximum pull force [`P`] that Herman can exert on the sleigh to keep if from sliding. Assume that the sleigh has a mass of [`[$m_s] \: \textrm{kg}`] and that the slope has an angle [`\theta = [$thetaDeg]^\circ`].
 
-Use the following values:
+[`P_{min} =`] [___]{"$P_min"} [`\: \textrm{N}`]
 
-[`\mu_s = [$mu_s]`]
-
-[`b = [$b] \: \textrm{m}`]
-
-[`d = [$d] \: \textrm{m}`]
-
-[`h_G = [$h_G] \: \textrm{m}`]
-
-[`h = [$h] \: \textrm{m}`]
+[`P_{max} =`] [___]{"$P_max"} [`\: \textrm{N}`]
 
 
-What is the largest static friction force that can applied on Mocha by the surface? Assume that she would not tip over.
+After a while, Herman suddenly jerks forward and starts pulling the sleigh with greater force in order to bring Justin to his friend and her horse. In order to keep Justin from getting dizzy or messing up his clothes, Herman pulls the sleigh such that they travel at a constant speed of [`[$s] \: \textrm{m/s}`]. If the kinetic coefficient of friction between the sleigh and the snow is [`[$mu_k]`], find the pull force [`P`] that Herman exerts on the sleigh.
 
-[`F_{max} =`] [___]{"$F_max"} [`\: \textrm{N}`]
-
-
-What is the largest force that can be applied on Mocha before she tips over? Assume that she would not slide.
-
-[`F_{tip} =`] [___]{"$F_tip"} [`\: \textrm{N}`]
-
-
-Will Mocha remain still, slide, or tip over?
-
-[@ $mc->buttons() @]*
+[`P =`] [___]{"$P"} [`\: \textrm{N}`]
 
 
 END_PGML
-
-ANS( $mc->cmp() );
 
 ##############################################################
 
