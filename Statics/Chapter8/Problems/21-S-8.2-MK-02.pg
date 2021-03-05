@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-8.3-MK-02
+## 21-S-8.2-MK-02
 ## Friction
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Friction)
-## DBsection(Wedges)
+## DBsection(Problems involving dry friction)
 ## Date(2021-03-03)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-8.3-MK-01.PNG')
+## RESOURCES('21-S-8.2-MK-02.PNG')
 
 ########################################################
 
@@ -50,24 +50,19 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1560;
-$height = $imgScale*1000;
+$width = $imgScale*1200;
+$height = $imgScale*1200;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$p2 = random(1000,3000,100);
-$theta = random(13,17,1);
-$u1 = random(0.3,0.4,0.05);
-$u2 = random(0.2,0.3,0.05);
-$rad = $theta * pi / 180;
+$mass = 5400;
+$h = 2.8;
+$u = random(0.05,0.5,0.05);
 
-#---Reaction Forces Block B---
-$N = $p2 / (cos($rad) + $u2*sin($rad) - $u1 * $u2 * cos($rad) + $u1 * sin($rad));
-$Nd = -$u2 * $N * cos($rad) + $N * sin($rad);
-$Nc = $N*cos($rad) + $u2*$N*sin($rad);
-$P1 = $u1*$Nc + $u2*$N*cos($rad) - $N*sin($rad);
-
+#---Calculations
+$rad = atan($u);
+$theta = $rad * 180 / pi;
 
 ######################################################
 #PGML
@@ -75,16 +70,11 @@ $P1 = $u1*$Nc + $u2*$N*cos($rad) - $N*sin($rad);
 BEGIN_PGML
 
 
-[@ image( "21-S-8.3-MK-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-MK-02.png", width=>[$width], height=>[$height]) @]*
 
+Mocha the Mammoth has found herself in a slippery situtation.  Macho was standing on a piece of ice when it suddently broke apart from the shore. She's afraid to leave the centre of the ice for fear of tipping the ice and which could cause her to slide into the water. If the coefficient of static friction between her feet and the ice is [`[$u]`] determine what the maximum angle of the ice can be before her feet start to slip on the ice.
 
-Determine the reversed horizontal force -[`P_1`] needed to pull out wedge [`A`], when [`P_2`] = [`[$p2]`] [`\textrm{lb}`]. Also determine the force, [`N_D`], exerted on wall [`D`] by block [`B`]. The coefficient of static friction between [`A`] and [`C`] and between [`B`] and [`D`] is [`\mu_s`] = [`[$u1]`], while the coefficient of static friction between [`A`] and [`B`] is [`\mu_{s'}`] = [`[$u2]`].  Use [`\theta`] = [`[$theta]`][`^\circ`] and neglect the weight of the blocks.
-   
-
-[`N_D`] = [_____]{$Nd} [`\textrm{lb}`]
-
-
-[`-P_1`] = [_____]{$P1} [`\textrm{lb}`]
+[`\theta`] = [___]{$theta} [`^\circ`]
 
 
 END_PGML

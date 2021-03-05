@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-8.3-MK-02
+## 21-S-8.2-MK-01
 ## Friction
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Friction)
-## DBsection(Wedges)
+## DBsection(Problems involving dry friction)
 ## Date(2021-03-03)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-8.3-MK-01.PNG')
+## RESOURCES('21-S-8.2-MK-01.PNG')
 
 ########################################################
 
@@ -56,18 +56,23 @@ $height = $imgScale*1000;
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$p2 = random(1000,3000,100);
-$theta = random(13,17,1);
-$u1 = random(0.3,0.4,0.05);
-$u2 = random(0.2,0.3,0.05);
-$rad = $theta * pi / 180;
+$mass = random(1000,2000,100);
+$weight = $m * 9.81;
+$w = random(2,6,1);
+$h = random(1,4,1);
+$us = random(0.4,0.6,0.1);
 
 #---Reaction Forces Block B---
-$N = $p2 / (cos($rad) + $u2*sin($rad) - $u1 * $u2 * cos($rad) + $u1 * sin($rad));
-$Nd = -$u2 * $N * cos($rad) + $N * sin($rad);
-$Nc = $N*cos($rad) + $u2*$N*sin($rad);
-$P1 = $u1*$Nc + $u2*$N*cos($rad) - $N*sin($rad);
+$rt = atan(($w/2)/$h);
+$rs = atan($us);
 
+if($rs<$rt){
+	$rmax = $rs;
+}else{
+	$rmax = $rt;
+}
+
+$tmax = $rmax * 180 / pi;
 
 ######################################################
 #PGML
@@ -75,16 +80,13 @@ $P1 = $u1*$Nc + $u2*$N*cos($rad) - $N*sin($rad);
 BEGIN_PGML
 
 
-[@ image( "21-S-8.3-MK-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-
-Determine the reversed horizontal force -[`P_1`] needed to pull out wedge [`A`], when [`P_2`] = [`[$p2]`] [`\textrm{lb}`]. Also determine the force, [`N_D`], exerted on wall [`D`] by block [`B`]. The coefficient of static friction between [`A`] and [`C`] and between [`B`] and [`D`] is [`\mu_s`] = [`[$u1]`], while the coefficient of static friction between [`A`] and [`B`] is [`\mu_{s'}`] = [`[$u2]`].  Use [`\theta`] = [`[$theta]`][`^\circ`] and neglect the weight of the blocks.
+The car has a mass of [`[$m]`] [`\textrm{kg}`], a centre of mass at [`G`] and [`d_1`] = [`[$w]`] [`\textrm{m}`] while [`d_2`] = [`[$h]`] [`\textrm{m}`].  If the coefficient of static friction between the shoulder of the road and tires is [`\mu_S`] = [`[$us]`], determine the greatest slope [`\theta`] the shoulder can have without causing the car to slip or tip over if the car travels along the shoulder at constant velocity.
    
 
-[`N_D`] = [_____]{$Nd} [`\textrm{lb}`]
+[`\theta_{Max}`] = [_____]{$tmax} [`^\circ`]
 
-
-[`-P_1`] = [_____]{$P1} [`\textrm{lb}`]
 
 
 END_PGML
