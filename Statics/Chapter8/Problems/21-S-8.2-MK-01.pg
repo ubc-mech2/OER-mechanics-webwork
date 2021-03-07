@@ -82,7 +82,7 @@ BEGIN_PGML
 
 [@ image( "21-S-8.2-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-The car has a mass of [`[$m]`] [`\textrm{kg}`], a centre of mass at [`G`] and [`d_1`] = [`[$w]`] [`\textrm{m}`] while [`d_2`] = [`[$h]`] [`\textrm{m}`].  If the coefficient of static friction between the shoulder of the road and tires is [`\mu_S`] = [`[$us]`], determine the greatest slope [`\theta`] the shoulder can have without causing the car to slip or tip over if the car travels along the shoulder at constant velocity.
+The car has a mass of [`[$mass]`] [`\textrm{kg}`], a centre of mass at [`G`] and [`d_1`] = [`[$w]`] [`\textrm{m}`] while [`d_2`] = [`[$h]`] [`\textrm{m}`].  If the coefficient of static friction between the shoulder of the road and tires is [`\mu_S`] = [`[$us]`], determine the greatest slope [`\theta`] the shoulder can have without causing the car to slip or tip over if the car travels along the shoulder at constant velocity.
    
 
 [`\theta_{Max}`] = [_____]{$tmax} [`^\circ`]
