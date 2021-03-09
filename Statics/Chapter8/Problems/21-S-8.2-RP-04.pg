@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Friction', 'Ladder', 'Equilibrium')
+## KEYWORDS('Statics', 'Friction', 'Horse and Sleigh', 'Equilibrium')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [8], section [8.2]')
 
 ########################################################
@@ -69,70 +69,43 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.21;
+$imgScale = 0.25;
 
-$height = $imgScale*2397;
+$height = $imgScale*2053;
 
-$width = $imgScale*2005;
+$width = $imgScale*2803;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$W_K = random(100, 120, 5);
-$W_L = random(150, 180, 5);
-$L = random(12, 15, 1);
-$d1 = random(4, 5, 0.5);
-$thetaDeg = random(40, 60, 5);
+$m_H = random(500, 700, 10);
+$mu_s = random(0.3, 0.4, 0.05);
+$P_max = random(12000, 15000, 500);
+$P_steady = random(8000, 9000, 100);
+$g = 9.81;
+$s = random(10, 15, 1);
 
 #---- Formulas to compute answers --------------#
-$theta = $thetaDeg * pi / 180;
-$N_A = $W_K + $W_L;
-$N_B = (($L * cos($theta) - $d1) * $W_K + $L * cos($theta) / 2 * $W_L) / ($L * sin($theta));
-$F_A = $N_B;
-$mu_s = $F_A / $N_A;
-
-#---- Setting up multiple choice --------------#
-$mc = RadioButtons([ "Up", "Down", "Right", "Left" ], "Left");
+$m_max = $P_max / ($mu_s * $g);
+$mu_k = $P_steady / ($m_max * $g);
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-8.2-RP-02.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-RP-04.png", width=>[$width], height=>[$height]) @]*
 
-Kate is climbing a ladder to clean the wall since she cannot reach the top on her own. She stops climbing just as the ladder is on the verge of slipping. If Kate is [`4 \: \textrm{ft}`] and [`11 \: \textrm{in}`] tall and weighs [`W_K = [$W_K] \: \textrm{lbs}`], and the ladder has a uniform weight of [`W_L = [$W_L] \: \textrm{lbs}`], find the coefficient of friction between the ladder and the surface at [`A`] such that the ladder experiences impending slipping. Assume that there is no friction between the ladder and the wall at [`B`]. The center of gravity of Kate is shown above as *COG*.
+Herman the Horse is feeling motivated after successfully taking his rider, Justin, to his friend's place. In order to achieve his long-time aspirations to be one of Santa's reindeers, he decides to demonstrate his strength to impress Santa's scouts hidden among the trees and shrubs. He begins loading weights into the sleigh with Justin so that he can highlight his pulling strength. If Herman can exert a maximum pull force that is just slightly greater than [`[$P_max] \: \textrm{N}`] and the static coefficient of friction between the surface and the sleigh is [`[$mu_s]`], what is the maximum total mass of the weights [`m_{max}`] that he should load into the sleigh, assuming that he starts from rest, in order to demonstrate his great strength? Assume that Justin's mass and the sleigh's mass are negligible and that Herman has a mass of [`[$m_H] \: \textrm{kg}`].
 
-Use the following values:
-
-[`length = [$L] \: \textrm{ft}`]
-
-[`d_1 = [$d1] \: \textrm{ft}`]
-
-[`\theta = [$thetaDeg]^\circ`]
+[`m_{max} =`] [___]{"$m_max"} [`\: \textrm{kg}`]
 
 
-Find the normal reactions at [`A`] and [`B`].
+After the sleigh begins sliding and reaches a speed of [`[$s] \: \textrm{m/s}`], Herman eases up and exerts a force of [`[$P_steady] \: \textrm{N}`] to keep the sleigh sliding at constant speed. Find the kinetic coefficient of friction between the surface and the sleigh.
 
-[`N_A =`] [___]{"$N_A"} [`\: \textrm{lbs}`]
-
-[`N_B =`] [___]{"$N_B"} [`\: \textrm{lbs}`]
-
-
-Find the magnitude of the friction force applied on the ladder at [`A`] and the corresponding static coefficient of friction between the ladder and the floor.
-
-[`F_A =`] [___]{"$F_A"} [`\: \textrm{lbs}`]
-
-[`\mu_s =`] [___]{"$mu_s"}
-
-
-In what direction is the friction force applied?
-
-[@ $mc->buttons() @]* 
+[`\mu_k =`] [___]{"$mu_k"}
 
 
 END_PGML
-
-ANS( $mc->cmp() );
 
 ##############################################################
 
