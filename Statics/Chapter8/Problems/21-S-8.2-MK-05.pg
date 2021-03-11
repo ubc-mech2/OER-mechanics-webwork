@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-8.2-MK-03
+## 21-S-8.2-MK-05
 ## Friction
 ## ENDDESCRIPTION
 
@@ -7,11 +7,11 @@
 ## DBsubject(Statics)
 ## DBchapter(Friction)
 ## DBsection(Problems involving dry friction)
-## Date(2021-03-03)
+## Date(2021-03-09)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-8.2-MK-03.PNG')
+## RESOURCES('21-S-8.2-MK-05.PNG')
 
 ########################################################
 
@@ -50,19 +50,30 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1200;
-$height = $imgScale*1200;
+$width = $imgScale*1500;
+$height = $imgScale*1500;
 
 
 #---- Provided --------#
-# random(lower, upper, stepsize)
-$r = random(0.5,20.5);
-$w = random(50,500,50);
-$ua = random(0.1,0.2,0.01);
+$d1 = random(1,1.5,0.1);
+$d2 = random(2,2.5,0.5);
+$d3 = random(3,3.5,0.1);
+$d4 = random(4.5,5.0,0.1);
+$w = random(200,250,10);
+$us = random(0.4,0.5,0.01);
 
-#---Calculations
-$Fa = $ua * $w;
-$M = $Fa * $r;
+#---Pushing---
+$N = $w;
+$p1 = $us * $w;
+
+#---Tipping---
+$p2 = $w * $d1 / $d4;
+
+if($p2<$p1){
+	$pmax = $p2;
+}else{
+	$pmax = $p1;
+}
 
 ######################################################
 #PGML
@@ -70,25 +81,24 @@ $M = $Fa * $r;
 BEGIN_PGML
 
 
-[@ image( "21-S-8.2-MK-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-MK-05.png", width=>[$width], height=>[$height]) @]*
 
-Use the  following values for the image above:
+Use the following values for the image above;
 
-* [`\mu_{s_A}`] = [`[$ua]`]
+* [`d_1`] = [`[$d1]`] [`\textrm{ft}`]
 
-* [`r`] = [`[$r]`] [`\textrm{m}`]
+* [`d_2`] = [`[$d2]`] [`\textrm{ft}`]
 
+* [`d_3`] = [`[$d3]`] [`\textrm{ft}`]
 
-Determine the smallest couple moment that can be applied to the [`[$w]`] [`\textrm{N}`] wheel that will cause impeding motion.
+* [`d_4`] = [`[$d4]`] [`\textrm{ft}`]
 
-[`M`] = [___]{$M} [`\textrm{N-m}`]
+Determine the force [`P`] that can be applied without causing movement of the [`[$w]`] [`\textrm{lb}`] crate that has a centre of gravity at [`G`].  The coefficient of static friction at the floor is [`\mu_{s}`] = [`[$us]`].
+
+[`P`] = [___]{$pmax} [`\textrm{lb}`]
 
 
 END_PGML
-
- BEGIN_PGML_SOLUTION
-[@ image( "21-S-8.2-MK-03.pdf", width=>[0], height=>[0]) @]*
- END_PGML_SOLUTION
 
 ######################################################
 

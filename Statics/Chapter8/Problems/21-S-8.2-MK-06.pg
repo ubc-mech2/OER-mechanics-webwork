@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-8.2-MK-03
+## 21-S-8.2-MK-06
 ## Friction
 ## ENDDESCRIPTION
 
@@ -7,11 +7,11 @@
 ## DBsubject(Statics)
 ## DBchapter(Friction)
 ## DBsection(Problems involving dry friction)
-## Date(2021-03-03)
+## Date(2021-03-10)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-8.2-MK-03.PNG')
+## RESOURCES('21-S-8.2-MK-06.PNG')
 
 ########################################################
 
@@ -50,45 +50,42 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1200;
-$height = $imgScale*1200;
+$width = $imgScale*1750;
+$height = $imgScale*1500;
 
 
 #---- Provided --------#
-# random(lower, upper, stepsize)
-$r = random(0.5,20.5);
-$w = random(50,500,50);
-$ua = random(0.1,0.2,0.01);
-
+$a = random(25,50,5);
+$b = random(15,25,5);
+$c = random(15,30,5);
+$uab = random(0.3,0.4,0.01);
+$ubc = random(0.3,0.4,0.01);
+$ucd = random(0.3,0.4,0.01);
 #---Calculations
-$Fa = $ua * $w;
-$M = $Fa * $r;
 
+#---Scenario 1---
+$p1 = $uab*$a + $ubc*($a+$b);
+$p2 = $uab*$a + $ucd*($a+$b+$c);
+
+if($p2<$p1){
+	$pmax = $p2;
+}else{
+	$pmax = $p1;
+}
 ######################################################
 #PGML
 
 BEGIN_PGML
 
 
-[@ image( "21-S-8.2-MK-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-MK-06.png", width=>[$width], height=>[$height]) @]*
 
-Use the  following values for the image above:
+Blocks [`A`], [`B`] and [`C`] have weights of [`[$a]`] [`\textrm{N}`], [`[$b]`] [`\textrm{N}`] and [`[$c]`] [`\textrm{N}`] respectively. If block [`A`] is secured by a taut rope attached the the wall,  determine the smallest horizontal force [`P`] that will cause motion in the blocks. The coefficient of static friction between [`A`] and [`B`] is [`\mu_{s_{AB}}`] = [`[$uab]`], between [`B`] and [`C`] is [`\mu_{s_{BC}}`] = [`[$ubc]`], and between block [`C`] and the ground is [`\mu_{s_{CD}}`] = [`[$ucd]`].
 
-* [`\mu_{s_A}`] = [`[$ua]`]
-
-* [`r`] = [`[$r]`] [`\textrm{m}`]
-
-
-Determine the smallest couple moment that can be applied to the [`[$w]`] [`\textrm{N}`] wheel that will cause impeding motion.
-
-[`M`] = [___]{$M} [`\textrm{N-m}`]
+[`P`] = [___]{$pmax} [`\textrm{N}`]
 
 
 END_PGML
-
- BEGIN_PGML_SOLUTION
-[@ image( "21-S-8.2-MK-03.pdf", width=>[0], height=>[0]) @]*
- END_PGML_SOLUTION
 
 ######################################################
 

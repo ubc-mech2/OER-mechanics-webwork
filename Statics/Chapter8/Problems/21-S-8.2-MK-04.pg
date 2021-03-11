@@ -50,19 +50,33 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1200;
-$height = $imgScale*1200;
+$width = $imgScale*1522;
+$height = $imgScale*1000;
 
 
 #---- Provided --------#
-# random(lower, upper, stepsize)
-$r = random(0.5,20.5);
-$w = random(50,500,50);
-$ua = random(0.1,0.2,0.01);
+$f = random(100,150,10);
+$m = random(0.5,0.95,0.05);
+$g = 9.81;
+$uh = random(0.3,0.6,0.1);
+$ub = random(0.2,0.4,0.1);
 
-#---Calculations
-$Fa = $ua * $w;
-$M = $Fa * $r;
+#---Scenario 1---
+$ff1 = $ub * $f;
+$n0 = floor($ff1 * 2 / ($m*$g));
+$n1 = floor($n0 + 2);
+
+#---Scenario 2---
+$ff2 = $uh * $f;
+$n2 = floor($ff2 * 2 / ($m*$g));
+
+if($n2<$n1){
+	$nmax = $n2;
+}else{
+	$nmax = $n1;
+}
+
+$nf = floor($nmax);
 
 ######################################################
 #PGML
@@ -70,18 +84,12 @@ $M = $Fa * $r;
 BEGIN_PGML
 
 
-[@ image( "21-S-8.2-MK-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.2-MK-04.png", width=>[$width], height=>[$height]) @]*
 
-Use the  following values for the image above:
-
-* [`\mu_A`] = [`[$ua]`]
-
-* [`r`] = [`[$r]`] [`\textrm{m}`]
+A person attempts to support a stack of books horizontally by applying a compressive force [`F`] = [`[$f]`] [`\textrm{N}`] to the ends of the stack with their hands.  Each book has a mass of [`[$m]`] [`\textrm{kg}`], the coefficient of static friction between the hands and books is [`\mu{s_h}`] = [`[$uh]`] and coefficient of static friction between any two books is [`\mu_{s_b}`] = [`[$ub]`].
 
 
-Determine the smallest couple moment that can be applied to the [`[$w]`] [`\textrm{N}`] wheel that will cause impeding motion.
-
-[`M`] = [___]{$M} [`\textrm{N-m}`]
+What is the maximum number of books the person can support? [___]{$nf}
 
 
 END_PGML

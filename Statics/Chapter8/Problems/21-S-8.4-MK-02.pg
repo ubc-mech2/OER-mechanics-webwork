@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-8.2-MK-03
+## 21-S-8.4-MK-02
 ## Friction
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Friction)
-## DBsection(Problems involving dry friction)
-## Date(2021-03-03)
+## DBsection(Friction Forces on Screws)
+## Date(2021-03-08)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-8.2-MK-03.PNG')
+## RESOURCES('21-S-8.4-MK-01.PNG')
 
 ########################################################
 
@@ -50,19 +50,23 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1200;
-$height = $imgScale*1200;
+$width = $imgScale*1000;
+$height = $imgScale*1711;
 
 
 #---- Provided --------#
-# random(lower, upper, stepsize)
-$r = random(0.5,20.5);
-$w = random(50,500,50);
-$ua = random(0.1,0.2,0.01);
+$f = random(10,20,1);
+$sd = random(0.5,1.5,0.25);
+$l = 0.25;
+$us = random(0.3,0.4,0.01);
+$d = random(3,9,1);
 
-#---Calculations
-$Fa = $ua * $w;
-$M = $Fa * $r;
+#---Calculations---
+$theta = atan($l / (2*pi*$sd/2));
+$phi = atan($us);
+$P = $f * $d * 2 / ($sd/2 * tan($theta+$phi));
+
+$mc = RadioButtons([ "Yes", "No" ], "Yes");
 
 ######################################################
 #PGML
@@ -70,25 +74,20 @@ $M = $Fa * $r;
 BEGIN_PGML
 
 
-[@ image( "21-S-8.2-MK-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.4-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-Use the  following values for the image above:
+If couple forces of [`F`] = [`[$f]`] [`\textrm{lb}`] are applied perpendicular to the lever of the clamp at [`A`] and [`B`], where [`d`] = [`[$d]`] [`\textrm{in}`], determine the clamping force on the boards.  The single square-threaded screw of the clamp has a mean diameter of [`[$sd]`] [`\textrm{inches}`] and a lead of [`[$l]`] [`\textrm{inches}`].  The coefficient of static friction is [`\mu_{s}`] = [`[$us]`]. 
 
-* [`\mu_{s_A}`] = [`[$ua]`]
-
-* [`r`] = [`[$r]`] [`\textrm{m}`]
+[`P`] = [___]{$P} [`\textrm{lb}`]
 
 
-Determine the smallest couple moment that can be applied to the [`[$w]`] [`\textrm{N}`] wheel that will cause impeding motion.
+Is the screw self-locking?
 
-[`M`] = [___]{$M} [`\textrm{N-m}`]
-
+[@ $mc->buttons() @]*  
 
 END_PGML
 
- BEGIN_PGML_SOLUTION
-[@ image( "21-S-8.2-MK-03.pdf", width=>[0], height=>[0]) @]*
- END_PGML_SOLUTION
+ANS( $mc->cmp() );
 
 ######################################################
 
