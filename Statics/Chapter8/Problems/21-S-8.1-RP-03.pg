@@ -83,9 +83,10 @@ $mu_k = random(0.2, 0.24, 0.01);
 $F = random(500, 750, 50);
 
 #---- Formulas to compute answers --------------#
-$F_max = $mu_s * ($F * 3 / 5 + $W);
+$N = $F * 3 / 5 + $W;
+$F_max = $mu_s * $N;
 $F_necessary = $F * 4 / 5;
-$F_actual = $mu_k * ($F * 3 / 5 + $W);
+$F_actual = $mu_k * $N;
 
 #---- Set up Multiple Choice --------------#
 $mc = RadioButtons([ "Remain still", "Slip" ], "Slip");
@@ -126,12 +127,40 @@ ANS( $mc->cmp() );
 
 BEGIN_PGML
 
-Find the friction force, [`F_{friction}`], that is applied by the surface onto the block.
+Find the friction force, [`F_{actual}`], that is applied by the surface onto the block.
 
-[`F_{friction} =`] [___]{"$F_actual"} [`\: \textrm{N}`]
+[`F_{actual} =`] [___]{"$F_actual"} [`\: \textrm{N}`]
 
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+The sum of the forces in the y direction are zero.
+
+Taking up to be positive:
+
+[`+ \uparrow \Sigma F_y = 0 \rightarrow - \frac{3}{5} \cdot [$F] - [$W] + N = 0 \\ \Rightarrow N = [$N] \: \textrm{N}`]
+
+
+The static coefficient of friction [`\mu_s`] dictates the maximum static friction:
+
+[`F_{max} = [$mu_s] \cdot [$N] = [$F_max] \: \textrm{N}`]
+
+
+The necessary friction force to keep the box in equilibrium can be found by summing the horizontal force components:
+
+[`+ \rightarrow \Sigma F_x = 0 \rightarrow \frac{4}{5} \cdot [$F] - F_{necessary} = 0 \\ \Rightarrow F_{necessary} = \frac{4}{5} \cdot [$F] = [$F_necessary] \: \textrm{N}`]
+
+
+If the necessary friction [`F_{necessary}`] is larger than the maximum friction [`F_{max}`], then the box will *slide*, otherwise it will remain still. (Assuming no tipping)
+
+
+If the block remains still, then the actual friction force [`F_{actual}`] that is applied is equal to the necessary friction [`F_{necessary}`]. If the block is sliding, then the actual friction force is equal to the normal force [`N`] multiplied by the kinetic coefficient of friction [`\mu_k`]:
+
+[`F_{actual} = [$mu_k] \cdot [$N] = [$F_actual] \: \textrm{N}`]
+
+END_PGML_SOLUTION
 
 ##############################################################
 
