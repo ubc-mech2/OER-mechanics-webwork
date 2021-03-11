@@ -134,6 +134,32 @@ END_PGML
 
 ANS( $mc->cmp() );
 
+BEGIN_PGML_SOLUTION
+
+*Find the normal reactions at [`A`] and [`B`].*
+
+Assume [`L = length`]
+
+[`\Sigma M_A = 0 \rightarrow (L \cos(\theta) - d_1) \cdot W_K + \frac{L \cos(\theta)}{2} \cdot W_L - L \sin(\theta) \cdot N_B = 0 \\ \Rightarrow N_B = \frac{(L \cos(\theta) - d_1) \cdot W_K + \frac{L \cos(\theta)}{2} \cdot W_L}{L \sin(\theta)} \\ \Rightarrow N_B = \frac{([$L] \cos([$thetaDeg]) - [$d1]) \cdot [$W_K] + \frac{[$L] \cos([$thetaDeg])}{2} \cdot [$W_L]}{[$L] \sin([$thetaDeg])} = [$N_B] \: \textrm{lbs}`]
+
+[`+ \uparrow \Sigma F_y = 0 \rightarrow N_A - W_K - W_L = 0 \\ \Rightarrow N_A = W_K + W_L \\ \Rightarrow N_A = [$W_K] + [$W_L] = [$N_A] \: \textrm{lbs}`]
+
+
+*Find the magnitude of the friction force applied on the ladder at [`A`] and the corresponding static coefficient of friction between the ladder and the floor.*
+
+[`+ \rightarrow \Sigma F_x = 0 \rightarrow N_B - F_A = 0 \\ \Rightarrow F_A = N_B = [$F_A] \: \textrm{lbs}`]
+
+Assuming impending slipping, [`F_A = \mu_s \cdot N_A`]
+
+[`\Rightarrow \mu_s = \frac{[$F_A]}{[$N_A]} = [$mu_s]`]
+
+
+*In what direction is the friction force applied?*
+
+In order to counter the normal force at [`B`], the friction force must act towards the *left*.
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();
