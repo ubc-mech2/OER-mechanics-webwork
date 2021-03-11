@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Friction)
-## DBsection(Problems Involving Dry Friction)
+## DBsection(Wedges)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Friction', 'Ladder', 'Equilibrium')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [8], section [8.2]')
+## KEYWORDS('Statics', 'Friction', 'Wedge', 'Equilibrium')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [8], section [8.3]')
 
 ########################################################
 
@@ -69,70 +69,55 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.21;
+$imgScale = 0.3;
 
-$height = $imgScale*2397;
+$height = $imgScale*1660;
 
-$width = $imgScale*2005;
+$width = $imgScale*2979;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$W_K = random(100, 120, 5);
-$W_L = random(150, 180, 5);
-$L = random(12, 15, 1);
-$d1 = random(4, 5, 0.5);
-$thetaDeg = random(40, 60, 5);
+$m = random(400, 600, 50);
+$g = 9.81;
+$d = random(1, 1.5, 0.25);
+$mu_s = random(0.3, 0.35, 0.01);
+$thetaDeg = random(5, 10, 1);
 
 #---- Formulas to compute answers --------------#
 $theta = $thetaDeg * pi / 180;
-$N_A = $W_K + $W_L;
-$N_B = (($L * cos($theta) - $d1) * $W_K + $L * cos($theta) / 2 * $W_L) / ($L * sin($theta));
-$F_A = $N_B;
-$mu_s = $F_A / $N_A;
-
-#---- Setting up multiple choice --------------#
-$mc = RadioButtons([ "Up", "Down", "Right", "Left" ], "Left");
+$N_B = $m * $g / (2 * (cos($theta) + $mu_s * sin($theta)));
+$N_C = $m * $g / 2;
+$P = $m * $g / 2 * ($mu_s - (sin($theta) - $mu_s * cos($theta)) / (cos($theta) + $mu_s * sin($theta)));
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-8.2-RP-02.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-8.3-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-Kate is climbing a ladder to clean the wall since she cannot reach the top on her own. She stops climbing just as the ladder is on the verge of slipping. If Kate is [`4 \: \textrm{ft}`] and [`11 \: \textrm{in}`] tall and weighs [`W_K = [$W_K] \: \textrm{lbs}`], and the ladder has a uniform weight of [`W_L = [$W_L] \: \textrm{lbs}`], find the coefficient of friction between the ladder and the surface at [`A`] such that the ladder experiences impending slipping. Assume that there is no friction between the ladder and the wall at [`B`]. The center of gravity of Kate is shown above as *COG*.
+A stone block with uniform density has a total mass of [`[$m] \: \textrm{kg}`] and is held in the horizontal position using the wedge at point [`B`]. If the static coefficient of friction at all surfaces of contact is [`[$mu_s]`], find the minimum force [`P`] required to remove the wedge. Assume that the stone does not slip at [`A`] and that the wedge has negligible mass. Use [`g = [$g] \: \textrm{N/kg}`].
 
 Use the following values:
 
-[`length = [$L] \: \textrm{ft}`]
-
-[`d_1 = [$d1] \: \textrm{ft}`]
+[`d = [$d] \: \textrm{m}`]
 
 [`\theta = [$thetaDeg]^\circ`]
 
 
-Find the normal reactions at [`A`] and [`B`].
+Find the normal forces acting on the wedge.
 
-[`N_A =`] [___]{"$N_A"} [`\: \textrm{lbs}`]
+[`N_B =`] [___]{"$N_B"} [`\: \textrm{N}`]
 
-[`N_B =`] [___]{"$N_B"} [`\: \textrm{lbs}`]
-
-
-Find the magnitude of the friction force applied on the ladder at [`A`] and the corresponding static coefficient of friction between the ladder and the floor.
-
-[`F_A =`] [___]{"$F_A"} [`\: \textrm{lbs}`]
-
-[`\mu_s =`] [___]{"$mu_s"}
+[`N_C =`] [___]{"$N_C"} [`\: \textrm{N}`]
 
 
-In what direction is the friction force applied?
+Find the minimum force  required to remove the wedge.
 
-[@ $mc->buttons() @]* 
+[`P =`] [___]{"$P"} [`\: \textrm{N}`]
 
 
 END_PGML
-
-ANS( $mc->cmp() );
 
 ##############################################################
 
