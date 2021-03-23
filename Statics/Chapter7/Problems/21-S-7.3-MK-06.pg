@@ -56,8 +56,8 @@ $height = $imgScale*1000;
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$p1 = random(1,5,1);
-$p2 = random(1,5,1);
+$p1 = random(2,4,1);
+$p2 = $p1/2;
 $d1 = random(5,15,1);
 
 #---Calculations---
