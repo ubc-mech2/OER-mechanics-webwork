@@ -158,6 +158,10 @@ Find the bending moments at distances [`x_1`], [`x_2`] and [`x_3`]
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-7.3-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
 ######################################################
 
 ENDDOCUMENT();

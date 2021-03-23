@@ -79,6 +79,10 @@ Mocha the Mammoth has found herself in a slippery situtation.  Mocha was standin
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-8.2-MK-02.pdf", width=>[0], height=>[0]) @]*
+
+ END_PGML_SOLUTION
 ######################################################
 
 ENDDOCUMENT();

@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-8.4-MK-01
+## 21-S-8.2-MK-03
 ## Friction
 ## ENDDESCRIPTION
 
@@ -90,6 +90,10 @@ In the above picture, if [`d`] = [`[$d]`] [`\textrm{in}`], determine the minimum
 
 
 END_PGML
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-8.4-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 

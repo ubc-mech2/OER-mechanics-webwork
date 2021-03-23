@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-7.2-MK-02
-## Internal Forces
+## 21-S-5.4-MK-10
+## Equilibrium of a rigid body
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
-## DBchapter(Internal Forces)
-## DBsection(Shear and Bending zmoment Equations and Diagrams)
-## Date(2021-02-23)
+## DBchapter(Equilibrium of a rigid body)
+## DBsection(Two and three- froce members)
+## Date(2021-03-12)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-7.1-MK-04.png')
+## RESOURCES('21-S-5.4-MK-10.PNG')
 
 ########################################################
 
@@ -50,64 +50,52 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*2200;
+$width = $imgScale*2000;
 $height = $imgScale*1100;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$f1 = random (2,5,1);
-$d1 = random(5,7,1);
-$d2 = random(3.5,4.5,0.5);
-$d3 = random(3.5,4.5,0.5);
+$p1 = random(4,9,1);
+$p2 = random(4,9,1);
+$d1 = random(1,3,0.5);
+$d2 = random(1,3,0.5);
 
-#---Reaction Forces---
-$Ay = $f1 * $d1 * ($d1 *1.5 + $d2 + $d2) / ($d2 + $d3);
-$By = $f1 * $d1 * ($d1 / 2) / ($d2 + $d3);
-$V0a = abs($f1*$d1);
-$Vab = abs($Ay - $V0a);
-
-if($V0a<$Vab){
-	$Vmax = $V0a;
-}else{
-	$Vmax = $Vab;
-}
-
-$Mmax = $f1 * $d1**2 /2;
+#---Calculations---
+$m1 = $p1/$d1;
+$m2 = $p2/$d2;
+$M = 0.5*$p1*$d1*$d1/3 + 0.5*$p2*$d2*($d2*2/3+$d1);
+$Fy = 0.5*$p1*$d1 + 0.5*$p2*$d2;
 
 ######################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-7.1-MK-04.png", width=>[$width], height=>[$height]) @]*
+
+[@ image( "21-S-5.4-MK-10.png", width=>[$width], height=>[$height]) @]*
 
 Use the following values for the image above;
 
 
-* [`d_1`] = [`[$d1]`] [`\textrm{ft}`]
+* [`d_1`] = [`[$d1]`] [`\textrm{m}`]
 
-* [`d_2`] = [`[$d2]`] [`\textrm{ft}`]
+* [`d_2`] = [`[$d2]`] [`\textrm{m}`]
 
-* [`d_3`] = [`[$d3]`] [`\textrm{ft}`]
+* [`P_1`] = [`[$p1]`] [`\textrm{N/m}`]
 
-* [`P`] = [`[$f1]`] [`\textrm{kip/ft}`]
+* [`P_2`] = [`[$p2]`] [`\textrm{N/m}`]
 
-
-Determine the absolute value of the maximum shear force and the maximum bending moment of the beam shown above.
-
-
-[`V_{Max}`] = [_____]{$Vmax} [`\textrm{kN}`]
+Find the reaction force and moment at point [`A`]. 
 
 
-[`M_{Max}`] = [_____]{$Mmax} [`\textrm{kN-m}`]
-  
+[`F_{A_y}`] = [_____]{$Fy} [`\textrm{N}`]
+
+
+[`M_A`] = [_____]{$M} [`\textrm{N-m}`]
+
 
 END_PGML
-
- BEGIN_PGML_SOLUTION
-[@ image( "21-S-7.2-MK-02.pdf", width=>[0], height=>[0]) @]*
- END_PGML_SOLUTION
 
 ######################################################
 
