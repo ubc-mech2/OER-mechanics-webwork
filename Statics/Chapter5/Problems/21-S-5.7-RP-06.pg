@@ -115,6 +115,12 @@ The metal member is held in equilibrium. The member is supported by a square bar
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.7-RP-06.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

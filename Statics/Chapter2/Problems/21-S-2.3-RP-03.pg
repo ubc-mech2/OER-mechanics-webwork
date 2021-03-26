@@ -99,6 +99,12 @@ Three forces [`\overrightarrow{F_1}`], [`\overrightarrow{F_2}`], and [`\overrigh
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-2.3-RP-03.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();
