@@ -107,6 +107,12 @@ After the sleigh begins sliding and reaches a speed of [`[$s] \: \textrm{m/s}`],
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-8.2-RP-04.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

@@ -133,6 +133,12 @@ Determine the magnitudes of the internal loadings in the bar at [`B`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-7.1-RP-05.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

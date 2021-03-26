@@ -132,6 +132,12 @@ Assume component vectors are pointing along the positive x, y, and z-axes.
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.7-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

@@ -94,7 +94,7 @@ BEGIN_PGML
 
 [@ image( "21-S-2.6-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-Two vectors [`\overrightarrow{A}`] and [`\overrightarrow{B}`] lie on the xy - plane. If [`\overrightarrow{A} = A_x \hat{i} + A_y \hat{j}`] and [`\overrightarrow{B} = B_x \hat{i} + B_y \hat{j}`], find the sum of these vectors.
+Two vectors [`\overrightarrow{A}`] and [`\overrightarrow{B}`] lie on the xy - plane. If [`\overrightarrow{A} = [$A_x] \hat{i} + [$A_y] \hat{j}`] and [`\overrightarrow{B} = [$B_x] \hat{i} + [$B_y] \hat{j}`], find the sum of these vectors.
 
 [`\overrightarrow{R} =`] [___]{"$R_x"} [`\: \hat{i} +`] [___]{"$R_y"} [`\: \hat{j}`]
 
@@ -103,7 +103,14 @@ If [`\overrightarrow{B}`] is the result of adding [`\overrightarrow{A}`] with an
 
 [`\overrightarrow{C} =`] [___]{"$C_x"} [`\: \hat{i} +`] [___]{"$C_y"} [`\: \hat{j}`]
 
+
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-2.6-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

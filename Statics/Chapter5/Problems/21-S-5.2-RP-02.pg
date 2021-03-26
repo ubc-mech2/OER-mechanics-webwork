@@ -147,6 +147,12 @@ END_PGML
 
 ANS( checkbox_cmp( $mcB->correct_ans() ) );
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.2-RP-02.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();
