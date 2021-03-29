@@ -129,6 +129,12 @@ ANS( checkbox_cmp( $mcB->correct_ans() ) );
 
 ANS( checkbox_cmp( $mcC->correct_ans() ) );
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-6.3-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

@@ -97,7 +97,7 @@ tolType=>'relative');
 BEGIN_PGML
 
 
-[@ image( "20-P-FA-BK-003.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-BK-003.png", width=>[$width], height=>[$height]) @]* 
 
 
 Three blocks are stacked on top of each other, as in the image above. 

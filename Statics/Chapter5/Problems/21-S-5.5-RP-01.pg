@@ -211,6 +211,12 @@ ANS( $mcL->cmp() );
 ANS( $mcM->cmp() );
 ANS( $mcN->cmp() );
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.5-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

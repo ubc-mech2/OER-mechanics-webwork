@@ -107,6 +107,10 @@ Using a ring collar, the [`[$F]`] [`\textrm{N}`] force can act in the vertical p
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-4.4-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
 ######################################################
 
 ENDDOCUMENT();

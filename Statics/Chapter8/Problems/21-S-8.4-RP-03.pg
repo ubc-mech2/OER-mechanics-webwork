@@ -114,6 +114,12 @@ END_PGML
 
 ANS( $mc->cmp() );
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-8.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();
