@@ -85,7 +85,7 @@ BEGIN_PGML
 
 [@ image( "21-S-6.4-MK-01.png", width=>[$width], height=>[$height]) @]*
 
-In the above truss assembly [`d_{1}`] = [`[$d1]`] [`\textrm{m}`] and [`d_{2}`] = [`[$d2]`] [`\textrm{m}`].  A force at points [`C`] and [`D`] are pulling down at [`[$fc]`] [`\textrm{kN}`] and [`[$fd]`] [`\textrm{kN}`] respectively.
+In above truss assembly [`d_{1}`] = [`[$d1]`] [`\textrm{m}`] and [`d_{2}`] = [`[$d2]`] [`\textrm{m}`].  A force at points [`C`] and [`D`] are pulling down at [`[$fc]`] [`\textrm{kN}`] and [`[$fd]`] [`\textrm{kN}`] respectively.
 
 
 Determine the force in member [`CF`] of the truss shown above and indicate whether the member is in tension or compression. Assume each member is connected by a pin.
@@ -98,6 +98,9 @@ Determine the force in member [`CF`] of the truss shown above and indicate wheth
 END_PGML
 ANS( $mfcf->cmp() );
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.4-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 

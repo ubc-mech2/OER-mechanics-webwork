@@ -88,6 +88,9 @@ $mfbc = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension
 
 BEGIN_PGML
 
+[`[$Dy]`]
+[`[$Ay]`]
+
 [@ image( "21-S-6.4-MK-02.png", width=>[$width], height=>[$height]) @]*
 
 In the above truss assembly [`d_{1}`] = [`[$d1]`] [`\textrm{m}`], [`d_{2}`] = [`[$d2]`] [`\textrm{m}`] and [`d_{3}`] = [`[$d3]`] [`\textrm{m}`]. The applied forces are; [`F_{1}`] = [`[$f1]`] [`\textrm{kN}`], [`F_{2}`] = [`[$f2]`] [`\textrm{kN}`] and [`F_{3}`] = [`[$f3]`] [`\textrm{kN}`] while [`\theta_1`] = [`[$theta1]`][`^\circ`].
@@ -103,6 +106,9 @@ Determine the force of member [`BC`] of the truss shown above and indicate wheth
 END_PGML
 ANS( $mfbc->cmp() );
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.4-MK-03.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 

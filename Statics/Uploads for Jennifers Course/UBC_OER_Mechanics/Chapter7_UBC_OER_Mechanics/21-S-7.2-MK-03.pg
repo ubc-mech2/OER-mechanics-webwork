@@ -102,6 +102,10 @@ Determine the absolute value of the maximum shear force and the maximum bending 
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-7.2-MK-03.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
 ######################################################
 
 ENDDOCUMENT();

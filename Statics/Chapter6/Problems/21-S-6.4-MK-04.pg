@@ -88,6 +88,7 @@ $mfcf = RadioButtons([ "Tension", "Compression", "None of the above" ], "Tension
 
 BEGIN_PGML
 
+[`[$rad2]`]
 
 [@ image( "21-S-6.4-MK-02.png", width=>[$width], height=>[$height]) @]*
 
@@ -104,6 +105,9 @@ Determine the force of member [`CF`] of the truss shown above and indicate wheth
 END_PGML
 ANS( $mfcf->cmp() );
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.4-MK-04.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 

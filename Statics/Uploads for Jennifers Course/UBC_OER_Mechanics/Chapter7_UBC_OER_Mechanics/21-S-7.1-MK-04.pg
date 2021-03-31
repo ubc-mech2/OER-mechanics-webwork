@@ -88,7 +88,7 @@ Use the following values for the image above;
 * [`P`] = [`[$f1]`] [`\textrm{kip/ft}`]
 
 
-Determine the values of the normal force, shear force, and bending moment at point [`C`].
+Determine the values of the normal force, shear force, and moment at point [`C`].
 
 
 [`N_{C}`] = [_____]{$Nc} [`\textrm{kip}`]
@@ -101,6 +101,10 @@ Determine the values of the normal force, shear force, and bending moment at poi
   
 
 END_PGML
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-7.1-MK-04.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 

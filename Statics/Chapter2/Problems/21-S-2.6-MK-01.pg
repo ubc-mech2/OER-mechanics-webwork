@@ -101,6 +101,10 @@ Find the coordinate direction angles ([`\alpha`],[`\beta`],[`\gamma`]) of the re
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-2.6-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
 ######################################################
 
 ENDDOCUMENT();

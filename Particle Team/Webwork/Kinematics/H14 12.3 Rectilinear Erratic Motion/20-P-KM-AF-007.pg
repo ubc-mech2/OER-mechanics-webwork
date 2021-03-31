@@ -133,7 +133,7 @@ ANS(function_cmp($vt2,'t'));
 Context()->texStrings;
 BEGIN_TEXT
  $BR
- \(v - t\) second equation: \{ans_rule(25) \}
+ \(s - t\) first equation: \{ans_rule(25) \}
 END_TEXT
 Context()->normalStrings;
 
