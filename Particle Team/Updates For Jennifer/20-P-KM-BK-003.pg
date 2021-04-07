@@ -1,5 +1,5 @@
-## DESCRIPTION
-## Particle dynamics; Professor Splash belly flop - free fall motion finding speed and deceleration
+##DESCRIPTION
+##
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
 ##
@@ -26,24 +26,18 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Kinematics of particles)
-## DBsection(Rectilinear motion)
+## DBsection(Rectilinear Motion)
 ## Institution('University of British Columbia')
-## Author(Nathan Wan)
+## Author(Bryden Kinsella)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
-## KEYWORDS('dynamics','force','rectilinear',continuous')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 12.2')
+## KEYWORDS('Dynamics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 12, section 2')
 
 ##############################################################
 
 DOCUMENT();
 
-#image scale
-$imgScale = .9;
-
-#image aspect ratio
-$width = $imgScale*711;
-$height = $imgScale*263;
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
@@ -52,8 +46,6 @@ loadMacros(
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
 	"parserRadioButtons.pl",
-	"PGauxiliaryFunctions.pl",
-	"niceTables.pl",
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
@@ -65,44 +57,34 @@ loadMacros(
 #
 
 Context("Numeric");
-
 #given
-$towerHeight = random(10,11,0.1);
-$distanceWater = random(30,50,10)/100;
-$distanceAir = $towerHeight-$distanceWater;
+$A = random(2, 10, 1);
+$B = random(2, 10, 1);
 
-$g = 9.81;
 
-#computation 
-$speed = sqrt(2*$g*$distanceAir);
-$acceleration = $speed**2/2/$distanceWater;
+#computation
+$a = ($A**2)*$B;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02);
+tolerance=>.05,
+tolType=>'relative');
 
 ##############################################################
 #
-#  Text 
+#  PGML 
 #
 #
 
 BEGIN_PGML
+*Preliminary Problem*
 
-[@ image("20-P-KM-NW-029.png", width=>[$width], height=>[$height]) @]*
+If [`v=[$A]s`] [`m/s`], find the acceleration when [`s=[$B]`] [`m`].
 
-People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him in [`[$distanceWater]`] [`m`].
-
-*a)* Ignoring friction and air resistance, how fast is he moving just before he hits the water? Graphically sketch the Professor's position, velocity, and acceleration as a function of time using a sheet of paper.
-
-[`v =`] [_____]{"$speed"} [`m/s`]  
-
-*b)* What is the magnitude of the water's  acceleration on Professor Splash?
-
-[`a =`] [_____]{"$acceleration"} [`m/s^2`]  
+[`a=`] [_____]{"$a"} [`m/s^2`]  
 
 END_PGML
 
 ##############################################################
 
-ENDDOCUMENT();
+ENDDOCUMENT()};
