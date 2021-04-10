@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Flowerpot')
+## KEYWORDS('Statics', 'Pterodactyl')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.4]')
 
 ########################################################
@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Vector");		# or Complex
+Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -69,98 +69,63 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.15;
+$imgScale = 0.21;
 
-$height = $imgScale*3927;
+$height = $imgScale * 2408;
 
-$width = $imgScale*3312;
+$width = $imgScale * 2653;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$m = random(5, 20, 1);
+$theta_1_deg = random(40, 60, 5);
+$theta_2_deg = random(20, 35, 5);
+$theta_3_deg = random(30, 45, 5);
+$theta_4_deg = random(30, 60, 15);
+$m = random(60, 70, 5);
 $g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$Ax = 0;
-$Ay = 0;
-$Az = -1;
+$theta_1 = $theta_1_deg * pi / 180;
+$theta_2 = $theta_2_deg * pi / 180;
+$theta_3 = $theta_3_deg * pi / 180;
+$theta_4 = $theta_4_deg * pi / 180;
 
-$ABx = 0;
-$ABy = sin(pi / 4);
-$ABz = cos(pi / 4);
-
-$ACx = - sin(pi / 6);
-$ACy = - cos(pi / 6) * sin(pi / 3);
-$ACz = cos(pi / 6) * cos(pi / 3);
-
-$ADx = - $ACx;
-$ADy = $ACy;
-$ADz = $ACz;
-
-$F_A = $m * $g;
-$F_AB = (6 ** (0.5) * $F_A) / (1 + 3 ** (0.5));
-$F_AC = (2 ** (0.5) * $F_AB) / 3;
-$F_AD = $F_AC;
-
-#---- Answers to the problem -----------------------#
-$ansAx = $Ax;
-$ansAy = $Ay;
-$ansAz = $Az;
-
-$ansBx = $ABx;
-$ansBy = $ABy;
-$ansBz = $ABz;
-
-$ansCx = $ACx;
-$ansCy = $ACy;
-$ansCz = $ACz;
-
-$ansDx = $ADx;
-$ansDy = $ADy;
-$ansDz = $ADz;
-
-$ansE = $F_A;
-$ansF = $F_AB;
-$ansG = $F_AC;
-$ansH = $F_AD;
+$T_A = $m * $g / (sin($theta_1) + tan($theta_4) * tan($theta_2) * cos($theta_1) + tan($theta_3) * cos($theta_1) / cos($theta_4));
+$T_B = $m * $g / (tan($theta_1) * cos($theta_2) / tan($theta_4) + sin($theta_2) + tan($theta_3) * cos($theta_2) / sin($theta_4));
+$T_C = $m * $g / (cos($theta_3) * cos($theta_4) * tan($theta_1) + cos($theta_3) * sin($theta_4) * tan($theta_2) + sin($theta_3));
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.4-RP-05.png", width=>[$width], height=>[$height]) @]*
 
-A flowerpot hangs on a ring attached to 3 ropes in equilibrium as shown above. If the flowerpot has a mass of [`m = [$m] \: \textrm{kg}`], find the tensions in each rope.
+Pterry the Pterodactyl spreads his wings such that he does not accelerate in any direction. If Pterry has a mass of [`[$m] \: \textrm{kg}`] and his wings experience wind forces of [`\overrightarrow{T_A}`], [`\overrightarrow{T_B}`], and [`\overrightarrow{T_C}`], calculate the magnitudes of the wind forces. Let [`g = [$g] \: \textrm{N/kg}`].
+
+Use the following values:
+
+[`\theta_1 = [$theta_1_deg]^\circ`]
+
+[`\theta_2 = [$theta_2_deg]^\circ`]
+
+[`\theta_3 = [$theta_3_deg]^\circ`]
+
+[`\theta_4 = [$theta_4_deg]^\circ`]
 
 
-Find the unit vectors of all forces in the 3D equilibrium system.
+[`||\overrightarrow{T_A}|| =`] [___]{"$T_A"} [`\: \textrm{N}`]
 
-[`\hat{u}_{basket} = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
+[`||\overrightarrow{T_B}|| =`] [___]{"$T_B"} [`\: \textrm{N}`]
 
-[`\hat{u}_{AB} = \: <`] [__]{"$ansBx"} [`, \:`] [__]{"$ansBy"} [`, \:`] [__]{"$ansBz"} [`>`]
-
-[`\hat{u}_{AC} = \: <`] [__]{"$ansCx"} [`, \:`] [__]{"$ansCy"} [`, \:`] [__]{"$ansCz"} [`>`]
-
-[`\hat{u}_{AD} = \: <`] [__]{"$ansDx"} [`, \:`] [__]{"$ansDy"} [`, \:`] [__]{"$ansDz"} [`>`]
-
-
-Find the magnitudes of the forces exerted by each rope.
-
-[`F_A =`] [__]{"$ansE"} [`\: \textrm{N}`]
-
-[`F_{AB} =`] [__]{"$ansF"} [`\: \textrm{N}`]
-
-[`F_{AC} =`] [__]{"$ansG"} [`\: \textrm{N}`]
-
-[`F_{AD} =`] [__]{"$ansH"} [`\: \textrm{N}`]
+[`||\overrightarrow{T_C}|| =`] [___]{"$T_C"} [`\: \textrm{N}`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-3.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-3.4-RP-05.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 

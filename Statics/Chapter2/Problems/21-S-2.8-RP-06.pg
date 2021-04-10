@@ -26,13 +26,13 @@
 ##
 ## DBsubject(Statics)
 ## DBchapter(Force Vectors)
-## DBsection(Addition of Cartesian Vectors)
+## DBsection(Force Vector Directed Along a Line)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
-## Difficulty(Advanced)
-## KEYWORDS('Statics', 'Cartesian Vectors', 'Screw Eye')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [2], section [2.6]')
+## Difficulty(Intermediate)
+## KEYWORDS('Statics', 'Cables', 'Max Tension')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [2], section [2.8]')
 
 ########################################################
 
@@ -59,7 +59,7 @@ loadMacros(
 
 TEXT(beginproblem());
 
-$showPartialCorrectAnswers = 1;
+$showPartialCorrectAnswers = 0;
 
 Context("Numeric");		# or Complex
 
@@ -69,64 +69,112 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.33;
+$imgScale = 0.16;
 
-$height = $imgScale * 1515;
+$height = $imgScale * 3108;
 
-$width = $imgScale * 1490;
+$width = $imgScale * 3509;
 
 #---- Random variables for this problem --------#
-$F_1 = random(700, 800, 50);
-$F_2 = random(600, 700, 50);
-$F_3 = random(800, 900, 50);
-$thetaDeg = random(25, 35, 5);
-$phiDeg = random(25, 35, 5);
+$d_1 = random(25, 35, 5);
+$d_2 = random(5, 15, 2.5);
+$d_3 = random(10, 20, 2.5);
+$d_4 = random(7.5, 17.5, 2.5);
+$d_5 = random(10, 20, 2.5);
+$d_6 = random(5, 15, 2.5);
+$F_max = random(400, 600, 100);
 
 #---- Formulas to compute answers --------------#
-$theta = $thetaDeg * pi / 180;
-$phi = $phiDeg * pi / 180;
+$u_x = 0;
+$u_y = 0;
+$u_z = -1;
 
-$A = $F_1 * sin($theta) + 4 / 5 * $F_2;
-$B = 3 / 5 * $F_2;
-$C = 2 * $A * cos($phi) + 2 * $B * sin($phi);
-$D = $A ** 2 + $B ** 2 - $F_3 ** 2 + ($F_1 * cos($theta)) ** 2;
+$AB = ($d_1 ** 2 + $d_2 ** 2 + $d_3 ** 2) ** 0.5;
+$AC = ($d_1 ** 2 + $d_5 ** 2 + $d_6 ** 2) ** 0.5;
+$AD = ($d_1 ** 2 + $d_4 ** 2) ** 0.5;
 
-$F_R = ($C + ($C ** 2 - 4 * $D) ** 0.5) / 2;
+$BC = $AB / $AC * $d_5 / $d_2;
+$CD = $AC / $AD * $d_2 * $d_4 / ($d_3 * $d_5 + $d_2 * $d_6);
+$DB = 1 / ($BC * $CD);
 
-$alpha_3 = acos(- ($F_1 * cos($theta)) / $F_3) * 180 / pi;
-$beta_3 = acos(($F_R * cos($phi) - $A) / $F_3) * 180 / pi;
-$gamma_3 = acos(($F_R * sin($phi) - $B) / $F_3) * 180 / pi;
+$F_AB = $F_max;
+$F_AC = $F_max;
+$F_AD = $F_max;
+$Largest;
+
+if ($BC > 1) {
+    if ($DB < 1) {
+        $Largest = "AB";
+        $F_AC = $F_AB / $BC;
+        $F_AD = $F_AB * $DB;
+    } else {
+        $Largest = "AD";
+        $F_AB = $F_AD / $DB;
+        $F_AC = $F_AD * $CD;
+    }
+} else {
+    if ($CD > 1) {
+        $Largest = "AC";
+        $F_AD = $F_AC / $CD;
+        $F_AB = $F_AC * $BC;
+    } else {
+        $Largest = "AD";
+        $F_AB = $F_AD / $DB;
+        $F_AC = $F_AD * $CD;
+    }
+}
+
+$mc = RadioButtons([ "AB", "AC", "AD" ], $Largest);
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-2.6-RP-05.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-2.8-RP-06.png", width=>[$width], height=>[$height]) @]*
 
-Three forces act on a screw eye fixed to a wall. If the resultant force points in the direction described by its unit vector [`\hat{u}_{F_R} = \cos \phi \hat{j} + \sin \phi \hat{k}`], and [`\overrightarrow{F_1}`], [`\overrightarrow{F_2}`], and [`\overrightarrow{F_3}`] have magnitudes of [`[$F_1] \: \textrm{N}`], [`[$F_2] \: \textrm{N}`], and [`[$F_3] \: \textrm{N}`] respectively, determine the coordinate direction angles of [`\overrightarrow{F_3}`] and the magnitude of [`\overrightarrow{F_R}`]. If there exists more than one possible set of answers, select the set with the larger magnitude [`F_R`].
+A metal tower has cables attached to it such that the resultant force has no horizontal component. What is the unit vector that describes the direction of the resultant force?
 
 Use the following values:
 
-[`\theta = [$thetaDeg]^\circ`]
+[`d_1 = [$d_1] \: \textrm{ft}`]
 
-[`\phi = [$phiDeg]^\circ`]
+[`d_2 = [$d_2] \: \textrm{ft}`]
+
+[`d_3 = [$d_3] \: \textrm{ft}`]
+
+[`d_4 = [$d_4] \: \textrm{ft}`]
+
+[`d_5 = [$d_5] \: \textrm{ft}`]
+
+[`d_6 = [$d_6] \: \textrm{ft}`]
 
 
-[`||\overrightarrow{F_R}|| =`] [___]{"$F_R"} [`\: \textrm{N}`]
+[`\hat{u}_{F_R} = \:`] [___]{"$u_x"} [`\: \hat{i} \: +`] [___]{"$u_y"} [`\: \hat{j} \: +`] [___]{"$u_z"} [`\: \hat{k}`]
 
-[`\alpha_3 =`] [___]{"$alpha_3"} [`^\circ`]
 
-[`\beta_3 =`] [___]{"$beta_3"} [`^\circ`]
+If all cables can withstand a tension magnitude of upto [`[$F_max] \: \textrm{lbs}`], determine which cable will have the largest magnitude and the maximum tension in each cable.
 
-[`\gamma_3 =`] [___]{"$gamma_3"} [`^\circ`]
+[@ $mc->buttons() @]*
+
+END_PGML
+
+ANS( $mc->cmp() );
+
+BEGIN_PGML
+
+[`||\overrightarrow{F_{AB}}|| =`] [___]{"$F_AB"} [`\: \textrm{lbs}`]
+
+[`||\overrightarrow{F_{AC}}|| =`] [___]{"$F_AC"} [`\: \textrm{lbs}`]
+
+[`||\overrightarrow{F_{AD}}|| =`] [___]{"$F_AD"} [`\: \textrm{lbs}`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-2.6-RP-05.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-2.8-RP-06.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 

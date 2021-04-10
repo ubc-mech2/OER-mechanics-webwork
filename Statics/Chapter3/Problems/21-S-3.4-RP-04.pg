@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Flowerpot')
+## KEYWORDS('Statics', 'Screw Eye')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.4]')
 
 ########################################################
@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Vector");		# or Complex
+Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -69,98 +69,49 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.15;
+$imgScale = 0.33;
 
-$height = $imgScale*3927;
+$height = $imgScale * 1515;
 
-$width = $imgScale*3312;
+$width = $imgScale * 1490;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$m = random(5, 20, 1);
-$g = 9.81;
+$F_1 = random(700, 800, 50);
+$F_2 = random(600, 700, 50);
+$thetaDeg = random(30, 60, 15);
 
 #---- Formulas to compute answers --------------#
-$Ax = 0;
-$Ay = 0;
-$Az = -1;
+$theta = $thetaDeg * pi / 180;
+$F_3x = - $F_1 * cos($theta);
+$F_3y = - $F_1 * sin($theta) - 4 / 5 * $F_2;
+$F_3z = - 3 / 5 * $F_2;
+$F_3 = ($F_3x ** 2 + $F_3y ** 2 + $F_3z ** 2) ** 0.5;
 
-$ABx = 0;
-$ABy = sin(pi / 4);
-$ABz = cos(pi / 4);
-
-$ACx = - sin(pi / 6);
-$ACy = - cos(pi / 6) * sin(pi / 3);
-$ACz = cos(pi / 6) * cos(pi / 3);
-
-$ADx = - $ACx;
-$ADy = $ACy;
-$ADz = $ACz;
-
-$F_A = $m * $g;
-$F_AB = (6 ** (0.5) * $F_A) / (1 + 3 ** (0.5));
-$F_AC = (2 ** (0.5) * $F_AB) / 3;
-$F_AD = $F_AC;
-
-#---- Answers to the problem -----------------------#
-$ansAx = $Ax;
-$ansAy = $Ay;
-$ansAz = $Az;
-
-$ansBx = $ABx;
-$ansBy = $ABy;
-$ansBz = $ABz;
-
-$ansCx = $ACx;
-$ansCy = $ACy;
-$ansCz = $ACz;
-
-$ansDx = $ADx;
-$ansDy = $ADy;
-$ansDz = $ADz;
-
-$ansE = $F_A;
-$ansF = $F_AB;
-$ansG = $F_AC;
-$ansH = $F_AD;
+$u_F_3x = $F_3x / $F_3;
+$u_F_3y = $F_3y / $F_3;
+$u_F_3z = $F_3z / $F_3;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.4-RP-04.png", width=>[$width], height=>[$height]) @]*
 
-A flowerpot hangs on a ring attached to 3 ropes in equilibrium as shown above. If the flowerpot has a mass of [`m = [$m] \: \textrm{kg}`], find the tensions in each rope.
-
-
-Find the unit vectors of all forces in the 3D equilibrium system.
-
-[`\hat{u}_{basket} = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
-
-[`\hat{u}_{AB} = \: <`] [__]{"$ansBx"} [`, \:`] [__]{"$ansBy"} [`, \:`] [__]{"$ansBz"} [`>`]
-
-[`\hat{u}_{AC} = \: <`] [__]{"$ansCx"} [`, \:`] [__]{"$ansCy"} [`, \:`] [__]{"$ansCz"} [`>`]
-
-[`\hat{u}_{AD} = \: <`] [__]{"$ansDx"} [`, \:`] [__]{"$ansDy"} [`, \:`] [__]{"$ansDz"} [`>`]
+A fixed screw eye is attached to three cables applying tension forces such that the wall experiences zero force. If [`\overrightarrow{F_1}`] and [`\overrightarrow{F_2}`] have tensions of [`[$F_1] \: \textrm{N}`] and [`[$F_2] \: \textrm{N}`] respectively, find the magnitude of [`\overrightarrow{F_3}`] and its unit vector. Let [`\theta = [$thetaDeg]^\circ`].
 
 
-Find the magnitudes of the forces exerted by each rope.
+[`||\overrightarrow{F_3}|| =`] [___]{"$F_3"} [`\: \textrm{N}`]
 
-[`F_A =`] [__]{"$ansE"} [`\: \textrm{N}`]
-
-[`F_{AB} =`] [__]{"$ansF"} [`\: \textrm{N}`]
-
-[`F_{AC} =`] [__]{"$ansG"} [`\: \textrm{N}`]
-
-[`F_{AD} =`] [__]{"$ansH"} [`\: \textrm{N}`]
+[`\hat{u}_{F_3} = \: <`] [___]{"$u_F_3x"} [`, \:`] [___]{"$u_F_3y"} [`, \:`] [___]{"$u_F_3z"} [`>`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-3.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-3.4-RP-04.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 

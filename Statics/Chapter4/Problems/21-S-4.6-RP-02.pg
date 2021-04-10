@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Equilibrium of a Particle)
-## DBsection(Three-Dimensional Force Systems)
+## DBchapter(Force System Resultants)
+## DBsection(Moment of a Couple)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Flowerpot')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.4]')
+## KEYWORDS('Statics', 'Couple Moments')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.6]')
 
 ########################################################
 
@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Vector");		# or Complex
+Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -69,98 +69,47 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.15;
+$imgScale = 0.24;
 
-$height = $imgScale*3927;
+$height = $imgScale*2074;
 
-$width = $imgScale*3312;
+$width = $imgScale*2586;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$m = random(5, 20, 1);
-$g = 9.81;
+$d_1 = random(1.5, 2.5, 0.5);
+$L = $d_1 + random(2.5, 3.5, 0.5);
+$F_C = random(200, 300, 10);
+$M_T = random(350, 500, 50);
 
 #---- Formulas to compute answers --------------#
-$Ax = 0;
-$Ay = 0;
-$Az = -1;
-
-$ABx = 0;
-$ABy = sin(pi / 4);
-$ABz = cos(pi / 4);
-
-$ACx = - sin(pi / 6);
-$ACy = - cos(pi / 6) * sin(pi / 3);
-$ACz = cos(pi / 6) * cos(pi / 3);
-
-$ADx = - $ACx;
-$ADy = $ACy;
-$ADz = $ACz;
-
-$F_A = $m * $g;
-$F_AB = (6 ** (0.5) * $F_A) / (1 + 3 ** (0.5));
-$F_AC = (2 ** (0.5) * $F_AB) / 3;
-$F_AD = $F_AC;
-
-#---- Answers to the problem -----------------------#
-$ansAx = $Ax;
-$ansAy = $Ay;
-$ansAz = $Az;
-
-$ansBx = $ABx;
-$ansBy = $ABy;
-$ansBz = $ABz;
-
-$ansCx = $ACx;
-$ansCy = $ACy;
-$ansCz = $ACz;
-
-$ansDx = $ADx;
-$ansDy = $ADy;
-$ansDz = $ADz;
-
-$ansE = $F_A;
-$ansF = $F_AB;
-$ansG = $F_AC;
-$ansH = $F_AD;
+$F = 5 * ($M_T + $d_1 * $F_C) / (3 * $L + 4 * $d_1);
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.6-RP-02.png", width=>[$width], height=>[$height]) @]*
 
-A flowerpot hangs on a ring attached to 3 ropes in equilibrium as shown above. If the flowerpot has a mass of [`m = [$m] \: \textrm{kg}`], find the tensions in each rope.
-
-
-Find the unit vectors of all forces in the 3D equilibrium system.
-
-[`\hat{u}_{basket} = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
-
-[`\hat{u}_{AB} = \: <`] [__]{"$ansBx"} [`, \:`] [__]{"$ansBy"} [`, \:`] [__]{"$ansBz"} [`>`]
-
-[`\hat{u}_{AC} = \: <`] [__]{"$ansCx"} [`, \:`] [__]{"$ansCy"} [`, \:`] [__]{"$ansCz"} [`>`]
-
-[`\hat{u}_{AD} = \: <`] [__]{"$ansDx"} [`, \:`] [__]{"$ansDy"} [`, \:`] [__]{"$ansDz"} [`>`]
+A metal beam is fixed into a wall and experiences two pairs of couple forces. If [`\overrightarrow{F_1}`] has a magnitude of [`[$F_C] \: \textrm{lbs}`] and the beam experiences a total moment of [`[$M_T] \: \textrm{lb} \cdot \textrm{ft}`] counterclockwise, find the magnitude of [`\overrightarrow{F}`]. Assume that the length of the beam is [`[$L] \: \textrm{ft}`] and that the beam has negligible mass. Let [`d_1 = [$d_1] \: \textrm{ft}`].
 
 
-Find the magnitudes of the forces exerted by each rope.
+Find the magnitude of [`\overrightarrow{F_2}`].
 
-[`F_A =`] [__]{"$ansE"} [`\: \textrm{N}`]
+[`||\overrightarrow{F_2}|| =`] [___]{"$F_C"} [`\: \textrm{lbs}`]
 
-[`F_{AB} =`] [__]{"$ansF"} [`\: \textrm{N}`]
 
-[`F_{AC} =`] [__]{"$ansG"} [`\: \textrm{N}`]
+Find the magnitude of [`\overrightarrow{F}`].
 
-[`F_{AD} =`] [__]{"$ansH"} [`\: \textrm{N}`]
+[`||\overrightarrow{F}|| =`] [___]{"$F"} [`\: \textrm{lbs}`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-3.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-4.6-RP-02.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
