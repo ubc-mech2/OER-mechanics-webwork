@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Equilibrium of a Particle)
-## DBsection(Three-Dimensional Force Systems)
+## DBchapter(Force System Resultants)
+## DBsection(Moment of a Force — Vector Formulation)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Flowerpot')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.4]')
+## KEYWORDS('Statics', 'Tree', 'Tractor')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.3]')
 
 ########################################################
 
@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Vector");		# or Complex
+Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -69,98 +69,55 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.15;
+$imgScale = 0.18;
 
-$height = $imgScale*3927;
+$height = $imgScale*2799;
 
-$width = $imgScale*3312;
+$width = $imgScale*1950;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$m = random(5, 20, 1);
-$g = 9.81;
+$d_1 = random(10, 12, 1);
+$d_2 = random(9, 11, 1);
+$d_3 = random(3, 5, 1);
+$F = random(3, 6, 1);
 
 #---- Formulas to compute answers --------------#
-$Ax = 0;
-$Ay = 0;
-$Az = -1;
+$AB = ($d_1 ** 2 + $d_2 ** 2 + $d_3 ** 2) ** 0.5;
+$F_x = $F * $d_3 / $AB;
+$F_y = $F * $d_2 / $AB;
+$F_z = - $F * $d_1 / $AB;
 
-$ABx = 0;
-$ABy = sin(pi / 4);
-$ABz = cos(pi / 4);
-
-$ACx = - sin(pi / 6);
-$ACy = - cos(pi / 6) * sin(pi / 3);
-$ACz = cos(pi / 6) * cos(pi / 3);
-
-$ADx = - $ACx;
-$ADy = $ACy;
-$ADz = $ACz;
-
-$F_A = $m * $g;
-$F_AB = (6 ** (0.5) * $F_A) / (1 + 3 ** (0.5));
-$F_AC = (2 ** (0.5) * $F_AB) / 3;
-$F_AD = $F_AC;
-
-#---- Answers to the problem -----------------------#
-$ansAx = $Ax;
-$ansAy = $Ay;
-$ansAz = $Az;
-
-$ansBx = $ABx;
-$ansBy = $ABy;
-$ansBz = $ABz;
-
-$ansCx = $ACx;
-$ansCy = $ACy;
-$ansCz = $ACz;
-
-$ansDx = $ADx;
-$ansDy = $ADy;
-$ansDz = $ADz;
-
-$ansE = $F_A;
-$ansF = $F_AB;
-$ansG = $F_AC;
-$ansH = $F_AD;
+$M_x = - $d_1 * $F_y;
+$M_y = $d_1 * $F_x;
+$M_z = 0;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.3-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-A flowerpot hangs on a ring attached to 3 ropes in equilibrium as shown above. If the flowerpot has a mass of [`m = [$m] \: \textrm{kg}`], find the tensions in each rope.
+A tractor pulls a tree with force [`[$F] \: \textrm{kN}`]. Find the resulting moment formed by the force about [`O`]. Express the moment in cartesian form.
 
+Use the following values:
 
-Find the unit vectors of all forces in the 3D equilibrium system.
+[`d_1 = [$d_1] \: \textrm{m}`]
 
-[`\hat{u}_{basket} = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
+[`d_2 = [$d_2] \: \textrm{m}`]
 
-[`\hat{u}_{AB} = \: <`] [__]{"$ansBx"} [`, \:`] [__]{"$ansBy"} [`, \:`] [__]{"$ansBz"} [`>`]
-
-[`\hat{u}_{AC} = \: <`] [__]{"$ansCx"} [`, \:`] [__]{"$ansCy"} [`, \:`] [__]{"$ansCz"} [`>`]
-
-[`\hat{u}_{AD} = \: <`] [__]{"$ansDx"} [`, \:`] [__]{"$ansDy"} [`, \:`] [__]{"$ansDz"} [`>`]
+[`d_3 = [$d_3] \: \textrm{m}`]
 
 
-Find the magnitudes of the forces exerted by each rope.
-
-[`F_A =`] [__]{"$ansE"} [`\: \textrm{N}`]
-
-[`F_{AB} =`] [__]{"$ansF"} [`\: \textrm{N}`]
-
-[`F_{AC} =`] [__]{"$ansG"} [`\: \textrm{N}`]
-
-[`F_{AD} =`] [__]{"$ansH"} [`\: \textrm{N}`]
+[`\overrightarrow{M} = \: (`] [___]{"$M_x"} [`\: \hat{i} \: +`] [___]{"$M_y"} [`\: \hat{j} \: +`] [___]{"$M_z"} [`\: \hat{k} \: ) \: \textrm{kN} \cdot \textrm{m}`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-3.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-4.3-RP-01.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 

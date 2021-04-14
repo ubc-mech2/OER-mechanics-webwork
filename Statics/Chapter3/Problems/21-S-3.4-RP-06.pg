@@ -31,7 +31,7 @@
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Flowerpot')
+## KEYWORDS('Statics', 'Three Cables')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [3], section [3.4]')
 
 ########################################################
@@ -61,7 +61,7 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Vector");		# or Complex
+Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
@@ -69,98 +69,63 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.15;
+$imgScale = 0.13;
 
-$height = $imgScale*3927;
+$height = $imgScale * 3759;
 
-$width = $imgScale*3312;
+$width = $imgScale * 3464;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$m = random(5, 20, 1);
-$g = 9.81;
+$F = random(250, 500, 50);
+$thetaDeg = random(30, 60, 15);
+$k = random(100, 200, 20);
+$x_0 = random(10, 20, 5);
 
 #---- Formulas to compute answers --------------#
-$Ax = 0;
-$Ay = 0;
-$Az = -1;
+$theta = $thetaDeg * pi / 180;
 
-$ABx = 0;
-$ABy = sin(pi / 4);
-$ABz = cos(pi / 4);
+$F_AC = $F * 5 / 3;
+$F_AD = 4 / 3 * $F / sin($theta);
+$F_AB = 4 / 3 * $F / tan($theta);
 
-$ACx = - sin(pi / 6);
-$ACy = - cos(pi / 6) * sin(pi / 3);
-$ACz = cos(pi / 6) * cos(pi / 3);
-
-$ADx = - $ACx;
-$ADy = $ACy;
-$ADz = $ACz;
-
-$F_A = $m * $g;
-$F_AB = (6 ** (0.5) * $F_A) / (1 + 3 ** (0.5));
-$F_AC = (2 ** (0.5) * $F_AB) / 3;
-$F_AD = $F_AC;
-
-#---- Answers to the problem -----------------------#
-$ansAx = $Ax;
-$ansAy = $Ay;
-$ansAz = $Az;
-
-$ansBx = $ABx;
-$ansBy = $ABy;
-$ansBz = $ABz;
-
-$ansCx = $ACx;
-$ansCy = $ACy;
-$ansCz = $ACz;
-
-$ansDx = $ADx;
-$ansDy = $ADy;
-$ansDz = $ADz;
-
-$ansE = $F_A;
-$ansF = $F_AB;
-$ansG = $F_AC;
-$ansH = $F_AD;
+$x_E = $x_0 + $F_AB / $k;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-3.4-RP-03.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-3.4-RP-06.png", width=>[$width], height=>[$height]) @]*
 
-A flowerpot hangs on a ring attached to 3 ropes in equilibrium as shown above. If the flowerpot has a mass of [`m = [$m] \: \textrm{kg}`], find the tensions in each rope.
+Three cables and a spring are connected by a knot at [`A`]. If one cable is pulled by a hook with a force [`F = [$F] \: \textrm{N}`] and the spring has an unstretched length of [`[$x_0] \: \textrm{cm}`], find the tension in the other two cables as well as the equilibrium length of the spring.
 
+Use the following values:
 
-Find the unit vectors of all forces in the 3D equilibrium system.
+[`\theta = [$thetaDeg]^\circ`]
 
-[`\hat{u}_{basket} = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
-
-[`\hat{u}_{AB} = \: <`] [__]{"$ansBx"} [`, \:`] [__]{"$ansBy"} [`, \:`] [__]{"$ansBz"} [`>`]
-
-[`\hat{u}_{AC} = \: <`] [__]{"$ansCx"} [`, \:`] [__]{"$ansCy"} [`, \:`] [__]{"$ansCz"} [`>`]
-
-[`\hat{u}_{AD} = \: <`] [__]{"$ansDx"} [`, \:`] [__]{"$ansDy"} [`, \:`] [__]{"$ansDz"} [`>`]
+[`k = [$k] \: \textrm{N/cm}`]
 
 
-Find the magnitudes of the forces exerted by each rope.
+Find the magnitudes of the forces applied by the two other cables and the spring.
 
-[`F_A =`] [__]{"$ansE"} [`\: \textrm{N}`]
+[`F_{AB} =`] [___]{"$F_AB"} [`\: \textrm{N}`]
 
-[`F_{AB} =`] [__]{"$ansF"} [`\: \textrm{N}`]
+[`F_{AC} =`] [___]{"$F_AC"} [`\: \textrm{N}`]
 
-[`F_{AC} =`] [__]{"$ansG"} [`\: \textrm{N}`]
+[`F_{AD} =`] [___]{"$F_AD"} [`\: \textrm{N}`]
 
-[`F_{AD} =`] [__]{"$ansH"} [`\: \textrm{N}`]
+
+Find the equilibrium length of the spring [`x_E`].
+
+[`x_E =`] [___]{"$x_E"} [`\: \textrm{cm}`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-3.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-3.4-RP-06.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
