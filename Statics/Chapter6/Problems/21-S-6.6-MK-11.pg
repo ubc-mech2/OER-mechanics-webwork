@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-6.6-MK-08
+## 21-S-6.6-MK-11
 ## Structural Analysis
 ## ENDDESCRIPTION
 
@@ -7,11 +7,11 @@
 ## DBsubject(Statics)
 ## DBchapter(Structural Analysis)
 ## DBsection(Frames and Machines)
-## Date(2021-04-08)
+## Date(2021-04-13)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-6.6-MK-08.png')
+## RESOURCES('21-S-6.6-MK-11.png')
 
 ########################################################
 
@@ -50,26 +50,31 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*2200;
-$height = $imgScale*1100;
+$width = $imgScale*1100;
+$height = $imgScale*1833;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
 
-$M = random(60,80,5);
-$d1 = random(2,3,0.5);
-$d2 = random(3,5,0.5);
-$d3 = random(0.25,0.75.0.25);
+$m = random(300,500,25);
+$f = $m * 9.81;
+$d1 = random(400,600,25);
+$d2 = random(50,60,5);
+$d3 = random(50,60,5);
+$d4 = random(350,450,10);
+$d5 = random(90,100,5);
+$deg = random(27,32,0.5);
+$rad = $deg * pi / 180;
 
 
 #---Calculations---
 
-$Dx = $M/$d3;
-$Ax = $Dx;
-$Ay = 0;
-$C = $Dx*$d3/$d2;
+$c = $f*$d1*cos($rad)/($d2+$d3);
+$ax = $c;
+$ay = $f;
 
+$d = ($ax * $d2 - $ay * $d5)/($d3+$d4);
 
 
 ######################################################
@@ -77,29 +82,38 @@ $C = $Dx*$d3/$d2;
 
 BEGIN_PGML
 
-[@ image( "21-S-6.6-MK-08.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-6.6-MK-11.png", width=>[$width], height=>[$height]) @]*
 
 Use the following values for the above image:
 
-* [`d_1`] = [`[$d1]`] [`\textrm{ft}`]
+* [`d_1`] = [`[$d1]`] [`\textrm{mm}`]
 
-* [`d_2`] = [`[$d2]`] [`\textrm{ft}`]
+* [`d_2`] = [`[$d2]`] [`\textrm{mm}`]
 
-* [`d_3`] = [`[$d3]`] [`\textrm{ft}`]
+* [`d_3`] = [`[$d3]`] [`\textrm{mm}`]
+
+* [`d_4`] = [`[$d4]`] [`\textrm{mm}`]
+
+* [`d_5`] = [`[$d5]`] [`\textrm{mm}`]
+
+* [`\theta`] = [`[$deg]`][`^{\circ}`]
+
+If the [`[$m]`] [`\textrm{kg}`] drum has a center of mass at point [`G`], determine the horizontal and vertical components of force acting at pin [`A`] and the reactions on the smoothpads [`C`] and [`D`]. The grip at [`B`] on member [`DAB`] resists both horizontal and components of force at the rim of the drum.
 
 
-Determine the force that the smooth roller [`C`] exerts on member [`AB`] if the  moment, [`M`], equals [`[$M]`] [`\textrm{lb-ft}`].  Also, determine the horizontal and vertical components at pin [`A`]. 
+[`F_{A_x}`] = [____]{$ax} [`\textrm{N}`]
 
-[`A_x`] = [____]{$Ax} [`\textrm{lb}`]
+[`F_{A_y}`] = [____]{$ay} [`\textrm{N}`]
 
-[`A_y`] = [____]{$Ay} [`\textrm{lb}`]
+[`F_C`] = [____]{$c} [`\textrm{N}`]
 
-[`C`] = [____]{$C} [`\textrm{lb}`]
+[`F_D`] = [____]{$d} [`\textrm{N}`]
+
 
 END_PGML
 
  BEGIN_PGML_SOLUTION
-[@ image( "21-S-6.6-MK-08.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-S-6.6-MK-11.pdf", width=>[0], height=>[0]) @]*
  END_PGML_SOLUTION
 
 ######################################################
