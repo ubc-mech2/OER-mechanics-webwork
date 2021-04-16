@@ -134,6 +134,12 @@ Use the following values:
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.7-RP-04.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

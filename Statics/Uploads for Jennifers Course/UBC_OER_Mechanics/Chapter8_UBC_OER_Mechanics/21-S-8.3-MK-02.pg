@@ -89,6 +89,11 @@ Determine the reversed horizontal force -[`P_1`] needed to pull out wedge [`A`],
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+[@ image( "21-S-8.3-MK-02.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ######################################################
 
 ENDDOCUMENT();

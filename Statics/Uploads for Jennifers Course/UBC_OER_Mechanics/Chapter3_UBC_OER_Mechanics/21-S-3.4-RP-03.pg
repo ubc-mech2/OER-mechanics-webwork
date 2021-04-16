@@ -89,11 +89,11 @@ $ABx = 0;
 $ABy = sin(pi / 4);
 $ABz = cos(pi / 4);
 
-$ACx = sin(pi / 6);
-$ACy = cos(pi / 6) * sin(pi / 3);
+$ACx = - sin(pi / 6);
+$ACy = - cos(pi / 6) * sin(pi / 3);
 $ACz = cos(pi / 6) * cos(pi / 3);
 
-$ADx = -$ACx;
+$ADx = - $ACx;
 $ADy = $ACy;
 $ADz = $ACz;
 
@@ -136,7 +136,7 @@ A flowerpot hangs on a ring attached to 3 ropes in equilibrium as shown above. I
 
 Find the unit vectors of all forces in the 3D equilibrium system.
 
-[`\hat{u}_A = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
+[`\hat{u}_{basket} = \: <`] [__]{"$ansAx"} [`, \:`] [__]{"$ansAy"} [`, \:`] [__]{"$ansAz"} [`>`]
 
 [`\hat{u}_{AB} = \: <`] [__]{"$ansBx"} [`, \:`] [__]{"$ansBy"} [`, \:`] [__]{"$ansBz"} [`>`]
 
@@ -157,6 +157,12 @@ Find the magnitudes of the forces exerted by each rope.
 
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-3.4-RP-03.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

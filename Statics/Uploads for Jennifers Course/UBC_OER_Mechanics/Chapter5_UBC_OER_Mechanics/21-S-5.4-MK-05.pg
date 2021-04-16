@@ -92,7 +92,7 @@ The rigid metal strip of negligible weight is used as part of an electromagnetic
 [`d_{3}`] = [`[$d3]`] [`\textrm{mm}`]
 
 
-If the stiffness of the springs are [`k_1`] = [`[$k1]`] [`\textrm{N/mm}`] and [`k_2`] = [`[$k2]`] [`\textrm{N/mm}`] and the strip is originally horizontal when the springs are unstretched, find the smallest force [`F`] needed to close the gap at [`d_3`] and find the change in length of each spring.
+If the stiffness of the springs are [`k_1`] = [`[$k1]`] [`\textrm{N/mm}`] and [`k_2`] = [`[$k2]`] [`\textrm{N/mm}`] and the strip is originally horizontal when the springs are unstretched, smallest force [`F`] need to close the gap at [`d_3`] and the stretched distance of each spring.
 
 
 [`F`] = [___]{"$F"} [`\textrm{N}`]
@@ -105,6 +105,9 @@ If the stiffness of the springs are [`k_1`] = [`[$k1]`] [`\textrm{N/mm}`] and [`
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-5.4-MK-05.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 ######################################################
 
 ENDDOCUMENT();

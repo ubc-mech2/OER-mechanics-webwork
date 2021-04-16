@@ -179,7 +179,14 @@ Find the maximum tensions in the ropes.
 
 [`||\overrightarrow{F_{AD}}|| =`] [__]{"$ansD"} [`\: \textrm{lbs}`]
 
+
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-3.4-RP-02.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

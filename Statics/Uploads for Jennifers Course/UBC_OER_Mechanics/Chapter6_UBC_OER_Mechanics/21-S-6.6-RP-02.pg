@@ -93,7 +93,14 @@ A block with weight [`W = [$W] \: \textrm{lbs}`] is supported by a simple pulley
 
 [`P =`] [___]{"$P"} [`\: \textrm{lbs}`]
 
+
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-6.6-RP-02.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

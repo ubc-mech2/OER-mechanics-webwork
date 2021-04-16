@@ -5,9 +5,9 @@
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
-## DBchapter(Equilibrium of a Rigid Body)
-## DBsection(Constraints and Statistical Determinacy)
-## Date(2021-01-27)
+## DBchapter(Equilibrium of a Particle)
+## DBsection(Three-Dimensional Force Systems)
+## Date(2021-01-20)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
@@ -50,7 +50,7 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1500;
+$width = $imgScale*1003;
 $height = $imgScale*1056;
 
 
@@ -87,7 +87,7 @@ BEGIN_PGML
 [@ image( "21-S-5.7-MK-01.png", width=>[$width], height=>[$height]) @]*
 
 
-Due to the unequal distribution of fuel in the wing tanks, the centers of gravity for the airplane fuselage [`A`] and wings [`B`] and [`C`] are located as shown. If these components have weights [`W_A`] = [`[$Wa]`] [`\textrm{lb}`], [`W_B`] = [`[$Wb]`] [`\textrm{lb}`]
+Due to the unequal distribution of fuel in the wing tanks, the centers of gravity for the airplane fuselage [`A`] and wings [`B`] and [`C`] are loacted as shown. If these components have weights [`W_A`] = [`[$Wa]`] [`\textrm{lb}`], [`W_B`] = [`[$Wb]`] [`\textrm{lb}`]
 and [`W_C`] = [`[$Wc]`] [`\textrm{lb}`], determine the normal reactions of the wheels [`D`], [`E`], and [`F`] on the ground.
 
 
@@ -100,6 +100,10 @@ and [`W_C`] = [`[$Wc]`] [`\textrm{lb}`], determine the normal reactions of the w
 [`F_{F}`] = [___]{"$Ff"} [`\textrm{lbs}`]
 
 END_PGML
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-5.7-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 

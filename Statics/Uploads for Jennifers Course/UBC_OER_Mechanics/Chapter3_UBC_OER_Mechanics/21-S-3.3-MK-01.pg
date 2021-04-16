@@ -90,6 +90,9 @@ What is the mass of the suspended weight, [`D`], if the tension in rope *AB* is 
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-3.3-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 ######################################################
 
 ENDDOCUMENT();

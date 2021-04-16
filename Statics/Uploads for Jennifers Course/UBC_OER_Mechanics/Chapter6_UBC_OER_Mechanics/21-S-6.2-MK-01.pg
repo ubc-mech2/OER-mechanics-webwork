@@ -110,6 +110,11 @@ END_PGML
 
 ANS( $mc3->cmp() );
 
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.2-MK-01.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
 ######################################################
 
 ENDDOCUMENT();

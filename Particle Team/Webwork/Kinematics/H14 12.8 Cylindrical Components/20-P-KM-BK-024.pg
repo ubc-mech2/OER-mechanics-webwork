@@ -42,7 +42,7 @@ DOCUMENT();
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*1305;
+$width = $imgScale*1405;
 $height = $imgScale*1543;
 
 
@@ -86,6 +86,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
+
+[@ image( "20-P-KM-BK-024.png", width=>[$width], height=>[$height]) @]*
 
 A monkey is swinging through the jungle, when the vine it grabs onto begins to slip. 
 If the monkey is swinging with an angular velocity of [`[$dtheta]`] [`rad/s`], and the vine is slipping at a constant rate of [`[$vr]`] [`m/s`],

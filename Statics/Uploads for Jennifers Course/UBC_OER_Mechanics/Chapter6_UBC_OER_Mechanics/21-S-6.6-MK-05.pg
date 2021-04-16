@@ -1,0 +1,103 @@
+## DESCRIPTION
+## 21-S-6.6-MK-05
+## Structural Analysis
+## ENDDESCRIPTION
+
+## KEYWORDS('statics')
+## DBsubject(Statics)
+## DBchapter(Structural Analysis)
+## DBsection(Frames and Machines)
+## Date(2021-04-07)
+## Author(Matthew Koebel)
+## Institution(University of British Columbia)
+## Level(Intermediate)
+## RESOURCES('21-S-6.6-MK-05.png')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl",
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+ );
+
+#######################################################
+
+#Setup
+
+TEXT(beginproblem());
+
+Context("Matrix");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scale---------------#
+$imgScale =0.35;
+
+
+#-------------- Image Aspect Ratio---------------#
+$width = $imgScale*1100;
+$height = $imgScale*1100;
+
+
+#---- Provided --------#
+# random(lower, upper, stepsize)
+
+$f = random(1,1.5,0.1);
+$d1 = random(0.25,0.3,0.05);
+$d2 = random(0.25,0.3,0.01);
+$d3 = random(1.25,1.5,0.05);
+
+#---Calculations---
+
+$Fa = $f*$d3/$d2;
+$Fd = $Fa + $f;
+$Fn = $Fd*$d3 / ($d1+$d2+$d3);
+
+######################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "21-S-6.6-MK-05.png", width=>[$width], height=>[$height]) @]*
+
+Use the following values for the above image:
+
+* [`d_1`] = [`[$d1]`] [`\textrm{in}`]
+
+* [`d_2`] = [`[$d2]`] [`\textrm{in}`]
+
+* [`d_3`] = [`[$d3]`] [`\textrm{in}`]
+
+A nail clipper consists of a handle and the two cutting blades. Assuming the blades are pin connected at [`B`] and the surface at [`D`] is smooth, determine the force exerted on the pin at [`A`] and find the normal force on the fingernail when a force of [`[$f]`] [`\textrm{lb}`] is applied to the handles as shown. 
+
+
+[`F_A`] = [____]{$Fa} [`\textrm{lb}`]
+
+
+[`F_{Normal}`] = [____]{$Fn} [`\textrm{lb}`]
+
+
+END_PGML
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.6-MK-05.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
+######################################################
+
+ENDDOCUMENT();

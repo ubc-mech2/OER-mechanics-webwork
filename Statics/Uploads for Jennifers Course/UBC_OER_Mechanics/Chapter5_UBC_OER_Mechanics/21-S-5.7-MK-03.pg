@@ -51,7 +51,7 @@ $imgScale =0.35;
 
 #-------------- Image Aspect Ratio---------------#
 $width = $imgScale*1300;
-$height = $imgScale*1056;
+$height = $imgScale*1350;
 
 
 #---- Provided --------#
@@ -123,6 +123,10 @@ END_PGML
 
 ANS( $mc1->cmp() );
 ANS( $mc2->cmp() );
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-5.7-MK-03.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 ######################################################
 
 ENDDOCUMENT();
