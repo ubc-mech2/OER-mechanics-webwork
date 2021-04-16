@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-4.7-MK-03
+## 21-S-4.7-MK-07
 ## Force System Resultants
 ## ENDDESCRIPTION
 
@@ -87,6 +87,7 @@ $Mx = $M2x + $M3x;
 $My = $M1y + $M3y;
 $Mz = 0;
 
+#---Third Matrix
 ######################################################
 #PGML
 
@@ -118,7 +119,7 @@ The above structure has the following values:
 [`F_3`] = [`[$fz]`] [`\textrm{N}`]
 
 
-Replace the force system by an equivalent resultant force and couple moment at point [`A`]. Express answers in catesian form.
+Replace the force system by an equivalent resultant force and couple moment at point [`A`]. Express answers in cartesian form.
  
 
 [`F_R`] =  ([___]{"$frx"}[`\textbf{i}`]  [`+`] [___]{"$fry"}[`\textbf{j}`]  [`+`] [___]{"$frz"} [`\textbf{k}`])  [`\textrm{N}`]

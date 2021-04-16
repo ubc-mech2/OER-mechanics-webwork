@@ -96,7 +96,7 @@ The above structure has the following values:
 
 
 
-Replace the force system by an equivalent resultant force and couple moment at point [`A`]. Express answers in catesian form.
+Replace the force system by an equivalent resultant force and couple moment at point [`A`]. Express answers in cartesian form.
  
 
 [`F_R`] =  ([___]{"$frx"}[`\textbf{i}`]  [`+`] [___]{"$fry"}[`\textbf{j}`]  [`+`] [___]{"$frz"} [`\textbf{k}`])  [`\textrm{N}`]
