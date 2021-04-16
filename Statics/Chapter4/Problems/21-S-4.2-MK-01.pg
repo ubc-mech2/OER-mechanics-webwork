@@ -79,10 +79,10 @@ $C = sqrt($x**2 + $y**2 + $z**2);
 
 BEGIN_PGML
 
-Determine the cross product, [`C`] of [`A`] = ([`[$a1]`], [`[$a2]`], [`[$a3]`]) and [`B`] = ([`[$b1]`], [`[$b2]`], [`[$b3]`]) as well as the magnitude of the result.
+Determine the result of the cross product, [`\overrightarrow{C}`] = [`\overrightarrow{A}`]X[`\overrightarrow{B}`]  if [`A`] = ([`[$a1]`], [`[$a2]`], [`[$a3]`]) and [`B`] = ([`[$b1]`], [`[$b2]`], [`[$b3]`]). Determine the magnitude of the result.
  
 
-[`C`] =  [___]{"$x"}[`\textbf{i}`]  [`+`] [___]{"$y"}[`\textbf{j}`]  [`+`] [___]{"$z"} [`\textbf{k}`]
+[`\overrightarrow{C}`] =  [___]{"$x"}[`\textbf{i}`]  [`+`] [___]{"$y"}[`\textbf{j}`]  [`+`] [___]{"$z"} [`\textbf{k}`]
 
 
 |[`C`]| = [___]{"$C"}

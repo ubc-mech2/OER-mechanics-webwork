@@ -72,7 +72,7 @@ $rad2 = $deg2 * pi / 180;
 #---Reaction Forces---
 $fx = $f2*cos($rad2);
 $fy = $f1 + $f2*sin($rad2);
-$M = $f1*$d1 + $f2*sin($rad2)*($d1+$d2+$d3*cos($rad1)) + $f2*cos($rad2)*3*sin($rad1);
+$M = $f1*$d1 + $f2*sin($rad2)*($d1+$d2+$d3*cos($rad1)) + $f2*cos($rad2)*$d3*sin($rad1);
 
 
 $mfx = RadioButtons([ "Right", "Left", "Not Applicable" ], "Right");
