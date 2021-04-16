@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-5.7-MK-02
-## Position Vectors
+## 21-S-4.2-MK-01
+## Force System Resultants
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
-## DBchapter(Equilibrium of a Rigid Body)
-## DBsection(Constraints and Statical Determinancy)
-## Date(2021-01-27)
+## DBchapter(Force System Resultants)
+## DBsection(Cross Product)
+## Date(2021-04-15)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-5.7-MK-02.png')
+## RESOURCES('21-S-4.2-MK-01.png')
 
 ########################################################
 
@@ -50,66 +50,49 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1300;
+$width = $imgScale*1056;
 $height = $imgScale*1056;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
 
-$W = random(100,900,100);
-$F = 200;
-
-#Distance from x'
-$Ax = 0;
-$Bx = 3;
-$Cx = 0;
-$Fx = 0;
-$Wx =$Bx/2;
-
-#Distance from y'
-$Ay = 4;
-$By =0;
-$Cy = 0;
-$Fy = $Ay/2;
-$Wy = $Fy;
 
 
-#---- Formulas to compute answers --------------#
+#-----Calculations------#
 
-#sum of moments around x'
-$Tb = $W * $Wx / $Bx;
+$a1 = 0;
+$a2 = random(1,10,1);
+$a3 = random(1,10,1);
+$b1 = random(1,10,1);
+$b2 = random(1,10,1);
+$b3 = 0;
 
-#sum around y'
-$Ta = ($F * $Fy + $W * $Wy) / $Ay;
+$x = $a2*$b3-$a3*$b2;
+$y = ($a3 * $b1 - $a1 * $b3);
+$z = ($a1 * $b2 - $a2 * $b1);
 
-#sum of forces
-$Tc = $W + $F - $Ta - $Tb;
+$C = sqrt($x**2 + $y**2 + $z**2);
 
-
-########################################################
+######################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.7-MK-02.png", width=>[$width], height=>[$height]) @]*
+Determine the cross product, [`C`] of [`A`] = ([`[$a1]`], [`[$a2]`], [`[$a3]`]) and [`B`] = ([`[$b1]`], [`[$b2]`], [`[$b3]`]) as well as the magnitude of the result.
+ 
 
-The uniform plate has a weight of [`[$W]`] [`\textrm{lb}`].  Determine the tension in each of the supporting cables.
-
-
-[`T_{A}`] = [___]{"$Ta"} [`\textrm{lb}`]
+[`C`] =  [___]{"$x"}[`\textbf{i}`]  [`+`] [___]{"$y"}[`\textbf{j}`]  [`+`] [___]{"$z"} [`\textbf{k}`]
 
 
-[`T_{B}`] = [___]{"$Tb"} [`\textrm{lb}`]
-
-
-[`T_{C}`] = [___]{"$Tc"} [`\textrm{lb}`]
+|[`C`]| = [___]{"$C"}
 
 END_PGML
 
  BEGIN_PGML_SOLUTION
-[@ image( "21-S-5.7-MK-02.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-S-4.2-MK-01.pdf", width=>[0], height=>[0]) @]*
  END_PGML_SOLUTION
+
 
 ######################################################
 

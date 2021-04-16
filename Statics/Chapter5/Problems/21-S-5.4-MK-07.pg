@@ -6,7 +6,7 @@
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Equilibrium of a Rigid body)
-## DBsection(Two and three-force members)
+## DBsection(Two and Three Force Members)
 ## Date(2021-03-12)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
@@ -115,6 +115,11 @@ Find the reaction forces at [`A`], [`C`], [`D`], and [`F`]
 
 
 END_PGML
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-5.4-MK-07.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
 
 ######################################################
 

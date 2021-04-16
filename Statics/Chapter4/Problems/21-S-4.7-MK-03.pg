@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-5.7-MK-07
-## Equilibrium of a Rigid Body
+## 21-S-4.7-MK-03
+## Force System Resultants
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
-## DBchapter(Equilibrium of a Rigid Body)
-## DBsection(Constraints and Statical Determinancy)
-## Date(2021-02-04)
+## DBchapter(Force System Resultants)
+## DBsection(Simplification of a Force and Couple System)
+## Date(2021-04-15)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-5.7-MK-07.png')
+## RESOURCES('21-S-4.7-MK-03.png')
 
 ########################################################
 
@@ -69,16 +69,30 @@ $d2 = random(0.2,0.5,0.1);
 $d3 = random(0.5,1,0.1);
 $d4 = random(0.5,1,0.05);
 
-$Fy = -$fy;
-$Mx = $fy*($d1+$d2) + $fz*$d3;
-$My = $fx*$d1 + $fz*$d4;
+$fry = $fy;
+$frx = -$fx;
+$frz = -$fz;
+
+#---first matrix---
+$M1y = $d1 * $frx;
+
+#---Second Matrix---
+$M2x = -($d1+$d2)*$fy;
+
+#---Third Matrix---
+$M3x = $frz * $d3;;
+$M3y = $frz * $d4;
+
+$Mx = $M2x + $M3x;
+$My = $M1y + $M3y;
 $Mz = 0;
+
 ######################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-5.7-MK-07.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.7-MK-03.png", width=>[$width], height=>[$height]) @]*
 
 The above structure has the following values:
 
@@ -104,31 +118,18 @@ The above structure has the following values:
 [`F_3`] = [`[$fz]`] [`\textrm{N}`]
 
 
-
-Determine the components of reaction around point [`A`].
+Replace the force system by an equivalent resultant force and couple moment at point [`A`]. Express answers in catesian form.
  
 
-[`A_{x}`] = [___]{"$fx"} [`\textrm{N}`]
+[`F_R`] =  ([___]{"$frx"}[`\textbf{i}`]  [`+`] [___]{"$fry"}[`\textbf{j}`]  [`+`] [___]{"$frz"} [`\textbf{k}`])  [`\textrm{N}`]
 
 
-[`A_{y}`] = [___]{"$Fy"} [`\textrm{N}`]
-
-
-[`A_{z}`] = [___]{"$fz"} [`\textrm{N}`]
-
-
-[`(M_{A})_{x}`] = [___]{"$Mx"} [`\textrm{N-m}`]
-
-
-[`(M_{A})_{y}`] = [___]{"$My"} [`\textrm{N-m}`]
-
-
-[`(M_{A})_{z}`] = [___]{"$Mz"} [`\textrm{N-m}`]
+[`M_A`] =  ([___]{"$Mx"}[`\textbf{i}`]  [`+`] [___]{"$My"}[`\textbf{j}`]  [`+`] [___]{"$Mz"} [`\textbf{k}`]) [`\textrm{N-m}`]
 
 END_PGML
 
  BEGIN_PGML_SOLUTION
-[@ image( "21-S-5.7-MK-07.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-S-4.7-MK-03.pdf", width=>[0], height=>[0]) @]*
  END_PGML_SOLUTION
 
 

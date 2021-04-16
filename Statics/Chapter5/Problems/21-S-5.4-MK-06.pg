@@ -102,6 +102,9 @@ If the switch requires a force of [`F`] = [`[$F]`] [`\textrm{N}`] to close the c
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-5.4-MK-06.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 ######################################################
 
 ENDDOCUMENT();
