@@ -103,6 +103,11 @@ Determine the force of member [`EF`] of the truss shown above and indicate wheth
 END_PGML
 ANS( $mfef->cmp() );
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.4-MK-02.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
+
 
 ######################################################
 

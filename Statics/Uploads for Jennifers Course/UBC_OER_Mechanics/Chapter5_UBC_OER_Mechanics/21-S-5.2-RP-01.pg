@@ -180,6 +180,12 @@ ANS( $mcH->cmp() );
 ANS( $mcI->cmp() );
 ANS( $mcJ->cmp() );
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.2-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

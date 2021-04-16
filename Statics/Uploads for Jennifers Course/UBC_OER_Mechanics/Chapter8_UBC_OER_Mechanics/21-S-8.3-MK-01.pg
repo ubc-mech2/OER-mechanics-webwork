@@ -78,7 +78,7 @@ BEGIN_PGML
 [@ image( "21-S-8.3-MK-01.png", width=>[$width], height=>[$height]) @]*
 
 
-Determine the smallest force [`P_1`] needed to lift a load, [`P_2`], of [`[$p2]`] [`\textrm{lb}`]. Also determine the force, [`N_D`], exerted on wall [`D`] by block [`B`]. The coefficient of static friction between [`A`] and [`C`] and between [`B`] and [`D`] is [`\mu_s`] = [`[$u1]`], while the coefficient of static friction between [`A`] and [`B`] is [`\mu_{s'}`] = [`[$u2]`]. Use [`\theta`] = [`[$theta]`][`^\circ`] and neglect the weight of the blocks.
+Determine the smallest force [`P_1`] needed to lift a load, [`P_2`], of [`[$p2]`] [`\textrm{lb}`]. Also determine the force, [`N_D`], exerted on wall [`D`]. The coefficient of static friction between [`A`] and [`C`] and between [`B`] and [`D`] is [`\mu_s`] = [`[$u1]`], while the coefficient of static friction between [`A`] and [`B`] is [`\mu_{s'}`] = [`[$u2]`]. Use [`\theta`] = [`[$theta]`][`^\circ`] and neglect the weight of the blocks.
    
 
 [`N_D`] = [_____]{$Nd} [`\textrm{lb}`]
@@ -88,6 +88,11 @@ Determine the smallest force [`P_1`] needed to lift a load, [`P_2`], of [`[$p2]`
 
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-S-8.3-MK-01.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ######################################################
 

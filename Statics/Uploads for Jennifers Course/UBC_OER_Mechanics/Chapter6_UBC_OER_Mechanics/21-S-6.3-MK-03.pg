@@ -170,7 +170,9 @@ BEGIN_PGML
 END_PGML
 ANS( $mde->cmp() );
 
-
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-6.3-MK-03.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 ######################################################
 
 ENDDOCUMENT();

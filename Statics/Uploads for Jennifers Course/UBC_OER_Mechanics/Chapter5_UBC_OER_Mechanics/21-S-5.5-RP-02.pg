@@ -104,6 +104,12 @@ install_problem_grader(~~&std_problem_grader);
 
 ANS( checkbox_cmp( $mcA->correct_ans() ) );
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-5.5-RP-02.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

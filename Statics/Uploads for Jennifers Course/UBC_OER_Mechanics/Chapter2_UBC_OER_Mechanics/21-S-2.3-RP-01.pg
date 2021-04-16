@@ -117,6 +117,12 @@ A hook screwed onto a surface is pulled by two ropes, which exert forces [`F_1`]
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-2.3-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT();

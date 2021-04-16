@@ -92,6 +92,11 @@ Management at UBC want to decrease the overall length of their ropes for the app
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-3.3-MK-02.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+ 
+
 ######################################################
 
 ENDDOCUMENT();

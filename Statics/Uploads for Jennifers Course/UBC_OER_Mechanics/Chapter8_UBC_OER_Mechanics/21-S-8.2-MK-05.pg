@@ -100,6 +100,11 @@ Determine the force [`P`] that can be applied without causing movement of the [`
 
 END_PGML
 
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-8.2-MK-05.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
+
+
 ######################################################
 
 ENDDOCUMENT();

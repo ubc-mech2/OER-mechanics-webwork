@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## 21-S-5.4-MK-01
+## 21-S-5.4-MK-02
 ## Position Vectors
 ## ENDDESCRIPTION
 
@@ -126,6 +126,10 @@ END_PGML
 
 ANS( $mc1->cmp() );
 ANS( $mc2->cmp() );
+
+ BEGIN_PGML_SOLUTION
+[@ image( "21-S-5.4-MK-02.pdf", width=>[0], height=>[0]) @]*
+ END_PGML_SOLUTION
 
 ######################################################
 
