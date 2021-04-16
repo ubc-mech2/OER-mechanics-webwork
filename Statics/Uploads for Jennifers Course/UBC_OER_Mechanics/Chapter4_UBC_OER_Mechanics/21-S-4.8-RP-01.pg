@@ -171,7 +171,14 @@ Specify where the line of action intersects the vertical line [`AB`], measured f
 
 [`d =`] [___]{"$ansD"} [`\: \textrm{m}`]
 
+
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-4.8-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

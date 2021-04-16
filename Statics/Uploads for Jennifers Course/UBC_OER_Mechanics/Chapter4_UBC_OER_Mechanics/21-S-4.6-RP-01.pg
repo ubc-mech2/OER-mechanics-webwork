@@ -121,11 +121,18 @@ Which way will the wheel turn?
 
 [@ $mc3->buttons() @]*
 
+
 END_PGML
 
 ANS( $mc1->cmp() );
 ANS( $mc2->cmp() );
 ANS( $mc3->cmp() );
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-4.6-RP-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
