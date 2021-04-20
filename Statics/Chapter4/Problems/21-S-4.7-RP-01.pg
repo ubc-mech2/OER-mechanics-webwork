@@ -25,14 +25,14 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Statics)
-## DBchapter(Force Vectors)
-## DBsection(Position Vectors)
+## DBchapter(Force System Resultants)
+## DBsection(Simplification of a Force and Couple System)
 ## Institution('University of British Columbia')
 ## Author(Ralph Pascual)
 ## Date(Winter 2021)
 ## Difficulty(Intermediate)
-## KEYWORDS('Statics', 'Dogs')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [2], section [2.7]')
+## KEYWORDS('Statics', 'Equivalent Force', 'Couple Moment')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter [4], section [4.7]')
 
 ########################################################
 
@@ -51,7 +51,7 @@ loadMacros(
 "PGauxiliaryFunctions.pl"
 #"source.pl", # allows code to be displayed on certain sites.
 #"PGcourse.pl", # Customization file for the course
-);
+ );
  
 ##############################################################
 #
@@ -69,99 +69,60 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.18;
+$imgScale = 0.13;
 
-$height = $imgScale * 2729;
+$height = $imgScale*3636;
 
-$width = $imgScale * 3809;
+$width = $imgScale*3464;
+		#aspect ratio
 
 #---- Random variables for this problem --------#
-$L = random(9, 10, 0.5);
-$h_A = random(2, 3, 0.5);
-$h_B = $h_A + random(0.5, 1, 0.5);
-$h_C = $h_A + random(0.5, 1, 0.5);
-$h_P = random(6, 7, 0.5);
-$d_Ax = random(3, 4, 0.5);
-$d_Bx = random(5, 6, 0.5);
-$d_Cx = random(7, 8, 0.5);
-$d_By = random(1, 2, 0.5);
-$d_Cy = random(5, 6, 0.5);
+$d_1 = random(6, 7, 0.5);
+$d_2 = $d_1 - random(1, 1.5, 0.5);
+$d_3 = $d_2 - random(1, 1.5, 0.5);
+$F_x1 = - random(300, 400, 50);
+$F_y1 = random(450, 600, 50);
+$F_z1 = random(200, 350, 50);
+$F_x2 = random(200, 250, 50);
+$F_y2 = random(50, 150, 50);
+$F_z2 = - random(400, 500, 50);
 
 #---- Formulas to compute answers --------------#
-$d_Py = (($L ** 2) - ($h_P ** 2)) ** 0.5;
-
-$r_PAx = - $d_Ax;
-$r_PAy = $d_Py;
-$r_PAz = $h_A - $h_P;
-$r_PBx = $d_Bx;
-$r_PBy = $d_Px - $d_By;
-$r_PBz = $h_B - $h_P;
-$r_PCx = $d_Cx;
-$r_PCy = $d_Px + $d_Cy;
-$r_PCz = $h_C - $h_P;
-
-$d_PA = ($r_PAx ** 2 + $r_PAy ** 2 + $r_PAz ** 2) ** 0.5;
-$d_PB = ($r_PBx ** 2 + $r_PBy ** 2 + $r_PBz ** 2) ** 0.5;
-$d_PC = ($r_PCx ** 2 + $r_PCy ** 2 + $r_PCz ** 2) ** 0.5;
+$F_Rx = $F_x1 + $F_x2;
+$F_Ry = $F_y1 + $F_y2;
+$F_Rz = $F_z1 + $F_z2;
+$M_x = $d_1 * ($F_z1 + $F_z2) + $d_3 * $F_y2;
+$M_y = - $d_3 * $F_x2 - $D_2 * $F_z2;
+$M_z = - $d_1 * ($F_x1 + $F_x2) + $d_2 * $F_y2;
 
 ########################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-2.7-RP-02.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.7-RP-01.png", width=>[$width], height=>[$height]) @]*
 
-Penguina is walking her three dogs, Alpaca, Bird, and Cat. If Penguina's hand is [`[$L] \: \textrm{ft}`] away from the origin, find the position vectors of all the dogs' collars relative to Penguina's hand.
+A bent rod is fixed to the wall at [`O`] and supports two forces [`\overrightarrow{F_1} = \left( [$F_x1] \: \hat{i} + [$F_y1] \: \hat{j} + [$F_z1] \: \hat{k} \right) \: \textrm{N}`] and [`\overrightarrow{F_2} = \left( [$F_x2] \: \hat{i} + [$F_y2] \: \hat{j} + [$F_z2] \: \hat{k} \right) \: \textrm{N}`]. Replace these forces with an equivalent force and couple moment acting on [`O`].
 
 Use the following values:
 
-[`h_P = [$h_P] \: \textrm{ft}`]
+[`d_1 = [$d_1] \: \textrm{m}`]
 
-[`d_{Ax} = [$d_Ax] \: \textrm{ft}`]
+[`d_2 = [$d_2] \: \textrm{m}`]
 
-[`h_A = [$h_A] \: \textrm{ft}`]
-
-[`d_{Bx} = [$d_Bx] \: \textrm{ft}`]
-
-[`d_{By} = [$d_By] \: \textrm{ft}`]
-
-[`h_B = [$h_B] \: \textrm{ft}`]
-
-[`d_{Cx} = [$d_Cx] \: \textrm{ft}`]
-
-[`d_{Cy} = [$d_Cy] \: \textrm{ft}`]
-
-[`h_C = [$h_C] \: \textrm{ft}`]
+[`d_3 = [$d_3] \: \textrm{m}`]
 
 
-Find Penguina's distance [`d_{Py}`] along the y axis from the origin.
+[`\overrightarrow{F_R} = \: (`] [___]{"$F_Rx"} [`\: \hat{i} \: +`] [___]{"$F_Ry"} [`\: \hat{j} \: +`] [___]{"$F_Rz"} [`\: \hat{k} ) \: \textrm{N}`]
 
-[`d_{Py} =`] [___]{"$d_Py"} [`\: \textrm{ft}`]
-
-
-Find the position vectors of Penguina's dogs' collars relative to her hand.
-
-[`\overrightarrow{r}_{PA} = \: (`] [___]{"$r_PAx"} [`\: \hat{i} \: +`] [___]{"$r_PAy"} [`\: \hat{j} \: +`] [___]{"$r_PAz"} [`\: \hat{k} \: ) \: \textrm{ft}`]
-
-[`\overrightarrow{r}_{PB} = \: (`] [___]{"$r_PBx"} [`\: \hat{i} \: +`] [___]{"$r_PBy"} [`\: \hat{j} \: +`] [___]{"$r_PBz"} [`\: \hat{k} \: ) \: \textrm{ft}`]
-
-[`\overrightarrow{r}_{PC} = \: (`] [___]{"$r_PCx"} [`\: \hat{i} \: +`] [___]{"$r_PCy"} [`\: \hat{j} \: +`] [___]{"$r_PCz"} [`\: \hat{k} \: ) \: \textrm{ft}`]
-
-
-Find the distance of each dog's collar from Penguina's hand.
-
-[`d_{PA} =`] [___]{"$d_PA"} [`\: \textrm{ft}`]
-
-[`d_{PB} =`] [___]{"$d_PB"} [`\: \textrm{ft}`]
-
-[`d_{PC} =`] [___]{"$d_PC"} [`\: \textrm{ft}`]
+[`\overrightarrow{M_O} = \: (`] [___]{"$M_x"} [`\: \hat{i} \: +`] [___]{"$M_y"} [`\: \hat{j} \: +`] [___]{"$M_z"} [`\: \hat{k} ) \: \textrm{N} \cdot \textrm{m}`]
 
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[@ image( "21-S-2.7-RP-02.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-S-4.7-RP-01.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
