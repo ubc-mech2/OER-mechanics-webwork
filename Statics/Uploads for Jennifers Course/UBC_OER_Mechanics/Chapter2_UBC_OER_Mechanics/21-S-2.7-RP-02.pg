@@ -71,9 +71,9 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.18;
 
-$height = $imgScale * 2713;
+$height = $imgScale * 2729;
 
-$width = $imgScale * 3775;
+$width = $imgScale * 3809;
 
 #---- Random variables for this problem --------#
 $L = random(9, 10, 0.5);
@@ -81,23 +81,23 @@ $h_A = random(2, 3, 0.5);
 $h_B = $h_A + random(0.5, 1, 0.5);
 $h_C = $h_A + random(0.5, 1, 0.5);
 $h_P = random(6, 7, 0.5);
-$d_Ay = random(3, 4, 0.5);
-$d_By = random(5, 6, 0.5);
-$d_Cy = random(7, 8, 0.5);
-$d_Bx = random(1, 2, 0.5);
-$d_Cx = random(5, 6, 0.5);
+$d_Ax = random(3, 4, 0.5);
+$d_Bx = random(5, 6, 0.5);
+$d_Cx = random(7, 8, 0.5);
+$d_By = random(1, 2, 0.5);
+$d_Cy = random(5, 6, 0.5);
 
 #---- Formulas to compute answers --------------#
-$d_Px = (($L ** 2) - ($h_P ** 2)) ** 0.5;
+$d_Py = (($L ** 2) - ($h_P ** 2)) ** 0.5;
 
-$r_PAx = $d_Px;
-$r_PAy = - $d_Ay;
+$r_PAx = - $d_Ax;
+$r_PAy = $d_Py;
 $r_PAz = $h_A - $h_P;
-$r_PBx = $d_Px - $d_Bx;
-$r_PBy = $d_By;
+$r_PBx = $d_Bx;
+$r_PBy = $d_Py - $d_By;
 $r_PBz = $h_B - $h_P;
-$r_PCx = $d_Px + $d_Cx;
-$r_PCy = $d_Cy;
+$r_PCx = $d_Cx;
+$r_PCy = $d_Py + $d_Cy;
 $r_PCz = $h_C - $h_P;
 
 $d_PA = ($r_PAx ** 2 + $r_PAy ** 2 + $r_PAz ** 2) ** 0.5;
@@ -117,7 +117,7 @@ Use the following values:
 
 [`h_P = [$h_P] \: \textrm{ft}`]
 
-[`d_{Ay} = [$d_Ay] \: \textrm{ft}`]
+[`d_{Ax} = [$d_Ax] \: \textrm{ft}`]
 
 [`h_A = [$h_A] \: \textrm{ft}`]
 
@@ -134,9 +134,9 @@ Use the following values:
 [`h_C = [$h_C] \: \textrm{ft}`]
 
 
-Find Penguina's distance [`d_{Px}`] along the x axis from the origin.
+Find Penguina's distance [`d_{Py}`] along the y axis from the origin.
 
-[`d_{Px} =`] [___]{"$d_Px"} [`\: \textrm{ft}`]
+[`d_{Py} =`] [___]{"$d_Py"} [`\: \textrm{ft}`]
 
 
 Find the position vectors of Penguina's dogs' collars relative to her hand.
