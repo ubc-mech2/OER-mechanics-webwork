@@ -94,10 +94,10 @@ $r_PAx = - $d_Ax;
 $r_PAy = $d_Py;
 $r_PAz = $h_A - $h_P;
 $r_PBx = $d_Bx;
-$r_PBy = $d_Px - $d_By;
+$r_PBy = $d_Py - $d_By;
 $r_PBz = $h_B - $h_P;
 $r_PCx = $d_Cx;
-$r_PCy = $d_Px + $d_Cy;
+$r_PCy = $d_Py + $d_Cy;
 $r_PCz = $h_C - $h_P;
 
 $d_PA = ($r_PAx ** 2 + $r_PAy ** 2 + $r_PAz ** 2) ** 0.5;
