@@ -91,7 +91,7 @@ BEGIN_TEXT
 $BR
 \{ image("STATICS-RBSE04-02-06-e11231c42ed04be29ec9b4ff72ede3541.png" , width=>300, height=>300.0) \}
 $BR
-The member is supported by a pin at \(A\) and cable \(BC\). Determine the components of reaction at these supports if the cylinder has a mass of 40 kg.
+The T-shaped member is supported by a pin at \(A\) and cable \(BC\). It supports a cylinder with a mass of 40 kg. Determine the components of reaction at the supports \(A\) and \(C\).
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

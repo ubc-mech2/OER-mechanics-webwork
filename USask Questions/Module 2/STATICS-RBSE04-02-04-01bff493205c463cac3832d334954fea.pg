@@ -91,7 +91,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE02-02-05-2f0268d7d8be4cacb57f9958a4be1f2c0.png" , width=>300, height=>250) \}
 $BR
-The rod is supported by smooth journal bearings at \(A\), \(B\), and \(C\) and is subjected to the two forces.  Determine the reactions at these supports.
+The rod is supported by journal bearings at \(A\), \(B\), and \(C\) and is subjected to the two applied forces shown.  Determine the reactions at the three supports.
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

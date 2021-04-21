@@ -91,7 +91,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE02-02-04-27d3b782e15142eca90db7e82c94f5270.png" , width=>300, height=>300) \}
 $BR
-The smooth uniform rod \(AB\) is supported by a ball-and socket joint \(A\), the wall \(B\), and a cable \(BC\). Determine the components of reaction at \(A\), the tension in the cable, and the normal reaction at \(B\) if the rod has a mass of 20 kg.
+The smooth uniform rod \(AB\) has a mass of 20 kg. It is supported by a ball-and socket joint \(A\), the wall at end \(B\), and a cable \(BC\), also attached at \(B\). Find the components of reaction at \(A\), the tension in the cable, and the normal reaction at \(B\).
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

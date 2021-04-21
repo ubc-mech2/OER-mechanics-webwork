@@ -91,7 +91,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE04-01-10-fb69f2fa30bc475694392df23da14b6b1.png" , width=>300, height=>170) \}
 $BR
-Determine the components of the support reactions at the fixed support \(A\) on the cantilevered beam.
+Determine the components of the support reactions on the cantilevered beam at the fixed support \(A\). 
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

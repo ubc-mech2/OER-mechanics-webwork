@@ -92,7 +92,7 @@ $BR
 \{ image("STATICS-RBSE02-01-03-fa2df8d939984923b5e90e92f354c85e0.png" , width=>270, height=>250) \}
 $BR
 
-A truss is supported by a pin at \(A\) and a roller at \(B\).  Determine the support reactions.
+A truss is supported by a pin at \(A\) and a roller at \(B\).  Find the reaction forces at the supports.
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above:

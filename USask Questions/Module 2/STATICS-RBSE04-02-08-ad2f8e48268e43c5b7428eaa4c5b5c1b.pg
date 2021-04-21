@@ -91,7 +91,7 @@ BEGIN_TEXT
 $BR
 \{ image("STATICS-RBSE04-02-08-ad2f8e48268e43c5b7428eaa4c5b5c1b1.png" , width=>300, height=>300) \}
 $BR
-Determine the components of reaction at the fixed support \(A\).  The 400 N, 500 N, and 600 N forces are parallel to the \(x\), \(y\), \(z\) axes, respectively.
+Determine the components of reaction at the fixed support \(A\).  The applied forces (400 N, 500 N, and 600 N) are parallel to the \(x\), \(y\), \(z\) axes, respectively.
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above:

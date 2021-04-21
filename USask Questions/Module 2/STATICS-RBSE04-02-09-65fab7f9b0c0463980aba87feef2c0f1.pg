@@ -90,7 +90,7 @@ BEGIN_TEXT
 $BR
 \{ image("STATICS-RBSE04-02-09-65fab7f9b0c0463980aba87feef2c0f11.png" , width=>300, height=>250) \}
 $BR
-Determine the components of reaction that the thrust bearing \(A\) and the cable \(BC\) exert on the bar.
+Given the loading on the bar as shown, determine the components of reaction at the two supports: the thrust bearing \(A\) and the cable \(BC\).
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

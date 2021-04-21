@@ -97,7 +97,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE02-01-05-f77910e9af8b499a8baa6bf9f940e23b0.png" , width=>400, height=>250) \}
 $BR
-Determine the reactions at the smooth contact points \(A\), \(B\) and \(C\) on the bar.
+Find the reactions at the smooth contact points \(A\), \(B\) and \(C\) on the bar.
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above:

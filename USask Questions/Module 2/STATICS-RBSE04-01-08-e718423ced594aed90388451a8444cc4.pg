@@ -93,7 +93,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE04-01-08-e718423ced594aed90388451a8444cc41.png" , width=>300, height=>150) \}
 $BR
-Determine the horizontal and vertical components of reaction at the supports. Neglect the thickness of the beam.
+Find the horizontal and vertical components of reaction at the supports \(A\) and \(B\). Neglect the thickness of the beam.
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

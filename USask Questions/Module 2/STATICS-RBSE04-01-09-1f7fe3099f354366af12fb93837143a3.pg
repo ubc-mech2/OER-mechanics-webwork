@@ -92,7 +92,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE04-01-09-1f7fe3099f354366af12fb93837143a31.png" , width=>300, height=>170) \}
 $BR
-Determine the reactions on the bend rod which is supported by a smooth surface at \(B\) and by collar \(A\), which is fixed to the rod and is free to slide over the fixed incline rod.
+The bent rod is supported by a smooth surface at \(B\) and by collar \(A\), which is rigidly attached to the bent rod and is free to slide over the fixed incline rod. Determine the reactions on the bent rod. 
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above.

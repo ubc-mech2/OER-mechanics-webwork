@@ -101,7 +101,7 @@ $BR
 $BR
 \{ image("STATICS-RBSE02-01-04-cf01d9b20b2e44daa97e00830e37b2260.png" , width=>400, height=>250) \}
 $BR
-Determine the horizontal and vertical components of reaction at pin \(A\) and the reaction of the rocker \(B\)
+Find the horizontal and vertical components of reaction force at pin \(A\) and the reaction of the rocker \(B\). 
 $BR
 $BR
 From the options below, select the best FBD for solving the problem above:
