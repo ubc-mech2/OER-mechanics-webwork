@@ -1,17 +1,17 @@
 ## DESCRIPTION
-## 21-S-4.7-MK-01
+## 21-S-4.5-MK-01
 ## Force System Resultants
 ## ENDDESCRIPTION
 
 ## KEYWORDS('statics')
 ## DBsubject(Statics)
 ## DBchapter(Force System Resultants)
-## DBsection(Simplification of a force and couple system)
-## Date(2021-04-15)
+## DBsection(Moment of a Force about a specified axis)
+## Date(2021-04-16)
 ## Author(Matthew Koebel)
 ## Institution(University of British Columbia)
 ## Level(Intermediate)
-## RESOURCES('21-S-4.7-MK-01.png')
+## RESOURCES('21-S-4.5-MK-01.png')
 
 ########################################################
 
@@ -50,94 +50,54 @@ $imgScale =0.35;
 
 
 #-------------- Image Aspect Ratio---------------#
-$width = $imgScale*1500;
+$width = $imgScale*1853;
 $height = $imgScale*1100;
 
 
 #---- Provided --------#
 # random(lower, upper, stepsize)
-$d1 = random(3,5,0.25);
-$d2 = random(1,2,0.25);
-$d3 = random(1,2,0.25);
-$d4 = random(1,2,0.25);
-$f1 = random(200,500,25);
-$f2 = random(200,500,25);
-$f3 = random(200,500,25);
-$f4 = random(200,500,25);
-$deg1 = random(40,60,5);
-$deg2 = random(20,30,5);
-$rad1 = $deg1 * pi / 180;
-$rad2 = $deg2 * pi/ 180;
+$d1 = random(3.5,4.5,0.1);
+$d2 = random(1.5,2.5,0.1);
+$d3 = random(1.5,2.5,0.25);
+$d4 = random(3.5,4.5,0.05);
+$f = random(25,35,1);
 
 #---Reaction Forces---
-$fx = $f4*cos($rad2);
-$fy = $f1 + $f2 + $f3 + $f4*sin($rad2);
-$M = $f1*($d1*cos($rad1)+$d2) + $f2*($d1*cos($rad1)+$d2+$d3) + $f3*($d1*cos($rad1)+$d2+$d3+$d4) + $f4*($d1*cos($rad1)+$d2+$d3+$d4)*sin($rad2) + $f4*cos($rad2)*sin($rad1)*$d1;
 
-$mfx = RadioButtons([ "Right", "Left", "Not Applicable" ], "Right");
-$mfy = RadioButtons([ "Up", "Down", "Not Applicable" ], "Down");
-$mM = RadioButtons([ "Clockwise", "Counterclockwise", "Not Applicable" ], "Clockwise");
+$a1 = $d4;
+$rmag = sqrt($d1**2+$d3**2+($d4-$d2)**2);
+$b1 = -$f*($d4-$d2)/$rmag;
+$b2 = $f*$d3/$rmag;
+$b3 = $f*$d1/$rmag;
+
+$y = ($a3 * $b1 - $a1 * $b3);
 
 ######################################################
 #PGML
 
 BEGIN_PGML
 
-[@ image( "21-S-4.7-MK-01.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-S-4.5-MK-01.png", width=>[$width], height=>[$height]) @]*
 
 Use the following values for the image above:
 
-* [`d_1`] = [`[$d1]`] [`\textrm{m}`]
+* [`d_1`] = [`[$d1]`] [`\textrm{ft}`]
 
-* [`d_2`] = [`[$d2]`] [`\textrm{m}`]
+* [`d_2`] = [`[$d2]`] [`\textrm{ft}`]
 
-* [`d_3`] = [`[$d3]`] [`\textrm{m}`]
+* [`d_3`] = [`[$d3]`] [`\textrm{ft}`]
 
-* [`d_4`] = [`[$d4]`] [`\textrm{m}`]
-
-* [`F_1`] = [`[$f1]`] [`\textrm{N}`]
-
-* [`F_2`] = [`[$f2]`] [`\textrm{N}`]
-
-* [`F_3`] = [`[$f3]`] [`\textrm{N}`]
-
-* [`F_4`] = [`[$f4]`] [`\textrm{N}`]
-
-* [`\theta_1`] = [`[$deg1]`][`^{\circ}`]
-
-* [`\theta_2`] = [`[$deg2]`][`^{\circ}`]
+* [`d_4`] = [`[$d4]`] [`\textrm{ft}`]
 
 
-Replace the loading system by an equivalant resultant force and couple moment acting at point [`A`].  Determine the magnitude of the resultant force components and couple moment along with their directions.
+The hood of the car is supported by stut [`AB`], which exerts a force of [`F`] = [`[$f]`] [`\textrm{lb}`] on the hood. Determine the moment of this force about the hinged axis [`y`]. Assume a counterclockwise moment is positive and clockwise moment is negative.
 
-[`F_{R_x}`] = [_____]{$fx} [`\textrm{N}`]
-
-[@ $mfx->buttons() @]*  
+[`M_{y}`] = [_____]{$y} [`\textrm{lb-ft}`]
 
 END_PGML
-ANS( $mfx->cmp() );
-
-BEGIN_PGML
-
-[`F_{R_y}`] = [_____]{$fy} [`\textrm{N}`]
-
-[@ $mfy->buttons() @]*  
-
-END_PGML
-ANS( $mfy->cmp() );
-
-BEGIN_PGML
-
-[`M_{A}`] = [_____]{$M} [`\textrm{N-m}`]
-
-[@ $mM->buttons() @]*  
-
-END_PGML
-ANS( $mM->cmp() );
-
 
  BEGIN_PGML_SOLUTION
-[@ image( "21-S-4.7-MK-01.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-S-4.5-MK-01.pdf", width=>[0], height=>[0]) @]*
  END_PGML_SOLUTION
 
 ######################################################
