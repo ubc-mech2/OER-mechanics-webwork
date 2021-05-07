@@ -38,15 +38,6 @@
 
 DOCUMENT();
 
-#image scale
-$imgScale = .2;
-
-#image aspect ratio
-$width = $imgScale*2620;
-$height = $imgScale*1616;
-
-
-
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
 	"MathObjects.pl",
@@ -68,10 +59,12 @@ Context("Numeric");
 #given
 $v = random(5,9,1);
 
-
 #computation
 $vA = $v/6;
 
+#image settings
+$width = 300;
+$height = 300;
 
 #set tolerance
 Context()->flags->set(
@@ -94,7 +87,11 @@ An evil physics professor has asked you to lift this block. If you pull the rope
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
 
+[@ image( "20-P-KM-BK-030.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
