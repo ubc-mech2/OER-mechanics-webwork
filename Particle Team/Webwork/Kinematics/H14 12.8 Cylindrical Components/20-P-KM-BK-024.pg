@@ -97,7 +97,11 @@ find the magnitude of the monkey's acceleration when [`r=[$r]`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
 
+[@ image( "20-P-KM-BK-024.pdf", width=>[$width], height=>[$height]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
