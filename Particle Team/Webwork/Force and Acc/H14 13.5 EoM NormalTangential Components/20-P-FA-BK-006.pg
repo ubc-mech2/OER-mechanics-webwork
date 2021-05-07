@@ -85,7 +85,11 @@ find the coefficient of friction between the block and the ramp.
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
 
+[@ image( "20-P-FA-BK-006.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
