@@ -73,7 +73,7 @@ $s = random(50,100,1);
 
 #computation
 $v = sqrt(2*$at*$s);
-$an = $v/($r**2);
+$an = ($v**2)/$r;
 $a = sqrt($an**2 + $at**2);
 
 
@@ -96,6 +96,14 @@ Find the car's total acceleration [`[$s]`] [`m`] along the track
 [`a=`] [_____]{"$a"} [`m/s^2`]
 
 END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-021.png", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

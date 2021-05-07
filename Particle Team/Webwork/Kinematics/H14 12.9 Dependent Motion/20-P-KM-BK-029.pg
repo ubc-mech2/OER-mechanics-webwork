@@ -42,8 +42,8 @@ DOCUMENT();
 $imgScale = .2;
 
 #image aspect ratio
-$width = $imgScale*2468;
-$height = $imgScale*1128;
+$width = $imgScale*2099;
+$height = $imgScale*1440;
 
 
 
@@ -98,6 +98,14 @@ Assuming you can pull with a speed of [`[$v]`] [`m/s`] either way, find the spee
 END_PGML
 
 
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-029.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
