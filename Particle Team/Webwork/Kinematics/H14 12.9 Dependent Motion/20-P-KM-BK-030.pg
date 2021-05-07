@@ -64,7 +64,7 @@ $vA = $v/6;
 
 #image settings
 $width = 300;
-$height = 300;
+$height = 350;
 
 #set tolerance
 Context()->flags->set(
