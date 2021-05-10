@@ -76,8 +76,11 @@ $vay = -sin($angle)*$va;
 $vax = cos($angle)*$va;
 $vabx = $vax - $D;
 
-$width = 350;
-$height = 300;
+#image resolution
+$resolution = 0.2;
+$width = $resolution*1677;
+$height = $resolution*1315;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -98,6 +101,12 @@ If Car A moves with an acceleration composed of [` [[$A] \hat{a_{t}} + [$B] \hat
 [`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vay"}[`\hat{j}`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-028.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
