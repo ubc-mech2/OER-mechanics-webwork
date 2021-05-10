@@ -91,7 +91,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If Car A moves with an acceleration composed of [` [[$A] \hat{a_{t}} + [$B] \hat{a_{n}} ]`] [`m/s`] with a [`\theta = [$C]^\circ`] and a radius of [`[$E]`] [`m`]. Car B moves with a velocity of [` [$D] `] [`m/s`]. What is the relative velocity from Car B's perspective.
+If Car A moves with an acceleration composed of [` [[$A] \hat{a_{t}} + [$B] \hat{a_{n}} ]`] [`m/s^2`] with a [`\theta = [$C]^\circ`] and a radius of [`[$E]`] [`m`]. Car B moves with a velocity of [` [$D] `] [`m/s`]. What is the relative velocity from Car B's perspective?
 
 [@ image( "20-P-KM-AF-028.png", width=>[$width], height=>[$height]) @]*
 
