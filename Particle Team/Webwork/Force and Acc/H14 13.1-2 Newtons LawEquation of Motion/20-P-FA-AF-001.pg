@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinetics of systems of particles)
+## DBsection(Equations of motion)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -79,9 +79,11 @@ $m1 = 5.972*10**24;
 $G = 66.73*10**(-12);
 $Fearth = $G*$m1*$M/($rm**2);
 
+#image settings
+$resolution = 0.25;
+$width = $resolution*1989;
+$height = $resolution*1872;
 
-$width = 300;
-$height = 300;
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -101,13 +103,19 @@ _use 9.81 for gravity and negative to indicate downwards_
 
 [`a = `][_____]{"$acc"}[`m/s^2`]
 
+[@ image( "20-P-WE-AF-006.png", width=>$width, height=>$height) @]*
 
 If it is [` [$D] `] [`km`] above the earths surface, what is the force felt between the two bodies?
 
 [`F = `][_____]{"$Fearth"}[`N`]
 
-
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-001.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
