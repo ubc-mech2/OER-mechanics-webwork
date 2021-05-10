@@ -103,7 +103,7 @@ _use 9.81 for gravity and negative to indicate downwards_
 
 [`a = `][_____]{"$acc"}[`m/s^2`]
 
-[@ image( "20-P-WE-AF-006.png", width=>$width, height=>$height) @]*
+[@ image( "20-P-FA-AF-001.png", width=>$width, height=>$height) @]*
 
 If it is [` [$D] `] [`km`] above the earths surface, what is the force felt between the two bodies?
 
