@@ -93,7 +93,7 @@ The [`[$M] \: kg`] block sits on the edge of a [`[$R] \: m`] disk that is accele
 
 _use 9.80 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-0102.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-FA-AF-010.png", width=>[$width], height=>[$height]) @]*
 
 [`T = `][_____]{"$tension"}[`N`]
 

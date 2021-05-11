@@ -100,7 +100,7 @@ The lawnmower has a mass of [`[$M]`] [`kg`] and its handle is at [`45^\circ`]. T
 
 _use 9.81 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-0022.png", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-AF-002.png", width=>[$width], height=>[$height]) @]* 
 
 END_PGML
 

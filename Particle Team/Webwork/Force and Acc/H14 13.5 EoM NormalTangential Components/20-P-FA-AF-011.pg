@@ -99,7 +99,7 @@ A motorcycle and cyclist have a combined mass of [`[$M] \: kg`], and travel alon
 
 _use 9.80 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-0111.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-FA-AF-011.png", width=>[$width], height=>[$height]) @]*
 
 [`v = `][_____]{"$velocity"}[`m/s`]
 

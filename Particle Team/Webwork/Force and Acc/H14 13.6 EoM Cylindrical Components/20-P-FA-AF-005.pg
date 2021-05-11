@@ -98,7 +98,7 @@ BEGIN_PGML
 
 The arm is rotating along the described path with an angular velocity of [`\dot\theta`] [`=`] [`[$A]`] [`rad/s`] and [`\ddot\theta`] [`=`] [`0`] [`rad/s^2`]. Determine the magnitude of the force exerted on the [`[$M]`] [`kg`] ball when [`\theta = [$theta]`] [`rad`].
 
-[@ image( "20-P-FA-AF-0052.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-FA-AF-005.png", width=>[$width], height=>[$height]) @]*
 
 [`F = `][_____]{"$F"}[`N`]
 
