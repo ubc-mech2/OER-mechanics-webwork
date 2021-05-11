@@ -53,6 +53,8 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
 
+TEXT(beginproblem());
+
 ##############################################################
 #
 #  Setup
