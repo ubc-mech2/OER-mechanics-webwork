@@ -87,7 +87,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-Find the force required to overcome friction and push a [`[$m]\: kg`] box up a slope with an angle of 
+Find the force required to overcome friction and push a [`[$m]\: kg`] box up a slope with an angle of incline of
 [`[$theta]^\circ`] and a coefficient of friction of [`\mu = [$mu]`].
 
 
