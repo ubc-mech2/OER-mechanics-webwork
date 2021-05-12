@@ -39,7 +39,7 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .2;
+$imgScale = .35;
 
 #image aspect ratio
 $width = $imgScale*1405;
@@ -57,6 +57,8 @@ loadMacros(
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
+
+TEXT(beginproblem());
 
 ##############################################################
 #
@@ -97,7 +99,11 @@ find the magnitude of the monkey's acceleration when [`r=[$r]`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
 
+[@ image( "20-P-KM-BK-024.pdf", width=>[$width], height=>[$height]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

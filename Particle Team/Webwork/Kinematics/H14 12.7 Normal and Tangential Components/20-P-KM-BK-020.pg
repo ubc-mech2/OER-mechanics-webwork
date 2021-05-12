@@ -58,6 +58,8 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
 
+TEXT(beginproblem());
+
 ##############################################################
 #
 #  Setup
@@ -91,9 +93,17 @@ A weight is tied to the end of a [`[$r]m`] rope. You want to swing it in a verti
 What is the minimum speed the weight must travel at so that it doesn't fall at the top of its arc?  
 ([`g = [$g]m/s^2`]).  
 
+[@ image( "20-P-KM-BK-020.png", width=>[$width], height=>[$height]) @]*
+
 [`v=`] [_____]{"$v"} [`m/s`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-020.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

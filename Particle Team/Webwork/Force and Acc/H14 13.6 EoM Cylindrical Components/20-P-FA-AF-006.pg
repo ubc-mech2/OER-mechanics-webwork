@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinetics of systems of particles)
+## DBsection(Equations of motion)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -54,6 +54,8 @@ loadMacros(
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
+
+TEXT(beginproblem());
 
 ##############################################################
 #
@@ -90,8 +92,11 @@ $at = $radius*$ddtheta + 2*$dradius*$dtheta;
 $N = ($M*$ar)/(sin($angle2));
 $F = $M*$at - $N*cos($angle2);
 
-$width = 300;
-$height = 450;
+#image settings
+$resolution = 0.4;
+$width = $resolution*986;
+$height = $resolution*1992;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -114,6 +119,12 @@ _note: [`0 < `] [`\theta`] [`< \pi/2`]_
 [`F = `][_____]{"$F"}[`N`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-006.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

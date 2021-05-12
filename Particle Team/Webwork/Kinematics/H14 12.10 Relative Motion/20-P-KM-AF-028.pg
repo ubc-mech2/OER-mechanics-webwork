@@ -54,6 +54,8 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
 
+TEXT(beginproblem());
+
 ##############################################################
 #
 #  Setup
@@ -76,8 +78,11 @@ $vay = -sin($angle)*$va;
 $vax = cos($angle)*$va;
 $vabx = $vax - $D;
 
-$width = 350;
-$height = 300;
+#image resolution
+$resolution = 0.2;
+$width = $resolution*1677;
+$height = $resolution*1315;
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.03,
@@ -91,13 +96,19 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If Car A moves with an acceleration composed of [` [[$A] \hat{a_{t}} + [$B] \hat{a_{n}} ]`] [`m/s`] with a [`\theta = [$C]^\circ`] and a radius of [`[$E]`] [`m`]. Car B moves with a velocity of [` [$D] `] [`m/s`]. What is the relative velocity from Car B's perspective.
+If Car A moves with an acceleration composed of [` [[$A] \hat{a_{t}} + [$B] \hat{a_{n}} ]`] [`m/s^2`] with a [`\theta = [$C]^\circ`] and a radius of [`[$E]`] [`m`]. Car B moves with a velocity of [` [$D] `] [`m/s`]. What is the relative velocity from Car B's perspective?
 
 [@ image( "20-P-KM-AF-028.png", width=>[$width], height=>[$height]) @]*
 
 [`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vay"}[`\hat{j}`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-028.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

@@ -54,6 +54,8 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
 
+TEXT(beginproblem());
+
 ##############################################################
 #
 #  Setup
@@ -107,7 +109,7 @@ A pulley outputs a force as a function of time, [`F \: = \: [$A] \: t`] on a blo
 
 _use 9.8 for gravity_
 
-[@ image( "20-P-FA-AF-0092.png", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-FA-AF-009.png", width=>[$width], height=>[$height]) @]* 
 
 [`d = `][_____]{"$displacement"}[`m`]
 

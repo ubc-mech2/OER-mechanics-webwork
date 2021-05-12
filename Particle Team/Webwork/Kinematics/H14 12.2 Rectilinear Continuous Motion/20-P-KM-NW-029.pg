@@ -39,11 +39,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .9;
+$imgScale = .7;
 
 #image aspect ratio
-$width = $imgScale*711;
-$height = $imgScale*263;
+$width = $imgScale*1606;
+$height = $imgScale*1320;
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
@@ -57,6 +57,8 @@ loadMacros(
 	#"source.pl",        # allows code to be displayed on certain sites.
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
+
+TEXT(beginproblem());
 
 ##############################################################
 #
@@ -102,6 +104,15 @@ People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], the
 [`a =`] [_____]{"$acceleration"} [`m/s^2`]  
 
 END_PGML
+
+##############################################################
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-029.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinematics of particles)
+## DBsection(Curvilinear motion: normal and tangential coordinates)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -55,6 +55,8 @@ loadMacros(
 	#"PGcourse.pl", 	 # Customization file for the course
    	);
 
+TEXT(beginproblem());
+
 ##############################################################
 #
 #  Setup
@@ -64,7 +66,7 @@ loadMacros(
 
 Context("Numeric");
 #given
-$M = random(2, 10, 1);
+$M = random(120, 180, 1);
 $X = random(1, 10, 1);
 $theta = random(5,30,5);
 
@@ -97,11 +99,17 @@ A motorcycle and cyclist have a combined mass of [`[$M] \: kg`], and travel alon
 
 _use 9.80 for gravity and negative to indicate downwards_
 
-[@ image( "20-P-FA-AF-0111.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-FA-AF-011.png", width=>[$width], height=>[$height]) @]*
 
 [`v = `][_____]{"$velocity"}[`m/s`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-011.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
