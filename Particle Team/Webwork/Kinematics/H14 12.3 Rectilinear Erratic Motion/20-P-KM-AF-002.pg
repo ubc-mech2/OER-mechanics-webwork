@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinematics of particles)
+## DBsection(Graphical solutions of rectilinear motion problems)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -98,9 +98,13 @@ A particle starts at the origin at [`t = 0`] [`s`] and moves with velocity [`v =
 [`d =`] [_____]{"$s"} [`m`]  
 [`v_{avg} =`] [_____]{"$v"} [`m/s`]  
 
-
-
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-002.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

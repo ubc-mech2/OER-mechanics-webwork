@@ -105,9 +105,6 @@ People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], the
 
 END_PGML
 
-##############################################################
-
-
 BEGIN_PGML_SOLUTION
 
 [@ image( "20-P-KM-NW-029.pdf", width=>[0], height=>[0]) @]*

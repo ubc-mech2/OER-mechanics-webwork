@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinematics of particles)
+## DBsection(Curvilinear motion: normal and tangential coordinates)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -91,6 +91,12 @@ Traffic circles are not often actual circles and are they can be expressed by eq
 [`a_{min}`][_____]{"$amin"} [`\frac{km}{h^2}`] 
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-019.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

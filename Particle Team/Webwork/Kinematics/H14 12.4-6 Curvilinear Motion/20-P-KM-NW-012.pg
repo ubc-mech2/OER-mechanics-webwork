@@ -99,4 +99,10 @@ _If you enter an answer as a expression of trigonometric functions, use radians.
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-012.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT()];     #save as .pg

@@ -84,4 +84,10 @@ A ball attached to a string has an initial speed of [`v_{0} = [$speed]`] [`m/s`]
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-017.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT()];     #save as .pg

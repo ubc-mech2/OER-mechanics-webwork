@@ -30,8 +30,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinematics of particles)
+## DBsection(Curvilinear motion: 2D rectangular coordinates)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -111,6 +111,12 @@ minimum speed [_____]{"$vi"} [`m/s`]
 maximum speed  [_____]{"$va"} [`m/s`]  
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-011.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

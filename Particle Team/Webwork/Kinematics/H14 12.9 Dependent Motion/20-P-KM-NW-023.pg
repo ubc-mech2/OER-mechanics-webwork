@@ -95,4 +95,10 @@ If the end [`A`] of the cable is moving at [`v_{A} = [$velocityA]`] [`m/s`], det
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-023.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT()];     #save as .pg

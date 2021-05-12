@@ -100,8 +100,13 @@ How many seconds after the club first hits the ball does the bird reach a height
 
 [`t=`][___]{"$t"} [`s`]
 
-
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-013.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

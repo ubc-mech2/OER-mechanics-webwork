@@ -107,6 +107,12 @@ Give your answer in earth days [`(one earth day = 86400 seconds)`], to one decim
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-010.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT()};

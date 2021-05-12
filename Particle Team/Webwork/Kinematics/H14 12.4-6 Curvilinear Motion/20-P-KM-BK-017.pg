@@ -106,6 +106,12 @@ Find the particle's position at [`t=[$t]`] [`s`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-017.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT()};

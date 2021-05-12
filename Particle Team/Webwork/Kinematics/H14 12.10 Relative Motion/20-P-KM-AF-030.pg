@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinematics of particles)
+## DBsection(Relative motion: translating axes)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -122,15 +122,20 @@ Race tracks are ovals, however the curves can be described as a section of a cir
 
 _[`\alpha = [$G]`] [`^\circ`] [`\beta = [$H]`] [`^\circ`]_ 
 
-[@ image( "20-P-KM-AF-0303.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-P-KM-AF-030.png", width=>[$width], height=>[$height]) @]*
 
 [`V_{A/B} = `][_____]{"$vabx"}[`\hat{i}`] [`+`] [_____]{"$vaby"}[`\hat{j}`]
 
 
 [`a_{A/B} = `][_____]{"$aabx"}[`\hat{i}`] [`+`] [_____]{"$aaby"}[`\hat{j}`]
 
-
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-030.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

@@ -99,6 +99,12 @@ Find [`y`], [`v_y`], and [`a_y`] when [`x = [$x]`] [`m`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-014.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ##############################################################
 
 ENDDOCUMENT()};

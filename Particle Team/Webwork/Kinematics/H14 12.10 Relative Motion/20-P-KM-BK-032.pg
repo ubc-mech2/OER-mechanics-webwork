@@ -101,7 +101,11 @@ Find the speed and angle at which the rain would appear to be falling to an obse
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
 
+[@ image( "20-P-KM-BK-032.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
