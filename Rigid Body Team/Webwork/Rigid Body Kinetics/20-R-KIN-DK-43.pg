@@ -107,4 +107,14 @@ density [`\rho = `] [`[$rho]`] [`kg/m^3`], determine its radius of gyration abou
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-R-KIN-DK-43.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT();
