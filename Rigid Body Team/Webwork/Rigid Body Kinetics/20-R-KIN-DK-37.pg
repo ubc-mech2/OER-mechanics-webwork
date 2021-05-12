@@ -100,4 +100,14 @@ at A and the tension in the cable PG at that instant. Assume the mass of the cab
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-R-KIN-DK-37.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT();

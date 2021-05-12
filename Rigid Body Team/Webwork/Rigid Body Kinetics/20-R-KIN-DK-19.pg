@@ -109,4 +109,14 @@ G is a horizontal distance [`d_A = `] [`[$dA]`] [`m`] from A while it is a horiz
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-R-KIN-DK-19.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT();
