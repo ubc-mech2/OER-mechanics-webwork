@@ -102,4 +102,16 @@ x-direction before the collision? Assume that linear momentum was conserved.
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-Mammoth-6-2dCollision.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
+
+
 ENDDOCUMENT();

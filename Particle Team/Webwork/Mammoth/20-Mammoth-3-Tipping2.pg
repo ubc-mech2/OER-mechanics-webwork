@@ -108,4 +108,27 @@ tip the mammoth? [`\theta = [$ang]^{o}`]. You can assume that the ground is roug
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+Using: 
+
+[`h = 3.75m`]
+
+[`h_g = 3.75m`]
+
+[`m = 6000kg`]
+
+[`c = 1.5m`]
+
+[`e = 0.3m`]
+
+[`\theta = 30^{\circ}`]
+
+[@ image( "20-Mammoth-3-Tipping2.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

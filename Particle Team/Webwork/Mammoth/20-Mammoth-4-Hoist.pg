@@ -104,7 +104,7 @@ BEGIN_PGML
 
 [@ image( "20-Mammoth-4-Hoist.png", width=>[$width], height=>[$height]) @]*
 
-You are hoisting a wooly mammoth([`m = [$mass] kg`]) upwards using a moment, [`M`], applied at pulley [`B`].
+You are hoisting a wooly mammoth ([`m = [$mass] kg`]) upwards using a moment, [`M`], applied at pulley [`B`].
 The radius of the pulleys at A and B are [`r_A = [$radA] m`] and [`r_B = [$radB] m`] respectively.
 
 [`1)`] If the pulley at [`B`] applies a moment of [`300t^{2} + 30000 Nm`], determine the velocity
@@ -128,5 +128,19 @@ needed at [`B`] to hoist the mammoth up to [`[$vel] m/s`] in [`t = [$time2] s`]?
 [`M =`] [____]{"$ans4"} [`Nm`]
 
 END_PGML
+
+
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-Mammoth-4-Hoist.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
+
+
 
 ENDDOCUMENT();

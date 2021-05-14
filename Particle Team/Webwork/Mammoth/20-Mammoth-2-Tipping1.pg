@@ -129,4 +129,28 @@ BEGIN_PGML
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+Using: 
+
+[`h = 3.75m`]
+
+[`h_g = 3.75m`]
+
+[`m = 6000kg`]
+
+[`b = 0.8 m`]
+
+[`F = 400 N`]
+
+[@ image( "20-Mammoth-2-Tipping1.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
+
+
 ENDDOCUMENT();

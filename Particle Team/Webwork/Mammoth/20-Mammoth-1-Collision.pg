@@ -104,4 +104,29 @@ Assume to the right is positive.
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[`P_{initial} = m_Av_A + m_Bv_B`]
+
+[`P_{final} = (m_A + m_B)v_f`]
+
+By the law of conservation of momentum:
+
+[`P_{initial}=P_{final}`]
+
+From which we can obtain:
+
+[`v_{f}=\frac{m_Av_A + m_Bv_B}{m_A+m_B}`]
+
+Note that the value used for [`v_B`] should be negative if moving to the right is taken as positive.
+
+[@ image( "20-Mammoth-1-Collision.pdf", width=>[0], height=>[0] ) @]*
+
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();
