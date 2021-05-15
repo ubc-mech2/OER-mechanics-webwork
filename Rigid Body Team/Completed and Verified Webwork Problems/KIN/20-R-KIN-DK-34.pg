@@ -117,4 +117,14 @@ END_TEXT
 
 ANS( $mc1->cmp() );
 
+
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-34.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

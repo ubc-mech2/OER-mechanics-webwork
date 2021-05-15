@@ -124,5 +124,13 @@ If the movers can apply the force required for the statue to slip, where is the 
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-27.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 
 ENDDOCUMENT();

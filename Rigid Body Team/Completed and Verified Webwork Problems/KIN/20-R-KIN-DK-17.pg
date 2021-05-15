@@ -108,4 +108,12 @@ and [`d_A = `] [`[$dA]`] [`m`] and [`d_B = `] [`[$dB]`] [`m`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-17.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();
