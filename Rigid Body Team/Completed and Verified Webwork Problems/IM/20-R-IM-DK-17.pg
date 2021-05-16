@@ -105,4 +105,13 @@ strikes the very top of the stick with length [`l = `] [`[$l]`] [`m`] at a veloc
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-17.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();

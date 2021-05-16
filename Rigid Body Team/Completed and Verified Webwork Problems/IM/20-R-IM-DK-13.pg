@@ -105,4 +105,13 @@ spinning relative to the rod. The pins at A and B have friction, but pin O is fr
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-13.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();

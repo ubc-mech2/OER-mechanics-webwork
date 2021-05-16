@@ -99,4 +99,13 @@ point O, determine the angular velocity of the plate just after a [`[$mbulletg]`
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-12.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

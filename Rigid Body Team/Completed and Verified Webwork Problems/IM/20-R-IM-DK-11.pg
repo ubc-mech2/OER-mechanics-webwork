@@ -103,4 +103,13 @@ nor rebound, determine the minimum initial velocity needed for it to roll over a
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-11.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();
