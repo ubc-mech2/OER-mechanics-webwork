@@ -105,4 +105,12 @@ The unstretched length of the spring is [`[$d0]`] [`m`] and the spring constant 
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-WE-DK-14.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

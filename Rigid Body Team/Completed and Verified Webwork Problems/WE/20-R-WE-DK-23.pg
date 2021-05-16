@@ -113,4 +113,12 @@ and [`\phi = `] [`[$phi]`][`^{\circ}`] at this instant. Each link has a mass of 
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-WE-DK-23.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();
