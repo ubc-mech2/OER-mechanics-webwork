@@ -98,4 +98,10 @@ A [`m = [$mass] kg`] mass is connected to a complex pulley system. The force on 
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-45.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

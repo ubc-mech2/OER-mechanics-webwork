@@ -105,4 +105,10 @@ and platform is [`e = [$e]`], determine the magnitude of velocity of the package
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-12.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

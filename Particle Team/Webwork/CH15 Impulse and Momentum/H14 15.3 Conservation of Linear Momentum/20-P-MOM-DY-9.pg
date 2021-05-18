@@ -100,4 +100,10 @@ A container on a freight ship has broken through its straps and slides at a velo
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-9.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

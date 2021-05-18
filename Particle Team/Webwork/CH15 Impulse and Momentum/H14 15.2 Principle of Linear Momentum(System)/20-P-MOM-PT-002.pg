@@ -24,13 +24,13 @@
 ## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
 ## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
 ## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
-## and the people of the Treaty 7 region of Southern Alberta. 
+## and the people of the Treaty 7 region of Southern Alberta.
 ##
-## ENDDESCRIPTION
+##ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Momentum)
+## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
 ## Author([Patrick Thangarajah])
 ## Date(Summer 2020)
@@ -108,6 +108,12 @@ Determine the impulse of the force F= [`[$c]t`] [`N`] for t= [`[$t]`] [`s`].
 _Round your answers to one decimal place_.
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-PT-002.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

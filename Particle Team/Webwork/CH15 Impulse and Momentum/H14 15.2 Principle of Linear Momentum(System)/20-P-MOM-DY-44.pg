@@ -105,4 +105,10 @@ END_PGML
 
 ANS($mcScenario11->cmp);
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-44.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

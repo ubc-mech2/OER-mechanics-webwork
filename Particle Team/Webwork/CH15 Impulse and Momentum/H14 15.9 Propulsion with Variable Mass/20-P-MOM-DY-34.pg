@@ -103,4 +103,10 @@ the blade by the water. The density of water is [`\rho = 997 kg/m^3`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-34.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

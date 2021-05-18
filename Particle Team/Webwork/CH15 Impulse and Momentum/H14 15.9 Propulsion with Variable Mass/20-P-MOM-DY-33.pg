@@ -106,4 +106,10 @@ the magnitude of the force required to keep the attachment on.
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-33.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

@@ -21,16 +21,17 @@
 ## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
 ##
 ## This work was completed on the traditional, ancestral, and unceded
-## territory of many peoples - specifically the Musqueam (xÊ·mÉÎ¸kÊ·ÉyÌÉm), Squamish (Sá¸µwxÌ±wÃº7mesh), 
-## Tsleil-Waututh (sÉlÌilwÉtaÉÉ¬), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (scÌÉwaÎ¸enaÉÉ¬ tÉmÉxÊ·), 
-## Chemainus (Stz'uminus), StÃ³:loÌ (SâÃ³lh TÃ©mÃ©xw), Kwanlin DÃ¼n, Niitsitapi (Blackfoot), 
-## and the people of the Treaty 7 region of Southern Alberta. 
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta.
 ##
-## ENDDESCRIPTION
+##ENDDESCRIPTION
+##
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Momentum)
+## DBsection(Conservation of Linear Momentum)
 ## Institution('University of British Columbia')
 ## Author([Patrick Thangarajah])
 ## Date(Summer 2020)
@@ -112,6 +113,12 @@ and no other forces act on it.
 _Round your answers to one decimal place_.
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-PT-003.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

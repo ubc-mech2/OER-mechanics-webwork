@@ -101,4 +101,10 @@ A [`m = [$mass] kg`] particle has the velocity [`v = [$i]i + [$j]j m/s`]. If the
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-17.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

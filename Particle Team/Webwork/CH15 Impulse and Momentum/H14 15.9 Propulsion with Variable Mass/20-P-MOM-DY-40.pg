@@ -102,4 +102,10 @@ END_TEXT
 
 ANS(function_cmp($ansA,'y'));
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-40.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

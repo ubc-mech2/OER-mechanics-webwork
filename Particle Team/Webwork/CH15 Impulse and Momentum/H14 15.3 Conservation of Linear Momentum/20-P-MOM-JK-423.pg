@@ -103,4 +103,10 @@ released, determine the final velocities of the blocks. Assume to the right is p
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-JK-423.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

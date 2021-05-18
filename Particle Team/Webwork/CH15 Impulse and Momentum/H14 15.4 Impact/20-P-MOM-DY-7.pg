@@ -115,4 +115,10 @@ If the coefficient of restitution is [`e = [$e]`] between the pucks, what are th
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-7.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

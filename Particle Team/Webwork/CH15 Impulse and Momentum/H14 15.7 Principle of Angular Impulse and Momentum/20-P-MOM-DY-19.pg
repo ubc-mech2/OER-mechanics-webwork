@@ -105,4 +105,10 @@ A [`m = [$mass] kg`] particle is [`d = [$i]i + [$j]j +[$k]k`] away from point [`
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-19.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

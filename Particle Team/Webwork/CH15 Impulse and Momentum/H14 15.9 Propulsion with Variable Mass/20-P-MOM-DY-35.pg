@@ -101,4 +101,10 @@ by the time the fuel runs out? Ignore the effect of altitude on the weight of th
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-35.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

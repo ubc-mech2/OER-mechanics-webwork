@@ -103,4 +103,10 @@ END_TEXT
 $v = "$mass*$vel/($mass+$dm*t/1000)";
 ANS(function_cmp($v,'t'));
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-36.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

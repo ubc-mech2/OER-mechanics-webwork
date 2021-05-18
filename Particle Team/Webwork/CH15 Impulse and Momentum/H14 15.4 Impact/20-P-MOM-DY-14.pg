@@ -121,4 +121,10 @@ how far away from the kickoff spot, [`s`], does the ball hit the ground.
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-14.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

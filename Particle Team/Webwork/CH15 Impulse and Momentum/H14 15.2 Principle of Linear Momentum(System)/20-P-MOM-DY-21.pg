@@ -98,4 +98,10 @@ A motor is lifting a crate with mass [`m = [$mass] kg`]. The motor provides a fo
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-21.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

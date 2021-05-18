@@ -105,4 +105,10 @@ If the mass is lifted to [`h = [$h]`] above the ball, what is the magnitude of e
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-8.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

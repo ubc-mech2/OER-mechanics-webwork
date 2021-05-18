@@ -110,4 +110,10 @@ Determine the final velocity of the blocks when time [`t = [$time] s`] and the f
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-23.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

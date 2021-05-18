@@ -100,4 +100,10 @@ Determine the magnitude of the velocity of the marble after time [`t = [$time] s
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-24.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

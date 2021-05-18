@@ -103,4 +103,10 @@ time [`t = [$time] s`] if the angle [`\theta = [$ang]^{o}`]. Assume the system s
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-28.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

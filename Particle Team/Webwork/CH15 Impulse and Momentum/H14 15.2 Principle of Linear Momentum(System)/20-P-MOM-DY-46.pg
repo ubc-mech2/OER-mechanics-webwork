@@ -103,4 +103,10 @@ above the horizontal. The birdie lands on the ground [`d = [$d] m`] away. Determ
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-MOM-DY-46.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();
