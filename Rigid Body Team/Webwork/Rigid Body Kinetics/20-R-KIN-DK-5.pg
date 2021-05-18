@@ -109,14 +109,4 @@ and the thickness of each plate as [`t = `] [`[$thickness]`] [`m`]
 
 END_PGML
 
-##############################################################
-
-BEGIN_PGML_SOLUTION
-
-[@ image( "20-R-KIN-DK-5.pdf", width=>[0], height=>[0]) @]*
-
-END_PGML_SOLUTION
-
-##############################################################
-
 ENDDOCUMENT();

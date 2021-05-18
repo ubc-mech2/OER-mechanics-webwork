@@ -93,4 +93,12 @@ The radius would need to be [____]{"$x"} times larger
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-8.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

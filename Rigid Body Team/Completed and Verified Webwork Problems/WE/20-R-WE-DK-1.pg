@@ -109,4 +109,12 @@ little cousin and the work done by friction if he applies a constant force [`F =
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-WE-DK-1.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

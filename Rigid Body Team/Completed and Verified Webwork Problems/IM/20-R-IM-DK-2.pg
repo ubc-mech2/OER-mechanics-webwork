@@ -107,4 +107,13 @@ the yo-yo's angular velocity after [`t = `] [`[$t]`] [`s`] if it initially start
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-2.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

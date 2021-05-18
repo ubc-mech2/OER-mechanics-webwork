@@ -107,14 +107,4 @@ forces at A at that instant? The sign has a width [`w = `] [`[$w]`] [`m`] and a 
 
 END_PGML
 
-##############################################################
-
-BEGIN_PGML_SOLUTION
-
-[@ image( "20-R-KIN-DK-22.pdf", width=>[0], height=>[0]) @]*
-
-END_PGML_SOLUTION
-
-##############################################################
-
 ENDDOCUMENT();

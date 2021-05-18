@@ -112,4 +112,12 @@ an angular acceleration of [`\alpha = `] [`[$angaccel]`] [`rad/s^2`] at this ins
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-35.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

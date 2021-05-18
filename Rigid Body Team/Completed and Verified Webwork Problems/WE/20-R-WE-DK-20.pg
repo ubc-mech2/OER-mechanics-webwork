@@ -107,4 +107,12 @@ Determine the efficiency of the motor if a total of [`[$W]`] [`W`] is put into i
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-WE-DK-20.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

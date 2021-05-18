@@ -103,4 +103,12 @@ The angle is given as [`\theta = `] [`[$theta]`][`^{\circ}`].
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-15.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

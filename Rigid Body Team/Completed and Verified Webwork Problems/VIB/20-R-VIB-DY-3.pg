@@ -104,4 +104,15 @@ END_TEXT
 
 ANS(function_cmp($ansA,'t'));
 
+
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-VIB-DY-3.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();

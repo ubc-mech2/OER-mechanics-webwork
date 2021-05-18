@@ -109,4 +109,12 @@ The punching bag has a height [`h = `] [`[$h]`] [`m`] and the machine makes cont
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-30.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

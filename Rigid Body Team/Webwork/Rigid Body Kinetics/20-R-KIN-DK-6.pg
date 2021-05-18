@@ -103,14 +103,4 @@ found a distance [`h/4`] away from the circular base of the cone.
 
 END_PGML
 
-##############################################################
-
-BEGIN_PGML_SOLUTION
-
-[@ image( "20-R-KIN-DK-6.pdf", width=>[0], height=>[0]) @]*
-
-END_PGML_SOLUTION
-
-##############################################################
-
 ENDDOCUMENT();

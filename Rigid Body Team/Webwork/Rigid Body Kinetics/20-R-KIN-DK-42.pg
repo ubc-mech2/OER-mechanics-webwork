@@ -106,14 +106,4 @@ top of the desk, and the desk has 4 legs in total.
 
 END_PGML
 
-##############################################################
-
-BEGIN_PGML_SOLUTION
-
-[@ image( "20-R-KIN-DK-42.pdf", width=>[0], height=>[0]) @]*
-
-END_PGML_SOLUTION
-
-##############################################################
-
 ENDDOCUMENT();

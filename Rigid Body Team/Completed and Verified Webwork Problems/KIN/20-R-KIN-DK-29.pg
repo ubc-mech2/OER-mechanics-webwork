@@ -100,4 +100,13 @@ pipe and that the pipe rolls without slipping. The radius of the pipe is [`r = `
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-29.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

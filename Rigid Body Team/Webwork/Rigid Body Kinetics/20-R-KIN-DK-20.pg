@@ -103,14 +103,4 @@ Kronk applies the force at a length [`5/6`] [`l`] and the lever has length [`l =
 
 END_PGML
 
-##############################################################
-
-BEGIN_PGML_SOLUTION
-
-[@ image( "20-R-KIN-DK-20.pdf", width=>[0], height=>[0]) @]*
-
-END_PGML_SOLUTION
-
-##############################################################
-
 ENDDOCUMENT();

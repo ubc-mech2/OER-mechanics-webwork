@@ -105,4 +105,13 @@ Links AB and CD have a length [`l = `] [`[$l]`] [`m`] and are an equal distance 
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-13.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();
