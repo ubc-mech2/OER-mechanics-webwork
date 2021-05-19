@@ -108,4 +108,13 @@ axle. Assume  the car rolls without slipping and starts from rest. Neglect the s
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-10.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();

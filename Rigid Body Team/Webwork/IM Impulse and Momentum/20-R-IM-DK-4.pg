@@ -107,4 +107,13 @@ after [`t = `] [`[$t]`] [`s`]. The cylinder is initially at rest.
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-DK-4.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

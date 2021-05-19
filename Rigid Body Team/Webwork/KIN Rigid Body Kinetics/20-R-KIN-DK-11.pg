@@ -116,4 +116,13 @@ The trapezoid has a height [`h_{trap} = `] [`[$htrapmm]`] [`mm`], top length [`l
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-11.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

@@ -125,4 +125,12 @@ Plate A, C, D, E, and F have a thickness of [`t_A = `] [`[$tAmm]`] [`mm`] while 
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-7.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

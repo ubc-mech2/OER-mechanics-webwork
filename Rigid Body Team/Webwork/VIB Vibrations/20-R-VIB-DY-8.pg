@@ -95,4 +95,13 @@ The spring has a spring constant [`k=`] [`[$k]`] [`N/m`]. Given that the rod end
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-VIB-DY-8.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+
 ENDDOCUMENT();

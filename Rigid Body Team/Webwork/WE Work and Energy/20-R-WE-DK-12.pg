@@ -105,4 +105,12 @@ the conveyor belt is [`\mu_k = `] [`[$mu]`], determine the distance the roller m
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-WE-DK-12.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

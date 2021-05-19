@@ -116,4 +116,12 @@ Each rectangular plate has a length [`l = `] [`[$lcm]`] [`cm`] and width [`w = `
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KIN-DK-10.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

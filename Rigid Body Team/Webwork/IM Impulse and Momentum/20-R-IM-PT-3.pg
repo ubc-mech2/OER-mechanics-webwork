@@ -133,4 +133,12 @@ needs a higher velocity to roll over the obstacle and by how much?
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-IM-PT-3.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT()};
