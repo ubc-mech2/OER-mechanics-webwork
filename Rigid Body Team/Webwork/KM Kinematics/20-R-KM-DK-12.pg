@@ -111,4 +111,13 @@ of the ladder has an acceleration [`a_B =`] [`[$accelB]`] [`m/s^2`] and a veloci
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-12.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

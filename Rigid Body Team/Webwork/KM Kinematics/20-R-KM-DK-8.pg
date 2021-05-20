@@ -98,4 +98,13 @@ and B is at an angle of [`45^{\circ}`] with the vertical. What would be the magn
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-8.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

@@ -98,4 +98,13 @@ when she reaches the other end of the platform? The platform has a length of [`l
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-18.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

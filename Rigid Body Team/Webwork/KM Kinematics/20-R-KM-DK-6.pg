@@ -111,4 +111,13 @@ _Hint: Express a relationship between [`\alpha`], [`\theta`], and [`\omega`] wit
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-6.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

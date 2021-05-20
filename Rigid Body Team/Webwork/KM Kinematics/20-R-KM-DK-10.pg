@@ -102,4 +102,13 @@ A gear rolls on a fixed rack with an angular velocity of [`\omega =`] [`[$angvel
 [`a_A =`][_]{"$accelA1"}[`\hat{i} + `][_]{"$accelA2"}[`\hat{j}`] [`m/s^2`]  
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-10.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

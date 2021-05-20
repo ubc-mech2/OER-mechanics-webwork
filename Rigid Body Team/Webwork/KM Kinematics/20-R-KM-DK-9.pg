@@ -110,4 +110,13 @@ The following mechanism has links length [`l_{AD} =`] [`[$rAD]`] [`m`], [`l_{BD}
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-9.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();

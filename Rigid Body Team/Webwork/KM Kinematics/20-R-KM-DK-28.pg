@@ -102,4 +102,13 @@ an angle of [`\theta =`] [`[$theta]`] [`^{\circ}`] with the horizontal. The dist
 
 END_PGML
 
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+[@ image( "20-R-KM-DK-28.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
 ENDDOCUMENT();
