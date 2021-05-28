@@ -34,7 +34,7 @@
 ## Institution('University of British Columbia')
 ## Author([SHOHOM SHAHD])
 ## Date(Summer 2021)
-## Difficulty([Beginner])
+## Difficulty([Intermediate])
 ## KEYWORDS(`Work and Energy`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
 
@@ -105,16 +105,15 @@ Determine the energy stored in the spring ([`E_{spring}`]).
 
 If a [`[$m_drop]`][`kg`] block is dropped from a height of [`[$h_drop]`][`m`] at the midpoint of the rod, calculate the maximum deflection ([`\Delta_{max}`]) of the spring.
 
-[@ image( "21-R-WE-SS-000.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-WE-SS-26.png", width=>[$width], height=>[$height]) @]*
 
-[`E_{spring} = `][_____]{"$E_i"} [`J`]
-
+[`E_{spring} = `][_____]{"$E_i"} [`J`]  
 [`\Delta_{max} = `][_____]{"$delta_max"} [`mm`]
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-WE-SS-000.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-WE-SS-26.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################
