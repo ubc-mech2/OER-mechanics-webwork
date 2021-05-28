@@ -81,12 +81,12 @@ $f_fric = random(20,70,10);
 
 
 $time = (1/2)*$mass*($radius/100)**2*($rpm*3.14159265358/30)/($radius/100*$f_fric);
-$cos_f_a = cos(180/pi * $force_angle);
-$sin_f_a = sin(180/pi * $force_angle);
-$cos_a = cos(180/pi * $angle);
-$sin_a = sin(180/pi * $angle);
+$cos_f_a = cos(pi/180 * $force_angle);
+$sin_f_a = sin(pi/180 * $force_angle);
+$cos_a = cos(pi/180 * $angle);
+$sin_a = sin(pi/180 * $angle);
 
-$force = (-9.81*($cos_f_a * $mass - 0.101937*$f_fric))/($cos_a*$sin_f_a-$sin_a*$cos_f_a);
+$force = abs((-9.81*($cos_f_a * $mass - 0.101937*$f_fric))/($cos_a*$sin_f_a-$sin_a*$cos_f_a));
 
 ########################################################;
 #PGML
