@@ -93,7 +93,7 @@ $force = abs((-9.81*($cos_f_a * $mass - 0.101937*$f_fric))/($cos_a*$sin_f_a-$sin
 
 BEGIN_PGML	
 
-[@ image( "21-R-IM-MS-XX-1.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-IM-MS-24.png", width=>[$width], height=>[$height]) @]*
 
 A [`[$mass]`] [`kg`] grinding wheel with a radius of [`[$radius]`] [`cm`] is firmly secured to a table by a rod at an angle of [`[$angle]`][`^\circ`] to the horizontal. 
 The wheel spins at a constant [`[$rpm]`] RPM, when a block of wood is pushed against it at an angle of [`[$force_angle]`][`^\circ`] to the horizontal. 
@@ -122,7 +122,7 @@ BEGIN_PGML_SOLUTION
 
 Answers
 
-[@ image( "21-R-IM-MS-XX-1.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-R-IM-MS-24.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 ENDDOCUMENT();
