@@ -100,10 +100,10 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-A rigid rod with a weight of [`[$m_rod]`][`kg`] is attached to a frictionless pivot on one end, and held horizontal with a spring ([`k=`] [`[$k]`][`N/m`]) on the other end.  
+A rigid rod with a weight of [`[$m_rod]`][`kg`] is attached to a frictionless pivot on one end (O), and held horizontal with a spring ([`k=`] [`[$k]`][`N/m`]) on the other end (A).  
 Determine the energy stored in the spring ([`E_{spring}`]).
 
-If a [`[$m_drop]`][`kg`] block is dropped from a height of [`[$h_drop]`][`m`] at the midpoint of the rod, calculate the maximum deflection ([`\Delta_{max}`]) of the spring.
+If a [`[$m_drop]`][`kg`] block (assumed to be a point mass) is dropped from a height of [`[$h_drop]`][`m`] at the midpoint of the rod (M), calculate the maximum deflection ([`\Delta_{max}`]) at A.
 
 [@ image( "21-R-WE-SS-26.png", width=>[$width], height=>[$height]) @]*
 
