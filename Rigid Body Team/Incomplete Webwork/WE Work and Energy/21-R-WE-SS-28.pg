@@ -92,9 +92,13 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A BMX rider and his bike weighs [`[$m]`][`kg`]. They ride off a [`[$h]`][`m`] high circular ramp which is initially vertical 
-and jump at an exit angle of [`[$alpha]`][`^{\circ}`] as shown in the image. If the coefficient of rolling resistance for the 
-wheels are [`[$mu]`], how much work is done against friction during the stunt?
+A BMX rider and his bike weighs [`[$m]`][`kg`]. They ride off vertically from a [`[$h]`][`m`] radius circular ramp and jump at an exit 
+angle of [`[$alpha]`][`^{\circ}`] as shown in the image. The coefficient of rolling resistance for the  wheels is [`[$mu]`].
+Find the energy lost to heat during the jump.
+
+Rolling resistance arises from deformation in wheels, and energy is lost to heat in the process because of elastic hysteresis 
+(the energy required to deform a tire is not equal to the energy returned when it returns to its original shape).
+Rolling resistance can be calculated in the same way as friction.
 
 [@ image( "21-R-WE-SS-28.png", width=>[$width], height=>[$height]) @]*
 

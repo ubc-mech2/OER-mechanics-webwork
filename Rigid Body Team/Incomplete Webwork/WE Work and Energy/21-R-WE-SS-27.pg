@@ -75,8 +75,8 @@ $l = random(5,10,0.1);	#[mm]
 $delta_i = (18.47759065-$l)/1000;							#[m]
 $E       = 0.5*($k*1000)*((0.02-$l/1000)**2-$delta_i**2);	#[J]
 
-$width = 400;
-$height = 250;
+$width = 350;
+$height = 350;
 
 #set tolerance
 Context()->flags->set(
