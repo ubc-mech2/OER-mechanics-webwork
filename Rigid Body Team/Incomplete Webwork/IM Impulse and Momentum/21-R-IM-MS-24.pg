@@ -95,8 +95,8 @@ BEGIN_PGML
 
 [@ image( "21-R-IM-MS-24.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$mass]`] [`kg`] grinding wheel with a radius of [`[$radius]`] [`cm`] is firmly secured to a table by a rod at an angle of [`[$angle]`][`^\circ`] to the horizontal. 
-The wheel spins at a constant [`[$rpm]`] RPM, when a block of wood is pushed against it at an angle of [`[$force_angle]`][`^\circ`] to the horizontal. 
+A [`[$mass]`] [`kg`] grinding wheel with a radius of [`[$radius]`] [`cm`] is pinned to a table by a rod at an angle of [`\theta_1 = [$angle]`][`^\circ`] to the horizontal. 
+The wheel spins at a constant [`[$rpm]`] RPM, when a block of wood is fixed in place tangent to the wheel at an angle of [`\theta_2 = [$force_angle]`][`^\circ`] to the horizontal. 
 If the wood applies a [`[$f_fric]`] N friction force to slow down the wheel:
 
 How long does it take to stop?

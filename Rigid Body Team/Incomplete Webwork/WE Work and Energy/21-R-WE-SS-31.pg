@@ -65,17 +65,15 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$m = random(60,90,5);
-$h = random(4,6,0.1);
-$alpha = random(30,45,5);
-$mu = random(0.05,0.2,0.01);
-
-#constants
-$g = 9.81;
+$m = random(25,50,1);	#[kg]
+$R = random(2,3,0.1);	#[m]
+$r = 0.75*$R;			#[m]
+$k = 0.8*$R;			#[m]
+$F = random(50,100,1);	#[N]
+$x = random(10,20,1);	#[N]
 
 #computation
-$alpha_r=$alpha*pi/180+pi/2;
-$W = $mu*$m*$g*$h*0.5*($alpha_r-0.5*sin($alpha_r*2));
+$v = $F*(($R+$r)/$R*$x)*2/($m*$k**2/$R**2+$m)
 
 $width = 400;
 $height = 250;
@@ -92,22 +90,19 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A BMX rider and his bike weighs [`[$m]`][`kg`]. They ride off vertically from a [`[$h]`][`m`] radius circular ramp and jump at an exit 
-angle of [`[$alpha]`][`^{\circ}`] as shown in the image. The coefficient of rolling resistance for the  wheels is [`[$mu]`].
-Find the energy lost to heat during the jump.
+A cable spool of weight [`[$m]`][`kg`] of radius [`[$R]`][`m`] has cable wrapped around at a radius of [`[$r]`][`m`]. 
+The system has a radius of gyration of [`[$k]`][`m`].
+If the cable is pulled with a force of [`[$F]`][`N`], what is the speed of the spool when it travels [`[$x]`][`m`] if it rolls 
+starting from rest and without slipping? The mass of the cable can be ignored.
 
-Rolling resistance arises from deformation in wheels, and energy is lost to heat in the process because of elastic hysteresis 
-(the energy required to deform a tire is not equal to the energy returned when it returns to its original shape).
-Rolling resistance can be calculated in the same way as friction.
+[@ image( "21-R-WE-SS-31.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "21-R-WE-SS-28.png", width=>[$width], height=>[$height]) @]*
-
-[`W = `][_____]{"$W"} [`J`]
+[`v = `][_____]{"$v"} [`m/s`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-WE-SS-28.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-WE-SS-29.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

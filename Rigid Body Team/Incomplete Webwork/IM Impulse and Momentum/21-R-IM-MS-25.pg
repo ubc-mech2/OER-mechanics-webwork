@@ -87,14 +87,15 @@ BEGIN_PGML
 
 [@ image( "21-R-IM-MS-25.png", width=>[$width], height=>[$height]) @]*
 
-A dumbbell consists of two equal masses m=[`[$mass]`] [`kg`] separated by a distance [`2b =`] [`[$b_times_2]`] [`m`]. 
+A dumbbell consists of two equal point masses with m=[`[$mass]`] [`kg`] each, separated by a distance [`2b =`] [`[$b_times_2]`] [`m`]
+but connected by a massless rod. 
 
 The dumbbell starts at rest on a frictionless horizontal surface. 
 
-An impulse is applied to the right mass, in the form of a force of [`[$force]`] [`N`] for [`[$time]`] [`s`]. 
+An impulse is applied to the right mass, in the form of a force of [`F=[$force]`] [`N`] for [`[$time]`] [`s`]. 
 
 
-What is the linear velocity of the right mass? 
+What is the linear velocity of the dumbbell system? 
 
 [`v=`][___]{"$v"} [`m/s`]
 
