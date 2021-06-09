@@ -65,18 +65,18 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$k = random(50,100,1);
-$l = random(5,10,0.1);
+$k = random(50,100,1);	#[N/mm]
+$l = random(5,10,0.1);	#[mm]
 
 #constants
 
 
 #computation
-$delta_i = (18.47759065-$l)/1000;		#[m]
-$E       = 0.5*($k*1000)*((0.02-$l/1000)**2-$delta_i**2);
+$delta_i = (18.47759065-$l)/1000;							#[m]
+$E       = 0.5*($k*1000)*((0.02-$l/1000)**2-$delta_i**2);	#[J]
 
-$width = 400;
-$height = 250;
+$width = 350;
+$height = 350;
 
 #set tolerance
 Context()->flags->set(
@@ -92,7 +92,7 @@ tolType=>'relative');
 BEGIN_PGML
 
 A switch can be modeled as a bistable system as shown in the image, with a spring of spring constant [`[$k]`][`N/mm`]
-attached [`10 mm`] from the hinge on both sides. If the spring has a natural length of [[`$l`]][`mm`], and the switch
+attached [`10 mm`] from the hinge on both sides. If the spring has a natural length of [`[$l]`][`mm`] , and the switch
 travels from [`-45\deg`] to [`+45\deg`] from the horizontal, what is the minimum energy required to flick the switch?
 
 [@ image( "21-R-WE-SS-27.png", width=>[$width], height=>[$height]) @]*
