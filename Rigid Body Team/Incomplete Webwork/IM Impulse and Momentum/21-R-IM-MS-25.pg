@@ -85,14 +85,14 @@ $v_angular = ($force * $time) / (2*$mass*$b);
 
 BEGIN_PGML	
 
-[@ image( "21-R-IM-MS-25.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-IM-MS-25.svg", width=>[$width], height=>[$height]) @]*
 
-A dumbbell consists of two equal point masses with m=[`[$mass]`] [`kg`] each, separated by a distance [`2b =`] [`[$b_times_2]`] [`m`]
+A dumbbell consists of two equal point masses A, B, with m=[`[$mass]`] [`kg`] each, separated by a distance [`2b =`] [`[$b_times_2]`] [`m`]
 but connected by a massless rod. 
 
 The dumbbell starts at rest on a frictionless horizontal surface. 
 
-An impulse is applied to the right mass, in the form of a force of [`F=[$force]`] [`N`] for [`[$time]`] [`s`]. 
+An impulse is applied to the right mass B, in the form of a force of [`F=[$force]`] [`N`] for [`[$time]`] [`s`]. 
 
 
 What is the linear velocity of the dumbbell system? 
