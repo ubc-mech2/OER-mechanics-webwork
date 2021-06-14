@@ -65,18 +65,19 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$m = random(25,50,1);	#[kg]
-$R = random(2,3,0.1);	#[m]
-$r = 0.75*$R;			#[m]
-$k = 0.8*$R;			#[m]
-$F = random(50,100,1);	#[N]
-$x = random(10,20,1);	#[N]
+$d	= random(0.5,5,0.5);	#[cm]
+$m	= random(15,60,5);		#[kg]
+$v	= random(0.1,1,0.1);	#[m/s]
+$GR	= random(5,20,5);		#[Nm]
+
+$g = 9.81;
 
 #computation
-$v = $F*(($R+$r)/$R*$x)*2/($m*$k**2/$R**2+$m);
+$P = $m*$g*$v;
+$T = $m*$g*$d/200/$GR;
 
-$width = 250;
-$height = 250;
+$width = 500;
+$height = 300;
 
 #set tolerance
 Context()->flags->set(
@@ -90,19 +91,24 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A cable spool of weight [`[$m]`][`kg`] and radius, R = [`[$R]`][`m`] has cable wrapped around at a radius, r = [`[$r]`][`m`]. 
-The system has a radius of gyration of [`[$k]`][`m`].
-If the cable is pulled with a force of [`[$F]`][`N`], what is the speed of the spool when it travels [`[$x]`][`m`] if it rolls 
-starting from rest and without slipping? The cable can be considered to be much lighter than the spool.
+For a design project, you want to design a DC motor powered hoist to lift payload at a velocity of [`[$v]`][`m/s`] 
+using a [`[$d]`][`cm`] diameter pulley. What is the power in lifting a [`[$m]`][`kg`] payload?
 
-[@ image( "21-R-WE-SS-31.png", width=>[$width], height=>[$height]) @]*
+If a gear ratio of [`[$GR]`]:1 is used (stepping up torque), how much torque does the motor have to provide?
 
-[`v = `][_____]{"$v"} [`m/s`]  
+What is the shaft power of the motor if the gears have no frictional losses?
+
+
+[@ image( "21-R-KM-SS-31.png", width=>[$width], height=>[$height]) @]*
+
+[`P_{out} = `][_____]{"$P"} [`W`]  
+[`\tau = `][_____]{"$T"} [`Nm`]  
+[`P_{in} = `][_____]{"$P"} [`W`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-WE-SS-31.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-KM-SS-31.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################
