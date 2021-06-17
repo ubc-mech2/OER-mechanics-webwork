@@ -87,7 +87,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-[@ image( "20-P-WE-BK-009.jpg", width=>[$width], height=>[$height]) @]* 
+[@ image( "20-P-WE-BK-009.png", width=>[$width], height=>[$height]) @]* 
 
 A motorcycle stunt rider wants to go around a vertical circular loop, as in the drawing above.
 Find the maximum possible radius of the loop so that make it all the way around without falling at the top
@@ -98,7 +98,11 @@ Assume that once the motorcycle enters the loop it is coasting (no further energ
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
 
+[@ image( "20-P-WE-BK-009.pdf", width=>[0], height=>[0]) @]* 
+
+END_PGML_SOLUTION
 
 ##############################################################
 

@@ -73,7 +73,7 @@ $B = random(1.2,1.6,0.1);
 
 #computation
 $N = ceil(ln(1000)/ln($B));
-$v = sqrt(2*9.8*($B**$N-1000);
+$v = sqrt(2*9.8*($B**$N-1000));
 
 #set tolerance
 Context()->flags->set(
