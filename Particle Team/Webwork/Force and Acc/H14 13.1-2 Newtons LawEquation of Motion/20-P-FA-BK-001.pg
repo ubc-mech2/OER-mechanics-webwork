@@ -99,6 +99,11 @@ What is the object's mass in [`kg`]?
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-BK-001.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 
 ##############################################################

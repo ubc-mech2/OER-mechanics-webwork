@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinetics of particles)
+## DBsection(2D equations of motion)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -103,6 +103,13 @@ The arm is rotating along the described path with an angular velocity of [`\dot\
 [`F = `][_____]{"$F"}[`N`]
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-005.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

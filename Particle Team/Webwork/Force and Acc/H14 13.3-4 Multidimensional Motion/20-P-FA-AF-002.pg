@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinetics of systems of particles)
+## DBsection(2D Equations of motion)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -123,6 +123,13 @@ BEGIN_PGML
 [`F = `][_____]{"$Fpush"}[`N`]
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-002.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

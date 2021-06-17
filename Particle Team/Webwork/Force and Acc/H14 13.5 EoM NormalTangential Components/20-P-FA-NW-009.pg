@@ -32,7 +32,7 @@
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS('dynamics','force','acceleration','normal','tangential')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 13.2')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 5')
 
 ##############################################################
 
@@ -96,6 +96,13 @@ The bottle shown rests at a distance of [`[$radius]`] feet from the centre of th
 [`v =`] [_____]{"$speed"} [`ft/s`]  
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-NW-009.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

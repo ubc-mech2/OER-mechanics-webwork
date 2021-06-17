@@ -112,6 +112,11 @@ C.) What is the increase in speed needed?
 END_PGML
 
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-BK-009.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

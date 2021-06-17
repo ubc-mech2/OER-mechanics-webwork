@@ -98,6 +98,11 @@ Find the force required to overcome friction and push a [`[$m]\: kg`] box up a s
 END_PGML
 
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-BK-014.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

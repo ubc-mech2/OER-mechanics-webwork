@@ -96,6 +96,11 @@ If two equal forces of [`[$f]`] [`N`] act on a particle with an angle of
 
 END_PGML
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-BK-002.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 
 ##############################################################

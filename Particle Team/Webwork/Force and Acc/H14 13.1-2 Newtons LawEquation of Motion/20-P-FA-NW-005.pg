@@ -32,7 +32,7 @@
 ## Date(Summer 2020)
 ## Difficulty(Intermediate)
 ## KEYWORDS('dynamics','force','acceleration','equations')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 13.2')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 2')
 
 ##############################################################
 
@@ -101,6 +101,13 @@ A child pulls on a rope with an angle [`\theta = [$angleDegrees]^\circ`] as show
 [`F_T=`] [_____]{"$Ftension"} [`N`]
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-NW-005.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
