@@ -91,18 +91,7 @@ BEGIN_PGML
 
 [@ image( "21-R-KIN-MS-47.png", width=>[$width], height=>[$height]) @]*
 
-[`[$r]`]
-
-[`[$m_cone]`]
-
-[`[$z_cone]`]
-
-[`[$z_scoop]`]
-
-[`[m_scoop]`]
-
-
-The ice cream is composed of [`[$z_bar]`]:
+The ice cream is composed of:
 
 a solid uniform cone of density [`\rho_{cone}=160 kg/m^3`] with the formula: [`z^2 = ax^2 + ay^2`], where [`a=[$a]`] [`(1/cm^2)`].
 
