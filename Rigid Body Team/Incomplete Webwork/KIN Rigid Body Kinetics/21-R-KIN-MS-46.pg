@@ -85,7 +85,7 @@ BEGIN_PGML
 
 [@ image( "21-R-KIN-MS-46.png", width=>[$width], height=>[$height]) @]*
 
-The ice cream is a uniform solid composed of a cone with the formula: [`z^2 = ax^2 + ay^2`] where [`a=[$a] 1/cm^2`], 
+The ice cream is a uniform solid composed of a cone with the formula: [`z^2 = ax^2 + ay^2`] where [`a=[$a]`] [`(1/cm^2)`], 
 and a hemisphere resting on top of the cone at [`z=b`] where [`b=[$b] cm`], with a radius matching the cone’s radius at that height.
 Find the centroid of the ice cream.
 

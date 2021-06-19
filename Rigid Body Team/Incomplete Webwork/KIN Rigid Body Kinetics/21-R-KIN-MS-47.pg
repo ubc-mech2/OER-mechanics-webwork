@@ -104,7 +104,7 @@ BEGIN_PGML
 
 The ice cream is composed of [`[$z_bar]`]:
 
-a solid uniform cone of density [`\rho_{cone}=160 kg/m^3`] with the formula: [`z^2 = ax^2 + ay^2`], where [`a=[$a] 1/cm^2`].
+a solid uniform cone of density [`\rho_{cone}=160 kg/m^3`] with the formula: [`z^2 = ax^2 + ay^2`], where [`a=[$a]`] [`(1/cm^2)`].
 
 a solid uniform scoop of ice cream, a hemisphere of density [`\rho_{scoop}=727 kg/m^3`] resting on top of the cone at [`z=b`] where [`b=[$b] cm`], with a radius matching the cone’s radius at that height. 
 
