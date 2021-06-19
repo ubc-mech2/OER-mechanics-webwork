@@ -32,7 +32,7 @@
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS('dynamics','force','acceleration','Newton's','Law')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 13.2')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 2')
 
 ##############################################################
 
@@ -95,6 +95,13 @@ The van is travelling at [`[$speed]`] [`km/h`] when the coupling of the trailer 
 [`F =`] [_____]{"$Ffriction"} [`N`]
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-NW-006.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

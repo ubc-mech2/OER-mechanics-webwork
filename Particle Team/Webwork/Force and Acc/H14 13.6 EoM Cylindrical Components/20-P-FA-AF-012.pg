@@ -29,8 +29,8 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinetics of particles)
+## DBsection(2D equations of motion)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
@@ -112,6 +112,13 @@ The smooth forked rod follows a path described as [` r = 5/(1 - sin(\theta))`], 
 [`F = `][_____]{"$P"}[`N`]
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-012.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

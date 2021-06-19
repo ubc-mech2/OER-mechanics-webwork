@@ -30,12 +30,12 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Kinetics of particles)
+## DBsection(2D equations of motion)
 ## Institution('University of British Columbia')
 ## Author([ASHLI FORBES])
 ## Date(Summer 2020)
-## Difficulty([Intermediate])
+## Difficulty(Intermediate)
 ## KEYWORDS(`EoM Normal/Tangential Coordinates`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 5')
 
@@ -104,6 +104,12 @@ _use 9.81 for gravity and negative to indicate downwards_
 [`a_{B} = `][_____]{"$A"}[`m/s^2`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-AF-013.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

@@ -32,7 +32,7 @@
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS('dynamics','force','acceleration','equations')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 13.1')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 13, section 1')
 
 ##############################################################
 
@@ -105,6 +105,13 @@ People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], the
 [`F =`] [_____]{"$force"} [`N`]  
 
 END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-NW-004.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 

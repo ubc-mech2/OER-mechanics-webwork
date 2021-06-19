@@ -128,6 +128,11 @@ A begins to slide against B at [`P_3=`] [______]{"$P3"} [`N`]
 END_PGML
 
 
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-FA-BK-003.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
 
 ##############################################################
 
