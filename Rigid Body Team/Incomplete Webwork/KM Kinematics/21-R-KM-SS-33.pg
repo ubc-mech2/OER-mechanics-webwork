@@ -35,7 +35,7 @@
 ## Author([SHOHOM SHAHD])
 ## Date(Summer 2021)
 ## Difficulty([Beginner])
-## KEYWORDS(`Work and Energy`)
+## KEYWORDS(`Kinematics`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
 
 ##############################################################
@@ -64,24 +64,23 @@ TEXT(beginproblem());
 
 
 Context("Numeric");
-#given
-$d	= random(0.5,5,0.5);	#[cm]
-$m	= random(15,60,5);		#[kg]
-$v	= random(0.1,1,0.1);	#[m/s]
-$GR	= random(5,20,5);		#[Nm]
 
-$g = 9.81;
+#Answers are hard coded from the image.
+$Ax = 2;
+$Ay = 4;
 
-#computation
-$P = $m*$g*$v;
-$T = $m*$g*$d/200/$GR;
+$Bx = Infinity;
+$By = Infinity;
 
-$width = 248;
-$height = 392;
+$Cx = 2;
+$Cy = 0;
+
+$width = 1212;
+$height = 381;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>0,
 tolType=>'relative');
 
 ##############################################################
@@ -91,24 +90,19 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-For a design project, you want to design a DC motor powered hoist to lift payload at a velocity of [`[$v]`][`m/s`] 
-using a [`[$d]`][`cm`] diameter pulley. What is the power in lifting a [`[$m]`][`kg`] payload?
+For each of the following cases, find the coordinates of the ICZV of the orange member. Enter your answer rounded to the
+nearest integer. Enter 'Inf' if there is no ICZV.
 
-If a gear ratio of [`[$GR]`]:1 is used (stepping up torque), how much torque does the motor have to provide?
+[@ image( "21-R-KM-SS-33.png", width=>[$width], height=>[$height]) @]*
 
-What is the shaft power of the motor if the gears have no frictional losses?
-
-
-[@ image( "21-R-KM-SS-31.png", width=>[$width], height=>[$height]) @]*
-
-[`P_{out} = `][_____]{"$P"} [`W`]  
-[`\tau = `][_____]{"$T"} [`Nm`]  
-[`P_{in} = `][_____]{"$P"} [`W`]  
+A: [`x = `][_____]{"$Ax"}  [`y = `][_____]{"$Ay"}  
+B: [`x = `][_____]{"$Bx"}  [`y = `][_____]{"$By"}  
+C: [`x = `][_____]{"$Cx"}  [`y = `][_____]{"$Cy"}   
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-31.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-KM-SS-33.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

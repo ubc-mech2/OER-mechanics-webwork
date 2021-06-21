@@ -79,8 +79,8 @@ $w_2 = $v_belt/$r/4*60/2/pi;
 
 $PWR_loss = $T*2*pi/60*($RPM/4-$w_2);
 
-$width = 500;
-$height = 300;
+$width = 597;
+$height = 379;
 
 #set tolerance
 Context()->flags->set(
