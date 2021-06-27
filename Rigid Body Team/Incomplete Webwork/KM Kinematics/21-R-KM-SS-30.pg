@@ -94,8 +94,8 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A very old engine uses a belt drive to transfer power from a [`[$d]`][`cm`] diameter pulley to a [`[$D]`][`cm`] 
-diameter pulley. The designer however didn't use timing belts, and the belt is slipping at a velocity of [`[$v]`][`m/s`] 
+A very old engine uses a belt drive to transfer power from a [`[$d]`][`cm`] diameter pulley (A) to a [`[$D]`][`cm`] 
+diameter pulley (B). The designer however didn't use timing belts, and the belt is slipping at a velocity of [`[$v]`][`m/s`] 
 on the drive pulley (A) when it operates at [`[$RPM]`][`RPM`].
 
 Find the angular velocity of the driven pulley (B), assuming there is no slippage between this pulley and the belt.

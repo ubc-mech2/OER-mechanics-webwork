@@ -94,7 +94,7 @@ BEGIN_PGML
 For a design project, you want to design a DC motor powered hoist to lift payload at a velocity of [`[$v]`][`m/s`] 
 using a [`[$d]`][`cm`] diameter pulley. What is the power in lifting a [`[$m]`][`kg`] payload?
 
-If a gear ratio of [`[$GR]`]:1 is used (stepping up torque), how much torque does the motor have to provide?
+If a gear ratio of [`[$GR]`][`:1`] is used (stepping up torque), how much torque does the motor have to provide?
 
 What is the shaft power of the motor if the gears have no frictional losses?
 

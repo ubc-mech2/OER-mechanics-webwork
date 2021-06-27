@@ -75,8 +75,8 @@ $By = Infinity;
 $Cx = 2;
 $Cy = 0;
 
-$width = 1424;
-$height = 638;
+$width = 1125;
+$height = 589;
 
 #set tolerance
 Context()->flags->set(
@@ -90,8 +90,10 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-For each of the following cases, find the coordinates of the ICZV of the orange member. Enter your answer rounded to the
-nearest integer. Enter 'Inf' if there is no ICZV.
+For each of the following cases, find the coordinates of the ICZV of the colored members. Enter your answer rounded to the
+nearest integer.
+
+Enter 'Inf' if there is no ICZV.
 
 [@ image( "21-R-KM-SS-34.png", width=>[$width], height=>[$height]) @]*
 

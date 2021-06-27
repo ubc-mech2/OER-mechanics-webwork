@@ -77,8 +77,8 @@ $w_C = random(0.5,5,0.5);	#[rad/s]
 #computation
 $w_B=-($w_C*$r_C-$w_A*$r_A)/$r_B;
 
-$width = 500;
-$height = 300;
+$width = 402;
+$height = 421;
 
 #set tolerance
 Context()->flags->set(
@@ -92,15 +92,15 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A pinion gear is attached to a ring gear with an arm. The arm and the ring gear share a pivot as shown in the diagram.
-The arm length, l is [`[$r_A]`][`cm`] and it rotates clockwise at [`[$w_A]`][`rad/s`]. The ring gear has a diameter, d 
-of [`[$d]`][`cm`] and it rotates clockwise at [`[$w_C]`][`rad/s`]. Find the angular velocity of the pinion gear.
+A pinion gear is attached to a ring gear with an arm. The arm and the ring gear share a pivot at point A as shown in the diagram.
+The arm length, [`L_{AB}`] is [`[$r_A]`][`cm`] and it rotates clockwise at [`\omega_{AB} = [$w_A]`][`rad/s`]. The ring gear has a diameter, d 
+of [`[$d]`][`cm`] and it rotates clockwise at [`\omega_{C} = [$w_C]`][`rad/s`]. Find the angular velocity of the pinion gear.
 
 Enter a positive number if it rotates counter-clockwise, and negative if it rotates clockwise.
 
 [@ image( "21-R-KM-SS-32.png", width=>[$width], height=>[$height]) @]*
 
-[`\omega = `][_____]{"$w_B"} [`rad/s`]  
+[`\omega_B = `][_____]{"$w_B"} [`rad/s`]  
 
 END_PGML
 
