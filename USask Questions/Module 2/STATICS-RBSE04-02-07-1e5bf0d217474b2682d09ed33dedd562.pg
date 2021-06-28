@@ -88,15 +88,16 @@ $mc1 = RadioButtons([
 
 BEGIN_TEXT
 
+$BR
+From the options below, select the best FBD for solving the following problem:
+$BR
 
 $BR
 \{ image("STATICS-RBSE04-02-07-1e5bf0d217474b2682d09ed33dedd5621.png" , width=>260, height=>300) \}
 $BR
 The 100-lb door has its center of gravity at \(G\), and is hinged at \(A\) and \(B\).  Determine the components of reaction at hinges \(A\) and \(B\) if hinge \(B\) resists only forces in the \(x\) and \(y\) directions and \(A\) resists forces in the \(x\), \(y\), \(z\) directions
 $BR
-$BR
 
-From the options below, select the best FBD for solving the problem above.
 
 $BR
 $BR
