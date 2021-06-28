@@ -98,7 +98,7 @@ Which of the following notations can be used to represent the reaction force vec
 
 "\(\overrightarrow{N}_B\)",
 );
-$mc -> makeLast("\(\bf{N_B}\)","\(\bf{T_B}\)","\(\overrightarrow{N}_B\)","\(\overrightarrow{M}_B\)",);
+$mc -> makeLast("\(\bf{T_B}\)","\(\overrightarrow{N}_B\)","\(\overrightarrow{M}_B\)",);
 
 ########################################################
 # Not in PGML
