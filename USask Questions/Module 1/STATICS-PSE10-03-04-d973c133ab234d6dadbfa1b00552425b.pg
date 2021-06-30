@@ -85,16 +85,8 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-A washer on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\theta\), is 30 \(^\circ\). What is the resultant force vector experienced by the washer, expressed in Cartesian form?
-
-
-
-
-From the list below, select all the correct assumptions that should be made in order to solve the above problem: 
-
+$BR
+A washer (the blue disk) on the edge of a shelf supports three different forces: \(F_1=700 lb\), \(F_2=400 lb\)﻿, and \(F_3=600 lb\)﻿﻿, as shown. The angle between \(F_1\)​﻿ and the positive \(x\)﻿ axis, \(\phi_1\)​﻿, is \(30^{\circ}\)﻿. What is the resultant force vector experienced by the washer due to the three forces, expressed in Cartesian form?
 ",
 "d) Given information is exact",
 
@@ -110,12 +102,15 @@ $mc -> makeLast("d) Given information is exact","e) The system is in static equi
 BEGIN_TEXT
 
 $BR
+\{ $mc -> print_q() \}
+
+$BR
 \{ image("STATICS-PSE08-03-04-79e2badd926246c2b51b5a21f3a742a20.png" , width=>522.8571428571429, height=>500.0) \}
 $BR
 
 $BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select all the correct assumptions that should be made in order to solve the above problem: 
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

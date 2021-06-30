@@ -96,22 +96,20 @@ Which of the following images below (a, b or c) shows the correct parallelogram 
 
 
 $BR
-$BR\{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd0.png" , width=>317, height=>129) \}
+$BR
+\{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd0.png" , width=>317, height=>129) \}
 
 $BR
-$BR\{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd1.png" , width=>317, height=>210) \}a.
-
+$BR
+a. \{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd1.png" , width=>317, height=>210) \}
 
 $BR
+$BR
+b. \{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd2.png" , width=>311, height=>218) \}
 
 $BR
-$BR\{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd2.png" , width=>311, height=>218) \}b.
-
-
 $BR
-
-$BR
-$BR\{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd3.png" , width=>304, height=>218) \}c.
+c. \{ image("STATICS-ASV02-01-04-0dfb11504af44546ac94cb02cea47cfd3.png" , width=>304, height=>218) \}
 
 
 $BR

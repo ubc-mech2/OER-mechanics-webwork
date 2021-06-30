@@ -85,56 +85,43 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-The ring at point A is attached by a spring to the wall at point C and by a rope to another wall at point B, while being pulled by a second rope with force F.
-
-
-
-
-From the list below, select all the correct options depicting the information that is given in the above problem.  
-
+$BR
+The ring at point A is attached by a spring to the wall at point C and by a rope to another wall at point B, while being pulled by a second rope with force F. What is the unstretched length of the spring AC?
 ",
-"a) A ring is pulled by two ropes and a spring",
+"A ring is pulled by two ropes and a spring",
 
-"c) Dimensions and angles as shown",
+"Dimensions and angles as shown",
 
-"e) F=600N",
+"F=600N",
 
-"f) \(k_{AC}\)=20N/m",
+"\(k_{AC}\)=20N/m",
 
-"h) Coordinate axes as shown",
+"Coordinate axes as shown",
 );
-$mc -> makeLast("a) A ring is pulled by two ropes and a spring",
-"b) Dimensions",
-"c) Dimensions and angles as shown",
-"d) \(\overrightarrow{F}\)=600N",
-"e) F=600N",
-"f) \(k_{AC}\)=20N/m",
-"g) \(K_{AC}\)=20N/m",
-"h) Coordinate axes as shown",
+$mc -> makeLast("A ring is pulled by two ropes and a spring",
+"Dimensions",
+"Dimensions and angles as shown",
+"\(\overrightarrow{F}\)=600N",
+"F=600N",
+"\(k_{AC}\)=20N/m",
+"\(K_{AC}\)=20N/m",
+"Coordinate axes as shown",
 );
 
 ########################################################
 # Not in PGML
 
 BEGIN_TEXT
-
-$BR
-
-
-$BR
-$BR\{ image("STATICS-PSE09-02-03-1f7625002f9e4aef91c8a9796e1cac220.png" , width=>659.5563139931741, height=>500.0) \}
-$BR
-
-
-
-$BR
-
 $BR
 \{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+
+$BR
+$BR\{ image("STATICS-PSE09-03-03-05c392d6d80047d68d925193c3a8accf0.png" , width=>740.4371584699453, height=>500.0) \}
+$BR
+
+$BR
+From the list below, select the 5 correct options depicting the information that is given in the above problem.  
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

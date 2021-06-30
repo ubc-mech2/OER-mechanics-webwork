@@ -107,10 +107,11 @@ Consider the following two-dimensional vectors represented in Cartesian form:
 
 [`\overrightarrow{B}`]=[`[$C]`][`\hat{i}`]+[`[$D]`][`\hat{j}`]
 
-Calculate the angle (in radians) between these two vectors using the formula for the dot product.
+Calculate the *angle* (in radians) between these two vectors using the formula for the dot product.
 
 [____]{"$ans0"}
 
 
 END_PGML
+
 ENDDOCUMENT();

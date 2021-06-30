@@ -85,34 +85,26 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-If a downward force of 450lb is applied to point A in the strut system shown below, what is the force along strut AB?
-
-
-
-
-From the list below, select all the correct assumptions that should be made in order to solve the above problem. 
-
+$BR
+If a downward force of 450lb is applied to point \(A\) in the strut system shown below, what is the force along strut \(AB\)?
+$BR
 ",
-"a) The system is in static equilibrium",
+"The system is in static equilibrium",
 
-"c) Given information is exact",
+"Given information is exact",
 
-"d) The struts are rigid and do not deform",
+"The struts are rigid and do not deform",
 
-"h) Point A is modelled as a particle",
+"Point A can be modelled as a particle",
 );
-$mc -> makeLast("a) The system is in static equilibrium",
-"b) Gravity is 9.81m/s^2",
-"c) Given information is exact",
-"d) The struts are rigid and do not deform",
-"e) The springs are linear",
-"f) The struts are frictionless",
-"g) The struts are modelled as a particle",
-"h) Point A is modelled as a particle",
-"i) The strut system is modelled as a rigid body",
+$mc -> makeLast("The system is in static equilibrium",
+"Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The struts are rigid and do not deform",
+"The springs are linear",
+"The struts are frictionless",
+"The struts can be modelled as a particle",
+"Point A can be modelled as a particle",
 );
 
 ########################################################
@@ -121,12 +113,16 @@ $mc -> makeLast("a) The system is in static equilibrium",
 BEGIN_TEXT
 
 $BR
+\{ $mc -> print_q() \}
+
+$BR
 \{ image("STATICS-PSE09-02-02-111f677f38664f6c935195bee8926b540.png" , width=>507.70547945205476, height=>500.0) \}
 $BR
 
 $BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 4 correct assumptions that should be made in order to solve the above problem. 
+\{ $mc -> print_a() \}
+
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

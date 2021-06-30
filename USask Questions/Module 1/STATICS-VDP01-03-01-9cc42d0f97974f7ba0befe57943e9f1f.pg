@@ -84,7 +84,7 @@ tolType=>'relative');  #relative or absolute
 $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
-Given the angle \(\theta\) \(^\circ\) between the two vectors, \(\overrightarrow{A}\)=(\(A_x\)\(\hat{i}\)+\(A_y\)\(\hat{j}\)) and \(\overrightarrow{B}\)=(\(B_x\)\(\hat{i}\)+\(B_y\)\(\hat{j}\)), which of the following expressions can be used to calculate the projection of \(\overrightarrow{A}\) onto \(\overrightarrow{B}\)?  Select all that apply.
+Given the angle \(\theta\) \(^\circ\) between the two vectors, \(\overrightarrow{A}\)=(\(A_x\)\(\hat{i}\)+\(A_y\)\(\hat{j}\)) and \(\overrightarrow{B}\)=(\(B_x\)\(\hat{i}\)+\(B_y\)\(\hat{j}\)), which of the following expressions can be used to calculate the projection of \(\overrightarrow{A}\) onto \(\overrightarrow{B}\)?  Select all expressions that apply.
 
 ",
 "a. |\(\overrightarrow{A}\)|\(\cdot\) \(\cos\)(\(\theta\) \(^\circ\))",

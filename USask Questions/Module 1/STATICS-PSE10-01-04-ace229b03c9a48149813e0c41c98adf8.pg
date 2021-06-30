@@ -85,29 +85,23 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-A washer on the edge of a shelf supports three different forces.  A force with a magnitude of \(F_1\)=700lb is directed at an angle of \(\phi_1\)=30 \(^\circ\), measured CCW from the positive x axis.  A force with a magnitude of \(F_2\)=400 lb is directed straight upwards from the washer.  And a force with a magnitude of \(F_3\)=600 lb forms an angle of \(\phi_3\)=45 \(^\circ\), measured CW from the positive x axis.  What is the resultant force vector experienced by the washer, expressed in Cartesian form?
-
-
-
+$BR
+A hook supports three different forces. A force with a magnitude of \(F1=700 lb\)﻿ is directed at an angle of \(\phi_1=30^\circ\)﻿﻿, measured CCW from the positive Cartesian \(x\)﻿ axis.  A force with a magnitude of \(F_2=400 lb\)﻿ is directed straight upwards from the hook.  And a force with a magnitude of \(F_3=600 lb\)﻿ forms an angle of \(\phi_3=45^\circ\)﻿, measured CW from the positive Cartesian \(x\)﻿ axis.  What is the resultant force vector experienced by the hook expressed in Cartesian form?
+$BR
 From the list below, select all the correct assumptions that should be made in order to solve the above problem. 
 
 ",
-"c) Given information is exact",
+"Given information is exact",
 
-"d) The system is in static equilibrium",
+"The system is in static equilibrium",
 
-"f) The washer is modelled as a particle",
+"The hook can be modelled as a particle",
 );
-$mc -> makeLast("a) The ropes are taut",
-"b) Gravity is 9.81m/s^2",
-"c) Given information is exact",
-"d) The system is in static equilibrium",
-"e) The springs are linear",
-"f) The washer is modelled as a particle",
-"g) The washer is modelled as a rigid body",
+$mc -> makeLast("Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The system is in static equilibrium",
+"The springs are linear",
+"The hook can be modelled as a particle",
 );
 
 ########################################################

@@ -85,39 +85,35 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-A ring (point A) is suspended in mid-air by 2 ropes and a spring.  The spring stretches from the ring to a point C on a vertical wall, on the left.  One of the ropes joins the ring with a vertical wall on the right at point B. The spring AC is horizontal and has a spring constant of \(k_{AC}\)=20N/m. The rope AB is attached to the right wall such that it has an angle of \(\theta_{AB}\)=60 \(^\circ\), measured CCW from the positive x axis.  A second rope is attached to the ring and pulls with a force of F=600 N at an angle of \(\theta_F\)=45 \(^\circ\), measured CW from the positive x axis. If rope AB has a length of 0.5 m and the stretched length of spring AC is 0.75 m, what is the unstretched length of the spring?
-
-
-
+$BR
+A ring (point \(A\)) is suspended in mid-air by 2 ropes and a spring.  The spring stretches from the ring to a point \(C\) on a vertical wall, on the left.  One of the ropes joins the ring with a vertical wall on the right at point \(B\). The spring \(AC\) is horizontal and has a spring constant of \(k_{AC}=20N/m\). The rope \(AB\) is attached to the right wall such that it has an angle of \(\theta_{AB}=60^\circ\), measured CCW from the positive \(x\) axis.  A second rope is attached to the ring and pulls with a force of \(F=600 N\) at an angle of \(\theta_F=45^\circ\), measured CW from the positive \(x\) axis. If rope \(AB\) has a length of \(0.5\:m\) and the stretched length of spring \(AC\) is \(0.75\:m\), what is the unstretched length of the spring?
+$BR
 From the list below, select all the correct assumptions that must be made in order to solve the above problem. 
 
 ",
-"a) The ropes are taut",
+"The ropes are taut",
 
-"b) The ropes are inelastic",
+"The ropes are inelastic",
 
-"d) Given information is exact",
+"Given information is exact",
 
-"e) The spring and two ropes are in static equilibrium",
+"The spring and two ropes are in static equilibrium",
 
-"g) The spring is linear",
+"The spring is linear",
 
-"j) The ring at point A is modelled as a particle",
+"The ring at point A is modelled as a particle",
 );
-$mc -> makeLast("a) The ropes are taut",
-"b) The ropes are inelastic",
-"c) Gravity is 9.81m/s^2",
-"d) Given information is exact",
-"e) The spring and two ropes are in static equilibrium",
-"f) The spring is rigid and does not deform",
-"g) The spring is linear",
-"h) The ring at point A is frictionless",
-"i) The spring is modelled as a particle",
-"j) The ring at point A is modelled as a particle",
-"k) The spring is modelled as a rigid body",
+$mc -> makeLast("The ropes are taut",
+"The ropes are inelastic",
+"Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The spring and two ropes are in static equilibrium",
+"The spring is rigid and does not deform",
+"The spring is linear",
+"The ring at point A is frictionless",
+"The spring is modelled as a particle",
+"The ring at point A is modelled as a particle",
+"The spring is modelled as a rigid body",
 );
 
 ########################################################

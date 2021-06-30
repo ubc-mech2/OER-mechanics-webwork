@@ -85,43 +85,35 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-A washer on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\theta\), is 30 \(^\circ\).
-
-
-
-
-From the list below, select all the correct options depicting the information that is given in the above problem.  
-
+$BR
+A washer (the blue disk) on the edge of a shelf supports three different forces: \(F_1\)=700lb, \(F_2\)=400 lb, and \(F_3\)=600 lb, as shown. The angle between \(F_1\) and the positive x axis, \(\theta\), is 30 \(^\circ\). What is the resultant force vector experienced by the washer, due to the 3 forces, expressed in Cartesian form?
 ",
-"a) A washer supporting three forces",
+"A washer supporting three forces",
 
-"c) Angles as shown",
+"Angles as shown",
 
-"e) \(\theta\)=30 \(^\circ\)",
+"\(\theta\)=30 \(^\circ\)",
 
-"g) \(F_1\)=700lb",
+"\(F_1\)=700lb",
 
-"h) \(F_2\)=400lb",
+"\(F_2\)=400lb",
 
-"k) \(F_3\)=600lb",
+"\(F_3\)=600lb",
 
-"l) Coordinate axes as shown",
+"Coordinate axes as shown",
 );
-$mc -> makeLast("a) A washer supporting three forces",
-"b) See figure",
-"c) Angles as shown",
-"d) 30 \(^\circ\)",
-"e) \(\theta\)=30 \(^\circ\)",
-"f) \(F_1\)=400lb",
-"g) \(F_1\)=700lb",
-"h) \(F_2\)=400lb",
-"i) \(F_2\)=600lb",
-"j) F=600lb",
-"k) \(F_3\)=600lb",
-"l) Coordinate axes as shown",
+$mc -> makeLast("A washer supporting three forces",
+"See figure",
+"Angles as shown",
+"30 \(^\circ\)",
+"\(\theta\)=30 \(^\circ\)",
+"\(F_1\)=400lb",
+"\(F_1\)=700lb",
+"\(F_2\)=400lb",
+"\(F_2\)=600lb",
+"F=600lb",
+"\(F_3\)=600lb",
+"Coordinate axes as shown",
 );
 
 ########################################################
@@ -130,14 +122,16 @@ $mc -> makeLast("a) A washer supporting three forces",
 BEGIN_TEXT
 
 $BR
+\{ $mc -> print_q() \}
+
 
 $BR
 $BR\{ image("STATICS-PSE08-03-04-79e2badd926246c2b51b5a21f3a742a20.png" , width=>522.8571428571429, height=>500.0) \}
 $BR
 
 $BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 7 correct options depicting the information that is given in the above problem.  
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

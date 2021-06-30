@@ -85,38 +85,28 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-The hook depicted in the image below has two ropes pulling on it. What is the magnitude of the resultant force acting on the ook due to the two ropes?
-
-
-
-
-From the list below, select all the correct assumptions that should be made in order to solve the above problem. 
-
+$BR
+The hook depicted in the image below has two ropes pulling on it. What is the magnitude of the resultant force acting on the hook due to the two ropes?
+$BR
 ",
-"a) The ropes are taut",
+"The ropes are taut",
 
-"b) The ropes are inelastic",
+"The ropes are inelastic",
 
-"d) Given information is exact",
+"Given information is exact",
 
-"e) The hook and two ropes are in static equilibrium",
+"The hook and two ropes are in static equilibrium",
 
-"i) The hook is modelled as a particle",
+"The hook can be modelled as a particle",
 );
-$mc -> makeLast("a) The ropes are taut",
-"b) The ropes are inelastic",
-"c) Gravity is 9.81m/s^2",
-"d) Given information is exact",
-"e) The hook and two ropes are in static equilibrium",
-"f) The hook is rigid and does not deform",
-"g) The springs are linear",
-"h) The hook is frictionless",
-"i) The hook is modelled as a particle",
-"j) The ropes are modelled as a particle",
-"k) The hook is modelled as a rigid body",
+$mc -> makeLast("The ropes are taut",
+"The ropes are inelastic",
+"Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The hook and two ropes are in static equilibrium",
+"The hook is rigid and does not deform",
+"The hook can be modelled as a particle",
+"The ropes can be modelled as a particle",
 );
 
 ########################################################
@@ -125,12 +115,16 @@ $mc -> makeLast("a) The ropes are taut",
 BEGIN_TEXT
 
 $BR
+\{ $mc -> print_q() \}
+
+$BR
 \{ image("STATICS-PSE09-02-01-57faf6c0bb184746b5a302a5385ba77f0.png" , width=>449.33554817275746, height=>500.0) \}
 $BR
 
 $BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 5 correct assumptions that should be made in order to solve the above problem. 
+\{ $mc -> print_a() \}
+
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

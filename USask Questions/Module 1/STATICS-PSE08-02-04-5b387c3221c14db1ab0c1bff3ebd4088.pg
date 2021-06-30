@@ -85,60 +85,48 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-A washer on the edge of a shelf supports three different forces, \(F_1\), \(F_2\), and \(F_3\), as shown above.
-
-
-
-
-From the list below, select all the correct options depicting the information that is given in the above problem.  
-
+$BR
+A washer (the blue disk) on the edge of a shelf supports three different forces, \(F_1\), \(F_2\), and \(F_3\), as shown above. What is the resultant force vector experienced by the washer due to these three forces, expressed in Cartesian form?
 ",
-"a) A washer supporting three forces",
+"A washer is supporting three forces",
 
-"b) Angles as shown",
+"Angles as shown",
 
-"f) \(F_1\)=700lb",
+"\(F_1\)=700lb",
 
-"g) \(F_2\)=400lb",
+"\(F_2\)=400lb",
 
-"j) \(F_3\)=600lb",
+"\(F_3\)=600lb",
 
-"k) Coordinate axes as shown",
+"Coordinate axes as shown",
 );
-$mc -> makeLast("a) A washer supporting three forces",
-"b) Angles as shown",
-"c) Dimensions as shown",
-"d) Angles and dimensions as shown",
-"e) F=700lb",
-"f) \(F_1\)=700lb",
-"g) \(F_2\)=400lb",
-"h) \(F_2\)=400",
-"i) \(f_3\)=600lb",
-"j) \(F_3\)=600lb",
-"k) Coordinate axes as shown",
+$mc -> makeLast("A washer is supporting three forces",
+"Angles as shown",
+"Dimensions as shown",
+"Angles and dimensions as shown",
+"F=700lb",
+"\(F_1\)=700lb",
+"\(F_2\)=400lb",
+"\(F_2\)=400",
+"\(f_3\)=600lb",
+"\(F_3\)=600lb",
+"Coordinate axes as shown",
 );
 
 ########################################################
 # Not in PGML
 
 BEGIN_TEXT
+$BR
+\{ $mc -> print_q() \}
 
 $BR
-
-
 \{ image("STATICS-PSE13-05-01-eabc67229bbd492a8a245dfefb8756a50.png" , width=>521.5716486902928, height=>500.0) \}
 $BR
 
-
-
 $BR
-
-$BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 6 correct options depicting the information that is given in the above problem.  
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

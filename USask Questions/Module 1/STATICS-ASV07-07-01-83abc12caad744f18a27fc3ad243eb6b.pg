@@ -97,9 +97,9 @@ $ans1=$A*sin((pi/180)*($B));
 #PGML
 BEGIN_PGML
 
-For a vector with a magnitude of [`[$A]`] N directed at an angle of [`[$B]`][`^{\circ}`] CCW from the positive x-axis, determine the x and y components to express the vector in Cartesian form:
+For a vector with a magnitude of [`[$A]`] N directed at an angle of [`[$B]`][`^{\circ}`] CCW from the positive x-axis, determine the x and y components to express the vector in Cartesian form. Make sure your answers have 3 significant figures.
 
-[`\overrightarrow{v}`]=[____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`]  N
+[`\overrightarrow{v}`]=([____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`])  N
 
 
 
