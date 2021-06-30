@@ -85,34 +85,30 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
+$BR
 Strut AB is connected at point B to the floor and juts out at an angle of \(\alpha\)=45 \(^\circ\), measured CW from the positive y axis. Strut AC is connected at point C to a spot on the vertical wall, directly above point B. The struts are connected to each other at point A. The angle between struts AB and AC is \(\beta\)=30 \(^\circ\). If a downward force of F=450lb is applied to point A, what is the force directed from point A to point B on the strut?
-
-
-
+$BR
 From the list below, select all the correct options depicting the information that is given in the above problem statement.  
 
 ",
-"a) Two struts connected at a point support a load",
+"Two struts connected at a point support a load",
 
-"d) F=450lb, downward",
+"F=450lb, downward",
 
-"f) \(\alpha\)=45 \(^\circ\), measured CW from the positive y axis",
+"\(\alpha\)=45 \(^\circ\), measured CW from the positive y axis",
 
-"h) \(\beta\)=30 \(^\circ\), between the struts",
+"\(\beta\)=30 \(^\circ\), between the struts",
 );
-$mc -> makeLast("a) Two struts connected at a point support a load",
-"b) Angles as shown",
-"c) f=450lb",
-"d) F=450lb, downward",
-"e) F=450",
-"f) \(\alpha\)=45 \(^\circ\), measured CW from the positive y axis",
-"g) 45 \(^\circ\), measured CW from the positive y axis",
-"h) \(\beta\)=30 \(^\circ\), between the struts",
-"i) \(\beta\)=30 \(^\circ\), measured CCW from the positive x axis",
-"j) Coordinate axes as shown",
+$mc -> makeLast("Two struts connected at a point support a load",
+"Angles as shown",
+"f=450lb",
+"F=450lb, downward",
+"F=450",
+"\(\alpha\)=45 \(^\circ\), measured CW from the positive y axis",
+"45 \(^\circ\), measured CW from the positive y axis",
+"\(\beta\)=30 \(^\circ\), between the struts",
+"\(\beta\)=30 \(^\circ\), measured CCW from the positive x axis",
+"Coordinate axes as shown",
 );
 
 ########################################################

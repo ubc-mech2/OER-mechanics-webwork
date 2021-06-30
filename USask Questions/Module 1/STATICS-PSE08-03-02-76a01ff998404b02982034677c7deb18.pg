@@ -85,53 +85,44 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-
-
-From the list below, select all the correct options depicting the information that is given in the image above.  
+$BR
+If a downward force of \(F=450\:lb\)﻿ is applied to point \(A\)﻿ in the strut system shown below, what is the force directed along strut \(AB\)﻿?  The angle between the struts \(\theta_A\) is \(30^\circ\) ﻿and the angle between strut \(AB\) and the downward force \(F\) is \(\theta_F=45^\circ\).
 
 ",
-"a) Two struts connected at a point, supporting a load",
+"Two struts connected at a point, supporting a load",
 
-"d) F=450lb",
+"F=450lb",
 
-"f) \(\theta_F\)=45 \(^\circ\)",
+"\(\theta_F\)=45 \(^\circ\)",
 
-"i) \(\theta_{A}\)=30 \(^\circ\)",
+"\(\theta_{A}\)=30 \(^\circ\)",
 );
-$mc -> makeLast("a) Two struts connected at a point, supporting a load",
-"b) Angles as shown",
-"c) 450lb",
-"d) F=450lb",
-"e) F=450",
-"f) \(\theta_F\)=45 \(^\circ\)",
-"g) 45 \(^\circ\)",
-"h) 30 \(^\circ\)",
-"i) \(\theta_{A}\)=30 \(^\circ\)",
-"j) Coordinate axes as shown",
+$mc -> makeLast("Two struts connected at a point, supporting a load",
+"Angles as shown",
+"450lb",
+"F=450lb",
+"F=450",
+"\(\theta_F\)=45 \(^\circ\)",
+"45 \(^\circ\)",
+"30 \(^\circ\)",
+"\(\theta_{A}\)=30 \(^\circ\)",
+"Coordinate axes as shown",
 );
 
 ########################################################
 # Not in PGML
 
 BEGIN_TEXT
-
 $BR
-
-
+\{ $mc -> print_q() \}
 
 $BR
 $BR\{ image("STATICS-PSE09-02-02-111f677f38664f6c935195bee8926b540.png" , width=>485.0, height=>500.0) \}
 $BR
 
-
 $BR
-
-$BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 4 correct options depicting the information that is given in the image above.  
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

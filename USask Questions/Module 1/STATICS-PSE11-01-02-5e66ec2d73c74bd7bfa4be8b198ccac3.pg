@@ -85,7 +85,7 @@ $mc1 = RadioButtons([
 
 "a) The subscript, x, should be removed from to \(\overrightarrow{F}_x\)",
 "b) The vector symbol, \(\overrightarrow{}\), should be removed from \(\overrightarrow{F}_x\)",
-"c) There should be another equation for \(\overrightarrow{F}_y\)",
+"c) There should be another term (\(\overrightarrow{F}_y\)) in the equation on the left hand side",
 "d) The summation sign, \(\Sigma\), should be removed"],
 "a) The subscript, x, should be removed from to \(\overrightarrow{F}_x\)");
 ########################################################
@@ -96,11 +96,11 @@ $BR
 
 $BR
 
-Given the stated vector equation of equilibrium:
+The following equation is meant to be a 2D vector equation of equilibrium but it has a mistake:
 
 \(\sum\)\(\overrightarrow{F}_x\)=0
 
-Choose from the list below as to what should be fixed so that the above statement is correct. 
+Which of the following statements would make the equation shown above, correct?  Note that there may be more than one correct answer.
 
 
 

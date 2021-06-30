@@ -108,7 +108,7 @@ Consider the following two-dimensional vectors represented in terms of their mag
 
 [`\overrightarrow{v_2}`]=[`[$C]`], [`\theta_2`]=[`[$D]`] [`^{\circ}`]
 
-Calculate the dot product of the two vectors, [`\overrightarrow{v_1}`][`\cdot`][`\overrightarrow{v_2}`].
+Calculate the dot product of the two vectors, [`\overrightarrow{v_1}`][`\cdot`][`\overrightarrow{v_2}`]. Use 3 significant figures in your answer.
 
 [____]{"$ans0"}
 

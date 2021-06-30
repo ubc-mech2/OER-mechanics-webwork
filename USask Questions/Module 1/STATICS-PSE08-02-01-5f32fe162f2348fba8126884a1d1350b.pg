@@ -85,56 +85,39 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
+$BR
+The hook depicted in the image above has two ropes pulling on it. What is the magnitude of the resultant force acting on the hook due to the two ropes?
 
-
-
-The hook depicted in the image above has two ropes pulling on it.
-
-
-
-
-From the list below, select all the correct options depicting the information that is given in the above problem.  
 
 ",
-"a) Hook supporting by two ropes",
-
-"b) Angles as shown",
-
-"e) \(F_1\)=100N",
-
-"f) \(F_2\)=150N",
-
-"h) Coordinate axes as shown",
+"Hook supporting by two ropes",
+"Angles as shown",
+"\(F_1\)=100N",
+"\(F_2\)=150N",
+"Coordinate axes as shown",
 );
-$mc -> makeLast("a) Hook supporting by two ropes",
-"b) Angles as shown",
-"c) See figure",
-"d) \(\overrightarrow{F_1}\)=100N",
-"e) \(F_1\)=100N",
-"f) \(F_2\)=150N",
-"g) \(f_2\)=150N",
-"h) Coordinate axes as shown",
+$mc -> makeLast("Hook supporting by two ropes",
+"Angles as shown",
+"See figure",
+"\(\overrightarrow{F_1}\)=100N",
+"\(F_1\)=100N",
+"\(F_2\)=150N",
+"\(f_2\)=150N",
+"Coordinate axes as shown",
 );
 
 ########################################################
 # Not in PGML
 
 BEGIN_TEXT
-
 $BR
-
-
+\{ $mc -> print_q() \}
 $BR
 $BR\{ image("STATICS-PSE09-02-01-57faf6c0bb184746b5a302a5385ba77f0.png" , width=>449.33554817275746, height=>500.0) \}
 $BR
-
-
-
 $BR
-
-$BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 5 correct options depicting the information that is given in the above problem.  
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

@@ -85,33 +85,29 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-Strut AB is connected at point B to the floor and juts out at an angle of \(\alpha\)=45 \(^\circ\), measured CW from the positive y axis. Strut AC is connected at point C to a spot on the vertical wall, directly above point B. The struts are connected to each other at point A. The angle between struts AB and AC is \(\beta\)=30 \(^\circ\). If a downward force of F=450lb is applied to point A, what is the force directed along strut AB?
-
-
-
+$BR
+Strut \(AB\) is connected at point \(B\) to the floor and juts out at an angle of \(\alpha=45^\circ\), measured CW from the positive \(y\) axis. Strut \(AC\) is connected at point \(C\) to a spot on the vertical wall, directly above point \(B\). The struts are connected to each other at point \(A\). The angle between struts \(AB\) and \(AC\) is \(\beta=30^\circ\). If a downward force of \(F=450lb\) is applied to point \(A\), what is the force directed along strut \(AB\)?
+$BR
 From the list below, select all the correct assumptions that should be made in order to solve the above problem. 
 
 ",
-"a) The system is in static equilibrium",
+"The system is in static equilibrium",
 
-"c) Given information is exact",
+"Given information is exact",
 
-"d) The struts are rigid and do not deform",
+"The struts are rigid and do not deform",
 
-"h) Point A is modelled as a particle",
+"Point \(A\) is modelled as a particle",
 );
-$mc -> makeLast("a) The system is in static equilibrium",
-"b) Gravity is 9.81m/s^2",
-"c) Given information is exact",
-"d) The struts are rigid and do not deform",
-"e) The springs are linear",
-"f) The struts are frictionless",
-"g) The struts are modelled as a particle",
-"h) Point A is modelled as a particle",
-"i) The strut system is modelled as a rigid body",
+$mc -> makeLast("The system is in static equilibrium",
+"Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The struts are rigid and do not deform",
+"The springs are linear",
+"The struts are frictionless",
+"The struts are modelled as a particle",
+"Point \(A\) is modelled as a particle",
+"The strut system is modelled as a rigid body",
 );
 
 ########################################################

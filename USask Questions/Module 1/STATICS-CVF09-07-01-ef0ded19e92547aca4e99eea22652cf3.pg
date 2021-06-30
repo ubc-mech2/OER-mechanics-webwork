@@ -89,9 +89,9 @@ $ans0=4.58;
 #PGML
 BEGIN_PGML
 
-Calculate the magnitude of the vector shown in the figure below. Round your answer to 3 significant figures.
+Calculate the magnitude of the red vector A shown in the figure below. Round your answer to 3 significant figures.
 
-[`|\overrightarrow{v}|`]= [____]{"$ans0"}
+[`|\overrightarrow{A}|`]= [____]{"$ans0"}
 
 [@ image( "STATICS-CVF09-07-01-ef0ded19e92547aca4e99eea22652cf30.png", width=>401.40023337222874, height=>500.0) @]*
 

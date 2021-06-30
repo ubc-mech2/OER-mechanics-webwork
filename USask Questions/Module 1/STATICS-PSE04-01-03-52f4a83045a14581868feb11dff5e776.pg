@@ -36,7 +36,7 @@
 ##
 ## DBsubject(Statics)
 ## Institution('University of Saskatchewan')
-## Author( Zoe)
+## Author(Zoe)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS( 3D, equilibrium, particle)
@@ -90,20 +90,12 @@ $mc1 = RadioButtons([
 
 BEGIN_TEXT
 $BR
-
 $BR
-
 Given two forces acting on a particle at rest, \(\overrightarrow{F_1}\)=(0\(\hat{i}\)-\($A\)\(\hat{j}\)+0\(\hat{k}\)) N and \(\overrightarrow{F_2}\)=(0\(\hat{i}\)+\($A\)\(\hat{j}\)+0\(\hat{k}\)) N, is the particle in static equilibrium?
-
-
-
-
 $BR
 $BR
 \{$mc1->buttons()\}
- 
- 
- 
+
 END_TEXT 
  
 ANS( $mc1->cmp() );

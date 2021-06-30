@@ -85,40 +85,32 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-The hook depicted in the image below has two ropes pulling on it. The first rope is pulling with a force \(F_1\)=100N and the second rope is pulling with a force \(F_2\)=150 N. The angles \(\theta_1\) and \(\theta_2\) are 15 \(^\circ\) and 10 \(^\circ\) respectively.
-
-
-
-
-From the list below, select all the correct options depicting the information that is given in the above problem.  
-
+$BR
+The hook depicted in the image below has two ropes pulling on it. The first rope is pulling with a force \(F_1=100\:N\) and the second rope is pulling with a force \(F_2=150\:N\). The angles \(\theta_1\) and \(\theta_2\) are 15 \(^\circ\) and 10 \(^\circ\) respectively. What is the magnitude of the resultant force acting on the hook due to the two ropes?
 ",
-"a) Two ropes pulling on a hook",
+"Two ropes pulling on a hook",
 
-"d) \(F_1\)=100N",
+"\(F_1\)=100N",
 
-"f) \(F_2\)=150N",
+"\(F_2\)=150N",
 
-"g) \(\theta_1\)=15 \(^\circ\), measured CCW from the positive x axis",
+"\(\theta_1\)=15 \(^\circ\), measured CCW from the positive x axis",
 
-"j) \(\theta_2\)=10 \(^\circ\), measured CW from the positive y axis",
+"\(\theta_2\)=10 \(^\circ\), measured CW from the positive y axis",
 
-"k) Coordinate axes as shown",
+"Coordinate axes as shown",
 );
-$mc -> makeLast("a) Two ropes pulling on a hook",
-"b) See figure",
-"c) \(F_2\)=100N",
-"d) \(F_1\)=100N",
-"e) \(\overrightarrow{F_2}\)=150N",
-"f) \(F_2\)=150N",
-"g) \(\theta_1\)=15 \(^\circ\), measured CCW from the positive x axis",
-"h) \(\theta_1\)=10 \(^\circ\), measured CCW from the positive x axis",
-"i) \(\theta_2\)=15 \(^\circ\), measured CW from the positive y axis",
-"j) \(\theta_2\)=10 \(^\circ\), measured CW from the positive y axis",
-"k) Coordinate axes as shown",
+$mc -> makeLast("Two ropes pulling on a hook",
+"See figure",
+"\(F_2\)=100N",
+"\(F_1\)=100N",
+"\(\overrightarrow{F_2}\)=150N",
+"\(F_2\)=150N",
+"\(\theta_1\)=15 \(^\circ\), measured CCW from the positive x axis",
+"\(\theta_1\)=10 \(^\circ\), measured CCW from the positive x axis",
+"\(\theta_2\)=15 \(^\circ\), measured CW from the positive y axis",
+"\(\theta_2\)=10 \(^\circ\), measured CW from the positive y axis",
+"Coordinate axes as shown",
 );
 
 ########################################################
@@ -127,19 +119,15 @@ $mc -> makeLast("a) Two ropes pulling on a hook",
 BEGIN_TEXT
 
 $BR
-
+\{ $mc -> print_q() \}
 
 $BR
 $BR\{ image("STATICS-PSE09-02-01-57faf6c0bb184746b5a302a5385ba77f0.png" , width=>416.51376146788994, height=>416.0) \}
 $BR
 
-
-
 $BR
-
-$BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 6 correct options depicting the information that is given in the above problem.
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

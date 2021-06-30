@@ -84,7 +84,7 @@ tolType=>'relative');  #relative or absolute
 $mc1 = RadioButtons([
 
 "a) \(\sum\)\(\overrightarrow{F}_x\)+\(\overrightarrow{F}_y\)+\(\overrightarrow{F}_z\)=0",
-"b) \(\sum\)\(\overrightarrow{F}_x\)=0, \(\sum\)\(\overrightarrow{F}_y\)=0, \(\sum\)\(\overrightarrow{F}_z\)=0",
+"b) \(\sum\)\(F\)=0",
 "c) \(\sum\)\(\overrightarrow{F}\)=0",
 "d) \(\overrightarrow{F}\)=0"],
 "c) \(\sum\)\(\overrightarrow{F}\)=0");
@@ -96,8 +96,7 @@ $BR
 
 $BR
 
-From the options below, select the correct equation that governs 3D particle static equilibrium, in terms of vector notation.
-
+From the options below, select the correct one that governs 3D particle static equilibrium in terms of vector notation.
 
 
 $BR

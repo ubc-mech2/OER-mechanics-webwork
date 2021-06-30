@@ -85,50 +85,40 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-If a downward force of F=450lb is applied to point A in the strut system shown below, what is the force directed along strut AB?  The angle between the struts \(\theta_2\) is 30 \(^\circ\)and the angle between strut AB and the downward force F is \(\theta_1\)=45 \(^\circ\).
-
-
-
-
-From the list below, select all the correct assumptions that should be made in order to solve the above problem. 
+$BR
+If a downward force of \(F=450lb\) is applied to point \(A\) in the strut system shown below, what is the force directed along strut \(AB\)?  The angle between the struts \(\theta_2\) is 30 \(^\circ\) and the angle between strut \(AB\) and the downward force F is \(\theta_1\)=45 \(^\circ\).
 
 ",
-"a) The system is in static equilibrium",
+"The system is in static equilibrium",
 
-"c) Given information is exact",
+"Given information is exact",
 
-"d) The struts are rigid and do not deform",
+"The struts are rigid and do not deform",
 
-"h) Point A is modelled as a particle",
+"Point A can be modelled as a particle",
 );
-$mc -> makeLast("a) The system is in static equilibrium",
-"b) Gravity is 9.81m/s^2",
-"c) Given information is exact",
-"d) The struts are rigid and do not deform",
-"e) The springs are linear",
-"f) The struts are frictionless",
-"g) The struts are modelled as a particle",
-"h) Point A is modelled as a particle",
-"i) The strut system is modelled as a rigid body",
+$mc -> makeLast("The system is in static equilibrium",
+"Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The struts are rigid and do not deform",
+"The springs are linear",
+"The struts are modelled as a particle",
+"Point A can be modelled as a particle",
 );
 
 ########################################################
 # Not in PGML
 
 BEGIN_TEXT
-
-$BR
+\{ $mc -> print_q() \}
 
 $BR
 $BR\{ image("STATICS-PSE10-03-02-186f27a2cfb4456eafe547d9ff8c444a0.png" , width=>485.0, height=>500.0) \}
 $BR
 
 $BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select the 4 correct assumptions that should be made in order to solve the above problem. 
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

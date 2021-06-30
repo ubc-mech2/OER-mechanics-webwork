@@ -85,30 +85,20 @@ $mc = new_checkbox_multiple_choice();
 $mc -> qa (
 "
 Consider the following scenario:
-
-
-
-A washer on the edge of a shelf supports three different forces, \(F_1\), \(F_2\), and \(F_3\), as shown. What is the resultant force vector experienced by the washer, expressed in Cartesian form?
-
-
-
-
-From the list below, select all the correct assumptions that should be made in order to solve the above problem. 
-
+$BR
+A washer (the blue disk) on the edge of a shelf supports three different forces, \(F_1\), \(F_2\), and \(F_3\), as shown. What is the resultant force vector experienced by the washer due to these three forces, expressed in Cartesian form?
+$BR
 ",
-"c) Given information is exact",
+"Given information is exact",
 
-"d) The system is in static equilibrium",
-
-"f) The washer is modelled as a particle",
+"The washer can be modelled as a particle",
 );
-$mc -> makeLast("a) The ropes are taut",
-"b) Gravity is 9.81m/s^2",
-"c) Given information is exact",
-"d) The system is in static equilibrium",
-"e) The springs are linear",
-"f) The washer is modelled as a particle",
-"g) The washer is modelled as a rigid body",
+$mc -> makeLast(
+"Gravity is \(9.81m/s^2\)",
+"Given information is exact",
+"The springs are linear",
+"Given information is correct",
+"The washer can be modelled as a particle",
 );
 
 ########################################################
@@ -117,18 +107,16 @@ $mc -> makeLast("a) The ropes are taut",
 BEGIN_TEXT
 
 $BR
+\{ $mc -> print_q() \}
 
 
 $BR
 $BR\{ image("STATICS-PSE13-05-01-eabc67229bbd492a8a245dfefb8756a50.png" , width=>521.5716486902928, height=>500.0) \}
 $BR
 
-
 $BR
-
-$BR
-\{ $mc -> print_q() \}
-$BR\{ $mc -> print_a() \}
+From the list below, select all of the correct assumptions that should be made in order to solve the above problem. 
+\{ $mc -> print_a() \}
 END_TEXT
   
 ANS( checkbox_cmp( $mc->correct_ans() ) );

@@ -92,15 +92,12 @@ $BR
 
 $BR
 
-Is the following FBD for point O correct?
-
+Is the following FBD for point O (below) a correct FBD for point O?  Note that you can assume that unknown forces are either tension forces or compression forces.
 
 
 $BR
 $BR\{ image("STATICS-PSE07-04-03-f7a0514546164426aa3cb6ab650f0a480.png" , width=>506.4635272391505, height=>500.0) \}
-
-$BR
-$BR\{ image("STATICS-PSE07-04-03-f7a0514546164426aa3cb6ab650f0a481.png" , width=>534.8101265822785, height=>500.0) \}
+\{ image("STATICS-PSE07-04-03-f7a0514546164426aa3cb6ab650f0a481.png" , width=>534.8101265822785, height=>500.0) \}
 
 
 $BR

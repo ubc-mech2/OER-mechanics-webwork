@@ -101,9 +101,9 @@ $ans2=$A*cos((pi/180)*$C);
 #PGML
 BEGIN_PGML
 
-Consider a three-dimensional vector with magnitude r=[`[$A]`] N, transverse angle [`\theta`]=[`[$B]`] [`^{\circ}`], and azmuth angle [`\phi`]=[`[$C]`] [`^{\circ}`]. Find the x, y, and z components of the vector so it can be expressed in the Cartesian form:
+Consider a three-dimensional vector with magnitude r=[`[$A]`] N, transverse angle [`\theta`]=[`[$B]`] [`^{\circ}`], and azimuth angle [`\phi`]=[`[$C]`] [`^{\circ}`]. Find the x, y, and z components of the vector so it can be expressed in the Cartesian form. Make sure you use 3 significant figures for each answer.
 
-[`\overrightarrow{v}`]=[____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`]+[____]{"$ans2"}[`\hat{k}`]  N
+[`\overrightarrow{v}`]=([____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`]+[____]{"$ans2"}[`\hat{k}`])  N
 
 
 

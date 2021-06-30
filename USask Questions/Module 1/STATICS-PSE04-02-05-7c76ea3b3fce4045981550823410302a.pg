@@ -89,25 +89,17 @@ $mc1 = RadioButtons([
 # Not in PGML
 
 BEGIN_TEXT
-$BR
-
-$BR
-
 The following forces are acting on a particle at rest:
-
+$BR
 \(\overrightarrow{F_1}\)=(0\(\hat{i}\)+\($A\)\(\hat{j}\)+0\(\hat{k}\)) N
-
+$BR
 \(\overrightarrow{F_2}\)=(0\(\hat{i}\)+0\(\hat{j}\)-\($A\)\(\hat{k}\))N,
-
+$BR
 \(\overrightarrow{F_3}\)=(0\(\hat{i}\)+0\(\hat{j}\)+\($A\)\(\hat{k}\))N
-
+$BR
 \(\overrightarrow{F_4}\)=(0\(\hat{i}\)-\($A\)\(\hat{j}\)+0\(\hat{k}\))N
-
+$BR
 Is the particle in static equilibrium?
-
-
-
-
 $BR
 $BR
 \{$mc1->buttons()\}

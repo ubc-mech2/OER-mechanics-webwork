@@ -83,11 +83,11 @@ tolType=>'relative');  #relative or absolute
 
 $mc1 = RadioButtons([
 
-"a) \(\sum\)\(\overrightarrow{F}_x\)=0, \(\sum\)\(\overrightarrow{F}_y\)=0",
-"b) \(\sum\)\(\overrightarrow{F}\)=0",
+"a) \(\sum\)\(\overrightarrow{F}\)=0",
+"b) \(\overrightarrow{F}\)=0",
 "c) \(\sum\)\(F\)=0",
-"d) \(\sum\)\(F_x\)+\(F_y\)=0"],
-"b) \(\sum\)\(\overrightarrow{F}\)=0");
+"d) \(\sum\)\(F_x\)+\(\sum\)\(F_y\)=0"],
+"a) \(\sum\)\(\overrightarrow{F}\)=0");
 ########################################################
 # Not in PGML
 
@@ -96,8 +96,7 @@ $BR
 
 $BR
 
-From the options below, select the correct equation that represents 2D particle static equilibrium, in terms of vector notation.
-
+From the choices below, select the one option that correctly represents 2D particle static equilibrium in terms of vector notation.
 
 
 $BR
