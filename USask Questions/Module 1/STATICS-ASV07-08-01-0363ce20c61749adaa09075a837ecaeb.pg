@@ -101,7 +101,7 @@ For a vector with a magnitude of [`[$A]`] N directed at an angle of [`[$B]`][`^{
 
 [`\overrightarrow{v}`]=([____]{"$ans0"}[`\hat{i}`]+[____]{"$ans1"}[`\hat{j}`])  N
 
-
+Express your answers to 3 significant figures.
 
 END_PGML
 ENDDOCUMENT();
