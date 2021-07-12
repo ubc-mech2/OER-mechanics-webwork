@@ -65,17 +65,19 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$w = random(5,20,5);	#[rad/s]
-$a = random(1,10,1);	#[rad/s^2]
-$GR = random(2,30,2);
-$t = random(2,10,1);	#[s]
+$r = random(8,12,1);		#[cm]
+$k = random(150,500,25); 	#[N/rad]
+$m = random(70,150,10);		#[g]
+$I = random(1,5,0.5);		#[g m^2]
+$work = random(0.01,0.3)*0.5*$k*pi**2;	#[J]
 
 #computation
-$w_B = -($a/2*$t**2+$w)/$GR;
-$a_B = -($a*$t)/$GR;
+$w = ((0.5*$k*pi**2 - $work)/(0.5*$I/1000))**0.5;
+$v = $w*$r/100;
 
-$width = 403;
-$height = 297;
+
+$width = 557;
+$height = 311;
 
 
 #set tolerance
@@ -90,21 +92,20 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-The gear A is spinning with an angular velocity [`(\omega_A)_0 = [$w]\boldsymbol{\hat{k}}`] [`rad/s`] and is accelerating at 
-[`\alpha_A = [$a]t\boldsymbol{\hat{k}}`] [`rad/s^2`]. It is connected to gear B, and the system has a gear ratio [`\frac{R}{r}=[$GR]`]. 
-Determine the angular acceleration and velocity of gear B after [`[$t]`] [`s`].
- 
-Note that the positive [`\boldsymbol{\hat{k}}`] axis points out of the screen.
+A mouse trap uses a torsional spring ([`k= [$k]`] [`N/rad`]) to store energy. The spring is wound 
+such that it is at its natural length when the jaw of the trap sits on the wooden base. The jaw 
+has a mass of [`[$m]`] [`kg`], a length of [`[$r]`] [`cm`] and a moment of inertia of [`[$I]`] [`g\cdot m^2`] 
+about the hinge. What is the velocity with which the tip of the jaw strike the wood when it is triggered if 
+[`[$work]`] [`J`] of energy is used against friction in the hinge?
 
-[@ image( "21-R-KM-SS-35.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-WE-SS-34.png", width=>[$width], height=>[$height]) @]*
 
-[`\omega_B = `][_____]{"$w_B"}[`\boldsymbol{\hat{k}}`] [`rad/s`]  
-[`\alpha_B = `][_____]{"$a_B"}[`\boldsymbol{\hat{k}}`] [`rad/s^2`]
+[`v = `][_____]{"$v"} [`m/s`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-35.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-WE-SS-34.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

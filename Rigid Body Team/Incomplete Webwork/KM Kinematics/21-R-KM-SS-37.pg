@@ -65,17 +65,17 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$w = random(5,20,5);	#[rad/s]
-$a = random(1,10,1);	#[rad/s^2]
-$GR = random(2,30,2);
-$t = random(2,10,1);	#[s]
+$alpha = 45;
+$v = random(2,10,1);	#[m/s]
+$r_A = random(10,20,2);	#[cm]
+$r_B = ceil(random(0.1,0.25,0.05)*$r_A);	#[cm]
+$r_C = random(40,60,5);	#[cm]
 
 #computation
-$w_B = -($a/2*$t**2+$w)/$GR;
-$a_B = -($a*$t)/$GR;
+$v_frame = $r_A*$v/$r_A/$r_B;
 
-$width = 403;
-$height = 297;
+$width = 523;
+$height = 374;
 
 
 #set tolerance
@@ -90,21 +90,19 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-The gear A is spinning with an angular velocity [`(\omega_A)_0 = [$w]\boldsymbol{\hat{k}}`] [`rad/s`] and is accelerating at 
-[`\alpha_A = [$a]t\boldsymbol{\hat{k}}`] [`rad/s^2`]. It is connected to gear B, and the system has a gear ratio [`\frac{R}{r}=[$GR]`]. 
-Determine the angular acceleration and velocity of gear B after [`[$t]`] [`s`].
- 
-Note that the positive [`\boldsymbol{\hat{k}}`] axis points out of the screen.
+The figure shows a concept vehicle that runs between two gear racks. The bottom gear rack is fixed and the top gear rack 
+is driven at a velocity of [`v = [$v]`] [`m/s`]. The vehicle is unpowered, and consists of a system of compound gears held 
+together by a frame ([`\alpha = [$alpha]`][`^\circ`]). Gears A and B share an axle (X) and move at the same angular velocity. 
+If [`r_A = [$r_A]`] [`cm`], [`r_B = [$r_B]`] [`cm`] and [`r_C = [$r_C]`] [`cm`], find the magnitude of the velocity of the vehicle.
 
-[@ image( "21-R-KM-SS-35.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-KM-SS-37.png", width=>[$width], height=>[$height]) @]*
 
-[`\omega_B = `][_____]{"$w_B"}[`\boldsymbol{\hat{k}}`] [`rad/s`]  
-[`\alpha_B = `][_____]{"$a_B"}[`\boldsymbol{\hat{k}}`] [`rad/s^2`]
+[`v_\text{vehicle} = `][_____]{"$v_frame"} [`m/s`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-35.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-KM-SS-37.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################
