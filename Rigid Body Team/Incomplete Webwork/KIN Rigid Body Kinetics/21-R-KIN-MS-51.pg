@@ -69,34 +69,34 @@ $imgScale = 0.2;
 
 #---- Random variables for this problem --------#
 
-$r_1 = random(7,15,1);
-$r_2 = random(17,20,1);
-$r_3 = random(7,15,1);
-$r_4 = random(20,30,1);
-$h_1 = 1;
-$h_2 = random(30,50,1);
-$h_3 = 1;
-$rho_p = 941/1000;
-$rho_s = 8050/1000;
-$rho_w = 1200/1000;
+$w = random(2,4,1);
+$L = random(15,25,1);
+$r = random(3,5,1);
+$d = random(2,5,1);
+
+$T = 1;
+$rho = 7500;
 
 #---- Formulas to compute answers --------------#
 
-$z_a = $h_3/2;
-$z_b = $h_2/4 + $h_3;
-$z_c = $h_3 + $h_2 + $h_1/2;
-$z_d = $h_3 + $h_2 + $h_1 + $r_1;
+$m_a = $w*($L-2*$r)*$T*$rho;
+$m_b = pi * $r* $r * $T * $rho;
+$m_c = $d*$d*$T*$rho;
+$x_ga = ($L-2*$r)/2;
+$x_gb = $L-$r;
+$x_gc = $L-$r;
 
-$m_a = pi * $r_4**2 * $h_3 * $rho_w;
-$m_b = 1/3 * pi * $r_3**2 *$h_2 * $rho_p;
-$m_c = pi*$r_2**2 *$h_1 * $rho_p;
-$m_d = 4/3 * pi*$r_1**3*$rho_s;
+$I_za = 1/12 * $m_a * ($w**2 + ($L-2*$r)**2) + $m_a * $x_ga**2;
+$I_ya = 1/12 * $m_a * ($T**2 + ($L-2*$r)**2) + $m_a * $x_ga**2;
 
-$x = 0;
+$I_zb = 1/2 * $m_b * $r*$r+$m_b * $x_gb**2;
+$I_yb = 1/12 * $m_b * (3*$r**2 + $T**2) + $m_b * $x_gb**2;
 
-$y = 0;
+$I_zc = 1/12*$m_c * (2*$d**2) + $m_c*$x_gc**2;
+$I_yc = 1/12*$m_c * ($d**2 + $T**2) + $m_c*$x_gc**2;
 
-$z = ($z_a*$m_a + $z_b*$m_b + $z_c*$m_c + $z_d*$m_d)/($m_a+$m_b+$m_c+$m_d);
+$I_z = ($I_za + $I_zb - $I_zc)/10000;
+$I_y = ($I_ya + $I_yb - $I_yc)/10000;
 
 
 ########################################################;
@@ -104,32 +104,22 @@ $z = ($z_a*$m_a + $z_b*$m_b + $z_c*$m_c + $z_d*$m_d)/($m_a+$m_b+$m_c+$m_d);
 
 BEGIN_PGML	
 
-[@ image( "21-R-KIN-MS-49.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-KIN-MS-51.png", width=>[$width], height=>[$height]) @]*
 
-This chess pawn is made up of a wooden base (the cylinder radius [`r_4`], height [`h_3`] and [`\rho_w=1200`] [`kg/m^3`]) 
-and a steel top (the sphere of radius [`r_1`] and [`\rho_s= 8050`] [`kg/m^3`]). 
-The rest is entirely out of plastic ([`\rho_p= 941`] [`kg/m^3`]). 
-Find the centre of mass of the pawn.
+Determine the moment of inertia of the wrench at point [`O`] about each axis described below. 
+The tool has a thickness of [`1 cm`] and a density of [`7500 kg/m^3`].
 
-[`r_1=[$r_1]`] [`cm`]
+Axis perpendicular to the page at [`O`]: [`(I_{z})_O=`][___]{"$I_z"} [`kg \cdot m^2`]
 
-[`r_2=[$r_2]`] [`cm`]
+Axis parallel to [`y`] direction at [`O`]: [`(I_{y})_O=`][___]{"$I_y"} [`kg \cdot m^2`]
 
-[`r_3=[$r_3]`] [`cm`]
+[`w=[$w]`] [`cm`]
 
-[`r_4=[$r_4]`] [`cm`]
+[`L=[$L]`] [`cm`]
 
-[`h_1=[$h_1]`] [`cm`]
+[`r=[$r]`] [`cm`]
 
-[`h_2=[$h_2]`] [`cm`]
-
-[`h_3=[$h_3]`] [`cm`]
-
-[`\bar{x}=`][___]{"$x"} [`cm`]
-
-[`\bar{y}=`][___]{"$y"} [`cm`]
-
-[`\bar{z}=`][___]{"$z"} [`cm`]
+[`d=[$d]`] [`cm`]
 
  _Round your answers to three decimal places_.
 
@@ -142,7 +132,7 @@ BEGIN_PGML_SOLUTION
 Answers
 
 
-[@ image( "21-R-KIN-MS-49.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-R-KIN-MS-51.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 ENDDOCUMENT();
