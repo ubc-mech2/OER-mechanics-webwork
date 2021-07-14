@@ -95,4 +95,14 @@ A popcorn kernel's position is defined by [`s=([$c]t^2 + 20)`] [`cm`] as it gets
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-001.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT()];     #save as .pg

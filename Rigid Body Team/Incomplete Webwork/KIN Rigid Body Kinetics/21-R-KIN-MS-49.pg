@@ -106,9 +106,9 @@ BEGIN_PGML
 
 [@ image( "21-R-KIN-MS-49.png", width=>[$width], height=>[$height]) @]*
 
-This chess pawn is made up of a wooden base (the cylinder radius $r_4$, height $h_3$ and $\rho_w=1200 kg/m^3$) 
-and a steel top (the sphere of radius $r_1$ and $\rho_s = 8050 kg/m^3$). 
-The rest is entirely out of plastic ($\rho_p = 941 kg/m^3$). 
+This chess pawn is made up of a wooden base (the cylinder radius [`r_4`], height [`h_3`] and [`\rho_w=1200`] [`kg/m^3`]) 
+and a steel top (the sphere of radius [`r_1`] and [`\rho_s= 8050`] [`kg/m^3`]). 
+The rest is entirely out of plastic ([`\rho_p= 941`] [`kg/m^3`]). 
 Find the centre of mass of the pawn.
 
 [`r_1=[$r_1]`] [`cm`]

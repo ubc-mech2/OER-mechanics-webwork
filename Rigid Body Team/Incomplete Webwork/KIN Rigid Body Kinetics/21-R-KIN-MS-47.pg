@@ -93,18 +93,18 @@ BEGIN_PGML
 
 The ice cream is composed of:
 
-a solid uniform cone of density [`\rho_{cone}=160 kg/m^3`] with the formula: [`z^2 = ax^2 + ay^2`], where [`a=[$a]`] [`(1/cm^2)`].
+* a solid uniform cone of density [`\rho_{cone}=160 kg/m^3`] with the formula: [`z^2 = ax^2 + ay^2`], where [`a=[$a]`].
 
-a solid uniform scoop of ice cream, a hemisphere of density [`\rho_{scoop}=727 kg/m^3`] resting on top of the cone at [`z=b`] where [`b=[$b] cm`], with a radius matching the cone’s radius at that height. 
+* a solid uniform scoop of ice cream, a hemisphere of density [`\rho_{scoop}=727 kg/m^3`] resting on top of the cone at [`z=b`] where [`b=[$b] cm`], with a radius matching the cone’s radius at that height. 
 
 
 Find the centre of mass of the ice cream.
 
-[`\bar{x}=`][___]{"$x_bar"} [`cm`]
+[`x_G=`][___]{"$x_bar"} [`cm`]
 
-[`\bar{y}=`][___]{"$y_bar"} [`cm`]
+[`y_G=`][___]{"$y_bar"} [`cm`]
 
-[`\bar{z}=`][___]{"$z_bar"} [`cm`]
+[`z_G=`][___]{"$z_bar"} [`cm`]
 
  _Round your answers to three decimal places_.
 

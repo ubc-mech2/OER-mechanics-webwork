@@ -1,0 +1,113 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of British Columbia')
+## Author([SHOHOM SHAHD])
+## Date(Summer 2021)
+## Difficulty([Beginner])
+## KEYWORDS(`Kinematics`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$r = random(0.5,1.5,0.1);	#[m]
+$m = random(1,5,0.5);		#[kg]
+$w = random(1,5,0.5);		#[rad/s]
+$theta = random(30,60,10);	#[deg]
+
+#computation
+$OG = 4*$r/3/pi;
+$AG = ( ($OG*sin($theta*pi/180))**2 + ($r-$OG*cos($theta*pi/180))**2 )**0.5;
+$KE_0 = 0.5*$m*(0.5*$r**2-$OG**2+$AG**2)*$w**2;
+$KE_1 = $KE_0 + $m*9.81*($OG-$OG*cos($theta*pi/180));
+
+$width = 463;
+$height = 308;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A uniform half-cylinder of radius [`r = [$r]`] [`m`] and mass [`[$m]`] [`kg`] is released with an initial angular velocity 
+of [`\omega = [$w]`] [`rad/s`] from an angle of [`\theta = [$theta]`][`^\circ`]. The cylinder rolls without slipping.  
+Find the initial kinetic energy of the cylinder ([`KE_1`]).  
+Find the kinetic energy of the cylinder when [`\theta`] becomes zero ([`KE_2`]).
+
+[@ image( "21-R-WE-SS-33.png", width=>[$width], height=>[$height]) @]*
+
+[`KE_1 = `][_____]{"$KE_0"} [`J`]  
+[`KE_2 = `][_____]{"$KE_1"} [`J`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-WE-SS-33.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

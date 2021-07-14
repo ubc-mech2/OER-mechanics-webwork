@@ -81,7 +81,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A student's report card is crushed into a ball and kicked with an initial velocity of [`v_{i} = [$velocity]`] [`m/s`] off the roof of a building [`[$height]`] [`m`] tall. Determine the speed of the ball upon impact if it travels for [`[$time]`] [`s`] before landing. Treat [`g = 10`] [`m/s^2`].
+A student's report card is crushed into a ball and kicked horizontally with an initial velocity of [`v_{i} = [$velocity]`] [`m/s`] off the roof of a building [`[$height]`] [`m`] tall. Determine the speed of the ball upon impact if it travels for [`[$time]`] [`s`] before landing. Treat [`g = 10`] [`m/s^2`].
 
 [`v=`][___]{"$speed"}[`m/s`]
 

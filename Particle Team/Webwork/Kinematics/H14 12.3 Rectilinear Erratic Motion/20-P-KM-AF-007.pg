@@ -82,6 +82,16 @@ in [`a - s`], [`v - t`], [`s - t`] and then write the appropriate equations belo
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-007.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 #TEXT(beginproblem());
 Context()->texStrings;
 BEGIN_TEXT

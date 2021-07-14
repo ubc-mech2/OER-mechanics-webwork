@@ -100,6 +100,16 @@ and the water is flowing at [`[$vw]`] [`m/s`], find the speed of the water relat
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-033.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 
 
 ##############################################################

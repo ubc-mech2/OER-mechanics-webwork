@@ -93,6 +93,8 @@ BEGIN_PGML
 The gear A is spinning with an angular velocity [`(\omega_A)_0 = [$w]\boldsymbol{\hat{k}}`] [`rad/s`] and is accelerating at 
 [`\alpha_A = [$a]t\boldsymbol{\hat{k}}`] [`rad/s^2`]. It is connected to gear B, and the system has a gear ratio [`\frac{R}{r}=[$GR]`]. 
 Determine the angular acceleration and velocity of gear B after [`[$t]`] [`s`].
+ 
+Note that the positive [`\boldsymbol{\hat{k}}`] axis points out of the screen.
 
 [@ image( "21-R-KM-SS-35.png", width=>[$width], height=>[$height]) @]*
 
