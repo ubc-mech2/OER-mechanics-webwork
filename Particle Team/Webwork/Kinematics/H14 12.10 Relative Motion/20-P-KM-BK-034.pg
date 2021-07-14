@@ -98,6 +98,16 @@ Find the speed of the wind, relative to a static observer.
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-034.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 
 
 ##############################################################

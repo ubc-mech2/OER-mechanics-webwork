@@ -107,6 +107,16 @@ All answers must be entered in the coordinate format. [`(x,y,z)`]
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-AF-010.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 
 $P1 = Point($x1,$y1,$z1);
 $P2 = Point($x2,$y2,$z2); 

@@ -94,4 +94,14 @@ The [`C`] motor draws in rope at a constant velocity of [`v_{C} = [$velocityC]`]
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-025.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT()];     #save as .pg

@@ -91,4 +91,14 @@ Two olympic athletes, [`A`] and [`B`], decide to have a race. They start from re
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-003.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT()];     #save as .pg

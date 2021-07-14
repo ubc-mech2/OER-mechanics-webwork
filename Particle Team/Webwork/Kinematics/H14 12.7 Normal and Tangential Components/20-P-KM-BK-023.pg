@@ -101,6 +101,16 @@ Assuming that in either case they are travelling at [`[$v]`] [`m/s`], find the a
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-BK-023.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 BEGIN_HINT
 Radius of curvature for \(y=f(x)\):
 $BR

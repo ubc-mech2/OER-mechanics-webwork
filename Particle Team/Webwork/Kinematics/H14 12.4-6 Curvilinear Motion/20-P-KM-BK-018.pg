@@ -78,9 +78,11 @@ $g = 32.2;
 
 $width = 1305;
 $height = 835.5;
+
 #computation
 $theta = asin($x*$g/($v**2))/2;
 $h = $x*tan($theta);
+
 #set tolerance
 Context()->flags->set(
 tolerance=>.05,
@@ -102,7 +104,7 @@ How many inches above the target do you have to aim?
 
 [@ image( "20-P-KM-BK-018.png", width=>[$width], height=>[$height]) @]*
 
-[`h=`] [_____]{"$h"} [`m`]  
+[`h=`] [_____]{"$h"} [`inches`]  
 
 
 END_PGML
