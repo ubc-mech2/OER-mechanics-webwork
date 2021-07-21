@@ -96,4 +96,14 @@ their acceleration when [`s_{1} = [$s1]`] [`m`] and when [`s_{2} = [$s2]`] [`m`]
 
 END_PGML
 
+##############################################################
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "20-P-KM-NW-008.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
 ENDDOCUMENT()];     #save as .pg
