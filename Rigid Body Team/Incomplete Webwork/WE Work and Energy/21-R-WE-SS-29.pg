@@ -65,42 +65,34 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$m   = random(15,25,1);		#[Mg]
-$V_R = random(120,160,10);	#[km/h]
-$V_2 = $V_R+random(5,20,5); #[km/h]
+$m   = random(5,10,1);		#[Mg]
+$V_1 = random(70,100,10);	#[km/h]
+$V_2 = $V_1+random(10,25,5);#[km/h]
 $ROC = random(10,30,5);		#[m/s]
 $w_1 = random(4,8,0.5);		#[deg/s]
 $w_2 = random(1,3,0.5);		#[deg/s]
-$K   = random(5,10,1);		#[m]
-$CG  = random(1,5,1);		#[m]
+$K   = random(8,10,0.5);	#[m]
+$CG  = random(1,3,0.5);		#[m]
 
 #unit conversion
 $m_SI   = $m*10**3;		#[kg]
-$V_R_SI = $V_R/3.6;		#[m/s]
+$V_1_SI = $V_1/3.6;		#[m/s]
 $V_2_SI = $V_2/3.6;		#[m/s]
 $w_1_SI = $w_1*pi/180;	#[rad/s]
 $w_2_SI = $w_2*pi/180;	#[rad/s]
 
 #computation
-$I_MLG = $m_SI*$K**2;
-$I_CG  = $m_SI*$K**2 + $m_SI*$CG**2;
+$I = $m_SI*$K**2;
 
-$KE_L_1 = 0.5*$m_SI*$V_R_SI**2;
-$KE_R_1 = 0.5*$I_MLG*$w_1_SI**2;
+$KE_1 = 0.5*$m_SI*($V_1_SI-$w_1_SI*$CG)**2+0.5*$I*$w_1_SI**2;
+$KE_2 = 0.5*$m_SI*($V_2_SI**2 + $ROC**2)+0.5*$I*$w_2_SI**2;
 
-$V_2_net = ($V_2_SI**2 + $ROC**2)**0.5;
-$KE_L_2 = 0.5*$m_SI*$V_2_net**2;
-$KE_R_2 = 0.5*$I_CG*$w_2_SI**2;
-
-$delta_KE_L = $KE_L_2-$KE_L_1;
-$delta_KE_R = $KE_R_2-$KE_R_1;
-
-$width = 400;
-$height = 250;
+$width = 713;
+$height = 343;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.004,
 tolType=>'relative');
 
 ##############################################################
@@ -110,20 +102,22 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-During its takeoff roll, a [`[$m]`][`Mg`] airplane rotates at a speed [`V_R`] of [`[$V_R]`][`km/h`]. This rotation occurs 
+During its takeoff roll, a [`[$m]`][`\times 10^3 kg`] airplane rotates at a speed [`V_1`] of [`[$V_1]`][`km/h`]. This rotation occurs 
 about the airplane's main landing gear at a rate of [`[$w_1]`][`deg/s`]. Shortly after liftoff, the aircraft speeds up to 
 a groundspeed of [`[$V_2]`][`km/h`], at a rate of climb of [`[$ROC]`][`m/s`], with a rotation rate of [`[$w_2]`][`deg/s`]. 
-Find the change in linear and rotational kinetic energy between these two flight phases.
+Find the kinetic energy in both flight phases.
 
 The radius of gyration of this airplane about the center of gravity is [`[$K]`][`m`], and the distance from the center 
 of gravity to the main landing gear is [`[$CG]`][`m`].
 
 Assume the kinetic energy of all subassemblies of the aircraft (propeller, wheels, etc.) remain constant.
 
+Give your answer correct to 4 significant figures or better.
+
 [@ image( "21-R-WE-SS-29.png", width=>[$width], height=>[$height]) @]*
 
-[`\Delta KE_{linear}  = `][_____]{"$delta_KE_L"} [`J`]  
-[`\Delta KE_{rotational}= `][_____]{"$delta_KE_R"} [`J`]
+[`KE_\text{takeoff phase} = `][_____]{"$KE_1"} [`J`]  
+[`KE_\text{climb phase}= `][_____]{"$KE_2"} [`J`]
 
 END_PGML
 
