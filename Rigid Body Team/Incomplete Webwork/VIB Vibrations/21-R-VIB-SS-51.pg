@@ -1,8 +1,4 @@
 ##DESCRIPTION
-## long cord with a trick and related velocity
-##ENDDESCRIPTION
-
-##DESCRIPTION
 ##
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
@@ -29,19 +25,22 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Vibrations)
+## DBsection(Vibrations)
 ## Institution('University of British Columbia')
 ## Author([SHOHOM SHAHD])
 ## Date(Summer 2021)
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
 ## Difficulty([Beginner])
-## KEYWORDS(`Kinematics`)
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+## KEYWORDS(`Vibrations`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 
-##############################################################
+########################################################
 
 DOCUMENT();
-
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
@@ -56,55 +55,48 @@ loadMacros(
 
 TEXT(beginproblem());
 
-##############################################################
-#
-#  Setup
-#
-#
 
+#######################################################
+#Setup
 
 Context("Numeric");
 
-#Answers are hard coded from the image.
-$Ax = 2;
-$Ay = 4;
+Context("Numeric");
+#given
+$m = random(1,10,1);	#[kg]
+$k = random(5,10,1);	#[N/m]
+$x = random(2,10,1);	#[cm]
+$t = random(1,5,0.5);	#[s]
 
-$Bx = Infinity;
-$By = Infinity;
+#computation
+$w = ($k/$m)**0.5;
+$d = $x*cos($w*$t);
 
-$Cx = 2;
-$Cy = 0;
+$width = 557;
+$height = 311;
 
-$width = 1068;
-$height = 435;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>0,
+tolerance=>0.02,
 tolType=>'relative');
 
-##############################################################
-#
-#  PGML 
-#
-#
+########################################################;
+#PGML
 
 BEGIN_PGML
-For each of the following cases, find the coordinates of the ICZV of the colored center plate (marked X). Enter your answer rounded to the
-nearest integer.
+An [`m= [$m]`] [`kg`] block rests on a smooth surface and is connected to a long spring ([`k= [$k]`] [`N/m`]).
+The mass is pulled by [`x= [$x]`] [`cm`], extending the spring from its natural length. What will be the deflection ([`\Delta`]) of 
+the spring [`[$t]`] [`s`] after being released?
 
-Enter 'Inf' if there is no ICZV.
+[@ image( "21-R-VIB-SS-51.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "21-R-KM-SS-33.png", width=>[$width], height=>[$height]) @]*
-
-A: [`x = `][_____]{"$Ax"}  [`y = `][_____]{"$Ay"}  
-B: [`x = `][_____]{"$Bx"}  [`y = `][_____]{"$By"}  
-C: [`x = `][_____]{"$Cx"}  [`y = `][_____]{"$Cy"}   
+[`\Delta_{t=[$t]}= `][_____]{"$d"} [`cm`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-33.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-VIB-SS-51.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

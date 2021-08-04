@@ -1,8 +1,4 @@
 ##DESCRIPTION
-## long cord with a trick and related velocity
-##ENDDESCRIPTION
-
-##DESCRIPTION
 ##
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
@@ -69,7 +65,7 @@ $r = random(8,12,1);		#[cm]
 $k = random(150,500,25); 	#[N/rad]
 $m = random(70,150,10);		#[g]
 $I = random(1,5,0.5);		#[g m^2]
-$work = random(0.01,0.3)*0.5*$k*pi**2;	#[J]
+$work = ceil(random(0.01,0.3)*0.5*$k*pi**2);	#[J]
 
 #computation
 $w = ((0.5*$k*pi**2 - $work)/(0.5*$I/1000))**0.5;
@@ -93,7 +89,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 A mouse trap uses a torsional spring ([`k= [$k]`] [`N/rad`]) to store energy. The spring is wound 
-such that it is at its natural length when the jaw of the trap sits on the wooden base. The jaw 
+such that it is undeformed when the jaw of the trap sits on the wooden base. The jaw 
 has a mass of [`[$m]`] [`kg`], a length of [`[$r]`] [`cm`] and a moment of inertia of [`[$I]`] [`g\cdot m^2`] 
 about the hinge. What is the velocity with which the tip of the jaw strike the wood when it is triggered if 
 [`[$work]`] [`J`] of energy is used against friction in the hinge?

@@ -101,7 +101,7 @@ tolType=>'relative');
 BEGIN_PGML
 The mechanism in the figure has an arm of length [`L_{BC} = [$L_BC]`] [`mm`], mass [`m_{BC} = [$m_BC]`] [`g`] and radius of gyration 
 about B [`K_{BC,B} = [$K_BC]`] [`mm`] rotating about its pivot B with a constant angular velocity of [`\omega = [$w]`] [`rad/s`] clockwise. 
-A pin at point C slides along the slotted linkage ([`m_{AD} = [$m_AC]`] [`g`], [`K_{AD,A} = [$K_AC]`] [`mm`]) which pivots the point A. 
+A pin at point C slides along the slotted linkage ([`m_{AD} = [$m_AC]`] [`g`], [`K_{AD,A} = [$K_AC]`] [`mm`]) which pivots about the point A. 
 Point A is [`x = [$x]`] [`mm`] from point B on the same horizontal plane.  
 Find the total kinetic energy of the system when the slotted linkage is [`\theta = [$theta]`][`^{\circ}`] from the horizontal.
 

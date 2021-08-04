@@ -67,7 +67,7 @@ Context("Numeric");
 #given
 $w = random(5,20,5);	#[rad/s]
 $a = random(1,10,1);	#[rad/s^2]
-$GR = random(2,30,2);
+$GR = random(2,10,0.5);
 $t = random(2,10,1);	#[s]
 
 #computation
@@ -90,7 +90,7 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-The gear A is spinning with an angular velocity [`(\omega_A)_0 = [$w]\boldsymbol{\hat{k}}`] [`rad/s`] and is accelerating at 
+The gear A is spinning with an initial angular velocity [`(\omega_A)_0 = [$w]\boldsymbol{\hat{k}}`] [`rad/s`] and is accelerating at 
 [`\alpha_A = [$a]t\boldsymbol{\hat{k}}`] [`rad/s^2`]. It is connected to gear B, and the system has a gear ratio [`\frac{R}{r}=[$GR]`]. 
 Determine the angular acceleration and velocity of gear B after [`[$t]`] [`s`].
  

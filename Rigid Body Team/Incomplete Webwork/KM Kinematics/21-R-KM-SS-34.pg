@@ -73,7 +73,7 @@ $Bx = Infinity;
 $By = Infinity;
 
 $Cx = 2;
-$Cy = 0;
+$Cy = 5;
 
 $width = 1125;
 $height = 589;
@@ -90,7 +90,7 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-For each of the following cases, find the coordinates of the ICZV of the colored members. Enter your answer rounded to the
+For each of the following cases, find the coordinates of the ICZV of the colored members (marked X). Enter your answer rounded to the
 nearest integer.
 
 Enter 'Inf' if there is no ICZV.
