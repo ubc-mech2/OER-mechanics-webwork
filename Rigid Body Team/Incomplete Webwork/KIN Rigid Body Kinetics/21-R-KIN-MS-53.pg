@@ -99,12 +99,12 @@ Determine the moment of inertia of this ring of mass [`m= [$m]`] [`g`] at point 
 
 
  
-[`(I_{z})_O=`][___]{"$iO"} [`g \cdot cm^2`]
+[`I_{z}=`][___]{"$iO"} [`g \cdot cm^2`]
 
 
 Next, find the moment of inertia about an axis [`z'`] parallel to the [`z`] axis located at the edge of the ring.
 
-[`(I_{z'})_O=`][___]{"$iOprime"} [`g \cdot cm^2`]
+[`I_{z'}=`][___]{"$iOprime"} [`g \cdot cm^2`]
 
 Note: the drawing may not be to scale.
 
