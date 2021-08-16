@@ -1,0 +1,108 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Vibrations)
+## Institution('University of British Columbia')
+## Author([SHOHOM SHAHD])
+## Date(Summer 2021)
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## Difficulty([Beginner])
+## KEYWORDS(`Vibrations`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+
+#######################################################
+#Setup
+
+Context("Numeric");
+
+Context("Numeric");
+#given
+$k = random(300,500,10);
+$F0 = random(10,30,1);
+$RPM = random(600,1000,50);
+
+#computation
+$w_n = ($k/$m)**0.5 * 30/pi; #[RPM]
+$MF = 1/(1-($RPM/$w_n)**2);
+$A = $F0/$k/$MF*1000;		#[mm]
+
+$width = 2048;
+$height = 388;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.01,
+tolType=>'relative');
+
+########################################################;
+#PGML
+
+BEGIN_PGML
+A car engine is effectively supported by four springs in parallel ([`k = [$k]`] [`N/m`]  each) as shown in the diagram. 
+The motion of the pistons causes an oscillating force of [`[$F0]`sin(RPM \times t)] [`N`] on the support.  
+Find the magnification factor ([`MF`]) when the engine runs at [`RPM = [$rpm]`].  
+Find the amplitude (A) of oscillations at this RPM.  
+Find the RPM at which the engine vibrates the most.
+
+[@ image( "21-R-VIB-SS-55.png", width=>[$width], height=>[$height]) @]*
+
+[`MF= `][_____]{"$MF"} 
+[`A= `][_____]{"$A"} [`mm`]  
+[`RPM_\text{resonnance}= `][_____]{"$w_n"}
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-VIB-SS-55.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
