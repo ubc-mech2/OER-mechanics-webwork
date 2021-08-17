@@ -26,15 +26,15 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Vibrations)
+## DBsection(Free damped)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
 ## EditionText1('14')
 ## Section1('22.1')
-## Difficulty([Beginner])
+## Difficulty(Beginner)
 ## KEYWORDS(`Vibrations`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 
@@ -120,8 +120,8 @@ if($cC > $c_critC){
 }
 $popupC = PopUp(["?", 'Underdamped', 'Critically Damped', 'Overdamped'], $ansC);
 
-$width = 2048;
-$height = 388;
+$width = 1460;
+$height = 385;
 
 
 #set tolerance
@@ -173,10 +173,6 @@ System B is [_]{$popupB}
 System C is [_]{$popupC}
 
 END_PGML
-
-ANS( $popupA->cmp() );
-ANS( $popupB->cmp() );
-ANS( $popupC->cmp() );
 
 BEGIN_PGML_SOLUTION
 [@ image( "21-R-VIB-SS-54.pdf", width=>[0], height=>[0]) @]*

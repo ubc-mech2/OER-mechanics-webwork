@@ -29,12 +29,12 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Work of a force)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
-## Difficulty([Beginner])
+## Difficulty(Advanced)
 ## KEYWORDS(`Work and Energy`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
 

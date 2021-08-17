@@ -26,15 +26,15 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Vibrations)
+## DBsection(Forced damped)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
 ## EditionText1('14')
 ## Section1('22.1')
-## Difficulty([Beginner])
+## Difficulty(Beginner)
 ## KEYWORDS(`Vibrations`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 

@@ -29,12 +29,12 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
-## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Rotation about a fixed axis)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
-## Difficulty([Beginner])
+## Difficulty(Intermediate)
 ## KEYWORDS(`Kinematics`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
 

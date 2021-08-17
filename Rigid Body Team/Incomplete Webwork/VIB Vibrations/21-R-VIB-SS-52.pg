@@ -26,15 +26,15 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Vibrations)
+## DBsection(Free damped)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
 ## EditionText1('14')
 ## Section1('22.1')
-## Difficulty([Beginner])
+## Difficulty(Beginner)
 ## KEYWORDS(`Vibrations`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 
@@ -73,8 +73,8 @@ $w = ($k/$m)**0.5;
 $z = $c/(2*$m*$w);
 $d = $x/(e**(2*pi*$z/(1-$z**2)**0.5))**0.5;
 
-$width = 557;
-$height = 311;
+$width = 1615/3;
+$height = 1110/3;
 
 
 #set tolerance

@@ -26,9 +26,9 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Vibrations)
+## DBsection(Free undamped)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
@@ -72,8 +72,8 @@ $t = random(1,5,0.5);	#[s]
 $w = ($k/$m)**0.5;
 $d = $x*cos($w*$t);
 
-$width = 557;
-$height = 311;
+$width = 1615/3;
+$height = 1110/3;
 
 
 #set tolerance
