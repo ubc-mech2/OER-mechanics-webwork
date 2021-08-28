@@ -34,7 +34,7 @@
 ## AuthorText1('Hibbeler')
 ## EditionText1('14')
 ## Section1('22.1')
-## Difficulty(Beginner)
+## Difficulty(Intermediate)
 ## KEYWORDS(`Vibrations`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 
@@ -63,39 +63,50 @@ Context("Numeric");
 
 Context("Numeric");
 #given
-$k = random(300,500,10);
-$F0 = random(10,30,1);
-$RPM = random(600,1000,50);
+$r = random(15,20,1);		#[cm]
+$K = random(5,10,1);		#[cm]
+$m = random(100,200,10);	#[kg]
+$k = random(300,500,10);	#[N/m]
+$c = random(1000,2000,100);	#[Ns/m]
+$M0 = random(0.1,0.5,0.1);	#[Nm]
+$RPM = random(400,600,50);	#[rpm]
 
 #computation
-$w_n = ($k/$m)**0.5 * 30/pi; #[RPM]
-$MF = 1/(1-($RPM/$w_n)**2);
-$A = $F0/$k/$MF*1000;		#[mm]
+$I = $m*($K/100)**2;
+$wn = ($k/($I/($r/100)**2))**0.5;	#[rad/s]
+$w0 = $RPM*pi/30;			#[rad/s]
+$c_c = 2/($r/100)*($I*$k)**0.5;
+$A = ($M0/$k)/((1-($w0/$wn)**2)**2+(2*$c/$c_c*$w0/$wn)**2)**0.5;	#[rad]
 
-$width = 2048;
-$height = 388;
+$A = $A*180/pi;		#[deg]
+$wn = $wn*30/pi;	#[rpm]
+
+$width = 500;
+$height = 300;
 
 
 #set tolerance
 Context()->flags->set(
-tolerance=>0.01,
+tolerance=>0.005,
 tolType=>'relative');
 
 ########################################################;
 #PGML
 
 BEGIN_PGML
-A car engine is effectively supported by four springs in parallel ([`k = [$k]`] [`N/m`]  each) as shown in the diagram. 
-The motion of the pistons causes an oscillating force of [`[$F0]`sin(RPM \times t)] [`N`] on the support.  
-Find the magnification factor ([`MF`]) when the engine runs at [`RPM = [$rpm]`].  
-Find the amplitude (A) of oscillations at this RPM.  
-Find the RPM at which the engine vibrates the most.
+A reciprocating engine in a car causes rotational vibration of the engine dampened by the engine mount. 
+The system can be modeled as shown in the image, with a spring ([`k = [$k]`] [`N/m`]) and damper ([`c = [$c]`] [`Ns/m`])
+attached at [`r = [$r]`] [`cm`] from the center of oscillations.  
+The engine has a mass of [`m = [$m]`] [`kg`], a radius of gyration of [`[$K]`] [`cm`] and is operating 
+at [`\omega = [$RPM]`] [`rpm`], which causes a moment of [`M = [$M0]\sin(\omega t)`] [`Nm`] about the center of oscillation.  
+What is the amplitude ([`A`]) of vibrations and the natural frequency ([`\omega_n`]) of the system?
+
+Answer to 3 decimal places.
 
 [@ image( "21-R-VIB-SS-55.png", width=>[$width], height=>[$height]) @]*
 
-[`MF= `][_____]{"$MF"} 
-[`A= `][_____]{"$A"} [`mm`]  
-[`RPM_\text{resonnance}= `][_____]{"$w_n"}
+[`A= `][_____]{"$A"} [`^\circ`]  
+[`\omega_n= `][_____]{"$wn"} [`rpm`]  
 
 END_PGML
 
