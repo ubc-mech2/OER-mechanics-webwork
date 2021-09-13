@@ -1,0 +1,119 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Relative motion: acceleration, translating axes)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`velocity`,`acceleration`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 5)
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$ra = random(0.1,0.5,0.05);
+$rb = random(0.6,0.9,0.05);
+$vc = random(1,5,0.5);
+$ac = random(6,9,0.5);
+$omegabar = random(1,5,1);
+$alphabar = random(6,9,1);
+
+#computation for numerical answer
+$vacoeff = $omegabar * ($ra+$rb);
+$omegaa = ( $vc + $vacoeff )/$ra;
+$horizaccela = $alpha * ($ra + $rb);
+$alphaa = ( $ac + $horizaccela )/$ra;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1270;
+$height = $resolution*1532;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-03.png", width=>[$width], height=>[$height]) @]*
+
+Arm [`AB`] attaches disc [`A`] to the rigid surface [`B`]. The arm moves at an angular velocity of [`{\omega}=[$omegabar]\:rad/s`],
+and an angular acceleration of [`{\alpha}=[$alphabar]\:rad/s^2`]. We know that the point C on disc A moves at a velocity of [`v_C=[$vc]\:m/s`],
+and a tangential acceleration of [`a_C=[$ac]\:m/s^2`] rightwards at this instant, assuming no slip. If [`r=[$ra]\:m`] and [`R=[$rb]\:m`],
+what is the angular velocity and angular acceleration of disc A at this instant?
+
+
+[`{\omega}_A = `][_____]{"$omegaa"}[`rad/s`]
+
+
+[`{\alpha}_A = `][_____]{"$alphaa"}[`rad/s^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-03.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

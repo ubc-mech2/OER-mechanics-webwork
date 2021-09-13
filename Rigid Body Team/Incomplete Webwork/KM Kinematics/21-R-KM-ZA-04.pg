@@ -1,0 +1,130 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Relative motion: velocity, instantaneous centers)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`instantaneous centers`,`velocity`,`dynamics`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 6')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$r1 = random(0.01,0.05,0.005);
+$r2 = random(0.06,0.09,0.005);
+$va = random(5,8,0.5);
+$vc = random(1,4,0.5);
+
+#computation for numerical answer
+$yIC = ($r1+$r2)/(($va/$vc)+1);
+$xIC = 0;
+$omegab = $vc/$yIC;
+$rBICi = ((r2**2)/2)**0.5;
+$rBICj = $rBICi + $r2-yIC;
+$vbi = $omegab*$rBICj;
+$vbj = $omegab*$rBICi;
+
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1604;
+$height = $resolution*1358;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-04.png", width=>[$width], height=>[$height]) @]*
+
+A cable attached to point A unwinds at a speed of [`v_A=[$va]\:m/s`]. The slippery surface causes the wheel to slip at
+point C at a speed of [`v_C=[$vc]\:m/s`] in the direction shown. Find the x and y coordinates of the instantaneous center
+of zero velocity using the coordinate system shown. Additionally, find the x and y components of velocity of the point B
+at this instant.
+
+
+The following dimensions are known: [`r_1=[$r1]\:m`], [`r_2=[$r2]\:m`].
+
+
+[`y_{IC} = `][_____]{"$yIC"}[`m`]
+
+
+[`x_{IC} = `][_____]{"$xIC"}[`m`]
+
+
+[`v_{Bx} = `][_____]{"$vbi"}[`m/s`]
+
+
+[`v_{By} = `][_____]{"$vbj"}[`m/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-04.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
