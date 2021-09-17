@@ -1,0 +1,113 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Relative motion: velocity, rotating axes)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`dynamics`,`rotating axes`,`velocity`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 8')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$omegaCD = random(5,10,0.5);
+$d1 = random(0.1,0.9,0.05);
+$d2 = random(2,10,0.5);
+$phi = random(30,60,1);
+
+#computation for numerical answer
+$vca = $omegaCD*$d2*-cos($phi*pi/180);
+$omegaAB = $omegaCD*$d2*sin($phi*pi/180)/$d1;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*2137;
+$height = $resolution*1499;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-R-KM-DK-16-60dLH.png", width=>[$width], height=>[$height]) @]*
+
+Collar [`C`] slides along rod [`AB`], and is pinned to the end of rod [`CD`] that is rotating at an angular velocity
+of [`{\omega}_{CD}=[$omegaCD]\:rad/s`][`\boldsymbol{\hat{k}}`]. If we know that [`d_1=[$d1]\:m`], [`d_2=[$d2]\:m`],
+and [`{\phi}=[$phi]\:degrees`], find the angular velocity of rod [`CD`], and the relative velocity of collar [`C`].
+
+
+[`{\omega}_{AB} = `][_____]{"$omegaAB"}[`rad/s`]
+
+[`v_{C/A} = `][_____]{"$vca"}[`m/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-10.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
