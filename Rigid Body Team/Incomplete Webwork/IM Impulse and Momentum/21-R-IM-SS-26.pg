@@ -85,13 +85,11 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A 2000kg car crashes into a rigid wall with a deceleration of [`a=5000\br{e^{-3t}-0.2\br{t+0.447}^{-2}}`] for [`t>0`].
+A 2000kg car crashes into a rigid wall with a deceleration of [`a=5000\left(e^{-3t}-0.2(t+0.447)^{-2}\right)`] for [`t>0`].
 
 Find the magnitude of impulse the car experiences during the collision.
 
-# [@ image( "21-R-IM-SS-26.png", width=>[$width], height=>[$height]) @]*
-
-[`W = `][_____]{"$W"} [`J`]  
+[`I = `][_____]{"$I"} [`Ns`]  
 
 END_PGML
 

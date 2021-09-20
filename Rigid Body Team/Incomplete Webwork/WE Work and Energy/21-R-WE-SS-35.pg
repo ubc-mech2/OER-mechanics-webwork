@@ -70,7 +70,7 @@ $G = 6.67*10**-11;
 #computation
 $W = $G*$m*$M*(1/$R - 1/($R+$h)) * 10**6 * 10**24 / 10**3;
 
-$width = 557;
+$width = 311;
 $height = 311;
 
 
@@ -89,10 +89,10 @@ BEGIN_PGML
 A rocket ([`m= [$m]`] [`\times 10^6 kg`]) launches from the surface of Earth to an altitude of [`h= [$h]`] [`km`]. 
 Assuming that no mass is lost (a highly unrealistic assumption), how much work is done against gravity?
 
-The force of gravity over large distances is given by [`F = \frac{GMm}{r^2}`], where [`G= [$G]`] [`Nm^2/kg^2`], [`M`] and [`m`] 
+The force of gravity over large distances is given by [`F = \frac{GMm}{r^2}`], where [`G= [$G*10**11]`] [`\times 10^{-11} Nm^2/kg^2`], [`M`] and [`m`] 
 are the masses of Earth and the rocket, and [`r`] is the distance between the centers of the two objects.
 
-The Earth has a radius of [`r= [$r]`] [`km`] and a mass of [`M= [$M]`] [`\times 10^24 kg`].
+The Earth has a radius of [`R= [$R]`] [`km`] and a mass of [`M= [$M]`] [`\times 10^{24} kg`].
 
 # [@ image( "21-R-WE-SS-35.png", width=>[$width], height=>[$height]) @]*
 
