@@ -67,7 +67,7 @@ $mA = random(1,5,1);	#[kg]
 $mB = random(5,10,1);	#[kg]
 $h  = random(0.1,0.5,0.1);	#[m]
 $k  = random(100,500,10);	#[N/m]
-$c  = random(0.1,0.9,0.1)*(4*($mA+$mB)*$k)**0.5;	#[Ns/m]		forcing underdamped system
+$c  = round(random(0.1,0.9,0.1)*(4*($mA+$mB)*$k)**0.5);	#[Ns/m]		forcing underdamped system
 
 $g = 9.81;
 
