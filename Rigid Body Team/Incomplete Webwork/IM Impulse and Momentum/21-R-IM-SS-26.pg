@@ -25,83 +25,76 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Forced Damped)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Principle of Impact and Momentum)
 ## Institution('University of British Columbia')
 ## Author(Shohom Shahd)
-## Date(Summer 2021)
-## TitleText1('Engineering Mechanics')
-## AuthorText1('Hibbeler')
-## EditionText1('14')
-## Section1('22.1')
+## Date(Fall 2021)
 ## Difficulty(Beginner)
-## KEYWORDS(`Vibrations`)
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
+## KEYWORDS('impulse and momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
 
 ########################################################
 
 DOCUMENT();
 
-loadMacros(   
-	"PGstandard.pl",     # Standard macros for PG language
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
 	"MathObjects.pl",
 	"PGML.pl",
 	"parserPopUp.pl",
 	"parserMultiAnswer.pl",
-	"parserRadioButtons.pl",
-	#"source.pl",        # allows code to be displayed on certain sites.
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
 	#"PGcourse.pl", 	 # Customization file for the course
-   	);
-
-TEXT(beginproblem());
-
+);
 
 #######################################################
 #Setup
 
-Context("Numeric");
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
 
 Context("Numeric");
 #given
-$m = random(800,2000,100);	#[kg]
-$k = random(200,500,50);	#[kN/m]
-$c = random(5,20,1);		#[kNs/m]
-$l = random(2,3,0.2);		#[m]
+$m = random(1500,2500,100);	 #[kg]
+$a = random(3000,6000,1000); #[m/s2]	coefficient of equation for acceleration
 
 #computation
-$w = (1000*$k/$m)**0.5;
-$z = 1000*$c/(2*$m*$w);
-$w = $w*(1-$z**2)**0.5;
-$t = 2*pi/$w;
-$v = $l/$t;
+$t = 0.501;	#[s] controlled by equation for acceleration
+$I = (e^(-2*$t)/2+0.2/($t+0.447) - 1/2+0.2/0.447) * $a * $m;
 
-$width = 663;
-$height = 388;
-
+$width = 557;
+$height = 311;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>0.01,
+tolerance=>0.02,
 tolType=>'relative');
 
-########################################################;
-#PGML
+##############################################################
+#
+#  PGML 
+#
+#
 
 BEGIN_PGML
-A [`m= [$m]`] [`kg`] car is driving on a road with bumps of wavelength [`\lambda= [$l]`] [`m`]. 
-The car's suspension system effectively have a spring constant of [`[$k]`] [`kN/m`] and damping coefficient of [`[$c]`] [`kNs/m`]. 
-At what speed will the car feel the most vibrations?  
-The spring constant and damping coefficients given are of the entire system (not per wheel). Assume that the car's wheel base is 
-equal to the wavelength of bumps (as shown in the diagram).
+A 2000kg car crashes into a rigid wall with a deceleration of [`a=5000\left(e^{-3t}-0.2(t+0.447)^{-2}\right)`] for [`t>0`].
 
-[@ image( "21-R-VIB-SS-53.png", width=>[$width], height=>[$height]) @]*
+Find the magnitude of impulse the car experiences during the collision.
 
-[`v= `][_____]{"$v"} [`m/s`]  
+[`I = `][_____]{"$I"} [`Ns`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-VIB-SS-53.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-IM-SS-26.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

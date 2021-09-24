@@ -25,22 +25,19 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Vibrations)
-## DBsection(Forced Damped)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
 ## Institution('University of British Columbia')
 ## Author(Shohom Shahd)
 ## Date(Summer 2021)
-## TitleText1('Engineering Mechanics')
-## AuthorText1('Hibbeler')
-## EditionText1('14')
-## Section1('22.1')
 ## Difficulty(Beginner)
-## KEYWORDS(`Vibrations`)
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
+## KEYWORDS(`Kinematics`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
 
-########################################################
+##############################################################
 
 DOCUMENT();
+
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
@@ -55,53 +52,56 @@ loadMacros(
 
 TEXT(beginproblem());
 
+##############################################################
+#
+#  Setup
+#
+#
 
-#######################################################
-#Setup
-
-Context("Numeric");
 
 Context("Numeric");
 #given
-$m = random(800,2000,100);	#[kg]
-$k = random(200,500,50);	#[kN/m]
-$c = random(5,20,1);		#[kNs/m]
-$l = random(2,3,0.2);		#[m]
+$m = random(0.5,1.5,0.1);	#[x10^6 kg]
+$M = 5.97;					#[x10^24 kg]
+$R = 6370;					#[km]
+$h = random(200,500,10);	#[km]
+$G = 6.67*10**-11;
 
 #computation
-$w = (1000*$k/$m)**0.5;
-$z = 1000*$c/(2*$m*$w);
-$w = $w*(1-$z**2)**0.5;
-$t = 2*pi/$w;
-$v = $l/$t;
+$W = $G*$m*$M*(1/$R - 1/($R+$h)) * 10**6 * 10**24 / 10**3;
 
-$width = 663;
-$height = 388;
+$width = 311;
+$height = 311;
 
 
 #set tolerance
 Context()->flags->set(
-tolerance=>0.01,
+tolerance=>0.02,
 tolType=>'relative');
 
-########################################################;
-#PGML
+##############################################################
+#
+#  PGML 
+#
+#
 
 BEGIN_PGML
-A [`m= [$m]`] [`kg`] car is driving on a road with bumps of wavelength [`\lambda= [$l]`] [`m`]. 
-The car's suspension system effectively have a spring constant of [`[$k]`] [`kN/m`] and damping coefficient of [`[$c]`] [`kNs/m`]. 
-At what speed will the car feel the most vibrations?  
-The spring constant and damping coefficients given are of the entire system (not per wheel). Assume that the car's wheel base is 
-equal to the wavelength of bumps (as shown in the diagram).
+A rocket ([`m= [$m]`] [`\times 10^6 kg`]) launches from the surface of Earth to an altitude of [`h= [$h]`] [`km`]. 
+Assuming that no mass is lost (a highly unrealistic assumption), how much work is done against gravity?
 
-[@ image( "21-R-VIB-SS-53.png", width=>[$width], height=>[$height]) @]*
+The force of gravity over large distances is given by [`F = \frac{GMm}{r^2}`], where [`G= [$G*10**11]`] [`\times 10^{-11} Nm^2/kg^2`], [`M`] and [`m`] 
+are the masses of Earth and the rocket, and [`r`] is the distance between the centers of the two objects.
 
-[`v= `][_____]{"$v"} [`m/s`]  
+The Earth has a radius of [`R= [$R]`] [`km`] and a mass of [`M= [$M]`] [`\times 10^{24} kg`].
+
+# [@ image( "21-R-WE-SS-35.png", width=>[$width], height=>[$height]) @]*
+
+[`W = `][_____]{"$W"} [`J`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-VIB-SS-53.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-WE-SS-35.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

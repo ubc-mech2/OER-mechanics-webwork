@@ -85,7 +85,7 @@ $v_angular = ($force * $time) / (2*$mass*$b);
 
 BEGIN_PGML	
 
-[@ image( "21-R-IM-MS-25.svg", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-IM-MS-25.png", width=>[$width], height=>[$height]) @]*
 
 A dumbbell consists of two equal point masses A, B, with m=[`[$mass]`] [`kg`] each, separated by a distance [`2b =`] [`[$b_times_2]`] [`m`]
 but connected by a massless rod. 
