@@ -96,7 +96,7 @@ together by a frame ([`\alpha = [$alpha]`][`^\circ`]). Gears A and B share an ax
 If [`r_A = [$r_A]`] [`cm`], [`r_B = [$r_B]`] [`cm`] and [`r_C = [$r_C]`] [`cm`], find the magnitude of the velocity of the vehicle.
 
 Hint: This problem can be solved without evaluating of the ICZV of each gear. Be very careful if you do choose to think of ICZVs 
-because the system's movement may be counterintuitive and incorrect assumptions can lead you off-track!
+because the system's movement may be counterintuitive and incorrect assumptions can get you stuck!
 
 [@ image( "21-R-KM-SS-37.png", width=>[$width], height=>[$height]) @]*
 
