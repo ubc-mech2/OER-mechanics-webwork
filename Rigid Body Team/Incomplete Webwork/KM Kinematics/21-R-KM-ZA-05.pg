@@ -1,0 +1,145 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Rotation about a fixed axis)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`kinematics`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$omega = random(10,15,0.5);
+$alpha = random(1,6,0.5);
+$d1 = random(0.6,1,0.1);
+$d2 = random(0.1,0.25,0.05);
+$d3 = random(0.6,1,0.1);
+$d4 = random(0.3,0.55,0.05);
+
+#computation for numerical answer
+#------VELOCITY------
+$coeff1 = $omega/(sqrt(($d1**2)+($d2**2)));
+$vdi = $coeff1*-1*$d2*$d4;
+$vdj = $coeff1*-1*$d1*$d4;
+$vdk = $coeff1*( ($d1*$d3) - ($d1*$d2) );
+
+#------ACCELERATION------
+$coeff2 = $alpha/(sqrt(($d1**2)+($d2**2)));
+$term1i = $coeff2*-1*$d2*$d4;
+$term1j = $coeff2*-1*$d1*$d4;
+$term1k = $coeff2*( ($d1*$d3) - ($d1*$d2) );
+
+$term2i = $coeff1*-1*$d2*$vdk;
+$term2j = $coeff1*-1*$d1*$vdk;
+$term2k = $coeff1*( ($d1*$vdj) - ($d2*$vdx) );
+
+$adi = $term1i+$term2i;
+$adj = $term1j+$term2j;
+$adk = $term1k+$term2k;
+
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1948;
+$height = $resolution*1424;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-05.png", width=>[$width], height=>[$height]) @]*
+
+The ball and socket joints at [`A`] and [`C`] support a rotating assembly. The assembly is rotating at an angular velocity
+of [`{\omega}_{AC}=[$omega]\:rad/s`], and an angular acceleration of [`{\alpha}_{AC}=[$alpha]\:rad/s^2`]
+about the axis of the shaft [`AC`]. Find the velocity and acceleration of the point [`D`] in Cartesian vector
+form using the coordinate system given.
+
+The following dimensions are known:
+
+[`d1=[$d1]\:m`]
+
+[`d2=[$d2]\:m`]
+
+[`d3=[$d3]\:m`]
+
+[`d4=[$d4]\:m`]
+
+
+[`v_D = `] [_____]{"$vdi"}[` \boldsymbol{\hat{i}} `] [` + `] [_____]{"$vdj"}[` \boldsymbol{\hat{j}} `] [` + `] [_____]{"$vdk"}[` \boldsymbol{\hat{k}} `] [` m/s`]
+
+[`a_D = `] [_____]{"$adi"}[` \boldsymbol{\hat{i}} `] [` + `] [_____]{"$adj"}[` \boldsymbol{\hat{j}} `] [` + `] [_____]{"$adk"}[` \boldsymbol{\hat{k}} `] [` m/s^2`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-05.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
