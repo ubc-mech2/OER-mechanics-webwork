@@ -103,7 +103,7 @@ Find the angular velocity of the driven pulley (B), assuming there is no slippag
 If the motor is known to operate at [`[$RPM]`][`RPM`] even if the belt isn't slipping, and the output shaft has a 
 torque of [`[$T]`][`Nm`], what is the power loss in the system because of slippage?
 
-[@ image( "21-R-KM-SS-30.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-WE-SS-36.png", width=>[$width], height=>[$height]) @]*
 
 [`\omega = `][_____]{"$w_2"} [`RPM`]  
 Power loss = [_____]{"$PWR_loss"} [`W`]
@@ -111,7 +111,7 @@ Power loss = [_____]{"$PWR_loss"} [`W`]
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-30.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-WE-SS-36.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

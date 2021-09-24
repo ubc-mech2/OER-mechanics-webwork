@@ -99,7 +99,7 @@ If a gear ratio of [`[$GR]`][`:1`] is used (stepping up torque), how much torque
 What is the shaft power of the motor if the gears have no frictional losses?
 
 
-[@ image( "21-R-KM-SS-31.png", width=>[$width], height=>[$height]) @]*
+[@ image( "21-R-WE-SS-37.png", width=>[$width], height=>[$height]) @]*
 
 [`P_{out} = `][_____]{"$P"} [`W`]  
 [`\tau = `][_____]{"$T"} [`Nm`]  
@@ -108,7 +108,7 @@ What is the shaft power of the motor if the gears have no frictional losses?
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-31.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-WE-SS-37.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################
