@@ -1,0 +1,110 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## Difficulty(Advanced)
+## KEYWORDS(`Work and Energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$m = random(25,50,1);	#[kg]
+$R = random(2,3,0.1);	#[m]
+$r = 0.75*$R;			#[m]
+$k = 0.8*$R;			#[m]
+$F = random(50,100,1);	#[N]
+$x = random(10,20,1);	#[N]
+
+#computation
+$v = $F*(($R+$r)/$R*$x)*2/($m*$k**2/$R**2+$m);
+
+$width = 561;
+$height = 334;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A cable spool of weight [`[$m]`][`kg`] and radius, [`R = [$R]`][`m`] has cable wrapped around at a radius, [`r = [$r]`][`m`]. 
+The system has a radius of gyration of [`[$k]`][`m`].
+If the cable is pulled with a force of [`[$F]`][`N`], what is the magnitude of the velocity of point G on the spool when it has travelled [`[$x]`][`m`] if it rolls 
+starting from rest and without slipping? The cable can be considered to be much lighter than the spool.
+
+[@ image( "21-R-WE-SS-31.png", width=>[$width], height=>[$height]) @]*
+
+[`v_G = `][_____]{"$v"} [`m/s`]  
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-WE-SS-31.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

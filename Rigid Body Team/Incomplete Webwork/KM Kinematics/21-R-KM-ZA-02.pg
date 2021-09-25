@@ -1,0 +1,122 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	 kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Rotation about a fixed axis)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`kinematics`,`rotation`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",  # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",   # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$ra = random(0.1,0.4,0.05);
+$rb = random(0.01,0.03,0.005);
+$rc = random(0.5,0.9,0.05);
+$rd = random(0.04,0.09,0.005);
+$t = random(5,10,0.5);
+$slip1 = random(0.5,1.5,0.1);
+$omegaacoeff = random(5,10,1);
+
+#computation for numerical answer
+$omegabcoeff = $omegaacoeff*$ra/$rb;
+$vccoeff = $omegabcoeff*$rc;
+$thetad = 1/$rd*(($vccoeff/3*($t**3))-($slip1*$t));
+$xe = $thetad*$rd;
+
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1740;
+$height = $resolution*2120;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-02.png", width=>[$width], height=>[$height]) @]*
+
+A conveyor belt driven by the gear system shown is used to move rocks away from a worksite.
+A motor gives gear A an angular velocity of [`{\omega}_A=[$omegaacoeff]t^2\:rad/s`] in the direction shown, where [`t`] is in seconds.
+You can assume there is no slipping between the belts and gear D, however the belt drive is slipping on gear C at a velocity of [`[$slip1]\:m/s`].
+If a pile of rocks starts at [`x=0`] at [`t=0`] and we know that [`{\omega}_B={\omega}_C`], find the x-position of the pile of rocks after [`[$t] seconds`] have passed.
+
+The following dimensions are known: [`r_A=[$ra]\:m`], [`r_B=[$rb]\:m`], [`r_C=[$rc]\:m`], [`r_D=[$rd]\:m`].
+
+
+
+[`x_E = `][_____]{"$xe"}[`m`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-02.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,128 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Relative motion: acceleration, translating axes)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`acceleration`,`relative motion`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 7')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$r = random(1,3,0.5);
+$theta = random(20,30,1);
+$va = random(2,5,0.5);
+$aatan = random(5,9,0.5);
+
+
+#computation for numerical answer
+$xb = $r*sin($theta*pi/180);
+$yb = $r*cos($theta*pi/180);
+$rbai = ( $r*2 ) - $xb;
+$rbaj = $yb;
+$vb = $va/( sin($theta*pi/180)+ (($rbai*cos($theta*pi/180))/$rbaj) );
+$omegaab = $vb*cos($theta*pi/180)/$rbaj;
+
+$abn = ($vb**2)/$r;
+$aan = ($va**2)/$r;
+$coeff1 = ( (-($va**2)/2) + (($omegaab**2)*$rbai) + ($vb**2/2*sin($theta*pi/180)) );
+$alphaab = ( (sin($theta*pi/180)*$coeff1/cos($theta*pi/180)) - ($vb**2/2*cos($theta*pi/180)) + $aatan + (($omegaab**2)*$rbaj) )/($rbai + (tan($theta*pi/180)*$rbaj) );
+$abtan = ( ($rbaj*$alphaab) - $coeff1 )/cos($theta*pi/180);
+$ab = ( (abn**2) + (abtan**2) )**(0.5);
+$alphaabmag = ( ($alphaab**2) )**(0.5);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1890;
+$height = $resolution*1200;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-07.png", width=>[$width], height=>[$height]) @]*
+
+Point [`A`] on rod [`AB`] moves at a velocity of [`v_A=[$va]\:m/s`], and a tangential acceleration of [`a_{A,tan}=[$aatan]\:m/s^2`].
+The motion of points [`A`] and [`B`] are constrained by the curved slots shown in the diagram that have the same radius of
+[`r=[$r]\:m`]. If we know that [`{\theta}=[$theta]\:degrees`], find the magnitudes of acceleration of point [`B`] and the
+angular acceleration of the rod [`AB`].
+
+
+[`a_B = `][_____]{"$ab"}[`m/s^2`]
+
+
+[`{\alpha}_{AB} = `][_____]{"$alphaabmag"}[`rad/s^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-07.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

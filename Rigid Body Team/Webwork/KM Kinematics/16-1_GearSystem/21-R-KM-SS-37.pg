@@ -34,8 +34,8 @@
 ## Institution('University of British Columbia')
 ## Author(Shohom Shahd)
 ## Date(Summer 2021)
-## Difficulty(Beginner)
-## KEYWORDS(`Work and Energy`)
+## Difficulty(Intermediate)
+## KEYWORDS(`Kinematics`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
 
 ##############################################################
@@ -65,26 +65,22 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$d	= random(5,15,5);		#[cm]
-$D	= random(30,60,10);		#[cm]
-$v	= random(1,5,0.5);		#[m/s]
-$RPM= random(3000,8000,500);#[RPM]
-$T	= random(2,10,1);		#[Nm]
+$alpha = 45;
+$v = random(2,10,1);	#[m/s]
+$r_A = random(10,20,2);	#[cm]
+$r_B = ceil(random(0.1,0.25,0.05)*$r_A);	#[cm]
+$r_C = random(40,60,5);	#[cm]
 
 #computation
-$r = $d/200;
-$R = $D/200;
-$v_belt = $RPM * 2*pi/60 * $r - $v;
-$w_2 = $v_belt/$r/4*60/2/pi;
+$v_frame = $r_A*$v/$r_A/$r_B;
 
-$PWR_loss = $T*2*pi/60*($RPM/4-$w_2);
+$width = 535;
+$height = 490;
 
-$width = 597;
-$height = 379;
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>0.02,
 tolType=>'relative');
 
 ##############################################################
@@ -94,24 +90,22 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A very old engine uses a belt drive to transfer power from a [`[$d]`][`cm`] diameter pulley (A) to a [`[$D]`][`cm`] 
-diameter pulley (B). The designer however didn't use timing belts, and the belt is slipping at a velocity of [`[$v]`][`m/s`] 
-on the drive pulley (A) when it operates at [`[$RPM]`][`RPM`].
+The figure shows a concept vehicle that runs between two gear racks. The bottom gear rack is fixed and the top gear rack 
+is driven at a velocity of [`v = [$v]`] [`m/s`]. The vehicle is unpowered, and consists of a system of compound gears held 
+together by a frame ([`\alpha = [$alpha]`][`^\circ`]). Gears A and B share an axle (X) and move at the same angular velocity. 
+If [`r_A = [$r_A]`] [`cm`], [`r_B = [$r_B]`] [`cm`] and [`r_C = [$r_C]`] [`cm`], find the magnitude of the velocity of the vehicle.
 
-Find the angular velocity of the driven pulley (B), assuming there is no slippage between this pulley and the belt.
+Hint: This problem can be solved without evaluating of the ICZV of each gear. Be very careful if you do choose to think of ICZVs 
+because the system's movement may be counterintuitive and incorrect assumptions can get you stuck!
 
-If the motor is known to operate at [`[$RPM]`][`RPM`] even if the belt isn't slipping, and the output shaft has a 
-torque of [`[$T]`][`Nm`], what is the power loss in the system because of slippage?
+[@ image( "21-R-KM-SS-37.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "21-R-KM-SS-30.png", width=>[$width], height=>[$height]) @]*
-
-[`\omega = `][_____]{"$w_2"} [`RPM`]  
-Power loss = [_____]{"$PWR_loss"} [`W`]
+[`v_\text{vehicle} = `][_____]{"$v_frame"} [`m/s`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-30.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-KM-SS-37.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

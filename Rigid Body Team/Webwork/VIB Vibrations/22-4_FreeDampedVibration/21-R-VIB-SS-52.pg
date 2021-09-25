@@ -1,8 +1,4 @@
 ##DESCRIPTION
-## long cord with a trick and related velocity
-##ENDDESCRIPTION
-
-##DESCRIPTION
 ##
 ## Created in collaboration between Douglas College Department of Physics and Astronomy
 ## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
@@ -29,19 +25,22 @@
 ## ENDDESCRIPTION
 ##
 ## DBsubject(Dynamics)
-## DBchapter(Planar kinematics of rigid bodies)
-## DBsection(Rotation about a fixed axis)
+## DBchapter(Vibrations)
+## DBsection(Free damped)
 ## Institution('University of British Columbia')
 ## Author(Shohom Shahd)
 ## Date(Summer 2021)
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
 ## Difficulty(Beginner)
-## KEYWORDS(`Work and Energy`)
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+## KEYWORDS(`Vibrations`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 
-##############################################################
+########################################################
 
 DOCUMENT();
-
 
 loadMacros(   
 	"PGstandard.pl",     # Standard macros for PG language
@@ -56,59 +55,49 @@ loadMacros(
 
 TEXT(beginproblem());
 
-##############################################################
-#
-#  Setup
-#
-#
 
+#######################################################
+#Setup
+
+Context("Numeric");
 
 Context("Numeric");
 #given
-$d	= random(0.5,5,0.5);	#[cm]
-$m	= random(15,60,5);		#[kg]
-$v	= random(0.1,1,0.1);	#[m/s]
-$GR	= random(5,20,5);		#[Nm]
-
-$g = 9.81;
+$m = random(1,10,1);	#[kg]
+$k = random(5,10,1);	#[N/m]
+$c = ceil(random(0.1,0.8,0.1)*(4*$m*$k)**0.5);	#[Ns/m]
+$x = random(2,10,1);	#[cm]
 
 #computation
-$P = $m*$g*$v;
-$T = $m*$g*$d/200/$GR;
+$w = ($k/$m)**0.5;
+$z = $c/(2*$m*$w);
+$d = $x/(e**(2*pi*$z/(1-$z**2)**0.5))**0.5;
 
-$width = 248;
-$height = 392;
+$width = 1615/3;
+$height = 1110/3;
+
 
 #set tolerance
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>0.02,
 tolType=>'relative');
 
-##############################################################
-#
-#  PGML 
-#
-#
+########################################################;
+#PGML
 
 BEGIN_PGML
-For a design project, you want to design a DC motor powered hoist to lift payload at a velocity of [`[$v]`][`m/s`] 
-using a [`[$d]`][`cm`] diameter pulley. What is the power in lifting a [`[$m]`][`kg`] payload?
+An [`m= [$m]`] [`kg`] block rests on a smooth surface and is connected to a long spring ([`k= [$k]`] [`N/m`]) and viscous damper 
+([`c= [$c]`] [`Ns/m`]). If the mass is released with an initial rightward displacement of [`x= [$x]`] [`cm`] from equilibrium, 
+find the maximum leftward displacement ([`\Delta_\text{max left}`]) from equilibrium.
 
-If a gear ratio of [`[$GR]`][`:1`] is used (stepping up torque), how much torque does the motor have to provide?
+[@ image( "21-R-VIB-SS-52.png", width=>[$width], height=>[$height]) @]*
 
-What is the shaft power of the motor if the gears have no frictional losses?
-
-
-[@ image( "21-R-KM-SS-31.png", width=>[$width], height=>[$height]) @]*
-
-[`P_{out} = `][_____]{"$P"} [`W`]  
-[`\tau = `][_____]{"$T"} [`Nm`]  
-[`P_{in} = `][_____]{"$P"} [`W`]  
+[`\Delta_\text{max left}= `][_____]{"$d"} [`cm`]  
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KM-SS-31.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-VIB-SS-52.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################

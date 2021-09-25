@@ -1,0 +1,104 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free undamped)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## Difficulty([Beginner])
+## KEYWORDS(`Vibrations`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+
+#######################################################
+#Setup
+
+Context("Numeric");
+
+Context("Numeric");
+#given
+$m = random(1,10,1);	#[kg]
+$k = random(5,10,1);	#[N/m]
+$x = random(2,10,1);	#[cm]
+$t = random(1,5,0.5);	#[s]
+
+#computation
+$w = ($k/$m)**0.5;
+$d = $x*cos($w*$t);
+
+$width = 1615/3;
+$height = 1110/3;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.02,
+tolType=>'relative');
+
+########################################################;
+#PGML
+
+BEGIN_PGML
+An [`m= [$m]`] [`kg`] block rests on a smooth surface and is connected to a long spring ([`k= [$k]`] [`N/m`]).
+The mass is pulled by [`x= [$x]`] [`cm`], extending the spring from its natural length. What will be the deflection ([`\Delta`]) of 
+the spring [`[$t]`] [`s`] after being released?
+
+[@ image( "21-R-VIB-SS-51.png", width=>[$width], height=>[$height]) @]*
+
+[`\Delta_{t=[$t]}= `][_____]{"$d"} [`cm`]  
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-VIB-SS-51.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

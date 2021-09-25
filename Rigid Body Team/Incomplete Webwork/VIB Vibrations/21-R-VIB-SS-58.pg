@@ -1,0 +1,124 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free undamped)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## Difficulty(Intermediate)
+## KEYWORDS(`Vibrations`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+
+#######################################################
+#Setup
+
+Context("Numeric");
+
+Context("Numeric");
+#given
+$mA = random(1,5,1);	#[kg]
+$mB = random(5,10,1);	#[kg]
+$h  = random(0.1,0.5,0.1);	#[m]
+$k  = random(100,500,10);	#[N/m]
+$c  = round(random(0.1,0.9,0.1)*(4*($mA+$mB)*$k)**0.5);	#[Ns/m]		forcing underdamped system
+
+$g = 9.81;
+
+#computation
+$m = $mA+$mB;
+$wn = ($k/$m)**0.5;
+$wd = (1-($c/(2*$m*$wn))**2)**0.5 * $wn;
+
+$x0 = -$mA*$g/$k;
+$v0 = ((2*$g*$h)**0.5)*$mA/$m;
+$C2 = $x0;
+$C1 = ($v0 + $c/2/$m*$C2) / $wd;
+
+#Newton's method
+$t = 0.5;
+$v = -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t))+exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t));
+
+do{
+	$t = $t - ( -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t))+exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) ) / ( ($c/2/$m)**2*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t)) - $c/$m*exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) + exp(-$c/2/$m*$t)*(-$C1*$wd**2*sin($wd*$t)-$C2*$wd**2*cos($wd*$t)) );  #I'm sorry, please don't look here
+	$v = ( -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t))+exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) );
+} until ($v < 0.001 && $v > -0.001);
+$x = -$x0 + exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t));
+
+$width = 500;
+$height = 300;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.01,
+tolType=>'relative');
+
+########################################################
+#PGML
+
+BEGIN_PGML
+A [`m_A = [$mA]`] [`kg`] block is dropped from rest at a height of [`h = [$h]`] [`m`] onto a [`m_B = [$mB]`] [`kg`] plate 
+which is connected to a spring ([`k = [$k]`] [`N/m`]) and a damper ([`c = [$c]`] [`Ns/m`]).  
+Given the plate is initially at rest in equilibrium and constrained to only move vertically and that the block does not 
+rebound on impact, what is the maximum downward displacement of the plate?
+
+[@ image( "21-R-VIB-SS-58.png", width=>[$width], height=>[$height]) @]*
+
+[`\Delta= `][_____]{"$wd"} [`m`]  
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-VIB-SS-58.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,102 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Principle of Impact and Momentum)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS('impulse and momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+#given
+$m = random(1500,2500,100);	 #[kg]
+$a = random(3000,6000,1000); #[m/s2]	coefficient of equation for acceleration
+
+#computation
+$t = 0.501;	#[s] controlled by equation for acceleration
+$I = (e^(-2*$t)/2+0.2/($t+0.447) - 1/2+0.2/0.447) * $a * $m;
+
+$width = 557;
+$height = 311;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A 2000kg car crashes into a rigid wall with a deceleration of [`a=5000\left(e^{-3t}-0.2(t+0.447)^{-2}\right)`] for [`t>0`].
+
+Find the magnitude of impulse the car experiences during the collision.
+
+[`I = `][_____]{"$I"} [`Ns`]  
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-IM-SS-26.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

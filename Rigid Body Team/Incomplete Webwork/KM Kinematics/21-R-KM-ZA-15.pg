@@ -1,0 +1,121 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Absolute motion)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Advanced)
+## KEYWORDS(`dynamics`,`absolute motion`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 4')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$r = random(0.1,0.5,0.05);
+$omega = random(1,5,0.5);
+$theta = random(45,60,1);
+$thetainit = random(15,30,1);
+
+#computation for numerical answer
+$L = ( ($r*cos($thetainit*pi/180))**2 + (2*$r - $r*sin($thetainit*pi/180))**2 )**0.5;
+$phi = arccos( (2*$r - $r*sin($theta*pi/180))/$L);
+$yb = $L*sin($phi) - $r*cos($theta*pi/180);
+$vb = cos($phi)*$r*cos($theta*pi/180)*$omega/( (1-((2*$r-$r*sin($theta*pi/180))/$L)**2)**0.5) + $r*sin($theta*pi/180)*$omega;
+$omegaAB = ($vb - $r*sin($theta*pi/180)*$omega)/($L*cos($phi));
+$omegaABmag = ( ($omegaAB)**2 )**0.5;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1698;
+$height = $resolution*2070;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-15.png", width=>[$width], height=>[$height]) @]*
+
+The ends of link [`AB`] are confined to move in the slots shown. The curved slot has a radius of [`r=[$r]\:m`],
+and the straight slot is a distance [`r`] away from the end of the curved slot. Point [`A`] is moving with an
+angular velocity of [`{\omega}_A=[$omega]\:rad/s`]. If we know that the system starts with [`{\theta}_0=[$thetainit]\:degrees`]
+in the position shown, find the velocity of point [`B`] when [`{\theta}=[$theta]\:degrees`], and the y-coordinate
+of point [`B`] assuming the coordinate system shown. Furthermore, find the magnitude of the angular velocity of the link [`AB`].
+
+
+[`y_B = `][_____]{"$yb"}[`m`]
+
+[`v_B = `][_____]{"$vb"}[`m/s`]
+
+[`{\omega}_{AB} = `][_____]{"$omegaABmag"}[`rad/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-15.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
