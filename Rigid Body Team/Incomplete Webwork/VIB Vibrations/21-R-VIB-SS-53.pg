@@ -26,15 +26,15 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Vibrations)
+## DBsection(Forced Damped)
 ## Institution('University of British Columbia')
-## Author([SHOHOM SHAHD])
+## Author(Shohom Shahd)
 ## Date(Summer 2021)
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
 ## EditionText1('14')
 ## Section1('22.1')
-## Difficulty([Beginner])
+## Difficulty(Beginner)
 ## KEYWORDS(`Vibrations`)
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
 
@@ -90,7 +90,7 @@ tolType=>'relative');
 BEGIN_PGML
 A [`m= [$m]`] [`kg`] car is driving on a road with bumps of wavelength [`\lambda= [$l]`] [`m`]. 
 The car's suspension system effectively have a spring constant of [`[$k]`] [`kN/m`] and damping coefficient of [`[$c]`] [`kNs/m`]. 
-At what speed will the car feel he most vibrations?  
+At what speed will the car feel the most vibrations?  
 The spring constant and damping coefficients given are of the entire system (not per wheel). Assume that the car's wheel base is 
 equal to the wavelength of bumps (as shown in the diagram).
 

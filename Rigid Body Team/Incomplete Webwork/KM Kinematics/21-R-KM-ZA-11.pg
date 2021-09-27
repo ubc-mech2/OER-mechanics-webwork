@@ -1,0 +1,156 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Relative motion: acceleration, rotating axes)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`rotating axes`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 8')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$omegaa = random(5,10,0.5);
+$alphaa = random(1,4,0.5);
+$omegao = random(4,9,0.1);
+$alphao = random(1,3,0.1);
+$theta = random(20,30,1);
+$phi = random(55,75,1);
+$r = random(0.5,0.9,0.1);
+$d11 = 2*$r/sin($phi*pi/180);
+$d1 = sprintf("%.3f",$d11);
+$d2 = $d1*1.5;
+
+#computation for numerical answer
+
+#-----------VELOCITY-----------
+$vci = -1*$omegaa*$d1*sin($phi*pi/180);
+$vb = $omegao/$r;
+
+$vcb = ( $vci - (tan($theta*pi/180)*$vb) )/( cos($theta*pi/180) - (tan($theta*pi/180)*sin($theta*pi/180)) );
+$omegacb = ( $vb - ($vcb*sin($theta*pi/180)) ) /( $d2*cos($theta*pi/180) );
+$vcbi = $vcb*cos($theta*pi/180);
+$vcbj = $vcb*-1*sin($theta*pi/180);
+
+#-----------ACCELERATION-----------
+$abnorm = ($vb**2)/$r;
+$abtan = $alphao*$r;
+$aci = -1*$alphaa*$d1*sin($phi*pi/180) - (($omegaa)**2*$d1*cos($phi*pi/180));
+
+#equate i and j components of acceleration, collect like terms (collect constants)
+$iconstants = $aci + $abnorm - (($omegacb**2)*$d2*cos($theta*pi/180)) + (2*$omegacb*(-1*$vcb)*sin($theta*pi/180));
+$jconstants = -1*$abtan + (($omegacb)**2*$d2*sin($theta*pi/180))+(2*$omegacb*(-1*$vcb)*cos($theta*pi/180));
+
+#solve system of equations and write in x,y components
+$acb = ( $jconstants - ($iconstants*cos($theta*pi/180)/sin($theta*pi/180)) )/( (-1*(cos($theta*pi/180))**2/sin($theta*pi/180)) - sin($theta*pi/180) );
+$acbi = $acb*cos($theta*pi/180);
+$acbj = $acb*-1*sin($theta*pi/180);
+
+#-----------IMAGE SETTINGS-----------
+#image settings
+$resolution = 0.2;
+$width = $resolution*1690;
+$height = $resolution*990;
+
+#-----------TOLERANCE-----------
+#set tolerance
+Context()->flags->set(
+tolerance=>.06,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-11.png", width=>[$width], height=>[$height]) @]*
+
+Slotted member [`AC`] rotates with an angular velocity of [`{\omega}_{AC}=[$omegaa]\:rad/s`], and an angular acceleration of [`{\alpha}_{AC}=[$alphaa]\:rad/s^2`],
+and has a length of [`d_1=[$d1]\:m`]. Another rod attaches point [`C`] to point [`B`] on disc [`O`], and has a length of
+[`d_2=[$d2]\:m`]. If disc [`O`] rotates with an angular velocity of  [`{\omega}_{O}=[$omegao]\:rad/s`], and an angular acceleration of
+[`{\alpha}_{O}=[$alphao]\:rad/s^2`], find the relative velocity and acceleration of point [`C`] with respect to point [`B`].
+Use the coordinate system shown to express your answers.
+
+The following dimensions are known:
+
+[`{\phi}=[$phi]\:degrees`]
+
+[`{\theta}=[$theta]\:degrees`]
+
+[`r=[$r]\:m`]
+
+
+[`v_{C/B, x} = `][_____]{"$vcbi"}[`m/s`][`\boldsymbol{\hat{i}}`]
+
+[`v_{C/B, y} = `][_____]{"$vcbj"}[`m/s`][`\boldsymbol{\hat{j}}`]
+
+[`a_{C/B, x} = `][_____]{"$acbi"}[`m/s^2`][`\boldsymbol{\hat{i}}`]
+
+[`a_{C/B, y} = `][_____]{"$acbj"}[`m/s^2`][`\boldsymbol{\hat{j}}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-11.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
