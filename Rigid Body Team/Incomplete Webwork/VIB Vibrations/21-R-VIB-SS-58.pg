@@ -26,7 +26,7 @@
 ##
 ## DBsubject(Dynamics)
 ## DBchapter(Vibrations)
-## DBsection(Free undamped)
+## DBsection(Free damped)
 ## Institution('University of British Columbia')
 ## Author(Shohom Shahd)
 ## Date(Summer 2021)
@@ -87,12 +87,12 @@ $v = -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t))+exp(-$c/2/$m*$t
 
 do{
 	$t = $t - ( -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t))+exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) ) / ( ($c/2/$m)**2*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t)) - $c/$m*exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) + exp(-$c/2/$m*$t)*(-$C1*$wd**2*sin($wd*$t)-$C2*$wd**2*cos($wd*$t)) );  #I'm sorry, please don't look here
-	$v = ( -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t))+exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) );
+	$v = ( -$c/2/$m*exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*	cos($wd*$t))+exp(-$c/2/$m*$t)*($C1*$wd*cos($wd*$t)-$C2*$wd*sin($wd*$t)) );
 } until ($v < 0.001 && $v > -0.001);
 $x = -$x0 + exp(-$c/2/$m*$t)*($C1*sin($wd*$t)+$C2*cos($wd*$t));
 
-$width = 500;
-$height = 300;
+$width = 508;
+$height = 499;
 
 
 #set tolerance
