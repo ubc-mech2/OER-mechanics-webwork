@@ -1,0 +1,126 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Kinetic energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`center of mass`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 1')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$lrect = random(6,18,6);
+$srect = random(4,16,4);
+$lcyl = $lrect*2/3;
+$rcyl = $srect*2/4;
+$width = ($srect-$rcyl)/2;
+$height = ($lrect-$lcyl)/2;
+$coeff1 = random(1,5,0.5);
+$coeff2 = random(6,9,0.5);
+
+#computation for numerical answer
+$mrect = $coeff1/3*$lrect**3 - $coeff2*$lrect;
+$mcyl = $coeff1/3*$lcyl**3 - $coeff2*$lcyl;
+$mobj = $mrect - $mcyl;
+$zrect = [ ($coeff1*$lrect**4/4) - ($coeff2*$lrect**2/2) ]/$mrect;
+$zcyl = [ ($coeff1*$lcyl**4/4) - ($coeff2*$lcyl**2/2) ]/$mcyl;
+$zobj = [ ($mrect*$zrect) - ($mcyl*($zcyl+$height)) ]/$mobj;
+$xobj = $srect/2;
+$yobj = $xobj;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1786;
+$height = $resolution*1600;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KIN-ZA-19.png", width=>[$width], height=>[$height]) @]*
+
+The rectangular prism shown has a height of [`D=[$lrect]\:m`], a side length of [`A=[$srect]\:m`] and a non-uniform density of
+[`{\lambda}=[$coeff1]z^2-[$coeff2]\:kg/m`] that varies along the z axis. The rectangular prism is solid except for a
+cylinder of radius [`F=[$rcyl]\:m`] and height [`C=[$lcyl]\:m`] removed from inside of it. If we know that [`E=[$height]\:m`]
+and [`B=[$width]\:m`], find the center of gravity of the object.
+
+
+[`x_G = `][_____]{"$xobj"}[`m`]
+
+[`y_G = `][_____]{"$yobj"}[`m`]
+
+[`z_G = `][_____]{"$zobj"}[`m`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KIN-ZA-19.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,135 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Kinetic energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`center of mass`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 1')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$do = random(4,7,0.5);
+$di = random(1,3,0.5);
+$l = random(9,15,0.5);
+$h = random(4,8,0.5);
+$rhocone = random(900,1000,1);
+$coeff1 = random(1,5,0.5);
+$coeff2 = random(5,9,0.5);
+
+#computation for numerical answer
+$ri = $di/2;
+$ro = $do/2;
+$hollowh = $h - ($ri)*$h/$ro;                                             #cm
+$mconefull = pi/3*$ro**2*$h*$rhocone/1000000;                             #kg
+$mhollow = $rhocone/1000000*pi*$ri**2*$hollowh;                           #kg
+$mcone = $mconefull - $mhollow;                                           #kg
+$zcone = ( ($h/4 + $l)*$mconefull - ($hollowh/2 + $l)*$mhollow )/$mcone;  #cm
+
+$zcyl = [ ($coeff1/4*($l/100)**3) + ($coeff2/2*$l/100) ]/[ ($coeff1/3*($l/100)**2) + ($coeff2) ]; #m
+$mcyl = ($coeff1/3*($l/100)**3) + ($coeff2*$l/100);                       #kg
+
+$zg = [ ($zcyl*100*$mcyl) + ($zcone*$mcone) ]/[ $mcone+$mcyl ];           #cm
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1412;
+$height = $resolution*2282;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KIN-ZA-18.png", width=>[$width], height=>[$height]) @]*
+
+A cone of height [`h_{cone}=[$h]\:cm`] and a uniform density of [`{\rho}_{cone}=[$rhocone]\:kg/m^3`] has a small cylinder of diameter [`d_i=[$di]\:cm`] carved
+out from inside it. You can assume the top of the inner cylinder just touches the edge of the cone.
+The cone is attached to a cylinder with the same outer diameter of [`d_o=[$do]\:cm`]. The cylinder of length [`l=[$l]\:cm`]
+has a non-uniform density of [`{\lambda}_{cylinder}= [$coeff1]z^2+[$coeff2]\:kg/m`] that varies along the z axis. Find the center of gravity of the object.
+
+Properties of a cone:
+
+Equation of a cone: [`x^2+y^2=(r^2/h^2)*z^2`]
+
+Equation of a circle: [`x^2+y^2=r^2`]
+
+
+[`x_G = `][_____]{"0"}[`cm`]
+
+[`y_G = `][_____]{"0"}[`cm`]
+
+[`z_G = `][_____]{"$zg"}[`cm`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KIN-ZA-18.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
