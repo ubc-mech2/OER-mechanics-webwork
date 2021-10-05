@@ -1,0 +1,110 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Sliding, rolling, tipping)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`Kinematics`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$A = random(5,12,1);	#[cm]
+$B = random(5,12,1);	#[cm]
+$x  = random(30,80,5);	#[deg]
+
+#computation
+$xr = $x * pi/180;	#[rad]
+$CG_x = ($A**2/2+$B**2/2*cos($xr))/($A+$B);
+$CG_y = ($B**2/2*sin($xr))/($A+$B);
+$phi  = atan($CG_y/$CG_x) * 180/pi;
+
+$width = 500;
+$height = 500;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A wire is bent to the shape shown in the figure, with [`L_{AB} = [$A]`] [`cm`], [`L_{BC} = [$B]`] [`cm`] and [`\theta = [$x]`][`^\circ`]
+
+What angle ([`\phi`]) does the line BC make with the vertical when the object is dangled by a rope from Point B?
+
+[@ image( "21-R-KIN-SS-55.png", width=>[$width], height=>[$height]) @]*
+
+[`\phi = `][_____]{"$phi"}[`^\circ`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-KIN-SS-55.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

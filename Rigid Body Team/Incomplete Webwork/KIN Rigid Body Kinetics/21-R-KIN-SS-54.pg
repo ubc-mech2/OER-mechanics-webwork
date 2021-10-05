@@ -1,0 +1,115 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Sliding, rolling, tipping)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`Kinematics`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$R = random(5,15,1);	  #[cm]
+$ratio = random(0.9,0.75,0.05);
+$n = 3;
+
+#computation
+$C_y0 = 2*pi/$R;
+$C_y1 = -2*pi/($R*0.8);
+$C_y2 = 2*pi/($R*0.8**2);
+$CG_y = ($C_y0*2*pi*$R + $C_y1*2*pi*$R*$ratio + $C_y1*2*pi*$R*$ratio**2)/(2*pi*($R+$ratio*$R+$ratio**2*$R));
+$C_x1 = $ratio*$R - $R;
+$C_x2 = $C_x1 + ($ratio*$R - $ratio**2*$R);
+$CG_x = ($C_x1*2*pi*$R*$ratio + $C_x2*2*pi*$R*$ratio**2)/(2*pi*($R+$ratio*$R+$ratio**2*$R));
+
+$width = 500;
+$height = 500;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A spiral is approximated using thin wires bent into [`[$n]`] semi-circles of decreasing radius as shown in the figure. The outermost semi-circle has a radius of [`[$R]`] [`cm`], decreasing 
+by a ratio of [`[$ratio]`]. What is the center of mass of the resulting object?
+
+Consider the orign to be at the center of the outermost circle.
+
+[@ image( "21-R-KIN-SS-54.png", width=>[$width], height=>[$height]) @]*
+
+[`CG_x = `][_____]{"$CG_x"}[`cm`]  
+[`CG_y = `][_____]{"$CG_y"}[`cm`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-KIN-SS-54.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
