@@ -60,7 +60,7 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.005,
+tolerance=>.08,
 tolType=>'absolute');  #relative or absolute
 
 #-------------- Image Scaling---------------#
@@ -69,44 +69,39 @@ $imgScale = 0.2;
 
 #---- Random variables for this problem --------#
 
-$b = random(10,22,1);
-$a = random(5,10,1); 
-$b = 15;
-$a = 7;
+$r = random(7,12,0.1);
+$rc = random(1,2,0.1);
+$m = random(25,50,1);
+
 #---- Formulas to compute answers --------------#
 
-$x_bar = 0;
-$y_bar = 0;
-$r = sqrt($b**2 / $a);
-$m_cone = (1/3*pi*$r*$r*$b)*160;
-$z_cone = 3/4*$b;
-$z_scoop = 3/8*$r+$b;
-$m_scoop = 2/3*pi*$r**3*727;
-$z_bar = ($z_cone * $m_cone + $z_scoop * $m_scoop)/($m_cone+$m_scoop);
+$R = $r+$rc;
+$v = pi*$rc*$rc*2*pi*$R*3/4;
+$rho = $m/$v;
+
+$iz = $rho*2*pi*pi*$R*$R*$R*$R*3*pi/2/1000;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "21-R-KIN-MS-47.png", width=>[$width], height=>[$height]) @]*
-
-The ice cream is composed of:
-
-* a solid uniform cone of density [`\rho_{cone}=160 kg/m^3`] with the formula: [`z^2 = ax^2 + ay^2`], where [`a=[$a]`].
-
-* a solid uniform scoop of ice cream, a hemisphere of density [`\rho_{scoop}=727 kg/m^3`] resting on top of the cone at [`z=b`] where [`b=[$b] cm`], with a radius matching the cone’s radius at that height. 
+[@ image( "21-R-KIN-MS-54.png", width=>[$width], height=>[$height]) @]*
 
 
-Find the centre of mass of the ice cream.
+Determine the moment of inertia of this ring about the [`z`] axis, 
+pointing out of the page at the centre of the ring. 
+The ring has mass [`m=[$m]`] [`g`] and inner radius [`r=[$r]`] [`cm`]. 
+Its cross-section is circular with a radius [`r_c= [$rc]`] [`cm`]. [`\frac{1}{4}`] 
+of the ring has been cut out.
 
-[`x_G=`][___]{"$x_bar"} [`cm`]
 
-[`y_G=`][___]{"$y_bar"} [`cm`]
 
-[`z_G=`][___]{"$z_bar"} [`cm`]
+ 
+[`I_{z}=`][___]{"$iz"} [`g \cdot cm^2`]
 
- _Round your answers to three decimal places_.
+
+Note: the drawing may not be to scale. Answer to at least 1 d.p.
 
 
 END_PGML
@@ -117,7 +112,7 @@ BEGIN_PGML_SOLUTION
 Answers
 
 
-[@ image( "21-R-KIN-MS-47.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "21-R-KIN-MS-54.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 ENDDOCUMENT();

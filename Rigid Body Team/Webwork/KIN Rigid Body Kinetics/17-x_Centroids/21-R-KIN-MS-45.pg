@@ -28,7 +28,7 @@
 ## DBchapter(Planar Kinetics of Rigid Bodies)
 ## DBsection(Kinetic Energy)
 ## Institution('University of British Columbia')
-## Author(Patrick Thangarajah)
+## Author(Michael Sekatchev)
 ## Date(Summer 2020)
 ## Difficulty(Intermediate)
 ## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
@@ -98,6 +98,8 @@ END_PGML
 BEGIN_PGML_SOLUTION
 
 Answers
+
+Solution uses 
 
 [@ image( "21-R-KIN-MS-45.pdf", width=>[0], height=>[0] ) @]*
 

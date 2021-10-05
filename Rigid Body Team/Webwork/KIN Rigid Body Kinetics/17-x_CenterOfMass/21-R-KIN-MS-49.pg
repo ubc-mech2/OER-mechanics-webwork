@@ -28,7 +28,7 @@
 ## DBchapter(Planar Kinetics of Rigid Bodies)
 ## DBsection(Kinetic Energy)
 ## Institution('University of British Columbia')
-## Author(Patrick Thangarajah)
+## Author(Michael Sekatchev)
 ## Date(Summer 2020)
 ## Difficulty(Intermediate)
 ## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
@@ -106,10 +106,10 @@ BEGIN_PGML
 
 [@ image( "21-R-KIN-MS-49.png", width=>[$width], height=>[$height]) @]*
 
-This chess pawn is made up of a wooden base (the cylinder radius [`r_4`], height [`h_3`] and [`\rho_w=1200`] [`kg/m^3`]) 
-and a steel top (the sphere of radius [`r_1`] and [`\rho_s= 8050`] [`kg/m^3`]). 
-The rest is entirely out of plastic ([`\rho_p= 941`] [`kg/m^3`]). 
-Find the centre of mass of the pawn.
+This chess pawn is made up of a wooden base (cylinder radius [`r_4`], height [`h_3`] and density [`\rho_w=1200`] [`kg/m^3`]),
+resting under a plastic cone (radius [`r_3`], height [`h_2`], density [`\rho_p= 941`] [`kg/m^3`]), which rests under a wooden disc (radius [`r_2`], height [`h_2`]).
+Above this wooden disc is a steel sphere (radius [`r_1`] and density [`\rho_s= 8050`] [`kg/m^3`]).
+Determine the centre of mass of the pawn.
 
 [`r_1=[$r_1]`] [`cm`]
 
