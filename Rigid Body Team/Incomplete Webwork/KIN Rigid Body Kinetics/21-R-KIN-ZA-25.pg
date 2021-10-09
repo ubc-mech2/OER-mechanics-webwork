@@ -1,0 +1,132 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Equations of motion)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`force and acceleration`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$l = random(1,1.5,0.05);
+$m = random(10,15,0.1);
+$tinit = random(10,15,0.1);
+$t = random(30,35,0.1);
+$ag = random(0.3,0.5,0.05);
+
+#computation for numerical answer
+$g = 9.81;
+$tr = $t*pi/180;
+$Nb = $m*$g;
+$Na = [ (-1*$m*$ag*$l/2*sin($tr)) + ($m*$g*$l/2*cos($tr)) ]/[$l*sin($tr)];
+$Fb = $Na + ($m*$ag);
+$mu = $Fb/$Nb;
+
+$tinitr = $tinit*pi/180;
+$Nb2 = $m*$g;
+$Fb2 = $mu*$Nb2;
+$Na2 = (-1*$m*$ag)+$Fb2;
+$Mg = $l/2*[ ($Nb2*cos($tinitr)) - ($Na2*sin($tinitr)) - ($Fb2*sin($tinitr)) ];
+$Ig = 1/12*$m*$l**2;
+$alpha = $Mg/$Ig;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1988;
+$height = $resolution*1161;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-AD-truck-leaning-board.png", width=>[$width], height=>[$height]) @]* [@ image( "21-AD-truck-leaning-board2.png", width=>[$width], height=>[$height]) @]*
+
+
+A truck carries a slender cylindrical rod with a mass [`m_{rod}=[$m]\:kg`], and length [`l_{rod}=[$l]\:m`].
+A block is initially used to keep the rod in place at an angle of [`{\theta}_0=[$tinit]\:^{\circ}`]. The block eventually falls off the truck, and
+the rod begins to slip until it reaches its final position at [`{\theta}=[$t]\:^{\circ}`] shown. If the truck is moving at the same
+constant acceleration of [`a_{truck}=[$ag]\:m/s^2`], find the minimum coefficient of static friction [`{\mu}_s`] between the rod and the
+truck at point [`B`], assuming the vertical wall of the truck is perfectly slippery.
+
+Furthermore, find the angular acceleration [`{\alpha}_{rod}`] of the rod the moment the block loses contact with the rod.
+
+
+[`{\mu}_s = `][_____]{"$mu"}
+
+[`{\alpha}_{rod} = `][_____]{"$alpha"} [` \boldsymbol{\hat{k}} `] [`rad/s^2`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KIN-ZA-25.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
