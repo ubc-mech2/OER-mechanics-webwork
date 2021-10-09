@@ -65,18 +65,13 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$R = random(5,15,1);	  #[cm]
-$ratio = random(0.9,0.75,0.05);
-$n = 3;
+$y1 = random(4,6,0.1);
+$a  = random(1.5,2,0.1);
 
 #computation
-$C_y0 = 2*pi/$R;
-$C_y1 = -2*pi/($R*0.8);
-$C_y2 = 2*pi/($R*0.8**2);
-$CG_y = ($C_y0*2*pi*$R + $C_y1*2*pi*$R*$ratio + $C_y1*2*pi*$R*$ratio**2)/(2*pi*($R+$ratio*$R+$ratio**2*$R));
-$C_x1 = $ratio*$R - $R;
-$C_x2 = $C_x1 + ($ratio*$R - $ratio**2*$R);
-$CG_x = ($C_x1*2*pi*$R*$ratio + $C_x2*2*pi*$R*$ratio**2)/(2*pi*($R+$ratio*$R+$ratio**2*$R));
+$A = 2*exp(($y1-$a)/2)-2*exp((0-$a)/2);
+$xA = (2*$y1*exp($y1/2-$a/2)-4*exp($y1/2-$a/2)) - (2*0*exp(0/2-$a/2)-4*exp(0/2-$a/2));
+$C = $xA/$A;
 
 $width = 500;
 $height = 500;
@@ -94,20 +89,18 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-A spiral is approximated using thin wires bent into [`[$n]`] semi-circles of decreasing radius as shown in the figure. The outermost semi-circle has a radius of [`[$R]`] [`cm`], decreasing 
-by a ratio of [`[$ratio]`]. What is the center of mass of the resulting object?
+Find the centroid of the 2D funnel shape given by the equation [`y=2\ln x +`][`[$a]`] and its reflection 
+on the y-axis bounded by y=0 and y=[`[$y1]`].
 
-Consider the orign to be at the center of the outermost circle.
+[@ image( "21-R-KIN-SS-56.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "21-R-KIN-SS-54.png", width=>[$width], height=>[$height]) @]*
-
-[`CG_x = `][_____]{"$CG_x"}[`cm`]  
-[`CG_y = `][_____]{"$CG_y"}[`cm`]
+[`C_x = `][_____]{"0"}  
+[`C_y = `][_____]{"$C"}
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KIN-SS-54.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-KIN-SS-56.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################
