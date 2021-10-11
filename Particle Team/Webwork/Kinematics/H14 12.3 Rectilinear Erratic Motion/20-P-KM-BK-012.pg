@@ -95,7 +95,6 @@ $mc3 = RadioButtons(
 
 BEGIN_TEXT
 
-20-P-KM-BK-012
 $BR
 \{ image( "20-P-KM-BK-012.png", width=>1000, height=>500,  
 tex_size=>700, extra_html_tags=>'alt=

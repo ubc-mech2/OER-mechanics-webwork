@@ -103,10 +103,6 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-20-P-KM-BK-011
-
-
-
 A car is being driven down a highway. It starts off travelling at [`[$v1]`] [`km/hr`],
 then accelerates at [`[$a1]`][`m/s^2`] for [`[$t1]`][`s`].  
 What is the car's velocity afterwards?

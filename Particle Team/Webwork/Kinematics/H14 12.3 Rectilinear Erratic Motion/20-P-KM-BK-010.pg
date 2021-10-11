@@ -101,8 +101,6 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-20-P-KM-BK-010
-
 [@ image( "20-P-KM-BK-010.png", width=>[$width], height=>[$height]) @]*
 
 A spaceship needs to deliver cargo to a destination 12 parsecs [`(3.7*10^{17}`] [`m)`] away.

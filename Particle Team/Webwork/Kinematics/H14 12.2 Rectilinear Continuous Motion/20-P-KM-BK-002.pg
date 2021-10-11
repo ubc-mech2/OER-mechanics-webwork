@@ -92,7 +92,6 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-*Preliminary Problem*
 
 If [`s=[$A]t^2`] [`m`], find the time at which velocity [`v =[$B]`] [`m/s`].
 

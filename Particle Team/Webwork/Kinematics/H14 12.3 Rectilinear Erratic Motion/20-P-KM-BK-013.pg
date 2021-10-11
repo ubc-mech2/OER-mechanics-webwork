@@ -101,8 +101,6 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-20-P-KM-BK-013
-
 _Note: Neglect air resistance, assume [`g = 9.80 m/s^2`]_
 
 A golfer hits a ball, giving it an initial vertical velocity of [`[$v1]`] [`m/s`]. 

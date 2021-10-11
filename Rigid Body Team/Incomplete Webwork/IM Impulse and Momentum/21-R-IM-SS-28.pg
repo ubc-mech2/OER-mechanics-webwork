@@ -85,7 +85,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 A billiard ball strikes another identical ball at rest. The initial trajectory of the ball is tangent 
-to the ball at rest, as shown. Find the deeflection ([`\theta`]) of the trajectory of the moving ball 
+to the ball at rest with their centers aligned, as shown. Find the deeflection ([`\theta`]) of the trajectory of the moving ball 
 if the coefficient of restitution between the balls is [`[$e]`].
 
 [@ image( "21-R-IM-SS-28.png", width=>[$width], height=>[$height]) @]*

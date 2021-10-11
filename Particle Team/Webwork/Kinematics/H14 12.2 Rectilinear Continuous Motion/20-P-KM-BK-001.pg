@@ -91,7 +91,6 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-*Preliminary Problem*
 
 If [`s=[$A]t^3 + 4`] [`m`], find velocity [`v`] at time [`t = [$B]`] [`s`].
 

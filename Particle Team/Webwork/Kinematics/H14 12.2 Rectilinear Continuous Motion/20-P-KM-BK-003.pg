@@ -91,7 +91,6 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-*Preliminary Problem*
 
 If [`v=[$A]s`] [`m/s`], find the acceleration when [`s=[$B]`] [`m`].
 
