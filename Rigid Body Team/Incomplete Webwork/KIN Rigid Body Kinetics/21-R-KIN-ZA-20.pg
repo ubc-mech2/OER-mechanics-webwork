@@ -1,0 +1,115 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Kinetic energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`moment of inertia`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 1')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$H = ( random(1,3,1) )**2/10;
+$rho = random(800,900,1);
+
+
+#computation for numerical answer
+$R = sqrt($H);
+$Iz= 1/2*$rho*pi/3*$H**3;
+$m = $rho*pi*$H**2/2;
+$Ip = $Iz + (1/2*$m*$R**2);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1300;
+$height = $resolution*894;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KIN-ZA-20.png", width=>[$width], height=>[$height]) @]*
+
+The paraboloid shown has a density of [`{\rho}=[$rho]\:kg/m^3`], and a height of [`H=[$H]\:m`]. If the cross section is
+a circle, and the projection of the [`x`]-[`z`] axis follows the equation: [`z=x^2`], find the moment of inertia about the [`z`]
+axis, and the [`z'`] axis.
+
+
+[`I_z = `][_____]{"$Iz"}[`kg {\cdot} m^2`]
+
+[`I_{z'} = `][_____]{"$Ip"}[`kg {\cdot} m^2`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KIN-ZA-20.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

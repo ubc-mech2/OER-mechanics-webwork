@@ -1,0 +1,119 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Equations of motion)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`force and acceleration`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$l = random(0.06,0.1,0.02);
+$d = 0.01;
+$m = random(10,15,0.1);
+$t = random(15,20,0.5);
+$mu = random(0.05,0.09,0.01);
+
+
+#computation for numerical answer
+$g = 9.81;
+$tr = $t*pi/180;
+$N = $m*$g*cos($tr);
+$Ff = $N*$mu;
+$a = (-1*$m*$g*sin($tr) + $Ff)/$m;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1938;
+$height = $resolution*1350;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-AD-cylinders-conveyor.png", width=>[$width], height=>[$height]) @]*
+
+A conveyor belt with an angle of [`{\theta}=[$t]\:^{\circ}`] relative to the ground is used to transport Dragon's Smokey Noodle Soup cans.
+The conveyor belt currently uses small stops to hold the cans in place, however they accidentally ordered a new conveyor belt
+without any stops for a different factory. The cans have a mass of [`m=[$m]\:kg`], length [`l=[$l]\:m`], and diameter [`d=[$d]\:m`]. If the coefficient of
+static friction of the new belt is [`{\mu}_s=[$mu]`], what is the maximum acceleration that the conveyor belt can be set to,
+without causing the cans to slip or tip?
+
+
+[`a = `][_____]{"$a"}[`m/s^2`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KIN-ZA-26.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
