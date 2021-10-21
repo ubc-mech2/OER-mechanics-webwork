@@ -1,0 +1,122 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 4')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$moa = random(6,9,0.5);
+$mcb = random(2,5,0.5);
+$md = random(10,15,0.5);
+$lc = random(0.5,1,0.05);
+$lo = random(1.05,1.5,0.01);
+$s = random(2,4,0.5);
+$M = random(6,9,1);
+$omegao0 = random(1,5,0.5);
+$r = $lo-$lc;
+
+#computation for numerical answer
+$Io = 1/3*$moa*$lo**2;
+$Ic = 1/3*$mcb*$lc**2;
+$UM = $M/2*( (pi/2)**2 - (pi/4)**2 );
+$omegac0 = $omegao0*$lo/$lc;
+$T1 = (0.5*$Io*$omegao0**2) + (0.5*$Ic*$omegac0**2) + (0.5*$md*($omegao0*$lo)**2);
+$V = ( $moa*9.81*(cos(pi/4)-1) ) + ($mcb*9.81* ($lc/2*(cos(pi/4)-1)+$r) ) + ($md*9.81*(($lo*cos(pi/4)+($s/2))-($lo+($s/2))));
+$omegao = [ ($T1+$V+$UM)*2/( $Io + ($Ic*($lo/$lc)**2) + ($md*$lo**2)) ]**0.5;
+$omegac = $omegao*$lo/$lc;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*974*2;
+$height = $resolution*933*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-32.png", width=>[$width], height=>[$height]) @]*
+
+The thin rectangular plate [`D`] of mass [`m_D=[$md]\:kg`] is attached to two links [`AO`] and [`BC`] of lengths [`l_{AO}=[$lo]\:m`] and [`l_{BC}=[$lc]\:m`] that are both connected to pins.
+When [`\theta=45^{\circ}`] link [`AO`] is moving with an angular velocity of [`\omega_{AO}=[$omegao0]\:rad/s`] in the direction shown, and a moment of [`M_{OA}=[$M]{\theta} N{\cdot}m`] is applied to it. If link [`AO`]
+has a mass of [`m_{AO}=[$moa]\:kg`] and link [`BC`] has a mass of [`m_{BC}=[$mcb]\:kg`], find the angular velocity of link [`BC`] when [`\theta=90^{\circ}`]. Assume that the plate remains horizontal.
+The following dimensions are known: [`r=[$r]\:m`], [`s=[$s]\:m`].
+
+[`omega_{BC} = `][_____]{"$omegac"}[`rad/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-32.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

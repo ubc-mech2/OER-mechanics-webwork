@@ -1,0 +1,119 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$k = (5,1,1);
+$l = random(1,0.5,0.1);
+$M = random(30,50,0.5);
+$m = (10,5,1);
+$lunst = $l/4;
+
+
+#computation for numerical answer
+$V1 = $l/2*$m*9.81*sin(pi/6);
+$V2 = $l/2*$m*9.81;
+$Ir = 1/3*$m*$l**2;
+$UM = $M/2*( (pi/2)**2-(pi/6)**2 );
+$s1 = $l*sin(pi/6)-$lunst;
+$s2 = $l*(1+(cos(pi/6))**2)**0.5 -$lunst;
+$Uk = -1/2*$k*($s2**2-$s1**2);
+$omega = (($V1+$UM+$Uk-$V2)*2/$Ir)**0.5;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*881*2;
+$height = $resolution*952*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-33.png", width=>[$width], height=>[$height]) @]*
+
+A rod of length [`l=[$l]\:m`] and mass [`m=[$m]\:kg`] is connected to a pin and attached to a spring that is also pinned
+with a spring constant of [`k=[$k]\:N/m`]. If the rod starts at [`\theta=30^{\circ}`] from rest, and a moment of [`M=[$M]{\theta}N{\cdot}m`] is applied
+in the direction shown, find the angular velocity when [`\theta=90^{\circ}`]. The unstretched length of the
+spring is [`l_{unstretched}=[$lunst]\:m`], and you can neglect the mass of the spring.
+
+[`\omega = `][_____]{"$omega"}[`rad/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-33.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

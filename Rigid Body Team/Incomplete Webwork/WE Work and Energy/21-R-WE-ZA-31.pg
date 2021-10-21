@@ -1,0 +1,122 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 4')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$ra = random(0.6,1,0.05);
+$rb = random(0.1,0.5,0.05);
+$mball = random(0.05,0.1,0.01);
+$mb = random(1,5,0.5);
+$rev = random(2,5,1);
+$T = 10;
+$M = random(0.001,0.005,0.001);
+
+#computation for numerical answer
+$thetab = $rev*2*pi*$ra/$rb;
+$Ib = 0.5*$mb*$rb**2;
+$Mb = $M*( ($thetab**3)/3+$thetab );
+$omegab = ( $Mb*2/$Ib )**0.5;
+$omegaa = $omegab*$rb/$ra;
+$sa = $rev*2*pi*$ra;
+$Fb = [ ($sa*(($mball*9.81)+$T)) - (0.5*$mball*($ra*$omegaa)**2)]/$sa;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*741*2;
+$height = $resolution*1062*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-31.png", width=>[$width], height=>[$height]) @]*
+
+The thin circular disks [`A`] and [`B`] start from rest and disk [`A`] is lowered to touch disk [`B`]. A moment of [`M_B=[$M](\theta^2+1)\:N{\cdot}m`] is
+applied to disk [`B`] in the clockwise direction, which rotates disk [`A`] as well with no slip. If disk [`A`] has
+a radius of [`r_A=[$ra]\:m`], and disk [`B`] as a mass of [`m_B=[$mb]\:kg`] and radius of [`r_B=[$rb]\:m`], find the angular velocity of disk [`A`]
+after it has rotated [`[$rev]`] revolutions. If the balloon has a mass of [`m_{balloon}=[$mball]\:kg`], and the tension in the cable after [`[$rev]`] revolutions
+is [`T=[$T]\:N`], find the upward force of the balloon at that instant.
+
+[`{\omega}_A = `][_____]{"$omegaa"}[`rad/s`]
+
+[`F_{balloon} = `][_____]{"$Fb"}[`N`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-31.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

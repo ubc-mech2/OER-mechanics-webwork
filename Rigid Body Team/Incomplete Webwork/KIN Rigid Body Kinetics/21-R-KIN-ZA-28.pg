@@ -1,0 +1,128 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Equations of motion)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`general planar motion`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 5')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$rho = random(1,3,0.5);
+$l = random(4,8,4);
+$mc = random(0.1,0.5,0.05);
+
+#computation for numerical answer
+$m = $rho/3*$l**3;
+$xg = $l*5/8;
+$yg = $l*3/8;
+$Ig = $rho/5*$l**5;
+$IG = 2*($Ig + ($m*( 2 * $xg**2 ))) + 2*($Ig + ($m*($xg**2+$yg**2)) );
+$IA = $IG + (4*$m*( ($l/2 - $yg)**2 + $yg**2));
+$alpha = [(-1*4*$m*9.81*($l/2-$yg))-($mc*9.81*$l/2)]/$IA;
+$alpha = abs($alpha);
+$agx = 3/8*$alpha*$l;
+$agy = -1*$alpha*$l/8;
+$Ax = 4*$m*$agx;
+$Ay = ($m*$agy)+(4*$m*9.81)+($mc*9.81);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1322;
+$height = $resolution*2209;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KIN-ZA-28.png", width=>[$width], height=>[$height]) @]*
+
+Four slender rods with the same non-uniform, linear density of [`{\lambda}=[$rho]x^2\:kg/m`] are attached to each other to form a square as shown.
+Each rod is oriented as shown, with the higher density end represented by the darker colour.
+There is a pin connection at point [`A`], and a cable attached to point [`B`], that keeps the system at rest initially.
+The cable suddenly snaps at the ceiling, forcing the system to support its mass of [`m_{cable}=[$mc]\:kg`]. If the length of each rod
+is [`l=[$l]\:m`], find the magnitude of angular acceleration of the system the instant the cable snaps, as well as the reaction forces at
+the pin connection. 
+
+
+[`A_x = `][_____]{"$Ax"}[`N`]
+
+[`A_y = `][_____]{"$Ay"}[`N`]
+
+[`{\alpha} = `][_____]{"$alpha"}[`rad/s^2`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KIN-ZA-28.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
