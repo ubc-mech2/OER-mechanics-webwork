@@ -104,7 +104,7 @@ BEGIN_PGML
 [@ image( "21-R-KIN-MS-52.png", width=>[$width], height=>[$height]) @]*
 
 This broken fan only has one blade. Determine the moment of inertia of the broken fan blade at point [`O`] about an axis perpendicular to the page. 
-The fan's shape can be approximated as a blade (extruded triangle and semicircle) attached to a base (annular-cylinder).  
+The fan's shape can be approximated as a symmetrical blade (extruded triangle and semicircle) attached to a base (annular-cylinder).  
 The base is [`T_\text{base} = 10 cm`] tall. The blade is [`T_\text{blade} = 0.4 cm`] thick.  
 The entire fan is made of a plastic with density [`0.92 g/cm^3`].
 
