@@ -65,7 +65,8 @@ tolType=>'absolute');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.2;
-	#aspect ratio
+$width = 1925 * $imgScale;
+$height = 2369 * $imgScale;
 
 #---- Random variables for this problem --------#
 
@@ -110,23 +111,24 @@ BEGIN_PGML
 
 [@ image( "21-R-KIN-MS-48.png", width=>[$width], height=>[$height]) @]*
 
-This E will be installed on an engineering building. Find its centroid.
-
-[`d_1=[$d_1]`] [`m`]
-
-[`d_2=[$d_2]`] [`m`]
-
-[`d_3=[$d_3]`] [`m`]
-
-[`d_4=[$d_4]`] [`m`]
-
-[`\bar{x}=`][___]{"$x"} [`m`]
-
-[`\bar{y}=`][___]{"$y"} [`m`]
-
+This E will be installed on an engineering building. Find its centroid.  
 Note that the dimensions in the image may not be to scale.
 
+[`d_1=[$d_1]`] [`m`]  
+[`d_2=[$d_2]`] [`m`]  
+[`d_3=[$d_3]`] [`m`]  
+[`d_4=[$d_4]`] [`m`]  
+
+The arms of the E are equally spaced.
+
+[`\bar{x}=`][___]{"$x"} [`m`]  
+[`\bar{y}=`][___]{"$y"} [`m`]
+
  _Round your answers to three decimal places_.
+
+
+
+
 
 
 END_PGML
