@@ -64,8 +64,9 @@ tolerance=>.00008,
 tolType=>'absolute');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.2;
-	#aspect ratio
+$imgScale = 0.3;
+$width = 2476 * $imgScale;
+$height = 1328 * $imgScale;
 
 #---- Random variables for this problem --------#
 
@@ -103,18 +104,14 @@ BEGIN_PGML
 [@ image( "21-R-KIN-MS-52.png", width=>[$width], height=>[$height]) @]*
 
 This broken fan only has one blade. Determine the moment of inertia of the broken fan blade at point [`O`] about an axis perpendicular to the page. 
-The fan's shape can be approximated as a blade (cone with a semicircle) attached to a doughnut-shaped base. 
-The base is [`T_{base} = 10 cm`] tall. The blade is [`T_{blade} = 0.4 cm`] thick. 
+The fan's shape can be approximated as a symmetrical blade (extruded triangle and semicircle) attached to a base (annular-cylinder).  
+The base is [`T_\text{base} = 10 cm`] tall. The blade is [`T_\text{blade} = 0.4 cm`] thick.  
 The entire fan is made of a plastic with density [`0.92 g/cm^3`].
 
-[`r_1=[$r1]`] [`cm`]
-
-[`r_2=[$r2]`] [`cm`]
-
-[`h=[$h]`] [`cm`]
-
+[`r_1=[$r1]`] [`cm`]  
+[`r_2=[$r2]`] [`cm`]  
+[`h=[$h]`] [`cm`]  
 [`r_3=[$r3]`] [`cm`]
-
 
 [`(I_{z})_O=`][___]{"$iO"} [`kg \cdot m^2`]
 
