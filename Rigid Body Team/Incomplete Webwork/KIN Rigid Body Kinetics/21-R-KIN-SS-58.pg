@@ -65,20 +65,13 @@ TEXT(beginproblem());
 
 Context("Numeric");
 #given
-$d1 = random(0.8,1,0.1);
-$d2	 = random(1.8,2.3,0.1);
-$d3  = random(0.6,1,0.1);
-$x1  = random(1,2,0.1);
-$p0  = random(40,60,5);
-$p1  = random(10,25,5);
+$h = random(2,10,1);
+$r = random(2,10,1);
 
 #computation
-$p_lo = $p0-$p1*$d2;
-$ratio = $p_lo/$p0;
-$m = 0.5*($ratio*$d3+$d3)*$d2*$d1*$p0;
-$CG_y = ($ratio*$d3*$d2**2/2 + 0.5*($d3-$ratio*$d3)*$d2**2/3)/(0.5*($ratio*$d3+$d3)*$d2);
-$I_G = $p0/3*($d2-$CG_y)**3 - $p1/4*($d2-$CG_y)**4 - $CG_y/3*($d2-$CG_y)**3 - ( $p0/3*(-$CG_y)**3 - $p1/4*(-$CG_y)**4 - $CG_y/3*(-$CG_y)**3 ) ;
-$I_O = $I_G + $m*$x1**2;
+$CG_x = $h/4;
+$CG_y = $r/pi;
+$CG_z = 0;
 
 $width = 2917/5;
 $height = 2523/5;
@@ -96,23 +89,18 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-Find the moment of inertia of the fridge being tipped by the dump truck about the ICZV labeled *O* in the figure, 
-[`x_1 = [$x1]`] [`m`] from the center of mass of the fridge. The fridge can be approximated as a cuboid with width, [`2d_1 = [$d1]`] [`m`], 
-height, [`d_2 = [$d2]`] [`m`] and depth, [`d_3 = [$d3]`] [`m`] with a linearly changing density along the height, given by [`\rho = [$p0]-[$p1]y`] [`kg/m^3`].  
-(y is zero at the base of the fridge and increases along the height of the fridge)
+Find the centroid of a half cone of radius [`r = [$r]`] [`cm`] and height [`h = [$h]`] [`cm`] in the coordinate system shown.
 
-Find the height of the center of mass ([`CG_y`]).  
-Find the mass moment of inertia about *O*.
+[@ image( "21-R-KIN-SS-58.png", width=>[$width], height=>[$height]) @]*
 
-[@ image( "21-R-KIN-SS-57.png", width=>[$width], height=>[$height]) @]*
-
-[`CG_y = `][_____]{"$CG_y"}[`m`]  
-[`I_O = `][_____]{"$I_O"}[`kgm^2`]
+[`CG_x = `][_____]{"$CG_x"}[`cm`]  
+[`CG_y = `][_____]{"$CG_z"}[`cm`]  
+[`CG_z = `][_____]{"$CG_z"}[`cm`]
 
 END_PGML
 
 BEGIN_PGML_SOLUTION
-[@ image( "21-R-KIN-SS-57.pdf", width=>[0], height=>[0]) @]*
+[@ image( "21-R-KIN-SS-58.pdf", width=>[0], height=>[0]) @]*
 END_PGML_SOLUTION
 
 ##############################################################
