@@ -110,11 +110,14 @@ BEGIN_PGML
 [@ image( "20-R-KIN-DK-27.png", width=>[$width], height=>[$height]) @]*
 
 Movers are trying to set up an art gallery. They attempt to drag a human-size statue of a soda can with 
-mass [`m = `] [`[$m]`] [`kg`] by tying a rope around it. Determine if the movers can drag the statue along
+mass [`[$m]`] [`kg`] by tying a rope around it. Determine if the movers can drag the statue along
 the floor without it tipping if the coefficients of static friction and kinetic friction are found to be [`\mu_s = `] [`[$mu]`]
-and [`\mu_k = `] [`[$muk]`], respectively. What is the maximum force the movers can apply without tipping the statue? The can
-has a height of [`h = `] [`[$h]`] [`m`] and the rope is tied [`[$y]`] [`m`] off the ground.
-Assume the statue to be a solid cylinder with radius [`r = `] [`[$r]`] [`m`] and constant density.  
+and [`\mu_k = `] [`[$muk]`], respectively.
+
+What is the maximum force the movers can apply without tipping the statue?
+
+Assume the statue is a solid cylinder of radius [`r = `][`[$r]`][`m`], height [`h = `][`[$h]`][`m`] and the rope is tied [`[$y]`] [`m`] off the ground.
+
 END_PGML
 
 BEGIN_TEXT
@@ -127,10 +130,12 @@ END_TEXT
 ANS( $mc->cmp() );
 
 BEGIN_PGML
-  
+
+
 [`F_{tip} =`] [____]{"$Ftip"} [`N`]  
   
-If the movers can apply the force required for the statue to slip, where is the maximum height they should tie the rope to safely drag the statue?    
+If the movers can apply the force required for the statue to slip, where is the maximum height they should tie the rope to safely drag the statue?
+ 
 [`y =`] [____]{"$newy"} [`m`]  
 
 

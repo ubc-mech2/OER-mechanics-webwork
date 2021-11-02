@@ -98,8 +98,8 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-5.png", width=>[$width], height=>[$height]) @]*
 
 A straight bar, [`3m`] in length, is pinned to the ceiling at point [`A`]. On one end there is a weight with a mass [`m =`] [`[$mass]`] [`kg`]
-and on the other end there is a spring with k value of [`[$k]`] [`N/m`]. Given that the bar is displaced a small angle \theta from equilibirum,
-what is the natural period of vibration? Negate the bar's weight.
+and on the other end there is a spring with k value of [`[$k]`] [`N/m`]. Given that the bar is displaced a small angle [`\theta`] from equilibrium,
+what is the natural period of vibration? Neglect the bar's weight.
 
 [`t =`] [____]{"$ansA"} [`s`]
 

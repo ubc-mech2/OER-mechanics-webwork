@@ -107,11 +107,11 @@ BEGIN_PGML
 [@ image( "20-R-KIN-DK-23.png", width=>[$width], height=>[$height]) @]*
 
 You were able to obtain a roll of toilet paper during quarantine and put it to good use. If the roll rests
-against a wall where its coefficient of friction is [`\mu_k =`][`[$mu]`] and you apply a force of [`[$F]`] [`N`]
-at an angle of [`[$theta]`][`^{\circ}`] tangent to the roll, determine the angular acceleration of the precious
+against a wall where its coefficient of friction is [`\mu_k=`][`[$mu]`] and you apply a force of [`[$F]`] [`N`]
+at an angle of [`\theta=`][`[$theta]^{\circ}`] tangent to the roll, determine the angular acceleration of the precious
 toilet paper.  
 Assume the roll can be treated as a cylinder with a mass of [`[$m]`] [`kg`], a width of [`11.5`] [`cm`], and a radius
-of [`[$rcm]`] [`cm`]. Point B is a vertical distance [`d =`][`[$dcm]`] [`cm`] from point A.
+of [`r=`][`[$rcm]`] [`cm`]. Point B is a vertical distance [`d =`][`[$dcm]`] [`cm`] from point A.
 
 [`\alpha =`] [____]{"$angaccel"} [`rad/s^2`]  
 
