@@ -116,7 +116,7 @@ and [`\mu_k = `] [`[$muk]`], respectively.
 
 What is the maximum force the movers can apply without tipping the statue?
 
-Assume the statue is a solid cylinder of radius [`r = `][`[$r]`][`m`], height [`h = `][`[$h]`][`m`] and the rope is tied [`[$y]`] [`m`] off the ground.
+Assume the statue is a solid cylinder of radius [`r = `][`[$r]`][`m`], height [`h = `][`[$h]`][`m`] and the rope is tied [`y = `][`[$y]`] [`m`] off the ground.
 
 END_PGML
 

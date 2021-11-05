@@ -31,7 +31,7 @@
 ## Author(David Kim)
 ## Date(Summer 2020)
 ## Difficulty(Intermediate)
-## KEYWORDS('Dynamics','rotation','toilet paper','kinetics','Newton','equations of motion','second law','intertia')
+## KEYWORDS('Dynamics','rotation','sign','kinetics','Newton','equations of motion','second law','intertia','angular acceleration','density')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.4')
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
@@ -77,43 +77,42 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale =0.35;
-$width = $imgScale*1959;
-$height = $imgScale*1626;
+$width = $imgScale*1603;
+$height = $imgScale*1291;
 
 
 #---- Random variables for this problem --------#
-
-$mu = random(0.15,0.25,0.01);
-$F = random(0.8,1.5,0.1);
-$theta = random(30,45,5);
-$thetarad = $theta*pi/180;
-$dcm = random(10,20,1);
-$d = $dcm/100;
-$m = random(0.2,0.3,0.01);
-$rcm = random(6,7.5,0.5);
-$r = $rcm/100;
+$m = random(0.5,2,0.1);
+$w = random(2,5,1);
+$h = random(1.5,2,0.1);
 
 #---- Formulas to compute answers --------------#
-$phi = atan($d/$r);
-$TAB = ($m*9.81+$F*sin($thetarad)-$mu*$F*cos($thetarad))/(sin($phi)-$mu*cos($phi));
-$NC = $TAB*cos($phi) - $F*cos($thetarad);
-$angaccel = ($mu*$NC*$r - $F*$r)/(0.5*$m*$r**2);
+$yc = $h/2;
+$xc = $w/2;
+
+$angaccel = -$m*9.81*$xc/(1/12*$m*($w**2+$h**2)+$m*($xc**2+$yc**2));
+$ax = $yc*$angaccel;
+$ay = $xc*$angaccel;
+
+$Fx = $m*$ax;
+$Fy = $m*$ay+$m*9.81;
 
 ########################################################;
 #PGML
 
 BEGIN_PGML	
 
-[@ image( "20-R-KIN-DK-23.png", width=>[$width], height=>[$height]) @]*
+[@ image( "20-R-KIN-DK-22A.png", width=>[$width], height=>[$height]) @]*
 
-You were able to obtain a roll of toilet paper during quarantine and put it to good use. If the roll rests
-against a wall where its coefficient of friction is [`\mu_k=`][`[$mu]`] and you apply a force of [`[$F]`] [`N`]
-at an angle of [`\theta=`][`[$theta]^{\circ}`] tangent to the roll, determine the angular acceleration of the precious
-toilet paper.  
-Assume the roll can be treated as a uniform solid cylinder with a mass of [`[$m]`] [`kg`], a width of [`11.5`] [`cm`], and a radius
-of [`r=`][`[$rcm]`] [`cm`]. Point B is a vertical distance [`d =`][`[$dcm]`] [`cm`] from point A.
+An advertisement can be modelled as a uniform plate of mass [`[$m]`] [`kg`].
+If the supporting wire at *B* suddenly snaps, what is the angular acceleration of the advertisement and the reaction
+forces at *A* at that instant? The sign has a width [`w = `] [`[$w]`] [`m`] and a height [`h = `] [`[$h]`] [`m`].
 
-[`\alpha =`] [____]{"$angaccel"} [`rad/s^2`]  
+[`\alpha =`] [____]{"$angaccel"} [`\boldsymbol{\hat{k}}`] [`rad/s^2`]  
+
+[`A_{x} =`] [____]{"$Fx"} [`\boldsymbol{\hat{\imath}}`] [`N`]  
+[`A_{y} =`] [____]{"$Fy"} [`\boldsymbol{\hat{\jmath}}`] [`N`]  
+
 
 END_PGML
 
@@ -121,7 +120,7 @@ BEGIN_PGML_SOLUTION
 
 Answers
 
-[@ image( "20-R-KIN-DK-23.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "20-R-KIN-DK-22A.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
