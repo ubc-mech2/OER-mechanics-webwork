@@ -10,9 +10,9 @@ import tarfile
 
 #using the following header for the .def file
 header = """setNumber=Chapter2_UBC_OER_Mechanics
-openDate = 1/7/00 at 6:00am
+openDate = 1/7/01 at 6:00am
 dueDate = 1/20/22 at 6:00am
-answerDate = 1/21/09 at 6:00
+answerDate = 1/21/23 at 6:00
 paperHeaderFile = defaultHeader
 screenHeaderFile = defaultHeader
 problemList =\n"""

@@ -1,0 +1,130 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Kinetic energy)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`Work and Energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$m   = random(5,10,1);		#[Mg]
+$V_1 = random(70,100,10);	#[km/h]
+$V_2 = $V_1+random(10,25,5);#[km/h]
+$ROC = random(10,30,5);		#[m/s]
+$w_1 = random(4,8,0.5);		#[deg/s]
+$w_2 = random(1,3,0.5);		#[deg/s]
+$K   = random(8,10,0.5);	#[m]
+$CG  = random(1,3,0.5);		#[m]
+
+#unit conversion
+$m_SI   = $m*10**3;		#[kg]
+$V_1_SI = $V_1/3.6;		#[m/s]
+$V_2_SI = $V_2/3.6;		#[m/s]
+$w_1_SI = $w_1*pi/180;	#[rad/s]
+$w_2_SI = $w_2*pi/180;	#[rad/s]
+
+#computation
+$I = $m_SI*$K**2;
+
+$KE_1 = 0.5*$m_SI*($V_1_SI-$w_1_SI*$CG)**2+0.5*$I*$w_1_SI**2;
+$KE_2 = 0.5*$m_SI*($V_2_SI**2 + $ROC**2)+0.5*$I*$w_2_SI**2;
+
+$width = 713;
+$height = 343;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.004,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+During its takeoff roll, a [`[$m]`][`\times 10^3 kg`] airplane rotates at a speed [`V_1`] of [`[$V_1]`][`km/h`]. This rotation occurs 
+about the airplane's main landing gear at a rate of [`[$w_1]`][`deg/s`]. Shortly after liftoff, the aircraft speeds up to 
+a groundspeed of [`[$V_2]`][`km/h`], at a rate of climb of [`[$ROC]`][`m/s`], with a rotation rate of [`[$w_2]`][`deg/s`]. 
+Find the kinetic energy in both flight phases.
+
+The radius of gyration of this airplane about the center of gravity is [`[$K]`][`m`], and the distance from the center 
+of gravity to the main landing gear is [`[$CG]`][`m`].
+
+Assume the kinetic energy of all subassemblies of the aircraft (propeller, wheels, etc.) remain constant.
+
+Give your answer correct to 4 significant figures or better.
+
+[@ image( "21-R-WE-SS-29.png", width=>[$width], height=>[$height]) @]*
+
+[`KE_\text{takeoff phase} = `][_____]{"$KE_1"} [`J`]  
+[`KE_\text{climb phase}= `][_____]{"$KE_2"} [`J`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-WE-SS-29.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

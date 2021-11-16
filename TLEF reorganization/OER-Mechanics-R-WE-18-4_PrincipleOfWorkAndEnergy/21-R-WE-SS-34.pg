@@ -1,0 +1,109 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`Kinematics`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$r = random(8,12,1);		#[cm]
+$k = random(150,500,25); 	#[N/rad]
+$m = random(70,150,10);		#[g]
+$I = random(1,5,0.5);		#[g m^2]
+$work = ceil(random(0.01,0.3)*0.5*$k*pi**2);	#[J]
+
+#computation
+$w = ((0.5*$k*pi**2 - $work)/(0.5*$I/1000))**0.5;
+$v = $w*$r/100;
+
+
+$width = 557;
+$height = 311;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+A mouse trap uses a torsional spring ([`k= [$k]`] [`N/rad`]) to store energy. The spring is wound 
+such that it is undeformed when the jaw of the trap sits on the wooden base. The jaw 
+has a mass of [`[$m]`] [`kg`], a length of [`[$r]`] [`cm`] and a moment of inertia of [`[$I]`] [`g\cdot m^2`] 
+about the hinge. What is the velocity with which the tip of the jaw strike the wood when it is triggered if 
+[`[$work]`] [`J`] of energy is used against friction in the hinge?
+
+[@ image( "21-R-WE-SS-34.png", width=>[$width], height=>[$height]) @]*
+
+[`v = `][_____]{"$v"} [`m/s`]  
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-WE-SS-34.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

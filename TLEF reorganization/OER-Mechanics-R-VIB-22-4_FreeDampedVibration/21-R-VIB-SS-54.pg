@@ -1,0 +1,183 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free damped)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## Difficulty(Beginner)
+## KEYWORDS(`Vibrations`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section ?')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+
+#######################################################
+#Setup
+
+Context("Numeric");
+
+Context("Numeric");
+#given
+$mA = random(1,10,1);
+$mB = random(1,10,1);
+$mC = random(1,10,1);
+
+$kA1 = random(1,3,1);
+$kA2 = random(1,4,1);
+$kB1 = random(1,5,1);
+$kB2 = random(1,5,1);
+$kC2 = random(1,10,1);
+$kC3 = random(1,10,1);
+$kC1 = $kC2+$kC3;
+
+$cA1 = random(2,20,2);
+$cA2 = random(2,40,2);
+$cB1 = random(1,12,1);
+$cB2 = random(1,12,1);
+$cC1 = random(1,10,1);
+$cC2 = $cC1;
+$cC3 = random(1,10,1);
+
+#computation
+$kA = 1/(1/$kA1 + 1/$kA2);
+$cA = 1/(1/$cA1 + 1/$cA2);
+$c_critA = 2*$mA*($kA/$mA)**0.5;
+if($cA > $c_critA){
+	$ansA = 'Overdamped';
+}elsif($cA < $c_critA){
+	$ansA = 'Underdamped';
+}else{
+	$ansA = 'Critically Damped';
+}
+$popupA = PopUp(["?", 'Underdamped', 'Critically Damped', 'Overdamped'], $ansA);
+
+$kB = $kB1 + $kB2;
+$cB = $cB1 + $cB2;
+$c_critB = 2*$mB*($kB/$mB)**0.5;
+if($cB > $c_critB){
+	$ansB = 'Overdamped';
+}elsif($cB < $c_critB){
+	$ansB = 'Underdamped';
+}else{
+	$ansB = 'Critically Damped';
+}
+$popupB = PopUp(["?", 'Underdamped', 'Critically Damped', 'Overdamped'], $ansB);
+
+$kC = $kC1/2;
+$cC = $cC1/2+$cC3;
+$c_critC = 2*$mC*($kC/$mC)**0.5;
+if($cC > $c_critC){
+	$ansC = 'Overdamped';
+}elsif($cC < $c_critC){
+	$ansC = 'Underdamped';
+}else{
+	$ansC = 'Critically Damped';
+}
+$popupC = PopUp(["?", 'Underdamped', 'Critically Damped', 'Overdamped'], $ansC);
+
+$width = 1460;
+$height = 385;
+
+
+#set tolerance
+Context()->flags->set(
+tolerance=>0.01,
+tolType=>'relative');
+
+########################################################;
+#PGML
+
+BEGIN_PGML
+Find the effective spring constant and damping coefficient for each case, and determine if the system is underdamped, critically damped or overdamped.
+
+*A:*  
+[`m_A = [$mA]`] [`kg`]  
+[`k_{A1} = [$kA1]`] [`N/m`]  
+[`k_{A2} = [$kA2]`] [`N/m`]  
+[`c_{A1} = [$cA1]`] [`Ns/m`]  
+[`c_{A2} = [$cA2]`] [`Ns/m`]
+
+*B:*  
+[`m_B = [$mB]`] [`kg`]  
+[`k_{B1} = [$kB1]`] [`N/m`]  
+[`k_{B2} = [$kB2]`] [`N/m`]  
+[`c_{B1} = [$cB1]`] [`Ns/m`]  
+[`c_{B2} = [$cB2]`] [`Ns/m`]  
+
+*C:*  
+[`m_C = [$mC]`] [`kg`]  
+[`k_{C1} = [$kC1]`] [`N/m`]  
+[`k_{C2} = [$kC2]`] [`N/m`]  
+[`k_{C3} = [$kC3]`] [`N/m`]  
+[`c_{C1} = [$cC1]`] [`Ns/m`]  
+[`c_{C2} = [$cC2]`] [`Ns/m`]  
+[`c_{C3} = [$cC3]`] [`Ns/m`]  
+
+[@ image( "21-R-VIB-SS-54.png", width=>[$width], height=>[$height]) @]*
+
+[`k_A= `][_____]{"$kA"} [`N/m`]  
+[`c_A= `][_____]{"$cA"} [`Ns/m`]  
+System A is [_]{$popupA}
+
+[`k_B= `][_____]{"$kB"} [`N/m`]  
+[`c_B= `][_____]{"$cB"} [`Ns/m`]  
+System B is [_]{$popupB}
+
+[`k_C= `][_____]{"$kC"} [`N/m`]  
+[`c_C= `][_____]{"$cC"} [`Ns/m`]  
+System C is [_]{$popupC}
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-VIB-SS-54.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
