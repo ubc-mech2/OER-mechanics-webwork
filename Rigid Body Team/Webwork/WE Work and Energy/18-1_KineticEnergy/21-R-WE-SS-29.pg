@@ -112,7 +112,7 @@ of gravity is [`[$CG]`][`m`] vertically above the main landing gear, find the ki
 
 Neglect the kinetic energy of all other subassemblies of the aircraft (propeller, wheels, etc.).
 
-Give your answer correct to 4 significant figures or better.
+*Give your answer correct to 4 significant figures or better.*
 
 [@ image( "21-R-WE-SS-29.png", width=>[$width], height=>[$height]) @]*
 
