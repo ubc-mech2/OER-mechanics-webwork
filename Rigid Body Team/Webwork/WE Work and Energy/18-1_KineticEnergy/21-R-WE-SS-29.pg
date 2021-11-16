@@ -104,9 +104,8 @@ tolType=>'relative');
 BEGIN_PGML
 During takeoff, a [`[$m]`][`\times 10^3 kg`] airplane is travelling at a speed [`V_1`] of [`[$V_1]`][`km/h`] 
 (i.e. this is the velocity at the airplane's main landing gear *M*). At this speed it begins to pitch up at a 
-rate of [`[$w_1]`][`deg/s`]. This rotation occurs about *M*.  
-Shortly after liftoff, the aircraft speeds up to a groundspeed of [`[$V_2]`][`km/h`], at a rate of climb of 
-[`[$ROC]`][`m/s`], and a rotation rate of [`[$w_2]`][`deg/s`].
+rate of [`[$w_1]`][`deg/s`]. This rotation occurs about *M*. Shortly after liftoff, the aircraft speeds up to 
+a groundspeed of [`[$V_2]`][`km/h`] at a rate of climb of [`[$ROC]`][`m/s`], and a rotation rate of [`[$w_2]`][`deg/s`].
 
 Given the radius of gyration of this airplane about the center of gravity is [`[$K]`][`m`], and that the center 
 of gravity is [`[$CG]`][`m`] vertically above the main landing gear, find the kinetic energy in both flight phases.
