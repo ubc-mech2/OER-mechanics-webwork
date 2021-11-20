@@ -102,17 +102,17 @@ tolType=>'relative');
 #
 
 BEGIN_PGML
-During its takeoff roll, a [`[$m]`][`\times 10^3 kg`] airplane rotates at a speed [`V_1`] of [`[$V_1]`][`km/h`]. This rotation occurs 
-about the airplane's main landing gear at a rate of [`[$w_1]`][`deg/s`]. Shortly after liftoff, the aircraft speeds up to 
-a groundspeed of [`[$V_2]`][`km/h`], at a rate of climb of [`[$ROC]`][`m/s`], with a rotation rate of [`[$w_2]`][`deg/s`]. 
-Find the kinetic energy in both flight phases.
+During takeoff, a [`[$m]`][`\times 10^3 kg`] airplane is travelling at a speed [`V_1`] of [`[$V_1]`][`km/h`] 
+(i.e. this is the velocity at the airplane's main landing gear *M*). At this speed it begins to pitch up at a 
+rate of [`[$w_1]`][`deg/s`]. This rotation occurs about *M*. Shortly after liftoff, the aircraft speeds up to 
+a groundspeed of [`[$V_2]`][`km/h`] at a rate of climb of [`[$ROC]`][`m/s`], and a rotation rate of [`[$w_2]`][`deg/s`].
 
-The radius of gyration of this airplane about the center of gravity is [`[$K]`][`m`], and the distance from the center 
-of gravity to the main landing gear is [`[$CG]`][`m`].
+Given the radius of gyration of this airplane about the center of gravity is [`[$K]`][`m`], and that the center 
+of gravity is [`[$CG]`][`m`] vertically above the main landing gear, find the kinetic energy in both flight phases.
 
-Assume the kinetic energy of all subassemblies of the aircraft (propeller, wheels, etc.) remain constant.
+Neglect the kinetic energy of all other subassemblies of the aircraft (propeller, wheels, etc.).
 
-Give your answer correct to 4 significant figures or better.
+*Give your answer correct to 4 significant figures or better.*
 
 [@ image( "21-R-WE-SS-29.png", width=>[$width], height=>[$height]) @]*
 
