@@ -95,11 +95,11 @@ $m  = $w*$t*($p0*$h-($p0-$p1)/$h/2*$h**2);
 $moment = ($p0/2*$h**2 - ($p0-$p1)/$h/3*$h**3)*$w*$t;
 $CG_y = $moment / $m;
 $I = (($p0*($h-$CG_y)**3/3-($p0-$p1)/4/$h*($h-$CG_y)**4-($p0-$p1)/3/$h*$CG_y*($h-$CG_y)**3)-($p0*(-$CG_y)**3/3-($p0-$p1)/4/$h*(-$CG_y)**4-($p0-$p1)/3/$h*$CG_y*(-$CG_y)**3))*$w*$t;
-$I = $I + $m*($h/3)**2;
+$I = $I + $m*($CG_y)**2;
 
 $alpha = -$h/2*$F / $I;
 $a_G = $alpha * $CG_y;
-$Fz = $m*$a_G;
+$Fz = $m*$a_G + $F;
 
 ########################################################;
 #PGML
@@ -117,7 +117,7 @@ instant it begins to tip?
 
 The sign has width [`w = `] [`[$w]`] [`m`], height [`h = `] [`[$h]`] [`m`] and thickness [`[$t]`] [`m`].
 
-[`\alpha =`] [____]{"$angaccel"} [`\boldsymbol{\hat{i}}`] [`rad/s^2`]  
+[`\alpha =`] [____]{"$angaccel"} [`\boldsymbol{\hat{imath}}`] [`rad/s^2`]  
 
 [`F_{x} =`] [____]{"0"} [`\boldsymbol{\hat{\imath}}`] [`N`]  
 [`F_{y} =`] [____]{"0"} [`\boldsymbol{\hat{\jmath}}`] [`N`]  
