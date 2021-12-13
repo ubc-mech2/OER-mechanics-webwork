@@ -112,23 +112,24 @@ BEGIN_PGML
 
 [@ image( "20-R-WE-DK-22.png", width=>[$width], height=>[$height]) @]*
 
-What is the work done by all forces to drag a box up an incline of [`[$theta]`][`^{\circ}`]? What is the work done by all forces to 
-roll a similar-sized cylinder up the same incline? Take the height of the box and the diameter of the cylinder to be 
-equivalent at [`[$h]`] [`m`]. Both have a mass of [`[$m]`] [`kg`]. The cylinder rolls without slipping and the box does not tip. Take the
-coefficients of friction to be [`\mu_s = `] [`[$mus]`] and [`\mu_k = `] [`[$muk]`] respectively. In both scenarios, a force of [`[$F]`] [`N`]
-is applied at the object's center of gravity and the objects travel a distance of [`[$d]`] [`m`] up the incline.
+What is the work done by all the forces acting on a box when dragging it [`[$d]`] [`m`] up an incline of [`[$theta]`][`^{\circ}`]? 
+Find the same information for a cylinder being dragged up the same incline. In both scenarios, a force of [`[$F]`] [`N`] is applied at the object's center of gravity.
 
-Box    
-[`U_N = `] [____]{"$boxUN"} [`J`]  
-[`U_G = `] [____]{"$boxUG"} [`J`]  
-[`U_P = `] [____]{"$boxUF"} [`J`]  
-[`U_{F} = `] [____]{"$boxUFF"} [`J`]  
+The height of the box and the diameter of the cylinder are both [`[$h]`] [`m`], and they each weigh [`[$m]`] [`kg`]. Take the
+coefficient of friction to be [`\mu_s = `] [`[$mus]`] and [`\mu_k = `] [`[$muk]`].  
+Assume that the box does not tip and the cylinder rolls without slipping.
+
+Box:  
+[`U_\text{Normal} = `] [____]{"$boxUN"} [`J`]  
+[`U_\text{Weight} = `] [____]{"$boxUG"} [`J`]  
+[`U_\text{Pulling force} = `] [____]{"$boxUF"} [`J`]  
+[`U_\text{Friction} = `] [____]{"$boxUFF"} [`J`]  
   
-Cylinder  
-[`U_N = `] [____]{"$cylUN"} [`J`]  
-[`U_G = `] [____]{"$cylUG"} [`J`]  
-[`U_P = `] [____]{"$cylUF"} [`J`]  
-[`U_{F} = `] [____]{"$cylUFF"} [`J`]  
+Cylinder:  
+[`U_\text{Normal} = `] [____]{"$cylUN"} [`J`]  
+[`U_\text{Weight} = `] [____]{"$cylUG"} [`J`]  
+[`U_\text{Pulling force} = `] [____]{"$cylUF"} [`J`]  
+[`U_\text{Friction} = `] [____]{"$cylUFF"} [`J`]  
 
 
 END_PGML
