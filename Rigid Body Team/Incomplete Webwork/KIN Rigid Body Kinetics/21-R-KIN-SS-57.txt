@@ -1,0 +1,8 @@
+This problem is incorrect. The moment of inertia integral is wrong.
+Normally, the integral is I=integral(r^2)dm
+
+we can't replace r with y, since the integral bounds aren't as simple with a rectangle.
+
+The problem can be fixed using a constant density 
+or using a non constant density in the depth direction
+(or giving the student a radius of gyration)
