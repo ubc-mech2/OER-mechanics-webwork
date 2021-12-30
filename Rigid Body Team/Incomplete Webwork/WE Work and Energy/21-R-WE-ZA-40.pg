@@ -1,0 +1,117 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Potential energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$m = random(30,50,0.5);
+$k = random(10,20,0.5);
+$x = random(1,1.5,0.05);
+$h = random(0.5,1,0.05);
+
+#computation for numerical answer
+$g = 9.81;
+$a = 1/2*$k;
+$b = ($m*$g)-($m*$g/2)-($k*$h**2);
+$c = ($m*$g*$h/2)-($m*$g*$h)+($k/2*$h**2);
+$lmin = (-$b+sqrt($b**2-(4*$a*$c)))/(2*$a);
+$V2 = $m*$g*( $lmin + ($h-$lmin)/2 );
+$b2 = ( ($m*$g/2)-($m*$g)-($h*$k) );
+$c2 = ($V2+($h**2*$k/2)-(($lmin-$h)**2*$k/2)-($m*$g*$h/2));
+$l2 = (-$b2+sqrt($b2**2-(4*$a*$c2)))/(2*$a);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*943*2;
+$height = $resolution*741*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-40.png", width=>[$width], height=>[$height]) @]*
+
+A rod of mass [`m=[$m]\:kg`], and length [`x=[$x]\:m`] pinned at a height [`h=[$h]\:m`] above the ground is attached to a spring with a constant
+[`k=[$k]\:N/m`]. If the rod is released from rest from the position shown, find the length of the spring after the end of the rod
+has reached the smallest height, and bounced back up. The spring starts at its unstretched length [`l_{unstretched}=[$h]\:m`].
+
+[`l_{spring} = `][_____]{"$l2"}[`m`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-40.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,124 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Kinetic energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$md = random(0.5,1,0.1);
+$mb = random(1,5,0.5);
+$k = random(10,20,0.1);
+$r1 = random(0.5,0.95,0.05);
+$r2 = random(1,1.5,0.05);
+$v = random(1,5,0.5);
+$F = random(50,70,0.5);
+$theta = random(10,15,0.1);
+
+#computation for numerical answer
+$Idisk = 1/2*$md*$r2**2;
+$T2 = (1/2*$Idisk*($v/$r2)**2) + (1/2*$mb*$v**2);
+$Uk = $k/4*$r2**2;
+$thetar = $theta*pi/180;
+$V = $mb*9.81*$r1;
+$Uf1 = $r1*cos($thetar);
+$Uf2 = $r1*cos($thetar)*$F/2;
+$a = -$Uk+$Uf2;
+$b = -$V+$Uf1;
+$phi = ((-$b)+sqrt($b**2-(4*$a*-$T2)))/(2*$a);
+$m = $T2/(9.81*$phi*$r1);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*868*2;
+$height = $resolution*802*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-38.png", width=>[$width], height=>[$height]) @]*
+
+A disk of mass [`m_{disk}=[$md]\:kg`], outer radius [`r_o=[$r2]\:m`], and inner radius [`r_i=[$r1]\:m`] is attached to a block of mass [`m=[$mb]\:kg`]
+and two springs in series each with a constant of [`k=[$k]\:N/m`] starting from their unstretched length. A force of [`1+[$F]\phi\:N`] is applied to a cable
+wound around its inner radius at an angle of [`\theta=[$theta]\:^{\circ}`] with the horizontal, where [`\phi`] is the angle turned by the disk. Find the mass of a block wound around the inner
+radius that would provide the disk with the same kinetic energy after rotating it the same angle, if the final velocity is [`v_f=[$v]\:m/s`] and it is released from rest.
+
+[`m = `][_____]{"$m"}[`kg`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-38.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,113 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Vibrations)
+## DBchapter(One DOF vibration: harmonic excitation)
+## DBsection(Undamped)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`dynamics`,`vibrations`,`forces`,`addition`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$m1 = random(1,3,0.5);
+$w01 = random(1,3,0.1);
+$w02 = random(1.5,4,0.1);
+$B2 = random(3,5,0.5);
+$a = random(0.3,0.6,0.1);
+$b = random(0.7,0.9,0.05);
+
+#computation for numerical answer
+$k = ($w01**2*$m1)/2;
+$m2 = $k*$b**2/($w02**2*$a**2);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*2*943;
+$height = $resolution*2*700;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-VIB-ZA-53.png", width=>[$width], height=>[$height]) @]*
+
+System [`1`] has a block of mass [`m_1=[$m1]\:kg`], attached to three springs with the same spring constant. The floor moves
+with a harmonic frequency of [`{\omega}_1=[$w01]\:rad/s`]. System [`2`] has a block attached to a spring by links pinned at [`O`]. The motor
+applies a displacement of [`{\delta}=[$B2]sin([$w02]t)\:mm`]. What mass does the block in system [`2`] have to be for both systems
+to reach resonance, if all [`k`] values are the same?
+
+[`m_2 = `][_____]{"$m2"}[`kg`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-VIB-ZA-53.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

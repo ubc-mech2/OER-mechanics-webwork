@@ -1,0 +1,117 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Power and Efficiency)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Advanced)
+## KEYWORDS(`Power`,`dynamics`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 14, section 4')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$m1 = random(1,5,0.1);
+$m2 = random(2,6,0.1);
+$sd = random(1,3,0.1);
+$sc = random(2,5,0.1);
+$va = random(4,6,0.5);
+$aa = random(1,3,0.5);
+$Fm = random(50,70,0.1);
+
+#computation for numerical answer
+$ab = ($Fm - ($m2*9.81))/$m2;
+$r = sqrt($sc**2+$sd**2);
+$ac = -2*$Fm*$sc/$r/$m1;
+$vc = (( ( (($ab*$r)+($r*$aa))/-2 ) - ($sc*$ac) )/(1-($sc/$r)**2) )**0.5;
+$vb = -$va-(2*$sc*$vc/$r);
+$P = $Fm*$vb;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*2*904;
+$height = $resolution*2*860;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-46.png", width=>[$width], height=>[$height]) @]*
+
+The motor [`M`] is attached to two blocks of mass [`m_1=[$m1]\:kg`] and [`m_2=[$m2]\:kg`] and applies a force of [`F_M=[$Fm]\:N`]
+to the cable. If [`s_C=[$sc]\:m`] and [`s_D=[$sd]\:m`], find the power required to move block [`2`] when [`v_A=[$va]\:m/s`] and [`a_A=[$aa]\:m/s^2`].
+Neglect the mass of the cable and pulleys.
+
+[`P = `][_____]{"$P"}[`W`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-46.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

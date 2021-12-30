@@ -1,0 +1,125 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Vibrations)
+## DBchapter(One DOF vibration: harmonic excitation)
+## DBsection(Undamped)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`statics`,`trusses`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 6, section 1')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$FA = random(50,100,1);
+$FB = random(75,150,1);
+$theta = random(0,60,1);
+$Fmax = random(50,75,1);
+
+#computation for numerical answer
+$RY = $FB*sin($theta*pi/180);
+$RX = $FA-$FB*cos($theta*pi/180);
+
+if(abs($RX)<=$Fmax){
+if(abs($RY)<=$Fmax){
+$ans = 1;
+}
+else{
+$ans = 2;
+}
+}
+else{
+$ans = 3;
+}
+
+$popup = PopUp(["?","No support required","Roller","Pin"],$ans);
+
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*2*891;
+$height = $resolution*2*733;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-S-6-ZA-55.png", width=>[$width], height=>[$height]) @]*
+
+The truss structure shown has a pin at point [`C`] and is acted on by two forces [`F_A`] and [`F_B`] at points [`A`] and [`B`] respectively.
+If [`F_A=[$FA]\:N`], [`F_B=[$FB]\:N`], and [`\theta=[$theta]\:^{\circ}`], find the required type of support at point [`D`] without over constraining the system, assuming the maximum force pin
+[`C`] can handle without deforming is [`F_{max}=[$Fmax]\:N`] in each direction.
+
+The type of support required is [____]{$popup}.
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-S-6-ZA-55.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

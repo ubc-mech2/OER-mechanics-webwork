@@ -1,0 +1,115 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Kinetic energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$mr = random(1,10,0.5);
+$mb = random(20,30,0.1);
+$ka = random(5,15,0.1);
+$r2 = random(0.5,1.5,0.1);
+$v = random(0.5,1,0.05);
+
+#computation for numerical answer
+$T2 = (1/4*$mr*$v**2) + (1/2*$mb*$v**2);
+$Uk = (1/2*$r2**2*$ka);
+$b = $mb*9.81*$r2;
+$theta = [-$b+sqrt($b**2-(4*$Uk*$T2))]/(2*$Uk);
+$M = $T2/$theta;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*589*2;
+$height = $resolution*939*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-37.png", width=>[$width], height=>[$height]) @]*
+
+A disk of radius [`r=[$r2]\:m`] and mass [`m_{disk}=[$mr]\:kg`] is attached to a block of mass [`m_{block}=[$mb]\:kg`] connected to a spring
+with a constant of [`k=[$ka]\:N/m`] that starts at its unstretched length. Find the magnitude of moment applied to the
+disk that would provide the same kinetic energy to the disk without anything attached to it if it is released from rest,
+after the block reaches a velocity of [`v_f=[$v]\:m/s`]. (Assume the smallest possible distance travelled by the block.)
+
+[`M = `][_____]{"$M"}[`N{\cdot}m`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-37.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
