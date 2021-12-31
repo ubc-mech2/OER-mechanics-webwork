@@ -78,7 +78,7 @@ $Ib = $mb*$kb**2;
 $V = $m*9.81*$h;
 $s = $h*($r2/$r1)**2;
 $Uk = 1/2*$k*$s**2;
-$omega = sqrt [ ($V-$Uk)*2/( ($mb*$r1**2) + $Ia + ($Ib*($r2/$r1)**2) ) ];
+$omega = sqrt ( ($V-$Uk)*2/( ($mb*$r1**2) + $Ia + ($Ib*($r2/$r1)**2) ) );
 $T = 1/2*$Ib*($omega*$r2/$r1)**2;
 
 #image settings
