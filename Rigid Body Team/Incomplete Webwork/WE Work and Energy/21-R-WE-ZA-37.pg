@@ -72,7 +72,7 @@ $v = random(0.5,1,0.05);
 $T2 = (1/4*$mr*$v**2) + (1/2*$mb*$v**2);
 $Uk = (1/2*$r2**2*$ka);
 $b = $mb*9.81*$r2;
-$theta = [-$b+sqrt($b**2-(4*$Uk*$T2))]/(2*$Uk);
+$theta = (-$b+sqrt($b**2-(4*$Uk*$T2)))/(2*$Uk);
 $M = $T2/$theta;
 
 #image settings
