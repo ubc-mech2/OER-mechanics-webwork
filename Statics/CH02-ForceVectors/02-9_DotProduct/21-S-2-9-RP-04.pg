@@ -91,7 +91,7 @@ $width = $imgScale * 1490;
 #---- Random variables for this problem --------#
 $F_1 = random(700, 800, 50);
 $F_2 = random(600, 700, 50);
-$F_3 = random(1100, 1200, 50);
+$F_3 = random(1250, 1350, 50);
 $thetaDeg = random(25, 35, 5);
 
 #---- Formulas to compute answers --------------#
