@@ -1,0 +1,128 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinematics','angular velocity',)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('5.11')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.4')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.8;
+
+$height = $imgScale * 447;
+
+$width = $imgScale * 560;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$v = random(0.5,2,0.5);
+$Rball = random(5,20,5);
+$d = random(0.5,1,0.5);
+$Rrock = $Rball*random(0.25,0.75,0.25);
+$mball = random(0.1,0.5,0.1);
+$mrock = random(1,4,1);
+
+#---- Formulas to compute answers --------------#
+$Iball = (2/5)*$mball*(($Rball+$d)**2-$Rball**2);
+$Irock = (2/5)*$mrock*$Rrock**2+$mrock*($Rball-$Rrock)**2;
+$I = $Iball+$Irock;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-KIN-TW-8.png", width=>[$width], height=>[$height]) @]*
+
+Julie is taking her pet rock, Rocko, for a walk. Rocko is safely fastened to the side of a spherical ball with inner radius [`R=[$Rball]\ cm`] and thickness [`d=[$d]\ cm`]. If the ball has a mass of [`[$mball]\ kg`] and rotates about its center, what is the moment of inertia of the ball-rock system? Assume the rock is perfectly spherical with a mass of [`[$mrock]\ kg`] and a radius of [`[$Rrock]\ cm`].
+
+[`I_{ball}=`][___]{"$Iball"} [`\times 10^{-4}\ kg\cdot m^2`]
+
+[`I_{rock}=`][___]{"$Irock"} [`\times 10^{-4}\ kg\cdot m^2`]
+
+[`I_{total}=`][___]{"$I"} [`\times 10^{-4}\ kg\cdot m^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-KIN-TW-8.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
