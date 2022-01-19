@@ -1,0 +1,133 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinematics','pure rotation','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('16.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.3')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.015,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.33;
+
+$height = $imgScale * 1061;
+
+$width = $imgScale * 1440;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$revs = random(20,25,30);	#[rev]
+$w_initial = random(2, 4, 6);	#[rad/s]
+$w_final = random(28, 32, 36);	#[rad/s]
+
+
+#---- Formulas to compute answers --------------#
+$revsRadians = $revs*2*pi;
+$alpha = ($w_final**2-$w_initial**2)/(2*$revsRadians);	#[rad/s^2]
+$time = ($w_final-$w_initial)/$alpha;			#[s]
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+Aliens are invading the Earth. They approached so sneakily that no defenses could be put in place ahead of time. However, all hope is not lost. You
+can save the planet by deploying the Intergalactic Space Shield. To do so, you must turn a crank connected to a gear. You can grab the gear when it
+has an initial displacement of [`0\ rad`] from the horizontal and an initial angular velocity of [`\vec{\omega} = [$w_initial]\ \hat{k}`] [`rad/s`].
+You turn the gear with constant angular acceleration, and after [`[$revs]`] revolutions, it reaches a final angular velocity 
+of [`\vec{\omega} = [$w_final]\ \hat{k}`] [`rad/s`] and the Shield has been deployed. Find the constant acceleration [`\vec{\alpha}_c`] needed and the amount of time [`t`] required for it
+to reach its final angular velocity.
+
+
+[@ image( "22-R-KM-JL-01.png", width=>[$width], height=>[$height]) @]*
+
+
+[`\vec{\alpha}_c = `][_____]{"$alpha"} [`\hat{k}\ rad/s^2`] 
+
+[`t = `][_____]{"$time"} [`s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KM-JL-01.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
