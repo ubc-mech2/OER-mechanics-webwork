@@ -102,9 +102,9 @@ BEGIN_PGML
 
 [@ image( "22-R-KM-TW-2.png", width=>[$width], height=>[$height]) @]*
 
-The fire truck is in the process of raising its ladder. It is able to increase the angle at a rate of [`[$angVel]\ \textrm{rad/s}`]. If the combined length of [`d_1`] and [`d_2`] is [`[$L]\ \textrm{m}`], what is the rate at which the height of the ladder at point [`A`] is increasing when [`\theta=[$ang]^\circ`]?
+The fire truck is in the process of raising its ladder. It is able to lift the ladder with a constant angular velocity of [`\omega=[$angVel]\ \textrm{rad/s}`]. If the combined length of [`d_1`] and [`d_2`] is [`[$L]\ \textrm{m}`] and the ladder starts with an initial angle of [`0^\circ`], what is the rate at which the height of the ladder at point [`A`] is increasing, with respect to the ground, when [`\theta=[$ang]^\circ`]?
 
-[`\vec{v}_{\textrm{up}}=`][____]{$v} [`\hat{j}`] [`\textrm{m/s}`]
+[`\vec{v}_{y}=`][____]{$v} [`\hat{j}`] [`\textrm{m/s}`]
 
 
 END_PGML
