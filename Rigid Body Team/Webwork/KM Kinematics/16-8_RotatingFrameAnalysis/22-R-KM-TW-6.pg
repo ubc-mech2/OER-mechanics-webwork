@@ -107,27 +107,27 @@ BEGIN_PGML
 
 [@ image( "22-R-KM-TW-6.png", width=>[$width], height=>[$height]) @]*
 
-Two ants, Anthony and Antonio, have crawled on to the blades of a helicopter. The two ants start at the center at the point [`C`]. Anthony, being a brave ant crawls from [`C`] along the blade to the point [`B`] at a constant velocity of [`[$vBC]\ m/s`]. Once he is halfway along the [`[$L]\ m`] long blade, the helicopter turns on and the blades begin to rotate with an angular acceleration of [`[$angAcc]\ rad/s^2`] counterclockwise. Despite this, Anthony continues to crawl all the way to point [`B`].
+Anthony the ant has crawled on to the blades of a helicopter. He starts at the center at the point [`C`] and crawls from [`C`] along the blade to the point [`B`] at a constant velocity of [`[$vBC]\ m/s`]. Once he is halfway along the [`[$L]\ m`] long blade, the helicopter blades begin to rotate with a constant angular acceleration of [`[$angAcc]\ rad/s^2`] counterclockwise. Despite this, Anthony continues to crawl all the way to point [`B`].
 
-Assuming that Anthony manages to stay on the helicopter blade the entire time, what is his velocity and acceleration once he reaches point [`B`]? _(express your answer in terms of the rotating coordinate system)_
+Assuming that Anthony manages to stay on the helicopter blade the entire time and the helicopter body stays stationary, what is his velocity and acceleration once he reaches point [`B`]? _(express your answer in terms of the rotating coordinate system)_
 
 [`\vec{v}_C=`][___]{"0"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m/s`]
 
 [`\vec{a}_C=`][___]{"0"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m/s^2`]
 
-[`\vec{v}_{B/C}=`][___]{"$vB"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m/s`]
+[`\vec{v}_{ant/C}=`][___]{"$vBC"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m/s`]
 
-[`\vec{a}_{B/C}=`][___]{"0"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m/s^2`]
+[`\vec{a}_{ant/C}=`][___]{"0"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m/s^2`]
 
 [`\vec{\Omega}=`][___]{"$angVel"} [`\hat{k}\ rad/s`]
 
 [`\vec{\dot{\Omega}}=`][___]{"$angAcc"} [`\hat{k}\ rad/s^2`]
 
-[`\vec{r}_{B/C}=`][___]{"$L"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m`]
+[`\vec{r}_{ant/C}=`][___]{"$L"} [`\hat{i}\ +`] [___]{"0"} [`\hat{j}\ m`]
 
-[`\vec{v}_B=`][___]{"$vBi"} [`\hat{i}\ +`] [___]{"$vBj"} [`\hat{j}\ m/s`]
+[`\vec{v}_{ant}=`][___]{"$vBi"} [`\hat{i}\ +`] [___]{"$vBj"} [`\hat{j}\ m/s`]
 
-[`\vec{a}_B=`][___]{"$aBi"} [`\hat{i}\ +`] [___]{"$aBj"} [`\hat{j}\ m/s^2`]
+[`\vec{a}_{ant}=`][___]{"$aBi"} [`\hat{i}\ +`] [___]{"$aBj"} [`\hat{j}\ m/s^2`]
 
 END_PGML
 
