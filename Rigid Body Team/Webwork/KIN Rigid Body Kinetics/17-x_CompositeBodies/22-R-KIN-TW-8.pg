@@ -110,7 +110,7 @@ BEGIN_PGML
 
 [@ image( "22-R-KIN-TW-8.png", width=>[$width], height=>[$height]) @]*
 
-Julie is taking her pet rock, Rocko, for a walk. Rocko is safely fastened to the side of a hollow cylinder with inner radius [`R=[$Rcyl]\ cm`], thickness [`d=[$d]\ cm`], and length [`[$L]\ cm`]. If the cylinder has a density of [`\rho=[$density]\ kg/m^3`], what is the moment of inertia of the ball-rock system about the center of the cylinder? Assume the rock is perfectly spherical with a mass of [`[$mrock]\ kg`] and a radius of [`[$Rrock]\ cm`]. [$Icyl]
+Julie is taking her pet rock, Rocko, for a walk. Rocko is safely fastened to the side of a hollow cylinder with inner radius [`R=[$Rcyl]\ cm`], thickness [`d=[$d]\ cm`], and length [`[$L]\ cm`]. If the cylinder has a density of [`\rho=[$density]\ kg/m^3`], what is the moment of inertia of the ball-rock system about the center of the cylinder? Assume the rock is perfectly spherical with a mass of [`[$mrock]\ kg`] and a radius of [`[$Rrock]\ cm`].
 
 [`I_{cylinder}=`][___]{"$Icyl"} [`kg\cdot m^2`]
 
