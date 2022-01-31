@@ -1,0 +1,131 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Radius of Gyration: Mass Moment of Inertia)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','radius of gyration','rod','mass','kinetics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('9.5')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.7')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgscale = 0.33;
+$width = 1474 * $imgscale;
+$height = 1051 * $imgscale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$F = random(3,6,0.5);		#[N]
+$r1 = random(1.5,2,0.1);	#[cm]
+$r2 = 4;			#[cm]
+$m = random(5,8,0.2);		#[kg]
+$k = 3;				#[cm]
+$mus = random(0.3,0.45,0.05);	
+$muk = $mus-0.15;
+
+
+#---- Formulas to compute answers --------------#
+$alpha = -$F*($r2 + $r1)/($m*($k**2 - $r2**2)/10000);
+$Ff = $m*$alpha*$r2/100-$F;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+You just bought yourself a brand new shiny yo-yo[`^©`] and decide to learn a couple fancy tricks. You start the trick by leaving it at rest in the position shown below.
+Pulling on the rope, you exert a force of [`[$F]\ N`] to the right. The yo-yo[`^©`] has a mass [`m = [$m]\ kg`], an inner radius [`r_1 = [$r1]\ cm`] an outer
+radius [`r_2 = [$r2]\ cm`] and a radius of gyration [`k_G = [$k]\ cm`]. You measured the coefficient of static friction and kinetic friction to be [`\mu_s = [$mus]`] and [`\mu_k = [$muk]`].
+
+[@ image( "22-R-KIN-JL-14.png", width=>[$width], height=>[$height]) @]*
+
+Find the angular acceleration [`\alpha`] and the force of friction [`F_F`] acting on the yo-yo[`^©`] at the start of your trick.
+
+[`\alpha = `] [_____]{"$alpha"} [`\hat{k}\ \textrm{rad/s}^2`]
+
+[`F_F = `] [_____]{"$Ff"} [`\textrm{N}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KIN-JL-14.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
