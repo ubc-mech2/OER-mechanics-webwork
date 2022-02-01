@@ -1,0 +1,131 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of a Rigid Body)
+## DBsection(Equations of Motion)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','kinetics','wheel','moment of inertia','pulley')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.5')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.5')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.5')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.5')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.4;
+
+$height = $imgScale * 1930;
+
+$width = $imgScale * 1021;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$rA = random(0.2,1,0.2);
+$rB = random(0.2,1,0.2);
+$mB = random(10,50,10);
+$mA = random(5,25,5);
+$g = 9.81;
+
+#---- Formulas to compute answers --------------#
+$IA = 0.5*$mA*$rA**2;
+$IB = 0.5*$mB*$rB**2;
+$a = -($rA**2)*$mA*$g/($IA+2*$IB/$rB**2+$mA);
+$angAccA = -$a/$rA;
+$angAccB = -$a/$rB;
+$T1 = -$IB*$a/$rB**2;
+$T2 = $mA*$g-$T1+$mA*$a;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-KIN-TW-15.png", width=>[$width], height=>[$height]) @]*
+
+Two pulleys are initially motionless. If pulley [`A`] is released from rest and begins to fall, find the angular acceleration of both wheels and the acceleration of wheel [`A`]'s center of mass. The wheels have masses [`m_A=[$mA]\ kg`] and [`m_B=[$mB]\ kg`] with radii [`r_A=[$rA]\ m`] and [`r_B=[$rB]\ m`]. _(Use [`g=9.81\ m/s^2`] and treat the wheel as a thin cylinder)_
+
+[`\vec{\alpha}_A=`][____]{"$angAccA"} [`\hat{k}\ rad/s^2`]
+
+[`\vec{\alpha}_B=`][____]{"$angAccB"} [`\hat{k}\ rad/s^2`]
+
+[`\vec{a}_B=`][____]{"$a"} [`\hat{j}\ m/s^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-KIN-TW-15.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
