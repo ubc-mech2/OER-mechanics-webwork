@@ -81,8 +81,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $imgScale = 0.38;
-$width = $imgScale*1126;
-$height = $imgScale*889;
+$width = $imgScale*1758;
+$height = $imgScale*1193;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -107,7 +107,7 @@ $P = $mus*$mB*9.81 + $T;
 BEGIN_PGML
 
 You have set up the following block system such that blocks [`\textrm{A}`] and [`\textrm{B}`] are connected by a rope with tension [`\textrm{T}`]. 
-You want to cause block [`\textrm{B}`] to either tip or slip along the ground without touching it. So instead you decide to apply a force [`\textrm{P}`]
+You want to cause block [`\textrm{A}`] to either tip or slip along the ground without touching it. So instead you decide to apply a force [`\textrm{P}`]
 on block [`\textrm{B}`].
 
 [@ image( "22-R-KIN-JL-13.png", width=>[$width], height=>[$height]) @]*
