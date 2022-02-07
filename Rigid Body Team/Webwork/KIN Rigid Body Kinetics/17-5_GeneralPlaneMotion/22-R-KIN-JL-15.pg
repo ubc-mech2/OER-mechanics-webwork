@@ -86,20 +86,20 @@ $height = 1051 * $imgscale;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$F = random(14,20,1);		#[N]
+$F = random(20,26,1);		#[N]
 $r1 = random(1.5,2,0.1);	#[cm]
 $r2 = 4;			#[cm]
-$m = random(1.2,2.4,0.2);	#[kg]
-$k = 3;				#[cm]
-$mus = random(0.2,0.35,0.05);	
+$m = random(1.2,2,0.2);		#[kg]
+$k = 5;				#[cm]
+$mus = random(0.15,0.25,0.05);	
 $muk = $mus-0.05;
 
 
 #---- Formulas to compute answers --------------#
 $I = $m*$k**2/10000;
 $Ff = $muk*$m*9.81;
-$alpha = $Ff*$r2/100/$I-$F*$r1/100/$I;
-$a = ($F+$Ff)/$m;
+$alpha = -$Ff*$r2/100/$I-$F*$r1/100/$I;
+$a = ($F-$Ff)/$m;
 
 ########################################################
 #PGML
