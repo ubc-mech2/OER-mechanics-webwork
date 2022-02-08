@@ -97,7 +97,7 @@ $muk = $mus-0.15;
 
 #---- Formulas to compute answers --------------#
 $alpha = -($F*(($r2 + $r1)/100)/($m*($k**2 + $r2**2)/10000));
-$Ff = -$m*$alpha*$r2/100-$F;
+$Ff = -(-$m*$alpha*$r2/100-$F);
 
 ########################################################
 #PGML
@@ -114,7 +114,7 @@ Find the angular acceleration [`\alpha`] and the force of friction [`F_F`] actin
 
 [`\alpha = `] [_____]{"$alpha"} [`\hat{k}\ \textrm{rad/s}^2`]
 
-[`F_F = `] [_____]{"$Ff"} [`\hat{i}\ \textrm{N}`]
+[`F_F = `] [_____]{"$Ff"} [`\textrm{N}`]
 
 END_PGML
 
