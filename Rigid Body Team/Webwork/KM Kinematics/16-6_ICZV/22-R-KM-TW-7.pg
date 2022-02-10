@@ -79,11 +79,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.8;
+$imgScale = 0.45;
 
-$height = $imgScale * 447;
+$height = $imgScale * 1436;
 
-$width = $imgScale * 560;
+$width = $imgScale * 1570;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -115,8 +115,6 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 If the solution doesn't display correctly, try right clicking and opening it in a new tab.
-
-TESTING LATEX: [`\pi=3`] <- there should be LaTeX to the left of this text
 
 [@ image( "22-R-KM-TW-7.pdf", width=>[0], height=>[0] ) @]*
 
