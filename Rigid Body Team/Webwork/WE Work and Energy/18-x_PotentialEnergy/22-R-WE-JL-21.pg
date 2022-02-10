@@ -1,0 +1,140 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Potential Energy)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinetic energy','pulley','velocity','work','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 18.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('18.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.4')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.8')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.35;
+$width = 2569*$scale;
+$height = 1303*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$k = random(60,80,2);		#[N/m]
+$m = random(5,9,0.5);		#[kg]
+$L1 = random(2,2.2,0.1);	#[m]
+$L2 = random(2.2,2.5,0.1);	#[m]
+$theta_i = random(15,27,3);	#[deg]
+$theta_i_rad = $theta_i*pi/180;
+$theta_f = random(80,92,3);	#[deg]
+$theta_f_rad = $theta_f*pi/180;
+
+
+#---- Formulas to compute answers --------------#
+$L_spring1 = sqrt($L1**2+$L2**2-2*$L1*$L2*cos(pi-$theta_i_rad));
+$Vg1 = $m*9.81*$L2*sin($theta_i_rad)/2;
+$Ve1 = $k/2*($L_spring1-$L1)**2;
+$V1 = $Vg1 + $Ve1;
+
+$L_spring2 = sqrt($L1**2+$L2**2-2*$L1*$L2*cos(pi-$theta_f_rad));
+$Vg2 = $m*9.81*$L2*sin($theta_f_rad)/2;
+$Ve2 = $k/2*($L_spring2-$L1)**2;
+$V2 = $Vg2 + $Ve2;
+
+$w = sqrt(2*($V1-$V2)/($m/3*$L2**2));
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-WE-JL-21.png", width=>[$width], height=>[$height]) @]*
+
+Dalinar is testing a prototype spring-powered catapult. It works by converting the elastic energy of the spring into kinetic energy that can propel the target object.
+The spring Dalinar uses has a spring constant of [`k = [$k]\ \textrm{N/m}`], an unstretched length of [`[$L1]\ \textrm{m}`], and has its base a distance 
+[`L_1 = [$L1]\ \textrm{m}`] from the base of the catapult arm. The arm has a length [`L_2 = [$L2]\ \textrm{m}`] and can be approximated by a uniform slender rod with mass [`m = [$m]\ \textrm{kg}`]. 
+If the catapult arm starts from rest at [`\theta = [$theta_i]^\circ`], what is the magnitude of the angular velocity of the catapult arm when it reaches [`\theta = [$theta_f]^\circ`]
+from the horizontal?
+
+
+[`\omega = `] [_____]{"$w"} [`\textrm{rad/s}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-WE-JL-21.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
