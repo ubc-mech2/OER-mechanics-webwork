@@ -1,0 +1,129 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free Undamped)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinetic energy','amplitude')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('19.2')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('8.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.3;
+
+$height = $imgScale * 2459;
+
+$width = $imgScale * 1944;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$x2 = -random(0.2,0.5,0.1);
+$x2Abs = -$x2;
+$m = random(20,30,5);
+$g = 9.81;
+$k1 = random(100,300,100);
+$k2 = random(100,250,50);
+
+#---- Formulas to compute answers --------------#
+$x1 = ($m*$g+$k2*$x2)/$k1;
+$xeq = $m*$g/$k1;
+$T = 0.5*$k1*$x1**2-0.5*$k1*$xeq**2+$m*$g*($xeq-$x1);
+$v = sqrt(2*$T/$m);
+$A = $xeq-$x1;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-VIB-TW-27.png", width=>[$width], height=>[$height]) @]*
+
+An engineer has developed a new contraption designed for shaking paint cans. A spring
+connects the top of the [`[$m]\ kg`] can to the roof of the contraption and another spring connects the bottom of the can to the floor of the contraption. The system is initially at rest and the bottom spring is compressed by [`[$x2Abs]\ m`]. If the bottom spring is cut, what is the maximum velocity of the paint can and the amplidude of the vibration? (Take [`k_1=[$k1]\ N/m`] and [`k_2=[$k2]\ N/m`]. Also use [`g=[$g]\ m/s^2`] and ignore the effects of air resistance)
+
+[`A=`][____]{"$A"} [`m`]
+
+[`v_{\text{max}}=`][____]{"$v"} [`m/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-VIB-TW-27.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
