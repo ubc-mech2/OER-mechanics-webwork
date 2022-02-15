@@ -1,0 +1,130 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Potential Energy)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinetic energy','pulley','velocity','work','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 18.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('18.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.4')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.8')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.3;
+$width = 2322*$scale;
+$height = 1766*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$d1 = random(2,3,0.5);		#[m]
+$d = random(0.4,0.55,0.05);	#[m]
+$r = random(0.2,0.4,0.1);	#[m]
+$k = random(40,80,10);		#[N/m]
+$theta = random(30,60,5);	#[deg]
+$uL = $d1 - 0.4;		#[deg]
+$v = random(2.25,3,0.25);	#[m/s] 
+
+
+#---- Formulas to compute answers --------------#
+$m = $k*(($d1 + $d - $uL)**2 - ($d1 - $uL)**2)/(2*(3/4*$v**2 + 9.81*$d*sin($theta)));
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-WE-JL-23.png", width=>[$width], height=>[$height]) @]*
+
+Your favourite record has fallen off the table and is rolling down a [`[$theta]^\circ`] inclined slope. Fortunately
+your safety spring is attached for just this reason and will prevent it from rolling too far. The spring has a
+stiffness of [`k = [$k]\ \textrm{N/m}`] and the record can be approximated by a thin uniform disc with radius 
+[`r = [$r]\ \textrm{m}`]. It started a distance [`d_1 = [$d1]\ \textrm{m}`] from the wall and rolls down
+the slope without slipping at [`v = [$v]\ \textrm{m/s}`]. If the spring has an unstretched length of [`[$uL]\ \textrm{m}`]
+and the record comes to a stop after rolling [`[$d]\ \textrm{m}`] find the mass of your favourite record.
+
+
+[`m = `] [_____]{"$k"} [`\textrm{N/m}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-WE-JL-23.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
