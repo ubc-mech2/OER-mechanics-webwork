@@ -1,0 +1,128 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Impact: Central)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics','inertia','moment','radius of gyration','rod','mass','kinetics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('9.5')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.7')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 466;
+$height = 385;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$r = random(4,7,0.25);
+$h = random(0.5,1.5,0.1);
+
+
+#---- Formulas to compute answers --------------#
+$v1 = (3*$r)/(3*$r-2*$h)*2*sqrt(9.81*$h/3);	#[m/s]
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-JL-31.png", width=>[$width], height=>[$height]) @]*
+
+In Greek mythology, it is told that Sisyphus was the founder and first king of Ephyra — 
+a city-state in ancient Greece that is now known as the city of Corinth. Legend has it
+that Sisyphus was an evil and deceitful king who cheated death *twice*. He is best known
+for his punishment from the god Zeus in which he was forced to roll a boulder up a hill
+for eternity, and every time it neared the top it would roll down to the bottom.
+
+The boulder has rolled along a single axis for so long that it can be approximated by a
+cylinder with radius [`[$r]\ \textrm{m}`]. One day when Sisyphus almost reached the top,
+the boulder rolled down, gaining speed, towards an obstruction. If the obstruction has a height 
+[`h = [$h]\ \textrm{m}`], what is the minimum initial velocity the boulder would have
+needed to overcome the obstacle without slipping or rebounding?
+
+[`v_{initial} = `] [__________]{"$v1"} [`\textrm{m/s}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-IM-JL-31.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
