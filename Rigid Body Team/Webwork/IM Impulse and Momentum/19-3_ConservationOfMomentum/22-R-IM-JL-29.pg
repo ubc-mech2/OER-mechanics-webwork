@@ -1,0 +1,132 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Conservation of Momentum)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','radius of gyration','magnetic','mass','kinetics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.1')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.3;
+$width = 466*$scale;
+$height = 385*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$k1 = random(7,17,1);		#[cm]
+$m1 = random(250, 500, 10);	#[g]
+$w1 = random(4,6,1);		#[rad/s]
+
+$mp = random(1,2,1);		#[g]
+$kp = random(0.1,0.3,1);	#[mm]
+
+#---- Formulas to compute answers --------------#
+$w2 = ($m1/1000*($k1/100)**2*$w1)/(($m1+40*$mp)/1000*($k1/100+40*$kp/1000)**2);
+$dw = $w1-$w2;			
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-JL-29.png", width=>[$width], height=>[$height]) @]*
+
+
+Your new rotating magnetic decoration has arrived and you turn it to see how it looks. The decoration spins with an angular 
+velocity of [`[$w1]\ \textrm{rad/s}`], has a radius of gyration [`k = [$k1]\ \textrm{cm}`] and a mass [`m = [$m1]\ \textrm{g}`].
+You decide it looks good and turn it off, letting it spin freely at the same angular velocity. After leaving for
+a short while, you come back to find your box of paperclips knocked over and empty. All 40 paperclips are now stuck to the magnetic
+decoration. If each paperclip has a mass of [`m_{paperclip} = [$mp]\ \textrm{g}`] and increases the decoration's radius of
+gyration by [`[$kp]\ \textrm{mm}`], what is the change in angular velocity of the decoration?
+
+Assume the decoration continues to spin freely and the paperclips are uniformly distributed around the decoration.
+
+[`\Delta \omega = `] [_____________]{"$dw"} [`\textrm{rad/s}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-IM-JL-29.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
