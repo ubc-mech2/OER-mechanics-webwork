@@ -30,7 +30,7 @@
 ## Institution('University of British Columbia')
 ## Author(Tyler Wilson)
 ## Date(Winter 2022)
-## Difficulty(Intermediate)
+## Difficulty(Beginner)
 ## KEYWORDS('Dynamics','angular momentum','angular velocity','friction')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.2')
 ## TitleText1('Engineering Mechanics')
@@ -114,7 +114,7 @@ END_PGML
 BEGIN_PGML_SOLUTION
 If the solution doesn't display correctly, try right clicking and opening it in a new tab.
 
-[@ image( "22-R-IM-TW-34.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "22-R-IM-TW-35.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
