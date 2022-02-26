@@ -1,0 +1,125 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Impact: Eccentric)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','angular momentum','angular velocity','foosball','impact','coefficient of restitution')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.4')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.4')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.12')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.3;
+
+$height = $imgScale * 1833;
+
+$width = $imgScale * 2537;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$l = random(0.06,0.08,0.01);
+$lcm = $l*100;
+$I = random(0.004,0.006,0.001);
+$M = random(0.8,1.2,0.2);
+$mb = random(0.04,0.05,0.005);
+$angDeg = 270;
+$angRad = $angDeg*pi/180;
+
+#---- Formulas to compute answers --------------#
+$angAcc = $M/$I;
+$angVel0 = sqrt(2*$angAcc*$angRad);
+$v = (2*$I*$angVel0)/($I/$l+$mb*$l);
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-TW-37.png", width=>[$width], height=>[$height]) @]*
+
+In the spirit of E-week, you want to determine how fast a foosball travels just after being hit. You measure the moment of inertia of the foosball figure to be [`I_O=[$I]\ kg\cdot m^2`] and the length [`l`] to be [`[$lcm]\ cm`]. Also, in the spirit of Engineering, you approximate the coefficient of restitution to be [`e=1`]. If the foosball figure rotates [`[$angDeg]^\circ`] due to an applied moment of [`[$M]\ N\cdot m`] before it hits the [`[$mb]\ kg`] ball (which is initially at rest), how fast will the ball be travelling just after impact?
+
+[`v_{\text{ball}}=`][____]{"$v"} [`m/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-IM-TW-37.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
