@@ -85,20 +85,16 @@ $height = 986*$scale;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$P = random(48,60,12);		#[kW]
-$m = random(1600,1760,80);	#[kg]
 $v = random(60,80,10);		#[km/h]
 $v_units = $v*1000/3600;	#[m/s]
 
-$P2 = random(74,82,4);		#[kW]
-$v2 = random(35,45,5);		#[km/h]
-$v2_units = $v2*1000/3600;	#[m/s]
 $n = random(0.4,0.44,0.02);
 
+$F = random(200,400,10);	#[N]
 
 #---- Formulas to compute answers --------------#
-$mu_k = ($P*1000)/($m*$v_units*9.81);
-$m2 = ($P2*1000*$n)/($mu_k*$v2_units*9.81);
+$Pout = $F*$v_units/1000;
+$Pin = $Pout/$n;
 
 
 
@@ -109,17 +105,15 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-27.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$m]\ \textrm{kg}`] racecar is travelling along a straight road at a constant speed of [`[$v]\ \textrm{km/h}`].
-If the motor is outputting [`[$P]\ \textrm{kW}`], what is the coefficient of friction of the road?
+A racecar is travelling along a straight road at a constant speed of [`[$v]\ \textrm{km/h}`].
+The friction of the road with the wheels pushes the car forward with a force of [`F = [$F]\ \textrm{N}`]. Find the
+output power of the motor.
 
-[`\mu_k = `] [__________]{"$mu_k"}
+If the motor has an efficiency of [`\eta = [$n]`], determine the input power of the motor.
 
+[`P_{out} = `] [__________]{"$Pout"} [`\textrm{kW}`]
 
-Later that day, another car (with identical tires) takes the same route, but it is not as efficient as the racecar. The input power supplied to the
-engine is [`[$P2]\ \textrm{kW}`], but this only results in a constant speed of [`[$v2]\ \textrm{km/h}`]. Given the efficiency of the
-second car to be [`\eta = [$n]`], determine it's mass.
-
-[`m_2 = `] [__________]{"$m2"} [`\textrm{kg}`]
+[`P_{in} = `] [__________]{"$Pin"} [`\textrm{kW}`]
 
 END_PGML
 
