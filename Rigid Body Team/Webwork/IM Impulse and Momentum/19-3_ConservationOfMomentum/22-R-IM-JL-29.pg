@@ -82,8 +82,8 @@ tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
 $scale = 0.3;
-$width = 466*$scale;
-$height = 385*$scale;
+$width = 2057*$scale;
+$height = 1608*$scale;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -96,7 +96,7 @@ $kp = random(0.1,0.3,1);	#[mm]
 
 #---- Formulas to compute answers --------------#
 $w2 = ($m1/1000*($k1/100)**2*$w1)/(($m1+40*$mp)/1000*($k1/100+40*$kp/1000)**2);
-$dw = $w1-$w2;			
+$dw = $w2-$w1;			
 
 ########################################################
 #PGML
@@ -107,7 +107,7 @@ BEGIN_PGML
 
 
 Your new rotating magnetic decoration has arrived and you turn it to see how it looks. The decoration spins with an angular 
-velocity of [`[$w1]\ \textrm{rad/s}`], has a radius of gyration [`k = [$k1]\ \textrm{cm}`] and a mass [`m = [$m1]\ \textrm{g}`].
+velocity of [`[$w1]\ \hat{k}\ \textrm{rad/s}`], has a radius of gyration [`k = [$k1]\ \textrm{cm}`] and a mass [`m = [$m1]\ \textrm{g}`].
 You decide it looks good and turn it off, letting it spin freely at the same angular velocity. After leaving for
 a short while, you come back to find your box of paperclips knocked over and empty. All 40 paperclips are now stuck to the magnetic
 decoration. If each paperclip has a mass of [`m_{paperclip} = [$mp]\ \textrm{g}`] and increases the decoration's radius of
@@ -115,7 +115,7 @@ gyration by [`[$kp]\ \textrm{mm}`], what is the change in angular velocity of th
 
 Assume the decoration continues to spin freely and the paperclips are uniformly distributed around the decoration.
 
-[`\Delta \omega = `] [_____________]{"$dw"} [`\textrm{rad/s}`]
+[`\Delta \omega = `] [_____________]{"$dw"} [`\ \hat{k}\ \textrm{rad/s}`]
 
 END_PGML
 
