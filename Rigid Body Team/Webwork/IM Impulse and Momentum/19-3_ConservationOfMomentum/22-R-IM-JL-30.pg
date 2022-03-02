@@ -81,9 +81,9 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$scale = 0.3;
-$width = 1500*$scale;
-$height = 1000*$scale;
+$scale = 0.22;
+$width = 1848*$scale;
+$height = 2402*$scale;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -113,7 +113,7 @@ and jumps of the swing which is a
 flat plate of mass [`m_{plate} = [$m2]\ \textrm{kg}`] and length [`L = [$L]\ \textrm{m}`] suspended by cords
 of negligible mass. As he jumps off, his center of mass is [`d_1 = [$d1]\ \textrm{m}`] from the pin holding
 the swing set, and the center of mass of the seat of the swing is [`d_2 = [$d2]\ \textrm{m}`] from it. Sam's jump
-gives him a horizontal velocity of [`v_{rel} = [$v_rel]\ \textrm{m/s}`] relative to the swing (measured at the distance [`d_1`]). What is the resulting
+gives him a horizontal velocity of [`v_{rel} = [$v_rel]\ \textrm{m/s}`] relative to the final velocity of the swing (measured at the distance [`d_1`]). What is the resulting
 angular velocity of the swing?
 
 
