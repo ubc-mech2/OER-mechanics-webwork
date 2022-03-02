@@ -80,9 +80,9 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$scale = 0.3;
-$width = 466*$scale;
-$height = 385*$scale;
+$scale = 0.23;
+$width = 2734*$scale;
+$height = 2398*$scale;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -100,7 +100,7 @@ $I_O = $I_G + $m_kg*4*$r_meters**2;
 
 $w = sqrt(2*$T/$I_O);
 
-$L = -$m_kg*4*$r_meters**2*$w;
+$L = -$m_kg*$r_meters*$w;
 $H_G = $I_G*$w;
 $H_O = $I_O*$w;
 

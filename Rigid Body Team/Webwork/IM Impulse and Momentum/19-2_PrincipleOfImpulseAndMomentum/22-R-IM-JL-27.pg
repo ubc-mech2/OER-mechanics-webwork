@@ -80,9 +80,9 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$scale = 0.3;
-$width = 466*$scale;
-$height = 385*$scale;
+$scale = 0.25;
+$width = 2423*$scale;
+$height = 3041*$scale;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
