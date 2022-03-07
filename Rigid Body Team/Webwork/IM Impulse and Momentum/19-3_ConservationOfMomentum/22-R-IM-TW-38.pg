@@ -1,0 +1,125 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Conservation of Momentum)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','angular momentum','angular velocity','conservation of momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.1')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.3;
+
+$height = $imgScale * 428;
+
+$width = $imgScale * 1148;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$rw = random(0.15,0.25,0.05);
+$kw = random(0.7,0.9,0.1)*$rw;
+$mw = random(10,20,5);
+$rhcm = random(3,6,1);
+$rh = $rhcm/100;
+$mh = random(0.3,0.5,0.1);
+$w0 = random(4,10,2);
+
+#---- Formulas to compute answers --------------#
+$Iw = $mw*$kw**2;
+$Ih = 0.4*$mh*$rh**2+$mh*($rw-$rh)**2;
+$wf = $Iw*$w0/($Ih+$Iw);
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-TW-38.png", width=>[$width], height=>[$height]) @]*
+
+Your pet hamster is running in its hamster wheel which has a radius of [`r_w=[$rw]\ m`], radius of gyration of [`k_w=[$kw]\ m`], and a mass of [`m_w=[$mw]\ kg`]. Eventually the speed of the wheel becomes too quick for the hamster to keep up and it falls down and begins to rotate with the wheel as shown. If the rotational speed of the wheel was [`\omega_0=[$w0]\ rad/s`] at the instant before the hamster fell down, what is the angular speed that the hamster will begin to rotate with? You may approximate the hamster as a sphere of mass [`m_h=[$mh]\ kg`] and radius [`r_h=[$rhcm]\ cm`].
+
+[`\omega=`][____]{"$wf"} [`rad/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-IM-TW-38.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
