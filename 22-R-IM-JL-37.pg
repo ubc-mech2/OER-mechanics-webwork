@@ -1,0 +1,132 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Principle of Impulse and Momentum)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','radius of gyration','magnetic','mass','kinetics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.1')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.3;
+$width = 3305*$scale;
+$height = 1833*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$m = random(7,17,1);		#[kg]
+$I = random(8,20,1);		#[N·s]
+$L = random(4,6,2);		#[m]
+$d = $L/2 + random(0.5,1.25,0.25);	#[m]
+$t = random(15,75,15);		#[degrees]
+$t_rad = $t/180*pi;
+
+
+#---- Formulas to compute answers --------------#
+$vi = -$I*cos($t_rad)/$m;
+$vj = $I*sin($t_rad)/$m;	
+$w = $I*sin($t_rad)*($d-$L/2)*12/($m*$L**2);		
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-JL-37.png", width=>[$width], height=>[$height]) @]*
+
+A slender bar of mass [`m = [$m]\ \textrm{kg}`] and length [`L = [$L]\ \textrm{m}`] is at rest
+ on a smooth horizontal surface receives an impulse [`I = [$I]\ \textrm{N·s}`]. The
+impulse acts at point [`\textrm{P}`] a distance [`d = [$d]\ \textrm{m}`] from the end and an angle 
+[`\theta = [$t]^\circ`] from the bar's main axis. Find the velocity of the center of mass and angular 
+velocity of the bar as a result of the impulse.
+
+[`\vec{v} = `][_______]{"$vi"}[`\ \hat{i}\ +`] [_______]{"$vj"}[`\ \hat{j}\ \textrm{m/s}`]
+
+[`\vec{\omega} = `][_______]{"$w"}[`\ \hat{k}\ \textrm{rad/s}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-IM-JL-37.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
