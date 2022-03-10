@@ -41,7 +41,7 @@
 ## AuthorText2('Beer and Johnston')
 ## EditionText2('11')
 ## Section2('5.11')
-## TitleText3('Engineering Mechanics - Statics')
+## TitleText3('Engineering Mechanics - Dynamics')
 ## AuthorText3('Meriam and Kraig')
 ## EditionText3('9')
 ## Section3('5.4')
@@ -81,9 +81,9 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.8;
 
-$height = $imgScale * 572;
+$height = $imgScale * 1522;
 
-$width = $imgScale * 637;
+$width = $imgScale * 1570;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
