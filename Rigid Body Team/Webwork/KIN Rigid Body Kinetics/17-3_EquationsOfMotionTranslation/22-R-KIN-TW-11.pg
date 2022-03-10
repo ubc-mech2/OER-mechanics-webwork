@@ -41,7 +41,7 @@
 ## AuthorText2('Beer and Johnston')
 ## EditionText2('11')
 ## Section2('15.2')
-## TitleText3('Engineering Mechanics - Statics')
+## TitleText3('Engineering Mechanics - Dynamics')
 ## AuthorText3('Meriam and Kraig')
 ## EditionText3('9')
 ## Section3('6.3')
@@ -107,7 +107,7 @@ BEGIN_PGML
 
 [@ image( "22-R-KIN-TW-11.png", width=>[$width], height=>[$height]) @]*
 
-A rod of mass [`[$m]\ kg`] with uniform density is connected to a collar by a rope of negligible mass, as shown. If a constant force [`P`] is applied to the collar, for what value [`P`] will the rod begin to leave the ground when the system is in rotational equilibrium?
+A rod of mass [`[$m]\ kg`] with uniform density is connected to a collar by a rope of negligible mass, as shown. If a constant force [`P`] is applied to the collar, for what value [`P`] will the rod experience lift-off (no normal force from the ground) when the system is in equilibrium? (Assume that there is no friction acting on the slider)
 
 Take [`d_1=[$d1]\ m`], [`d_2=[$d2]\ m`], [`d_3=[$d3]\ m`], and use [`g=9.81\ m/s^2`].
 
