@@ -28,7 +28,7 @@
 ## DBchapter(Vibrations)
 ## DBsection(Free Work-Energy Methods)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(Daniel Youm and Julian Lapenna)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS('Dynamics', 'Natural Frequency')
@@ -100,10 +100,18 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-11.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$length]`] [`m`] bar is pinned by one end to the ceiling. Given that he mass of the bar is [`[$mass]`] [`kg`], what is the natural frequency of the system?
+A [`[$length]`] [`m`] bar is pinned by one end to the ceiling. Given that the mass of the bar is [`[$mass]`] [`kg`], what is the natural frequency of the system?
 
-[`w_n =`] [____]{"$ansA"} [`Hz`]
+[`w_n =`] [_______]{"$ansA"} [`Hz`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "20-R-VIB-DY-11.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ENDDOCUMENT();
