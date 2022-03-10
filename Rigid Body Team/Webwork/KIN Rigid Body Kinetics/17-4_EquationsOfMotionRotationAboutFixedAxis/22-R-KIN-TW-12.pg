@@ -41,7 +41,7 @@
 ## AuthorText2('Beer and Johnston')
 ## EditionText2('11')
 ## Section2('15.4')
-## TitleText3('Engineering Mechanics - Statics')
+## TitleText3('Engineering Mechanics - Dynamics')
 ## AuthorText3('Meriam and Kraig')
 ## EditionText3('9')
 ## Section3('6.4')
@@ -107,7 +107,7 @@ BEGIN_PGML
 
 [@ image( "22-R-KIN-TW-12.png", width=>[$width], height=>[$height]) @]*
 
-A force of, [`P=[$P]\ N`] is applied at a distance [`d=[$d]\ m`] to a uniform rod of mass [`m=[$m]\ kg`] and length [`L=[$L]\ m`] connected to a pin at point [`A`]. If, at the instant shown, the rod has an angular velocity of [`\omega=[$angVel]\ rad/s`] clockwise, find the horizontal and vertical components of the pin at point [`A`]. _(Use [`g=9.81\ m/s^2`])_
+A force of, [`P=[$P]\ N`] is applied at a distance [`d=[$d]\ m`] to a uniform rod of mass [`m=[$m]\ kg`] and length [`L=[$L]\ m`] connected to a pin at point [`A`]. If, at the instant shown, the rod has an angular velocity of [`\omega=[$angVel]\ rad/s`] clockwise, find the horizontal and vertical components of the reaction force of the pin at point [`A`]. _(Use [`g=9.81\ m/s^2`])_
 
 [`\vec{A}_t=`][____]{"$At"} [`\hat{i}\ N`]
 
