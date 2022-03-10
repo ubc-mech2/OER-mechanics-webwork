@@ -41,7 +41,7 @@
 ## AuthorText2('Beer and Johnston')
 ## EditionText2('11')
 ## Section2('15.5')
-## TitleText3('Engineering Mechanics - Statics')
+## TitleText3('Engineering Mechanics - Dynamics')
 ## AuthorText3('Meriam and Kraig')
 ## EditionText3('9')
 ## Section3('6.5')
@@ -81,13 +81,14 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.4;
 
-$height = $imgScale * 827;
+$height = $imgScale * 1436;
 
-$width = $imgScale * 827;
+$width = $imgScale * 1570;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
 $m = random(50,60,5);
+$mw = random(2,8,3);
 $r = random(0.3,0.7,0.2);
 $k = $r-0.1;
 $mus = random(0.4,0.6,0.1);
@@ -96,7 +97,7 @@ $M = 5*random(2,8,2);
 $g = 9.81;
 
 #---- Formulas to compute answers --------------#
-$a = -$M*$r/($m*$k**2+$m*$r**2);
+$a = -$M*$r/($mw*$k**2+$m*$r**2);
 
 ########################################################
 #PGML
@@ -105,7 +106,7 @@ BEGIN_PGML
 
 [@ image( "22-R-KIN-TW-16.png", width=>[$width], height=>[$height]) @]*
 
-Jessica is riding on a unicycle with a tire of radius [`r=[$r]\ m`] and radius of gyration of [`k=[$k]\ m`]. Her peddling applies a moment of [`[$M]\ N\cdot m`] to the wheel. If the coefficients of static and kinetic friction between the wheel and the ground are [`\mu_s=[$mus]`] and [`\mu_k=[$muk]`] and the combined mass of the rider and unicycle is [`[$m]\ kg`], what is the acceleration of the unicycle rider? _(Use [`g=9.81\ m/s^2`])_
+Jessica is riding on a unicycle with a tire of radius [`r=[$r]\ m`] and radius of gyration of [`k=[$k]\ m`]. Her peddling applies a moment of [`[$M]\ N\cdot m`] to the wheel. If the coefficients of static and kinetic friction between the wheel and the ground are [`\mu_s=[$mus]`] and [`\mu_k=[$muk]`], the mass of the wheel is [`[$mw]\ kg`], and the combined mass of the rider and unicycle is [`[$m]\ kg`], what is the acceleration of the unicycle rider? _(Use [`g=9.81\ m/s^2`])_
 
 [`\vec{a}=`][____]{"$a"} [`\hat{i}\ m/s^2`]
 
