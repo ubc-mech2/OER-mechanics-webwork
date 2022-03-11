@@ -73,7 +73,7 @@ $P = 100;
 #computation for numerical answer
 $N = $m*9.81;
 $Ff = $muk*$N;
-$alpha = [ ($P*$r2) - ($Ff*$r1) ]/[ $m*$k**2 ];
+$alpha = (($P*$r2) - ($Ff*$r1))/($m*$k**2);
 
 #image settings
 $resolution = 0.2;
