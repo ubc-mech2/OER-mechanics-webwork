@@ -79,17 +79,17 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.8;
+$imgScale = 0.4;
 
-$height = $imgScale * 675;
+$height = $imgScale * 1642;
 
-$width = $imgScale * 450;
+$width = $imgScale * 1160;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
 $l = random(30,40,5);
 $w = random(2,4,2);
-$d = random(4,6,2);
+$d = random(2,3,1);
 $density = 7.6;       #g/cm^3
 $thickness = random(1.5,2.5,0.5);
 
@@ -118,7 +118,7 @@ BEGIN_PGML
 
 [@ image( "22-R-KIN-TW-9.png", width=>[$width], height=>[$height]) @]*
 
-A wrench is thrown across the room (don't ask why) and rotates about its center of mass. The wrench has a density of [`[$density]\ g/cm^3`] and thickness of [`[$thickness]\ cm`] with dimensions [`l=[$l]\ cm`], [`w=[$w]\ cm`], and [`d=[$d]\ cm`]. Find the moment of inertia of the wrench.
+A wrench is thrown across the room (don't ask why) and rotates about the z-axis running through its center of mass. The wrench has a density of [`[$density]\ g/cm^3`] and thickness of [`[$thickness]\ cm`] with dimensions [`l=[$l]\ cm`], [`w=[$w]\ cm`], and [`d=[$d]\ cm`]. Find the moment of inertia of the wrench. _(Note that the distance [`d`] is not the same as the radius)_
 
 Center of Mass:
 
