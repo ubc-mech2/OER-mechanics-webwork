@@ -30,7 +30,7 @@
 ## Institution('University of British Columbia')
 ## Author(Tyler Wilson)
 ## Date(Winter 2022)
-## Difficulty(Intermediate)
+## Difficulty(Advanced)
 ## KEYWORDS('Dynamics','kinetics','wheel','moment of inertia','pulley')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.5')
 ## TitleText1('Engineering Mechanics')
@@ -41,7 +41,7 @@
 ## AuthorText2('Beer and Johnston')
 ## EditionText2('11')
 ## Section2('15.5')
-## TitleText3('Engineering Mechanics - Statics')
+## TitleText3('Engineering Mechanics - Dynamics')
 ## AuthorText3('Meriam and Kraig')
 ## EditionText3('9')
 ## Section3('6.5')
@@ -96,11 +96,9 @@ $g = 9.81;
 #---- Formulas to compute answers --------------#
 $IA = 0.5*$mA*$rA**2;
 $IB = 0.5*$mB*$rB**2;
-$a = -($rA**2)*$mA*$g/($IA+2*$IB/$rB**2+$mA);
-$angAccA = -$a/$rA;
-$angAccB = -$a/$rB;
-$T1 = -$IB*$a/$rB**2;
-$T2 = $mA*$g-$T1+$mA*$a;
+$angAccA = ($mA*$g*$rA*$rB**2)/($IA*$rB**2+4*$IB*$rA**2+$mA*($rA**2)*$rB**2);
+$a = -$angAccA*$rA;
+$angAccB = 2*$angAccA*$rA/$rB;
 
 ########################################################
 #PGML
@@ -109,13 +107,13 @@ BEGIN_PGML
 
 [@ image( "22-R-KIN-TW-15.png", width=>[$width], height=>[$height]) @]*
 
-Two pulleys are initially motionless. If pulley [`A`] is released from rest and begins to fall, find the angular acceleration of both wheels and the acceleration of wheel [`A`]'s center of mass. The wheels have masses [`m_A=[$mA]\ kg`] and [`m_B=[$mB]\ kg`] with radii [`r_A=[$rA]\ m`] and [`r_B=[$rB]\ m`]. _(Use [`g=9.81\ m/s^2`] and treat the wheel as a thin cylinder)_
+Two disks are initially motionless. If disk [`A`] is released from rest and begins to fall, find the angular acceleration of both disks and the acceleration of disk [`A`]'s center of mass. The disks have masses [`m_A=[$mA]\ kg`] and [`m_B=[$mB]\ kg`] with radii [`r_A=[$rA]\ m`] and [`r_B=[$rB]\ m`]. _(Use [`g=9.81\ m/s^2`] and treat the disks as thin cylinders)_
 
 [`\vec{\alpha}_A=`][____]{"$angAccA"} [`\hat{k}\ rad/s^2`]
 
 [`\vec{\alpha}_B=`][____]{"$angAccB"} [`\hat{k}\ rad/s^2`]
 
-[`\vec{a}_B=`][____]{"$a"} [`\hat{j}\ m/s^2`]
+[`\vec{a}_{A}=`][____]{"0"} [`\hat{i}\ +`] [____]{"$a"} [`\hat{j}\ m/s^2`]
 
 END_PGML
 
