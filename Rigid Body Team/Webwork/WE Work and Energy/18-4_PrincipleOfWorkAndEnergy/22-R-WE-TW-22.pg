@@ -107,7 +107,7 @@ BEGIN_PGML
 
 A reel of mass [`[$m]\ kg`], resting on two rollers is initially at rest when a force of [`P=[$P]\ N`] is applied to a rope attached to the reel. Given that [`r_1=[$r1]\ m`], [`r_2=[$r2]\ m`], and the radius of gyration of the reel is [`[$k]\ m`], what is the angular velocity of the reel after it completes one full rotation? _(Assume no energy is lost due to friction and neglect the mass of the rope and the two rollers)_ 
 
-[`\vec{\omega}_{\text{max}}=`][____]{"$angVel"}[`\hat{k}\ rad/s`]
+[`\vec{\omega}_{\text{final}}=`][____]{"$angVel"}[`\hat{k}\ rad/s`]
 
 END_PGML
 
