@@ -75,15 +75,15 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.01,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.4;
+$imgScale = 0.2;
 
-$height = $imgScale * 462;
+$height = $imgScale * 2250;
 
-$width = $imgScale * 743;
+$width = $imgScale * 3472;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -91,10 +91,10 @@ $m = random(1,5,1);
 $h = random(2,4,1)**2;
 $g = 9.81;
 $r = random(0.1,0.5,0.2);
-$v = sprintf("%0.2f",sqrt($g*$h*random(1.1,1.5,0.1)));
+$v = sprintf("%0.2f",sqrt($g*($h-$r)*random(1.1,1.5,0.1)));
 
 #---- Formulas to compute answers --------------#
-$k = $r*sqrt(2*$g*$h/$v**2-1);
+$k = $r*sqrt(2*$g*($h-$r)/$v**2-1);
 
 ########################################################
 #PGML
