@@ -1,0 +1,136 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free Work-Energy Methods)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics', 'Natural Frequency','Natural Period', 'Amplitude')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('19.2')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('8.2')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.28;
+$width = 2412*$scale;
+$height = 2696*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$k = random(12,24,3);		#[N/m]
+$Lcm = random(60,80,2);		#[cm]
+$L = $Lcm/100;			#[m]
+$m_grams = random(135,155,1);	#[g]
+$m = $m_grams/1000;		#[kg]
+$rcm = 3.65;			#[cm]
+$r = $rcm/100;			#[m]
+
+
+#---- Formulas to compute answers --------------#
+$I = $m*(2*$r**2/5 + ($L/2)**2);
+$coefficient = $k*($L/2)**2/$I;
+$wn = sqrt($coefficient);
+$T = 2*pi/$wn;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-VIB-JL-40.png", width=>[$width], height=>[$height]) @]*
+
+A physicist who loves baseball has decided to make a pendulum from a baseball they caught at their favourite team's
+championship win. It is made from a bar of negligible mass and length [`L = [$Lcm]\ \textrm{cm}`] connected at
+one end to a spring and with the baseball attached at the other end. The spring has a stiffness 
+[`k = [$k]\ \textrm{N/m}`] which keeps the pendulum is at rest when the bar is horizontal. The baseball is a uniform sphere of radius
+[`r = [$rcm]\ \textrm{cm}`] and mass [`m = [$m_grams]\ \textrm{g}`]. Find the following information about the pendulum:
+
+_(Note the pendulum has very small displacement, use the approximation [`\sin(\theta) = \theta`])_
+
+
+[`I_A = `] [________]{"$I"} [`\textrm{kg*m}^2`]
+
+[`\tau = `] [________]{"$T"} [`\textrm{kg*m}^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-VIB-JL-40.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
