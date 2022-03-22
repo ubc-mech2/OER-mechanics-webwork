@@ -100,7 +100,7 @@ $I_O = $I_G + $m_kg*4*$r_meters**2;
 
 $w = sqrt(2*$T/$I_O);
 
-$L = -$m_kg*$r_meters*$w;
+$L = -$m_kg*2*$r_meters*$w;
 $H_G = $I_G*$w;
 $H_O = $I_O*$w;
 
