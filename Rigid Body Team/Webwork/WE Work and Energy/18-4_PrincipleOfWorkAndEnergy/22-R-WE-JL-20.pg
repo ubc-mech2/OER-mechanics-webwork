@@ -96,10 +96,10 @@ $theta_f = $theta/2-5;
 $rG = $L/2;
 $I_IC = 1/12*$m*$L**2 + $m*$rG**2;
 $T1 = $I_IC*$w**2/2;
-$h1 = $L/2*sin($theta*pi/180);
-$h2 = $L/2*sin($theta_f*pi/180);
-$deltaY = $h2-$h1;
-$U = -$m*9.81*$deltaY-18*$deltaY;
+$DeltaYG = $L/2*(sin($theta_f*pi/180)-sin($theta*pi/180));
+$DeltaXB = -$L*(cos($theta_f*pi/180)-cos($theta*pi/180));
+$DeltaYA = $DeltaYG*2;
+$U = -$m*9.81*$DeltaYG-18*$DeltaYA+10*$DeltaXB;
 
 $T2 = $T1 + $U;
 
@@ -111,12 +111,14 @@ BEGIN_PGML
 
 [@ image( "22-R-WE-JL-19.png", width=>[$width], height=>[$height]) @]*
 
-Hoid is going for another canoeing trip to enjoy the beautiful weather. The motion of his paddle strokes can be modelled 
+Hoid is going for a canoeing trip to enjoy the beautiful weather. The motion of his paddle strokes can be modelled 
 by a slender rod where his hand (at the top on point A) moves vertically downwards, and the bottom of the paddle (down
 at point B) moves horizontally to the left. Hoid's paddle has a mass of [`m = [$m]\ \textrm{kg}`], a length of
 [`L = [$L]\ \textrm{m}`], with its center of mass directly at the midpoint and is an angle of [`\theta = [$theta]^\circ`] from the horizontal at the instant shown.
-If the paddle is has an angular velocity of [`\omega = [$w]\ \textrm{rad/s}`] and Hoid applies a constant downwards force of [`F = 18\ N`] at A 
+If the paddle is has an angular velocity of [`\omega = -[$w]\ \hat{k}\ \textrm{rad/s}`], Hoid applies a constant downwards force of [`F = 18\ N`] at A, and the water pushes back with a drag force of [`F = 10\ N`] to the right at B,
 find the energy of the paddle when it reaches an angle of [`\theta = [$theta_f]^\circ`] from the horizontal.
+
+Neglect any buoyancy forces.
 
 
 [`T_{initial} = `] [_____]{"$T1"} [`\textrm{J}`]
