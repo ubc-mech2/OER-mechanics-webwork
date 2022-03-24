@@ -106,11 +106,11 @@ BEGIN_PGML
 [@ image( "22-R-IM-JL-29.png", width=>[$width], height=>[$height]) @]*
 
 
-Your new rotating magnetic decoration has arrived and you turn it to see how it looks. The decoration spins with an angular 
+Your new rotating magnetic decoration has arrived and you turn it to see how it looks. The decoration accelerates up to an angular 
 velocity of [`[$w1]\ \hat{k}\ \textrm{rad/s}`], has a radius of gyration [`k = [$k1]\ \textrm{cm}`] and a mass [`m = [$m1]\ \textrm{g}`].
 You decide it looks good and turn it off, letting it spin freely at the same angular velocity. After leaving for
 a short while, you come back to find your box of paperclips knocked over and empty. All 40 paperclips are now stuck to the magnetic
-decoration. If each paperclip has a mass of [`m_{paperclip} = [$mp]\ \textrm{g}`] and increases the decoration's radius of
+decoration. If each paperclip has a mass of [`m_{paperclip} = [$mp]\ \textrm{g}`] and, on average, increases the decoration's radius of
 gyration by [`[$kp]\ \textrm{mm}`], what is the change in angular velocity of the decoration?
 
 Assume the decoration continues to spin freely and the paperclips are uniformly distributed around the decoration.
