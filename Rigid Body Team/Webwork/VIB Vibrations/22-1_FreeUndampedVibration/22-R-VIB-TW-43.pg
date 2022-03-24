@@ -1,0 +1,123 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free Undamped)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','natural frequency','undamped','oscillation')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('19.2')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('8.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.005,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.3;
+
+$height = $imgScale * 1589;
+
+$width = $imgScale * 2612;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$rho = random(1,2,0.5);
+$m = random(0.2,1,0.2);
+$l = random(0.5,1,0.1);
+$g = 9.81;
+
+#---- Formulas to compute answers --------------#
+$r = sqrt($rho**2-$l**2/4);
+$IG = (1/12)*$m*$l**2;
+$IO = $IG + $m*$r**2;
+$f = (1/(2*pi))*sqrt($r*$m*$g/$IO);
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-VIB-TW-43.png", width=>[$width], height=>[$height]) @]*
+
+A rod of length [`l=[$l]\ m`] and mass [`[$m]\ kg`] slides down the side of a circular bowl as shown. This causes oscillatory motion as the rod slides back and forth up the two sides of the bowl. If the radius of curvature of the bowl is [`\rho=[$rho]\ m`], what is the frequency in which the rod oscillates? (Use [`g=9.81\ m/s^2`] and assume [`\sin\theta=\theta`])
+
+[`f=`][____]{"$f"} [`Hz`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-VIB-TW-43.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
