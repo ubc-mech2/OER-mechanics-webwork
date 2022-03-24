@@ -97,7 +97,7 @@ $e = random(0.6,0.8,0.05);
 
 
 #---- Formulas to compute answers --------------#
-$vA2 = $v*($mB+$e)/($mB+$mA/3);
+$vA2 = $v*$mB*(1+$e)/($mB+$mA/3);
 $w2 = $vA2/$L;	#[rad/s]
 
 ########################################################
@@ -112,7 +112,7 @@ slender bar of mass [`m_A = [$mA]\ \textrm{kg}`] and length [`L = [$L]\ \textrm{
 If the coefficient of restitution between the slender bar and the block is [`e = [$e]`], find the angular velocity
 of the bar just after the impact.
 
-[`\omega = `] [__________]{"$w2"} [`\textrm{rad/s}`]
+[`\vec\omega = `] [__________]{"$w2"} [`\ \hat k\ \textrm{rad/s}`]
 
 END_PGML
 
