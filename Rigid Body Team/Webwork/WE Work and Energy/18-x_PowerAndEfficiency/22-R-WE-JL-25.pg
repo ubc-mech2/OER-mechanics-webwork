@@ -106,7 +106,7 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-27.png", width=>[$width], height=>[$height]) @]*
 
 A racecar is travelling along a straight road at a constant speed of [`[$v]\ \textrm{km/h}`].
-The friction of the road with the wheels pushes the car forward with a force of [`F = [$F]\ \textrm{N}`]. Find the
+The reaction force of the wheels and the axles pushes the axles (and thus the car) forward with a force of [`F = [$F]\ \textrm{N}`]. Find the
 output power of the motor.
 
 If the motor has an efficiency of [`\eta = [$n]`], determine the input power of the motor.
