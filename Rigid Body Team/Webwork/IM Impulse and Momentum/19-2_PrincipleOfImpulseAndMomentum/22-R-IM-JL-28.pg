@@ -116,13 +116,13 @@ It has a mass of [`m = [$m]\ \textrm{g}`] and a radius of gyration [`k = [$k]\ \
 about its center of mass [`G`]. If it rolls to the left without slipping and has [`[$T]\ \textrm{J}`] of
 kinetic energy at this moment, find the linear momentum of the toy, the angular momentum
 about its center of mass [`G`] and its angular momentum about the point of contact with the ground
-[`O`]. The center of mass is directly above the point of contact with the ground.
+[`O`]. The center of mass is directly above the point of contact with the ground at this instant.
 
-[`L = `] [____________]{"$L"} [`\hat{i}\ \textrm{kg·m/s}`]
+[`\vec L = `] [____________]{"$L"} [`\hat{i}\ \textrm{kg·m/s}`]
 
-[`H_G = `] [____________]{"$H_G"} [`\hat{k}\ \textrm{kg·m}^2\textrm{/s}`]
+[`\vec H_G = `] [____________]{"$H_G"} [`\hat{k}\ \textrm{kg·m}^2\textrm{/s}`]
 
-[`H_O = `] [____________]{"$H_O"} [`\hat{k}\ \textrm{kg·m}^2\textrm{/s}`]
+[`\vec H_O = `] [____________]{"$H_O"} [`\hat{k}\ \textrm{kg·m}^2\textrm{/s}`]
 
 END_PGML
 
