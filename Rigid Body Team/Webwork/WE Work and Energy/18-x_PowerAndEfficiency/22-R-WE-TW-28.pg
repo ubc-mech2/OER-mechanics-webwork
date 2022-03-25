@@ -103,9 +103,9 @@ BEGIN_PGML
 
 [@ image( "22-R-WE-TW-28.png", width=>[$width], height=>[$height]) @]*
 
-Lucy is playing with a rechargeable flashlight. It works in that spinning the handle will generate electrical energy which can be stored to power the [`[$B]\ W`] flashlight bulb. Lucy rotates the handle with a constant moment of [`[$M]\ N\cdot m`] and an average angular velocity of [`[$angVel]\ rad/s`] for [`[$tCharge]\ s`]. When she stops turning and switches the flashlight on the bulb stays on for [`[$tPower]\ s`]. Given this information, how efficient is the flashlight in converting mechanical energy to electrical energy?
+Lucy is playing with a rechargeable flashlight. It works in that spinning the handle will generate electrical energy which can be stored to power the [`[$B]\ W`] flashlight bulb. Lucy rotates the handle with a constant moment of [`[$M]\ N\cdot m`] and an average angular velocity of [`[$angVel]\ rad/s`] for [`[$tCharge]\ s`]. When she stops turning and switches the flashlight on the bulb stays on for [`[$tPower]\ s`]. Given this information, how efficient is the flashlight in converting mechanical energy to usable electrical energy?
 
-[`\text{efficiency}=`][____]{"$e"}
+[`\text{efficiency}=`][____]{"$e"} _(express your answer as a decimal)_
 
 END_PGML
 
