@@ -16,7 +16,7 @@
   -	IM – Impulse Momentum
   -	KIN – Kinetics 
   -	KM – Kinematics
-  -	MOM – Impulse and Momentum
+  -	MOM – Impulse Momentum
   -	MPA – Moments about a Point
   -	PSE – Particle Static Equilibrium
   -	RBS – Rigid Body Static Equilibrium
