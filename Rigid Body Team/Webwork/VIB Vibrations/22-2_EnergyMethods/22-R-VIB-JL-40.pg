@@ -123,6 +123,13 @@ _(Note the pendulum has very small displacement, use the approximation [`\sin(\t
 
 END_PGML
 
+BEGIN_PGML_HINT
+
+The pendulum has reached an equilibrium with the baseball attached where the force from the spring cancels the force of gravity on the ball. When
+considering the potential energy, try looking at the elastic energy from the new equilibrium in terms of [`\theta`].
+
+END_PGML_HINT
+
 BEGIN_PGML_SOLUTION
 
 If the solution does not appear, right click the icon and select "Open image in new tab".
