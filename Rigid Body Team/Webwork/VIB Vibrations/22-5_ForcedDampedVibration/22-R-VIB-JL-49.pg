@@ -123,7 +123,7 @@ Find the natural period of oscillation [`\tau`], the damping ratio [`\zeta`], an
 
 [`\zeta =`] [_____________________]{"$z"}
 
-[`X' =`] [_____________________]{"$X"} [`\textrm{s}`]
+[`X' =`] [_____________________]{"$X"} [`\textrm{m}`]
 
 END_PGML
 

@@ -115,7 +115,7 @@ to a damper with damping constant [`c = [$c]\ \textrm{N·s/m}`] on one side, and
 [`k = [$k]\ \textrm{N/m}`] on the other. A rotating wheel causes periodic motion to keep the milkshake shaking where
 [`\delta_0 = [$dcm]\ \textrm{cm}`] and the angular velocity is [`\omega = [$freq]\ \textrm{rad/s}`].
 
-Find the natural period of oscillation [`\tau`], the damping ratio [`\zeta`], and the phase angle [`\phi'`] of the damped forced milkshaker.
+Find the natural period of oscillation [`\tau`], the damping ratio [`\zeta`], and the phase angle [`\phi'`] of the steady state solution.
 
 [`\tau =`] [_________]{"$tau"} [`\textrm{s}`]
 
