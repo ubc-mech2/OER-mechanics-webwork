@@ -98,6 +98,7 @@ $wn = sqrt($k/$m);
 $w0 = 2*pi*$v/$lambda;
 $lambda_max = 2*pi*$v/$wn;
 $maxAmp = $A/(1-($w0/$wn)**2);
+$AbsAmp = abs($maxAmp);
 
 ########################################################
 #PGML
@@ -119,7 +120,7 @@ If the waves today are moving at a speed of [`v = [$v]\ \textrm{m/s}`] and the h
 It turns out that today the measured wavelength is [`\lambda = [$lambda]\ \textrm{m}`]. Knowing this, what is the
 amplitude [`A`] of the steady state vibration of the poster board?
 
-[`|A| = `] [_________]{"$maxAmp"} [`\textrm{rad}`]
+[`|A| = `] [_________]{"$AbsAmp"} [`\textrm{m}`]
 
 END_PGML
 
