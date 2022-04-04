@@ -106,7 +106,7 @@ BEGIN_PGML
 
 [@ image("20-P-FA-NW-004.png", width=>[$width], height=>[$height]) @]*
 
-People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash has a weight of [`[$mass]`] [`kg`] and does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him at a depth of [`[$distanceWater]`] [`cm`].
+People dive from a high tower that has a height of [`[$towerHeight]`] [`m`], then belly flop into shallow water, coming to rest at the bottom. Assume Professor Splash has a mass of [`[$mass]`] [`kg`] and does this belly flop by starting from rest. He free falls [`[$distanceAir]`] metres until he lands in water that exerts a constant force on him, stopping him at a depth of [`[$distanceWater]`] [`cm`].
 
 *a)* Ignoring friction and air resistance, how fast is he moving just before he hits the water? Graphically sketch the Professor's position, velocity, and acceleration as a function of time using a sheet of paper.
 
