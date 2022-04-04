@@ -52,11 +52,11 @@
 DOCUMENT();
 
 #image scale
-$imgScale = .7;
+$imgScale = .4;
 
 #image aspect ratio
-$width = $imgScale*1250;
-$height = $imgScale*1200;
+$width = $imgScale*1801;
+$height = $imgScale*1723;
 
 
 loadMacros(   
