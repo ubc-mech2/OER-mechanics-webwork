@@ -1,0 +1,123 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Work of a Couple Moment)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','moment','force','angular velocity','car')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.2')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.2')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.8')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.44;
+$width = 1962*$scale;
+$height = 1024*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$a = random(0.4,0.6,1);
+$b = random(6,9,1);
+$revs = random(5,10,1);	#[revs]
+
+#---- Formulas to compute answers --------------#
+$W = $a/3*(2*pi*$revs)**3 + $b*(2*pi*$revs);
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-WE-JL-51.png", width=>[$width], height=>[$height]) @]*
+
+The crank to roll a car window up and down must be turned clockwise a total of [`[$revs]`] revolutions to completely open the window.
+You have decided that it requires too much work though, and instead built a torque motor to apply a clockwise couple moment 
+[`M = [$a]\ \theta^2 + [$b]\ \textrm{N·m}`].
+
+You do a test run with it and it works perfectly! What is the total work [`U_M`] done on the crank?
+
+[`U_M = `] [_____________]{"$W"} [`\textrm{J}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-WE-JL-51.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
