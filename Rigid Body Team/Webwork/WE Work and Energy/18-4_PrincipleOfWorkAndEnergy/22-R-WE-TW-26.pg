@@ -108,7 +108,7 @@ BEGIN_PGML
 
 [@ image( "22-R-WE-TW-26.png", width=>[$width], height=>[$height]) @]*
 
-A metal cylinder of mass [`m=[$m]\ kg`] and radius [`r=[$r]\ m`] is rolling without slipping towards an incline of [`\theta=[$theta]^\circ`]. If at the moment the cylinder starts rolling up the incline the angular velocity of the cylinder is [`\vec{\omega}=-[$angVel]\hat{k}\ rad/s`] and the rolling resistance of the cylinder is [`[$rr]`], what is the maximum distance [`l`] the cylinder travels up the incline? _(Use [`g=[$g]\ m/s^2`])_
+A metal cylinder of mass [`m=[$m]\ kg`] and radius [`r=[$r]\ m`] is rolling without slipping towards an incline of [`\theta=[$theta]^\circ`]. If at the moment the cylinder starts rolling up the incline the angular velocity of the cylinder is [`\vec{\omega}=-[$angVel]\hat{k}\ rad/s`] and the coefficient of rolling resistance of the cylinder is [`\mu_r=[$rr]`], what is the maximum distance [`l`] the cylinder travels up the incline? _(Use [`g=[$g]\ m/s^2`])_
 
 Rolling resistance arises from deformation in wheels, and energy is lost to heat in the process because of elastic hysteresis (the energy required to deform a tire is not equal to the energy returned when it returns to its original shape). Rolling resistance can be calculated in the same way as friction.
 
