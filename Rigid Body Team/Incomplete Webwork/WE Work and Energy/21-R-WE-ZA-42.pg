@@ -73,8 +73,8 @@ $lun = random(1,1.5,0.05);
 
 #computation for numerical answer
 $dsa = $lun-$sa;
-$va = $sd*-$vc/$sa;
 $sd = sqrt(($sa)**2+($sb)**2);
+$va = $sd*(-$vc)/$sa;
 $aa = (((-$vc)**2)+(-$ac*$sd)-($va**2))/$sa;
 $F = (($m*$aa)+($m*9.81)+($k*$dsa))*$sd/$sa;
 $P = $F*$sa/$sd*$va;

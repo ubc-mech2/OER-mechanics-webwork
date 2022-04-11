@@ -105,13 +105,14 @@ A spring is used in a pinball machine to launch a ball of mass [`m=[$m]\:kg`] an
 The handle is pulled which compresses the spring to a length of [`l_1`], and when it is released the
 ball rolls without slipping to the top of the machine, at a distance [`x=[$x]\:m`] from the starting point.
 In state 2 the spring is at its uncompressed length [`l_2`]. If the angle the machine makes with the vertical
-is [`\theta=[$theta]\:^{\circ}`], and the velocity of the ball in state 2 is [`v=[$v]\:m/s`], find the spring constant [`k`] in terms of the
-length the spring is compressed. Use [`l`] for the compressed length. Also, find the minimum length
-required to compress the spring to reach state 2 if [`k=[$q]\:N/m`].
+is [`\theta=[$theta]\:^{\circ}`], and the velocity of the ball in state 2 is [`v=[$v]\:m/s`], find the spring constant [`k`] in terms of [`l`], the
+length the spring is compressed. 
+
+Then, given [`k=[$q]\:N/m`], find the minimum length required to compress the spring to reach state 2.
 
 [`k = `][_____]{"$ans1"}[`N/m`]
 
-[`l = `][_____]{"$lmin"}[`m`]
+[`l_{min} = `][_____]{"$lmin"}[`m`]
 
 END_PGML
 

@@ -113,7 +113,7 @@ BEGIN_PGML
 A link of length [`l_1=[$l1]\:m`] and mass [`m_1=[$m1]\:kg`] is pinned at point [`A`], and the other end is attached
 to a spring with a constant of [`k=[$k]\:N/m`], and a second link. The second link has a length of [`l_2=[$l2]\:m`],
 mass [`m_2=[$m2]\:kg`], and is attached to a roller on the ground. If the system starts from rest at
-[`{\theta}_0=[$theta1]\:^{\circ}`], find the angular velocity of link [`BC`] when [`{\theta}=[$theta2]\:^{\circ}`]. The spring has an unstretched length of [`x`].
+[`{\theta}_0=[$theta1]^{\circ}`], find the angular velocity of the second link when [`{\theta}=[$theta2]^{\circ}`]. The spring has an unstretched length of [`x`].
 
 [`{\omega}_{BC} = `][_____]{"$w2"}[`rad/s`]
 

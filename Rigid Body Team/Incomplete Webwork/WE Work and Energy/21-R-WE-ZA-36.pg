@@ -78,7 +78,7 @@ $Ib = $mb*$kb**2;
 $V = $m*9.81*$h;
 $s = $h*($r2/$r1)**2;
 $Uk = 1/2*$k*$s**2;
-$omega = sqrt ( ($V-$Uk)*2/( ($mb*$r1**2) + $Ia + ($Ib*($r2/$r1)**2) ) );
+$omega = sqrt (($V-$Uk)*2/(($m*$r1**2) + $Ia + ($Ib*($r2/$r1)**2)));
 $T = 1/2*$Ib*($omega*$r2/$r1)**2;
 
 #image settings
@@ -101,7 +101,7 @@ BEGIN_PGML
 
 [@ image( "21-R-WE-ZA-36.png", width=>[$width], height=>[$height]) @]*
 
-Two disks of mass [`m_A=[$ma]\:kg`], inner radius [`r_i=[$r1]\:m`] and outer radius [`r_o=[$r2]\:m`] are connected by a cable wound around the outer radius
+Two disks of mass [`m_A=[$ma]\:kg`] and [`m_B=[$mb]\:kg`], inner radius [`r_i=[$r1]\:m`] and outer radius [`r_o=[$r2]\:m`] are connected by a cable wound around the outer radius
 of disk [`A`] and inner radius of disk [`B`]. A block of mass [`m=[$m]\:kg`] is attached to the inner radius of disk [`A`], and a spring
 with a constant [`k=[$k]\:N/m`] is attached to the outer radius of disk [`B`]. If the system is released from rest, find the kinetic
 energy of disk [`B`] after the block has moved [`[$h]\:m`] downwards. The spring starts at its unstretched length, and

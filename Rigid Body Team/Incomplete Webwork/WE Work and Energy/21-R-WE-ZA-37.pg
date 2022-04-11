@@ -72,8 +72,7 @@ $v = random(0.5,1,0.05);
 $T2 = (1/4*$mr*$v**2) + (1/2*$mb*$v**2);
 $Uk = (1/2*$r2**2*$ka);
 $b = $mb*9.81*$r2;
-$theta = (-$b+sqrt($b**2-(4*$Uk*$T2)))/(2*$Uk);
-$M = $T2/$theta;
+$theta = ($b-sqrt($b**2-(4*$Uk*$T2)))/(2*$Uk);
 
 #image settings
 $resolution = 0.2;
@@ -96,11 +95,15 @@ BEGIN_PGML
 [@ image( "21-R-WE-ZA-37.png", width=>[$width], height=>[$height]) @]*
 
 A disk of radius [`r=[$r2]\:m`] and mass [`m_{disk}=[$mr]\:kg`] is attached to a block of mass [`m_{block}=[$mb]\:kg`] connected to a spring
-with a constant of [`k=[$ka]\:N/m`] that starts at its unstretched length. Find the magnitude of moment applied to the
-disk that would provide the same kinetic energy to the disk without anything attached to it if it is released from rest,
-after the block reaches a velocity of [`v_f=[$v]\:m/s`]. (Assume the smallest possible distance travelled by the block.)
+with a constant of [`k=[$ka]\:N/m`] that starts at its unstretched length. 
 
-[`M = `][_____]{"$M"}[`N{\cdot}m`]
+Find the kinetic energy of the block and disk when the block reaches a velocity of [`v_f=[$v]\:m/s`]. (Assume the smallest possible distance travelled by the block.)
+
+[`T_2 = `][_______________]{"$T2"}[`kg*m^2`]
+
+Find the angle [`\theta`] the disk will have rotated when the block reaches a velocity of [`v_f=[$v]\:m/s`]. (Again, assume the smallest possible distance travelled by the block.)
+
+[`\theta = `][_______________]{"$theta"}[`rad`]
 
 END_PGML
 
