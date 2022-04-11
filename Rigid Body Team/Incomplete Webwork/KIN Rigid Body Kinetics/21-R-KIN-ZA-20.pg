@@ -70,7 +70,7 @@ $rho = random(800,900,1);
 $R = sqrt($H);
 $Iz= 1/2*$rho*pi/3*$H**3;
 $m = $rho*pi*$H**2/2;
-$Ip = $Iz + (1/2*$m*$R**2);
+$Ip = $Iz + ($m*$R**2);
 
 #image settings
 $resolution = 0.2;

@@ -70,15 +70,16 @@ $mring = random(10,20,1);
 
 
 #computation for numerical answer
-$r=$D/2;
+$R=$D/2;
 $mplate = $rho*$L**2*$t;
 $Iplate = 1/6*$L**2*$mplate;
 $mdisk = $rho*$R**2*pi*$t;
 $Idisk = 1/2*$mdisk*$R**2;
 $Iring = $mring*$R**2;
 $MOIz = $Iplate-$Idisk+$Iring;
+$mtotal = $mplate-$mdisk+$mring;
 $d = 2*($L/2)**2;
-$MOI = $MOIz + [ 1/2*($mplate+$mdisk+$mring)*$d**2 ];
+$MOI = $MOIz + ($mtotal)*$d;
 
 
 
