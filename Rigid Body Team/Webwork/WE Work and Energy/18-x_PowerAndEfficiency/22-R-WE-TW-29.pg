@@ -101,7 +101,7 @@ BEGIN_PGML
 
 [@ image( "22-R-WE-TW-29.png", width=>[$width], height=>[$height]) @]*
 
-Sam is riding his bike and wants to determine his average power output. He measures his average speed to be [`[$v]\ m/s`] and is applying a constant moment of [`[$M]\ N\cdot m`] to the wheels. If the radius of the wheels is [`[$r]\ m`] and the bike rolls without slipping, what is Sam's average power output?
+Sam is riding his bike and wants to determine his average power output. He measures his average speed to be [`[$v]\ m/s`] and is applying a constant moment of [`[$M]\ N\cdot m`] to the rear wheel. If the radius of the wheels is [`[$r]\ m`] and the bike rolls without slipping, what is Sam's average power output?
 
 [`P_{\text{average}}=`][____]{"$P"}
 
