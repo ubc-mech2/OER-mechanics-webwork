@@ -81,9 +81,9 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.4;
 
-$height = $imgScale * 1656;
+$height = $imgScale * 1603;
 
-$width = $imgScale * 1348;
+$width = $imgScale * 913;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -106,7 +106,7 @@ BEGIN_PGML
 
 [@ image( "22-R-IM-TW-36.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$mb]\ kg`] mass is suspended from a pulley of mass [`[$mp]\ kg`], radius [`r=[$r]\ m`], and radius of gyration of [`k=[$k]\ m`]. A constant moment acts on the pulley so that it stays in rotational equilibrium. If the rope connecting the mass to the pulley is cut, what will the angular velocity of the pulley be [`[$t]`] seconds after the rope is cut? _(Use [`g=9.81\ m/s^2`])_
+A [`[$mb]\ kg`] mass is suspended from a pulley of mass [`[$mp]\ kg`], radius [`r=[$r]\ m`], and radius of gyration of [`k=[$k]\ m`]. A constant moment (not shown) acts on the pulley so that it stays in rotational equilibrium. If the rope connecting the mass to the pulley is cut, what will the angular velocity of the pulley be [`[$t]`] seconds after the rope is cut? _(Use [`g=9.81\ m/s^2`])_
 
 [`\vec{\omega}=`][____]{"$angVel"} [`\hat{k}\ rad/s`]
 
