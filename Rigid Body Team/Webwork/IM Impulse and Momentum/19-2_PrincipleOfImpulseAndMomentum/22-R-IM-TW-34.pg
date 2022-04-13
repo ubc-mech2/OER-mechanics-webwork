@@ -79,11 +79,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.4;
+$imgScale = 0.3;
 
-$height = $imgScale * 527;
+$height = $imgScale * 2012;
 
-$width = $imgScale * 646;
+$width = $imgScale * 2034;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -105,7 +105,7 @@ BEGIN_PGML
 
 [@ image( "22-R-IM-TW-34.png", width=>[$width], height=>[$height]) @]*
 
-A circular industrial disc sander of radius with a moment of inertia of [`[$I]\ kg\cdot m^2`] is rotating at a speed of [`[$rpm]`] rotations per minute just after being disconnected from power. A block of wood is pushed against the sander with a constant force of [`[$F]\ N`] at a distance of [`d=[$dcm]\ cm`] from the center of the sander in order to slow down the rotation. How long does it take the sander to completely stop spinning? (Take the coefficient of kinetic friction between the wood and sandpaper to be [`\mu_k=[$muk]`])
+A circular industrial disc sander of radius with a moment of inertia about its center of rotation of [`[$I_G]\ kg\cdot m^2`] is rotating at a speed of [`[$rpm]`] revolutions per minute just after being disconnected from power. A block of wood is pushed against the sander with a constant force of [`[$F]\ N`] at a distance of [`d=[$dcm]\ cm`] from the center of the sander in order to slow down the rotation. How long does it take the sander to completely stop spinning? (Take the coefficient of kinetic friction between the wood and the sanding disc to be [`\mu_k=[$muk]`])
 
 [`t=`][____]{"$t"} [`s`]
 
