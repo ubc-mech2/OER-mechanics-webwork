@@ -107,7 +107,7 @@ BEGIN_PGML
 
 [@ image( "22-R-IM-TW-37.png", width=>[$width], height=>[$height]) @]*
 
-In the spirit of E-week, you want to determine how fast a foosball travels just after being hit. You measure the moment of inertia of the foosball figure to be [`I_O=[$I]\ kg\cdot m^2`] and the length [`l`] to be [`[$lcm]\ cm`]. Also, in the spirit of Engineering, you approximate the coefficient of restitution to be [`e=1`]. If the foosball figure rotates [`[$angDeg]^\circ`] due to an applied moment of [`[$M]\ N\cdot m`] before it hits the [`[$mb]\ kg`] ball (which is initially at rest), how fast will the ball be travelling just after impact?
+In the spirit of E-week, you want to determine how fast a foosball travels just after being hit. You measure the moment of inertia of the foosball figure about the horizontal bar to be [`I_{bar}=[$I]\ kg\cdot m^2`] and the length [`L`] to be [`[$lcm]\ cm`]. Also, in the spirit of Engineering, you approximate the coefficient of restitution to be [`e=1`]. If the foosball figure starts from rest and rotates [`[$angDeg]^\circ`] due to an applied moment of [`[$M]\ N\cdot m`] before it hits the [`[$mb]\ kg`] ball (which is initially at rest), how fast will the ball be travelling just after impact?
 
 [`v_{\text{ball}}=`][____]{"$v"} [`m/s`]
 
