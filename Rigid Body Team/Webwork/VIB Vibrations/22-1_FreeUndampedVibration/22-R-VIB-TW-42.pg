@@ -103,7 +103,7 @@ BEGIN_PGML
 
 [@ image( "22-R-VIB-TW-42.png", width=>[$width], height=>[$height]) @]*
 
-A spring with spring constant [`[$k]\ N/m`] is connected to a disk with a mass [`[$m]\ kg`] and radius [`r=[$r]\ m`]. A moment of [`\vec{M}=-[$M]\hat{k}\ N\cdot m`] is required to keep the disk in static equilibrium. At some time, [`t=t_0`], the moment is suddenly removed, and the disk begins to experience oscillatory motion due to the spring. With what period, [`\tau`], does the system oscillate?
+A spring with spring constant [`[$k]\ N/m`] is connected to a disk with a mass [`[$m]\ kg`] and radius [`r=[$r]\ m`]. A moment of [`\vec{M}=-[$M]\hat{k}\ N\cdot m`] is required to keep the disk in static equilibrium. At time [`t=0`] the moment is suddenly removed, and the disk begins to experience oscillatory motion due to the spring. With what period, [`\tau`], does the system oscillate? (You may assume [`\sin\theta=\theta`])
 
 [`\tau=`][____]{"$T"} [`s`]
 
