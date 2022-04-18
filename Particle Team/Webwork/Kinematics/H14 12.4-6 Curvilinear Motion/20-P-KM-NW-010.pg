@@ -71,14 +71,13 @@ TEXT(beginproblem());
 
 Context("Numeric");         # or Complex
 #given
-$acceleration = -10;
+$acceleration = 9.8;
 
 $velocity = random(2,10,1);         # (lower, upper, stepsize)
-$height = random(100,150,10);
-$time = sprintf("%0.3f", sqrt(-$height*2/$acceleration) );
+$height = random(10,15,1);
 
 #computation
-$speed = sqrt($velocity**2 + ($acceleration*$time)**2);
+$speed = sqrt($velocity**2 + 2*$acceleration*$height);
 
 #set tolerance
 Context()->flags->set(
@@ -93,7 +92,7 @@ tolType=>'absolute');  #absolute or relative
 
 BEGIN_PGML
 
-A student's report card is crushed into a ball and kicked horizontally with an initial velocity of [`v_{i} = [$velocity]`] [`m/s`] off the roof of a building [`[$height]`] [`m`] tall. Determine the speed of the ball upon impact if it travels for [`[$time]`] [`s`] before landing. Treat [`g = 10`] [`m/s^2`].
+A student's report card is crushed into a ball and kicked horizontally with an initial velocity of [`v_{i} = [$velocity]`] [`m/s`] off the roof of a building [`[$height]`] [`m`] tall. Determine the speed of the ball upon impact and treat [`g = 9.8`] [`m/s^2`].
 
 [`v=`][___]{"$speed"}[`m/s`]
 
