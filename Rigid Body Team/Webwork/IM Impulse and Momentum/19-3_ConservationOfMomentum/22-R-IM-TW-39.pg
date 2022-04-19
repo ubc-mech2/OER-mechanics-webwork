@@ -30,7 +30,7 @@
 ## Institution('University of British Columbia')
 ## Author(Tyler Wilson)
 ## Date(Winter 2022)
-## Difficulty(Beginner)
+## Difficulty(Intermediate)
 ## KEYWORDS('Dynamics','angular momentum','angular velocity','conservation of momentum')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.2')
 ## TitleText1('Engineering Mechanics')
@@ -79,11 +79,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.5;
+$imgScale = 0.3;
 
-$height = $imgScale * 386;
+$height = $imgScale * 1010;
 
-$width = $imgScale * 806;
+$width = $imgScale * 2558;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -108,7 +108,7 @@ BEGIN_PGML
 
 [@ image( "22-R-IM-TW-39.png", width=>[$width], height=>[$height]) @]*
 
-A ping pong ball (radius [`[$rcm]\ cm`], radius of gyration [`[$kcm]\ cm`], and mass [`[$mg]\ g`]) hits the table with a horizontal velocity of [`\vec{v}_x=[$vx]\hat{i}\ m/s`] and a vertical velocity of [`\vec{v}_y=[$vy]\hat{j}\ m/s`]. If the coefficient of restitution between the ball and the table is [`e=[$e]`], what spin, [`\vec{\omega}`], must the ball have before impact in order for it to bounce straight up? (Assume that no slipping occurs and use [`g=9.81\ m/s^2`])
+A ping pong ball (radius [`[$rcm]\ cm`], radius of gyration [`[$kcm]\ cm`], and mass [`[$mg]\ g`]) hits the table with a horizontal velocity of [`\vec{v}_x=[$vx]\hat{i}\ m/s`] and a vertical velocity of [`\vec{v}_y=[$vy]\hat{j}\ m/s`]. What spin, [`\vec{\omega}`], must the ball have before impact in order for it to bounce straight up? (Assume that no slipping occurs between the ball and the table).
 
 [`\vec{\omega}=`][____]{"$angVel"}[`\hat{k}\ rad/s`]
 
