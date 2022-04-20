@@ -30,7 +30,7 @@
 ## Institution('University of British Columbia')
 ## Author(Tyler Wilson)
 ## Date(Winter 2022)
-## Difficulty(Intermediate)
+## Difficulty(Advanced)
 ## KEYWORDS('Dynamics','angular momentum','angular velocity','conservation of momentum','projectile motion')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.4')
 ## TitleText1('Engineering Mechanics')
@@ -79,11 +79,11 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.5;
+$imgScale = 0.4;
 
-$height = $imgScale * 386;
+$height = $imgScale * 1010;
 
-$width = $imgScale * 806;
+$width = $imgScale * 2558;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -97,15 +97,15 @@ $xcm = random(8,12,2);
 $x = $xcm/100;
 $hcm = 15.25;
 $h = $hcm/100;
-$vx0 = random(0.5,1.5,0.5);
-$vy0 = -random(0.5,1.5,0.5);
+$vx0 = random(0.5,1,0.5);
+$vy0 = -random(2.5,5,0.5);
 $e = random(0.8,0.95,0.05);
 $g = 9.81;
 
 #---- Formulas to compute answers --------------#
 $I = $m*$k**2;
 $vy1 = -$e*$vy0;
-$t=($vy1+sqrt($vy1**2+2*$g*$h))/$g;
+$t=($vy1+sqrt($vy1**2-2*$g*$h))/$g;
 $vx1 = $x/$t;
 $w1 = $vx1/$r;
 $w0 = ($I*$w1+$m*$vx1*$r+$m*$vx0*$r)/$I;
