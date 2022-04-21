@@ -98,6 +98,7 @@ $t = random(3,6,1);		#[s]
 #---- Formulas to compute answers --------------#
 $I_A = $m*($k**2 + $r**2);
 $w = $F/2*($t**2)*$r/$I_A;
+$v = $w*$r;
 
 ########################################################
 #PGML
@@ -108,11 +109,11 @@ BEGIN_PGML
 
 Gear track [`\textrm{T}`] sits fixed on the ground with gear [`\textrm{G}`] meshed in the track at point
 [`\textrm{A}`]. A force [`F = [$F]\ t\ \textrm{N}`] pulls on gear [`\textrm{G}`], where [`t`] is in seconds.
-The gear has a radius of gyration [`k = [$k_cm]\ \textrm{cm}`], a mass [`m = [$m]\ \textrm{kg}`] and a radius [`r = [$r_cm]\ \textrm{cm}`].
+The gear has a radius of gyration about G of [`k = [$k_cm]\ \textrm{cm}`], a mass [`m = [$m]\ \textrm{kg}`] and a radius [`r = [$r_cm]\ \textrm{cm}`].
 
 Find the velocity of the center of mass of the gear at [`t = [$t]\ \textrm{s}`] if it started from rest.
 
-[`\omega = `] [_____]{"$w"} [`\textrm{rad/s}`]
+[`\vec{v}_G = `] [_____]{"$v"} [`\ \hat{i}\ \textrm{m/s}`]
 
 END_PGML
 
