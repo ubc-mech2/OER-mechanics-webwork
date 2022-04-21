@@ -115,7 +115,7 @@ To get the tire into her workshop she needs to roll her replacement tire which h
 step of height [`h = [$h_cm]\ \textrm{cm}`] off the ground.
 Olivia needs to roll the tire such that once it contacts point [`\textrm{P}`] it strikes the step into the workshop and rolls over it without slipping or rebounding. The tire needs to rotate about point [`\textrm{P}`] with an angular velocity [`\omega = [$w2]\ \textrm{rad/s}`] if it is to have enough energy to make it into the workshop on the first try. 
 
-Given that the tire has a radius of gyration [`k = [$k_cm]\ \textrm{cm}`], find the minimum angular velocity required
+Given that the tire has a radius of gyration [`k = [$k_cm]\ \textrm{cm}`], find the magnitude of minimum initial angular velocity required
 to roll the tire over the step on the first try.
 
 [`\omega = `] [__________]{"$w1"} [`\textrm{rad/s}`]
