@@ -101,6 +101,7 @@ $v1 = random(2,4,0.1);
 
 #---- Formulas to compute answers --------------#
 $w = ($m_ball*$v1*$L/2)*(1+$e)/($m_rod/12*$L**2 + $m_ball*$L**2/4);		#[rad/s]
+$ans = -$w;
 
 ########################################################
 #PGML
@@ -116,7 +117,7 @@ The radius of the bowling ball and the height of the bar off the ground are both
 If the bowling ball is moving at a speed of [`(v_G)_1 = [$v1]\ \textrm{m/s}`] and the coefficient of restitution
 is [`e = [$e]`], find the angular velocity of the target pin just after the impact.
 
-[`\omega = `] [__________]{"$w"} [`\textrm{rad/s}`]
+[`\vec\omega = `] [__________]{"$ans"} [`\ \hat{k}\ \textrm{rad/s}`]
 
 END_PGML
 
