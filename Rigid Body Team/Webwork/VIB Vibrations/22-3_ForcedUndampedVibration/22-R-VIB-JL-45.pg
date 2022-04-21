@@ -112,7 +112,7 @@ and supports with a spring of stiffness [`k = [$k]\ \textrm{N/m}`]. The poster b
 and oscillates directly up and down above the buoy. The buoy is also tethered in place such that it stays in the same horizontal
 position and only moves vertically staying at the top of the water. 
 
-If the waves today are moving at a speed of [`v = [$v]\ \textrm{m/s}`] and the height from peak to valley is
+If the waves today are moving at a speed of [`v = [$v]\ \textrm{m/s}`] and the amplitude is
 [`\delta_0 = [$A]\ \textrm{m}`] what wavelength [`\lambda`] would result in the greatest vibrational amplitude of the poster board?
 
 [`\lambda = `] [_________]{"$lambda_max"} [`\textrm{m}`]
