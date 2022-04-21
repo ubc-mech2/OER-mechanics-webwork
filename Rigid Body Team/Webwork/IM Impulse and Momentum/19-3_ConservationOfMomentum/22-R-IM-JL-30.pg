@@ -108,16 +108,16 @@ BEGIN_PGML
 [@ image( "22-R-IM-JL-30.png", width=>[$width], height=>[$height]) @]*
 
 
-Sam just finished swinging on his favourite swing set and has reached resting position. Sam has a mass of [`m = [$m1]\ \textrm{kg}`]
+Ryan just finished swinging on his favourite swing set and is at rest. Ryan has a mass of [`m = [$m1]\ \textrm{kg}`]
 and jumps of the swing which is a 
 flat plate of mass [`m_{plate} = [$m2]\ \textrm{kg}`] and length [`L = [$L]\ \textrm{m}`] suspended by cords
 of negligible mass. As he jumps off, his center of mass is [`d_1 = [$d1]\ \textrm{m}`] from the pin holding
-the swing set, and the center of mass of the seat of the swing is [`d_2 = [$d2]\ \textrm{m}`] from it. Sam's jump
-gives him a horizontal velocity of [`v_{rel} = [$v_rel]\ \textrm{m/s}`] relative to the final velocity of the swing (measured at the distance [`d_1`]). What is the resulting
+the swing set, and the center of mass of the seat of the swing is [`d_2 = [$d2]\ \textrm{m}`] from it. Ryan's jump
+gives him a horizontal velocity of [`\vec v_{rel} = -[$v_rel]\ \hat{i}\ \textrm{m/s}`] relative to the final velocity of the swing (measured at the distance [`d_1`]). What is the resulting
 angular velocity of the swing?
 
 
-[`\omega = `] [_____________]{"$w"} [`\textrm{rad/s}`]
+[`\vec\omega = `] [_____________]{"$w"} [`\ \hat{k}\ \textrm{rad/s}`]
 
 END_PGML
 
