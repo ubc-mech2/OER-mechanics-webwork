@@ -98,7 +98,7 @@ $theta = arcsin(($h**2 + $L**2)*$w**2/(3*9.81*$L));
 
 BEGIN_PGML
 
-[@ image( "22-R-WE-JL-26-.png", width=>[$width], height=>[$height]) @]*
+[@ image( "22-R-WE-JL-26.png", width=>[$width], height=>[$height]) @]*
 
 You are out for a guided tour at your local Modern Art Museum, and you arrive to the final piece in the exhibit: the masterpiece. The guide explains that
 even though the painting is somewhat small, only measuring [`h = [$h]\ \textrm{m}`] by [`L = [$L]\ \textrm{m}`], it costs over 3 million dollars. It is so mesmerizingly beautiful, that when
@@ -115,7 +115,7 @@ BEGIN_PGML_SOLUTION
 
 If the solution does not appear, right click the icon and select "Open image in new tab".
 
-[@ image( "22-R-WE-JL-26-.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "22-R-WE-JL-26.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
