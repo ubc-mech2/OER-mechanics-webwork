@@ -111,7 +111,9 @@ BEGIN_PGML
 A large pendulum of length [`L = [$L]\ \textrm{m}`] and mass [`m = [$m]\ \textrm{kg}`] swings back and forth. Air resistance
 acts as a damping force with a magnitude proportional to the pendulum's velocity by a constant of [`[$c]`].
 
-Determine the natural frequency of the pendulum.
+Determine the natural frequency of the pendulum. 
+
+_(Assume the radius of the pendulum is sufficiently small relative to the length such that the pendulum can be approximated by a point mass.)_
 
 [`\omega_n = `] [_________]{"$wn"} [`\textrm{rad}`]
 
@@ -120,7 +122,7 @@ Determine the damping ratio [`\zeta`] of the pendulum's vibration.
 [`\zeta = `] [_________]{"$z"} [`\ \ \ `] Is the system over-damped, critically-damped, or under-damped? [@ $mcScenario->menu() @]*
 
 A measurement is taken when the pendulum reaches a maximum, and the amplitude of vibration at that moment is found to be 
-[`s_1 = [$x1]\ \textrm{m}`]. Using this information, deduce the amplitude of the previous oscillation's maxima?
+[`s_1 = [$x1]\ \textrm{m}`]. Using this information, deduce the pendulum's amplitude from one period earlier.
 
 
 END_PGML
