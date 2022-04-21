@@ -100,7 +100,7 @@ $Vg1 = $m*9.81*$L1;  #not used
 $L_spring2 = sqrt($L2**2+$d**2/4);
 $Vg2 = $m*9.81*$L2;  #not used
 
-$k = 2*$m*($v**2/2+9.81*($L1-$L2))/(($L_spring1-$uL)**2-($L_spring2-$uL)**2);
+$k = 2*$m*($v**2/2+9.81*($L1-$L2))/(($L_spring2-$uL)**2-($L_spring1-$uL)**2);
 
 
 ########################################################
@@ -113,7 +113,7 @@ BEGIN_PGML
 You have recently decided that you love peanut butter so much that you have prepared some experiments to perform on your favourite jar of peanut butter. Using two equal springs
 you suspend your [`[$m]\ \textrm{kg}`] jar and push it down so that initially it is a distance [`L_1 = [$L1]\ \textrm{m}`] from the attachments and falls at [`v = [$v]\ \textrm{m/s}`].
 The attachments are a distance [`d = [$d]\ \textrm{m}`] away from each other with the jar of peanut butter at the horizontal midpoint. If the springs have an unstretched length of
-[`[$uL]\ \textrm{m}`], for what spring constant [`k`] would the jar come to rest at a distance [`L_2 = [$L2]\ \textrm{m}`] from the top?
+[`[$uL]\ \textrm{m}`], for what spring constant [`k`] would the jar reach its lowest position at a distance [`L_2 = [$L2]\ \textrm{m}`] from the top?
 
 
 [`k = `] [_____]{"$k"} [`\textrm{N/m}`]
