@@ -108,7 +108,7 @@ BEGIN_PGML
 
 [@ image( "22-R-VIB-JL-40.png", width=>[$width], height=>[$height]) @]*
 
-A physicist who loves baseball has decided to make a pendulum from a baseball they caught at their favourite team's
+A physicist who loves baseball has decided to make an oscillator from a baseball they caught at their favourite team's
 championship win. It is made from a bar of negligible mass and length [`L = [$Lcm]\ \textrm{cm}`] connected at
 one end to a spring and with the baseball attached at the other end. The spring has a stiffness 
 [`k = [$k]\ \textrm{N/m}`] which keeps the pendulum is at rest when the bar is horizontal. The baseball is a uniform sphere of radius
@@ -125,8 +125,9 @@ END_PGML
 
 BEGIN_PGML_HINT
 
-The pendulum has reached an equilibrium with the baseball attached where the force from the spring cancels the force of gravity on the ball. When
-considering the potential energy, try looking at the elastic energy from the new equilibrium in terms of [`\theta`].
+The oscillator has reached an equilibrium with the baseball attached where the moment from the spring equals the moment from the force of gravity on the ball. When
+considering the potential energy, try summing the moments about A, then substituting that expression for the initial stretch into the equation
+for potential energy. Finally look at expressing the different variables in the potential energy equation in terms of [`\theta`].
 
 END_PGML_HINT
 
