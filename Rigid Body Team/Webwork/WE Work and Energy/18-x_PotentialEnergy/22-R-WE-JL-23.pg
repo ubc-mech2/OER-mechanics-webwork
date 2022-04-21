@@ -90,12 +90,13 @@ $d = random(0.4,0.55,0.05);	#[m]
 $r = random(0.2,0.4,0.1);	#[m]
 $k = random(40,80,10);		#[N/m]
 $theta = random(30,60,5);	#[deg]
+$t_rad = $theta/180*pi;		#[rad]
 $uL = $d1 - 0.4;		#[deg]
 $v = random(2.25,3,0.25);	#[m/s] 
 
 
 #---- Formulas to compute answers --------------#
-$m = $k*(($d1 + $d - $uL)**2 - ($d1 - $uL)**2)/(2*(3/4*$v**2 + 9.81*$d*sin($theta)));
+$m = $k*(($d1 + $d - $uL)**2 - ($d1 - $uL)**2)/(2*(3/4*$v**2 + 9.81*$d*sin($t_rad)));
 
 
 ########################################################
@@ -109,11 +110,11 @@ Your favourite record has fallen off the table and is rolling down a [`[$theta]^
 your safety spring is attached for just this reason and will prevent it from rolling too far. The spring has a
 stiffness of [`k = [$k]\ \textrm{N/m}`] and the record can be approximated by a thin uniform disc with radius 
 [`r = [$r]\ \textrm{m}`]. It started a distance [`d_1 = [$d1]\ \textrm{m}`] from the wall and rolls down
-the slope without slipping at [`v = [$v]\ \textrm{m/s}`]. If the spring has an unstretched length of [`[$uL]\ \textrm{m}`]
+the slope without slipping at an initial velocity of [`v = [$v]\ \textrm{m/s}`]. If the spring has an unstretched length of [`[$uL]\ \textrm{m}`]
 and the record comes to a stop after rolling [`[$d]\ \textrm{m}`] find the mass of your favourite record.
 
 
-[`m = `] [_____]{"$k"} [`\textrm{N/m}`]
+[`m = `] [_____]{"$m"} [`\textrm{kg}`]
 
 END_PGML
 
