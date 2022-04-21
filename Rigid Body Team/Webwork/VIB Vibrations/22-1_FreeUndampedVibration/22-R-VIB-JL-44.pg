@@ -110,8 +110,8 @@ BEGIN_PGML
 [@ image( "22-R-VIB-JL-44.png", width=>[$width], height=>[$height]) @]*
 
 A tire of mass [`m = [$m]\ \textrm{kg}`] and moment of inertia [`I_G = [$I]\ \textrm{kg·m}^2`] hangs
-from a torsional rod with a stiffness of [`k = [$k]\ \textrm{N·m/rad}`]. The tire is given a small
-twist [`\textrm{M}`] and then let go, disrupting its equilibrium. Determine the natural period of
+from a rod with a torsional stiffness of [`k = [$k]\ \textrm{N·m/rad}`]. The tire is given a small angular displacement 
+disrupting its equilibrium and then let go so that [`\textrm{M} = 0`] once the system is released. Determine the natural period of
 the tire's vibration.
 
 [`\tau = `] [_________]{"$tau"} [`\textrm{s}`]
