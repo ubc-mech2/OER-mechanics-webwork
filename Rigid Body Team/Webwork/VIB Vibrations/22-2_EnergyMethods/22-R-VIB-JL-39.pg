@@ -102,8 +102,8 @@ BEGIN_PGML
 
 [@ image( "22-R-VIB-JL-39.png", width=>[$width], height=>[$height]) @]*
 
-The pendulum hanging from point [`\textrm{A}`] is given a small displacement. The displacement gives the
-pendulum a natural period of vibration of [`\tau = [$T]\ \textrm{s}`]. Find the moment of inertia [`I_A`] about
+The pendulum hanging from point [`\textrm{A}`] is given a small displacement and swings with a period
+of [`\tau = [$T]\ \textrm{s}`]. Find the moment of inertia [`I_A`] about
 the pendulum's connection at point [`\textrm{A}`] if the pendulum has a mass of [`[$m]\ \textrm{kg}`] and its center 
 of mass is located a distance [`d = [$d]\ \textrm{cm}`] below point [`\textrm{A}`].
 
