@@ -131,7 +131,7 @@ BEGIN_PGML_SOLUTION
 
 If the solution does not appear, right click the icon and select "Open image in new tab".
 
-[@ image( "22-R-KIN-JL-50.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "22-R-KIN-JL-16.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
