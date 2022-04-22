@@ -96,6 +96,34 @@ $kTot = $k**2/($k*2);
 $ansL = $mass;
 $ansR = $kTot;
 $ansC = 1/$cTot;
+
+$mcScenario1 = PopUp(["?",
+	"1/m",
+	"m",
+	"k",
+	"sqrt(k)",
+	"sqrt(c)",
+	"1/c"], 
+		"m"); #[@ $mcScenario1->menu() @]*
+
+$mcScenario2 = PopUp(["?",
+	"m^2",
+	"sqrt(m)",
+	"sqrt(k)",
+	"1/k",
+	"c^2",
+	"1/c"], 
+		"1/k"); #[@ $mcScenario2->menu() @]*
+
+$mcScenario3 = PopUp(["?",
+	"1/m",
+	"m^2",
+	"k",
+	"1/k",
+	"c",
+	"c^2"], 
+		"c"); #[@ $mcScenario3->menu() @]*
+
 $mc1 = RadioButtons(
     [ "A", "B", "C", "D"],
     "D"); #this will make D the correct answer
@@ -110,16 +138,30 @@ BEGIN_PGML
 A mass, [`m =`] [`[$mass]`] [`kg`], is supported by two springs in series and two dampers in series. 
 The dampers each have a damping constant [`c =`] [`[$c]`] [`Ns/m`] and the springs each have a spring 
 constant [`k = [$k] N/m`]. A force [`F = [$force]cos([$freq]t)`] is applied to the mass. 
-Determine the total resistance, ohms, and capacitance of an equilvalent electrical analog system.
 
-[`L =`] [____]{"$ansL"} [`H`]
+Find the equivalent values for mass [`\textrm{m}`], stiffness [`\textrm{k}`], and damping [`\textrm{c}`] if there was only one of each
+component in the circuit, and select their proportionality to inductance [`\textrm{L}`], resistance [`\textrm{R}`], and capacitance [`\textrm{C}`].
 
-[`R =`] [____]{"$ansR"} [`\Omega`]
+[`m_{eq} =`] [__________]{"$mass"} [`\textrm{kg}`] 
 
-[`C =`] [____]{"$ansC"} [`F`]
+[`k_{eq} =`] [__________]{"$kTot"} [`\textrm{N/m}`] 
+
+[`c_{eq} =`] [__________]{"$cTot"} [`\textrm{N·s/m}`] 
+
+
+Inductance is proportional to [@ $mcScenario1->menu() @]*
+
+
+Capacitance is proportional to [@ $mcScenario2->menu() @]*
+
+
+Resistance is proportional to [@ $mcScenario3->menu() @]*
 
 END_PGML
 
+ANS($mcScenario1->cmp);
+ANS($mcScenario2->cmp);
+ANS($mcScenario3->cmp);
 
 BEGIN_TEXT
 
