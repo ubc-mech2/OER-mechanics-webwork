@@ -97,7 +97,8 @@ $g = 9.81;
 
 #---- Formulas to compute answers --------------#
 $I = 0.5*$m*$rm**2;
-$v2 = sqrt(2*$g*$d3m);
+$w2 = sqrt(2*$m*$g*$d3m/($I+$m*$rm**2));
+$v2 = $w2*$rm;
 $v1 = ($m*$v2*$rm**2+$I*$v2)/($rm*$m*($rm-$d3m));
 $angVel = $v1/$d1;
 
@@ -109,7 +110,7 @@ BEGIN_PGML
 
 [@ image( "22-R-IM-TW-30.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$m]\ kg`] can of concentrated orange juice is sitting on the side of a freezer door as shown. If the can of juice has a radius of [`r=[$r]\ cm`] and is at a distance [`d_1=[$d1]\ m`] away from the hinge of the freezer, what is the maximum angular speed [`\omega`] you can open the freezer door with without having the juice hop the [`[$d3]\ cm`] ledge labelled [`d_3`] and fall out of the freezer?
+A [`[$m]\ kg`] can of concentrated orange juice is sitting on the side of a freezer door as shown. If the can of juice has a radius of [`r=[$r]\ cm`] and the center of the can is at a distance [`d_1=[$d1]\ m`] away from the hinge of the freezer, what is the maximum angular speed [`\omega`] you can open the freezer door with without having the juice hop the [`[$d3]\ cm`] ledge labelled [`d_3`] and fall out of the freezer?
 
 [`\omega=`][____]{"$angVel"} [`rad/s`]
 
