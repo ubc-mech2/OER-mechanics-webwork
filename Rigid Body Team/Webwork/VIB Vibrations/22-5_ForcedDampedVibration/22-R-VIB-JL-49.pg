@@ -103,6 +103,10 @@ $frequencyRatio = $freq/$wN;
 
 $X = $d/sqrt((1-$frequencyRatio**2)**2 + (2*$z*$frequencyRatio)**2);
 
+$tau0 = 2*pi/$freq;
+$wD = $wN*sqrt(1-$z**2);
+$taud = 2*pi/$wD;
+
 ########################################################
 #PGML
 
@@ -117,13 +121,18 @@ to a damper with damping constant [`c = [$c]\ \textrm{N·s/m}`] on one side, and
 [`k = [$k]\ \textrm{N/m}`] on the other. A rotating wheel causes periodic motion to keep the milkshake shaking where
 [`\delta_0 = [$dcm]\ \textrm{cm}`] and the angular velocity is [`\omega = [$freq]\ \textrm{rad/s}`].
 
-Find the natural period of oscillation [`\tau`], the damping ratio [`\zeta`], and the amplitude [`X'`] of the vibrations.
-
-[`\tau =`] [_____________________]{"$tau"} [`\textrm{s}`]
+Find the the damping ratio [`\zeta`], the steady state amplitude [`X'`] of the vibrations, the natural period [`\tau_n`], the period of the steady state response [`\tau_0`], and the period of the damped vibration [`\tau_d`].
 
 [`\zeta =`] [_____________________]{"$z"}
 
 [`X' =`] [_____________________]{"$X"} [`\textrm{m}`]
+
+[`\tau_n =`] [_____________________]{"$tau"} [`\textrm{s}`]
+
+[`\tau_0 =`] [_____________________]{"$tau0"} [`\textrm{s}`]
+
+[`\tau_d =`] [_____________________]{"$taud"} [`\textrm{s}`]
+
 
 END_PGML
 
