@@ -101,7 +101,7 @@ BEGIN_PGML
 [@ image( "22-R-WE-JL-51.png", width=>[$width], height=>[$height]) @]*
 
 The crank to roll a car window up and down must be turned clockwise a total of [`[$revs]`] revolutions to completely open the window.
-You have decided that it requires too much work though, and instead built a torque motor to apply a clockwise couple moment 
+You have decided that it requires too much work though, and instead built a motor to apply a clockwise moment 
 [`M = [$a]\ \theta^2 + [$b]\ \textrm{N·m}`].
 
 You do a test run with it and it works perfectly! What is the total work [`U_M`] done on the crank?
