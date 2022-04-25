@@ -30,7 +30,7 @@
 ## Institution('University of British Columbia')
 ## Author(Tyler Wilson)
 ## Date(Winter 2022)
-## Difficulty(Beginner)
+## Difficulty(Intermediate)
 ## KEYWORDS('Dynamics','pendulum','oscillation','damped')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.4')
 ## TitleText1('Engineering Mechanics')
@@ -81,16 +81,16 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.3;
 
-$height = $imgScale * 772;
+$height = $imgScale * 2508;
 
-$width = $imgScale * 1046;
+$width = $imgScale * 2263;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
-$l = random(0.5,2,0.5);
+$l = random(0.5,2,0.5)*2;
 $c = random(3,5,1);
 $g = 9.81;
-$r = random(0.05,0.15,0.05);
+$r = random(0.02,0.05,0.01);
 
 #---- Formulas to compute answers --------------#
 $m = $c*sqrt($l**3/(4*$g*(0.4*$r**2+$l**2)));
@@ -104,7 +104,7 @@ BEGIN_PGML
 
 A new fish species discovered in the Fraser River has been observed to be attracted to swinging pendulums as depicted above. You want to observe this phenomenon so you take a spherical metal ball of radius [`r=[$r]\ m`] attached to a rope of length [`L=[$l]\ m`] and tie it to a buoy as shown. If the drag force of the ball is modelled by [`F_d=-[$c]v`], what mass must the ball be in order for oscillation to occur?
 
-(Use [`g=9.81\ m/s^2`] and assume that [`\sin\theta=\theta`])
+(Use [`g=9.81\ m/s^2`] and assume that [`\sin\theta=\theta`]. Ignore the buoyancy force in your calculations.)
 
 [`m\geq`][___]{"$m"} [`kg`]
 
