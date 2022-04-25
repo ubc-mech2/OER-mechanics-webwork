@@ -75,15 +75,15 @@ Context("Numeric");		# or Complex
 
 #---------------Tolerance------------------#
 Context()->flags->set(
-tolerance=>.02,
+tolerance=>.01,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.3;
+$imgScale = 0.25;
 
-$height = $imgScale * 428;
+$height = $imgScale * 1672;
 
-$width = $imgScale * 1148;
+$width = $imgScale * 2899;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -107,7 +107,7 @@ BEGIN_PGML
 
 [@ image( "22-R-IM-TW-38.png", width=>[$width], height=>[$height]) @]*
 
-Your pet hamster is running in its hamster wheel which has a radius of [`r_w=[$rw]\ m`], radius of gyration of [`k_w=[$kw]\ m`], and a mass of [`m_w=[$mw]\ kg`]. Eventually the speed of the wheel becomes too quick for the hamster to keep up and it falls down and begins to rotate with the wheel as shown. If the rotational speed of the wheel was [`\omega_0=[$w0]\ rad/s`] at the instant before the hamster fell down, what is the angular speed that the hamster will begin to rotate with? You may approximate the hamster as a sphere of mass [`m_h=[$mh]\ kg`] and radius [`r_h=[$rhcm]\ cm`].
+Your pet hamster is running without slipping in its hamster wheel which has a radius of [`r_w=[$rw]\ m`], radius of gyration of [`k_w=[$kw]\ m`], and a mass of [`m_w=[$mw]\ kg`]. Eventually the speed of the wheel becomes too quick for the hamster to keep up and it falls down and begins to rotate with the wheel as shown. If the rotational speed of the wheel was [`\omega_0=[$w0]\ rad/s`] at the instant before the hamster fell down, what is the angular speed that the hamster will begin to rotate with? You may approximate the hamster as a sphere of mass [`m_h=[$mh]\ kg`] and radius [`r_h=[$rhcm]\ cm`].
 
 [`\omega=`][____]{"$wf"} [`rad/s`]
 
