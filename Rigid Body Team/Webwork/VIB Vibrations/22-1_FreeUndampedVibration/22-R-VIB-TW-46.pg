@@ -81,9 +81,9 @@ tolType=>'relative');  #relative or absolute
 #-------------- Image Scaling---------------#
 $imgScale = 0.3;
 
-$height = $imgScale * 1661;
+$height = $imgScale * 1618;
 
-$width = $imgScale * 2440;
+$width = $imgScale * 2329;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -112,7 +112,7 @@ END_PGML
 
 BEGIN_PGML_HINT
 
-The bouyancy force can also be written as [`F_b=A\rho gh`] which can be treated the same as Hooke's law.
+The bouyancy force can also be written as [`F_b=A\rho gh`] where [`h`] is the height of water displaced. This can be treated the same as Hooke's law.
 
 END_PGML_HINT
 
