@@ -79,11 +79,11 @@ tolerance=>.01,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.3;
+$imgScale = 0.25;
 
-$height = $imgScale * 772;
+$height = $imgScale * 2508;
 
-$width = $imgScale * 1046;
+$width = $imgScale * 2263;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -121,7 +121,7 @@ END_PGML
 BEGIN_PGML_SOLUTION
 If the solution doesn't display correctly, try right clicking and opening it in a new tab.
 
-[@ image( "22-R-VIB-TW-48.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "22-R-VIB-TW-50.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 
