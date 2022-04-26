@@ -30,7 +30,7 @@
 ## Institution('University of British Columbia')
 ## Author(Tyler Wilson)
 ## Date(Winter 2022)
-## Difficulty(Beginner)
+## Difficulty(Intermediate)
 ## KEYWORDS('Dynamics','pendulum','oscillation','damped','forced')
 ## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.5')
 ## TitleText1('Engineering Mechanics')
@@ -79,11 +79,11 @@ tolerance=>.01,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale = 0.3;
+$imgScale = 0.25;
 
-$height = $imgScale * 772;
+$height = $imgScale * 2480;
 
-$width = $imgScale * 1046;
+$width = $imgScale * 2329;
 		#aspect ratio
 
 #---- Random variables for this problem --------#
@@ -91,7 +91,7 @@ $l = random(0.5,2,0.5);
 $c = random(3,5,1);
 $g = 9.81;
 $r = random(0.05,0.15,0.05);
-$F = random(0.2,0.5,0.1);
+$F = random(6,10,1);
 $w0 = random(2,5,1);
 $m = random(1,5,1);
 
@@ -99,7 +99,7 @@ $m = random(1,5,1);
 $I = 0.4*$m*$r**2+$m*$l**2;
 $wn = sqrt($m*$g*$l/$I);
 $cc = 2*$I*$wn;
-$X = $F/sqrt((1-($w0/$wn)**2)**2+(2*($c/$cc)*($w0/$wn))**2);
+$X = ($F/($m*$g*$l))/sqrt((1-($w0/$wn)**2)**2+(2*($c/$cc)*($w0/$wn))**2);
 
 ########################################################
 #PGML
@@ -108,7 +108,7 @@ BEGIN_PGML
 
 [@ image( "22-R-VIB-TW-49.png", width=>[$width], height=>[$height]) @]*
 
-A new fish species discovered in the Fraser River has been observed to be attracted to swinging pendulums as depicted above. You want to observe this phenomenon so you take a spherical metal ball of radius [`r=[$r]\ m`] and mass [`[$m]\ kg`] attached to a rope of length [`L=[$l]\ m`] and tie it to a buoy with a servomotor driving the pendulum with an angle of [`\theta(t)=[$F]\cos([$w0] t)`]. If the drag force of the ball is modelled by [`F_d=-[$c]v`], what is the amplitude of the pendulum's oscillations?
+A new fish species discovered in the Fraser River has been observed to be attracted to swinging pendulums as depicted above. You want to observe this phenomenon so you take a spherical metal ball of radius [`r=[$r]\ m`] and mass [`[$m]\ kg`] attached to a rope of length [`L=[$l]\ m`] and tie it to a buoy with a servomotor driving the pendulum with a moment of [`M(t)=[$F]\cos([$w0] t)`]. If the drag force of the ball is modelled by [`|F_d|=[$c]v`], what is the amplitude of the pendulum's oscillations?
 
 (Use [`g=9.81\ m/s^2`] and assume that [`\sin\theta=\theta`])
 
