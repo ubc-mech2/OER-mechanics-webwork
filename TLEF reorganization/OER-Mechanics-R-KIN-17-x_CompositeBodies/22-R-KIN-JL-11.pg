@@ -1,0 +1,147 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Distributed Forces: Centroid and Center of Gravity)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','parallel axis','kinetics','composite bodies')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('5.11')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.4')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 601;
+$height = 534;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$a = random(15.2,16.6,17.4);		#[cm]
+$h1 = random(7.6, 12.4, 14.8);		#[cm]
+$h2 = $h1/4*3+1.6;			#[cm]
+$r = ($a/2)-1.2;			#[cm]
+$p = random(1300, 1400, 1500);		#[kg/m^3]
+
+
+#---- Formulas to compute answers --------------#
+$vBox = ($a/100)**2*$h1/100;		#[m^3]
+$mBox = $p*$vBox;			#[kg]
+
+$vCylinder = ($r/100)**2*$h2/100*pi;	#[m^3]
+$mCylinder = $p*$vCylinder;		#[kg]
+
+$IzzBox = 1/12*$mBox*(2*($a/100)**2);			
+$IzzCylinder = 1/2*$mCylinder*($r/100)**2;			
+$IzzTotal = $IzzBox - $IzzCylinder; 
+$IzzAxis = $IzzTotal + ($mBox - $mCylinder)*0.5*($a/100)**2;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+A box with dimensions [`a = b = [$a]`] [`\textrm{cm}`] and [`h_1 = [$h1]`] [`\textrm{cm}`] sits with its back corner centered at the origin and its edges aligned with the coordinates axes.
+A hole in the shape of a cylinder has been milled out from the top as shown with [`r = [$r]`] [`\textrm{cm}`] and [`h_2 = [$h2]`] [`\textrm{cm}`]. The box has a density of [`\rho = [$p]`]
+[`\textrm{kg/m}^3`]. Let [`\textrm{z}'`] be an axis parallel to the [`\textrm{z}`] axis that comes up through the bottom of the box and out through the top, passing through the box's
+center of mass. Note that the image is not to scale.
+
+[@ image( "22-R-KIN-JL-11.png", width=>[$width], height=>[$height]) @]*
+
+Find the moment of inertia of the box without the cutout about the [`\textrm{z}'`]-axis.
+ 
+[`I_{z'z'\ box} = `] [_____]{"$IzzBox"} [`\textrm{kg*m}^2`]
+
+Find the moment of inertia of the cylinder about the [`\textrm{z}'`]-axis.
+ 
+[`I_{z'z'\ cylinder} = `] [_____]{"$IzzCylinder"} [`\textrm{kg*m}^2`]
+
+Find the moment of inertia of the box with the cutout about the [`\textrm{z}'`]-axis.
+ 
+[`I_{z'z'} = `] [_____]{"$IzzTotal"} [`\textrm{kg*m}^2`]
+
+Find the moment of inertia of the box with the cutout about the coordinate [`\textrm{z}`]-axis.
+
+[`I_{zz} = `] [_____]{"$IzzAxis"} [`\textrm{kg*m}^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KIN-JL-11.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
