@@ -1,0 +1,137 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinematics','pure rotation','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('16.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.3')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.015,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.33;
+$width = 1688*$scale;
+$height = 1948*$scale;
+
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$coefficient_a = random(0.2, 0.4, 0.6);
+$coefficient_b = random(3.2, 3.8, 4.4);
+$time = random(4, 5, 6);		#[s]
+$radius = random(1.5, 2, 2.5); 		#[m]
+
+
+#---- Formulas to compute answers --------------#
+$w = 3*$coefficient_a*$time**2+$coefficient_b;
+$alpha = 6*$coefficient_a*$time;
+$v = -$w*$radius;
+$a = -$alpha*$radius;
+$0 = 0;
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+A robber is attempting to steal iron boxes filled with gold. Unfortunately, they triggered a trap on the way in. A large pulley on the ceiling begins rotating
+and lowers a magnet to attract any boxes of gold the robber might steal. If the pulley has a radius of [`[$radius]`] [`m`] and an angular displacement 
+of [`\theta = [$coefficient_a]*t^3+[$coefficient_b]*t`] [`rad`], where [`t`] is in seconds, determine the angular velocity [`\vec{\omega}`] and acceleration [`\vec{\alpha}`] of the pulley
+and the velocity [`\vec{v}`] and acceleration [`\vec{a}`] of the magnet when [`t = [$time]`] [`s`].
+
+
+[@ image( "22-R-KM-JL-2.png", width=>[$width], height=>[$height]) @]*
+
+
+[`\vec{\omega} = `][_____]{"$w"} [`\hat{k}\ \textrm{rad/s}`]	
+
+[`\vec{\alpha} = `][_____]{"$alpha"} [`\hat{k}\ \textrm{rad/s}^2`]	
+
+[`\vec{v}_{magnet} = `][_____]{"$0"}[`\hat{i}\ + `] [_____]{"$v"} [`\hat{j}\ \textrm{m/s}`]  
+
+[`\vec{a}_{magnet} = `][_____]{"$0"}[`\hat{i}\ + `] [_____]{"$a"} [`\hat{j}\ \textrm{m/s}^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KM-JL-02.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
