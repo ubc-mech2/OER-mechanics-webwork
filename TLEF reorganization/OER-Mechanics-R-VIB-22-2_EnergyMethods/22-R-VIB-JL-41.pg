@@ -28,45 +28,49 @@
 ## DBchapter(Vibrations)
 ## DBsection(Free Work-Energy Methods)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm and Julian Lapenna)
-## Date(Summer 2020)
-## Difficulty(Beginner)
-## KEYWORDS('Dynamics', 'Natural Frequency')
-## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.2')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics', 'Natural Frequency','Natural Period', 'Amplitude')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
 ## TitleText1('Engineering Mechanics')
 ## AuthorText1('Hibbeler')
 ## EditionText1('14')
-## Section1('22.2')
+## Section1('22.1')
 ## TitleText2('Vector Mechanics For Engineers')
 ## AuthorText2('Beer and Johnston')
 ## EditionText2('11')
-## Section2('19.6')
+## Section2('19.2')
 ## TitleText3('Engineering Mechanics - Dynamics')
 ## AuthorText3('Meriam and Kraig')
 ## EditionText3('9')
-## Section3('8.5')
+## Section3('8.2')
+
 
 ########################################################
 
 DOCUMENT();
 
 loadMacros(
-	"PGstandard.pl",	# Standard macros for PG language
-	"MathObjects.pl",
-	"PGML.pl",
-	"parserPopUp.pl",
-	"parserMultiAnswer.pl",
-	"weightedGrader.pl",
-	"source.pl",			# allows code to be displayed on certain sites
-	"PGcourse.pl", 	 # Customization file for the course
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
 );
-
-#######################################################
+ 
+##############################################################
+#
 #Setup
 
 TEXT(beginproblem());
-
-$showPartialCorrectAnswers = 1;
 
 Context("Numeric");		# or Complex
 
@@ -76,33 +80,40 @@ tolerance=>.02,
 tolType=>'relative');  #relative or absolute
 
 #-------------- Image Scaling---------------#
-$imgScale =0.35;
-$width = $imgScale*1339;		#aspect ratio
-$height = $imgScale*1009;
+$scale = 0.3;
+$width = 2606*$scale;
+$height = 2148*$scale;
+		#aspect ratio
 
 #---- Random variables for this problem --------#
-$length = random(0.75,2,0.01);
-$mass = random(2,3,0.1);
+$k = random(200,240,5);		#[N/m]
+$L = random(3,6,1);		#[m]
+$m = random(5,10,1);		#[kg]
+
 
 #---- Formulas to compute answers --------------#
-$inertia = 1/3*$mass*$length**2;
-$T = 1/2*$inertia;
-$V = $mass*9.81*$length/2;
-$natFreq = sqrt($V/($T*2));
+$coefficient = ($m*9.81*$L/2+8/9*$k*$L**2)/(1/3*$m*$L**2);
+$wn = sqrt($coefficient);
+$tau = 2*pi/$wn;
 
-#---- Answers to the problem -----------------------#
-$ansA = $natFreq;
-
-########################################################;
+########################################################
 #PGML
 
-BEGIN_PGML	
+BEGIN_PGML
 
-[@ image( "20-R-VIB-DY-11.png", width=>[$width], height=>[$height]) @]*
+[@ image( "22-R-VIB-JL-41.png", width=>[$width], height=>[$height]) @]*
 
-A [`[$length]`] [`m`] bar is pinned by one end to the ceiling. Given that the mass of the bar is [`[$mass]`] [`kg`], what is the natural frequency of the system?
+An evil hypnotist has discovered through testing that a slender golden rod swinging back and forth is
+an effective way to hypnotize people. In an attempt to perform mass hypnosis and take over the world
+they have designed the following pendulum for manufacturing. The pendulum has a length 
+[`L = [$L]\ \textrm{m}`] and mass [`m = [$m]\ \textrm{kg}`]. It is connected to two identical springs
+each with a stiffness [`k = [$k]\ \textrm{N/m}`]. The springs are unstretched when the pendulum is at
+rest vertically. Determine the natural period of vibration [`\tau`] of the evil hypnotist's pendulum.
 
-[`w_n =`] [_______]{"$ansA"} [`Hz`]
+_(Note the pendulum has very small displacement, use the approximation [`\sin(\theta) = \theta`])_
+
+
+[`\tau = `] [__________]{"$tau"} [`\textrm{s}`]
 
 END_PGML
 
@@ -110,8 +121,10 @@ BEGIN_PGML_SOLUTION
 
 If the solution does not appear, right click the icon and select "Open image in new tab".
 
-[@ image( "20-R-VIB-DY-11.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "22-R-VIB-JL-41.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
+
+##############################################################
 
 ENDDOCUMENT();
