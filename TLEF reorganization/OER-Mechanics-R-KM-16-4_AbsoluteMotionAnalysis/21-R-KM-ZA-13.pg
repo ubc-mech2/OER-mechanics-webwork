@@ -1,0 +1,119 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Absolute motion)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`dynamics`,`absolute motion`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 4')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$r = random(1,3,0.5);
+$theta = random(10,19,1);
+$vc = random(4,9,0.1);
+$ac = random(1,3,0.1);
+$phi = random(20,40,1);
+
+
+#computation for numerical answer
+$s = $r*(sin($phi*pi/180)/sin($theta*pi/180));
+$omega = $vc/(-1*$s*sin($theta*pi/180));
+$alpha = ( ($ac/-1*$s) - ($omega**2*cos($theta*pi/180)) )/sin($theta*pi/180);
+
+
+#image settings
+$resolution = 0.4;
+$width = $resolution*1620;
+$height = $resolution*890;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-13.png", width=>[$width], height=>[$height]) @]*
+
+Hydraulic cylinder [`AB`] rotates with some angular velocity and acceleration, and keeps link [`BC`] at the same angle
+[`{\phi}=[$phi]\:^{\circ} `] relative to the ground throughout its rotation by adjusting its length. Link [`BC`] has a permanent length of
+[`r=[$r]\:m`]. If we know that the system starts with [`{\theta}={\phi}`], find the angular velocity and angular acceleration
+of the hydraulic cylinder [`AB`] when [`{\theta}=[$theta]\:^{\circ}`]. At [`{\theta}=[$theta]\:^{\circ}`], we also know that
+[`v_C=[$vc]\:m/s`] and [`a_C=[$ac]\:m/s^2`].
+
+
+[`{\omega}_{AB} = `][_____]{"$omega"}[`\boldsymbol{\hat{k}}`][`rad/s`]
+
+[`{\alpha}_{AB} = `][_____]{"$alpha"}[`\boldsymbol{\hat{k}}`][`rad/s^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-13.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
