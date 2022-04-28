@@ -1,0 +1,137 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Forced Undamped)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics', 'Natural Frequency','Natural Period', 'Amplitude', 'Waves')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('19.7')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('8.3')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.32;
+$width = 3168*$scale;
+$height = 1758*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$lambda = random(12,24,1);	#[m]
+$k = random(30,80,2);		#[N/m]
+$m = random(5,8,0.3);		#[kg]
+$A = random(0.1,0.3,0.01);	#[m]
+$v = random(10,14,1);		#[m/s]
+
+
+#---- Formulas to compute answers --------------#
+$wn = sqrt($k/$m);
+$w0 = 2*pi*$v/$lambda;
+$lambda_max = 2*pi*$v/$wn;
+$maxAmp = $A/(1-($w0/$wn)**2);
+$AbsAmp = abs($maxAmp);
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-VIB-JL-45.png", width=>[$width], height=>[$height]) @]*
+
+A student is doing an experiment with her little brother's physics poster board project. She attaches the poster to a buoy
+and supports with a spring of stiffness [`k = [$k]\ \textrm{N/m}`]. The poster board has a mass of [`m = [$m]\ \textrm{kg}`]
+and oscillates directly up and down above the buoy. The buoy is also tethered in place such that it stays in the same horizontal
+position and only moves vertically staying at the top of the water. 
+
+If the waves today are moving at a speed of [`v = [$v]\ \textrm{m/s}`] and the amplitude is
+[`\delta_0 = [$A]\ \textrm{m}`] what wavelength [`\lambda`] would result in the greatest vibrational amplitude of the poster board?
+
+[`\lambda = `] [_________]{"$lambda_max"} [`\textrm{m}`]
+
+It turns out that today the measured wavelength is [`\lambda = [$lambda]\ \textrm{m}`]. Knowing this, what is the
+amplitude [`A`] of the steady state vibration of the poster board?
+
+[`|A| = `] [_________]{"$AbsAmp"} [`\textrm{m}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-VIB-JL-45.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();
