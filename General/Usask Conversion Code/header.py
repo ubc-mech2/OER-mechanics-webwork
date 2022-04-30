@@ -42,7 +42,10 @@ for file in glob.glob("*.md"):
                         elif 'Keywords' in line:
                                 line=line.split(':',1)[1]
                                 header=header.replace('KEYWORDS()','KEYWORDS('+line.rstrip('\n')+')')                                
-         
+                        elif 'Last Edit' in line:
+                                line=line.split(':',1)[1]
+                                header=header.replace('Date()','Date('+line.rstrip('\n')+')')
+                                
          #opening the webwork question copy and replacing the header                  
         with open(pglocation,'r',encoding='utf-8') as f2:
                 ln=f2.readlines()
