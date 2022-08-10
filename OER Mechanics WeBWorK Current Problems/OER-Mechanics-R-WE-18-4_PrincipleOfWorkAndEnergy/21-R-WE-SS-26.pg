@@ -1,0 +1,123 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd)
+## Date(Summer 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`Work and Energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$m_rod  = random(20,30,1);
+$h_drop = random(1,10,0.5);
+$m_drop = random(0.5,2,0.1);
+$k      = random(500,1000,100);
+
+#constants
+$g = 9.81;
+$r = 0.5;
+
+#computation
+$delta_i = $r*$m_rod*$g / $k;
+$E_i     = 0.5*$k*$delta_i**2;
+
+$a = 0.5*$k;
+$b = -$r*$m_drop*$g;
+$c = -0.5*$k*$delta_i**2 - $m_drop*$g*$h_drop;
+
+$delta_max = (-$b + ($b**2-4*$a*$c)**0.5)/(2*$a)*1000;	#[mm]
+
+
+$width = 400;
+$height = 250;
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A rigid rod with a weight of [`[$m_rod]`][`kg`] is attached to a frictionless pivot on one end (O), and held horizontal with a spring ([`k=`] [`[$k]`][`N/m`]) on the other end (A).  
+Determine the energy stored in the spring ([`E_{spring}`]).
+
+If a [`[$m_drop]`][`kg`] block (assumed to be a point mass) is dropped from a height of [`[$h_drop]`][`m`] at the midpoint of the rod (M), calculate the maximum deflection ([`\Delta_{max}`]) at A.  
+Assume the block only moves vertically downward during the analysis period (ie. it does not bounce).  
+Give your answer as a positive number.
+
+[@ image( "21-R-WE-SS-26.png", width=>[$width], height=>[$height]) @]*
+
+[`E_{spring} = `][_____]{"$E_i"} [`J`]  
+[`\Delta_{max} = `][_____]{"$delta_max"} [`mm`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-WE-SS-26.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};
