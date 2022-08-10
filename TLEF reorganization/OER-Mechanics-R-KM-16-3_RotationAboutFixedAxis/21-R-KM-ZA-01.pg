@@ -1,0 +1,121 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Rotation about a fixed axis)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`dynamics`,`gears`,`rotation`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$ra = random(5,10,0.5);
+$rb = random(10.5,15,0.5);
+$rc = random(1,4.5,0.5);
+$t = random(5,10,1);
+
+#computation for numerical answer
+$omegaa = 3*($t**2);
+$omegab = $omegaa*$ra/$rb;
+$alphaa = 6*$t;
+$atangentialp = $alphaa*$ra;
+$alphab = $atangentialp/$rb;
+$atangentiald = $alphab*$rc;
+$anormald = ($omegab*$rc)**2/$rc;
+
+#image settings
+$resolution = 0.33;
+$width = $resolution*1932;
+$height = $resolution*1361;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "20-R-KM-DK-2-mod.png", width=>[$width], height=>[$height]) @]*
+
+A motor gives gear [`A`] an angular velocity of [`{\omega}_A=3t^2\:rad/s`] in the direction shown, where [`t`] is in seconds.
+Assume that [`{\omega}_B={\omega}_C`] and [`{\alpha}_B={\alpha}_C`]. Given that the system starts from rest at time [`t=0`],
+[`r_A=[$ra]\:m`], [`r_B=[$rb]\:m`], and [`r_C=[$rc]\:m`],
+find the magnitudes of [`{\omega}_B`], and the normal and tangential components of acceleration of the point [`D`] on gear [`C`] when [`t = [$t]\:s`].
+
+
+[`{\omega}_B = `][_____]{"$omegab"}[`rad/s`]
+
+[`a_n = `][_____]{"$anormald"}[`m/s^2`]
+
+[`a_t = `][_____]{"$atangentiald"}[`m/s^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-01.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

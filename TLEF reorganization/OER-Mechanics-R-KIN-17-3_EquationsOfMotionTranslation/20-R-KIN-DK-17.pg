@@ -28,7 +28,7 @@
 ## DBchapter(Planar Kinetics of Rigid Bodies)
 ## DBsection(Equations of Motion)
 ## Institution('University of British Columbia')
-## Author(David Kim)
+## Author(David Kim and Julian Lapenna)
 ## Date(Summer 2020)
 ## Difficulty(Intermediate)
 ## KEYWORDS('Dynamics','translation','car','kinetics','Newton','equations of motion','second law','punchbuggy')
@@ -93,7 +93,7 @@ $dB = 3.5 - $dA;
 
 #---- Formulas to compute answers --------------#
 
-$ax = ($m*9.81*$dA)/(($m/($mu*2))*2*3.5+$m*($h+$r));
+$ax = ($m*9.81*$dA)/(($m/($mu*2))*2*3.5-$m*($h+$r));
 $NB = $m/($mu*2)*$ax;
 $NA = ($m*9.81-2*$NB)/2;
 
@@ -124,7 +124,7 @@ BEGIN_PGML_SOLUTION
 
 Answers
 
-[@ image( "20-R-KIN-DK-17.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "20-R-KIN-DK-17_.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 

@@ -1,0 +1,136 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Kinetic Energy)
+## Institution('University of British Columbia')
+## Author(Michael Sekatchev)
+## Date(Winter 2021)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+	"PGchoicemacros.pl",
+);
+
+#######################################################
+#Setup
+
+TEXT(beginproblem());
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.005,
+tolType=>'absolute');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+#aspect ratio
+
+#---- Random variables for this problem --------#
+
+$d1 = random(0.1,0.15,0.01);
+$d2 = $d1;
+$d3 = random(0.2,0.4,0.01);
+$k = random(10,30,1);
+$m = random(5,20,1);
+
+#---- Formulas to compute answers --------------#
+
+$g = 9.81;
+$l =  $d1 + $d3;
+$dx = sqrt(($d1 + $l)**2 + $d3**2) - $d1;
+
+$v = sqrt(3*$g*$l - (3*$k*$dx**2)/$m);
+
+$mc = new_multiple_choice();
+$mc->qa(
+"In what direction?", 
+"Down"
+);
+$mc->extra(
+"Up",
+"Left",
+"Right",
+"Other",
+);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "21-R-WE-MS-39.png", width=>[$width], height=>[$height]) @]*
+
+The thin rod shown of mass [`m=[$m]\text{kg}`] is released from rest at a position very close to its vertical position, 
+at which point the spring with spring constant [`k=[$k] \text{N}/\text{m}`] is unstretched. 
+Calculate the velocity that the end point A will have when the rod reaches the horizontal position shown. 
+The distances are [`d_1 = d_2 = [$d1]\text{m}, d_3 = [$d3]\text{m}`].
+
+
+[`|v_{A}|=`][___]{"$v"} [`\text{m}/\text{s}`]
+
+
+END_PGML
+BEGIN_TEXT
+\{ $mc->print_q() \}
+$BR
+\{ $mc->print_a() \}
+END_TEXT
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+
+[@ image( "21-R-WE-MS-39.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+$showPartialCorrectAnswers = 0;
+
+ANS( radio_cmp( $mc->correct_ans() ) );
+
+
+ENDDOCUMENT();

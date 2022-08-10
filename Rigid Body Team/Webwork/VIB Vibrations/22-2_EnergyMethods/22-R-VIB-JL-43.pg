@@ -1,0 +1,131 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Free Work-Energy Methods)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics', 'Natural Frequency','Natural Period', 'Amplitude')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('19.2')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('8.2')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.26;
+$width = 4362*$scale;
+$height = 1571*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$k1 = random(55,110,5);		#[N/m]
+$k2 = random(80,160,5);		#[N/m]
+$kG = random(0.5,0.8,0.01);	#[m]
+$r = random(0.9,1.2,0.01);	#[m]
+$m = random(5,17,3);		#[kg]
+
+
+#---- Formulas to compute answers --------------#
+$coefficient1 = 1/2*$m*($r**2 + $kG**2);
+$coefficient2 = $r**2*(2*$k1 + 1/2*$k2);
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-VIB-JL-43.png", width=>[$width], height=>[$height]) @]*
+
+A disc with two springs of different stiffnesses attached sits at equilibrium. A small disturbance displaces the disc
+from equilibrium so that it oscillates back and forth. Determine the equation of energy that
+describes it's oscillation.
+
+The disc has a mass [`m = [$m]\ \textrm{kg}`], radius [`r = [$r]\ \textrm{m}`] and radius of gyration
+[`k_G = [$kG]\ \textrm{m}`]. The springs have stiffnesses [`k_1 = [$k1]\ \textrm{N/m}`] and [`k_2 = [$k2]\ \textrm{N/m}`].
+
+_(Assume the disc has very small displacement, use the approximation [`\sin(\theta) = \theta`])_
+
+
+[`T + V = `] [________]{"$coefficient1"} [`\ \omega^2 + `] [________]{"$coefficient2"}[`\ \theta^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-VIB-JL-43.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

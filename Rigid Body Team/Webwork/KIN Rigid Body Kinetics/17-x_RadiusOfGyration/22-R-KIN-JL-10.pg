@@ -1,0 +1,126 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Radius of Gyration: Mass Moment of Inertia)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','radius of gyration','rod','mass','kinetics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('9.5')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.7')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 416;
+$height = 573;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$h = random(12, 14, 16);	#[m]
+$L = random(6,8,10);		#[m]
+$r = random(0.5,0.75,1.2);	#[m]
+
+#radius of gyration doesn't depend on mass, but it may be easier to solve that way
+$p = random(650,750,850);	#[kg/m]
+
+
+#---- Formulas to compute answers --------------#
+$k = sqrt((3*$r**2+$h**2)/12 + ($L+$h/2)**2);	#[m]
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+An engineer decides to go to the gym to show off how strong the new punching machine that he built is. Everyone else in the gym is so intimidated that they back away.
+You watch as the engineer approaches the punching bag you were using. The punching bag can be approximated by a cylinder with height [`h = [$h]`] [`\textrm{m}`] and a radius
+of [`[$r]\ \textrm{m}`]. The engineer's punching machine punches the punching bag with a force that mesmerizes everyone, but you won't worry about how much force went into
+the punch today. The punching bag has a constant density of [`\rho = [$p]`] [`\textrm{kg/m}^3`] and is attached to the pin at A by a member of length [`L = [$L]`] [`\textrm{m}`].
+You may neglect the mass and moment of inertia of the member connecting the bag to pin A. Find the radius of gyration about the point A.
+
+[@ image( "22-R-KIN-JL-10.png", width=>[$width], height=>[$height]) @]*
+
+[`k_A = `] [_____]{"$k"} [`\textrm{m}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KIN-JL-10.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

@@ -1,0 +1,63 @@
+setNumber=Chapter2_UBC_OER_Mechanics
+openDate = 1/7/01 at 6:00am
+dueDate = 1/20/22 at 6:00am
+answerDate = 1/21/23 at 6:00
+paperHeaderFile = defaultHeader
+screenHeaderFile = defaultHeader
+problemList =
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-01-01-063c9edeaa694b52a0aa59d3a1fe24b2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-01-02-711f281d1051421c8a07c65338384daf.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-01-03-5aa3a91b26df4902b7bd8e7f2e9f9842.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-01-04-6aac19163087406093cb95c118c78ac4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-02-01-e33afed0465f4f2da7da33e1f6af71b2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-02-02-c6f57a19e67e4b269476a410f0f3dcc9.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-03-01-b6e3b22d339b47e486329ff7ae53b1f0.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE03-03-02-2f03584411e34678bf6983070132fd00.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-02-01-5f32fe162f2348fba8126884a1d1350b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-02-02-dcee8fb223c04845a28984ce7cb50188.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-02-03-0c9978a9f39144f49881da0f6d83d309.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-02-04-5b387c3221c14db1ab0c1bff3ebd4088.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-03-01-6886ddc8e37242d182472035edd643d8.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-03-02-76a01ff998404b02982034677c7deb18.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-03-03-4557c68d2194424890df96a6adb23360.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE08-03-04-79e2badd926246c2b51b5a21f3a742a2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-01-01-694d6380095442d98d4b3b7fd3526ec1.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-01-02-99a25a5d5684432ea2c00871a65bfa86.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-01-03-8b6f3c25aa6a4c6a832c90acd12d4b7.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-01-04-c4ed49209b2d4f95b7a1d4cb38254949.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-02-01-57faf6c0bb184746b5a302a5385ba77f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-02-02-111f677f38664f6c935195bee8926b54.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-02-03-1f7625002f9e4aef91c8a9796e1cac22.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-02-04-508e02ce27cb46618714148b0d9301b6.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-03-01-8633ffcdb2724b97b8db483b73ffba9e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-03-02-611a0c335b5c4158909cfbccf91184f6.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-03-03-05c392d6d80047d68d925193c3a8accf.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE09-03-04-a1b1d667c0774368b2086ce7b74ef513.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-02-01-8e55a9f076ee4df08da27261cea3f66.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-02-02-cefbd4edc7cf4c7fafe2551ec068f0f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-02-03-6ae339003d784b5bb5370049df9ab914.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-02-04-5e04f5ae136f4eaf9eb083865effbb09.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-03-01-d012d7d4eb5748648e1f1dd4978dbd24.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-03-02-186f27a2cfb4456eafe547d9ff8c444a.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE10-03-03-b8711209b6184e23a4edea3ddb9d7895.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE11-01-01-113001dc475b4e31a18d604a546ccb3a.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE11-01-02-5e66ec2d73c74bd7bfa4be8b198ccac3.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE11-02-01-806e8eb720c04b0bab8105bc14ab50b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE11-02-02-4fa0fce603d2488e803bcfadd8c03729.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE11-03-01-d2812919dff948d4b7c290f9374eaeb2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE11-03-02-79ee47716b8a40bb937e15d9998d5f59.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE12-01-01-1ddfa74e8c414b6dafe36e8888051d73.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE12-02-01-78e713fe28ff4108bc179a8c4fb1ea62.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE12-02-02-df502c53a7eb431fadd972aa40305de5.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE12-03-01-f34fab7eb30d43129937e048e4030dc.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-01-01-e790ddcbe62e4bb6889c21dbe3fd44da.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-01-02-2eb9207605084e7988963305ed79f96.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-02-01-afa9aa71dfe045a5b3cc1c48e01f12d0.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-02-02-4100f05df2fd4109a10b210a2e00cd8e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-03-01-7b0251426b374232bb9aab25d682c056.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-03-02-6dab5d8b37c04f86b4ca6235c5d2b827.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-03-02-716b62470c4d45e5a7a584065dcabe5f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-04-01-16ce1b98c59c4ccc8d610e1c953428c6.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-04-02-9742c5b37ec24c238b157546f1b332ea.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-05-01-eabc67229bbd492a8a245dfefb8756a5.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-3_CoplanarForces/STATICS-PSE13-05-02-bc37ab23042b405f8434240aab7806f1.pg, 1

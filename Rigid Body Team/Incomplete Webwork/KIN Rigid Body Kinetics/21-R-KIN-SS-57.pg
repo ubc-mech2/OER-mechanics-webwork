@@ -69,16 +69,12 @@ $d1 = random(0.8,1,0.1);
 $d2	 = random(1.8,2.3,0.1);
 $d3  = random(0.6,1,0.1);
 $x1  = random(1,2,0.1);
-$p0  = random(40,60,5);
-$p1  = random(10,25,5);
+$m  = random(60,100,5);
 
 #computation
-$p_lo = $p0-$p1*$d2;
-$ratio = $p_lo/$p0;
-$m = 0.5*($ratio*$d3+$d3)*$d2*$d1*$p0;
-$CG_y = ($ratio*$d3*$d2**2/2 + 0.5*($d3-$ratio*$d3)*$d2**2/3)/(0.5*($ratio*$d3+$d3)*$d2);
-$I_G = $p0/3*($d2-$CG_y)**3 - $p1/4*($d2-$CG_y)**4 - $CG_y/3*($d2-$CG_y)**3 - ( $p0/3*(-$CG_y)**3 - $p1/4*(-$CG_y)**4 - $CG_y/3*(-$CG_y)**3 ) ;
-$I_O = $I_G + $m*$x1**2;
+$I_G = 1/12*$m*(4*$d1**2 + $d2**2);
+$d = $x1**2 + ($d2/2)**2;
+$I_O = $I_G + $m*$d;
 
 $width = 2917/5;
 $height = 2523/5;
@@ -97,16 +93,14 @@ tolType=>'relative');
 
 BEGIN_PGML
 Find the moment of inertia of the fridge being tipped by the dump truck about the ICZV labeled *O* in the figure, 
-[`x_1 = [$x1]`] [`m`] from the center of mass of the fridge. The fridge can be approximated as a cuboid with width, [`2d_1 = [$d1]`] [`m`], 
-height, [`d_2 = [$d2]`] [`m`] and depth, [`d_3 = [$d3]`] [`m`] with a linearly changing density along the height, given by [`\rho = [$p0]-[$p1]y`] [`kg/m^3`].  
-(y is zero at the base of the fridge and increases along the height of the fridge)
-
-Find the height of the center of mass ([`CG_y`]).  
+[`x_1 = [$x1]`] [`m`] from the center of mass of the fridge. The fridge can be approximated as a uniform cuboid with width, [`2d_1 = [$d1]`] [`m`], 
+height, [`d_2 = [$d2]`] [`m`] depth, [`d_3 = [$d3]`] [`m`] and a mass, [`m = [$m]\ kg`]  
+(G is located at the centroid of the fridge).
+ 
 Find the mass moment of inertia about *O*.
 
 [@ image( "21-R-KIN-SS-57.png", width=>[$width], height=>[$height]) @]*
 
-[`CG_y = `][_____]{"$CG_y"}[`m`]  
 [`I_O = `][_____]{"$I_O"}[`kgm^2`]
 
 END_PGML

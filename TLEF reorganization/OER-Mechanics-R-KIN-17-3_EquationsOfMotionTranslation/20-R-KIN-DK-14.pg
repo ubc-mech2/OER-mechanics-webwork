@@ -28,7 +28,7 @@
 ## DBchapter(Planar Kinetics of Rigid Bodies)
 ## DBsection(Equations of Motion)
 ## Institution('University of British Columbia')
-## Author(David Kim)
+## Author(David Kim and Julian Lapenna)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS('Dynamics','translation','door','kinetics','Newton','equations of motion','second law')
@@ -94,8 +94,8 @@ $y = random(0.1,0.9,0.1);
 #---- Formulas to compute answers --------------#
 
 $ax = $F/$m;
-$FB = ($m*9.81*$d-$F*($h-$y))/(2*$d);
-$FA = -$FB+$m*9.81;
+$FA = ($m*9.81 + $F*($h/2-$y)/$d)/2;
+$FB = -$FA+$m*9.81;
 
 $s = $vel*$t + 0.5*$ax*$t**2;
 
@@ -125,7 +125,7 @@ BEGIN_PGML_SOLUTION
 
 Answers
 
-[@ image( "20-R-KIN-DK-14.pdf", width=>[0], height=>[0] ) @]*
+[@ image( "20-R-KIN-DK-14-.pdf", width=>[0], height=>[0] ) @]*
 
 END_PGML_SOLUTION
 

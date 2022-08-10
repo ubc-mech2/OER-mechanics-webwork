@@ -1,0 +1,117 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Vibrations)
+## DBchapter(One DOF vibration: free)
+## DBsection(Viscous damping)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`Vibrations`,`dynamics`,`rigid bodies`,`damping`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 5')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$m = random(4,10,0.1);
+$k1 = random(5,10,0.5);
+$c = random(1,3,0.5);
+$a = random(0.1,0.5,0.05);
+$b = random(0.6,0.9,0.05);
+$g = 9.81;
+
+#computation for numerical answer
+$Io = (1/12*$m*($a**2+$b**2))+($m*(($a/2)**2+($b/2)**2));
+$r = sqrt(($a/2)**2+($b/2)**2);
+$lambda = ((pi/2)-(arctan($a/$b)));
+$k2 = (($c**2*$a**4/4/$Io)-($b**2*$k1)+($m*$g*$r*cos($lambda)))/$a**2;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*2*879;
+$height = $resolution*2*656;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-VIB-ZA-52.png", width=>[$width], height=>[$height]) @]*
+
+A thin plate of mass [`[$m]\:kg`] and dimensions [`a=[$a]\:m`] and [`b=[$b]\:m`] is attached to a pin at point [`O`].
+A spring of constant [`k_1=[$k1]\:N/m`] is attached to the plate at point [`B`], and a damper of constant [`c=[$c]\:N{\cdot}s/m`] is
+attached at point [`A`]. If both springs start with the same perturbed length, and spring [`2`] starts
+compressed, find the spring constant of spring [`2`] required to make the system critically damped.
+
+Hint: You may need to use the following trig identities: [`sin({\theta}+{\phi})=sin({\theta})cos({\phi})+cos({\theta})sin({\phi})`], [`cos(arctan(x))=1/(sqrt(1+x**2))`].
+
+[`k_2 = `][_____]{"$k2"}[`N/m`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-VIB-ZA-52.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

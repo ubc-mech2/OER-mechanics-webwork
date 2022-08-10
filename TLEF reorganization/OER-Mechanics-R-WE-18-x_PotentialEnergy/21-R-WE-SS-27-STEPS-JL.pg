@@ -1,0 +1,125 @@
+##DESCRIPTION
+## long cord with a trick and related velocity
+##ENDDESCRIPTION
+
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of rigid bodies)
+## DBsection(Potential energy)
+## Institution('University of British Columbia')
+## Author(Shohom Shahd and Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS(`Work and Energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section ?')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(   
+	"PGstandard.pl",     # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	#"source.pl",        # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+   	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+
+Context("Numeric");
+#given
+$k = random(50,100,1);	#[N/mm]
+$l = random(5,10,0.1);	#[mm]
+$L = 18.47759065;	#[mm]
+
+#constants
+
+
+#computation
+$delta_i 	= ($L-$l)/1000;					#[m]
+$E_initial 	= 0.5*($k*1000)*($delta_i**2);			#[J]
+$E_final 	= 0.5*($k*1000)*((0.02-$l/1000)**2);		#[J]
+$E       	= $E_final-$E_initial;				#[J]
+
+$width = 350;
+$height = 350;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');
+
+##############################################################
+#
+#  PGML 
+#
+#
+
+BEGIN_PGML
+
+A switch can be modeled as a bistable system as shown in the image, with a spring of spring constant [`[$k]`][`N/mm`]
+attached [`10 mm`] from the hinge on both sides. If the spring has a natural length of [`[$l]`][`mm`] , and the switch
+travels from [`-45^\circ`] to [`+45^\circ`] from the horizontal, what is the minimum energy required to flick the switch?
+
+[@ image( "21-R-WE-SS-27.png", width=>[$width], height=>[$height]) @]*
+
+Find the initial stretched length of the spring.
+
+[`L = `][_____]{"$L"} [`mm`]
+
+Find the initial and final energy of the spring (be careful of your units).
+
+[`E_{initial} = `][_____]{"$E_initial"} [`J`]
+
+[`E_{final} = `][_____]{"$E_final"} [`J`]
+
+Find the minimum energy required to flick the switch.
+
+[`E = `][_____]{"$E"} [`J`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+[@ image( "21-R-WE-SS-27.pdf", width=>[0], height=>[0]) @]*
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

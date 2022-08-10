@@ -28,7 +28,7 @@
 ## DBchapter(Vibrations)
 ## DBsection(Free Work-Energy Methods)
 ## Institution('University of British Columbia')
-## Author(Daniel Youm)
+## Author(Daniel Youm and Julian Lapenna)
 ## Date(Summer 2020)
 ## Difficulty(Beginner)
 ## KEYWORDS('Dynamics', 'Energy')
@@ -100,10 +100,18 @@ BEGIN_PGML
 [@ image( "20-R-VIB-DY-10.png", width=>[$width], height=>[$height]) @]*
 
 Two springs, with spring constants [`k =`] [`[$k]`] [`N/m`] each, are used to connect a [`m =`] [`[$mass]`] [`kg`] cargo load to a wall, Assuming the floor is frictionless, determine
-the first order differential equation describing energy.
+the equation describing the energy of the system.
 
-[____]{"$ansA"} [`v^2 + `][_____]{"$ansB"} [`x^2 = 0`]
+[________]{"$ansA"} [`v^2 + `][________]{"$ansB"} [`x^2 = T + V`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "20-R-VIB-DY-10.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ENDDOCUMENT();

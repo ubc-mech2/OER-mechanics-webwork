@@ -1,0 +1,132 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Mass Moment of Inertia)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinematics','angular velocity',)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('5.11')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.4')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.45;
+
+$height = $imgScale * 1436;
+
+$width = $imgScale * 1570;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$Rcyl = random(5,20,5);
+$d = random(0.5,1,0.5);
+$Rrock = $Rcyl*random(0.25,0.75,0.25);
+$density = random(100,200,50);
+$L = 30;
+$mrock = random(1,4,1);
+
+#---- Formulas to compute answers --------------#
+$mInner = ($density*pi*$L*$Rcyl**2)/1000000;
+$mOuter = ($density*pi*$L*($Rcyl+$d)**2)/1000000;
+$Iinner = 0.5*$mInner*$Rcyl**2;
+$Iouter = 0.5*$mOuter*($Rcyl+$d)**2;
+$Irock = ((2/5)*$mrock*$Rrock**2+$mrock*($Rcyl-$Rrock)**2)/10000;
+$Icyl = ($Iouter-$Iinner)/10000;
+$I = $Irock+$Icyl;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-KIN-TW-8.png", width=>[$width], height=>[$height]) @]*
+
+Julie is taking her pet rock, Rocko, for a walk. Rocko is safely fastened to the side of a hollow cylinder with inner radius [`R=[$Rcyl]\ cm`], thickness [`d=[$d]\ cm`], and length [`[$L]\ cm`]. If the cylinder has a density of [`\rho=[$density]\ kg/m^3`], what is the moment of inertia of the ball-rock system about the center of the cylinder? Assume the rock is perfectly spherical with a mass of [`[$mrock]\ kg`] and a radius of [`[$Rrock]\ cm`].
+
+[`I_{cylinder}=`][___]{"$Icyl"} [`kg\cdot m^2`]
+
+[`I_{rock}=`][___]{"$Irock"} [`kg\cdot m^2`]
+
+[`I_{total}=`][___]{"$I"} [`kg\cdot m^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-KIN-TW-8.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

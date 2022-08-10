@@ -1,0 +1,134 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Conservation of Momentum)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','inertia','moment','radius of gyration','swing','mass','kinetics')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.1')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.22;
+$width = 1848*$scale;
+$height = 2402*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$m1 = random(30,60,5);		#[kg]
+$m2 = random(50,90,5);		#[kg]
+$d1 = random(2.1,3.3,0.2);	#[m]
+$d2 = $d1+random(0.1,0.5,0.2);	#[m]
+$L = random(0.2,0.4,0.05);	#[m]
+$v_rel = random(2,6,1);		#[m/s]
+
+#---- Formulas to compute answers --------------#
+$I_swing = 1/12*$m2*$L**2 + $m2*$d2**2;
+$I_sam = $m1*$d1**2;
+
+$w = ($m1*$v_rel*$d1)/($I_swing + $I_sam);			
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-JL-30.png", width=>[$width], height=>[$height]) @]*
+
+
+Ryan just finished swinging on his favourite swing set and is at rest. Ryan has a mass of [`m = [$m1]\ \textrm{kg}`]
+and jumps of the swing which is a 
+flat plate of mass [`m_{plate} = [$m2]\ \textrm{kg}`] and length [`L = [$L]\ \textrm{m}`] suspended by cords
+of negligible mass. As he jumps off, his center of mass is [`d_1 = [$d1]\ \textrm{m}`] from the pin holding
+the swing set, and the center of mass of the seat of the swing is [`d_2 = [$d2]\ \textrm{m}`] from it. Ryan's jump
+gives him a horizontal velocity of [`\vec v_{rel} = -[$v_rel]\ \hat{i}\ \textrm{m/s}`] relative to the final velocity of the swing (measured at the distance [`d_1`]). What is the resulting
+angular velocity of the swing?
+
+
+[`\vec\omega = `] [_____________]{"$w"} [`\ \hat{k}\ \textrm{rad/s}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-IM-JL-30.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

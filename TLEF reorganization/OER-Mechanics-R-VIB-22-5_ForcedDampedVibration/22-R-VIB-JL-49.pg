@@ -1,0 +1,149 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Vibrations)
+## DBsection(Forced Damped)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics', 'Particular Solution', 'Oscillation','Milkshake')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 22, section 22.5')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('22.5')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('19.9')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('8.4')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.28;
+$width = 3783*$scale;
+$height = 1492*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$dcm = random(32,56,1);
+$d = $dcm/100;
+$freq = random(3,7,1);
+$m = random(4.2,6.1,0.1);
+$c = random(5,13,1);
+$k = random(34,50,1);
+
+
+#---- Formulas to compute answers --------------#
+$wN = sqrt($k/$m);
+$tau = 2*pi/$wN;
+
+$z = $c/(2*$m*$wN);
+
+$frequencyRatio = $freq/$wN;
+
+$X = $d/sqrt((1-$frequencyRatio**2)**2 + (2*$z*$frequencyRatio)**2);
+
+$tau0 = 2*pi/$freq;
+$wD = $wN*sqrt(1-$z**2);
+$taud = 2*pi/$wD;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-VIB-JL-48.png", width=>[$width], height=>[$height]) @]*
+
+Your latest invention is a milkshake maker that uses vibrational movement to create the perfect milkshake. You start by 
+adding all the frozen ingredients to the milkshake maker and you can approximate it as a uniform, solid container.
+The milkshake maker and all the ingredients inside have combined mass of [`m = [$m]\ \textrm{kg}`]. It is connected
+to a damper with damping constant [`c = [$c]\ \textrm{N·s/m}`] on one side, and a spring of stiffness
+[`k = [$k]\ \textrm{N/m}`] on the other. A rotating wheel causes periodic motion to keep the milkshake shaking where
+[`\delta_0 = [$dcm]\ \textrm{cm}`] and the angular velocity is [`\omega = [$freq]\ \textrm{rad/s}`].
+
+Find the the damping ratio [`\zeta`], the steady state amplitude [`X'`] of the vibrations, the natural period [`\tau_n`], the period of the steady state response [`\tau_0`], and the period of the damped vibration [`\tau_d`].
+
+[`\zeta =`] [_____________________]{"$z"}
+
+[`X' =`] [_____________________]{"$X"} [`\textrm{m}`]
+
+[`\tau_n =`] [_____________________]{"$tau"} [`\textrm{s}`]
+
+[`\tau_0 =`] [_____________________]{"$tau0"} [`\textrm{s}`]
+
+[`\tau_d =`] [_____________________]{"$taud"} [`\textrm{s}`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-VIB-JL-49.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

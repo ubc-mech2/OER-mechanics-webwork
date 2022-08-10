@@ -1,0 +1,116 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Impact)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Beginner)
+## KEYWORDS(`Impact`,`dynamics`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 15, section 4')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$ma = random(0.5,2,0.1);
+$mb = random(2.5,5,0.1);
+$vb3 = random(3,6,0.1);
+$e = random(0.3,0.7,0.05);
+$r = random(0.3,0.6,0.05);
+
+#computation for numerical answer
+$va2 = (($mb*$vb3)+($ma*$vb3))/($ma+($ma*$e));
+$va3 = $vb3-($va2*$e);
+$va1 = sqrt(2*((0.5*$va2**2)-(9.81*$r)));
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*2*785;
+$height = $resolution*2*1037;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-IM-ZA-49.png", width=>[$width], height=>[$height]) @]*
+
+Collar [`A`] of mass [`m_A=[$ma]\:kg`] is given an initial velocity of [`v_{A1}`]. The collar slides down the bar with a radius of [`r=[$r]\:m`] to
+plate [`B`] with a mass [`m_B=[$mb]\:kg`]. Collar [`A`] impacts plate [`B`] with a coefficient of restitution of [`e=[$e]`], and
+the velocity of [`B`] right after the collision is [`v_{B3}=[$vb3]\:m/s`]. Find the initial velocity [`v_{A1}`] given to collar [`A`], and the velocity of [`A`]
+right after the collision.
+
+
+[`v_{A1} = `][_____]{"$va1"}[`m/s`]
+
+[`v_{A3} = `][_____]{"$va3"}[`m/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-IM-ZA-49.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

@@ -1,0 +1,122 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$ma = random(1,3,0.5);
+$mc = random(4,7,0.5);
+$ra = 0.25;
+$rc = 0.5;
+$R = 1;
+$M = random(50,70,1);
+$omegac = random(2,6,0.5);
+
+#computation for numerical answer
+$Ic = 1/2*$mc*$rc**2;
+$Ia = 1/2*$ma*$ra**2;
+$thetao = pi/2*$rc/$R;
+$alpha = arccos(sin($thetao/2));
+$h2 = 2*$R*sin($thetao/2)*cos($alpha);
+$V2 = $ma*9.81*$h2;
+$Tc = 1/2*$Ic*$omegac**2;
+$UM = $M*pi/2;
+$omegaa = [ ($UM-$V2-$Tc)*2/(($ma*($ra)**2)+$Ia) ]**0.5;
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*806*2;
+$height = $resolution*906*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-34.png", width=>[$width], height=>[$height]) @]*
+
+Disk [`C`] with radius [`r_C=[$rc]\:m`] and mass [`m_C=[$mc]\:kg`] has a moment of [`M=[$M]\:N{\cdot}m`] applied to it from rest in the position shown.
+The cord connecting disks [`C`] and [`A`] is winding around disk [`C`] and unwinding around disk [`A`].
+Disk [`A`] has a radius [`r_A=[$ra]\:m`] and mass [`m_A=[$ma]\:kg`], and is confined to move in the circular
+slot with radius [`R=[$R]\:m`]. If after disk [`C`] rotates [`90^{\circ}`] it has an angular velocity of [`{\omega}_C=[$omegac]\:rad/s`],
+find the angular velocity of disk [`A`] at that instant. Assume there is no slip between disk [`A`] and the surface of the smaller circular slot, however the larger slot is perfectly slippery.
+
+[`{\omega}_A = `][_____]{"$omegaa"}[`rad/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-34.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

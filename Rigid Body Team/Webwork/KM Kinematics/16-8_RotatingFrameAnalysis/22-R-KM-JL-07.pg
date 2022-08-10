@@ -1,0 +1,202 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Rotating Axes)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','engineering student', 'satellite', 'relative', 'acceleration', 'velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.8')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('16.8')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.3')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 410;
+$height = 458;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$rA = random(140, 150, 160);	#[km]
+$rB = random(90, 100, 110); 	#[km]
+$wB = random(0.5, 0.6, 0.6);	#[rad/s]
+$aB = random(0.02, 0.03, 0.02);	#[rad/s^s]
+$wA = random(0.2, 0.3, 0.4);	#[rad/s]
+$aA = 0.01;			#[rad/s^s]
+$theta = 90;			#[deg]
+
+
+#---- Formulas to compute answers --------------#
+$vBi = -($wB*$rB);		#[km/s]	
+$vBj = 0;			#[km/s]
+$aBt = -($aB*$rB);		#[km/s^2]
+$aBn = -($wB**2)*$rB;		#[km/s^2]
+$rAB = $rA-$rB;			#[km]
+$vAi = -($wA*$rA);		#[km/s]
+$vAj = 0;			#[km/s]
+$aAt = -($aA*$rA);		#[km/s^2]
+$aAn = -($wA**2)*$rA;		#[km/s^2]
+$omega = $wB;			#[rad/s]
+$omegaDot = $aB;		#[rad/s^2]
+
+$vABi = $vAi - $vBi + ($omega*$rAB);				#[km/s]
+$vABj = 0;							#[km/s]
+
+$aABi = $aAt - $aBt + ($omegaDot*$rAB);				#[km/s^2]
+$aABj = $aAn - $aBn + ($omega**2)*$rAB - 2*($omega*$vABi);	#[km/s^2]
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+You and your friend decide to take a vacation in space for the weekend. You each rent your own private self-driving satellites and enter the orbit of a planet. You are in satellite A and they
+are in satellite B. Since you both love physics so much (who doesn't right??) you decide to play a game. You tell your friend to carefully watch your satellite
+and when you reach a position such that [`\theta = 90^\circ`] they are to write down the velocity and acceleration they observe your satellite to moving at that instant.
+
+Meanwhile from your own satellite you know the true velocity and acceleration values of both satellites (relative to the planet which you both orbit). Your job is to find out what relative velocity and acceleration your
+friend observed and wrote down.
+
+
+[@ image( "22-R-KM-JL-7.png", width=>[$width], height=>[$height]) @]*
+
+Looking down at your display, you know the following information:
+
+	[`\cdot`] [`\vec{r}_A = [$rA]\ \hat{j}\ \textrm{km}`]  
+
+	[`\cdot`] [`\vec{r}_B = [$rB]\ \hat{j}\ \textrm{km}`]	
+
+	[`\cdot`] [`\vec{\omega}_A = [$wA]\ \hat{k}\ \textrm{rad/s}`]	
+
+	[`\cdot`] [`\vec{\omega}_B = [$wB]\ \hat{k}\ \textrm{rad/s}`]	
+
+	[`\cdot`] [`\vec{\alpha}_A = [$aA]\ \hat{k}\ \textrm{rad/s}^2`]	
+
+	[`\cdot`] [`\vec{\alpha}_B = [$aB]\ \hat{k}\ \textrm{rad/s}^2`]	
+	
+
+Find the information of motion of the moving reference [`\textrm{B}`]:
+
+[`\vec{v}_B = `][_____]{"$vBi"}[`\hat{i}\ +`] [_____]{"$vBj"}[`\hat{j}\ km/s`]
+
+[`\vec{a}_B = `][_____]{"$aBt"}[`\hat{i}\ +`] [_____]{"$aBn"}[`\hat{j}\ km/s^2`]
+
+[`\vec{\Omega} = \vec{\omega}_B = `][_____]{"$omega"} [`\hat{k}\ rad/s`]
+
+[`\dot{\vec{\Omega}} = \vec{\alpha}_B = `][_____]{"$omegaDot"} [`\hat{k}\ rad/s^2`]
+
+
+Find the information of motion of satellite [`\textrm{A}`]:
+
+[`\vec{r}_{A/B} = `][_____]{"$rAB"}[`\hat{j}\ km`]
+
+[`\vec{v}_A = `][_____]{"$vAi"}[`\hat{i}\ +`] [_____]{"$vAj"}[`\hat{j}\ km/s`]
+
+[`\vec{a}_A = `][_____]{"$aAt"}[`\hat{i}\ +`] [_____]{"$aAn"}[`\hat{j}\ km/s^2`]
+
+
+Use the velocity equation with rotating axes to find [`(\vec{v_{A/B}})_{xyz}`]:
+
+[`(\vec{v}_{A/B})_{xyz} = `][_____]{"$vABi"}[`\hat{i}\ +`] [_____]{"$vABj"}[`\hat{j}\ km/s`]
+
+
+Use the acceleration equation with rotating axes to find [`(\vec{a_{A/B}})_{xyz}`]:
+
+[`(\vec{a}_{A/B})_{xyz} = `][_____]{"$aABi"}[`\hat{i}\ +`] [_____]{"$aABj"}[`\hat{j}\ km/s^2`]
+
+
+END_PGML
+
+BEGIN_PGML_HINT
+The acceleration of each satellite can be broken up into [`\hat{i}`] and [`\hat{j}`] components, but these can also be expressed as the tangential and normal components.
+END_PGML_HINT
+
+BEGIN_PGML_HINT
+The velocity equation with rotating axes is: [`\vec{v}_A = \vec{v}_B+\vec{\Omega}\times\vec{r}_{A/B}+(\vec{v}_{A/B})_{xyz}`] where [`(\vec{v}_{A/B})_{xyz}`] is the 
+velocity of [`\textrm{A}`] with respect to [`\textrm{B}`] (the velocity of [`\textrm{A}`] from [`\textrm{B}`]'s perspective).
+END_PGML_HINT
+
+BEGIN_PGML_HINT
+The acceleration equation with rotating axes is: [`\vec{a}_A = \vec{a}_B+\dot{\vec{\Omega}}\times\vec{r}_{A/B}+\vec{\Omega}\times(\vec{\Omega}\times\vec{r}_{A/B})+2\cdot\vec{\Omega}\times(\vec{v}_{A/B})_{xyz}+(\vec{a}_{A/B})_{xyz}`] where [`(\vec{a}_{A/B})_{xyz}`] is the 
+acceleration of [`\textrm{A}`] with respect to [`\textrm{B}`] (the acceleration of [`\textrm{A}`] from [`\textrm{B}`]'s perspective).
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KM-JL-7.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

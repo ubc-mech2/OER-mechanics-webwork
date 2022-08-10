@@ -1,0 +1,136 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Principle of Impulse and Momentum)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','moment','impulse','momentum','inertia','angular velocity','disk')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.2')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('19.2')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.8')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.8')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.25;
+$width = 2423*$scale;
+$height = 3041*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$F1A = random(3,6,3);	#[N]
+$F1B = random(5,9,2);	#[N]
+$F2A = random(2,4,2);	#[N]
+$F2B = random(1,5,2);	#[N]
+$L = random(1.6,2,0.2);		#[m]
+$m = random(120,200,40);	#[kg]
+$k = random(1,2,0.1);		#[m]
+$t = random(5,6,1);	#[s]
+
+$mcScenario = PopUp(["?","Clockwise","Counter-clockwise"], "Clockwise");
+
+#---- Formulas to compute answers --------------#
+$I_O = $m*$k**2;
+$w = $L/2*($F1A/3*$t**3+$F1B*$t-$F2A/2*$t**2-$F2B*$t)/$I_O;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-IM-JL-27.png", width=>[$width], height=>[$height]) @]*
+
+You and your friend are out canoeing on the water in your double canoe. The canoes are rigidly attached by the support system in the center and the center of gravity
+is at the midpoint between your two canoes. You are in the left canoe and paddle with a force of [`F_1 = [$F1A]t^2 + [$F1B]\ \textrm{N}`] while your friend in the
+right canoe paddles with a force of [`F_2 = [$F2A]t + [$F2B]\ \textrm{N}`]. You and your friend are [`L = [$L]\ \textrm{m}`] apart, and the connected double
+canoes have a radius of gyration [`k_G = [$k]\ \textrm{m}`] about the center of gravity [`G`]. If the entire system (including the two of you) has a mass
+of [`m = [$m]\ \textrm{kg}`] and you started from rest, find the magnitude of the angular velocity of the double canoe
+after [`t = [$t]\ \textrm{s}`].
+
+[`\omega = `] [_____]{"$w"} [`\textrm{rad/s}`]
+
+[@ $mcScenario->menu() @]*
+
+END_PGML
+
+ANS($mcScenario->cmp);
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-IM-JL-27.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

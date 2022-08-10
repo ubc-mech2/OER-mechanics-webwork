@@ -1,0 +1,148 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Kinetic Energy)
+## Institution('University of British Columbia')
+## Author(Michael Sekatchev)
+## Date(Winter 2021)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+	"PGchoicemacros.pl",
+);
+
+#######################################################
+#Setup
+
+TEXT(beginproblem());
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.005,
+tolType=>'absolute');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+	#aspect ratio
+
+#---- Random variables for this problem --------#
+
+$m1 = random(10,20,5);
+$L = random(0.4,0.6,0.1);
+$m2 = random(3,7,1);
+$R = random(0.1,0.2,0.01);
+$k = random(50,250,50);
+$x0 = random(30,70,10);
+
+#---- Formulas to compute answers --------------#
+
+$g = 9.81;
+
+
+$Efkin_omega2 = 1/2*(1/2*$m2*$R**2) + 1/2*$m1*($L/2)**2 + 1/2*1/12*$m1*$L**2;
+$Efpot = 1/2*$k*(pi/2*$R)**2-$m1*9.81*1/2*$L;
+
+$omega = sqrt(-$Efpot/$Efkin_omega2);
+
+
+$mc = new_multiple_choice();
+$mc->qa(
+"In what direction?", 
+"Clockwise"
+);
+$mc->extra(
+"Counterclockwise",
+);
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "21-R-WE-MS-37.png", width=>[$width], height=>[$height]) @]*
+
+
+
+
+A rod of mass [`m_1=[$m1]kg`] and length [`L=[$L]m`] is rigidly attached on one end to the centre of a uniform 
+disk of mass [`m_2=[$m2]kg`] and radius [`R=[$R]m`]. A spring of spring constant [`k=[$k] N/m`] is attached to the 
+outside of the disk as shown, and starts at unstretched length [`x_0=[$x0]cm`] when the rod is horizontal. 
+
+If the rod is released from rest at the horizontal position shown, What is the angular velocity after it has rotated [`90^\circ`]?
+
+You can neglect the thickness of the rod and friction forces.
+
+[`{\omega}=`][___]{"$omega"} [`rad/s`]
+
+
+
+
+
+ _Round your answer to three decimal places_.
+
+
+END_PGML
+BEGIN_TEXT
+\{ $mc->print_q() \}
+$BR
+\{ $mc->print_a() \}
+END_TEXT
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+
+[@ image( "21-R-WE-MS-37.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+$showPartialCorrectAnswers = 0;
+
+ANS( radio_cmp( $mc->correct_ans() ) );
+
+
+ENDDOCUMENT();

@@ -1,0 +1,133 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Distributed Forces: Centroid and Center of Gravity)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','inertia','moment','parallel axis','kinetics','composite bodies')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('5.11')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.4')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 317;
+$height = 470;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$w = random(1.2, 1.4, 1.5);	#[m]
+$h = random(5, 7, 8);		#[m]
+$r = random(2, 2.5, 3);		#[m]
+$p = random(20, 30, 35);	#[kg/m^3]
+
+
+#---- Formulas to compute answers --------------#
+$rC = $w/2;
+$mH = 2/3*pi*$r**3*$p;
+$mC = pi*$rC**2*$h*$p;
+
+$IaHemisphere = 0.259*$mH*$r**2 + $mH*(3/8*$r)**2;			
+$IaCylinder = 1/12*$mC*(3*$rC**2+$h**2) + $mC*($h/2)**2;
+$IaTotal = $IaHemisphere + $IaCylinder;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+You and your friend in engineering are modelling a bolt in 3D modelling software, and make the following preliminary model. The model is made from a light material that has a constant density of
+[`\rho = [$p]`] [`\textrm{kg/m}^3`]. It is composed of a tall cylinder of height [`h = [$h]`] [`\textrm{m}`]
+and a width [`w = [$w]`] [`\textrm{m}`] centered on a hemisphere of radius [`r = [$r]`] [`\textrm{m}`]. After making a physical prototype of your model, you accidentally drop it and notice that it
+falls from your hands in the position shown. Find the moment of inertia of your model about [`\textrm{A}`].
+
+[@ image( "22-R-KIN-JL-12.png", width=>[$width], height=>[$height]) @]*
+
+[`I_{A\ (Hemisphere)} = `] [_____]{"$IaHemisphere"} [`\textrm{kg*m}^2`]
+
+[`I_{A\ (Cylinder)} = `] [_____]{"$IaCylinder"} [`\textrm{kg*m}^2`]
+
+[`I_{A\ (model)} = `] [_____]{"$IaTotal"} [`\textrm{kg*m}^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KIN-JL-12.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

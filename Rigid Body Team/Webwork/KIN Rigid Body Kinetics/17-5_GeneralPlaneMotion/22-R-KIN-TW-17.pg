@@ -1,0 +1,138 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of a Rigid Body)
+## DBsection(Equations of Motion)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics','kinetics','wheel','moment of inertia','friction','slipping')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.5')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.5')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.5')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.5')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.4;
+
+$height = $imgScale * 560;
+
+$width = $imgScale * 1002;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$mb = 15;
+$mw = 8;
+$r = 0.15;
+$g = 9.81;
+$F = 200;
+$mugs = 0.05;
+$mugk = 0.02;
+$mubk = 0.5;
+$mubs = 0.6;
+
+#---- Formulas to compute answers --------------#
+$I = 0.5*$mw*$r**2;
+$N1 = 0.5*$mb*$g;
+$N2 = $N1+$mw*$g;
+
+$aT = 2*$F*$r**2/($I+$mw*$r**2+2*$mb*$r**2);
+$F1T = 0.5*($F-$mb*$aT);
+$F2T = $F1T-$mw*$aT*0.5;
+
+$F2 = $mugk*$N2;
+$F1 = ($I*$mw*$F+$I*$mb*$F2+$F2*$mw*$mb*$r**2)/($I*$mb+$mw*$mb*$r**2+2*$I*$mb);
+$aw = -($F1-$F2)/$mw;
+$ab = -($F-2*$F1)/$mb;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-KIN-TW-17.png", width=>[$width], height=>[$height]) @]*
+
+A wood block of mass [`[$mb]\ kg`] lies on top of two metal cylinders, each of mass [`[$mw]\ kg`] and radius [`r=[$r]\ m`], and is being pulled by a force [`F=[$F]\ N`] Given that the coefficients of friction between the wood and the cylinders are [`\mu_s=[$mubs]`] and [`\mu_k=[$mubk]`] and the coefficients of friction between the cylinders and the ground are [`\mu_s=[$mugs]`] and [`\mu_k=[$mugk]`], find the acceleration of the block and the two wheels. _(Use [`g=9.81\ m/s^2`])_
+
+[`\vec{a}_{\text{block}}=`][______]{"$ab"} [`\hat{i}\ m/s^2`]
+
+[`\vec{a}_{\text{wheels}}`][______]{"$aw"} [`\hat{i}\ m/s^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-KIN-TW-17.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

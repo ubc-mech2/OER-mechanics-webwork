@@ -1,0 +1,67 @@
+setNumber=Chapter2_UBC_OER_Mechanics
+openDate = 1/7/01 at 6:00am
+dueDate = 1/20/22 at 6:00am
+answerDate = 1/21/23 at 6:00
+paperHeaderFile = defaultHeader
+screenHeaderFile = defaultHeader
+problemList =
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-01-01-216e2b17b522420481cf3e325c01df38.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-01-02-6be30beddcc44813957bf545a0e71a29.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-01-03-4e1943f3efac4ff1a3bba60fe8ab91e1.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-01-04-7deefb06411d45dba1a7c0abcd0d760f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-02-01-bc235f5ad5624b18816f34808f67f386.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-02-02-cddbc72fdab944c9a66eaeaa666de810.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-02-03-e62439e41c064e1ba3d97f7dac0568a2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-02-04-a2d1faad9f9d4244be05fb66bae5fb06.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-03-01-a50107af328740369593662ce687d426.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-03-02-bf0d09b09eb54254a905a63e4b803934.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-03-03-94d3fb73664247e4a588663f68ba089.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL01-03-04-34e592a41d4b429aa7221a15042b1fd1.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-01-01-38469ef0eead43019b5e391b7d4e07e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-01-02-9571f0db781849e5b0f406ec6a51a861.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-01-03-7e7336dc192f46d99005736b7e273181.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-01-04-90a700c505b64455a0c090d515e13682.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-02-01-f131106ef259480aba83392529d3f95c.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-02-02-a254dde20899422896065ac2d6891131.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-02-03-ddeae2911c4b41538ab4e806b4a67fee.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-02-04-2d59bb89b9834ac2809db4b59a1bf67e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-03-01-a799fdd8cfb34d0292c439f14434a80b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-03-02-4e2009cd3696453e884d93ca52d77eb7.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-03-03-0ede6350fc624e8a88a582ca85677413.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL02-03-04-71ae0078ae2c46d3b1b266c6e4a49087.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-01-01-a77cdecafa394c5599dd1540e2d1cde1.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-01-02-739b9049d37849c4b012ce7171ac766.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-01-03-08eadf581b9e4ec6902ef3831ff05845.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-01-04-9dd0271518a44462815110f60c780cd0.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-01-9f0bb0711c0f49e1baa24f47ee757fdc.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-02-823626148e7c4482af3d403ed0242759.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-03-ab16798133ba446d8b5f6dcefe1f5980.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-04-b3ba483a864241b99f9dc96d433f6f52.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-05-7c489b148b7849749d18bd7b4af954a7.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-06-69561e0aff9b488b9ee3af9edab93e4c.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-07-2276b3bd8e6b4211bef2540fe513b5f4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-02-08-49ff1ef9d1814907a8d602a605fb2132.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-03-01-237815eeddbd48bda51bf9cf17ae6ca1.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-03-02-48acfb26ac5346c8917e4fd5b14a48d3.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-03-03-b0feb8526fe246059010b6671d5bb44f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL03-03-04-30486d05d4a844278759fae53dd6322f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-01-01-311d81bc7a494e938b1965714160f4cc.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-01-02-a47c5648b71947eb9291005cca7a66a6.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-01-03-1adb1d67b3094eb6bd2e05b1cfea2319.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-01-04-18b51bdf294d4ae1b7de647418e78788.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-01-fdaacd3ab50c4bd1af1ba85d530c7624.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-02-b54c5775c93c4b4681e7e5c7f36da489.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-03-d2bb77652e8a4a5884e24536718885f0.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-04-c47f3e3456fe4c93bb5e85c7eed91b1f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-05-eadd9c15653040e2b617a05b00c3e971.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-06-e81d6932a25d4ebdbcc32fd6d0392057.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-07-c3eb9300e50d43548a7fb6e56cd05da0.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-02-08-88f40c8ae85c44c6ba0d29b0afaf1741.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-03-01-f780230078be4cdeae2302a717d16630.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-03-02-d190cb06a450471fa160c21e2aaab947.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-03-03-e886c0ab654c4c07980ce11081a81c86.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL04-03-04-77ddedfe4e2740438b0f92d455223085.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL05-01-01-e9b9ca2f9d664c20bcc0acb1c3fab2a5.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL05-01-02-5aae2c82180249f589ee99d0925d930.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL05-01-03-2adc86423e89433c83dd54376313d53e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-4-9_ReductionOfSimpleDistributedLoading/STATICS-EPL05-01-04-3caf06cdabe74a6eb1204f2d9f08dcf4.pg, 1

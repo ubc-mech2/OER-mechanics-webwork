@@ -83,7 +83,7 @@ $C = random(9, 10, 1);
 #computation
 $s1 = 1/64*$A - 7/4;
 $s2 = 1/64*$B - 7/4;
-$s3 = 6.25*($C-8)*(3.25*($C-8)**2 +13);
+$s3 = (169/8)*($C-8)**3-(169/2)*($C-8);
 
 #set tolerance
 Context()->flags->set(
@@ -99,12 +99,12 @@ tolType=>'relative');
 BEGIN_PGML
 
 A plane starts from rest and travels in a straight line motion as shown by the graph below. Create an [`a - s`] graph and find the values of acceleration
-at [`s = [$A], [$B]`] and [`[$C]`] [`s`] to three decimal points. 
+at [`s = [$A], [$B]`] and [`[$C]`] [`m`] to three decimal points. 
 
 
-[`a_{[$A]} =`] [_____]{"$s1"} [`m/s^2`]  
-[`a_{[$B]} =`] [_____]{"$s2"} [`m/s^2`]  
-[`a_{[$C]} =`] [_____]{"$s3"} [`m/s^2`]  
+[`a({[$A]}) =`] [_____]{"$s1"} [`m/s^2`]  
+[`a({[$B]}) =`] [_____]{"$s2"} [`m/s^2`]  
+[`a({[$C]}) =`] [_____]{"$s3"} [`m/s^2`]  
 
 
 *Use the figure below*

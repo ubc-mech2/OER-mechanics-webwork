@@ -29,7 +29,7 @@ for item in items:
         #CREATE .DEF FILE FOR FOLDER
         for filename in os.listdir(cwd+'\\'+FolderName):
             if filename.endswith('.pg'):    #adds line per .pg file
-                content += 'UBC_Dynamics/' + FolderName + '/' + filename +', 1\n'
+                content += 'USask_Statics/' + FolderName + '/' + filename +', 1\n'
         content = header + content          #entire content of .def file
         f = open('set_'+FolderName+'.def','w', encoding='utf-8')    #create new .def file
         f.write(content)                                            #write to file

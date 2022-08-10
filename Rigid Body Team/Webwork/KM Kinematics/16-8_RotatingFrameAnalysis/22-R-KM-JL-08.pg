@@ -1,0 +1,186 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Relative Motion: Acceleration, Rotating Axes)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','engineering student', 'satellite', 'relative', 'acceleration', 'velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.8')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('16.8')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.3')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 552;
+$height = 558;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$d = random(1000, 1200, 1600);	#[km]
+$rAB = ($d - 400)/2;		#[km]
+$theta = 45;		 	#[deg]
+$vB = random(400, 440, 480);	#[km/s]
+$aB = random(60, 80, 100);	#[km/s^s]
+$vA = random(180, 200, 220);	#[km/s]
+$aA = random(50, 60, 70);	#[km/s^s]
+
+
+#---- Formulas to compute answers --------------#
+$vBi = 0;			#[km/s]	
+$vBj = $vB;			#[km/s]
+$aBi = $vB**2/$d;		#[km/s^2]
+$aBj = $aB;			#[km/s^2]
+$vAi = -$vA;			#[km/s]
+$vAj = -$vA;			#[km/s]
+$aAi = -$aA;			#[km/s^2]
+$aAj = -$aA;			#[km/s^2]
+$omega = -$vB/$d;		#[rad/s]
+$omegaDot = -$aB/$d;		#[rad/s^2]
+
+$vABi = $vAi - $vBi;				#[km/s]
+$vABj = $vAj - $vBj - $omega*$rAB;		#[km/s]
+
+$aABi = $aAi - $aBi + ($omega**2)*$rAB + 2*($omega*$vABj);	#[km/s^2]
+$aABj = $aAj - $aBj - ($omegaDot*$rAB) - 2*($omega*$vABi);	#[km/s^2]
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+Two planes are flying at cruising altitude and happen to come in close proximity. You are in plane [`\textrm{B}`] with a window seat such that you have a nice view of plane [`\textrm{A}`].
+Plane [`\textrm{A}`]'s trajectory is a straight line with [`\theta = 45^\circ`], while your trajectory in plane [`\textrm{B}`] is a circle of distance [`d_1 = [$d]\ \textrm{km}`] from its
+center as shown below. At this instant, plane [`\textrm{A}`] is [`[$rAB]\ \textrm{km}`] away from you such that the planes are in the position shown in the image. If plane [`\textrm{B}`] has
+a velocity [`\vec v_B=[$vB]\ \textrm{km/s}`] and a tangential acceleration [`\vec a_B=[$aB]\ \textrm{km/s}^2`] and plane [`\textrm{A}`] has a velocity
+[`\vec v_A=[$vA]\sqrt{2}\ \textrm{km/s}`] and an acceleration [`\vec a_A=[$aA]\sqrt{2}\ \textrm{km/s}^2`] in the direction shown, find the velocity and acceleration of plane [`\textrm{A}`] as seen from
+your window seat in plane [`\textrm{B}`].
+
+[@ image( "22-R-KM-JL-8.png", width=>[$width], height=>[$height]) @]*
+
+
+Determine the motion of plane [`\textrm{B}`] as vectors:
+
+[`\vec{v}_B = `][_____]{"$vBi"}[`\hat{i}\ +`] [_____]{"$vBj"}[`\hat{j}\ km/s`]
+
+[`\vec{a}_B = `][_____]{"$aBi"}[`\hat{i}\ +`] [_____]{"$aBj"}[`\hat{j}\ km/s^2`]
+
+[`\vec{\Omega} = \vec{\omega}_B = `][_____]{"$omega"} [`\hat{k}\ rad/s`]
+
+[`\dot{\vec{\Omega}} = \vec{\alpha}_B = `][_____]{"$omegaDot"} [`\hat{k}\ rad/s^2`]
+
+
+Determine the motion of plane [`\textrm{A}`]:
+
+[`\vec{r}_{A/B} = `][_____]{"$rAB"}[`\hat{i}\ km`]
+
+[`\vec{v}_A = `][_____]{"$vAi"}[`\hat{i}\ +`] [_____]{"$vAj"}[`\hat{j}\ km/s`]
+
+[`\vec{a}_A = `][_____]{"$aAi"}[`\hat{i}\ +`] [_____]{"$aAj"}[`\hat{j}\ km/s^2`]
+
+
+Use the velocity equation with rotating axes to find [`\vec{v}_{A/B}`]:
+
+[`\vec v_{A/B} = `][_____]{"$vABi"}[`\hat{i}\ +`] [_____]{"$vABj"}[`\hat{j}\ km/s`]
+
+
+Use the acceleration equation with rotating axes to find [`\vec{a}_{A/B}`]:
+
+[`\vec a_{A/B} = `][_____]{"$aABi"}[`\hat{i}\ +`] [_____]{"$aABj"}[`\hat{j}\ km/s^2`]
+
+
+END_PGML
+
+BEGIN_PGML_HINT
+The acceleration of each plane [`\textrm{B}`] can be broken into it's tangential and normal components. Remember that the formula for the normal component [`\omega^2\cdot r`] can be re-written using [`v=\omega\cdot r`].
+END_PGML_HINT
+
+BEGIN_PGML_HINT
+The velocity equation with rotating axes is: [`\vec{v}_A = \vec{v}_B+\vec{\Omega}\times\vec{r}_{A/B}+\vec{v}_{A/B}`] where [`\vec{v}_{A/B}`] is the 
+velocity of [`\textrm{A}`] with respect to [`\textrm{B}`] (the velocity of [`\textrm{A}`] from [`\textrm{B}`]'s perspective).
+END_PGML_HINT
+
+BEGIN_PGML_HINT
+The acceleration equation with rotating axes is: [`\vec{a}_A = \vec{a}_B+\dot{\vec{\Omega}}\times\vec{r}_{A/B}+\vec{\Omega}\times(\vec{\Omega}\times\vec{r}_{A/B})+2\cdot\vec{\Omega}\times\vec{v}_{A/B}+\vec{a}_{A/B}`] where [`\vec{a}_{A/B}`] is the 
+acceleration of [`\textrm{A}`] with respect to [`\textrm{B}`] (the acceleration of [`\textrm{A}`] from [`\textrm{B}`]'s perspective).
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KM-JL-8.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

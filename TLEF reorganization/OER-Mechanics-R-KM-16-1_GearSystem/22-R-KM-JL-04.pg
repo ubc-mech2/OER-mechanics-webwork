@@ -1,0 +1,141 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Rotation About a Fixed Axis)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','Kinematics','velocity', 'gear','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.3')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('16.3')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.3')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.015,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.33;
+
+$height = $imgScale * 2039;
+
+$width = $imgScale * 1855;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$aA = random(6,3,9);
+$rC = random(0.4,0.5,0.6);
+$rB = $rC*2.5+0.2;
+$rA = random(0.3,0.4,0.5);
+$t = random(2.2, 2.4, 2.6);
+
+
+#---- Formulas to compute answers --------------#
+$wA = $aA/3*$t**3;
+$wC = $wA*$rA/$rC;
+$thetaC = $aA/12*$t**4*$rA/$rC;
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+It is time for the annual Groovy Gathering where everyone from your physics classes dance while a giant disco ball spins overhead. As the party ends, the disco ball is raised back
+through a hole in the ceiling. The wheel system shown below controls how fast the disco ball is raised. All the wheels are surrounded in a band of rubber so that no slipping occurs 
+between any of them. If wheel A starts from rest and begins turning with an angular acceleration of [`\alpha = [$aA]\, t^2\ \textrm{rad/s}^2`], it takes the disco ball [`[$t]`] seconds
+to reach the top. The wheels have radii [`r_A =`] [`[$rA]`] [`m`], [`r_B =`] [`[$rB]`] [`m`], and [`r_C =`] [`[$rC]`] [`m`].
+
+
+[@ image( "22-R-KM-JL-4.png", width=>[$width], height=>[$height]) @]*
+
+Find the magnitude of the angular velocity of wheel A just before the disco ball reaches the top.
+
+[`\omega_A = `] [_____]{"$wA"}[`\textrm{rad/s}`]
+
+Find the magnitude angular velocity of wheel C just before the disco ball reaches the top.
+
+[`\omega_C = `] [_____]{"$wC"}[`\textrm{rad/s}`]
+
+What will be the angular displacement in radians of wheel C when the disco ball is fully raised?
+
+[`\theta_C = `] [_____]{"$thetaC"}[`\textrm{rad}`]
+
+END_PGML
+
+
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KM-JL-4.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

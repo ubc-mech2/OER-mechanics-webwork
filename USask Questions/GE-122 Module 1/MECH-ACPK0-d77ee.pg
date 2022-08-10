@@ -1,0 +1,116 @@
+##DESCRIPTION
+##
+## Problem created by University of Saskatchewan
+## Project led by Sean Maw
+## Contact: sean.maw@usask.ca
+##  
+## Problem coded into WeBWorK by Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+## Contact: adentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+## This problem text is licensed under the 
+## Creative Commons Attribution Share Alike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## The image associated with this problem is licensed under the 
+## Creative Commons Attribution Share Alike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/> (if no other license graphic shown)
+## OR 
+## under the Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/> (if license graphic showing CC BY). 
+##
+## Converting this work into WeBWorK was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was coded and completed on the traditional, ancestral, and unceded 
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the peoples of the Treaty 6 and Treaty 7 regions of Alberta. 
+##
+##END DESCRIPTION
+##
+##
+## DBsubject(Dynamics)
+## DBchapter(Kinematics of particles)
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of Saskatchewan')
+## Author( Kaitlyn Baron)
+## Date( February 5, 2022 12:26 PM)
+## Difficulty(Beginner)
+## KEYWORDS( Normal-tangential coordinates)
+## RESOURCES()
+
+
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+
+$mc1 = RadioButtons([
+
+"a) Rectangular coordinates (x-y) ",
+"b) Normal & tangential coordinates (n-t) ",],
+"b) Normal & tangential coordinates (n-t) ");
+########################################################
+# Not in PGML
+
+$scale = 0.8;
+$width = 630*$scale;
+$height = 456*$scale;
+
+BEGIN_TEXT
+$BR
+\{ image( "USASK-GE-122-2.png", width=>$width, height=>$height ) \}
+$BR
+$BR
+
+A particle follows the parabolic path seen in the image below. At point A, \(v = 13\ \text{m/s}\) and \(\dot v = 5\ \text{m/s}^2\). You are asked to determine the magnitude of acceleration at this point.  What is the easiest coordinate system to use to analyze this problem? 
+
+$BR
+$BR
+\{$mc1->buttons()\}
+ 
+ 
+ 
+END_TEXT 
+ 
+ANS( $mc1->cmp() );
+BEGIN_PGML_SOLUTION
+This is an example of curvilinear motion. Even though the path is shown in x-y coordinates, it is still easier to analyze the situation using normal-tangential coordinates due to being given the tangential acceleration and the defined path for the particle. 
+END_PGML_SOLUTION
+ENDDOCUMENT();

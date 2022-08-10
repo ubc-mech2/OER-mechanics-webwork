@@ -1,0 +1,138 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinematics of Rigid Bodies)
+## DBsection(Absolute Motion)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','time derivative', 'bar', 'constrained', 'velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 16.4')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('16.4')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.3')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.2')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.015,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$width = 640;
+$height = 421;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$d_1 = random(2, 2.5, 3);	#[km]
+$d_2 = random(5, 6, 6); 	#[km]
+$divisor = random(3,4,6);	#used in making theta
+$theta = pi/$divisor;		#[rad]
+$w = random(0.5, 0.75, 1);	#[rad/s]
+
+
+#---- Formulas to compute answers --------------#
+$d_3 = $d_1*cos($theta)+sqrt($d_1**2*cos($theta)**2-$d_1**2+$d_2**2);		#[km]
+$v_3 = -$d_1*$d_3*$w*sin($theta)/($d_1*cos($theta)-$d_3);	#[km/s]
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+You recently completed building your high torque gear motor and decided to test it outside. As you're testing it, a gigantic tree begins to fall and it will crush your
+creation (at point A) unless you can move it out of the way. You can save your motor by turning it on to maximum power where it turns counter-clockwise with an angular velocity of
+[`\vec\omega = [$w]\ \hat{k}\ \textrm{rad/s}`]. If the arms have lengths [`d_1 = [$d_1]`] km and [`d_2 = [$d_2]`] km, find the following when the angle shown is [`\theta = \pi/[$divisor]`] rad.
+
+
+[@ image( "22-R-KM-JL-6.png", width=>[$width], height=>[$height]) @]*
+
+
+Find the distance [`d_3`] from the motor to the base.
+
+[`d_3 = `][_____]{"$d_3"} [`\textrm{km}`]
+
+Find the speed at which the motor moves towards the base.
+
+[`\big|\dot{d_3}\big| = \big|\vec v_3\big| = `][_____]{"$v_3"} [`\textrm{km/s}`]
+
+
+END_PGML
+
+BEGIN_PGML_HINT
+Using trigonometry, find an expression that relates [`d_3`] and [`\theta`] and then differentiate with respect to time. Remember to keep everything
+in terms of variables so you know what changes with respect to time when differentiating.
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KM-JL-6.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

@@ -77,8 +77,8 @@ $barrelHeight = random(10,30,10);
 $acceleration = 9.8;
 
 #computation
-$time = sqrt(2*$height/$acceleration);
-$distance = 2*$height;
+$time = sqrt($barrelHeight/$acceleration);
+$distance = $barrelHeight;
 
 #image scale
 $imgScale = .3;

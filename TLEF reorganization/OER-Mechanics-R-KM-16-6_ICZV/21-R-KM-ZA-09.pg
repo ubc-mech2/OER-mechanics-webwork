@@ -1,0 +1,135 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinematics of rigid bodies)
+## DBsection(Relative motion: velocity, instantaneous centers)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`dynamics`,`rotation`,`ICZV`,`rigid bodies`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 16, section 6')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+
+$r = random(0.5,0.9,0.05);
+$vb = random(1,5,0.1);
+$vo = random(-0.9,-0.5,0.05);
+$t = random(0.5,0.9,0.05);
+$xacoeff = random(0.1,0.5,0.1);
+
+$va2 = random(0.5,0.9,0.1);
+
+#computation for numerical answer
+$va = 2*$xacoeff*$t;
+$yIC = ($vb*$r)/((-1*$vo)+$vb);
+$omega = $vb/$yIC;
+$vp = $omega*($r*2 - $yIC);
+$vslip = $vp - $va;
+
+$x = (2*$r*$va2)/($vb-$va2);
+$yIC2 = 2*$r + $x;
+$omega2 = $vb/$yIC2;
+$vo2 = $omega2*($x + $r);
+
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*1666;
+$height = $resolution*962;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-KM-ZA-09.png", width=>[$width], height=>[$height]) @]*
+
+A gear is placed between a gear rack and a sliding plate. The gear rack moves at a velocity of [`v_B=[$vb]\:m/s`].
+The point [`A`] on the sliding plate moves according to the following distance equation: [`x_A=[$xacoeff]t^2\:m`] in the
+leftwards direction, however it slips on the top of the gear at some velocity. If we know that [`v_O=[$vo]`][`\boldsymbol{\hat{i}}`][`m/s`],
+and [`r=[$r]\:m`], what is the slip velocity between points [`P`] and [`A`] when [`t=[$t]\:seconds`]?
+
+
+[`v_{slip} = `][_____]{"$vslip"}[`m/s`]
+
+
+Now assume that [`v_B`] remains the same, but the sliding plate moves without slipping at a velocity of [`v_A=[$va2]\:m/s`]
+towards the right. Find the y coordinate of the ICZV where [`y=0`] is at point [`B`], and the velocity of point [`O`].
+Assume [`r`] remains the same.
+
+
+[`y_{IC} = `][_____]{"$yIC2"}[`m`]
+
+[`v_O= `][_____]{"$vo2"}[`m/s`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-KM-ZA-09.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

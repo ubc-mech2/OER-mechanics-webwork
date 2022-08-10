@@ -1,0 +1,141 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Equations of Motion)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','inertia','moment','roll','trap','friction','kinetics',')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.5')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.5')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('15.5')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('6.5')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.3;
+$width = 2625*$scale;
+$height = 1658*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$mBall = random(4,8,1);	#[kg]
+$mRod = random(2,5,1);	#[kg]
+$l = random(2,4,0.5);	#[m]
+$r = random(0.5,2,0.5);	#[m]
+
+$mTotal = $mBall + $mRod; #not random but helps for computation
+
+
+#---- Formulas to compute answers --------------#
+$I_O = 2/5*$mBall*$r**2+$mBall*($r+$l)**2 + 1/3*$mRod*($l**2);
+$COMx = -($mBall*($l+$r)+$mRod*$l/2)/($mBall+$mRod);
+$alpha = $mTotal*9.81*$COMx/$I_O;
+$Ox = 0;
+$Oy = $mTotal*(9.81-$alpha*$COMx);
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+Navani, a skilled engineer, designed the perfect bell-ringing contraption. It has a ball of mass [`m = [$mBall]\ kg`] and radius [`r = [$r]\ m`] connected to a slender rod
+of mass [`m = [$mRod]\ kg`] and length [`l = [$l]\ m`]. For her contraption to work, she cuts the string and the ball swings down striking the bell.
+
+[@ image( "22-R-KIN-JL-16.png", width=>[$width], height=>[$height]) @]*
+
+Find the center of mass of the contraption if the pin [`\textrm{O}`] is located at [`(0,0)`].
+
+[`\bar{x} = `] [_____]{"$COMx"} [`\hat{i}\ \textrm{m}`]
+
+Find the moment of inertia of the bell-ringer about the pin [`\textrm{O}`].
+
+[`I_O = `] [_____]{"$I_O"} [`kg\cdot m^2`]
+
+Find the reaction forces [`O_x`] and [`O_y`] at the pin when Navani cuts the string.
+
+[`O_x = `] [_____]{"$Ox"} [`\hat{i}\ \textrm{N}`]
+
+[`O_y = `] [_____]{"$Oy"} [`\hat{j}\ \textrm{N}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KIN-JL-16.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

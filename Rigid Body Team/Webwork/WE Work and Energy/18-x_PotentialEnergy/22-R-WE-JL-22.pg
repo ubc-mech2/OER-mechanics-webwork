@@ -1,0 +1,133 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Potential Energy)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','kinetic energy','pulley','velocity','work','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 18.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('18.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.4')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.8')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.3;
+$width = 2625*$scale;
+$height = 1658*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$d = random(2,3,0.5);		#[m]
+$m = random(16,20,2);		#[kg]
+$L1 = random(3,4,0.5);		#[m]
+$L2 = random(8,10,1);		#[m]
+$uL = random(2.6,3,0.1);	#[deg]
+$v = random(2,3,0.25);		#[m/s]
+
+
+#---- Formulas to compute answers --------------#
+$L_spring1 = sqrt($L1**2+$d**2/4);
+$Vg1 = $m*9.81*$L1;  #not used
+
+$L_spring2 = sqrt($L2**2+$d**2/4);
+$Vg2 = $m*9.81*$L2;  #not used
+
+$k = 2*$m*($v**2/2+9.81*($L1-$L2))/(($L_spring2-$uL)**2-($L_spring1-$uL)**2);
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-WE-JL-22.png", width=>[$width], height=>[$height]) @]*
+
+You have recently decided that you love peanut butter so much that you have prepared some experiments to perform on your favourite jar of peanut butter. Using two equal springs
+you suspend your [`[$m]\ \textrm{kg}`] jar and push it down so that initially it is a distance [`L_1 = [$L1]\ \textrm{m}`] from the attachments and falls at [`v = [$v]\ \textrm{m/s}`].
+The attachments are a distance [`d = [$d]\ \textrm{m}`] away from each other with the jar of peanut butter at the horizontal midpoint. If the springs have an unstretched length of
+[`[$uL]\ \textrm{m}`], for what spring constant [`k`] would the jar reach its lowest position at a distance [`L_2 = [$L2]\ \textrm{m}`] from the top?
+
+
+[`k = `] [_____]{"$k"} [`\textrm{N/m}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-WE-JL-22.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

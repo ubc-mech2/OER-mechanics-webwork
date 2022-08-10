@@ -1,0 +1,109 @@
+##DESCRIPTION
+##
+## Problem created by University of Saskatchewan
+## Project led by Sean Maw
+## Contact: sean.maw@usask.ca
+##  
+## Problem coded into WeBWorK by Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+## Contact: adentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+## This problem text is licensed under the 
+## Creative Commons Attribution Share Alike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## The image associated with this problem is licensed under the 
+## Creative Commons Attribution Share Alike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/> (if no other license graphic shown)
+## OR 
+## under the Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/> (if license graphic showing CC BY). 
+##
+## Converting this work into WeBWorK was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was coded and completed on the traditional, ancestral, and unceded 
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the peoples of the Treaty 6 and Treaty 7 regions of Alberta. 
+##
+##END DESCRIPTION
+##
+##
+## DBsubject(Dynamics)
+## DBchapter(Kinematics of particles)
+## DBsection([REFER TO https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/Taxonomy])
+## Institution('University of Saskatchewan')
+## Author( Meagan Lee)
+## Date( February 5, 2022 9:26 AM)
+## Difficulty(Beginner)
+## KEYWORDS( Projectile Motion)
+## RESOURCES()
+
+
+
+########################################################
+DOCUMENT();
+loadMacros(
+"PGstandard.pl",	# Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"weightedGrader.pl",
+"PGchoicemacros.pl",
+
+
+"source.pl",
+
+
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+
+
+
+########################################################
+
+#Setup
+
+Context("Numeric");
+
+#---------------Tolerance------------------#
+
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');  #relative or absolute
+
+#---- Random variables for this problem --------#
+$v = random(50,80,3);
+$theta = random(12,13,0.2);
+
+# personally I think they should have to solve for these, but an easier question is fine too
+$theta_rad = $theta/180*pi;
+$tv = sprintf("%0.3f", 2*$v*sin($theta_rad)/9.81);
+
+#---- Formulas to compute answers --------------#
+
+$ans0=2*$v**2*cos($theta_rad)*sin($theta_rad)/9.81;
+
+$scale = 0.4;
+$width = 2217*$scale;
+$height = 1263*$scale;
+
+########################################################
+#PGML
+BEGIN_PGML
+
+[@ image( "USASK-GE-122-10.png", width=>[$width], height=>[$height]) @]*
+
+A golf ball is struck such that it has an initial velocity of [`v = [$v]\ \textrm{m/s}`]. It has an initial angle of [`\theta = [$theta]^\circ`] upwards from the horizontal. If the golf field is perfectly flat (i.e. no changes in elevation), air resistance is negligible, and gravity is [`9.81\ \textrm{m/s}^2`], then the golf ball will be airborne for [`t = [$tv]`] seconds. When it first hits the ground, how far away will the ball be (x-direction only)? Give your answer to three significant figures.
+
+[`\textrm{s} = `] [_________________________]{"$ans0"} [`\ \textrm{m}`]
+
+END_PGML
+ENDDOCUMENT();

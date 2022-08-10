@@ -1,0 +1,123 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Kinetic Energy)
+## Institution('University of British Columbia')
+## Author(Michael Sekatchev)
+## Date(Winter 2021)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','spinning','circle','angular velocity','conservation of momentum')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 19, section 19.3')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+	"PGstandard.pl",	# Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+    "parserRadioButtons.pl",
+	"weightedGrader.pl",
+	#"source.pl",			# allows code to be displayed on certain sites
+	#"PGcourse.pl", 	 # Customization file for the course
+);
+
+#######################################################
+#Setup
+
+TEXT(beginproblem());
+
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.005,
+tolType=>'absolute');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.2;
+#aspect ratio
+
+#---- Random variables for this problem --------#
+
+$R = random(20,50,1);
+
+
+#---- Formulas to compute answers --------------#
+
+$g = 9.81;
+
+$omega_1 = sqrt(3/2 * $g/($R/100));
+$v_1 = sqrt(3/8 * $g*($R/100));
+$omega_2 = 0;
+$v_2 = sqrt($g*($R/100));
+
+########################################################;
+#PGML
+
+BEGIN_PGML	
+
+[@ image( "21-R-WE-MS-38.png", width=>[$width], height=>[$height]) @]*
+
+
+ 
+ 
+The motion of a slender rod of length [`R=[$R]cm`] is guided by pins at [`A`] and [`B`] which slide freely in slots cut in a vertical plate as shown. 
+
+The end [`B`] is moved slightly to the left and then released. Determine the magnitudes of the angular velocity and the velocity of the centre of mass in the following two cases:
+
+When the velocity of end [`B`] is [`0`], [`v_B=0`].
+
+[`|\omega_{\textrm{CM},1}|=`][___]{"$omega_1"} [`rad/s`]
+
+[`|v_{\textrm{CM},1}|=`][___]{"$v_1"} [`m/s`]
+
+
+When the end [`B`] passes through [`D`]. 
+
+[`|\omega_{\textrm{CM},2}|=`][___]{"$omega_2"} [`rad/s`]
+
+[`|v_{\textrm{CM},2}|=`][___]{"$v_2"} [`m/s`]
+
+
+END_PGML
+
+
+BEGIN_PGML_SOLUTION
+
+Answers
+
+
+[@ image( "21-R-WE-MS-38.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+ENDDOCUMENT();

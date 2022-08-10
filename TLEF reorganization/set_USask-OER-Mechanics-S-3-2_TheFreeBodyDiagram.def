@@ -1,0 +1,74 @@
+setNumber=Chapter2_UBC_OER_Mechanics
+openDate = 1/7/01 at 6:00am
+dueDate = 1/20/22 at 6:00am
+answerDate = 1/21/23 at 6:00
+paperHeaderFile = defaultHeader
+screenHeaderFile = defaultHeader
+problemList =
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-01-02-0a012d77b05643debee0352d344391fe.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-01-03-cae616c2bf3742369d33c6cdc6c657fc.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-01-04-52e35e799e8a450c93e903d467839865.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-02-01-f6de9cc9bd2d44679dd14e6d8c3ae9f.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-02-02-90956275ddcb4c3ba89374ef6e0a289a.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-02-03-960cb92728794c488ba2b315751305f8.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-02-04-64995066ae4243949f4ed00bf8a4fb24.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-03-01-04c270248a2c4db5a015d89af6f1260.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-03-02-98b96f5209f1415cafd0825d19731cae.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-03-03-84c301a0db96443b873c7d6f3443fff4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE01-03-04-92bc2ac38a3a4b51b07d2b431ba20a62.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-01-04-b62e49b6f3af4699810bfbb29c02d049.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-01-05-29aad1d1dfd7484195b4493659f04326.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-01-06-7f9094bf65a94a04aac48beac71fcff4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-02-01-3f96bbe74751498ca7f930c63c11088.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-02-02-6bdbb1af5d3c4a01a9d291f27476eb06.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-02-03-03db8d91b10b4685806fe5fe83c0ff0.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-02-04-5896a4cea9784890b2fe7d257ae4fae.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-02-05-512ad40ef1aa4743ba697edc9ec1a6ca.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-03-01-d9f08a273c5746ecaf4b1bd71ee25c18.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-03-02-23172d4330604b91a63ca975886334e2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-03-03-158dd39acee14893bb4ac814db8b700.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-03-04-748438f8886e476c819f9e2a38efa620.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-03-05-f10797b224dd49c5aa096497e3289eee.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-03-06-c9b484eeb2e64275969a8386fc3dd3c.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-04-01-b734fbbb351241889cd0dda75c5d907b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-04-02-9f76de1530c94e828005abb2edacc2aa.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-04-03-4e12b490e3354ed8ac24d54f128d44ef.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-04-04-29a08deeecfd442890439d0a309a571a.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-04-05-6cd625aba26f4881ae1294742b8c7a66.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-04-06-e90545cbd7104a238fb67c379dbadf21.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-05-01-5b58cf0cbb6c4b05aa9f96bee582b51b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-05-02-b10a3611a47b47979ca2f3baf7ecd160.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-05-03-df339bafcdb34cfa9758e25e9a1f7691.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-05-04-5d2cb3585146455bbaec09d99eea99b4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-05-05-45aa9cb163684f78807e77160f01c9c5.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE02-05-06-7e22267408254c3194949b0c94f25d56.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-01-01-192ade72a69045d5b65f38629ea09628.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-01-02-9328bfc7cc3345e2b29c47578d8a787e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-01-03-a3d6475d12ff44b8b822803b2d2f0c43.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-01-04-47941c11b03a41b782dfcdc55b03c1c2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-02-01-895116ae8d794581907f45b3d0c3aab4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-02-02-9ab7e059943e4c73aef39f5960879e.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-02-03-65bbcf6708914a9eb2a572c98e86ff64.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE05-02-04-90a02e3d60c043cb987a66b24a6ed5f3.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-01-01-8199ec40c7594421a499a63a7d453229.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-01-02-8b25b8c156b14441866f55837f911a42.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-01-03-5b37d26357fa4de5aefac4bfc7f31bb2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-02-01-210155d7d85445bcbd30dbcc9d4a138b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-02-02-03b200a4b1aa4e53942361c2391cb2da.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-02-03-4c77a7c3d64e4e029004a3cc2eb47b64.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-03-01-27cc4877827d4f85911352d4b5d94614.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-03-02-64551582e43943e38795f155e09e2168.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-03-03-1d7143881caf4db6be03e269543261f2.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-06-01-9204c96adcc94baeaf2007eb045e10b7.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-06-02-950079a3f6fd430dbaf9fffcb6dda379.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-06-03-f8aee4e27262460ab577fdb5e20ae32b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-06-04-1176a9205fe54d4e9860a9df4d5a12c4.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE06-06-05-cac251c67c1448dcb8d4a37b1f9176af.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-01-01-f1732542b3f44edbaecbd627b9a0d945.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-01-02-3c2e16d045df46ceb4706ca70da54822.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-01-03-027b7781f2bd4d18abe17845b793f919.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-02-01-90e17b4e50f94241ae8d795a22212322.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-02-02-82e7e8494e7f4cd3b2b229da1156e70b.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-04-01-5736c1a6602247ac93172d158d7466ae.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-04-02-078e852225df4f0b9a6eb651fb8c133.pg, 1
+USask_Statics/USask-OER-Mechanics-S-3-2_TheFreeBodyDiagram/STATICS-PSE07-04-03-f7a0514546164426aa3cb6ab650f0a48.pg, 1

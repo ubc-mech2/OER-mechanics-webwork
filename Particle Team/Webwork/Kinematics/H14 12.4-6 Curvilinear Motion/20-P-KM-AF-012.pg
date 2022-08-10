@@ -105,7 +105,7 @@ tolType=>'relative');
 
 BEGIN_PGML
 
-If the particle starts at the origin and moves at a speed of [`v = [$A]`][`m/s`], what is the cartesian components if the it makes the angle [`\theta = [$B]^\circ`] to the [`x`]-axis in the [`x-y`] plane. 
+If the particle starts at the origin and moves at a speed of [`v = [$A]`][`m/s`], what are the Cartesian components if the it makes the angle [`\theta = [$B]^\circ`] to the [`x`]-axis in the [`x-y`] plane. 
 and the angle [`\alpha = [$C]^\circ`] to the [`z`]- axis. 
 
 END_PGML

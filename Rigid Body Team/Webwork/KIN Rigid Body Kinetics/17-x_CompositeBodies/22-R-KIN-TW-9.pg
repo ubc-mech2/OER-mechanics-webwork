@@ -1,0 +1,148 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of a Rigid Body)
+## DBsection(Mass Moment of Inertia)
+## Institution('University of British Columbia')
+## Author(Tyler Wilson)
+## Date(Winter 2022)
+## Difficulty(Advanced)
+## KEYWORDS('Dynamics','kinetics','moment of inertia','center of mass', 'wrench')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('5.11')
+## TitleText3('Engineering Mechanics - Statics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.4')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.4;
+
+$height = $imgScale * 1642;
+
+$width = $imgScale * 1160;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$l = random(30,40,5);
+$w = random(2,4,2);
+$d = random(2,3,1);
+$density = 7.6;       #g/cm^3
+$thickness = random(1.5,2.5,0.5);
+
+#---- Formulas to compute answers --------------#
+$surfDensity = $density*$thickness;
+$r = 0.5*(8-$w);
+$Lrod = $l+2*$r-$d;
+$yRod = $Lrod/2;
+$yCirc = $l+$r;
+$mRod = $surfDensity*$Lrod*$w;
+$mCirc = $surfDensity*pi*$r**2;
+$yCM = ($yRod*$mRod+$yCirc*$mCirc)/($mRod+$mCirc);
+$xCM = 4;
+
+$IGCirc = 0.25*$mCirc*$r**2-0.5*$mCirc*16*$r**2/(9*pi**2);
+$dCirc = sqrt(($w/2+4*$r/(3*pi))**2+($yCirc-$yCM)**2);
+$ICirc = ($IGCirc+0.5*$mCirc*$dCirc**2)/1000;
+$IRod = ((1/12)*$mRod*($Lrod**2+$w**2)+$mRod*($yCM-$yRod)**2)/1000;
+$I = 2*$ICirc+$IRod;
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-KIN-TW-9.png", width=>[$width], height=>[$height]) @]*
+
+A wrench is thrown across the room (don't ask why) and rotates about the z-axis running through its center of mass. The wrench has a density of [`[$density]\ g/cm^3`] and thickness of [`[$thickness]\ cm`] with dimensions [`l=[$l]\ cm`], [`w=[$w]\ cm`], and [`d=[$d]\ cm`]. Find the moment of inertia of the wrench. _(Note that the distance [`d`] is not the same as the radius)_
+
+Center of Mass:
+
+[`x_{CM}=`][___]{"$xCM"} [`cm`]
+
+[`y_{CM}=`][___]{"$yCM"} [`cm`]
+
+Moments of Inertia:
+
+[`I_{\textrm{semicircle}}=`][___]{"$ICirc"} [`kg\cdot cm^2`]
+
+[`I_{\textrm{rectangle}}=`][___]{"$IRod"} [`kg\cdot cm^2`]
+
+[`I_{\textrm{total}}=`][___]{"$I"} [`kg\cdot cm^2`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+If the solution doesn't display correctly, try right clicking and opening it in a new tab.
+
+[@ image( "22-R-KIN-TW-9.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

@@ -107,7 +107,7 @@ When [`\theta=45^{\circ}`] link [`AO`] is moving with an angular velocity of [`\
 has a mass of [`m_{AO}=[$moa]\:kg`] and link [`BC`] has a mass of [`m_{BC}=[$mcb]\:kg`], find the angular velocity of link [`BC`] when [`\theta=90^{\circ}`]. Assume that the plate remains horizontal.
 The following dimensions are known: [`r=[$r]\:m`], [`s=[$s]\:m`].
 
-[`omega_{BC} = `][_____]{"$omegac"}[`rad/s`]
+[`\omega_{BC} = `][_____]{"$omegac"}[`rad/s`]
 
 END_PGML
 

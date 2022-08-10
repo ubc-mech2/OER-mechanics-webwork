@@ -94,11 +94,9 @@ $massS = $density*$areaDisk;
 $mass = $massT + $massS;
 $COG = ($areaTower*($radius+$h/2)+$areaDisk*($radius-4*$radius/(3*pi)))/($areaTower+$areaDisk);
 
-$inertTower = $massT*(1/12*($h**2+$w**2)+($h/2)**2);
-$inertSemi = 1/2*$massS*$radius**2;
-$inertA = $inertTower + $inertSemi;
-$inertCOG = $inertA - $mass*(abs($radius-$COG))**2;
-$inertIC = $inertCOG + $mass*$COG**2;
+$inertTower = $massT*(1/12*($h**2+$w**2)+($h/2 + $radius)**2);
+$inertSemi = 0.6512*$massS*$radius**2;
+$inertIC = $inertSemi + $inertTower;
 
 #---- Answers to the problem -----------------------#
 $ansA = 2*pi*sqrt($inertIC/($mass*9.81*abs($radius-$COG)));
@@ -110,12 +108,26 @@ BEGIN_PGML
 
 [@ image( "20-R-VIB-DY-12.png", width=>[$width], height=>[$height]) @]*
 
-A symmetrical buoy of unifrom density [`\rho =`] [`[$density]`] [`kg/m^2`] is moved onto land for maintenance. The tower on top of the buoy can be thought 
+A symmetrical buoy of uniform density [`\rho =`] [`[$density]`] [`kg/m^2`] is moved onto land for maintenance. The tower on top of the buoy can be thought 
 of as a rectangle with a height [`h = `] [`[$h]`] [`m`] and width [`w =`] [`[$w]`] [`m`]. Given that the radius of 
-the bottom is [`r =`] [`[$radius]`] [`m`], find the natural period of the system. The buoy has uniform density [`\rho =`] [`[$density]`] [`kg/m^2`].
+the bottom is [`r =`] [`[$radius]`] [`m`], find the natural period of the system. Take the moment of inertia of
+the semi-circle base about the IC in this position to be [`I_{IC semi-circle} = 0.6512\ m\ R^2`].
 
-[`t =`] [____]{"$ansA"} [`s`]
+
+[`I_{IC Buoy} =`] [_______]{"$inertIC"} [`kg*m^2`]
+
+[`y_G =`] [_______]{"$COG"} [`m\ `] (The height of the center of gravity of the buoy from the point of contact with the ground)
+
+[`t =`] [_______]{"$ansA"} [`s`]
 
 END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "20-R-VIB-DY-12.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
 
 ENDDOCUMENT();

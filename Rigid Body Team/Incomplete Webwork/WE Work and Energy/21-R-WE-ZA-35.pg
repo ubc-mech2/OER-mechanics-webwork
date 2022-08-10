@@ -1,0 +1,118 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering.
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	  kirkeyj@douglascollege.ca
+##
+##
+## This work, including related images, is licensed under the
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/).
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh),
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ),
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot),
+## and the people of the Treaty 7 region of Southern Alberta.
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar kinetics of rigid bodies)
+## DBsection(Principle of work and energy)
+## Institution('University of British Columbia')
+## Author(Zahra Alimohamed)
+## Date(Fall 2021)
+## Difficulty(Intermediate)
+## KEYWORDS(`rigid bodies`,`dynamics`,`work energy`)
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 3')
+
+##############################################################
+
+DOCUMENT();
+
+
+loadMacros(
+	"PGstandard.pl",   # Standard macros for PG language
+	"MathObjects.pl",
+	"PGML.pl",
+	"parserPopUp.pl",
+	"parserMultiAnswer.pl",
+	"parserRadioButtons.pl",
+	"PGchoicemacros.pl",
+	"PGessaymacros.pl",
+	#"source.pl",    # allows code to be displayed on certain sites.
+	#"PGcourse.pl", 	 # Customization file for the course
+	);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+# Setup
+#
+#
+
+Context("Numeric");
+#given
+$mo = random(5,10,0.5);
+$mb = random(1,4,0.5);
+$M = random(30,60,3);
+$r = random(0.5,1,0.5);
+$k = $M/3/$r**2;
+$omega = random(10,15,0.5);
+
+#computation for numerical answer
+$Io=1/2*$mo*$r**2;
+$v = $omega*$r;
+$T2 = (1/2*$Io*$omega**2) + (1/2*$v**2*$mb);
+$a = (($M/2)-$k*$r**2);
+$b = ($mb*9.81*$r);
+$c = -$T2;
+$theta= ( -$b+($b**2-(4*$a*$c))**0.5 )/(2*$a);
+
+#image settings
+$resolution = 0.2;
+$width = $resolution*916*2;
+$height = $resolution*1070*2;
+
+#set tolerance
+Context()->flags->set(
+tolerance=>.03,
+tolType=>'relative');
+
+##############################################################
+#
+# PGML
+#
+#
+
+BEGIN_PGML
+
+[@ image( "21-R-WE-ZA-35.png", width=>[$width], height=>[$height]) @]*
+
+A disk of mass [`m_{disk}=[$mo]\:kg`] and radius [`r=[$r]\:m`] is attached to two springs in parallel with the same spring constant
+of [`k=[$k]\:N/m`]. A block of mass [`m=[$mb]\:kg`] is hanging from the other side of the disk. If a moment of [`M=[$M]{\theta}\:N{\cdot}m`]
+is applied to the system from rest, find angle the disk has turned in radians when is has reached an
+angular velocity of [`\omega=[$omega]\:rad/s`]. You can assume the disk moves in the direction shown, and the springs start at their unstretched length.
+
+[`{\theta} = `][_____]{"$theta"}[`rad`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[@ image( "21-R-WE-ZA-35.pdf", width=>[0], height=>[0]) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT()};

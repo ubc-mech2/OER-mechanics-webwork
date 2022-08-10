@@ -1,0 +1,135 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Systems of Rigid Bodies)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Beginner)
+## KEYWORDS('Dynamics','rotation','tip','kinetics','Newton','equations of motion','second law','intertia','slip')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 17, section 17.5')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('17.5')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('5.11')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('5.4')
+
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$imgScale = 0.38;
+$width = $imgScale*1758;
+$height = $imgScale*1193;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$mus = random(0.25,0.4,0.05);
+$muk = $mus- 0.1/(random(1,2,1));
+
+$h1 = random(0.2,0.4,0.1);
+$h2 = random(0.8,1.1,0.1);
+$w = 0.4;
+
+$mA = random(10,12,0.5);
+$mB = random(8,10,0.5);
+
+
+#---- Formulas to compute answers --------------#
+$T = $mus*$mA*9.81;
+$P = $mus*$mB*9.81 + $T;
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+You have set up the following block system such that blocks [`\textrm{A}`] and [`\textrm{B}`] are connected by a rope with tension [`\textrm{T}`]. 
+You want to cause block [`\textrm{A}`] to either tip or slip along the ground without touching it. So instead you decide to apply a force [`\textrm{P}`]
+on block [`\textrm{B}`].
+
+[@ image( "22-R-KIN-JL-13.png", width=>[$width], height=>[$height]) @]*
+
+Block [`\textrm{A}`] has a mass of [`[$mA]\ kg`] and block [`\textrm{B}`] has a mass of [`[$mB]\ kg`]. Block [`\textrm{A}`] has a height [`h_2 = [$h2]\ m`] and
+a width [`w = [$w]\ m`]. The rope connects at a height [`h_1 = [$h1]\ m`] and the coefficients of static and kinetic friction are given as [`\mu_s = [$mus]`]
+and [`\mu_k = [$muk]`]. Find the force [`\textrm{P}`] required to move the blocks and the tension [`\textrm{T}`] present in the ropes at that moment.
+
+[`T = `] [_____]{"$T"} [`\textrm{N}`]
+
+[`P = `] [_____]{"$P"} [`\textrm{N}`]
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-KIN-JL-13.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

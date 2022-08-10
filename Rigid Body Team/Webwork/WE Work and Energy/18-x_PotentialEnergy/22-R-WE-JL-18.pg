@@ -1,0 +1,139 @@
+##DESCRIPTION
+##
+## Created in collaboration between Douglas College Department of Physics and Astronomy
+## and the University of British Columbia (UBC) Department of Mechanical Engineering. 
+##
+## Project led by Agnes d'Entremont and Jennifer Kirkey
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+## 	    kirkeyj@douglascollege.ca
+## 
+##
+## This work, including related images, is licensed under the 
+## Creative Commons Attribution 4.0 International (CC BY 4.0)
+## <https://creativecommons.org/licenses/by/4.0/>
+##
+## This work was supported by funding from the BCcampus 
+## ZTC (Zero Textbook Cost) Project for STEM (https://bccampus.ca/projects/open-education/zed-cred-z-degrees/ztc-open-educational-resources-for-stem/). 
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of many peoples - specifically the Musqueam (xʷməθkʷəy̓əm), Squamish (Sḵwx̱wú7mesh), 
+## Tsleil-Waututh (səl̓ilwətaɁɬ), QayQayt, Kwikwetlem, Kwantlen, Ktunaxa, Tsawwassen (sc̓əwaθenaɁɬ təməxʷ), 
+## Chemainus (Stz'uminus), Stó:lō (S’ólh Téméxw), Kwanlin Dün, Niitsitapi (Blackfoot), 
+## and the people of the Treaty 7 region of Southern Alberta. 
+##
+## ENDDESCRIPTION
+##
+## DBsubject(Dynamics)
+## DBchapter(Planar Kinetics of Rigid Bodies)
+## DBsection(Potential Energy)
+## Institution('University of British Columbia')
+## Author(Julian Lapenna)
+## Date(Winter 2022)
+## Difficulty(Intermediate)
+## KEYWORDS('Dynamics','kinetic energy','pulley','velocity','work','angular velocity')
+## RESOURCES('Content corresponds to Hibbeler (14th ed.) chapter 18, section 18.1')
+## TitleText1('Engineering Mechanics')
+## AuthorText1('Hibbeler')
+## EditionText1('14')
+## Section1('18.1')
+## TitleText2('Vector Mechanics For Engineers')
+## AuthorText2('Beer and Johnston')
+## EditionText2('11')
+## Section2('17.4')
+## TitleText3('Engineering Mechanics - Dynamics')
+## AuthorText3('Meriam and Kraig')
+## EditionText3('9')
+## Section3('7.8')
+
+########################################################
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl", # Standard macros for PG language
+"MathObjects.pl",
+"PGML.pl",
+"parserPopUp.pl",
+"parserMultiAnswer.pl",
+"parserRadioButtons.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl",
+"PGauxiliaryFunctions.pl"
+#"source.pl", # allows code to be displayed on certain sites.
+#"PGcourse.pl", # Customization file for the course
+);
+ 
+##############################################################
+#
+#Setup
+
+TEXT(beginproblem());
+
+Context("Numeric");		# or Complex
+
+#---------------Tolerance------------------#
+Context()->flags->set(
+tolerance=>.02,
+tolType=>'relative');  #relative or absolute
+
+#-------------- Image Scaling---------------#
+$scale = 0.2;
+$width = 1355*$scale;
+$height = 2572*$scale;
+		#aspect ratio
+
+#---- Random variables for this problem --------#
+$m1 = random(4,9,1);		#[kg]
+$mA = random(1.1,2.5,0.2);	#[kg]
+$mB = random(1.5,3.5,0.5);	#[kg]
+$rA = random(0.3,0.6,0.05);	#[m]
+$rB = $rA*2;			#[m]
+$w = random(6,15,1);		#[rad/s]
+
+
+#---- Formulas to compute answers --------------#
+$I_G = 1/2*$m1*$rB**2;
+$T_wheel = 1/2*$I_G*$w**2;
+$T_A = 1/2*$mA*($w*$rA)**2;
+$T_B = 1/2*$mB*($w*$rB)**2;
+
+$T_i = $T_wheel + $T_A + $T_B;
+$U = $mA*9.81*0.75 - $mB*9.81*1.5;
+$w_f = sqrt(($T_i + $U)/(0.5*$I_G + 0.5*$mB*$rB**2 + 0.5*$mA*$rA**2));
+
+
+########################################################
+#PGML
+
+BEGIN_PGML
+
+[@ image( "22-R-WE-JL-17.png", width=>[$width], height=>[$height]) @]*
+
+Szeth and his friend Lift are playing a game before lunch. Each have attached a can of beans to a rope which are attached
+to a wheel as shown. They then spin the wheel counterclockwise with an angular velocity of [`\omega = [$w]\ \textrm{rad/s}`]. Szeth observes that the system must now have significant kinetic energy. Lift, who simply wants her food, waits for canister [`\textrm{A}`] to fall [`0.75\ \textrm{m}`] and then grabs it so she can start eating. What is the angular velocity of the wheel at the moment Lift grabs her canned beans?
+
+The wheel can be treated as a uniform thin disc with a mass of [`m = [$m1]\ \textrm{kg}`] and the radii are [`r_A = [$rA]\ \textrm{m}`] and [`r_B = [$rB]\ \textrm{m}`]. Canister [`\textrm{A}`] has a mass of [`m_A = [$mA]\ \textrm{kg}`] and canister [`\textrm{B}`] has a mass of [`m_B = [$mB]\ \textrm{kg}`]. No slipping occurs between the rope and the wheel.
+
+
+[`T_{initial} = `] [_____]{"$T_wheel"} [`\textrm{J}`]
+
+[`U_{System} = `] [_____]{"$U"} [`\textrm{J}`]
+
+[`\omega = `] [_____]{"$w_f"} [`\textrm{rad/s}`]
+
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+If the solution does not appear, right click the icon and select "Open image in new tab".
+
+[@ image( "22-R-WE-JL-18.pdf", width=>[0], height=>[0] ) @]*
+
+END_PGML_SOLUTION
+
+##############################################################
+
+ENDDOCUMENT();

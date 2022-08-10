@@ -68,11 +68,11 @@ $coeff1 = random(2,8,1);
 
 
 #computation for numerical answer
-$ms = $coeff1*pi*16*$R**4*[ (1/3)-(1/4) ];
+$ms = $coeff1*pi*16*$R**4*( (1/3)-(1/4) );
 $Is = $coeff1/2*pi*$R**6*(16/15);
 $mr = $coeff1*pi*$alpha**2*$R*2*$R;
 $Ir = $coeff1/3*pi*$alpha**2*$R*($R)**3;
-$k = sqrt[ ($Is-$Ir)/($ms-$mr) ];
+$k = sqrt( ($Is-$Ir)/($ms-$mr) );
 
 #image settings
 $resolution = 0.2;

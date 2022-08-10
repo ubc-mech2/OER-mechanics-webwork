@@ -108,7 +108,7 @@ The boat A moves with a velocity of [`[ [$A]\hat{i} + [$B]\hat{j} ]`] [`\frac{km
 
 [@ image( "20-P-KM-AF-027.png", width=>[$width], height=>[$height]) @]*
 
-[`V_{B/A} = `][_____]{"$vba"} [`m/s`] 
+[`V_{B/A} = `][_____]{"$vba"} [`km/h`] 
 
 [`\theta = `][_____]{"$theta"} [`^\circ`] 
 
