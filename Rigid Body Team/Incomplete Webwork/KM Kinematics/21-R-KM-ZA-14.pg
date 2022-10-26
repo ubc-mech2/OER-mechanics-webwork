@@ -76,8 +76,11 @@ $vc = -1*sin($phi)*$r*cos($theta*pi/180)/(sqrt(1-($y/$l)**2))*$omegaAB + $r*sin(
 $vbar = $vc/cos( (90 - $beta)*pi/180 );
 $omegaCD = $vbar/$L;
 
+$vc = abs($vc);
+$omegaCD = abs($omegaCD);
+
 #image settings
-$resolution = 0.2;
+$resolution = 0.4;
 $width = $resolution*1590;
 $height = $resolution*1208;
 
@@ -99,9 +102,9 @@ BEGIN_PGML
 The slotted arm [`CD`] moves with some angular velocity, causing point [`C`] to move with some velocity towards the right. Point [`C`]
 is attached to a disc that rotates about pin [`A`], which is some distance away from the centre of the disc. If we know
 line [`AB`] rotates with an angular velocity of [`{\omega}_{AB}=[$omegaAB]\:rad/s`], [`r=[$r]\:m`], and [`l=[$l]\:m`],
-find the velocity of point [`C`] when [`{\theta}=[$theta]\:degrees`].
+find the magnitude of the velocity of point [`C`] when [`{\theta}=[$theta]\:degrees`].
 
-If we know that [`L=[$L]\:m`] and [`{\beta}=[$beta]\:degrees`] at the same instant, find the angular velocity of arm [`CD`].
+If we know that [`L=[$L]\:m`] and [`{\beta}=[$beta]\:degrees`] at the same instant, find the magnitude of the angular velocity of arm [`CD`].
 
 
 [`v_C = `][_____]{"$vc"}[`m/s`]
