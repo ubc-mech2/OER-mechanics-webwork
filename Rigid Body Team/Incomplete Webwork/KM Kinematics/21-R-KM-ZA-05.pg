@@ -92,7 +92,7 @@ $adk = $term1k+$term2k;
 
 
 #image settings
-$resolution = 0.2;
+$resolution = 0.4;
 $width = $resolution*1948;
 $height = $resolution*1424;
 
