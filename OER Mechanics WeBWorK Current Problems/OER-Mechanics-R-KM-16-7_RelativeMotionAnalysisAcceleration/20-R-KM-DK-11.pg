@@ -122,7 +122,7 @@ BEGIN_PGML
 Students are attempting to create a lift to raise their model car. The lift is assembled with two linkages, 
 link AB and link BC, as seen in the picture shown. If the links have length [`r_{AB} =`] [`[$rAB]`] [`m`] and 
 [`r_{BC} =`] [`[$rBC]`] [`m`], determine the velocity [`v_C`] and acceleration of the lift [`a_C`] at the instant where the magnitude of the angular velocity
-of AB is [`\omega_{AB} =`] [`[$dispangvelAB]`] [`rad/s`] and the magnitude of the angular acceleration of AB is [`\alpha_{AB} =`] [`[$dispangaccelAB]`] [`rad/s^2`].
+of AB is [`\omega_{AB} =`] [`[$dispangvelAB]`] [`rad/s`] and the magnitude of the angular acceleration of AB is [`\alpha_{AB} =`] [`[$dispangaccelAB]`] [`rad/s^2`], both in the direction shown.
 Take the angles to be [`\theta_{AB} =`] [`[$degAB]`][`^{\circ}`] and [`\phi_{BC} =`] [`[$degBC]`][`^{\circ}`].
 
 [`\vec{v_C} =`][____]{"$velC"} [`\hat{\jmath}`] [`m/s`]  
